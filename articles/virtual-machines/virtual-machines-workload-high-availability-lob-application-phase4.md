@@ -11,13 +11,15 @@
 <tags 
 	ms.service="virtual-machines" 
 	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="na" 
+	ms.tgt_pltfrm="Windows" 
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/11/2015" 
 	ms.author="josephd"/>
 
 # Line of Business Application Workload Phase 4: Configure web servers
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)] This article covers creating resources with the Resource Manager deployment model. 
 
 In this phase of deploying a high availability line of business application in Azure infrastructure services, you build out the web servers and load your line of business application on them.
 
@@ -26,6 +28,8 @@ You must complete this phase before moving on to [Phase 5](virtual-machines-work
 ## Create the web server virtual machines in Azure
 
 There are two web server virtual machines, on which you can deploy ASP.NET applications or older applications that can be hosted by Internet Information Services (IIS) 8 in Windows Server 2012 R2.
+
+> [AZURE.NOTE] This article contains commands for versions of Azure PowerShell up to *but not including* versions 1.0.0 and later. You can check your version of Azure PowerShell with the **Get-Module azure | format-table version** command. The Azure PowerShell command blocks in this article are in the process of being tested and updated to support the new cmdlets in Azure PowerShell versions 1.0.0 and later. Thank you for your patience.
 
 First, you configure internal load balancing so that Azure distributes the client traffic to the line of business application evenly among the two web servers. This requires you to specify an internal load balancing instance consisting of a name and its own IP address, assigned from the subnet address space that you assigned to your Azure virtual network. To determine whether an IP address you chose for the internal load balancer is available, use these commands at the Azure PowerShell prompt. Specify the values for the variables and remove the < and > characters.
 
@@ -115,6 +119,8 @@ When you have supplied all the proper values, run the resulting block at the Azu
 	$osDiskUri=$storageAcc.PrimaryEndpoints.Blob.ToString() + "vhds/" + $vmName + "-OSDisk.vhd"
 	$vm=Set-AzureVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
 	New-AzureVM -ResourceGroupName $rgName -Location $locName -VM $vm
+
+> [AZURE.NOTE] Because these virtual machines are for an intranet application, they are not assigned a public IP address or a DNS domain name label and exposed to the Internet. However, this also means that you cannot connect to them from the Azure Preview portal. The **Connect** button will be unavailable when you view the properties of the virtual machine.
 
 Use the remote desktop client of your choice and create a remote desktop connection to each web server virtual machine. Use its intranet DNS or computer name and the credentials of the local administrator account.
 
