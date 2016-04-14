@@ -19,9 +19,9 @@
 # Configure AlwaysOn Availability Groups in Azure VM (PowerShell)
 
 > [AZURE.SELECTOR]
-- [Portal - Resource Manager](virtual-machines-sql-server-alwayson-availability-groups-gui-arm.md)
-- [Portal - Classic](virtual-machines-windows-classic-portal-sql-availability.md)
-- [PowerShell - Classic](virtual-machines-windows-classic-ps-sql-availability.md)
+- [Portal - Resource Manager](virtual-machines-windows-portal-sql-alwayson-availability-groups.md)
+- [Portal - Classic](virtual-machines-windows-classic-portal-sql-alwayson-availability-groups.md)
+- [PowerShell - Classic](virtual-machines-windows-classic-ps-sql-alwayson-availability-groups.md)
 
 <br/>
 
@@ -535,7 +535,7 @@ Finally, you are ready to configure the availability group. You will use the SQL
 		$svc2.Start();
 		$svc2.WaitForStatus([System.ServiceProcess.ServiceControllerStatus]::Running,$timeout)
 
-1. Download **CreateAzureFailoverCluster.ps1** from [Create WSFC Cluster for AlwaysOn Availability Groups in Azure VM](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a) to the local working directory. You will use this script to help you create a functional WSFC cluster. For important information on how WSFC interacts with the Azure network, see [High Availability and Disaster Recovery for SQL Server in Azure Virtual Machines](virtual-machines-windows-classic-sql-dr.md).
+1. Download **CreateAzureFailoverCluster.ps1** from [Create WSFC Cluster for AlwaysOn Availability Groups in Azure VM](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a) to the local working directory. You will use this script to help you create a functional WSFC cluster. For important information on how WSFC interacts with the Azure network, see [High Availability and Disaster Recovery for SQL Server in Azure Virtual Machines](virtual-machines-windows-sql-high-availability-dr.md).
 
 1. Change to your working directory and create the WSFC cluster with the downloaded script.
 
@@ -628,4 +628,4 @@ Finally, you are ready to configure the availability group. You will use the SQL
 ## Next Steps
 You have now successfully implemented SQL Server AlwaysOn by creating an availability group in Azure. To configure a listener for this availability group, see [Configure an ILB listener for AlwaysOn Availability Groups in Azure](virtual-machines-windows-classic-ps-sql-int-listener.md).
 
-For other information about using SQL Server in Azure, see [SQL Server on Azure Virtual Machines](virtual-machines-windows-classic-sql-overview.md).
+For other information about using SQL Server in Azure, see [SQL Server on Azure Virtual Machines](virtual-machines-windows-sql-server-iaas-overview.md).
