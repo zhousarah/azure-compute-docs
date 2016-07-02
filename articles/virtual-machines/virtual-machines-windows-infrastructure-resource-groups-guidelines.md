@@ -2,24 +2,24 @@
 	pageTitle="Resource Groups Guidelines | Microsoft Azure"
 	description="Learn about the key design and implementation guidelines for deploying Resource Groups in Azure infrastructure services."
 	documentationCenter=""
-	services="virtual-machines-linux"
+	services="virtual-machines-windows"
 	authors="iainfoulds"
 	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines-linux"
+	ms.service="virtual-machines-windows"
 	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
+	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/22/2016"
+	ms.date="06/30/2016"
 	ms.author="iainfou"/>
 
 # Azure resource group guidelines
 
-[AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-intro](../../includes/virtual-machines-linux-infrastructure-guidelines-intro.md)] 
+[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-intro](../../includes/virtual-machines-windows-infrastructure-guidelines-intro.md)] 
 
 This article focuses on understanding how to logically build out your environment and group together all the components in Resource Groups.
 
@@ -36,14 +36,14 @@ Tasks:
 - Define what core infrastructure components you will need and if you will use dedicated Resource Groups.
 - Review how you can implement Resource Manager templates for consistent, reproducible deployments.
 - Define what user access roles you will need for controlling access to Resource Groups.
-- Create the set of Resource Groups using your naming convention. You can use the Azure CLI or portal.
+- Create the set of Resource Groups using your naming convention. You can use Azure PowerShell or the portal.
 
 
 ## Resource Groups
 
 In Azure, you can logically group together related resources such as storage accounts, virtual networks, and virtual machines (VMs) in order to deploy, manage, and maintain them as a single entity. This makes it easier to deploy applications while keeping all the related resources together from a management perspective, or to grant others access to that group of resources. For a more comprehensive understanding of Resource Groups, you can read the [Azure Resource Manager overview](../resource-group-overview.md).
 
-A key feature to Resource Groups is ability to build out your environment using a JSON file that declares the storage, networking, and compute resources, along with any related custom scripts or configurations to apply. By using these JSON templates, you can create consistent, reproducible deployments for your applications. This makes it easy to build out an environment in development and then use that same template to create a production deployment, or vice versa. For a better understanding using templates, you can read [the template walkthrough](../resource-manager-template-walkthrough.md) which guides you through each step of the building out a JSON template.
+A key feature to Resource Groups is ability to build out your environment using templates. A template is simply a JSON file that declares the storage, networking, and compute resources, along with any related custom scripts or configurations to apply. By using these templates, you can create consistent, reproducible deployments for your applications. This makes it easy to build out an environment in development and then use that same template to create a production deployment, or vice versa. For a better understanding using templates, you can read [the template walkthrough](../resource-manager-template-walkthrough.md) which guides you through each step of the building out a template.
 
 There are two different approaches you can take when designing your environment with Resource Groups:
 
@@ -55,4 +55,4 @@ As you scale out, creating centralized Resource Groups for your virtual networki
 
 ## Next steps
 
-[AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-next-steps](../../includes/virtual-machines-linux-infrastructure-guidelines-next-steps.md)] 
+[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-next-steps](../../includes/virtual-machines-windows-infrastructure-guidelines-next-steps.md)] 

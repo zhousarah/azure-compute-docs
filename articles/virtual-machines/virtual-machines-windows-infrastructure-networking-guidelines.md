@@ -2,24 +2,24 @@
 	pageTitle="Networking Infrastructure Guidelines | Microsoft Azure"
 	description="Learn about the key design and implementation guidelines for deploying virtual networking in Azure infrastructure services."
 	documentationCenter=""
-	services="virtual-machines-linux"
+	services="virtual-machines-windows"
 	authors="iainfoulds"
 	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines-linux"
+	ms.service="virtual-machines-windows"
 	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
+	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/22/2016"
+	ms.date="06/30/2016"
 	ms.author="iainfou"/>
 
 # Networking infrastructure guidelines
 
-[AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-intro](../../includes/virtual-machines-linux-infrastructure-guidelines-intro.md)] 
+[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-intro](../../includes/virtual-machines-windows-infrastructure-guidelines-intro.md)] 
 
 This article focuses on understanding the required planning steps for virtual networking within Azure and connectivity between existing on-prem environments.
 
@@ -54,7 +54,7 @@ If on-premises users and computers do not require ongoing connectivity to VMs in
 
 ![Basic cloud-only virtual network diagram](./media/virtual-machines-common-infrastructure-service-guidelines/vnet01.png)
 
-This is typically for Internet-facing workloads, such as an Internet-based web server. You can manage these VMs using SSH or point-to-site VPN connections.
+This is typically for Internet-facing workloads, such as an Internet-based web server. You can manage these VMs using RDP or point-to-site VPN connections.
 
 Because they do not connect to your on-premises network, Azure-only virtual networks can use any portion of the private IP address space, even if the same private space is in use on-premises.
 
@@ -105,4 +105,4 @@ As with an on-premises physical networking infrastructure, Azure virtual network
 
 ## Next steps
 
-[AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-next-steps](../../includes/virtual-machines-linux-infrastructure-guidelines-next-steps.md)] 
+[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-next-steps](../../includes/virtual-machines-windows-infrastructure-guidelines-next-steps.md)] 
