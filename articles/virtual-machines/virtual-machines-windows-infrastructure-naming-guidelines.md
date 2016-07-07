@@ -2,24 +2,24 @@
 	pageTitle="Infrastructure Naming Guidelines | Microsoft Azure"
 	description="Learn about the key design and implementation guidelines for naming in Azure infrastructure services."
 	documentationCenter=""
-	services="virtual-machines-linux"
+	services="virtual-machines-windows"
 	authors="iainfoulds"
 	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines-linux"
+	ms.service="virtual-machines-windows"
 	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
+	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/22/2016"
+	ms.date="06/30/2016"
 	ms.author="iainfou"/>
 
 # Infrastructure naming guidelines
 
-[AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-intro](../../includes/virtual-machines-linux-infrastructure-guidelines-intro.md)] 
+[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-intro](../../includes/virtual-machines-windows-infrastructure-guidelines-intro.md)] 
 
 This article focuses on understanding how to approach naming conventions for all your various Azure resources in order to build a logical and easily identifiable set of resources across your environment.
 
@@ -62,7 +62,7 @@ Affixes can refer to different aspects that describe the particular resources. T
 | Environment                          | dev, stg, prod                                                         | Depending on the purpose and name of each environment.                                                     |
 | Location                             | usw (West US), use (East US 2)                                         | Depending on the region of the datacenter or the region of the organization.                               |
 | Azure component, service, or product | Rg for resource group, VNet for virtual network                        | Depending on the product for which the resource provides support.                                          |
-| Role                                 | db, app, web                                                           | Depending on the role of the virtual machine.                                                              |
+| Role                                 | sql, ora, sp, iis                                                      | Depending on the role of the virtual machine.                                                              |
 | Instance                             | 01, 02, 03, etc.                                                       | For resources that have more than one instance. For example, load balanced web servers in a cloud service. |
 
 
@@ -108,4 +108,4 @@ Storage accounts have special rules governing their names. You can only use lowe
 
 
 ## Next steps
-[AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-next-steps](../../includes/virtual-machines-linux-infrastructure-guidelines-next-steps.md)] 
+[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-next-steps](../../includes/virtual-machines-windows-infrastructure-guidelines-next-steps.md)] 
