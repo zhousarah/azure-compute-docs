@@ -1,41 +1,41 @@
 ---
-title: Azure CLI Script Sample - Create a Linux VM | Microsoft Docs
-description: Azure CLI Script Sample - Create a Linux VM 
-services: virtual-machines-linux
+title: Azure CLI Script Sample - Create a Windows Server 2016 VM with OMS monitoring | Microsoft Docs
+description: Azure CLI Script Sample - Create a Windows Server 2016 VM with OMS monitoring
+services: virtual-machines-Windows
 documentationcenter: virtual-machines
-author: neilpeterson
+author: rickstercdn
 manager: timlt
 editor: tysonn
-tags: azure-service-management
+tags: 
 
 ms.assetid:
-ms.service: virtual-machines-linux
+ms.service: virtual-machines-Windows
 ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
+ms.tgt_pltfrm: vm-Windows
 ms.workload: infrastructure
-ms.date: 02/27/2017
-ms.author: nepeters
+ms.date: 02/23/2017
+ms.author: rclaus
 ---
 
-# Create a fully configured virtual machine
+# Monitor a VM with Operations Management Suite
 
-This script creates an Azure Virtual Machine with an Ubuntu operating system and related networking resources. Once the script has been successfully run, the virtual Machine can be accessed over SSH. 
+This script creates an Azure Virtual Machine, installs the Operations Management Suite (OMS) agent, and enrolls the system with an OMS workspace. Once the script has run, the virtual machine will be visible in the OMS console.
 
-Before running this script, ensure that a connection with Azure has been created using the `az login` command.
+Before running this script, ensure that a connection with Azure has been created using the `az login` command. Also, you should change the $AdminPassword variable at the start of the script to unique and meeting password complexity requirements.
 
-This sample works in a Bash shell. For options on running Azure CLI scripts on Windows client, see [Running the Azure CLI in Windows](../virtual-machines-windows-cli-options.md).
+This sample works in a Bash Shell. For options on running Azure CLI scripts on Windows, see [Running the Azure CLI in Windows](../virtual-machines-windows-cli-options.md).
 
-## Sample script
+## Create VM sample with Operations Management Suite
 
-[!code-azurecli[main](../../../cli_scripts/virtual-machine/create-vm-detailed/create-vm-detailed.sh "Quick Create VM")]
+[!code-azurecli[main](../../../cli_scripts/virtual-machine/create-vm-monitor-oms/create-windows-vm-monitor-oms.sh?highlight=4-5 "Quick Create VM")]
 
 ## Clean up deployment 
 
 After the script sample has been run, the following command can be used to remove the Resource Group, VM, and all related resources.
 
 ```azurecli
-az group delete --name myResourceGroup
+az group delete --name myResourceGroup --yes
 ```
 
 ## Script explanation
@@ -51,10 +51,11 @@ This script uses the following commands to create a resource group, virtual mach
 | [az network nsg rule create](https://docs.microsoft.com/cli/azure/network/nsg/rule#create) | Creates an NSG rule to allow inbound traffic. In this sample, port 22 is opened for SSH traffic. |
 | [az network nic create](https://docs.microsoft.com/cli/azure/network/nic#create) | Creates a virtual network card and attaches it to the virtual network, subnet, and NSG. |
 | [az vm create](https://docs.microsoft.com/cli/azure/vm#create) | Creates the virtual machine and connects it to the network card, virtual network, subnet, and NSG. This command also specifies the virtual machine image to be used, and administrative credentials.  |
+| [azure vm extension set](https://docs.microsoft.com/cli/azure/vm/extension#set) | Runs a VM extension against a virtual machine. In this case, the Operations Management Suite agent extension is used to install the OMS agent and enroll the VM in an OMS workspace. |
 | [az group delete](https://docs.microsoft.com/cli/azure/vm/extension#set) | Deletes a resource group including all nested resources. |
 
 ## Next steps
 
 For more information on the Azure CLI, see [Azure CLI documentation](https://docs.microsoft.com/cli/azure/overview).
 
-Additional virtual machine CLI script samples can be found in the [Azure Linux VM documentation](../virtual-machines-linux-cli-samples.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+Additional virtual machine CLI script samples can be found in the [Azure Windows VM documentation](../virtual-machines-windows-cli-samples.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
