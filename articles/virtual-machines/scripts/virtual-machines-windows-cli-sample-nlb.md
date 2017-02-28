@@ -1,41 +1,41 @@
 ---
-title: Azure CLI Script Sample - Create a Linux VM with NLB | Microsoft Docs
-description: Azure CLI Script Sample - Create a Linux VM with NLB 
-services: virtual-machines-linux
+title: Azure CLI Script Sample - Create a Windows Server 2016 VM with NLB | Microsoft Docs
+description: Azure CLI Script Sample - Create a Windows Server 2016 VM with NLB 
+services: virtual-machines-Windows
 documentationcenter: virtual-machines
-author: neilpeterson
+author: rickstercdn
 manager: timlt
 editor: tysonn
-tags: azure-service-management
+tags: 
 
 ms.assetid:
-ms.service: virtual-machines-linux
+ms.service: virtual-machines-Windows
 ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: vm-linux
+ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
-ms.date: 02/27/2017
-ms.author: nepeters
+ms.date: 02/23/2017
+ms.author: rclaus
 ---
 
-# Create a highly available VM
+# Load balance traffic between highly available virtual machines
 
-This script sample creates everything needed to run several Ubuntu virtual machines configured in a highly available and load balanced configuration. The outcome of this script is three virtual machines joined to an Azure Availability Set and accessible through an Azure Load Balancer. 
+This script sample creates everything needed to run several Windows Server 2016 virtual machines configured in a highly available and load balanced configuration. The outcome of this script is three virtual machines joined to an Azure Availability Set and accessible through an Azure Load Balancer. This sample works in a Bash shell.
 
-Before running this script, ensure that a connection with Azure has been created using the `az login` command.
+Before running this script, ensure that a connection with Azure has been created using the `az login` command. Also, you should change the $AdminPassword variable at the start of the script to unique and meeting password complexity requirements.
 
-This sample works in a Bash shell. For options on running Azure CLI scripts on Windows client, see [Running the Azure CLI in Windows](../virtual-machines-windows-cli-options.md).
+This sample works in a Bash Shell. For options on running Azure CLI scripts on Windows, see [Running the Azure CLI in Windows](../virtual-machines-windows-cli-options.md).
 
-## Sample script
+## Create VM with network load balancer
 
-[!code-azurecli[main](../../../cli_scripts/virtual-machine/create-vm-nlb/create-vm-nlb.sh "Quick Create VM")]
+[!code-azurecli[main](../../../cli_scripts/virtual-machine/create-vm-nlb/create-windows-vm-nlb.sh "Quick Create VM")]
 
 ## Clean up deployment 
 
 After the script sample has been run, the following command can be used to remove the Resource Group, VM, and all related resources.
 
 ```azurecli
-az group delete --name myResourceGroup
+az group delete --name myResourceGroup --yes
 ```
 
 ## Script explanation
@@ -62,4 +62,4 @@ This script uses the following commands to create a resource group, virtual mach
 
 For more information on the Azure CLI, see [Azure CLI documentation](https://docs.microsoft.com/cli/azure/overview).
 
-Additional virtual machine CLI script samples can be found in the [Azure Linux VM documentation](../virtual-machines-linux-cli-samples.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+Additional virtual machine CLI script samples can be found in the [Azure Windows VM documentation](../virtual-machines-windows-cli-samples.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
