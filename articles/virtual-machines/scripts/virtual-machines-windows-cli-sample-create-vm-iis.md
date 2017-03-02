@@ -1,9 +1,9 @@
 ---
-title: Azure CLI Script Sample - Create a Windows Server 2016 VM with OMS monitoring | Microsoft Docs
-description: Azure CLI Script Sample - Create a Windows Server 2016 VM with OMS monitoring
+title: Azure CLI Script Sample - Install IIS | Microsoft Docs
+description: Azure CLI Script Sample - Install IIS 
 services: virtual-machines-Windows
 documentationcenter: virtual-machines
-author: rickstercdn
+author: neilpeterson
 manager: timlt
 editor: tysonn
 tags: 
@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-Windows
 ms.workload: infrastructure
-ms.date: 02/23/2017
-ms.author: rclaus
+ms.date: 02/28/2017
+ms.author: nepeters
 ---
 
-# Monitor a VM with Operations Management Suite
+# Quick Create a virtual machine with the Azure CLI
 
-This script creates an Azure Virtual Machine, installs the Operations Management Suite (OMS) agent, and enrolls the system with an OMS workspace. Once the script has run, the virtual machine will be visible in the OMS console.
+This script creates an Azure Virtual Machine with Windows Server 2016, and then uses the Azure Virtual Machine Custom Script Extension to install IIS. Once the script has been run, the default IIS website can be reached on the public IP address of the virtual machine.
 
 Before running this script, ensure that a connection with Azure has been created using the `az login` command. Also, you should change the $AdminPassword variable at the start of the script to unique and meeting password complexity requirements.
 
@@ -28,7 +28,7 @@ This sample works in a Bash Shell. For options on running Azure CLI scripts on W
 
 ## Sample script
 
-[!code-azurecli[main](../../../cli_scripts/virtual-machine/create-vm-monitor-oms/create-windows-vm-monitor-oms.sh "Quick Create VM")]
+[!code-azurecli[main](../../../cli_scripts/virtual-machine/create-vm-windows-iis/create-vm-windows-iis.sh "Quick Create VM")]
 
 ## Clean up deployment 
 
@@ -45,8 +45,9 @@ This script uses the following commands to create a resource group, virtual mach
 | Command | Notes |
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group#create) | Creates a resource group in which all resources are stored. |
-| [az vm create](https://docs.microsoft.com/cli/azure/vm#create) | Creates the virtual machine and connects it to the network card, virtual network, subnet, and NSG. This command also specifies the virtual machine image to be used, and administrative credentials.  |
-| [azure vm extension set](https://docs.microsoft.com/cli/azure/vm/extension#set) | Runs a VM extension against a virtual machine. In this case, the Operations Management Suite agent extension is used to install the OMS agent and enroll the VM in an OMS workspace. |
+| [az vm create](https://docs.microsoft.com/cli/azure/vm#create) | Creates the virtual machine and connects it to the network card, virtual network, subnet, and network security group. This command also specifies the virtual machine image to be used and administrative credentials.  |
+| [az vm open-port](https://docs.microsoft.com/cli/azure/network/nsg/rule#create) | Creates a network security group rule to allow inbound traffic. In this sample, port 80 is opened for HTTP traffic. |
+| [azure vm extension set](https://docs.microsoft.com/cli/azure/vm/extension#set) | Adds and runs a virtual machine extension to a VM. In this sample, the custom script extension is used to install IIS.|
 | [az group delete](https://docs.microsoft.com/cli/azure/vm/extension#set) | Deletes a resource group including all nested resources. |
 
 ## Next steps
