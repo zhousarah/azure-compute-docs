@@ -14,7 +14,7 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 08/14/2017
+ms.date: 09/15/2017
 ms.author: zivr
 
 ---
@@ -26,4 +26,5 @@ ms.author: zivr
 ## Next steps
 
 For information on managing planned maintence, see [Handling planned maintenance notifications](maintenance-notifications.md).
+
 
