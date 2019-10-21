@@ -50,7 +50,7 @@ Check the IOPS activity of your environment and verify that premium file shares 
 
 Many workloads have bursting IO, so it's a good idea to check during heavy usage periods and note both the maximum IOPS and the average IOPS. Premium file shares provide IOPS based on the size of the share. Premium file shares also provide complimentary bursting that allows you to burst your IO to triple the baseline amount for up to one hour.
 
-For more information about premium file share performance, see [File share performance tiers](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-planning#file-share-performance-tiers).
+For more information about premium file share performance, see [File share performance tiers](https://docs.microsoft.com/azure/storage/files/storage-files-planning#file-share-performance-tiers).
 
 ### Licensing and pricing
 
@@ -167,7 +167,7 @@ After you create and configure the virtual machines, you can configure the premi
 1. Select the drive letter you want to use from the drop-down list and then copy both code blocks to Notepad.
 
 
-   :::image type="content" source="media/virtual-machines-windows-portal-sql-create-failover-cluster-premium-file-storage/premium-file-storage-commands.png" alt-text="Copy both PowerShell commands from the file share connect portal":::
+   :::image type="content" source="media/virtual-machines-windows-portal-sql-create-failover-cluster-premium-file-share/premium-file-storage-commands.png" alt-text="Copy both PowerShell commands from the file share connect portal":::
 
 1. RDP in to the SQL Server VM with the account that your SQL Server FCI will use for the service account.
 1. Open an administrative PowerShell command console.
@@ -224,7 +224,7 @@ To validate the cluster with the UI, do the following steps from one of the virt
 1. On **Testing options**, choose **Run only tests I select**. Click **Next**.
 1. On **Test selection**, include all tests except **Storage** and **Storage Spaces Direct**. See the following picture:
 
-   :::image type="content" source="media/virtual-machines-windows-portal-sql-create-failover-cluster-premium-file-storage/cluster-validation.png" alt-text="Cluster validation tests":::
+   :::image type="content" source="media/virtual-machines-windows-portal-sql-create-failover-cluster-premium-file-share/cluster-validation.png" alt-text="Cluster validation tests":::
 
 1. Click **Next**.
 1. On **Confirmation**, click **Next**.
@@ -281,7 +281,7 @@ Cloud Witness is a new type of cluster quorum witness stored in an Azure Storage
 
 Test failover of  your cluster. In Failover Cluster Manager, right-click your cluster > **More Actions** > **Move Core Cluster Resource** > **Select node** and select the other node of the cluster. Move the core cluster resource to every node of the cluster, and then move it back to the primary node. If you're able to successfully move the cluster to each node, then you are ready to install SQL Server.  
 
-:::image type="content" source="media/virtual-machines-windows-portal-sql-create-failover-cluster-premium-file-storage/test-cluster-failover.png" alt-text="Test cluster failover by moving the core resource to the other nodes":::
+:::image type="content" source="media/virtual-machines-windows-portal-sql-create-failover-cluster-premium-file-share/test-cluster-failover.png" alt-text="Test cluster failover by moving the core resource to the other nodes":::
 
 ## Step 5: Create SQL Server FCI
 
@@ -299,7 +299,7 @@ After you have configured the failover cluster, you can create the SQL Server FC
 
    The FCI data directories need to be on the premium file share. Type in the full path of the share, in the form of `\\storageaccountname.file.core.windows.net\filesharename\foldername`. A warning will appear, notifying you that you have specified a file server as the data directory. This is expected. Ensure that the same account you persisted the file share with is the same account that the SQL Server service uses to avoid possible failures. 
 
-   :::image type="content" source="media/virtual-machines-windows-portal-sql-create-failover-cluster-premium-file-storage/use-file-share-as-data-directories.png" alt-text="Use file share as SQL data directories":::
+   :::image type="content" source="media/virtual-machines-windows-portal-sql-create-failover-cluster-premium-file-share/use-file-share-as-data-directories.png" alt-text="Use file share as SQL data directories":::
 
 1. After you complete the wizard, Setup will install a SQL Server FCI on the first node.
 
