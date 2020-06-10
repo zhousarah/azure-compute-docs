@@ -1,8 +1,8 @@
 ---
-title: 'Quickstart: Use a Resource Manager template to create a Windows VM'
-description: In this quickstart, you learn how to use a Resource Manager template to create a Windows virtual machine
+title: 'Quickstart: Use a Resource Manager template to create an Ubuntu Linux VM'
+description: In this quickstart, you learn how to use a Resource Manager template to create a Linux virtual machine
 author: cynthn
-ms.service: virtual-machines-windows
+ms.service: virtual-machines-linux
 ms.topic: quickstart
 ms.workload: infrastructure
 ms.date: 06/04/2020
@@ -11,25 +11,20 @@ ms.custom: subject-armqs
 
 ---
 
-# Quickstart: Create a Windows virtual machine using a Resource Manager template
+# Quickstart: Create an Ubuntu Linux virtual machine using a Resource Manager template
 
-This quickstart shows you how to use a Resource Manager template to deploy a Windows virtual machine (VM) in Azure. 
+This quickstart shows you how to use a Resource Manager template to deploy an Ubuntu Linux virtual machine (VM) in Azure. 
 
 [!INCLUDE [About Azure Resource Manager](../../../includes/resource-manager-quickstart-introduction.md)]
 
 If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) before you begin.
 
-## Prerequisites
 
-None.
+## Review the template
 
-## Create a Windows virtual machine
+The template used in this quickstart is from [Azure Quickstart Templates](https://azure.microsoft.com/resources/templates/101-vm-simple-linux/).
 
-### Review the template
-
-The template used in this quickstart is from [Azure Quickstart Templates](https://azure.microsoft.com/resources/templates/101-vm-simple-windows/).
-
-:::code language="json" source="~/quickstart-templates/101-vm-simple-windows/azuredeploy.json" range="1-225" highlight="67-224":::
+:::code language="json" source="~/quickstart-templates/101-vm-simple-linux/azuredeploy.json" range="1-261" highlight="110-260":::
 
 
 Several resources are defined in the template:
@@ -44,11 +39,11 @@ Several resources are defined in the template:
 
 
 
-### Deploy the template
+## Deploy the template
 
 1. Select the following image to sign in to Azure and open a template. The template creates a key vault and a secret.
 
-    [![Deploy to Azure](../../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-vm-simple-windows%2fazuredeploy.json)
+    [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3a%2f%2fraw.githubusercontent.com%2fAzure%2fazure-quickstart-templates%2fmaster%2f101-vm-simple-linux%2fazuredeploy.json)
 
 1. Select or enter the following values. Use the default values, when available.
 
@@ -56,15 +51,21 @@ Several resources are defined in the template:
     - **Resource group**: select an existing resource group from the drop-down, or select **Create new**, enter a unique name for the resource group, and then click **OK**.
     - **Location**: select a location.  For example, **Central US**.
     - **Admin username**: provide a username, such as *azureuser*.
-    - **Admin password**: provide a password to use for the admin account. The password must be at least 12 characters long and meet the [defined complexity requirements](faq.md#what-are-the-password-requirements-when-creating-a-vm).
+    - **Authentication type**: You can choose between using an SSH key or a password.
+	- **Admin Password Or Key** depending on what you choose for authentication type:
+		- If you choose **password**, the password must be at least 12 characters long and meet the [defined complexity requirements](faq.md#what-are-the-password-requirements-when-creating-a-vm).
+		- If you choose **sshPublicKey**, paste in the contents of your public key.
     - **DNS label prefix**: enter a unique identifier to use as part of the DNS label.
-    - **Windows OS version**: select which version of Windows you want to run on the VM.
-    - **VM size**: select the [size](sizes.md) to use for the VM.
+    - **Ubuntu OS version**: select which version of Ubuntu you want to run on the VM.
     - **Location**: the default is the same location as the resource group, if it already exists.
+    - **VM size**: select the [size](sizes.md) to use for the VM.
+    - **Virtual Network Name**: name to be used for the vNet.
+	- **Subnet Name**: name for the subnet the VM should use.
+	- **Network Security Group Name**: name for the NSG.
 1. Select **Review + create**. After validation completes, select **Create** to create and deploy the VM.
 
 
-The Azure portal is used to deploy the template. In addition to the Azure portal, you can also use the Azure PowerShell, Azure CLI, and REST API. To learn other deployment methods, see [Deploy templates](../../azure-resource-manager/templates/deploy-powershell.md).
+The Azure portal is used to deploy the template. In addition to the Azure portal, you can also use the Azure CLI, Azure PowerShell, and REST API. To learn other deployment methods, see [Deploy templates](../../azure-resource-manager/templates/deploy-cli.md).
 
 ## Review deployed resources
 
@@ -86,4 +87,4 @@ In this quickstart, you deployed a simple virtual machine using a Resource Manag
 
 
 > [!div class="nextstepaction"]
-> [Azure Windows virtual machine tutorials](./tutorial-manage-vm.md)
+> [Azure Linux virtual machine tutorials](./tutorial-manage-vm.md)
