@@ -2,11 +2,11 @@
 title: Built-in policy definitions for Azure virtual machine scale sets
 description: Lists Azure Policy built-in policy definitions for Azure virtual machine scale sets. These built-in policy definitions provide common approaches to managing your Azure resources.
 ms.date: 07/10/2020
-ms.topic: sample
+ms.topic: reference
 author: ju-shim
 ms.author: jushiman
 ms.service: virtual-machine-scale-sets
-ms.custom: subject-policy-samples
+ms.custom: subject-policy-reference
 ---
 # Azure Policy built-in definitions for Azure virtual machine scale sets
 
@@ -21,11 +21,11 @@ the link in the **Version** column to view the source on the
 
 ## Microsoft.Compute
 
-[!INCLUDE [azure-policy-samples-rp-compute](../../includes/policy/samples/byrp/microsoft.compute.md)]
+[!INCLUDE [azure-policy-reference-rp-compute](../../includes/policy/reference/byrp/microsoft.compute.md)]
 
 ## Microsoft.ClassicCompute
 
-[!INCLUDE [azure-policy-samples-rp-classiccompute](../../includes/policy/samples/byrp/microsoft.classiccompute.md)]
+[!INCLUDE [azure-policy-reference-rp-classiccompute](../../includes/policy/reference/byrp/microsoft.classiccompute.md)]
 
 ## Next steps
 
