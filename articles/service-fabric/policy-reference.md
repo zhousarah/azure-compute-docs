@@ -1,9 +1,9 @@
 ---
 title: Built-in policy definitions for Azure Service Fabric
 description: Lists Azure Policy built-in policy definitions for Azure Service Fabric. These built-in policy definitions provide common approaches to managing your Azure resources.
-ms.date: 07/10/2020
-ms.topic: sample
-ms.custom: subject-policy-samples
+ms.date: 09/04/2020
+ms.topic: reference
+ms.custom: subject-policy-reference
 ---
 # Azure Policy built-in definitions for Azure Service Fabric
 
@@ -17,7 +17,7 @@ the link in the **Version** column to view the source on the
 
 ## Azure Service Fabric
 
-[!INCLUDE [azure-policy-samples-rp-servicefabric](../../includes/policy/samples/byrp/microsoft.servicefabric.md)]
+[!INCLUDE [azure-policy-reference-rp-servicefabric](../../includes/policy/reference/byrp/microsoft.servicefabric.md)]
 
 ## Next steps
 
