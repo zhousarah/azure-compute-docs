@@ -1,12 +1,12 @@
 ---
 title: Built-in policy definitions for Azure Virtual Machines 
 description: Lists Azure Policy built-in policy definitions for Azure Virtual Machines. These built-in policy definitions provide common approaches to managing your Azure resources.
-ms.date: 07/13/2020
-ms.topic: sample
+ms.date: 09/04/2020
+ms.topic: reference
 author: cynthn
 ms.author: cynthn
 ms.service: virtual-machines
-ms.custom: subject-policy-samples
+ms.custom: subject-policy-reference
 ---
 # Azure Policy built-in definitions for Azure Virtual Machines
 
@@ -20,15 +20,15 @@ the link in the **Version** column to view the source on the
 
 ## Microsoft.Compute
 
-[!INCLUDE [azure-policy-samples-rp-compute](../../includes/policy/samples/byrp/microsoft.compute.md)]
+[!INCLUDE [azure-policy-reference-rp-compute](../../includes/policy/reference/byrp/microsoft.compute.md)]
 
 ## Microsoft.VirtualMachineImages
 
-[!INCLUDE [azure-policy-samples-rp-vmimages](../../includes/policy/samples/byrp/microsoft.virtualmachineimages.md)]
+[!INCLUDE [azure-policy-reference-rp-vmimages](../../includes/policy/reference/byrp/microsoft.virtualmachineimages.md)]
 
 ## Microsoft.ClassicCompute
 
-[!INCLUDE [azure-policy-samples-rp-classiccompute](../../includes/policy/samples/byrp/microsoft.classiccompute.md)]
+[!INCLUDE [azure-policy-reference-rp-classiccompute](../../includes/policy/reference/byrp/microsoft.classiccompute.md)]
 
 ## Next steps
 
