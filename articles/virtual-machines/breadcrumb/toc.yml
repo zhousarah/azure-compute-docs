@@ -5,7 +5,3 @@
   - name: Virtual Machines
     tocHref: /azure/
     topicHref: /azure/virtual-machines/index
-    items: 
-     - name: Overview
-       tocHref: /azure/virtual-machines/index
-       topicHref: /azure/baremetal-infrastructure/workloads/sap/
