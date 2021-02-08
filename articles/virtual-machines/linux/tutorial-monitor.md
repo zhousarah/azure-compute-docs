@@ -1,20 +1,26 @@
 ---
-title: Tutorial - Monitor Windows virtual machines in Azure 
-description: In this tutorial, you learn how to monitor the performance and discovered application components running on your Windows virtual machines.
+title: Tutorial - Monitor Linux virtual machines in Azure 
+description: In this tutorial, you learn how to monitor the performance and discovered application components running on your Linux virtual machines.
+services: virtual-machines-linux
+documentationcenter: virtual-machines
 author: mgoedtel
-manager: carmonm
-ms.service: virtual-machines-windows
-ms.subservice: monitoring
-ms.topic: tutorial
-ms.workload: infrastructure
-ms.date: 09/27/2018
-ms.author: magoedte
-ms.custom: mvc
+manager: gwallace
+editor: ''
+tags: azure-resource-manager
 
-#Customer intent: As an IT administrator, I want to learn about monitoring so that I can review the health status and perform troubleshooting on Windows virtual machines.
+ms.assetid: 
+ms.service: virtual-machines-linux
+ms.topic: tutorial
+ms.tgt_pltfrm: vm-linux
+ms.workload: infrastructure
+ms.date: 09/30/2019
+ms.author: magoedte
+ms.custom: mvc, devx-track-azurecli
+
+#Customer intent: As an IT administrator, I want to learn about monitoring so that I can review the health status and perform troubleshooting on Linux virtual machines.
 ---
 
-# Tutorial: Monitor a Windows virtual machine in Azure
+# Tutorial: Monitor a Linux virtual machine in Azure
 
 Azure monitoring uses agents to collect boot and performance data from Azure VMs, store this data in Azure storage, and make it accessible through portal, the Azure PowerShell module, and Azure CLI. Advanced monitoring is delivered with Azure Monitor for VMs by collecting performance metrics, discover application components installed on the VM, and includes performance charts and dependency map.
 
@@ -34,44 +40,86 @@ The Azure Cloud Shell is a free interactive shell that you can use to run the st
 
 To open the Cloud Shell, just select **Try it** from the upper right corner of a code block. You can also launch Cloud Shell in a separate browser tab by going to [https://shell.azure.com/powershell](https://shell.azure.com/powershell). Select **Copy** to copy the blocks of code, paste it into the Cloud Shell, and press enter to run it.
 
-## Create virtual machine
+If you choose to install and use the CLI locally, this tutorial requires that you are running the Azure CLI version 2.0.30 or later. Run `az --version` to find the version. If you need to install or upgrade, see [Install the Azure CLI](/cli/azure/install-azure-cli).
 
-To configure Azure monitoring and update management in this tutorial, you need a Windows VM in Azure. First, set an administrator username and password for the VM with [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential):
+## Create VM
 
-```azurepowershell-interactive
-$cred = Get-Credential
+To see diagnostics and metrics in action, you need a VM. First, create a resource group with [az group create](/cli/azure/group#az_group_create). The following example creates a resource group named *myResourceGroupMonitor* in the *eastus* location.
+
+```azurecli-interactive
+az group create --name myResourceGroupMonitor --location eastus
 ```
 
-Now create the VM with [New-AzVM](/powershell/module/az.compute/new-azvm). The following example creates a VM named *myVM* in the *EastUS* location. If they do not already exist, the resource group *myResourceGroupMonitorMonitor* and supporting network resources are created:
+Now create a VM with [az vm create](/cli/azure/vm#az_vm_create). The following example creates a VM named *myVM* and generates SSH keys if they do not already exist in *~/.ssh/*:
 
-```azurepowershell-interactive
-New-AzVm `
-    -ResourceGroupName "myResourceGroupMonitor" `
-    -Name "myVM" `
-    -Location "East US" `
-    -Credential $cred
+```azurecli-interactive
+az vm create \
+  --resource-group myResourceGroupMonitor \
+  --name myVM \
+  --image UbuntuLTS \
+  --admin-username azureuser \
+  --generate-ssh-keys
 ```
 
-It takes a few minutes for the resources and VM to be created.
+## Enable boot diagnostics
+
+As Linux VMs boot, the boot diagnostic extension captures boot output and stores it in Azure storage. This data can be used to troubleshoot VM boot issues. Boot diagnostics are not automatically enabled when you create a Linux VM using the Azure CLI.
+
+Before enabling boot diagnostics, a storage account needs to be created for storing boot logs. Storage accounts must have a globally unique name, be between 3 and 24 characters, and must contain only numbers and lowercase letters. Create a storage account with the [az storage account create](/cli/azure/storage/account#az_storage_account_create) command. In this example, a random string is used to create a unique storage account name.
+
+```azurecli-interactive
+storageacct=mydiagdata$RANDOM
+
+az storage account create \
+  --resource-group myResourceGroupMonitor \
+  --name $storageacct \
+  --sku Standard_LRS \
+  --location eastus
+```
+
+When enabling boot diagnostics, the URI to the blob storage container is needed. The following command queries the storage account to return this URI. The URI value is stored in a variable names *bloburi*, which is used in the next step.
+
+```azurecli-interactive
+bloburi=$(az storage account show --resource-group myResourceGroupMonitor --name $storageacct --query 'primaryEndpoints.blob' -o tsv)
+```
+
+Now enable boot diagnostics with [az vm boot-diagnostics enable](/cli/azure/vm/boot-diagnostics#az-vm-boot-diagnostics-enable). The `--storage` value is the blob URI collected in the previous step.
+
+```azurecli-interactive
+az vm boot-diagnostics enable \
+  --resource-group myResourceGroupMonitor \
+  --name myVM \
+  --storage $bloburi
+```
 
 ## View boot diagnostics
 
-As Windows virtual machines boot up, the boot diagnostic agent captures screen output that can be used for troubleshooting purpose. This capability is enabled by default. The captured screenshots are stored in an Azure storage account, which is also created by default.
+When boot diagnostics are enabled, each time you stop and start the VM, information about the boot process is written to a log file. For this example, first deallocate the VM with the [az vm deallocate](/cli/azure/vm#az_vm_deallocate) command as follows:
 
-You can get the boot diagnostic data with the [Get-​Azure​Rm​VM​Boot​Diagnostics​Data](/powershell/module/az.compute/get-azvmbootdiagnosticsdata) command. In the following example, boot diagnostics are downloaded to the root of the *c:\* drive.
+```azurecli-interactive
+az vm deallocate --resource-group myResourceGroupMonitor --name myVM
+```
 
-```powershell
-Get-AzVMBootDiagnosticsData -ResourceGroupName "myResourceGroupMonitor" -Name "myVM" -Windows -LocalPath "c:\"
+Now start the VM with the [az vm start](/cli/azure/vm#az_vm_start) command as follows:
+
+```azurecli-interactive
+az vm start --resource-group myResourceGroupMonitor --name myVM
+```
+
+You can get the boot diagnostic data for *myVM* with the [az vm boot-diagnostics get-boot-log](/cli/azure/vm/boot-diagnostics#az-vm-boot-diagnostics-get-boot-log) command as follows:
+
+```azurecli-interactive
+az vm boot-diagnostics get-boot-log --resource-group myResourceGroupMonitor --name myVM
 ```
 
 ## View host metrics
 
-A Windows VM has a dedicated Host VM in Azure that it interacts with. Metrics are automatically collected for the Host and can be viewed in the Azure portal.
+A Linux VM has a dedicated host in Azure that it interacts with. Metrics are automatically collected for the host and can be viewed in the Azure portal as follows:
 
-1. In the Azure portal, click **Resource Groups**, select **myResourceGroupMonitor**, and then select **myVM** in the resource list.
-2. Click **Metrics** on the VM blade, and then select any of the Host metrics under **Available metrics** to see how the Host VM is performing.
+1. In the Azure portal, select **Resource Groups**, choose **myResourceGroupMonitor**, and then select **myVM** in the resource list.
+1. To see how the host VM is performing, select  **Metrics** on the VM window, then choose any of the *[Host]* metrics under **Available metrics**.
 
-    ![View host metrics](./media/tutorial-monitoring/tutorial-monitor-host-metrics.png)
+    ![View host metrics](./media/tutorial-monitoring/monitor-host-metrics.png)
 
 ## Enable advanced monitoring
 
@@ -142,4 +190,4 @@ In this tutorial, you configured and viewed performance of your VM. You learned 
 Advance to the next tutorial to learn about Azure Security Center.
 
 > [!div class="nextstepaction"]
-> [Manage VM security](../../security/fundamentals/overview.md)
+> [Manage VM security](../tutorial-azure-security.md)
