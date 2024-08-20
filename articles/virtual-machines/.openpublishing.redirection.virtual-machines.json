@@ -3,17 +3,17 @@
         {
             "source_path_from_root": "/articles/virtual-machines/extensions/network-watcher-update.md",
             "redirect_url": "/azure/network-watcher/network-watcher-agent-update",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path_from_root": "/articles/virtual-machines/extensions/network-watcher-windows.md",
             "redirect_url": "/azure/network-watcher/network-watcher-agent-windows",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path_from_root": "/articles/virtual-machines/extensions/network-watcher-linux.md",
             "redirect_url": "/azure/network-watcher/network-watcher-agent-linux",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path_from_root": "/articles/virtual-machines/linux/tutorial-availability-sets.md",
@@ -863,12 +863,12 @@
         {
             "source_path_from_root": "/articles/virtual-machines/linux/ansible-install-configure.md",
             "redirect_url": "/azure/ansible/ansible-install-configure",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path_from_root": "/articles/virtual-machines/linux/ansible-manage-linux-vm.md",
             "redirect_url": "/azure/ansible/ansible-manage-linux-vm",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path_from_root": "/articles/virtual-machines/linux/classic/web-app-visual-studio.md",
@@ -3483,7 +3483,7 @@
         {
             "source_path_from_root": "/articles/virtual-machines/linux/cloudfoundry-deploy-your-first-app.md",
             "redirect_url": "/azure/cloudfoundry/cloudfoundry-deploy-your-first-app",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path_from_root": "/articles/virtual-machines/linux/overview.md",
@@ -3498,12 +3498,12 @@
         {
             "source_path_from_root": "/articles/virtual-machines/linux/cloudfoundry-get-started.md",
             "redirect_url": "/azure/cloudfoundry/cloudfoundry-get-started",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path_from_root": "/articles/virtual-machines/linux/tutorial-build-deploy-jenkins.md",
             "redirect_url": "/azure/jenkins/tutorial-build-deploy-jenkins",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path_from_root": "/articles/virtual-machines/linux/tutorial-jenkins-github-docker-cicd.md",
@@ -3953,12 +3953,12 @@
         {
             "source_path_from_root": "/articles/virtual-machines/linux/terraform-create-complete-vm.md",
             "redirect_url": "/azure/terraform/terraform-create-complete-vm",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path_from_root": "/articles/virtual-machines/linux/terraform-install-configure.md",
             "redirect_url": "/azure/terraform/terraform-install-configure",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path_from_root": "/articles/virtual-machines/windows/hpcpack-cluster-headnode.md",
@@ -4653,7 +4653,7 @@
         {
             "source_path_from_root": "/articles/virtual-machines/windows/chef-automation.md",
             "redirect_url": "/azure/chef/chef-automation",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path_from_root": "/articles/virtual-machines/windows/sqlclassic/virtual-machines-windows-classic-sql-server-reportviewer.md",
