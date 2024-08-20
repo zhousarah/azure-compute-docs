@@ -1,3 +1,39 @@
-- name: '<please enter product name here>'
-  tocHref: /
-  topicHref: /
+items:
+- name: Azure
+  tocHref: /azure/
+  topicHref: /azure/index
+  items:
+  - name: Azure portal documentation
+    tocHref: /azure/virtual-machines/
+    topicHref: /azure/azure-portal/index
+  - name: Container Instances
+    tocHref: /azure/container-instances/
+    topicHref: /azure/container-instances/
+  - name: Service Fabric
+    tocHref: /azure/service-fabric/
+    topicHref: /azure/service-fabric/
+  - name: Virtual Machine Scale Sets
+    tocHref: /azure/virtual-machine-scale-sets/
+    topicHref: /azure/virtual-machine-scale-sets/
+  - name: Virtual Machines
+    tocHref: /azure/virtual-machines/
+    topicHref: /azure/virtual-machines/
+    items:
+    - name: Workloads
+      tocHref: /azure/virtual-machines/workloads/
+      topicHref: /azure/virtual-machines/workloads/workloads/
+      items:
+      - name: Oracle
+        tocHref: /azure/virtual-machines/workloads/oracle/
+        topicHref: /azure/virtual-machines/workloads/oracle/index
+      - name: Mainframe rehosting
+        tocHref: /azure/virtual-machines/workloads/mainframe-rehosting/
+        topicHref: /azure/virtual-machines/workloads/mainframe-rehosting/overview
+    - name: Linux
+      tocHref: /azure/virtual-machines/linux/
+      topicHref: /azure/virtual-machines/linux/
+      items: []
+    - name: Windows
+      tocHref: /azure/virtual-machines/windows/
+      topicHref: /azure/virtual-machines/windows/
+      items: []
