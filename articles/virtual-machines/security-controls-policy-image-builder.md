@@ -19,9 +19,9 @@ ms.custom: subject-policy-compliancecontrols
 
 In this article, you can refer to a list of the compliance domains and security controls for Azure VM Image Builder. You can assign the built-ins for a security control individually, to help make your Azure resources compliant with the specific standard.
 
-[!INCLUDE [azure-policy-compliancecontrols-introwarning](../../includes/policy/standards/intro-warning.md)]
+[!INCLUDE [azure-policy-compliancecontrols-introwarning](~/azure-docs-pr/includes/policy/standards/intro-warning.md)]
 
-[!INCLUDE [azure-policy-compliancecontrols-vmimages](../../includes/policy/standards/byrp/microsoft.virtualmachineimages.md)]
+[!INCLUDE [azure-policy-compliancecontrols-vmimages](~/azure-docs-pr/includes/policy/standards/byrp/microsoft.virtualmachineimages.md)]
 
 ## Next steps
 

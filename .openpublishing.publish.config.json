@@ -75,6 +75,12 @@
       "url": "https://github.com/Azure/azure-docs-powershell-samples",
       "branch": "master",
       "branch_mapping": {}
+    },
+    {
+      "path_to_root": "azure-docs-pr",
+      "url": "https://github.com/MicrosoftDocs/azure-docs-pr",
+      "branch": "main",
+      "branch_mapping": {}
     }
   ]
 }
