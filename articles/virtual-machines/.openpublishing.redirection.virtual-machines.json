@@ -5134,6 +5134,51 @@
             "source_path_from_root": "/articles/virtual-machines/spot-placement-score.md",
             "redirect_url": "/azure/virtual-machines/index",
             "redirect_document_id": false
-        }    
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/linux/create-aad-work-id.md",
+            "redirect_url": "/azure/active-directory/active-directory-users-create-azure-portal",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/windows/create-aad-work-id.md",
+            "redirect_url": "/azure/active-directory/active-directory-users-create-azure-portal",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/security-recommendations.md",
+            "redirect_url": "/security/benchmark/azure/baselines/virtual-machines-windows-virtual-machines-security-baseline",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "articles/virtual-machines/linux/tutorial-azure-devops-blue-green-strategy.md",
+            "redirect_url": "/previous-versions/azure/virtual-machines/linux/tutorial-azure-devops-blue-green-strategy",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "articles/virtual-machines/linux/tutorial-azure-devops-canary-strategy.md",
+            "redirect_url": "/previous-versions/azure/virtual-machines/linux/tutorial-azure-devops-canary-strategy",
+            "redirect_document_id": false
+        },
+        {
+            "source_path": "articles/virtual-machines/linux/tutorial-build-deploy-azure-pipelines.md",
+            "redirect_url": "/previous-versions/azure/virtual-machines/linux/tutorial-build-deploy-azure-pipelines",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machine-scale-sets/security-baseline.md",
+            "redirect_url": "/security/benchmark/azure/baselines/virtual-machine-scale-sets-security-baseline",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/linux/security-baseline.md",
+            "redirect_url": "/security/benchmark/azure/baselines/virtual-machines-linux-security-baseline",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/windows/security-baseline.md",
+            "redirect_url": "/security/benchmark/azure/baselines/virtual-machines-windows-security-baseline",
+            "redirect_document_id": false
+        }          
     ]
 }
