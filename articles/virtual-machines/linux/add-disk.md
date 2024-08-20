@@ -18,7 +18,7 @@ This article shows you how to attach a persistent disk to your VM so that you ca
 
 ## Attach a new disk to a VM
 
-If you want to add a new, empty data disk on your VM, use the [az vm disk attach](/cli/azure/vm/disk) command with the `--new` parameter. If your VM is in an Availability Zone, the disk is automatically created in the same zone as the VM. For more information, see [Overview of Availability Zones](../../availability-zones/az-overview.md). The following example creates a disk named *myDataDisk* that is 50 Gb in size:
+If you want to add a new, empty data disk on your VM, use the [az vm disk attach](/cli/azure/vm/disk) command with the `--new` parameter. If your VM is in an Availability Zone, the disk is automatically created in the same zone as the VM. For more information, see [Overview of Availability Zones](/azure/availability-zones/az-overview). The following example creates a disk named *myDataDisk* that is 50 Gb in size:
 
 ```azurecli
 az vm disk attach \

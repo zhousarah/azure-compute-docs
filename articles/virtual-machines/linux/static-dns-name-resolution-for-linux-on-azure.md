@@ -69,7 +69,7 @@ az group create --name myResourceGroup --location westus
 
 ## Create the virtual network
 
-The next step is to build a virtual network to launch the VMs into. The virtual network contains one subnet for this walkthrough. For more information on Azure virtual networks, see [Create a virtual network](../../virtual-network/manage-virtual-network.yml#create-a-virtual-network).
+The next step is to build a virtual network to launch the VMs into. The virtual network contains one subnet for this walkthrough. For more information on Azure virtual networks, see [Create a virtual network](/azure/virtual-network/manage-virtual-network#create-a-virtual-network).
 
 Create the virtual network with [az network vnet create](/cli/azure/network/vnet). The following example creates a virtual network named `myVnet` and subnet named `mySubnet`:
 
@@ -83,7 +83,7 @@ az network vnet create \
 ```
 
 ## Create the Network Security Group
-Azure Network Security Groups are equivalent to a firewall at the network layer. For more information about Network Security Groups, see [How to create NSGs in the Azure CLI](../../virtual-network/tutorial-filter-network-traffic-cli.md).
+Azure Network Security Groups are equivalent to a firewall at the network layer. For more information about Network Security Groups, see [How to create NSGs in the Azure CLI](/azure/virtual-network/tutorial-filter-network-traffic-cli).
 
 Create the network security group with [az network nsg create](/cli/azure/network/nsg). The following example creates a network security group named `myNetworkSecurityGroup`:
 

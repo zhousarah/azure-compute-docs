@@ -23,7 +23,7 @@ The NP-series virtual machines are powered by [Xilinx U250](https://www.xilinx.c
 [Live Migration](maintenance-and-updates.md): Not Supported<br>
 [Memory Preserving Updates](maintenance-and-updates.md): Not Supported<br>
 VM Generation Support: Generation 1<br>
-[Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md): Supported<br>
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported<br>
 [Ephemeral OS Disks](ephemeral-os-disks.md): Supported<br>
 [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Not Supported <br>
 <br>
@@ -43,7 +43,7 @@ VM Generation Support: Generation 1<br>
 
 **Q:** How to request quota for NP VMs?
 
-**A:** Follow this page [Increase VM-family vCPU quotas](../azure-portal/supportability/per-vm-quota-requests.md). NP VMs are available in East US, West US2, SouthCentral US, West Europe, SouthEast Asia, Japan East, and Canada Central.
+**A:** Follow this page [Increase VM-family vCPU quotas](/azure/azure-portal/supportability/per-vm-quota-requests). NP VMs are available in East US, West US2, SouthCentral US, West Europe, SouthEast Asia, Japan East, and Canada Central.
 
 **Q:** What version of Vitis should I use? 
 

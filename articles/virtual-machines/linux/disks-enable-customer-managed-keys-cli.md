@@ -118,12 +118,12 @@ az disk-encryption-set update -n keyrotationdes -g keyrotationtesting --key-url 
 [!INCLUDE [virtual-machines-disks-encryption-status-cli](../../../includes/virtual-machines-disks-encryption-status-cli.md)]
 
 > [!IMPORTANT]
-> Customer-managed keys rely on managed identities for Azure resources, a feature of Microsoft Entra ID. When you configure customer-managed keys, a managed identity is automatically assigned to your resources under the covers. If you subsequently move the subscription, resource group, or managed disk from one Microsoft Entra directory to another, the managed identity associated with the managed disks is not transferred to the new tenant, so customer-managed keys may no longer work. For more information, see [Transferring a subscription between Microsoft Entra directories](../../active-directory/managed-identities-azure-resources/known-issues.md#transferring-a-subscription-between-azure-ad-directories).
+> Customer-managed keys rely on managed identities for Azure resources, a feature of Microsoft Entra ID. When you configure customer-managed keys, a managed identity is automatically assigned to your resources under the covers. If you subsequently move the subscription, resource group, or managed disk from one Microsoft Entra directory to another, the managed identity associated with the managed disks is not transferred to the new tenant, so customer-managed keys may no longer work. For more information, see [Transferring a subscription between Microsoft Entra directories](/azure/active-directory/managed-identities-azure-resources/known-issues#transferring-a-subscription-between-azure-ad-directories).
 
 ## Next steps
 
 - [Explore the Azure Resource Manager templates for creating encrypted disks with customer-managed keys](https://github.com/ramankumarlive/manageddiskscmkpreview)
-- [Replicate machines with customer-managed keys enabled disks](../../site-recovery/azure-to-azure-how-to-enable-replication-cmk-disks.md)
-- [Set up disaster recovery of VMware VMs to Azure with PowerShell](../../site-recovery/vmware-azure-disaster-recovery-powershell.md#replicate-vmware-vms)
-- [Set up disaster recovery to Azure for Hyper-V VMs using PowerShell and Azure Resource Manager](../../site-recovery/hyper-v-azure-powershell-resource-manager.md#step-7-enable-vm-protection)
+- [Replicate machines with customer-managed keys enabled disks](/azure/site-recovery/azure-to-azure-how-to-enable-replication-cmk-disks)
+- [Set up disaster recovery of VMware VMs to Azure with PowerShell](/azure/site-recovery/vmware-azure-disaster-recovery-powershell#replicate-vmware-vms)
+- [Set up disaster recovery to Azure for Hyper-V VMs using PowerShell and Azure Resource Manager](/azure/site-recovery/hyper-v-azure-powershell-resource-manager#step-7-enable-vm-protection)
 - See [Create a managed disk from a snapshot with CLI](../scripts/create-managed-disk-from-snapshot.md#disks-with-customer-managed-keys) for a code sample.

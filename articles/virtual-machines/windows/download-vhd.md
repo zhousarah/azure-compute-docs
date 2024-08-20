@@ -64,7 +64,7 @@ Your snapshot will be created shortly, and can then be used to download or creat
 
 ## Generate download URL
 
-To download the VHD file, you need to generate a [shared access signature (SAS)](../../storage/common/storage-sas-overview.md?toc=/azure/virtual-machines/windows/toc.json) URL. When the URL is generated, an expiration time is assigned to the URL.
+To download the VHD file, you need to generate a [shared access signature (SAS)](/azure/storage/common/storage-sas-overview?toc=/azure/virtual-machines/windows/toc.json) URL. When the URL is generated, an expiration time is assigned to the URL.
 
 [!INCLUDE [disks-sas-change](../includes/disks-sas-change.md)]
 

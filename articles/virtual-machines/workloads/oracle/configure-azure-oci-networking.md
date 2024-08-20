@@ -14,7 +14,7 @@ ms.author: jacobjaygbay
 
 **Applies to:** :heavy_check_mark: Linux VMs
 
-To create an [integrated multicloud experience](oracle-oci-overview.md), Microsoft and Oracle offer direct interconnection between Azure and Oracle Cloud Infrastructure (OCI) through [ExpressRoute](../../../expressroute/expressroute-introduction.md) and [FastConnect](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectoverview.htm). Through the ExpressRoute and FastConnect interconnection, you can experience low latency, high throughput, private direct connectivity between the two clouds.
+To create an [integrated multicloud experience](oracle-oci-overview.md), Microsoft and Oracle offer direct interconnection between Azure and Oracle Cloud Infrastructure (OCI) through [ExpressRoute](/azure/expressroute/expressroute-introduction) and [FastConnect](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnectoverview.htm). Through the ExpressRoute and FastConnect interconnection, you can experience low latency, high throughput, private direct connectivity between the two clouds.
 
 > [!IMPORTANT]
 > Oracle has certified these applications to run in Azure when using the Azure / Oracle Cloud interconnect solution:
@@ -30,7 +30,7 @@ The following image shows a high-level overview of the interconnection:
 :::image type="content" source="https://user-images.githubusercontent.com/37556655/115093592-bced0180-9ecf-11eb-976d-9d4c7a1be2a8.png" alt-text="Diagram shows cross-cloud network connection that uses FastConnect and ExpressRoute." lightbox="https://user-images.githubusercontent.com/37556655/115093592-bced0180-9ecf-11eb-976d-9d4c7a1be2a8.png":::
 
 > [!NOTE]
-> The ExpressRoute connection seen in the diagram is a regular [ExpressRoute circuit](../../../expressroute/expressroute-introduction.md) and supports all fuctionality, such as Global Reach.
+> The ExpressRoute connection seen in the diagram is a regular [ExpressRoute circuit](/azure/expressroute/expressroute-introduction) and supports all fuctionality, such as Global Reach.
 >
 
 ## Prerequisites
@@ -41,7 +41,7 @@ The following image shows a high-level overview of the interconnection:
 
 ## Configure direct connectivity between ExpressRoute and FastConnect
 
-Create a standard ExpressRoute circuit on your Azure subscription under a resource group. For more information, see [Create and modify an ExpressRoute circuit](../../../expressroute/expressroute-howto-circuit-portal-resource-manager.md).
+Create a standard ExpressRoute circuit on your Azure subscription under a resource group. For more information, see [Create and modify an ExpressRoute circuit](/azure/expressroute/expressroute-howto-circuit-portal-resource-manager).
 
 1. In the Azure portal, enter *ExpressRoute* in the search bar, and then select **ExpressRoute circuits**.
 1. Under **Express Route circuits**, select **Create**.
@@ -85,27 +85,27 @@ After you create your ExpressRoute, configure direct connectivity between Expres
 
 ## Connect virtual network to ExpressRoute
 
-Create a virtual network and virtual network gateway, if you haven't already. For more information, see [Configure a virtual network gateway for ExpressRoute using the Azure portal](../../../expressroute/expressroute-howto-add-gateway-portal-resource-manager.md).
+Create a virtual network and virtual network gateway, if you haven't already. For more information, see [Configure a virtual network gateway for ExpressRoute using the Azure portal](/azure/expressroute/expressroute-howto-add-gateway-portal-resource-manager).
 
-Set up the connection between the virtual network gateway and your ExpressRoute circuit by using the [Terraform script](https://github.com/microsoft/azure-oracle/tree/master/InterConnect-2) or by using the PowerShell command to [Configure ExpressRoute FastPath](../../../expressroute/expressroute-howto-linkvnet-arm.md#configure-expressroute-fastpath).
+Set up the connection between the virtual network gateway and your ExpressRoute circuit by using the [Terraform script](https://github.com/microsoft/azure-oracle/tree/master/InterConnect-2) or by using the PowerShell command to [Configure ExpressRoute FastPath](/azure/expressroute/expressroute-howto-linkvnet-arm#configure-expressroute-fastpath).
 
 Once you have completed the network configuration, you can verify your configuration by selecting **Get ARP Records** and **Get route table** under the ExpressRoute Private peering page in the Azure portal.
 
 ## Automation
 
-Microsoft has created Terraform scripts to enable automated deployment of the network interconnect. The Terraform scripts need to authenticate with Azure before they run, because they require adequate permissions on the Azure subscription. Authentication can be performed using an [Microsoft Entra service principal](../../../active-directory/develop/app-objects-and-service-principals.md#service-principal-object) or using the Azure CLI. For more information, see [CLI Authentication](https://www.terraform.io/cli/auth).
+Microsoft has created Terraform scripts to enable automated deployment of the network interconnect. The Terraform scripts need to authenticate with Azure before they run, because they require adequate permissions on the Azure subscription. Authentication can be performed using an [Microsoft Entra service principal](/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object) or using the Azure CLI. For more information, see [CLI Authentication](https://www.terraform.io/cli/auth).
 
 For the Terraform scripts and related documentation to deploy the inter-connect, see [Azure-OCI Cloud Inter-Connect](https://aka.ms/azureociinterconnecttf).
 
 ## Monitoring
 
-Installing agents on both the clouds, you can use Azure [Network Performance Monitor](../../../expressroute/how-to-npm.md) to monitor the performance of the end-to-end network. Network Performance Monitor helps you to readily identify network issues, and helps eliminate them.
+Installing agents on both the clouds, you can use Azure [Network Performance Monitor](/azure/expressroute/how-to-npm) to monitor the performance of the end-to-end network. Network Performance Monitor helps you to readily identify network issues, and helps eliminate them.
 
 ## Delete the interconnect link
 
 To delete the interconnect, perform these steps in the order given. Failure to do so results in a *failed state* ExpressRoute circuit.
 
-1. Delete the ExpressRoute connection. Delete the connection by selecting the **Delete** icon on the page for your connection. For more information, see [Clean up resources](../../../expressroute/expressroute-howto-linkvnet-portal-resource-manager.md#clean-up-resources).
+1. Delete the ExpressRoute connection. Delete the connection by selecting the **Delete** icon on the page for your connection. For more information, see [Clean up resources](/azure/expressroute/expressroute-howto-linkvnet-portal-resource-manager#clean-up-resources).
 1. Delete the Oracle FastConnect from the Oracle Cloud Console.
 1. Once the Oracle FastConnect circuit has been deleted, you can delete the Azure ExpressRoute circuit.
 

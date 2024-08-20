@@ -21,7 +21,7 @@ FX-series VMs feature [Intel® Turbo Boost Technology 2.0](https://www.intel.com
 [Live Migration](maintenance-and-updates.md): Supported<br>
 [Memory Preserving Updates](maintenance-and-updates.md): Supported<br>
 [VM Generation Support](generation-2.md): Generation 2<br>
-[Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md): Supported<br>
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported<br>
 [Ephemeral OS Disks](ephemeral-os-disks.md): Supported <br>
 [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Supported <br>
 <br>

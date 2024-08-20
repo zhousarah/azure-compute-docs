@@ -154,7 +154,7 @@ az vm start --resource-group myResourceGroup --name myVM
 
 
 ## Create multiple NICs using Resource Manager templates
-Azure Resource Manager templates use declarative JSON files to define your environment. You can read an [overview of Azure Resource Manager](../../azure-resource-manager/management/overview.md). Resource Manager templates provide a way to create multiple instances of a resource during deployment, such as creating multiple NICs. You use *copy* to specify the number of instances to create:
+Azure Resource Manager templates use declarative JSON files to define your environment. You can read an [overview of Azure Resource Manager](/azure/azure-resource-manager/management/overview). Resource Manager templates provide a way to create multiple instances of a resource during deployment, such as creating multiple NICs. You use *copy* to specify the number of instances to create:
 
 ```json
 "copy": {
@@ -163,7 +163,7 @@ Azure Resource Manager templates use declarative JSON files to define your envir
 }
 ```
 
-Read more about [creating multiple instances using *copy*](../../azure-resource-manager/templates/copy-resources.md).
+Read more about [creating multiple instances using *copy*](/azure/azure-resource-manager/templates/copy-resources).
 
 You can also use a `copyIndex()` to then append a number to a resource name, which allows you to create `myNic1`, `myNic2`, etc. The following shows an example of appending the index value:
 
@@ -171,7 +171,7 @@ You can also use a `copyIndex()` to then append a number to a resource name, whi
 "name": "[concat('myNic', copyIndex())]",
 ```
 
-You can read a complete example of [creating multiple NICs using Resource Manager templates](../../virtual-network/template-samples.md).
+You can read a complete example of [creating multiple NICs using Resource Manager templates](/azure/virtual-network/template-samples).
 
 Add routing tables to the guest OS by completing the steps in [Configure the guest OS for multiple NICs](#configure-guest-os-for-multiple-nics).
 
@@ -240,4 +240,4 @@ ping bing.com -c 4 -I eth1
 ## Next steps
 Review [Linux VM sizes](../sizes.md) when trying to creating a VM with multiple NICs. Pay attention to the maximum number of NICs each VM size supports.
 
-To further secure your VMs, use just in time VM access. This feature opens network security group rules for SSH traffic when needed, and for a defined period of time. For more information, see [Manage virtual machine access using just in time](../../security-center/security-center-just-in-time.md).
+To further secure your VMs, use just in time VM access. This feature opens network security group rules for SSH traffic when needed, and for a defined period of time. For more information, see [Manage virtual machine access using just in time](/azure/security-center/security-center-just-in-time).

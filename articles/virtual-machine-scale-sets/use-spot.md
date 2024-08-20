@@ -206,12 +206,12 @@ For more information, see [Testing a simulated eviction notification](../virtual
 
 **Q:** How is quota managed for Azure Spot Virtual Machine?
 
-**A:** Azure Spot Virtual Machine instances and standard instances have separate quota pools. Azure Spot Virtual Machine quota is shared between VMs and scale-set instances. For more information, see [Azure subscription and service limits, quotas, and constraints](../azure-resource-manager/management/azure-subscription-service-limits.md).
+**A:** Azure Spot Virtual Machine instances and standard instances have separate quota pools. Azure Spot Virtual Machine quota is shared between VMs and scale-set instances. For more information, see [Azure subscription and service limits, quotas, and constraints](/azure/azure-resource-manager/management/azure-subscription-service-limits).
 
 
 **Q:** Can I request for additional quota for Azure Spot Virtual Machine?
 
-**A:** Yes, you are able to submit the request to increase your quota for Azure Spot Virtual Machines through the [standard quota request process](../azure-portal/supportability/per-vm-quota-requests.md).
+**A:** Yes, you are able to submit the request to increase your quota for Azure Spot Virtual Machines through the [standard quota request process](/azure/azure-portal/supportability/per-vm-quota-requests).
 
 
 **Q:** Can I convert existing scale sets to Azure Spot Virtual Machine Scale Sets?

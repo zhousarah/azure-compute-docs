@@ -12,7 +12,7 @@ ms.date: 07/14/2022
 
 # Deploy a Linux Service Fabric cluster into an Azure virtual network
 
-In this article you learn how to deploy a Linux Service Fabric cluster into an [Azure virtual network (VNET)](../virtual-network/virtual-networks-overview.md) using Azure CLI and a template. When you're finished, you have a cluster running in the cloud that you can deploy applications to. To create a Windows cluster using PowerShell, see [Create a secure Windows cluster on Azure](service-fabric-tutorial-create-vnet-and-windows-cluster.md).
+In this article you learn how to deploy a Linux Service Fabric cluster into an [Azure virtual network (VNET)](/azure/virtual-network/virtual-networks-overview) using Azure CLI and a template. When you're finished, you have a cluster running in the cloud that you can deploy applications to. To create a Windows cluster using PowerShell, see [Create a secure Windows cluster on Azure](service-fabric-tutorial-create-vnet-and-windows-cluster.md).
 
 ## Prerequisites
 

@@ -67,7 +67,7 @@
     - name: Azure CLI
       href: tutorial-autoscale-cli.md
     - name: Azure PowerShell
-      href: ../azure-monitor/autoscale/autoscale-using-powershell.md
+      href: /azure/azure-monitor/autoscale/autoscale-using-powershell
       maintainContext: true
 - name: Scale
   items:
@@ -78,7 +78,7 @@
     - name: Configure autoscale
       href: virtual-machine-scale-sets-autoscale-portal.md
     - name: Predictive autoscale
-      href: ../azure-monitor/autoscale/autoscale-predictive.md
+      href: /azure/azure-monitor/autoscale/autoscale-predictive
       maintainContext: true
     - name: Autoscale using guest metrics
       href: virtual-machine-scale-sets-mvss-guest-based-autoscale-linux.md
@@ -109,7 +109,7 @@
 - name: Reliability
   items: 
   - name: Reliability in Virtual Machine Scale Sets
-    href: ../reliability/reliability-virtual-machines.md?toc=/azure/virtual-machine-scale-sets/toc.json&bc=/azure/virtual-machine-scale-sets/breadcrumb/toc.json
+    href: /azure/reliability/reliability-virtual-machines?toc=/azure/virtual-machine-scale-sets/toc.json&bc=/azure/virtual-machine-scale-sets/breadcrumb/toc.json
   - name: Design considerations
     href: virtual-machine-scale-sets-design-overview.md
   - name: vCPU quotas
@@ -128,7 +128,7 @@
   - name: Spot Priority Mix
     href: spot-priority-mix.md
   - name: Reserved instances
-    href: ../cost-management-billing/reservations/save-compute-costs-reservations.md
+    href: /azure/cost-management-billing/reservations/save-compute-costs-reservations
   - name: Azure Hybrid Benefit
     items: 
     - name: Hybrid Benefit for Linux
@@ -224,7 +224,7 @@
     href: ../virtual-machines/monitor-vm.md
     maintainContext: true
   - name: VM insights
-    href: ../azure-monitor/vm/vminsights-overview.md
+    href: /azure/azure-monitor/vm/vminsights-overview
     maintainContext: true
   - name: Terminate notifications
     href: virtual-machine-scale-sets-terminate-notification.md
@@ -327,10 +327,10 @@
 - name: Networking
   items: 
   - name: Networking Overview
-    href: ../virtual-network/network-overview.md
+    href: /azure/virtual-network/network-overview
     maintainContext: true
   - name: Default outbound access in Azure
-    href: ../virtual-network/ip-services/default-outbound-access.md
+    href: /azure/virtual-network/ip-services/default-outbound-access
     maintainContext: true
   - name: Networking for scale sets
     href: virtual-machine-scale-sets-networking.md
@@ -347,7 +347,7 @@
     href: /security/benchmark/azure/baselines/virtual-machine-scale-sets-security-baseline
     maintainContext: true
   - name: Hotpatch
-    href: ../automanage/automanage-hotpatch.md
+    href: /azure/automanage/automanage-hotpatch
     maintainContext: true
   - name: Automatic VM guest patching
     href: ../virtual-machines/automatic-vm-guest-patching.md

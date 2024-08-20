@@ -22,7 +22,7 @@ The Reliable ServiceRemoting runtime defines the following performance counter c
 
 Each of the preceding categories has one or more counters.
 
-The [Windows Performance Monitor](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249(v=ws.11)) application that is available by default in the Windows operating system can be used to collect and view performance counter data. [Azure Diagnostics](../cloud-services/cloud-services-dotnet-diagnostics.md) is another option for collecting performance counter data and uploading it to Azure tables.
+The [Windows Performance Monitor](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249(v=ws.11)) application that is available by default in the Windows operating system can be used to collect and view performance counter data. [Azure Diagnostics](/azure/cloud-services/cloud-services-dotnet-diagnostics) is another option for collecting performance counter data and uploading it to Azure tables.
 
 ### Performance counter instance names
 A cluster that has a large number of  ServiceRemoting services or partitions have a large number of  performance counter instances. The performance counter instance names can help in identifying the specific partition and Service method (if applicable) that the performance counter instance is associated with.

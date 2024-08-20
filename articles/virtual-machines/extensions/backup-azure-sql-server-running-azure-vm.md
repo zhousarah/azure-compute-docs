@@ -18,11 +18,11 @@ To do that, Azure Backup installs the **AzureBackupWindowsWorkload** extension o
 
 ## Prerequisites
 
-For the list of supported scenarios, refer to the [supportability matrix](../../backup/sql-support-matrix.md#scenario-support) supported by Azure Backup.
+For the list of supported scenarios, refer to the [supportability matrix](/azure/backup/sql-support-matrix#scenario-support) supported by Azure Backup.
 
 ## Network connectivity
 
-Azure Backup supports NSG Tags, deploying a proxy server or listed IP ranges; for details on each of the methods, refer this [article](../../backup/backup-sql-server-database-azure-vms.md#establish-network-connectivity).
+Azure Backup supports NSG Tags, deploying a proxy server or listed IP ranges; for details on each of the methods, refer this [article](/azure/backup/backup-sql-server-database-azure-vms#establish-network-connectivity).
 
 ## Extension schema
 
@@ -109,5 +109,5 @@ The command will return a **backup container** of this resource and the status w
 
 ## Next steps
 
-- [Learn More](../../backup/backup-sql-server-azure-troubleshoot.md) about Azure SQL Server VM backup troubleshooting guidelines
-- [Common questions](../../backup/faq-backup-sql-server.yml) about backing up SQL Server databases that run on Azure virtual machines (VMs) and that use the Azure Backup service.
+- [Learn More](/azure/backup/backup-sql-server-azure-troubleshoot) about Azure SQL Server VM backup troubleshooting guidelines
+- [Common questions](/azure/backup/faq-backup-sql-server) about backing up SQL Server databases that run on Azure virtual machines (VMs) and that use the Azure Backup service.

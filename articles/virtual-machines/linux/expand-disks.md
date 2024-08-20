@@ -19,7 +19,7 @@ This article describes how to expand managed disks for a Linux virtual machine (
 An OS disk has a maximum capacity of 4,095 GiB. However, many operating systems are partitioned with [master boot record (MBR)](https://wikipedia.org/wiki/Master_boot_record) by default. MBR limits the usable size to 2 TiB. If you need more than 2 TiB, consider attaching data disks for data storage. If you do need to store data on the OS disk and require extra space, convert it to GUID Partition Table (GPT).
 
 > [!WARNING]
-> Always make sure that your filesystem is in a healthy state, your disk partition table type (GPT or MBR) will support the new size, and ensure your data is backed up before you perform disk expansion operations. For more information, see the [Azure Backup quickstart](../../backup/quick-backup-vm-portal.md).
+> Always make sure that your filesystem is in a healthy state, your disk partition table type (GPT or MBR) will support the new size, and ensure your data is backed up before you perform disk expansion operations. For more information, see the [Azure Backup quickstart](/azure/backup/quick-backup-vm-portal).
 
 ## <a id="identifyDisk"></a>Identify Azure data disk object within the operating system ##
 

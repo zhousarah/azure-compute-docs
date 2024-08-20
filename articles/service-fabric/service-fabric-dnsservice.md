@@ -54,7 +54,7 @@ If you are creating a managed cluster in the portal, DNS service is enabled by d
 If you are updating an existing managed cluster to enable DNS service, you can do so from the portal by visiting the **Add-on services** page from the cluster resource page. Otherwise, you can enable DNS service using alternative methods that are referenced below:
   - Use the ARM template that was used to deploy the cluster, if applicable.
   - Navigate to the cluster on [Azure Resource Explorer](https://resources.azure.com/) and update the cluster resource, as seen in the steps further below (from step 2 and onward).
-  - Navigate to the cluster on the portal and click **Export Template**. To learn more, see [Export the template from resource group](../azure-resource-manager/templates/export-template-portal.md).
+  - Navigate to the cluster on the portal and click **Export Template**. To learn more, see [Export the template from resource group](/azure/azure-resource-manager/templates/export-template-portal).
 
 After you have a template, you can enable DNS service with the following steps:
 

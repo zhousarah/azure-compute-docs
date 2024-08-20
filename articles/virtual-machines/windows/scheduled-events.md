@@ -20,7 +20,7 @@ Scheduled Events is an Azure Metadata Service that gives your application time t
 
 For information about Scheduled Events on Linux, see [Scheduled Events for Linux VMs](../linux/scheduled-events.md).
 
-Scheduled events provide proactive notifications about upcoming events, for reactive information about events that have already happened see [VM availability information in Azure Resource Graph](../resource-graph-availability.md) and [Create availability alert rule for Azure virtual machine](../../azure-monitor/vm/tutorial-monitor-vm-alert-availability.md). 
+Scheduled events provide proactive notifications about upcoming events, for reactive information about events that have already happened see [VM availability information in Azure Resource Graph](../resource-graph-availability.md) and [Create availability alert rule for Azure virtual machine](/azure/azure-monitor/vm/tutorial-monitor-vm-alert-availability). 
 
 > [!Note] 
 > Scheduled Events is generally available in all Azure Regions. See [Version and Region Availability](#version-and-region-availability) for latest release information.
@@ -54,7 +54,7 @@ Metadata Service exposes information about running VMs by using a REST endpoint 
 Scheduled events are delivered to and can be acknowledged by:
 
 - Standalone Virtual Machines.
-- All the VMs in an [Azure cloud service (classic)](../../cloud-services/index.yml).
+- All the VMs in an [Azure cloud service (classic)](/azure/cloud-services/).
 - All the VMs in an availability set.
 - All the VMs in a scale set placement group. 
 

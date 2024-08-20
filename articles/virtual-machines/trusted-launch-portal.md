@@ -25,7 +25,7 @@ ms.custom: template-how-to, devx-track-azurecli, devx-track-azurepowershell
    - Configure prerequisites to enable Guest Attestation on Trusted Launch-enabled VMs.
    - Configure machines to automatically install the Azure Monitor and Azure Security agents on VMs.
 
-- Allow the service tag `AzureAttestation` in network security group outbound rules to allow traffic for Azure Attestation. For more information, see [Virtual network service tags](../virtual-network/service-tags-overview.md).
+- Allow the service tag `AzureAttestation` in network security group outbound rules to allow traffic for Azure Attestation. For more information, see [Virtual network service tags](/azure/virtual-network/service-tags-overview).
 - Make sure that the firewall policies allow access to `*.attest.azure.net`.
 
 > [!NOTE]
@@ -557,7 +557,7 @@ The **Virtual machine should have Trusted launch enabled** single policy checks 
 
 These two policies come together to make the Trusted Launch policy initiative. This initiative enables you to group several related policy definitions to simplify assignments and management resources to include Trusted Launch configuration.
 
-To learn more and start deploying, see [Trusted Launch built-in policies](../governance/policy/samples/built-in-policies.md#trusted-launch).
+To learn more and start deploying, see [Trusted Launch built-in policies](/azure/governance/policy/samples/built-in-policies#trusted-launch).
 
 ---
 ## Verify or update your settings

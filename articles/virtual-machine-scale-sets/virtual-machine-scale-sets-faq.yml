@@ -93,17 +93,17 @@ sections:
       - question: |
           What are best practices for Azure autoscale?
         answer: |
-          See [Best practices for autoscaling virtual machines](../azure-monitor/autoscale/autoscale-best-practices.md).
+          See [Best practices for autoscaling virtual machines](/azure/azure-monitor/autoscale/autoscale-best-practices).
 
       - question: |
           Where do I find metric names for autoscaling that uses host-based metrics?
         answer: |
-          See [Supported metrics with Azure Monitor](../azure-monitor/essentials/metrics-supported.md).
+          See [Supported metrics with Azure Monitor](/azure/azure-monitor/essentials/metrics-supported).
 
       - question: |
           Are there any examples of autoscaling based on an Azure Service Bus topic and queue length?
         answer: |
-          Yes. For these examples, see [Azure Monitor autoscaling common metrics](../azure-monitor/autoscale/autoscale-common-metrics.md).
+          Yes. For these examples, see [Azure Monitor autoscaling common metrics](/azure/azure-monitor/autoscale/autoscale-common-metrics).
 
           For a Service Bus queue, use the following JSON:
 
@@ -129,9 +129,9 @@ sections:
         answer: |
           You can create an autoscale setting on a VM to use host-level metrics, or metrics based on a guest operating system.
 
-          For a list of supported metrics, see [Azure Monitor autoscaling common metrics](../azure-monitor/autoscale/autoscale-common-metrics.md).
+          For a list of supported metrics, see [Azure Monitor autoscaling common metrics](/azure/azure-monitor/autoscale/autoscale-common-metrics).
 
-          For a full sample for Virtual Machine Scale Sets, see [Advanced autoscale configuration by using Resource Manager templates for Virtual Machine Scale Sets](../azure-monitor/autoscale/autoscale-virtual-machine-scale-sets.md).
+          For a full sample for Virtual Machine Scale Sets, see [Advanced autoscale configuration by using Resource Manager templates for Virtual Machine Scale Sets](/azure/azure-monitor/autoscale/autoscale-virtual-machine-scale-sets).
 
           The sample uses the host-level CPU metric and a message count metric.
 
@@ -140,13 +140,13 @@ sections:
       - question: |
           How do I set alert rules on a Virtual Machine Scale Set?
         answer: |
-          You can create alerts on metrics for Virtual Machine Scale Sets via PowerShell or the Azure CLI. For more information, see [Azure Monitor PowerShell quickstart samples](../azure-monitor/powershell-samples.md#create-metric-alerts) and [Azure Monitor cross-platform CLI quickstart samples](../azure-monitor/cli-samples.md#work-with-alerts).
+          You can create alerts on metrics for Virtual Machine Scale Sets via PowerShell or the Azure CLI. For more information, see [Azure Monitor PowerShell quickstart samples](/azure/azure-monitor/powershell-samples#create-metric-alerts) and [Azure Monitor cross-platform CLI quickstart samples](/azure/azure-monitor/cli-samples#work-with-alerts).
 
           The `TargetResourceId` of the Virtual Machine Scale Set looks like:
 
           */subscriptions/yoursubscriptionid/resourceGroups/yourresourcegroup/providers/Microsoft.Compute/virtualMachineScaleSets/yourvmssname*
 
-          You can choose any VM performance counter as the metric to set an alert for. For more information, see [Guest operating system metrics for Resource Manager-based Windows VMs](../azure-monitor/autoscale/autoscale-common-metrics.md#guest-os-metrics-for-resource-manager-based-windows-vms) and [Guest operating system metrics for Linux VMs](../azure-monitor/autoscale/autoscale-common-metrics.md#guest-os-metrics-linux-vms) in the [Azure Monitor autoscaling common metrics](../azure-monitor/autoscale/autoscale-common-metrics.md) article.
+          You can choose any VM performance counter as the metric to set an alert for. For more information, see [Guest operating system metrics for Resource Manager-based Windows VMs](/azure/azure-monitor/autoscale/autoscale-common-metrics#guest-os-metrics-for-resource-manager-based-windows-vms) and [Guest operating system metrics for Linux VMs](/azure/azure-monitor/autoscale/autoscale-common-metrics#guest-os-metrics-linux-vms) in the [Azure Monitor autoscaling common metrics](/azure/azure-monitor/autoscale/autoscale-common-metrics) article.
 
       - question: |
           How do I set up autoscale on a Virtual Machine Scale Set by using PowerShell?
@@ -200,7 +200,7 @@ sections:
           az sf cluster create -h
           ```
 
-          Self-signed certificates can't be used for distributed trust provided by a certificate authority, and shouldn't be used for any Service Fabric cluster intended to host enterprise production solutions. For more security guidance, review [Azure Service Fabric security best practices](../security/fundamentals/service-fabric-best-practices.md) and [Service Fabric cluster security scenarios](../service-fabric/service-fabric-cluster-security.md).
+          Self-signed certificates can't be used for distributed trust provided by a certificate authority, and shouldn't be used for any Service Fabric cluster intended to host enterprise production solutions. For more security guidance, review [Azure Service Fabric security best practices](/azure/security/fundamentals/service-fabric-best-practices) and [Service Fabric cluster security scenarios](../service-fabric/service-fabric-cluster-security.md).
 
       - question: |
           For SSH authentication with a Linux Virtual Machine Scale Set from a Resource Manager template, can I specify an SSH key pair to use?
@@ -382,7 +382,7 @@ sections:
       - question: |
           Do managed identities for Azure resources work with Virtual Machine Scale Sets?
         answer: |
-          Yes. For more information, see the [managed identities overview](../active-directory/managed-identities-azure-resources/overview.md). You can see some example MSI templates in Azure Quickstart Templates for [Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.compute/vmss-msi) and [Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.compute/vmss-msi).
+          Yes. For more information, see the [managed identities overview](/azure/active-directory/managed-identities-azure-resources/overview). You can see some example MSI templates in Azure Quickstart Templates for [Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.compute/vmss-msi) and [Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.compute/vmss-msi).
 
   - name: Deleting
     questions:

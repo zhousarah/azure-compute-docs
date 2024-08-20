@@ -14,7 +14,7 @@ This article provides an overview of your options for preventing your Azure mana
 
 ## Custom role
 
-To limit the number of people who can import or export managed disks or snapshots using Azure RBAC, create a [custom RBAC role](../role-based-access-control/custom-roles-powershell.md) that doesn't have the following permissions:
+To limit the number of people who can import or export managed disks or snapshots using Azure RBAC, create a [custom RBAC role](/azure/role-based-access-control/custom-roles-powershell) that doesn't have the following permissions:
 
 - Microsoft.Compute/disks/beginGetAccess/action
 - Microsoft.Compute/disks/endGetAccess/action

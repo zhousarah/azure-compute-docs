@@ -27,7 +27,7 @@ One way to upload and collect logs is to use the Windows Azure Diagnostics (WAD)
 ## Prerequisites
 The following tools are used in this article:
 
-* [Azure Resource Manager](../azure-resource-manager/management/overview.md)
+* [Azure Resource Manager](/azure/azure-resource-manager/management/overview)
 * [Azure PowerShell](/powershell/azure/)
 * [Azure Resource Manager template](../virtual-machines/extensions/diagnostics-template.md?toc=/azure/virtual-machines/windows/toc.json)
 
@@ -63,7 +63,7 @@ To create a cluster by using Resource Manager, you need to add the Diagnostics c
 
 To see the Diagnostics setting in the Resource Manager template, open the azuredeploy.json file and search for **IaaSDiagnostics**. To create a cluster by using this template, select the **Deploy to Azure** button available at the previous link.
 
-Alternatively, you can download the Resource Manager sample, make changes to it, and create a cluster with the modified template by using the `New-AzResourceGroupDeployment` command in an Azure PowerShell window. See the following code for the parameters that you pass in to the command. For detailed information on how to deploy a resource group by using PowerShell, see the article [Deploy a resource group with the Azure Resource Manager template](../azure-resource-manager/templates/deploy-powershell.md).
+Alternatively, you can download the Resource Manager sample, make changes to it, and create a cluster with the modified template by using the `New-AzResourceGroupDeployment` command in an Azure PowerShell window. See the following code for the parameters that you pass in to the command. For detailed information on how to deploy a resource group by using PowerShell, see the article [Deploy a resource group with the Azure Resource Manager template](/azure/azure-resource-manager/templates/deploy-powershell).
 
 ### Add the diagnostics extension to an existing cluster
 If you have an existing cluster that doesn't have Diagnostics deployed, you can add or update it via the cluster template. Modify the Resource Manager template that's used to create the existing cluster or download the template from the portal as described earlier. Modify the template.json file by performing the following tasks:
@@ -345,7 +345,7 @@ In the "WadCfg" of the Resource Manager template, add a "Sink" by including the 
 
 In both the preceding code snippets, the name "applicationInsights" was used to describe the sink. This is not a requirement and as long as the name of the sink is included in "sinks", you can set the name to any string.
 
-Currently, logs from the cluster show up as **traces** in Application Insights' log viewer. Since most of the traces coming from the platform are of level "Informational", you can also consider changing the sink configuration to only send logs of type "Warning" or "Error." This can be done by adding "Channels" to your sink, as demonstrated in [this article](../azure-monitor/agents/diagnostics-extension-to-application-insights.md).
+Currently, logs from the cluster show up as **traces** in Application Insights' log viewer. Since most of the traces coming from the platform are of level "Informational", you can also consider changing the sink configuration to only send logs of type "Warning" or "Error." This can be done by adding "Channels" to your sink, as demonstrated in [this article](/azure/azure-monitor/agents/diagnostics-extension-to-application-insights).
 
 >[!NOTE]
 >If you use an incorrect Application Insights Key either in portal or in your Resource Manager template, you will have to manually change the key and update the cluster / redeploy it.

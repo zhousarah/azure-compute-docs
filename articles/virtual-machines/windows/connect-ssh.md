@@ -139,7 +139,7 @@ resource allowSSH 'Microsoft.Network/networkSecurityGroups/securityRules@2021-08
   **Overview** from the left menu and look at the **Networking** section. If you see an IP address
   next to **Public IP address**, then your VM has a public IP. To learn more about adding a public IP
   address to an existing VM, see
-  [Associate a public IP address to a virtual machine](../../virtual-network/ip-services/associate-public-ip-address-vm.md)
+  [Associate a public IP address to a virtual machine](/azure/virtual-network/ip-services/associate-public-ip-address-vm)
 
 - Verify your VM is running. On the Overview tab, in the essentials section, verify the status of
   the VM is Running. To start the VM, select **Start** at the top of the page.

@@ -17,7 +17,7 @@ The EventSource name for the Stateful Reliable Services StatefulServiceBase clas
 [Diagnostics Events](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md#view-service-fabric-system-events-in-visual-studio) window when the service is being [debugged in Visual Studio](service-fabric-debugging-your-application.md).
 
 Examples of tools and technologies that help in collecting and/or viewing EventSource events are [PerfView](https://github.com/Microsoft/perfview/releases),
-[Azure Diagnostics](../cloud-services/cloud-services-dotnet-diagnostics.md), and the
+[Azure Diagnostics](/azure/cloud-services/cloud-services-dotnet-diagnostics), and the
 [Microsoft TraceEvent Library](https://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent).
 
 ## Events
@@ -51,7 +51,7 @@ The Service Fabric Transactional Replicator is used by the [Reliable State Manag
 
 The Service Fabric TStore is a component used in [Reliable Collections](./service-fabric-reliable-services-introduction.md) for storing and retrieving key-value pairs.
 
-The [Windows Performance Monitor](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249(v=ws.11)) application that is available by default in the Windows operating system can be used to collect and view performance counter data. [Azure Diagnostics](../cloud-services/cloud-services-dotnet-diagnostics.md) is another option for collecting performance counter data and uploading it to Azure tables.
+The [Windows Performance Monitor](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249(v=ws.11)) application that is available by default in the Windows operating system can be used to collect and view performance counter data. [Azure Diagnostics](/azure/cloud-services/cloud-services-dotnet-diagnostics) is another option for collecting performance counter data and uploading it to Azure tables.
 
 ### Performance counter instance names
 A cluster that has a large number of reliable services or reliable service partitions will have a large number of transactional replicator performance counter instances. This is also the case for TStore performance counters, but is also multiplied by the number of Reliable Dictionaries and Reliable Queues used. The performance counter instance names can help in identifying the specific [partition](service-fabric-concepts-partitioning.md), service replica, and state provider in the case of TStore, that the performance counter instance is associated with.

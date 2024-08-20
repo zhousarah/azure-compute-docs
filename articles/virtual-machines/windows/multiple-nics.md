@@ -16,7 +16,7 @@ ms.custom: devx-track-azurepowershell
 Virtual machines (VMs) in Azure can have multiple virtual network interface cards (NICs) attached to them. A common scenario is to have different subnets for front-end and back-end connectivity. You can associate multiple NICs on a VM to multiple subnets, but those subnets must all reside in the same virtual network (vNet). This article details how to create a VM that has multiple NICs attached to it. You also learn how to add or remove NICs from an existing VM. Different [VM sizes](../sizes.md) support a varying number of NICs, so size your VM accordingly.
 
 > [!NOTE]
-> If multiple subnets are not required for a scenario, it may be more straightforward to utilize multiple IP configurations on a single NIC.  Instructions for this setup can be found [here](../../virtual-network/ip-services/virtual-network-multiple-ip-addresses-portal.md).
+> If multiple subnets are not required for a scenario, it may be more straightforward to utilize multiple IP configurations on a single NIC.  Instructions for this setup can be found [here](/azure/virtual-network/ip-services/virtual-network-multiple-ip-addresses-portal).
 
 ## Prerequisites
 
@@ -71,7 +71,7 @@ $myNic2 = New-AzNetworkInterface -ResourceGroupName "myResourceGroup" `
     -SubnetId $backEnd.Id
 ```
 
-Typically you also create a [network security group](../../virtual-network/network-security-groups-overview.md) to filter network traffic to the VM and a [load balancer](../../load-balancer/load-balancer-overview.md) to distribute traffic across multiple VMs.
+Typically you also create a [network security group](/azure/virtual-network/network-security-groups-overview) to filter network traffic to the VM and a [load balancer](/azure/load-balancer/load-balancer-overview) to distribute traffic across multiple VMs.
 
 ### Create the virtual machine
 Now start to build your VM configuration. Each VM size has a limit for the total number of NICs that you can add to a VM. For more information, see [Windows VM sizes](../sizes.md).
@@ -213,7 +213,7 @@ To remove a virtual NIC from an existing VM, you deallocate the VM, remove the v
     ```   
 
 ## Create multiple NICs with templates
-Azure Resource Manager templates provide a way to create multiple instances of a resource during deployment, such as creating multiple NICs. Resource Manager templates use declarative JSON files to define your environment. For more information, see [overview of Azure Resource Manager](../../azure-resource-manager/management/overview.md). You can use *copy* to specify the number of instances to create:
+Azure Resource Manager templates provide a way to create multiple instances of a resource during deployment, such as creating multiple NICs. Resource Manager templates use declarative JSON files to define your environment. For more information, see [overview of Azure Resource Manager](/azure/azure-resource-manager/management/overview). You can use *copy* to specify the number of instances to create:
 
 ```json
 "copy": {
@@ -222,7 +222,7 @@ Azure Resource Manager templates provide a way to create multiple instances of a
 }
 ```
 
-For more information, see [creating multiple instances by using *copy*](../../azure-resource-manager/templates/copy-resources.md). 
+For more information, see [creating multiple instances by using *copy*](/azure/azure-resource-manager/templates/copy-resources). 
 
 You can also use `copyIndex()` to append a number to a resource name. You can then create *myNic1*, *MyNic2* and so on. The following code shows an example of appending the index value:
 
@@ -230,7 +230,7 @@ You can also use `copyIndex()` to append a number to a resource name. You can th
 "name": "[concat('myNic', copyIndex())]", 
 ```
 
-You can read a complete example of [creating multiple NICs by using Resource Manager templates](../../virtual-network/template-samples.md).
+You can read a complete example of [creating multiple NICs by using Resource Manager templates](/azure/virtual-network/template-samples).
 
 Add routes for secondary NICs to the OS by completing the steps in [Configure the operating system for multiple NICs](#configure-guest-os-for-multiple-nics).
 

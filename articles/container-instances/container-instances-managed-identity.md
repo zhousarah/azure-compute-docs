@@ -12,7 +12,7 @@ ms.date: 06/17/2022
 
 # How to use managed identities with Azure Container Instances
 
-Use [managed identities for Azure resources](../active-directory/managed-identities-azure-resources/overview.md) to run code in Azure Container Instances that interacts with other Azure services - without maintaining any secrets or credentials in code. The feature provides an Azure Container Instances deployment with an automatically managed identity in Microsoft Entra ID.
+Use [managed identities for Azure resources](/azure/active-directory/managed-identities-azure-resources/overview) to run code in Azure Container Instances that interacts with other Azure services - without maintaining any secrets or credentials in code. The feature provides an Azure Container Instances deployment with an automatically managed identity in Microsoft Entra ID.
 
 In this article, you learn more about managed identities in Azure Container Instances and:
 
@@ -25,17 +25,17 @@ Adapt the examples to enable and use identities in Azure Container Instances to 
 
 ## Why use a managed identity?
 
-Use a managed identity in a running container to authenticate to any [service that supports Microsoft Entra authentication](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication) without managing credentials in your container code. For services that don't support AD authentication, you can store secrets in an Azure key vault and use the managed identity to access the key vault to retrieve credentials. For more information about using a managed identity, see [What is managed identities for Azure resources?](../active-directory/managed-identities-azure-resources/overview.md)
+Use a managed identity in a running container to authenticate to any [service that supports Microsoft Entra authentication](/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities#azure-services-that-support-azure-ad-authentication) without managing credentials in your container code. For services that don't support AD authentication, you can store secrets in an Azure key vault and use the managed identity to access the key vault to retrieve credentials. For more information about using a managed identity, see [What is managed identities for Azure resources?](/azure/active-directory/managed-identities-azure-resources/overview)
 
 ### Enable a managed identity
 
  When you create a container group, enable one or more managed identities by setting a [ContainerGroupIdentity](/rest/api/container-instances/2022-09-01/container-groups/create-or-update#containergroupidentity) property. You can also enable or update managed identities after a container group is running - either action causes the container group to restart. To set the identities on a new or existing container group, use the Azure CLI, a Resource Manager template, a YAML file, or another Azure tool.
 
-Azure Container Instances supports both types of managed Azure identities: user-assigned and system-assigned. On a container group, you can enable a system-assigned identity, one or more user-assigned identities, or both types of identities. If you're unfamiliar with managed identities for Azure resources, see the [overview](../active-directory/managed-identities-azure-resources/overview.md).
+Azure Container Instances supports both types of managed Azure identities: user-assigned and system-assigned. On a container group, you can enable a system-assigned identity, one or more user-assigned identities, or both types of identities. If you're unfamiliar with managed identities for Azure resources, see the [overview](/azure/active-directory/managed-identities-azure-resources/overview).
 
 ### Use a managed identity
 
-To use a managed identity, the identity must be granted access to one or more Azure service resources (such as a web app, a key vault, or a storage account) in the subscription. Using a managed identity in a running container is similar to using an identity in an Azure VM. See the VM guidance for using a [token](../active-directory/managed-identities-azure-resources/how-to-use-vm-token.md), [Azure PowerShell or Azure CLI](../active-directory/managed-identities-azure-resources/how-to-use-vm-sign-in.md), or the [Azure SDKs](../active-directory/managed-identities-azure-resources/how-to-use-vm-sdk.md).
+To use a managed identity, the identity must be granted access to one or more Azure service resources (such as a web app, a key vault, or a storage account) in the subscription. Using a managed identity in a running container is similar to using an identity in an Azure VM. See the VM guidance for using a [token](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token), [Azure PowerShell or Azure CLI](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-sign-in), or the [Azure SDKs](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-sdk).
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](~/reusable-content/azure-cli/azure-cli-prepare-your-environment.md)]
 
@@ -393,6 +393,6 @@ In this article, you learned about managed identities in Azure Container Instanc
 > * Grant the identity access to an Azure key vault
 > * Use the managed identity to access a key vault from a running container
 
-* Learn more about [managed identities for Azure resources](../active-directory/managed-identities-azure-resources/index.yml).
+* Learn more about [managed identities for Azure resources](/azure/active-directory/managed-identities-azure-resources/).
 
 * See an [Azure Go SDK example](https://medium.com/@samkreter/c98911206328) of using a managed identity to access a key vault from Azure Container Instances.

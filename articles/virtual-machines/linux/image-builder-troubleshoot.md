@@ -26,9 +26,9 @@ When you're creating a build, do the following:
   - Create an IT_ resource group.
   - Create a storage account without a firewall.
   - Deploy [Azure Container Instances](../../container-instances/container-instances-overview.md).
-  - Deploy [Azure Virtual Network resources](../../virtual-network/virtual-networks-overview.md) (and subnets therein).
-  - Deploy [Azure Private Endpoint](../../private-link/private-endpoint-overview.md) resources.
-  - Deploy [Azure Files](../../storage/files/storage-files-introduction.md).
+  - Deploy [Azure Virtual Network resources](/azure/virtual-network/virtual-networks-overview) (and subnets therein).
+  - Deploy [Azure Private Endpoint](/azure/private-link/private-endpoint-overview) resources.
+  - Deploy [Azure Files](/azure/storage/files/storage-files-introduction).
 - Verify that Azure Policy doesn't install unintended features on the build VM, such as Azure Extensions.
 - Ensure that VM Image Builder has the correct permissions to read/write images and to connect to the storage account. For more information, review the permissions documentation for the [Azure CLI](./image-builder-permissions-cli.md) or [Azure PowerShell](./image-builder-permissions-powershell.md).
 - VM Image Builder fails the build if the scripts or inline commands fail with errors (nonzero exit codes). Ensure that you've tested the custom scripts and verified that they run without error (exit code 0) or require user input. For more information, see [Create an Azure Virtual Desktop image by using VM Image Builder and PowerShell](../windows/image-builder-virtual-desktop.md#tips-for-building-windows-images).
@@ -257,15 +257,15 @@ Then, to implement this solution using CLI, use the following command:
 az role assignment create -g {ResourceGroupName} --assignee {AibrpSpOid} --role Contributor
 ```
 
-To implement this solution in portal, follow the instructions in this documentation: [Assign Azure roles using the Azure portal - Azure RBAC](../../role-based-access-control/role-assignments-portal.yml).
+To implement this solution in portal, follow the instructions in this documentation: [Assign Azure roles using the Azure portal - Azure RBAC](/azure/role-based-access-control/role-assignments-portal).
 
-For [Step 1: Identify the needed scope](../../role-based-access-control/role-assignments-portal.yml#step-1-identify-the-needed-scope): The needed scope is your resource group.
+For [Step 1: Identify the needed scope](/azure/role-based-access-control/role-assignments-portal#step-1-identify-the-needed-scope): The needed scope is your resource group.
 
-For [Step 3: Select the appropriate role](../../role-based-access-control/role-assignments-portal.yml#step-3-select-the-appropriate-role): The role is Contributor.
+For [Step 3: Select the appropriate role](/azure/role-based-access-control/role-assignments-portal#step-3-select-the-appropriate-role): The role is Contributor.
 
-For [Step 4: Select who needs access](../../role-based-access-control/role-assignments-portal.yml#step-4-select-who-needs-access): Select member “Azure Virtual Machine Image Builder”
+For [Step 4: Select who needs access](/azure/role-based-access-control/role-assignments-portal#step-4-select-who-needs-access): Select member “Azure Virtual Machine Image Builder”
 
-Then proceed to [Step 6: Assign role](../../role-based-access-control/role-assignments-portal.yml#step-7-assign-role) to assign the role.
+Then proceed to [Step 6: Assign role](/azure/role-based-access-control/role-assignments-portal#step-7-assign-role) to assign the role.
 
 ## Troubleshoot build failures
 
@@ -800,13 +800,13 @@ Azure Image Builder builds can fail for reasons listed elsewhere in this documen
 
 #### Solution
 If you determine that a build is failing due to Isolated Image Builds, you can do the following:
-- Ensure there's no [Azure Policy](../../governance/policy/overview.md) blocking the deployment of resources mentioned in the [Prerequisites section](./image-builder-troubleshoot.md#prerequisites), specifically Azure Container Instances.
+- Ensure there's no [Azure Policy](/azure/governance/policy/overview) blocking the deployment of resources mentioned in the [Prerequisites section](./image-builder-troubleshoot.md#prerequisites), specifically Azure Container Instances.
 - Ensure your subscription has sufficient quota of Azure Container Instances to support all your concurrent image builds. For more information, see, Azure Container Instances [quota exceeded](./image-builder-troubleshoot.md#azure-container-instances-quota-exceeded).
 
 Azure Image Builder is currently in the process of deploying Isolated Image Builds. Specific image templates are not tied to Isolated Image Builds and the same image template might or might not utilize Isolated Image Builds during different builds. You can do the following to temporarily run your build without Isolated Image Builds.
 - Retry your build. Since Image Templates are not tied to the Isolated Image Builds feature, retrying a build has a high probability of rerunning without Isolated Image Builds.
 
- If none of these solutions mitigate failing image builds, then you can contact Azure support to temporarily opt your subscription out of Isolated Image Builds. For more information, see [Create an Azure support request](../../azure-portal/supportability/how-to-create-azure-support-request.md).
+ If none of these solutions mitigate failing image builds, then you can contact Azure support to temporarily opt your subscription out of Isolated Image Builds. For more information, see [Create an Azure support request](/azure/azure-portal/supportability/how-to-create-azure-support-request).
 
 > [!NOTE]
 > Isolated Image Builds will eventually be enabled in all regions and templates. So, the above mitigations should be considered temporary and the underlying cause of build failures must be addressed.

@@ -21,7 +21,7 @@ ms.author: jushiman
 NVIDIA Tesla (CUDA) drivers for all NC* and ND*-series VMs (optional for NV*-series) are generic and not Azure specific. For the latest drivers, visit the [NVIDIA](https://www.nvidia.com/) website.
 
 > [!TIP]
-> As an alternative to manual CUDA driver installation on a Windows Server VM, you can deploy an Azure [Data Science Virtual Machine](../articles/machine-learning/data-science-virtual-machine/overview.md) image. The DSVM editions for Windows Server 2016 pre-install NVIDIA CUDA drivers, the CUDA Deep Neural Network Library, and other tools.
+> As an alternative to manual CUDA driver installation on a Windows Server VM, you can deploy an Azure [Data Science Virtual Machine](/azure/machine-learning/data-science-virtual-machine/overview) image. The DSVM editions for Windows Server 2016 pre-install NVIDIA CUDA drivers, the CUDA Deep Neural Network Library, and other tools.
 
 
 ### NVIDIA GRID/vGPU drivers

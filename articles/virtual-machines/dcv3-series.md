@@ -30,7 +30,7 @@ DCsv3-series instances run on a 3rd Generation Intel&reg; Xeon Scalable Processo
 - [Live Migration](maintenance-and-updates.md): Not supported
 - [Memory Preserving Updates](maintenance-and-updates.md): Not supported
 - [VM Generation Support](generation-2.md): Generation 2
-- [Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md): Supported
+- [Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported
 - [Ephemeral OS Disks](ephemeral-os-disks.md): Supported for DCdsv3-series
 - [Ultra-Disk Storage](disks-enable-ultra-ssd.md): Supported
 - [Azure Kubernetes Service](/azure/aks/intro-kubernetes): Supported (CLI provisioning only)

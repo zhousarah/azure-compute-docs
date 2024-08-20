@@ -95,7 +95,7 @@ Service Fabric provides several container capabilities that help you build appli
 * Ability to set security credentials on the container.
 * A choice of different networking modes for containers.
 
-For a comprehensive overview of container support on Azure, such as how to create a Kubernetes cluster with Azure Kubernetes Service, how to create a private Docker registry in Azure Container Registry, and more, see [Azure for Containers](../containers/index.yml).
+For a comprehensive overview of container support on Azure, such as how to create a Kubernetes cluster with Azure Kubernetes Service, how to create a private Docker registry in Azure Container Registry, and more, see [Azure for Containers](/azure/containers/).
 
 ## Next steps
 

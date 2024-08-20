@@ -43,7 +43,7 @@ Any network security group settings that are applied must still allow the endpoi
 
 ## Azure Disk Encryption with Microsoft Entra ID (previous version)
 
-If using [Azure Disk Encryption with Microsoft Entra ID (previous version)](disk-encryption-overview-aad.md), the [Microsoft Authentication Library](../../active-directory/develop/msal-overview.md) will need to be installed manually for all distros (in addition to the [packages appropriate for the distro](#package-management)).
+If using [Azure Disk Encryption with Microsoft Entra ID (previous version)](disk-encryption-overview-aad.md), the [Microsoft Authentication Library](/azure/active-directory/develop/msal-overview) will need to be installed manually for all distros (in addition to the [packages appropriate for the distro](#package-management)).
 
 When encryption is being enabled with [Microsoft Entra credentials](disk-encryption-linux-aad.md), the target VM must allow connectivity to both Microsoft Entra endpoints and Key Vault endpoints. Current Microsoft Entra authentication endpoints are maintained in sections 56 and 59 of the [Microsoft 365 URLs and IP address ranges](/microsoft-365/enterprise/urls-and-ip-address-ranges) documentation. Key Vault instructions are provided in the documentation on how to [Access Azure Key Vault behind a firewall](/azure/key-vault/general/access-behind-firewall).
 
@@ -54,4 +54,4 @@ The virtual machine must be able to access the [Azure Instance Metadata service]
 ## Next steps
 
 - See more steps for [Azure disk encryption troubleshooting](disk-encryption-troubleshooting.md)
-- [Azure data encryption at rest](../../security/fundamentals/encryption-atrest.md)
+- [Azure data encryption at rest](/azure/security/fundamentals/encryption-atrest)

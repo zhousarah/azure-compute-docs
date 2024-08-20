@@ -34,7 +34,7 @@ This article shows two ways to set up the workflow:
 
 * **GitHub account** - Create an account on https://github.com if you don't already have one.
 * **Azure CLI** - You can use the Azure Cloud Shell or a local installation of the Azure CLI to complete the Azure CLI steps. If you need to install or upgrade, see [Install Azure CLI][azure-cli-install].
-* **Azure container registry** - If you don't have one, create an Azure container registry in the Basic tier using the [Azure CLI](../container-registry/container-registry-get-started-azure-cli.md), [Azure portal](../container-registry/container-registry-get-started-portal.md), or other methods. Take note of the resource group used for the deployment, which is used for the GitHub workflow.
+* **Azure container registry** - If you don't have one, create an Azure container registry in the Basic tier using the [Azure CLI](/azure/container-registry/container-registry-get-started-azure-cli), [Azure portal](/azure/container-registry/container-registry-get-started-portal), or other methods. Take note of the resource group used for the deployment, which is used for the GitHub workflow.
 
 ## Set up repo
 
@@ -90,7 +90,7 @@ Save the JSON output because it is used in a later step. Also, take note of the 
 
 ### Update for registry authentication
 
-Update the Azure service principal credentials to allow push and pull access to your container registry. This step enables the GitHub workflow to use the service principal to [authenticate with your container registry](../container-registry/container-registry-auth-service-principal.md) and to push and pull a Docker image. 
+Update the Azure service principal credentials to allow push and pull access to your container registry. This step enables the GitHub workflow to use the service principal to [authenticate with your container registry](/azure/container-registry/container-registry-auth-service-principal) and to push and pull a Docker image. 
 
 Get the resource ID of your container registry. Substitute the name of your registry in the following [az acr show][az-acr-show] command:
 

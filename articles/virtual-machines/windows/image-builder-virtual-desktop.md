@@ -20,7 +20,7 @@ In this article, you learn how to create an Azure Virtual Desktop image with the
 
 * [FSLogix setup](https://github.com/DeanCefola/Azure-WVD/blob/master/PowerShell/FSLogixSetup.ps1)
 * [Azure Virtual Desktop optimization](https://github.com/The-Virtual-Desktop-Team/Virtual-Desktop-Optimization-Tool)
-* [Microsoft Teams installation](../../virtual-desktop/teams-on-avd.md)
+* [Microsoft Teams installation](/azure/virtual-desktop/teams-on-avd)
 * [Windows Restart customizer](../linux/image-builder-json.md?bc=%2fazure%2fvirtual-machines%2fwindows%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#windows-restart-customizer)
 * [Windows Update customizer](../linux/image-builder-json.md?bc=%2fazure%2fvirtual-machines%2fwindows%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#windows-update-customizer)
 
@@ -159,7 +159,7 @@ New-AzResourceGroup -Name $imageResourceGroup -Location $location
     ```
 
 > [!NOTE] 
-> If you receive the error "New-AzRoleDefinition: Role definition limit exceeded. No more role definitions can be created," see [Troubleshoot Azure RBAC (role-based access control)](../../role-based-access-control/troubleshooting.md).
+> If you receive the error "New-AzRoleDefinition: Role definition limit exceeded. No more role definitions can be created," see [Troubleshoot Azure RBAC (role-based access control)](/azure/role-based-access-control/troubleshooting).
 
 
 ## Create an Azure Compute Gallery 

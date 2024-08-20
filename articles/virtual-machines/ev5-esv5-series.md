@@ -29,7 +29,7 @@ Ev5-series supports Standard SSD and Standard HDD disk types. To use Premium SSD
 [Live Migration](maintenance-and-updates.md): Supported<br>
 [Memory Preserving Updates](maintenance-and-updates.md): Supported<br>
 [VM Generation Support](generation-2.md): Generation 1 and 2<br>
-[Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md)<sup>1</sup>: Required <br>
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli)<sup>1</sup>: Required <br>
 [Ephemeral OS Disks](ephemeral-os-disks.md): Not Supported <br>
 [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Supported <br>
 <br>
@@ -48,7 +48,7 @@ Ev5-series supports Standard SSD and Standard HDD disk types. To use Premium SSD
 | Standard_E104i_v5<sup>3</sup> | 104 | 672 | Remote Storage Only | 64 | 8 | 100000 |
 
 <sup>1</sup> Accelerated networking is required and turned on by default on all Ev5 virtual machines.<br>
-<sup>2</sup> Instance is [isolated](../security/fundamentals/isolation-choices.md#compute-isolation) to hardware dedicated to a single customer.<br>
+<sup>2</sup> Instance is [isolated](/azure/security/fundamentals/isolation-choices#compute-isolation) to hardware dedicated to a single customer.<br>
 
 ## Esv5-series
 
@@ -61,7 +61,7 @@ Esv5-series supports Standard SSD, Standard HDD, and Premium SSD disk types. You
 [Live Migration](maintenance-and-updates.md): Supported<br>
 [Memory Preserving Updates](maintenance-and-updates.md): Supported<br>
 [VM Generation Support](generation-2.md): Generation 1 and 2<br>
-[Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md)<sup>1</sup>: Required <br>
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli)<sup>1</sup>: Required <br>
 [Ephemeral OS Disks](ephemeral-os-disks.md): Not Supported <br>
 [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Supported <br>
 <br>
@@ -83,7 +83,7 @@ Esv5-series supports Standard SSD, Standard HDD, and Premium SSD disk types. You
 
 <sup>2</sup> [Constrained core](constrained-vcpu.md) sizes available.
 
-<sup>3</sup> Instance is [isolated](../security/fundamentals/isolation-choices.md#compute-isolation) to hardware dedicated to a single customer.
+<sup>3</sup> Instance is [isolated](/azure/security/fundamentals/isolation-choices#compute-isolation) to hardware dedicated to a single customer.
 
 <sup>4</sup> Esv5-series VMs can [burst](disk-bursting.md) their disk performance and get up to their bursting max for up to 30 minutes at a time.
 

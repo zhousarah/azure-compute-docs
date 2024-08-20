@@ -15,10 +15,10 @@ ms.date: 05/01/2023
 
 **Applies to:** :heavy_check_mark: Linux VMs :heavy_check_mark: Windows VMs :heavy_check_mark: Flexible scale sets :heavy_check_mark: Uniform scale sets
 
-By analyzing your Azure usage data, powerful consumption insights can be gained – insights that can enable better cost management and allocation throughout your organization. This document provides a deep dive into your Azure Compute consumption details. For more details on general Azure usage, navigate to [Understanding your bill](../cost-management-billing/understand/review-individual-bill.md).
+By analyzing your Azure usage data, powerful consumption insights can be gained – insights that can enable better cost management and allocation throughout your organization. This document provides a deep dive into your Azure Compute consumption details. For more details on general Azure usage, navigate to [Understanding your bill](/azure/cost-management-billing/understand/review-individual-bill).
 
 ## Download your usage details
-To begin, [download your usage details](../cost-management-billing/understand/download-azure-daily-usage.md). The table provides the definition and example values of usage for Virtual Machines deployed via the Azure Resource Manager. This document doesn't contain detailed information for VMs deployed via our classic model.
+To begin, [download your usage details](/azure/cost-management-billing/understand/download-azure-daily-usage). The table provides the definition and example values of usage for Virtual Machines deployed via the Azure Resource Manager. This document doesn't contain detailed information for VMs deployed via our classic model.
 
 
 | Field | Meaning | Example Values | 
@@ -32,7 +32,7 @@ To begin, [download your usage details](../cost-management-billing/understand/do
 | Consumed| The amount of the resource that has been consumed for that day. For Compute, we bill for each minute the VM ran for a given hour (up to six decimals of accuracy).| `1, 0.5`|
 | Resource Location  | Identifies the datacenter where the resource is running.| `JA East`|
 | Consumed Service | The Azure platform service that you used.| `Microsoft.Compute`|
-| Resource Group | The resource group in which the deployed resource is running in. For more information, see [Azure Resource Manager overview.](../azure-resource-manager/management/overview.md)|`MyRG`|
+| Resource Group | The resource group in which the deployed resource is running in. For more information, see [Azure Resource Manager overview.](/azure/azure-resource-manager/management/overview)|`MyRG`|
 | Instance ID | The identifier for the resource. The identifier contains the name you specify for the resource when it was created. For VMs, the Instance ID contains the SubscriptionId, ResourceGroupName, and VM Name (or scale set name for scale set usage).| `/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/ resourceGroups/MyRG/providers/Microsoft.Compute/virtualMachines/MyVM1`<br><br>or<br><br>`/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/ resourceGroups/MyRG/providers/Microsoft.Compute/virtualMachineScaleSets/MyVMSS1`|
 | Tags| Tag you assign to the resource. Use tags to group billing records. Learn how to tag your Virtual Machines using the [CLI](./tag-cli.md) or [PowerShell](./tag-portal.md) This is available for Resource Manager VMs only.| `{"myDepartment":"RD","myUser":"myName"}`|
 | More Info | Service-specific metadata. For VMs, we populate the following data in the additional info field: <br><br> Image Type- specific image that you ran. Find the full list of supported strings under Image Types.<br><br> Service Type: the size that you deployed.<br><br> VM Name: name of your VM. This field is only populated for scale set VMs. If you need your VM Name for scale set VMs, you can find that in the Instance ID string.<br><br> UsageType: Specifies the type of usage.<br><br> ComputeHR is the Compute Hour usage for the underlying VM, like Standard_D1_v2.<br><br> ComputeHR_SW is the premium software charge if the VM is using premium software. | Virtual Machines<br>`{"ImageType":"Canonical","ServiceType":"Standard_DS1_v2","VM Name":"", "UsageType":"ComputeHR"}`<br><br>Virtual Machine Scale Sets<br> `{"ImageType":"Canonical","ServiceType":"Standard_DS1_v2","VM Name":"myVM1", "UsageType":"ComputeHR"}`<br><br>Premium Software<br> `{"ImageType":"","ServiceType":"Standard_DS1_v2","VM Name":"", "UsageType":"ComputeHR_SW"}` |
@@ -125,7 +125,7 @@ ComputeHR stands for 'Compute Hour', which represents the usage event for the un
 ### How do I know if I'm charged for premium software?
 When exploring which VM Image best fits your needs, be sure to check out [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/compute). The image has the software plan rate. If you see “Free” for the rate, there's no extra cost for the software. 
 ### What is the difference between 'Microsoft.ClassicCompute' and 'Microsoft.Compute' in the Consumed service?
-Microsoft.ClassicCompute represents classic resources deployed via the Azure Service Manager. If you deploy via the Resource Manager, then Microsoft.Compute is populated in the consumed service. Learn more about the [Azure Deployment models](../azure-resource-manager/management/deployment-models.md).
+Microsoft.ClassicCompute represents classic resources deployed via the Azure Service Manager. If you deploy via the Resource Manager, then Microsoft.Compute is populated in the consumed service. Learn more about the [Azure Deployment models](/azure/azure-resource-manager/management/deployment-models).
 ### Why is the InstanceID field blank for my Virtual Machine usage?
 If you deploy via the classic deployment model, the InstanceID string isn't available.
 ### Why are the tags for my VMs not flowing to the usage details?
@@ -136,4 +136,4 @@ In the Classic model, billing for resources is aggregated at the Cloud Service l
 Premium storage capable VMs are billed at the same rate as nonpremium storage capable VMs. Only your storage costs differ. Visit the [storage pricing page](https://azure.microsoft.com/pricing/details/storage/unmanaged-disks/) for more information.
 
 ## Next steps
-To learn more about your usage details, see [Understand your bill for Microsoft Azure.](../cost-management-billing/understand/review-individual-bill.md)
+To learn more about your usage details, see [Understand your bill for Microsoft Azure.](/azure/cost-management-billing/understand/review-individual-bill)

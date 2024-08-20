@@ -15,7 +15,7 @@ ms.reviewer: jjaygbay1
 
 **Applies to:** :heavy_check_mark: Linux VMs
 
-This article demonstrates the use of Azure Backup to take disk snapshots of virtual machine (VM) disks, which include the Oracle Database files and the Oracle fast recovery area. By using Azure Backup, you can take full disk snapshots that are suitable as backups and are stored in a [Recovery Services vault](../../../backup/backup-azure-recovery-services-vault-overview.md).
+This article demonstrates the use of Azure Backup to take disk snapshots of virtual machine (VM) disks, which include the Oracle Database files and the Oracle fast recovery area. By using Azure Backup, you can take full disk snapshots that are suitable as backups and are stored in a [Recovery Services vault](/azure/backup/backup-azure-recovery-services-vault-overview).
 
 Azure Backup also provides application-consistent backups, which ensure that more fixes aren't required to restore the data. Application-consistent backups work with both file system and Oracle Automatic Storage Management (ASM) databases.
 
@@ -71,7 +71,7 @@ When the database is in `ARCHIVELOG` mode, it archives the contents of online re
 
 Oracle provides the capability to archive redo log files to different locations. The industry best practice is that at least one of those destinations should be on remote storage, so it's separate from the host storage and protected with independent snapshots. Azure Files meets those requirements.
 
-An Azure file share is storage that you an attach to a Linux or Windows VM as a regular file-system component, by using the Server Message Block (SMB) or Network File System (NFS) protocol. To set up an Azure file share on Linux (by using the SMB 3.0 protocol) for use as archive log storage, see [Mount an SMB Azure file share on Linux](../../../storage/files/storage-how-to-use-files-linux.md). When you complete the setup, return to this guide and complete all remaining steps.
+An Azure file share is storage that you an attach to a Linux or Windows VM as a regular file-system component, by using the Server Message Block (SMB) or Network File System (NFS) protocol. To set up an Azure file share on Linux (by using the SMB 3.0 protocol) for use as archive log storage, see [Mount an SMB Azure file share on Linux](/azure/storage/files/storage-how-to-use-files-linux). When you complete the setup, return to this guide and complete all remaining steps.
 
 ### Prepare the databases
 
@@ -193,11 +193,11 @@ To use Azure Backup to back up the database, complete these steps:
 
 ### Understand the Azure Backup framework
 
-The Azure Backup service provides a [framework](../../../backup/backup-azure-linux-app-consistent.md) to achieve application consistency during backups of Windows and Linux VMs for various applications. This framework involves invoking a pre-script to quiesce the applications before taking a snapshot of disks. It calls a post-script to unfreeze the applications after the snapshot is completed.
+The Azure Backup service provides a [framework](/azure/backup/backup-azure-linux-app-consistent) to achieve application consistency during backups of Windows and Linux VMs for various applications. This framework involves invoking a pre-script to quiesce the applications before taking a snapshot of disks. It calls a post-script to unfreeze the applications after the snapshot is completed.
 
 Microsoft has enhanced the framework so that the Azure Backup service provides packaged pre-scripts and post-scripts for selected applications. These pre-scripts and post-scripts are already loaded on the Linux image, so there's nothing for you to install. You just name the application, and then Azure Backup automatically invokes the relevant scripts. Microsoft manages the packaged pre-scripts and post-scripts, so you can be assured of the support, ownership, and validity of them.
 
-Currently, the supported applications for the enhanced framework are Oracle 12.x or later and MySQL. For details, see [Support matrix for managed Azure VM backups](../../../backup/backup-support-matrix-iaas.md).
+Currently, the supported applications for the enhanced framework are Oracle 12.x or later and MySQL. For details, see [Support matrix for managed Azure VM backups](/azure/backup/backup-support-matrix-iaas).
 
 You can author your own scripts for Azure Backup to use with pre-12.x databases. Example scripts are available on [GitHub](https://github.com/Azure/azure-linux-extensions/tree/master/VMBackup/main/workloadPatch/DefaultScripts).
 

@@ -199,11 +199,11 @@ To go to Application Map, select **Application map** on the resource menu on the
 
 :::image type="content" source="media/service-fabric-tutorial-monitoring-aspnet/app-map-new.png" alt-text="Screenshot that highlights Application map on the resource menu.":::
 
-Application Map can help you understand your application topology better, especially as you start to add services that work together. It also gives you basic data about request success rates, and it can help you diagnose failed request to understand where things went wrong. To learn more, see [Application Map in Application Insights](../azure-monitor/app/app-map.md).
+Application Map can help you understand your application topology better, especially as you start to add services that work together. It also gives you basic data about request success rates, and it can help you diagnose failed request to understand where things went wrong. To learn more, see [Application Map in Application Insights](/azure/azure-monitor/app/app-map).
 
 ## Add custom instrumentation to your application
 
-Although Application Insights provides telemetry out of the box, you might want to add custom instrumentation. Maybe you have business needs for custom instrumentation or you want to improve diagnostics when things go wrong in your application. You can ingest custom events and metrics by using the [Application Insights API](../azure-monitor/app/api-custom-events-metrics.md).
+Although Application Insights provides telemetry out of the box, you might want to add custom instrumentation. Maybe you have business needs for custom instrumentation or you want to improve diagnostics when things go wrong in your application. You can ingest custom events and metrics by using the [Application Insights API](/azure/azure-monitor/app/api-custom-events-metrics).
 
 Next, add some custom events to *VoteDataController.cs* (in `VotingData` > `Controllers`) to track when votes are being added and deleted from the underlying `votesDictionary`:
 

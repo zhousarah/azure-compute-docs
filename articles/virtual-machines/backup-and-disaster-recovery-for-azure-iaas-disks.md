@@ -65,7 +65,7 @@ This section covers some of Azure's options for backup and disaster recovery. Yo
 |**Description**|Snapshot is a ready-only poin-in-time copy of the disk that you can use for backup. |Restore Points can be used to implement granular backup of all disks attached to your Virtual Machine|Azure Backup is a fully managed Azure service to provide simple, secure, and cost-effective solution to back up your data and recover it|Azure Site Recovery helps ensure your organization's business continuity by keeping apps and workloads running during outages|
 |**Incremental Backup**|Yes   |Yes   |Yes   |Yes   |
 |**Cross-Region Copy**|Yes   |Available in public preview   |Yes, with Azure VM backup   |Yes   |
-|**Pricing**|See [Azure Disk Pricing](https://azure.microsoft.com/pricing/details/managed-disks/)   |N/A   |See [Estimate costs for backing up Azure VMs or on-premises servers](../backup/azure-backup-pricing.md#estimate-costs-for-backing-up-azure-vms-or-on-premises-servers)  |See [Azure Site Recovery Pricing](https://azure.microsoft.com/pricing/details/site-recovery/)   |
+|**Pricing**|See [Azure Disk Pricing](https://azure.microsoft.com/pricing/details/managed-disks/)   |N/A   |See [Estimate costs for backing up Azure VMs or on-premises servers](/azure/backup/azure-backup-pricing#estimate-costs-for-backing-up-azure-vms-or-on-premises-servers)  |See [Azure Site Recovery Pricing](https://azure.microsoft.com/pricing/details/site-recovery/)   |
 |**Operational Maintenance**|High   |Medium   |Low   |Low   |
 |**Key benefits**|Most cost effective, suitable for disk backup   |Back up disks at VM level, Application consistent for VM running Windows OS, File system consistency for VMs running Linux OS  |Frequent and quick backup without interrupting the VM, custom backup policy, agentless solution   |Simple BCDR solution, keep application consistency over failover, orchestrate replication without intercepting application data   |
 
@@ -87,7 +87,7 @@ In the described scenario, snapshots weren't coordinated. This lack of coordinat
 1.	Flush all the pending writes.
 1.	[Create an incremental snapshot for managed disks](disks-incremental-snapshots.md) for all the disks.
 
-Some Windows applications, like SQL Server, provide a coordinated backup mechanism through a volume shadow service to create application-consistent backups. On Linux, you can use a tool like fsfreeze to coordinate disks (this tool provides file-consistent backups, not application-consistent snapshots). This backup procedure is complex, so you should consider [Overview of Azure Disk Backup](../backup/disk-backup-overview.md) or a third-party backup solution that already implements this procedure. This would result a collection of coordinated snapshots for all the VM disks, representing a specific point-in-time view of the VM - in other words, a backup restore point for the VM. You can repeat the process at scheduled intervals to create periodic backups. 
+Some Windows applications, like SQL Server, provide a coordinated backup mechanism through a volume shadow service to create application-consistent backups. On Linux, you can use a tool like fsfreeze to coordinate disks (this tool provides file-consistent backups, not application-consistent snapshots). This backup procedure is complex, so you should consider [Overview of Azure Disk Backup](/azure/backup/disk-backup-overview) or a third-party backup solution that already implements this procedure. This would result a collection of coordinated snapshots for all the VM disks, representing a specific point-in-time view of the VM - in other words, a backup restore point for the VM. You can repeat the process at scheduled intervals to create periodic backups. 
 
 ### Restore Points
 
@@ -108,21 +108,21 @@ See the following articles to learn how to [Create VM restore points](virtual-ma
 
 ### Azure Backup
 
-[Azure Backup](../backup/backup-overview.md) provides simple, secure, and cost-effective solutions to backup your data and recover it from Azure. [Azure Disk Backup](../backup/disk-backup-overview.md) is a native, cloud-based backup solution that protects your data in managed disks. It's a simple, secure, and cost-effective solution that enables you to configure protection for managed disks in a few steps. It ensures your data is protected in the event of a disaster.
+[Azure Backup](/azure/backup/backup-overview) provides simple, secure, and cost-effective solutions to backup your data and recover it from Azure. [Azure Disk Backup](/azure/backup/disk-backup-overview) is a native, cloud-based backup solution that protects your data in managed disks. It's a simple, secure, and cost-effective solution that enables you to configure protection for managed disks in a few steps. It ensures your data is protected in the event of a disaster.
 
-[Azure Disk Backup](../backup/disk-backup-overview.md) offers a turnkey solution that provides snapshot lifecycle management for managed disks by automating periodic creation of snapshots and retaining it for however long you specify, using backup policy. You can manage disk snapshots, with no infrastructure costs, without the need for custom scripting, or any management overhead.
+[Azure Disk Backup](/azure/backup/disk-backup-overview) offers a turnkey solution that provides snapshot lifecycle management for managed disks by automating periodic creation of snapshots and retaining it for however long you specify, using backup policy. You can manage disk snapshots, with no infrastructure costs, without the need for custom scripting, or any management overhead.
 
 Azure Disk Backup is a crash-consistent backup solution that takes point-in-time backup of a managed disk using incremental snapshots and supports multiple backups per day. It's also an agent-less solution, and doesn't impact production application performance. It supports backup and restore of both OS and data disks (including shared disks), whether they're currently attached to a running Azure VM or not. 
 
-Azure Disk Backup is integrated into Backup Center, which provides a single unified management experience in Azure for enterprises to govern, monitor, operate, and analyze backups at scale. If you need an application-consistent backup of virtual machine including the data disks, or an option to restore an entire virtual machine from backup, restore a file or folder, or restore to a secondary region, use the [Azure VM backup](../backup/backup-azure-vms-introduction.md) solution. If you're unable to use Azure Backup, you can implement your own backup mechanism by using snapshots. But creating consistent snapshots for all the disks used by a VM, replicating those snapshots to another region, and continually managing this process is complicated and time consuming.
+Azure Disk Backup is integrated into Backup Center, which provides a single unified management experience in Azure for enterprises to govern, monitor, operate, and analyze backups at scale. If you need an application-consistent backup of virtual machine including the data disks, or an option to restore an entire virtual machine from backup, restore a file or folder, or restore to a secondary region, use the [Azure VM backup](/azure/backup/backup-azure-vms-introduction) solution. If you're unable to use Azure Backup, you can implement your own backup mechanism by using snapshots. But creating consistent snapshots for all the disks used by a VM, replicating those snapshots to another region, and continually managing this process is complicated and time consuming.
 
 ### Azure Site Recovery
 
-[Azure Site Recovery](../site-recovery/site-recovery-overview.md) helps ensure your organization’s business continuity by keeping apps and workloads running during outages. It's a paid, fully managed service to help you achieve your business continuity and disaster recovery (BCDR) strategy.
+[Azure Site Recovery](/azure/site-recovery/site-recovery-overview) helps ensure your organization’s business continuity by keeping apps and workloads running during outages. It's a paid, fully managed service to help you achieve your business continuity and disaster recovery (BCDR) strategy.
 
 Azure Site Recovery replicates workloads running on physical and virtual machines from a primary site to a secondary location. When an outage occurs at your primary site, your workload failover to a secondary location and can be accessed from there. After the primary location is running again, your workloads can fail back to it. 
 
-You can easily set up [disaster recovery to a secondary Azure region](../site-recovery/azure-to-azure-quickstart.md) with a few steps. Azure Site Recovery enables many disaster recovery scenarios – Azure to Azure, VMware to Azure, Physical to Azure, Azure Stack VM, Hyper-V to Azure, DR for apps, DR to a secondary site. For a full list of benefits that Azure Site Recovery provides, refer to [About Site Recovery](../site-recovery/site-recovery-overview.md).
+You can easily set up [disaster recovery to a secondary Azure region](/azure/site-recovery/azure-to-azure-quickstart) with a few steps. Azure Site Recovery enables many disaster recovery scenarios – Azure to Azure, VMware to Azure, Physical to Azure, Azure Stack VM, Hyper-V to Azure, DR for apps, DR to a secondary site. For a full list of benefits that Azure Site Recovery provides, refer to [About Site Recovery](/azure/site-recovery/site-recovery-overview).
 
 ### Other options
 
@@ -134,5 +134,5 @@ Explore your options:
 - [Create an incremental snapshot for managed disks](disks-incremental-snapshots.md)
 - [Copy an incremental snapshot to a new region](disks-copy-incremental-snapshot-across-regions.md)
 - [Overview of VM restore points](virtual-machines-create-restore-points.md)
-- [Overview of Azure Disk Backup](../backup/disk-backup-overview.md)
-- [About Site Recovery](../site-recovery/site-recovery-overview.md)
+- [Overview of Azure Disk Backup](/azure/backup/disk-backup-overview)
+- [About Site Recovery](/azure/site-recovery/site-recovery-overview)

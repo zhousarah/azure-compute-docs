@@ -48,7 +48,7 @@ Your public key can be shared with anyone, but only you (or your local security 
 
 Recent versions of Windows 10 include [OpenSSH client commands](https://blogs.msdn.microsoft.com/commandline/2018/03/07/windows10v1803/) to create and use SSH keys and make SSH connections from PowerShell or a command prompt.
 
-You can also use Bash in the [Azure Cloud Shell](../../cloud-shell/overview.md) to connect to your VM. You can use Cloud Shell in a [web browser](https://shell.azure.com/bash), from the [Azure portal](https://portal.azure.com), or as a terminal in Visual Studio Code using the [Azure Account extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account).
+You can also use Bash in the [Azure Cloud Shell](/azure/cloud-shell/overview) to connect to your VM. You can use Cloud Shell in a [web browser](https://shell.azure.com/bash), from the [Azure portal](https://portal.azure.com), or as a terminal in Visual Studio Code using the [Azure Account extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account).
 
 You can also install the [Windows Subsystem for Linux](/windows/wsl/about) to connect to your VM over SSH and use other native Linux tools within a Bash shell.
 
@@ -102,7 +102,7 @@ To run the command using CLI, use the [`az vm run-command invoke` command](/cli/
 
 If you configured a passphrase when you created your key pair, enter the passphrase when prompted.
 
-If the VM is using the just-in-time access policy, you need to request access before you can connect to the VM. For more information about the just-in-time policy, see [Manage virtual machine access using the just in time policy](../../security-center/security-center-just-in-time.md).
+If the VM is using the just-in-time access policy, you need to request access before you can connect to the VM. For more information about the just-in-time policy, see [Manage virtual machine access using the just in time policy](/azure/security-center/security-center-just-in-time).
 
 
 ## Next steps

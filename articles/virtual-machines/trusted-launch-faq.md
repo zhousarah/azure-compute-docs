@@ -93,11 +93,11 @@ For more information about deploying a Trusted Launch VM by using the Azure Comp
 
 ### Is Azure Backup supported by Trusted Launch?
 
-Trusted Launch now supports Azure Backup. For more information, see  [Support matrix for Azure VM backup](../backup/backup-support-matrix-iaas.md#vm-compute-support).
+Trusted Launch now supports Azure Backup. For more information, see  [Support matrix for Azure VM backup](/azure/backup/backup-support-matrix-iaas#vm-compute-support).
 
 ### Will Azure Backup continue working after I enable Trusted Launch?
 
-Backups configured with the [Enhanced policy](../backup/backup-azure-vms-enhanced-policy.md) continue to take backups of VMs after you enable Trusted Launch.
+Backups configured with the [Enhanced policy](/azure/backup/backup-azure-vms-enhanced-policy) continue to take backups of VMs after you enable Trusted Launch.
 
 ### Are ephemeral OS disks supported by Trusted Launch?
 
@@ -514,7 +514,7 @@ To learn more about the SBInfo diagnostic tool, you can run `sudo sbinfo -help`.
 
 ### Why am I getting a boot integrity monitoring fault?
 
-Trusted Launch for Azure VMs is monitored for advanced threats. If such threats are detected, an alert is triggered. Alerts are only available if [enhanced security features in Microsoft Defender for Cloud](../security-center/enable-enhanced-security.md) are enabled.
+Trusted Launch for Azure VMs is monitored for advanced threats. If such threats are detected, an alert is triggered. Alerts are only available if [enhanced security features in Microsoft Defender for Cloud](/azure/security-center/enable-enhanced-security) are enabled.
 
 Microsoft Defender for Cloud periodically performs attestation. If the attestation fails, a medium-severity alert is triggered. Trusted Launch attestation can fail for the following reasons:
 

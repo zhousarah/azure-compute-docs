@@ -10,7 +10,7 @@ ms.date: 07/11/2022
 ---
 
 # Introduction to Autoscaling on Service Fabric managed clusters
-[Autoscaling](../azure-monitor/autoscale/autoscale-overview.md) gives great elasticity and enables addition or reduction of nodes on demand on a secondary node type. This automated and elastic behavior reduces the management overhead and potential business impact by monitoring and optimizing the number of nodes servicing your workload. You configure rules for your workload and let autoscaling handle the rest. When those defined thresholds are met, autoscale rules take action to adjust the capacity of your node type. Autoscaling can be enabled, disabled, or configured at any time. This article provides an example deployment, how to enable or disable autoscaling, and how to configure an example autoscale policy.
+[Autoscaling](/azure/azure-monitor/autoscale/autoscale-overview) gives great elasticity and enables addition or reduction of nodes on demand on a secondary node type. This automated and elastic behavior reduces the management overhead and potential business impact by monitoring and optimizing the number of nodes servicing your workload. You configure rules for your workload and let autoscaling handle the rest. When those defined thresholds are met, autoscale rules take action to adjust the capacity of your node type. Autoscaling can be enabled, disabled, or configured at any time. This article provides an example deployment, how to enable or disable autoscaling, and how to configure an example autoscale policy.
 
 
 **Requirements and supported metrics:**
@@ -18,7 +18,7 @@ ms.date: 07/11/2022
 * The cluster SKU must be Standard.
 * Can only be configured on a secondary node type in your cluster.
 * After enabling autoscale for a node type, configure `vmInstanceCount` property to `-1` when redeploying the resource.
-* Only [Azure Monitor published metrics](../azure-monitor/essentials/metrics-supported.md) are supported.
+* Only [Azure Monitor published metrics](/azure/azure-monitor/essentials/metrics-supported) are supported.
 
 >[!NOTE] 
 > If using Windows OS image with Hyper-V role enabled, ie. the VM will be configured for nested virtualization, the Available Memory Metric will not be available, since the dynamic memory driver within the VM will be in a stopped state.
@@ -110,7 +110,7 @@ Remove-AzResource -ResourceId "/subscriptions/$subscriptionId/resourceGroups/$re
 
 ## Set policies for autoscaling
 
- A Service Fabric managed cluster does not configure any [policies for autoscaling](../azure-monitor/autoscale/autoscale-understanding-settings.md) by default. Autoscaling policies must be configured for any scaling actions to occur on the underlying resources.
+ A Service Fabric managed cluster does not configure any [policies for autoscaling](/azure/azure-monitor/autoscale/autoscale-understanding-settings) by default. Autoscaling policies must be configured for any scaling actions to occur on the underlying resources.
 
 The following example will set a policy for `nodeType2Name` to be at least 3 nodes, but allow scaling up to 20 nodes. It will trigger scaling up when average CPU usage is 70% over the last 30 minutes with 1 minute granularity. It will trigger scaling down once average CPU usage is under 40% for the last 30 minutes with 1 minute granularity.
 
@@ -237,9 +237,9 @@ Once you've been through these steps, if you're still having autoscale problems,
 
 ## Next steps
 > [!div class="nextstepaction"]
-> [Read about Azure Monitor autoscale support](../azure-monitor/autoscale/autoscale-overview.md)
+> [Read about Azure Monitor autoscale support](/azure/azure-monitor/autoscale/autoscale-overview)
 > [!div class="nextstepaction"]
-> [Review Metrics in Azure Monitor](../azure-monitor/essentials/data-platform-metrics.md)
+> [Review Metrics in Azure Monitor](/azure/azure-monitor/essentials/data-platform-metrics)
 > [!div class="nextstepaction"]
 > [Service Fabric managed cluster configuration options](how-to-managed-cluster-configuration.md)
 

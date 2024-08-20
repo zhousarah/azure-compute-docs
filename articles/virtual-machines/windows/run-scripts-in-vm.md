@@ -39,7 +39,7 @@ The [Run Command](run-command.md) feature enables virtual machine and applicatio
 
 ## Hybrid Runbook Worker
 
-The [Hybrid Runbook Worker](../../automation/automation-hybrid-runbook-worker.md) provides general machine, application, and environment management with user's custom scripts stored in an Automation account.
+The [Hybrid Runbook Worker](/azure/automation/automation-hybrid-runbook-worker) provides general machine, application, and environment management with user's custom scripts stored in an Automation account.
 
 * Run scripts in Azure and non-Azure machines.
 * Can be run using Azure portal, Azure CLI, REST API, PowerShell, webhook.
@@ -50,7 +50,7 @@ The [Hybrid Runbook Worker](../../automation/automation-hybrid-runbook-worker.md
 * Full script output is returned and stored.
 * Job history available for 90 days.
 * Scripts can run as Local System or with user-supplied credentials.
-* Requires [manual installation](../../automation/extension-based-hybrid-runbook-worker-install.md).
+* Requires [manual installation](/azure/automation/extension-based-hybrid-runbook-worker-install).
 
 
 
@@ -69,5 +69,5 @@ Learn more about the different features that are available to run scripts and co
 
 * [Custom Script Extension](../extensions/custom-script-windows.md)
 * [Run Command](run-command.md)
-* [Hybrid Runbook Worker](../../automation/automation-hybrid-runbook-worker.md)
+* [Hybrid Runbook Worker](/azure/automation/automation-hybrid-runbook-worker)
 * [Serial console](/troubleshoot/azure/virtual-machines/serial-console-windows)

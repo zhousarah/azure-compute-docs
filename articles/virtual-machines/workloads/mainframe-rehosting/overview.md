@@ -88,13 +88,13 @@ Mainframes typically scale up, while cloud environments scale out. Azure offers 
 
 ### Storage
 
-In the cloud, you have a range of flexible, scalable storage options, and you pay only for what you need. [Azure Storage](../../../storage/common/storage-introduction.md) offers a massively scalable object store for data objects, a file system service for the cloud, a reliable messaging store, and a NoSQL store. For VMs, managed and unmanaged disks provide persistent, secure disk storage.
+In the cloud, you have a range of flexible, scalable storage options, and you pay only for what you need. [Azure Storage](/azure/storage/common/storage-introduction) offers a massively scalable object store for data objects, a file system service for the cloud, a reliable messaging store, and a NoSQL store. For VMs, managed and unmanaged disks provide persistent, secure disk storage.
 
 Learn how to [move mainframe storage to Azure](./concepts/mainframe-storage-azure.md).
 
 ### Backup and recovery
 
-Maintaining your own disaster recovery site can be an expensive proposition. Azure has easy-to-implement and cost-effective options for [backup](../../../backup/backup-overview.md), [recovery](../../../site-recovery/site-recovery-overview.md), and [redundancy](../../../storage/common/storage-redundancy.md) at local or regional levels, or via geo-redundancy.
+Maintaining your own disaster recovery site can be an expensive proposition. Azure has easy-to-implement and cost-effective options for [backup](/azure/backup/backup-overview), [recovery](/azure/site-recovery/site-recovery-overview), and [redundancy](/azure/storage/common/storage-redundancy) at local or regional levels, or via geo-redundancy.
 
 ## Azure Government for mainframe migrations
 

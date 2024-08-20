@@ -30,7 +30,7 @@ Azure Virtual machine Scale sets supports enabling Trusted launch on existing [U
 
 ## Prerequisites
 
-- Register Preview Feature `ImageSkuGenUpdateWithVMSS` under `Microsoft.Compute` namespace on scale set subscription. For more details, refer to [Set up preview features in Azure subscription](../azure-resource-manager/management/preview-features.md)
+- Register Preview Feature `ImageSkuGenUpdateWithVMSS` under `Microsoft.Compute` namespace on scale set subscription. For more details, refer to [Set up preview features in Azure subscription](/azure/azure-resource-manager/management/preview-features)
 - Scale set is not dependent on [features currently not supported with Trusted launch](trusted-launch.md#unsupported-features).
 - Scale set should be configured with [Trusted launch supported size family](trusted-launch.md#virtual-machines-sizes)
     > [!NOTE]
@@ -43,7 +43,7 @@ Azure Virtual machine Scale sets supports enabling Trusted launch on existing [U
 
 ### [Template](#tab/template)
 
-This section documents steps for using an [ARM template](../azure-resource-manager/templates/overview.md) to enable Trusted launch on existing Virtual machine Scale set uniform.
+This section documents steps for using an [ARM template](/azure/azure-resource-manager/templates/overview) to enable Trusted launch on existing Virtual machine Scale set uniform.
 
 Make the following modifications to your existing ARM template deployment code. For complete template, refer to [Quickstart Trusted launch Scale set ARM template](https://github.com/Azure/azure-quickstart-templates/blob/master/quickstarts/microsoft.compute/vmss-trustedlaunch-windows/azuredeploy.json).
 

@@ -77,5 +77,5 @@ Depending on the network topology specified in the Image Template, you might obs
 
 - [Azure VM Image Builder overview](./image-builder-overview.md)
 - [Getting started with Azure Container Instances](../container-instances/container-instances-overview.md)
-- [Securing your Azure resources](../security/fundamentals/overview.md)
+- [Securing your Azure resources](/azure/security/fundamentals/overview)
 - [Troubleshooting guide for Azure VM Image Builder](./linux/image-builder-troubleshoot.md#troubleshoot-build-failures)

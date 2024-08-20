@@ -12,7 +12,7 @@ ms.custom: "include file"
 
 
 ## Overview
-Azure Storage provides the capability to take snapshots of blobs. Snapshots capture the blob state at that point in time. In this article, we describe a scenario in which you can maintain backups of virtual machine disks using snapshots. You can use this methodology when you choose not to use Azure Backup and Recovery Service, and wish to create a custom backup strategy for your virtual machine disks. For virtual machines running business or mission critical workloads, it's recommended to use [Azure Backup](../articles/backup/backup-azure-vms-introduction.md) as part of the backup strategy.  
+Azure Storage provides the capability to take snapshots of blobs. Snapshots capture the blob state at that point in time. In this article, we describe a scenario in which you can maintain backups of virtual machine disks using snapshots. You can use this methodology when you choose not to use Azure Backup and Recovery Service, and wish to create a custom backup strategy for your virtual machine disks. For virtual machines running business or mission critical workloads, it's recommended to use [Azure Backup](/azure/backup/backup-azure-vms-introduction) as part of the backup strategy.  
 
 Azure virtual machine disks are stored as page blobs in Azure Storage. Since we are describing a backup strategy for virtual machine disks in this article, we refer to snapshots in the context of page blobs. To learn more about snapshots, refer to [Creating a Snapshot of a Blob](/rest/api/storageservices/Creating-a-Snapshot-of-a-Blob).
 
@@ -28,7 +28,7 @@ Snapshots can be copied to another storage account as a blob to keep backups of 
 > 
 
 ### Back up disks using snapshots
-As a backup strategy for your virtual machine disks, you can take periodic snapshots of the disk or page blob, and copy them to another storage account using tools like [Copy Blob](/rest/api/storageservices/Copy-Blob) operation or [AzCopy](../articles/storage/common/storage-use-azcopy-v10.md). You can copy a snapshot to a destination page blob with a different name. The resulting destination page blob is a writeable page blob and not a snapshot. Later in this article, we describe steps to take backups of virtual machine disks using snapshots.
+As a backup strategy for your virtual machine disks, you can take periodic snapshots of the disk or page blob, and copy them to another storage account using tools like [Copy Blob](/rest/api/storageservices/Copy-Blob) operation or [AzCopy](/azure/storage/common/storage-use-azcopy-v10). You can copy a snapshot to a destination page blob with a different name. The resulting destination page blob is a writeable page blob and not a snapshot. Later in this article, we describe steps to take backups of virtual machine disks using snapshots.
 
 ### Restore disks using snapshots
 When it is time to restore your disk to a stable version that was previously captured in one of the backup snapshots, you can copy a snapshot over the base page blob. After the snapshot is promoted to the base page blob, the snapshot remains, but its source is overwritten with a copy that can be both read and written. Later in this article we describe steps to restore a previous version of your disk from its snapshot.
@@ -75,9 +75,9 @@ In this section, we describe a scenario that involves a custom backup strategy f
 
 Consider a DS-series Azure VM with a premium storage P30 disk attached. The P30 disk called *mypremiumdisk* is stored in a premium storage account called *mypremiumaccount*. A standard storage account called *mybackupstdaccount* is used for storing the backup of *mypremiumdisk*. We would like to keep a snapshot of *mypremiumdisk* every 12 hours.
 
-To learn about creating a storage account, see [Create a storage account](../articles/storage/common/storage-account-create.md).
+To learn about creating a storage account, see [Create a storage account](/azure/storage/common/storage-account-create).
 
-To learn about backing up Azure VMs, refer to [Plan Azure VM backups](../articles/backup/backup-azure-vms-introduction.md).
+To learn about backing up Azure VMs, refer to [Plan Azure VM backups](/azure/backup/backup-azure-vms-introduction).
 
 ## Steps to maintain backups of a disk using incremental snapshots
 The following steps describe how to take snapshots of *mypremiumdisk* and maintain the backups in *mybackupstdaccount*. The backup is a standard page blob called *mybackupstdpageblob*. The backup page blob always reflects the same state as the last snapshot of *mypremiumdisk*.
@@ -109,4 +109,4 @@ The following steps, describe how to restore the premium disk, *mypremiumdisk* t
 Use the following links to learn more about creating snapshots of a blob and planning your VM backup infrastructure.
 
 * [Creating a Snapshot of a Blob](/rest/api/storageservices/Creating-a-Snapshot-of-a-Blob)
-* [Plan your VM Backup Infrastructure](../articles/backup/backup-azure-vms-introduction.md)
+* [Plan your VM Backup Infrastructure](/azure/backup/backup-azure-vms-introduction)

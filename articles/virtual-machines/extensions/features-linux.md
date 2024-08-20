@@ -49,7 +49,7 @@ If you use a [supported version of the Azure Linux Agent](https://support.micros
 > [!IMPORTANT]
 > If you've blocked access to the private IP address 168.63.129.16 by using the guest firewall, extensions fail even if you're using a supported version of the agent or you've configured outbound access.
 
-Agents can only be used to download extension packages and reporting status. For example, if an extension installation needs to download a script from GitHub (Custom Script extension) or needs access to Azure Storage (Azure Backup), then you need to open additional firewall or network security group (NSG) ports. Different extensions have different requirements, because they're applications in their own right. For extensions that require access to Azure Storage, you can allow access by using Azure NSG [service tags](../../virtual-network/network-security-groups-overview.md#service-tags).
+Agents can only be used to download extension packages and reporting status. For example, if an extension installation needs to download a script from GitHub (Custom Script extension) or needs access to Azure Storage (Azure Backup), then you need to open additional firewall or network security group (NSG) ports. Different extensions have different requirements, because they're applications in their own right. For extensions that require access to Azure Storage, you can allow access by using Azure NSG [service tags](/azure/virtual-network/network-security-groups-overview#service-tags).
 
 To redirect agent traffic requests, the Azure Linux Agent has proxy server support. However, this proxy server support does not apply extensions. You must configure each individual extension to work with a proxy.
 

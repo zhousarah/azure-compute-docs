@@ -94,7 +94,7 @@ More detailed instructions can be found in the following sections.
 
 #### Ensure quota for the target VM family
 
-Be sure that you have enough vCPU quota for the VM family of the Dedicated Host SKU that you'll be using. If you need quota, follow this guide to [request an increase in vCPU quota](../../../azure-portal/supportability/per-vm-quota-requests.md) for your target VM family in your target region. Select the Dsv3-series or Esv3-series as the VM family, depending on the target Dedicated Host SKU.
+Be sure that you have enough vCPU quota for the VM family of the Dedicated Host SKU that you'll be using. If you need quota, follow this guide to [request an increase in vCPU quota](/azure/azure-portal/supportability/per-vm-quota-requests) for your target VM family in your target region. Select the Dsv3-series or Esv3-series as the VM family, depending on the target Dedicated Host SKU.
 
 #### Create a new Dedicated Host
 

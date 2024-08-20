@@ -15,7 +15,7 @@ ms.date: 11/15/2021
 
 **Applies to:** :heavy_check_mark: Linux VMs :heavy_check_mark: Windows VMs 
 
-The ECasv5-series and ECadsv5-series are [confidential VMs](../confidential-computing/confidential-vm-overview.md) for use in Confidential Computing. 
+The ECasv5-series and ECadsv5-series are [confidential VMs](/azure/confidential-computing/confidential-vm-overview) for use in Confidential Computing. 
 
 These confidential VMs use AMD's third-Generation EPYC<sup>TM</sup> 7763v processor in a multi-threaded configuration with up to 256 MB L3 cache. This processor can achieve a boosted maximum frequency of 3.5 GHz. Both series offer Secure Encrypted Virtualization-Secure Nested Paging (SEV-SNP). SEV-SNP provides hardware-isolated VMs that protect data from other VMs, the hypervisor, and host management code. Confidential VMs offer hardware-based VM memory encryption. These series also offer OS disk pre-encryption before VM provisioning with different key management solutions. 
 
@@ -28,7 +28,7 @@ ECasv5-series VMs offer a combination of vCPU and memory for memory-intensive en
 This series supports Standard SSD, Standard HDD, and Premium SSD disk types. Billing for disk storage and VMs is separate. To estimate your costs, use the [Pricing Calculator](https://azure.microsoft.com/pricing/calculator/).
 
 > [!NOTE]
-> There are some [pricing differences based on your encryption settings](../confidential-computing/confidential-vm-overview.md#encryption-pricing-differences) for confidential VMs.
+> There are some [pricing differences based on your encryption settings](/azure/confidential-computing/confidential-vm-overview#encryption-pricing-differences) for confidential VMs.
 
 ### ECasv5-series feature support
 
@@ -42,7 +42,7 @@ This series supports Standard SSD, Standard HDD, and Premium SSD disk types. Bil
 
 - [Live Migration](maintenance-and-updates.md)
 - [Memory Preserving Updates](maintenance-and-updates.md)
-- [Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md)
+- [Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli)
 - [Ephemeral OS Disks](ephemeral-os-disks.md)
 - [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization)
 
@@ -67,7 +67,7 @@ ECadsv5-series VMs offer a combination of vCPU, memory, and temporary storage fo
 This series supports Standard SSD, Standard HDD, and Premium SSD disk types. Billing for disk storage and VMs is separate. To estimate your costs, use the [Pricing Calculator](https://azure.microsoft.com/pricing/calculator/).
 
 > [!NOTE]
-> There are some [pricing differences based on your encryption settings](../confidential-computing/confidential-vm-overview.md#encryption-pricing-differences) for confidential VMs.
+> There are some [pricing differences based on your encryption settings](/azure/confidential-computing/confidential-vm-overview#encryption-pricing-differences) for confidential VMs.
 
 ### ECadsv5-series feature support
 
@@ -82,7 +82,7 @@ This series supports Standard SSD, Standard HDD, and Premium SSD disk types. Bil
 
 - [Live Migration](maintenance-and-updates.md)
 - [Memory Preserving Updates](maintenance-and-updates.md)
-- [Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md)
+- [Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli)
 
 ### ECadsv5-series products
 
@@ -106,4 +106,4 @@ This series supports Standard SSD, Standard HDD, and Premium SSD disk types. Bil
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Confidential virtual machine options on AMD processors](../confidential-computing/virtual-machine-options.md)
+> [Confidential virtual machine options on AMD processors](/azure/confidential-computing/virtual-machine-options)

@@ -32,7 +32,7 @@ az vm create \
   --generate-ssh-keys
 ```
 
-In Azure Resource Manager, there's a [base64 function](../azure-resource-manager/templates/template-functions-string.md#base64):
+In Azure Resource Manager, there's a [base64 function](/azure/azure-resource-manager/templates/template-functions-string#base64):
 
 ```json
 "name": "[parameters('virtualMachineName')]",
@@ -91,7 +91,7 @@ For single VMs, you can't update custom data in the VM model. But for Virtual Ma
 * New instances receive the new custom data.
 
 ### Can I place sensitive values in custom data?
-We advise *not* to store sensitive data in custom data. For more information, see [Azure data security and encryption best practices](../security/fundamentals/data-encryption-best-practices.md).
+We advise *not* to store sensitive data in custom data. For more information, see [Azure data security and encryption best practices](/azure/security/fundamentals/data-encryption-best-practices).
 
 ### Is custom data made available in IMDS?
 Custom data isn't available in Azure Instance Metadata Service (IMDS). We suggest using user data in IMDS instead. For more information, see [User data through Azure Instance Metadata Service](./linux/instance-metadata-service.md?tabs=linux#get-user-data).

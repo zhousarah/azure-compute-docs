@@ -1510,6 +1510,6 @@ That completes the installation of the OpenFrame components.
 
 If you are considering a mainframe migration, our expanding partner ecosystem is available to help you. For detailed guidance about choosing a partner solution, refer to the [Platform Modernization Alliance](/data-migration/).
 
-- [Get started with Azure](../../../../index.yml)
+- [Get started with Azure](/azure/)
 - [Host Integration Server (HIS) documentation](/host-integration-server/)
 - [Azure Virtual Data Center Lift-and-Shift Guide](/archive/blogs/azurecat/new-whitepaper-azure-virtual-datacenter-lift-and-shift-guide)

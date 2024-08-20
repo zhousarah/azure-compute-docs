@@ -8,7 +8,7 @@
  ms.author: rogarana
  ms.custom: include file
 ---
-If you're using [Microsoft Entra ID](../articles/active-directory/fundamentals/active-directory-whatis.md) to control resource access, you can now use it to restrict uploads and downloads of Azure managed disks. This feature is available as a GA offering in all regions. When a user attempts to upload or download a disk, Azure validates the identity of the requesting user in Microsoft Entra ID, and confirms that user has the required permissions. At a higher level, a system administrator could set a policy at the Azure account or subscription level, to ensure that all disks and snapshots must use Microsoft Entra ID for uploads or downloads. If you have any questions on securing uploads or downloads with Microsoft Entra ID, reach out to this email: azuredisks@microsoft .com
+If you're using [Microsoft Entra ID](/azure/active-directory/fundamentals/active-directory-whatis) to control resource access, you can now use it to restrict uploads and downloads of Azure managed disks. This feature is available as a GA offering in all regions. When a user attempts to upload or download a disk, Azure validates the identity of the requesting user in Microsoft Entra ID, and confirms that user has the required permissions. At a higher level, a system administrator could set a policy at the Azure account or subscription level, to ensure that all disks and snapshots must use Microsoft Entra ID for uploads or downloads. If you have any questions on securing uploads or downloads with Microsoft Entra ID, reach out to this email: azuredisks@microsoft .com
 
 ### Restrictions
 [!INCLUDE [disks-azure-ad-upload-download-restrictions](../articles/virtual-machines/includes/disks-azure-ad-upload-download-restrictions.md)]
@@ -18,14 +18,14 @@ If you're using [Microsoft Entra ID](../articles/active-directory/fundamentals/a
 
 ### Assign RBAC role
 
-To access managed disks secured with Microsoft Entra ID, the requesting user must have either the [Data Operator for Managed Disks](../articles/role-based-access-control/built-in-roles.md#data-operator-for-managed-disks) role, or a [custom role](../articles/role-based-access-control/custom-roles-portal.md) with the following permissions: 
+To access managed disks secured with Microsoft Entra ID, the requesting user must have either the [Data Operator for Managed Disks](/azure/role-based-access-control/built-in-roles#data-operator-for-managed-disks) role, or a [custom role](/azure/role-based-access-control/custom-roles-portal) with the following permissions: 
 
 - **Microsoft.Compute/disks/download/action**
 - **Microsoft.Compute/disks/upload/action**
 - **Microsoft.Compute/snapshots/download/action**
 - **Microsoft.Compute/snapshots/upload/action**
 
-For detailed steps on assigning a role, see the following articles for [portal](../articles/role-based-access-control/role-assignments-portal.yml), [PowerShell](../articles/role-based-access-control/role-assignments-powershell.md), or [CLI](../articles/role-based-access-control/role-assignments-cli.md). To create or update a custom role, see the following articles for [portal](../articles/role-based-access-control/custom-roles-portal.md), [PowerShell](../articles/role-based-access-control/role-assignments-powershell.md), or [CLI](../articles/role-based-access-control/role-assignments-cli.md).
+For detailed steps on assigning a role, see the following articles for [portal](/azure/role-based-access-control/role-assignments-portal), [PowerShell](/azure/role-based-access-control/role-assignments-powershell), or [CLI](/azure/role-based-access-control/role-assignments-cli). To create or update a custom role, see the following articles for [portal](/azure/role-based-access-control/custom-roles-portal), [PowerShell](/azure/role-based-access-control/role-assignments-powershell), or [CLI](/azure/role-based-access-control/role-assignments-cli).
 
 ### Enable data access authentication mode
 

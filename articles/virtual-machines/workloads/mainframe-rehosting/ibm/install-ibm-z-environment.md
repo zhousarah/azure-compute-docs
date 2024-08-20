@@ -54,7 +54,7 @@ This article shows you how to set up Z Development and Test Environment (zD&T) E
 
 3. Get the SSH credentials shown on the **Overview** blade of the VM via the **Connect** button. Select the **SSH** tab and copy the SSH logon command to the clipboard.
 
-4. Log on to a [Bash shell](../../../../cloud-shell/quickstart.md) from your local PC and paste the command. It will be in the form **ssh\<user id\>\@\<IP Address\>**. When prompted for your credentials, enter them to establish a connection to your Home directory.
+4. Log on to a [Bash shell](/azure/cloud-shell/quickstart) from your local PC and paste the command. It will be in the form **ssh\<user id\>\@\<IP Address\>**. When prompted for your credentials, enter them to establish a connection to your Home directory.
 
 ## Copy the installation file to the server
 

@@ -11,7 +11,7 @@ ms.date: 06/17/2022
 
 # Virtual network scenarios and resources
 
-[Azure Virtual Network](../virtual-network/virtual-networks-overview.md) provides secure, private networking for your Azure and on-premises resources. By deploying container groups into an Azure virtual network, your containers can communicate securely with other resources in the virtual network. 
+[Azure Virtual Network](/azure/virtual-network/virtual-networks-overview) provides secure, private networking for your Azure and on-premises resources. By deploying container groups into an Azure virtual network, your containers can communicate securely with other resources in the virtual network. 
 
 This article provides background about virtual network scenarios, limitations, and resources. For deployment examples using the Azure CLI, see [Deploy container instances into an Azure virtual network](container-instances-vnet.md).
 
@@ -24,9 +24,9 @@ Container groups deployed into an Azure virtual network enable scenarios like:
 
 * Direct communication between container groups in the same subnet
 * Send [task-based](container-instances-restart-policy.md) workload output from container instances to a database in the virtual network
-* Retrieve content for container instances from a [service endpoint](../virtual-network/virtual-network-service-endpoints-overview.md) in the virtual network
-* Enable container communication with on-premises resources through a [VPN gateway](../vpn-gateway/vpn-gateway-about-vpngateways.md) or [ExpressRoute](../expressroute/expressroute-introduction.md)
-* Integrate with [Azure Firewall](../firewall/overview.md) to identify outbound traffic originating from the container 
+* Retrieve content for container instances from a [service endpoint](/azure/virtual-network/virtual-network-service-endpoints-overview) in the virtual network
+* Enable container communication with on-premises resources through a [VPN gateway](/azure/vpn-gateway/vpn-gateway-about-vpngateways) or [ExpressRoute](/azure/expressroute/expressroute-introduction)
+* Integrate with [Azure Firewall](/azure/firewall/overview) to identify outbound traffic originating from the container 
 * Resolve names via the internal Azure DNS for communication with Azure resources in the virtual network, such as virtual machines
 * Use NSG rules to control container access to subnets or other network resources
 
@@ -45,9 +45,9 @@ Container groups deployed into an Azure virtual network enable scenarios like:
 * Due to the additional networking resources involved, deployments to a virtual network are typically slower than deploying a standard container instance.
 * Outbound connections to port 25 and 19390 aren't supported at this time. Port 19390 needs to be opened in your Firewall for connecting to ACI from Azure portal when container groups are deployed in virtual networks.
 * For inbound connections, the firewall should also allow all ip addresses within the virtual network.
-* If you're connecting your container group to an Azure Storage Account, you must add a [service endpoint](../virtual-network/virtual-network-service-endpoints-overview.md) to that resource.
-* [IPv6 addresses](../virtual-network/ip-services/ipv6-overview.md) aren't supported at this time.
-* Depending on your subscription type, [certain ports could be blocked](../virtual-network/network-security-groups-overview.md#azure-platform-considerations).
+* If you're connecting your container group to an Azure Storage Account, you must add a [service endpoint](/azure/virtual-network/virtual-network-service-endpoints-overview) to that resource.
+* [IPv6 addresses](/azure/virtual-network/ip-services/ipv6-overview) aren't supported at this time.
+* Depending on your subscription type, [certain ports could be blocked](/azure/virtual-network/network-security-groups-overview#azure-platform-considerations).
 * Container instances don't read or inherit DNS settings from an associated virtual network. DNS settings must be explicitly set for container instances.
 
 ## Required network resources

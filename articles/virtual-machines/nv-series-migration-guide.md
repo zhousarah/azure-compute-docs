@@ -81,7 +81,7 @@ After you assess your current usage, decide what type of GPU VM you need. Depend
 
 ### Get a quota for the target VM family 
 
-Follow the guide to [request an increase in vCPU quota by VM family](../azure-portal/supportability/per-vm-quota-requests.md). Select the NVSv3 series or NVv4 series as the VM family name depending on the target VM size you selected for migration.
+Follow the guide to [request an increase in vCPU quota by VM family](/azure/azure-portal/supportability/per-vm-quota-requests). Select the NVSv3 series or NVv4 series as the VM family name depending on the target VM size you selected for migration.
 
 ### Resize the current VM
 

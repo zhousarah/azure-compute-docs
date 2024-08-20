@@ -29,7 +29,7 @@ The VM provisioning state is available, in slightly different forms, from within
 To retrieve the power state of all the VMs in your subscription, use the [Virtual Machines - List All API](/rest/api/compute/virtualmachines/listall) with parameter `statusOnly` set to `true`.
 
 > [!NOTE]
-> [Virtual Machines - List All API](/rest/api/compute/virtualmachines/listall) with parameter `statusOnly` set to `true` retrieves the power states of all VMs in a subscription. However, in some rare situations, the power state may not available due to intermittent issues in the retrieval process. In such situations, we recommend retrying using the same API or using [Azure Resource Health](../service-health/resource-health-overview.md) to check the power state of your VMs.
+> [Virtual Machines - List All API](/rest/api/compute/virtualmachines/listall) with parameter `statusOnly` set to `true` retrieves the power states of all VMs in a subscription. However, in some rare situations, the power state may not available due to intermittent issues in the retrieval process. In such situations, we recommend retrying using the same API or using [Azure Resource Health](/azure/service-health/resource-health-overview) to check the power state of your VMs.
 
 ## Power states and billing
 
@@ -97,6 +97,6 @@ For other troubleshooting help visit [Azure Virtual Machines troubleshooting doc
 
 ## Next steps
 
-- Review the [Azure Cost Management and Billing documentation](../cost-management-billing/index.yml)
+- Review the [Azure Cost Management and Billing documentation](/azure/cost-management-billing/)
 - Use the [Azure Pricing calculator](https://azure.microsoft.com/pricing/calculator/) to plan your deployments.
-- Learn more about monitoring your VM, see [Monitor virtual machines in Azure](../azure-monitor/vm/monitor-vm-azure.md).
+- Learn more about monitoring your VM, see [Monitor virtual machines in Azure](/azure/azure-monitor/vm/monitor-vm-azure).

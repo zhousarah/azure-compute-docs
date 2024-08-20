@@ -29,7 +29,7 @@ Dv5-series virtual machines do not have any temporary storage thus lowering the 
 [Live Migration](maintenance-and-updates.md): Supported<br>
 [Memory Preserving Updates](maintenance-and-updates.md): Supported<br>
 [VM Generation Support](generation-2.md): Generation 1 and 2<br>
-[Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md)<sup>1</sup>: Required <br>
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli)<sup>1</sup>: Required <br>
 [Ephemeral OS Disks](ephemeral-os-disks.md): Not Supported <br>
 [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Supported <br>
 <br>
@@ -58,7 +58,7 @@ Dsv5-series virtual machines do not have any temporary storage thus lowering the
 [Live Migration](maintenance-and-updates.md): Supported<br>
 [Memory Preserving Updates](maintenance-and-updates.md): Supported<br>
 [VM Generation Support](generation-2.md): Generation 1 and 2<br>
-[Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md)<sup>1</sup>: Required <br>
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli)<sup>1</sup>: Required <br>
 [Ephemeral OS Disks](ephemeral-os-disks.md): Not Supported <br>
 [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Supported <br>
 <br>

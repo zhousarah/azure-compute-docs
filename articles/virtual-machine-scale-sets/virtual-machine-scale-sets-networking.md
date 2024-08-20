@@ -18,7 +18,7 @@ When you deploy an Azure Virtual Machine Scale Set through the portal, certain n
 You can configure all of the features covered in this article using Azure Resource Manager templates. Azure CLI and PowerShell examples are also included for selected features.
 
 ## Accelerated Networking
-Azure Accelerated Networking improves network performance by enabling single root I/O virtualization (SR-IOV) to a virtual machine. To learn more about using Accelerated networking, see Accelerated networking for [Windows](../virtual-network/create-vm-accelerated-networking-powershell.md) or [Linux](../virtual-network/create-vm-accelerated-networking-cli.md) virtual machines. To use accelerated networking with scale sets, set enableAcceleratedNetworking to **true** in your scale set's networkInterfaceConfigurations settings. For example:
+Azure Accelerated Networking improves network performance by enabling single root I/O virtualization (SR-IOV) to a virtual machine. To learn more about using Accelerated networking, see Accelerated networking for [Windows](/azure/virtual-network/create-vm-accelerated-networking-powershell) or [Linux](/azure/virtual-network/create-vm-accelerated-networking-cli) virtual machines. To use accelerated networking with scale sets, set enableAcceleratedNetworking to **true** in your scale set's networkInterfaceConfigurations settings. For example:
 
 ```json
 "networkProfile": {
@@ -38,7 +38,7 @@ Azure Accelerated Networking improves network performance by enabling single roo
 ```
 
 ## Azure Virtual Machine Scale Sets with Azure Load Balancer
-See [Azure Load Balancer and Virtual Machine Scale Sets](../load-balancer/load-balancer-standard-virtual-machine-scale-sets.md) to learn more about how to configure your Standard Load Balancer with Virtual Machine Scale Sets based on your scenario.
+See [Azure Load Balancer and Virtual Machine Scale Sets](/azure/load-balancer/load-balancer-standard-virtual-machine-scale-sets) to learn more about how to configure your Standard Load Balancer with Virtual Machine Scale Sets based on your scenario.
 
 ## Add a Virtual Machine Scale Set to an Application Gateway
 
@@ -219,7 +219,7 @@ Note when Virtual Machine Scale Sets with public IPs per instance are created wi
 
 Example template using a Basic Load Balancer: [vmss-public-ip-linux](https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.compute/vmss-public-ip-linux)
 
-Alternatively, a [Public IP Prefix](../virtual-network/ip-services/public-ip-address-prefix.md) (a contiguous block of Standard SKU Public IPs) can be used to generate instance-level IPs in a Virtual Machine Scale Set. The zonal properties of the prefix will be passed to the instance IPs, though they will not be shown in the output.
+Alternatively, a [Public IP Prefix](/azure/virtual-network/ip-services/public-ip-address-prefix) (a contiguous block of Standard SKU Public IPs) can be used to generate instance-level IPs in a Virtual Machine Scale Set. The zonal properties of the prefix will be passed to the instance IPs, though they will not be shown in the output.
 
 Example template using a Public IP Prefix: [vmms-with-public-ip-prefix](https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.compute/vmss-with-public-ip-prefix)
 
@@ -298,7 +298,7 @@ Example output from the [Azure Resource Explorer](https://resources.azure.com) a
 ```
 
 ## Multiple IP addresses per NIC
-Every NIC attached to a VM in a scale set can have one or more IP configurations associated with it. Each configuration is assigned one private IP address. Each configuration may also have one public IP address resource associated with it. To understand how many IP addresses can be assigned to a NIC, and how many public IP addresses you can use in an Azure subscription, refer to [Azure limits](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits).
+Every NIC attached to a VM in a scale set can have one or more IP configurations associated with it. Each configuration is assigned one private IP address. Each configuration may also have one public IP address resource associated with it. To understand how many IP addresses can be assigned to a NIC, and how many public IP addresses you can use in an Azure subscription, refer to [Azure limits](/azure/azure-resource-manager/management/azure-subscription-service-limits?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits).
 
 ## Multiple NICs per virtual machine
 You can have up to 8 NICs per virtual machine, depending on machine size. The maximum number of NICs per machine is available in the [VM size article](../virtual-machines/sizes.md). All NICs connected to a VM instance must connect to the same virtual network. The NICs can connect to different subnets, but all subnets must be part of the same virtual network.
@@ -377,7 +377,7 @@ The following example is a scale set network profile showing multiple NIC entrie
 ```
 
 ## NSG & ASGs per scale set
-[Network Security Groups](../virtual-network/network-security-groups-overview.md) allow you to filter traffic to and from Azure resources in an Azure virtual network using security rules. [Application Security Groups](../virtual-network/network-security-groups-overview.md#application-security-groups) enable you to handle network security of Azure resources and group them as an extension of your application's structure.
+[Network Security Groups](/azure/virtual-network/network-security-groups-overview) allow you to filter traffic to and from Azure resources in an Azure virtual network using security rules. [Application Security Groups](/azure/virtual-network/network-security-groups-overview#application-security-groups) enable you to handle network security of Azure resources and group them as an extension of your application's structure.
 
 Network Security Groups can be applied directly to a scale set, by adding a reference to the network interface configuration section of the scale set virtual machine properties.
 
@@ -599,7 +599,7 @@ The following example shows how to add a second IP Configuration to your NIC.
 
 In order to enhance default network security, [Virtual Machine Scale Sets with Flexible orchestration](..\virtual-machines\flexible-virtual-machine-scale-sets.md) will require that instances created implicitly via the autoscaling profile have outbound connectivity defined explicitly through one of the following methods: 
 
-- For most scenarios, we recommend [NAT Gateway attached to the subnet](../virtual-network/nat-gateway/quickstart-create-nat-gateway-portal.md).
+- For most scenarios, we recommend [NAT Gateway attached to the subnet](/azure/virtual-network/nat-gateway/quickstart-create-nat-gateway-portal).
 - For scenarios with high security requirements or when using Azure Firewall or Network Virtual Appliance (NVA), you can specify a custom User Defined Route as next hop through firewall. 
 - Instances are in the backend pool of a Standard SKU Azure Load Balancer. 
 - Attach a Public IP Address to the instance network interface. 
@@ -609,10 +609,10 @@ With single instance VMs and Virtual Machine Scale Sets with Uniform orchestrati
 Common scenarios that will require explicit outbound connectivity include: 
 
 - Windows VM activation will require that you have defined outbound connectivity from the VM instance to the Windows Activation Key Management Service (KMS). See [Troubleshoot Windows VM activation problems](/troubleshoot/azure/virtual-machines/troubleshoot-activation-problems) for more information.  
-- Access to storage accounts or Key Vault. Connectivity to Azure services can also be established via [Private Link](../private-link/private-link-overview.md). 
+- Access to storage accounts or Key Vault. Connectivity to Azure services can also be established via [Private Link](/azure/private-link/private-link-overview). 
 
-See [Default outbound access in Azure](../virtual-network/ip-services/default-outbound-access.md) for more details on defining secure outbound connections.
+See [Default outbound access in Azure](/azure/virtual-network/ip-services/default-outbound-access) for more details on defining secure outbound connections.
 
 
 ## Next steps
-For more information about Azure virtual networks, see [Azure virtual networks overview](../virtual-network/virtual-networks-overview.md).
+For more information about Azure virtual networks, see [Azure virtual networks overview](/azure/virtual-network/virtual-networks-overview).

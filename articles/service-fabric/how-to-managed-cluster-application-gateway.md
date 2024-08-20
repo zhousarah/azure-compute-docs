@@ -12,7 +12,7 @@ ms.date: 09/05/2023
 
 # Use Azure Application Gateway in a Service Fabric managed cluster
 
-[Azure Application Gateway](../application-gateway/overview.md) is a web traffic load balancer that enables you to manage traffic to your web applications. There are [several benefits to using Application Gateway](https://azure.microsoft.com/products/application-gateway/#overview). Service Fabric managed cluster supports Azure Application Gateway and allows you to connect your node types to an Application Gateway. You can [create an Azure Application Gateway](../application-gateway/quick-create-portal.md) and pass the resource ID to the service fabric managed cluster ARM template. 
+[Azure Application Gateway](/azure/application-gateway/overview) is a web traffic load balancer that enables you to manage traffic to your web applications. There are [several benefits to using Application Gateway](https://azure.microsoft.com/products/application-gateway/#overview). Service Fabric managed cluster supports Azure Application Gateway and allows you to connect your node types to an Application Gateway. You can [create an Azure Application Gateway](/azure/application-gateway/quick-create-portal) and pass the resource ID to the service fabric managed cluster ARM template. 
 
 
 ## How to use Application Gateway in a Service Fabric managed cluster
@@ -25,7 +25,7 @@ ms.date: 09/05/2023
 
 The following section describes the steps that should be taken to use Azure Application Gateway in a Service Fabric managed cluster:
 
-1. Follow the steps in the [Quickstart: Direct web traffic using the portal - Azure Application Gateway](../application-gateway/quick-create-portal.md). Note the resource ID for use in a later step. 
+1. Follow the steps in the [Quickstart: Direct web traffic using the portal - Azure Application Gateway](/azure/application-gateway/quick-create-portal). Note the resource ID for use in a later step. 
 
 2. Link your Application Gateway to the node type of your Service Fabric managed cluster. To do this, you must grant SFMC permission to join the application gateway. This permission is granted by assigning SFMC the “Network Contributor” role on the application gateway resource as described in steps below:
 
@@ -57,7 +57,7 @@ The following section describes the steps that should be taken to use Azure Appl
    Note the `Role definition name` and `Role definition ID` property values for use in a later step
 
 
-   B.    The [sample ARM deployment template](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/SF-Managed-Standard-SKU-2-NT-AppGateway)             adds a role assignment to the application gateway with contributor access. For more information on Azure roles, see [Azure built-in roles - Azure RBAC](../role-based-access-control/built-in-roles.md). This role assignment is defined in the resources section of template with PrincipalId and a role definition ID                   determined from the first step. 
+   B.    The [sample ARM deployment template](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/SF-Managed-Standard-SKU-2-NT-AppGateway)             adds a role assignment to the application gateway with contributor access. For more information on Azure roles, see [Azure built-in roles - Azure RBAC](/azure/role-based-access-control/built-in-roles). This role assignment is defined in the resources section of template with PrincipalId and a role definition ID                   determined from the first step. 
 
 
       ```json

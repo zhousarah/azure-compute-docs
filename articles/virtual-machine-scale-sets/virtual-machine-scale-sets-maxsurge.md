@@ -69,7 +69,7 @@ Rolling upgrades with MaxSurge disabled performs upgrades in place. Depending on
 
 
 ## Configure rolling upgrades with MaxSurge
-Enabling or disabling MaxSurge can be done during or after scale set provisioning. When using a rolling upgrade policy, the scale set must also use an [Application Health Extension](virtual-machine-scale-sets-health-extension.md) or a [health probe](../load-balancer/load-balancer-custom-probe-overview.md). It's suggested to create the scale set with a manual upgrade policy and update the policy to rolling after successfully confirming the application health is being properly reported. 
+Enabling or disabling MaxSurge can be done during or after scale set provisioning. When using a rolling upgrade policy, the scale set must also use an [Application Health Extension](virtual-machine-scale-sets-health-extension.md) or a [health probe](/azure/load-balancer/load-balancer-custom-probe-overview). It's suggested to create the scale set with a manual upgrade policy and update the policy to rolling after successfully confirming the application health is being properly reported. 
 
 
 

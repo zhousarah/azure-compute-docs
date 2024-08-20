@@ -59,7 +59,7 @@ Image definitions contain metadata for the image to allow grouping of images tha
 - EULA - can be used to point to an end-user license agreement specific to the image definition.
 - Privacy Statement and Release notes - store release notes and privacy statements in Azure storage and provide a URI for accessing them as part of the image definition.
 - End-of-life date - establish a default date after which the image shouldn't be used, for all image versions in the image definition. End-of-life dates are informational; users will still be able to create VMs from images and versions past the end-of-life date.
-- Tag - you can add tags when you create your image definition. For more information about tags, see [Using tags to organize your resources](../azure-resource-manager/management/tag-resources.md)
+- Tag - you can add tags when you create your image definition. For more information about tags, see [Using tags to organize your resources](/azure/azure-resource-manager/management/tag-resources)
 - Minimum and maximum vCPU and memory recommendations - if your image has vCPU and memory recommendations, you can attach that information to your image definition.
 - Disallowed disk types - you can provide information about the storage needs for your VM. For example, if the image isn't suited for standard HDD disks, you add them to the disallow list.
 - Purchase plan information for Marketplace images - `-PurchasePlanPublisher`, `-PurchasePlanName`, and `-PurchasePlanProduct`. For more information about purchase plan information, see [Find images in the Azure Marketplace](./windows/cli-ps-findimage.md) and [Supply Azure Marketplace purchase plan information when creating images](marketplace-images.md).
@@ -77,8 +77,8 @@ Image definitions contain metadata for the image to allow grouping of images tha
 
    | SecurityType | Definition | Supported in |
     |--|--|--|
-   | [ConfidentialVMSupported](../confidential-computing/create-confidential-vm-from-compute-gallery.md#confidential-vm-supported-images) | It's a generic Gen2 image that does not contain VMGS blob. Gen2 VM or Confidential VM can be created from this image type | Private, Direct shared, Community |
-   | [Confidential VM](../confidential-computing/create-confidential-vm-from-compute-gallery.md#confidential-vm-images) | Only Confidential VMs can be created from this image type | Private |
+   | [ConfidentialVMSupported](/azure/confidential-computing/create-confidential-vm-from-compute-gallery#confidential-vm-supported-images) | It's a generic Gen2 image that does not contain VMGS blob. Gen2 VM or Confidential VM can be created from this image type | Private, Direct shared, Community |
+   | [Confidential VM](/azure/confidential-computing/create-confidential-vm-from-compute-gallery#confidential-vm-images) | Only Confidential VMs can be created from this image type | Private |
    | TrustedLaunchSupported | It's a generic Gen2 image that does not contain the VMGS blob. Gen2 VM or TrustedLaunch VM can be created from this image type. | Private, direct shared, community |
    | TrustedLaunch | Only TrustedLaunch VM can be   created from this image type | Private |
    | TrustedLaunchAndConfidentialVmSupported | It's a generic Gen2 image that does not contain the VMGS blob. Gen2 VM, TrustedLaunch VM, or a ConfidentialVM can be created from this image type. | Private, direct shared, community |
@@ -166,7 +166,7 @@ ACG images can be created by users from various sources, including virtual machi
 | Managed Image	| Read|
 | Gallery Image	| Read|
 
-Refer to our documentation for additional information regarding [Azure built-in roles](../role-based-access-control/built-in-roles.md), for [granting RBAC permissions](../role-based-access-control/quickstart-assign-role-user-portal.md)
+Refer to our documentation for additional information regarding [Azure built-in roles](/azure/role-based-access-control/built-in-roles), for [granting RBAC permissions](/azure/role-based-access-control/quickstart-assign-role-user-portal)
 
 
 

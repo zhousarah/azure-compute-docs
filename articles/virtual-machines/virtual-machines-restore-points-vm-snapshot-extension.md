@@ -30,7 +30,7 @@ Most common restore point failures are attributed to the communication with the 
 
 During certain VSS writer failure, Azure takes file system-consistent restore points for the next three times (irrespective of the frequency at which the restore point creation is scheduled) upon failing the initial creation request. From the fourth time onward, an application-consistent restore point is attempted.
 
-Follow these steps to [troubleshoot VSS writer issues](../backup/backup-azure-vms-troubleshoot.md#extensionfailedvsswriterinbadstate---snapshot-operation-failed-because-vss-writers-were-in-a-bad-state).
+Follow these steps to [troubleshoot VSS writer issues](/azure/backup/backup-azure-vms-troubleshoot#extensionfailedvsswriterinbadstate---snapshot-operation-failed-because-vss-writers-were-in-a-bad-state).
 
 > [!NOTE]
 > Avoid manually deleting the extension because it leads to failure of the subsequent creation of an application-consistent restore point.

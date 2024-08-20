@@ -44,7 +44,7 @@ Due to increased GPU memory I/O footprint, the NC A100 v4 requires the use of [G
 - [Live Migration](maintenance-and-updates.md): Not Supported
 - [Memory Preserving Updates](maintenance-and-updates.md): Not Supported
 - [VM Generation Support](generation-2.md): Generation 2
-- [Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md): Supported
+- [Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported
 - [Ephemeral OS Disks](ephemeral-os-disks.md): Supported
 - InfiniBand: Not Supported
 - NVIDIA NVLink Interconnect: Supported

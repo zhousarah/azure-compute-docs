@@ -88,7 +88,7 @@ Networking outbound access behavior will vary depending on how you choose to cre
 
 In order to enhance default network security, **virtual machine instances created implicitly via the autoscaling profile don't have default outbound access**. In order to use Virtual Machine Scale Sets with implicitly created VM instances, outbound access must be explicitly defined through one of the following methods: 
 
-- For most scenarios, we recommend [NAT Gateway attached to the subnet](../virtual-network/nat-gateway/quickstart-create-nat-gateway-portal.md).
+- For most scenarios, we recommend [NAT Gateway attached to the subnet](/azure/virtual-network/nat-gateway/quickstart-create-nat-gateway-portal).
 - For scenarios with high security requirements or when using Azure Firewall or Network Virtual Appliance (NVA), you can specify a custom User Defined Route as next hop through firewall. 
 - Instances are in the backend pool of a Standard SKU Azure Load Balancer. 
 - Attach a Public IP Address to the instance network interface. 
@@ -96,17 +96,17 @@ In order to enhance default network security, **virtual machine instances create
 Common scenarios that will require explicit outbound connectivity include: 
 
 - Windows VM activation will require that you have defined outbound connectivity from the VM instance to the Windows Activation Key Management Service (KMS). For more information, see [Troubleshoot Windows VM activation problems](/troubleshoot/azure/virtual-machines/troubleshoot-activation-problems).  
-- Access to storage accounts or Key Vault. Connectivity to Azure services can also be established via [Private Link](../private-link/private-link-overview.md). 
+- Access to storage accounts or Key Vault. Connectivity to Azure services can also be established via [Private Link](/azure/private-link/private-link-overview). 
 - Windows updates.
 - Access to Linux package managers. 
 
-For more information, see [Default outbound access in Azure](../virtual-network/ip-services/default-outbound-access.md).
+For more information, see [Default outbound access in Azure](/azure/virtual-network/ip-services/default-outbound-access).
 
 With single instance VMs where you explicitly create the NIC, default outbound access is provided. Virtual Machine Scale Sets in Uniform Orchestration mode also has default outbound connectivity. 
 
 
 > [!IMPORTANT]
-> Confirm that you have explicit outbound network connectivity. Learn more about this in [virtual networks and virtual machines in Azure](../virtual-network/network-overview.md) and make sure you're following Azure's networking [best practices](../virtual-network/concepts-and-best-practices.md). 
+> Confirm that you have explicit outbound network connectivity. Learn more about this in [virtual networks and virtual machines in Azure](/azure/virtual-network/network-overview) and make sure you're following Azure's networking [best practices](/azure/virtual-network/concepts-and-best-practices). 
 
 
 ### Assign fault domain during VM creation
@@ -120,7 +120,7 @@ az vm create –vmss "myVMSS"  –-platform_fault_domain 1
 When you create a VM and add it to a Flexible scale set, you have full control over instance names within the Azure Naming convention rules. When VMs are automatically added to the scale set via autoscaling, you provide a prefix, and Azure appends a unique number to the end of the name. 
 
 ### List scale sets VM API changes
-Virtual Machine Scale Sets allows you to list the instances that belong to the scale set. With Flexible orchestration, the list Virtual Machine Scale Sets VM command provides a list of scale sets VM IDs. You can then call the GET Virtual Machine Scale Sets VM commands to get more details on how the scale set is working with the VM instance. To get the full details of the VM, use the standard GET VM commands or [Azure Resource Graph](../governance/resource-graph/overview.md).
+Virtual Machine Scale Sets allows you to list the instances that belong to the scale set. With Flexible orchestration, the list Virtual Machine Scale Sets VM command provides a list of scale sets VM IDs. You can then call the GET Virtual Machine Scale Sets VM commands to get more details on how the scale set is working with the VM instance. To get the full details of the VM, use the standard GET VM commands or [Azure Resource Graph](/azure/governance/resource-graph/overview).
 
 
 ### Query instances for power state
@@ -134,7 +134,7 @@ The preferred method is to use Azure Resource Graph to query for all VMs in a Vi
 | order by resourceGroup desc, name desc
 ```
 
-Querying resources with [Azure Resource Graph](../governance/resource-graph/overview.md) is a convenient and efficient way to query Azure resources and minimizes API calls to the resource provider. Azure Resource Graph is an eventually consistent cache where new or updated resources may not be reflected for up to 60 seconds. You can:
+Querying resources with [Azure Resource Graph](/azure/governance/resource-graph/overview) is a convenient and efficient way to query Azure resources and minimizes API calls to the resource provider. Azure Resource Graph is an eventually consistent cache where new or updated resources may not be reflected for up to 60 seconds. You can:
 - List VMs in a resource group or subscription.
 - Use the expand option to retrieve the instance view (fault domain assignment, power and provisioning states) for all VMs in your subscription.
 - Use the Get VM API and commands to get model and instance view for a single instance.
@@ -158,7 +158,7 @@ Use extensions targeted for standard virtual machines, instead of extensions tar
 
 ### Protect instances from delete
 
-Virtual Machine Scale Sets in Flexible orchestration mode don't currently have instance protection options. If you have autoscale enabled on a Virtual Machine Scale Set, some VMs might be at risk of deletion during the scaling in process. If you want to protect certain VM instances from deletion, use [Azure Resource Manager lock](../azure-resource-manager/management/lock-resources.md).
+Virtual Machine Scale Sets in Flexible orchestration mode don't currently have instance protection options. If you have autoscale enabled on a Virtual Machine Scale Set, some VMs might be at risk of deletion during the scaling in process. If you want to protect certain VM instances from deletion, use [Azure Resource Manager lock](/azure/azure-resource-manager/management/lock-resources).
 
 
 

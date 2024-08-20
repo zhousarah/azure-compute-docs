@@ -159,7 +159,7 @@ sections:
       - question: |
           Can I back up and restore an encrypted VM? 
         answer: |
-          Azure Backup provides a mechanism to back up and restore encrypted VMs within the same subscription and region.  For instructions, see [Back up and restore encrypted virtual machines with Azure Backup](../../backup/backup-azure-vms-encryption.md).  Restoring an encrypted VM to a different region isn't currently supported.  
+          Azure Backup provides a mechanism to back up and restore encrypted VMs within the same subscription and region.  For instructions, see [Back up and restore encrypted virtual machines with Azure Backup](/azure/backup/backup-azure-vms-encryption).  Restoring an encrypted VM to a different region isn't currently supported.  
           
       - question: |
           Where can I go to ask questions or provide feedback?
@@ -173,5 +173,5 @@ additionalContent: |
   In this document, you learned more about the most frequent questions related to Azure Disk Encryption. For more information about this service, see the following articles:
           
   - [Azure Disk Encryption Overview](disk-encryption-overview.md)
-  - [Apply disk encryption in Azure Security Center](../../security-center/asset-inventory.md)
-  - [Azure data encryption at rest](../../security/fundamentals/encryption-atrest.md)
+  - [Apply disk encryption in Azure Security Center](/azure/security-center/asset-inventory)
+  - [Azure data encryption at rest](/azure/security/fundamentals/encryption-atrest)

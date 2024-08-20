@@ -26,7 +26,7 @@ Edv5-series virtual machines support Standard SSD and Standard HDD disk types. T
 [Live Migration](maintenance-and-updates.md): Supported<br>
 [Memory Preserving Updates](maintenance-and-updates.md): Supported<br>
 [VM Generation Support](generation-2.md): Generation 1 and 2<br>
-[Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md)<sup>1</sup>: Required <br>
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli)<sup>1</sup>: Required <br>
 [Ephemeral OS Disks](ephemeral-os-disks.md): Supported <br>
 [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Supported <br><br>
 
@@ -45,7 +45,7 @@ Edv5-series virtual machines support Standard SSD and Standard HDD disk types. T
 
 <sup>*</sup> These IOPs values can be guaranteed by using [Gen2 VMs](generation-2.md)<br>
 <sup>1</sup> Accelerated networking is required and turned on by default on all Edv5 virtual machines.<br>
-<sup>2</sup> Instance is [isolated](../security/fundamentals/isolation-choices.md#compute-isolation) to hardware dedicated to a single customer.
+<sup>2</sup> Instance is [isolated](/azure/security/fundamentals/isolation-choices#compute-isolation) to hardware dedicated to a single customer.
 
 
 ## Edsv5-series
@@ -59,7 +59,7 @@ Edsv5-series virtual machines support Standard SSD and Standard HDD disk types. 
 [Live Migration](maintenance-and-updates.md): Supported<br>
 [Memory Preserving Updates](maintenance-and-updates.md): Supported<br>
 [VM Generation Support](generation-2.md): Generation 1 and 2<br>
-[Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md)<sup>1</sup>: Required <br>
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli)<sup>1</sup>: Required <br>
 [Ephemeral OS Disks](ephemeral-os-disks.md): Supported <br>
 [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Supported <br>
 <br>
@@ -83,7 +83,7 @@ Edsv5-series virtual machines support Standard SSD and Standard HDD disk types. 
 
 <sup>2</sup> [Constrained Core](constrained-vcpu.md) sizes available.
 
-<sup>3</sup> Instance is [isolated](../security/fundamentals/isolation-choices.md#compute-isolation) to hardware dedicated to a single customer.
+<sup>3</sup> Instance is [isolated](/azure/security/fundamentals/isolation-choices#compute-isolation) to hardware dedicated to a single customer.
 
 <sup>4</sup> Attaching Ultra Disk or Premium v2 SSD to **Standard_E104ids_v5** results in higher IOPs and MBps than standard premium disks:
 - Max uncached Ultra Disk and Premium v2 SSD throughput (IOPS/ MBps): 120000/4000 

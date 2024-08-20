@@ -62,7 +62,7 @@ Connect to your new VM using SSH, which allows you to perform further configurat
 
 - [Connect over SSH on Linux or macOS](./linux/mac-create-ssh-keys.md#ssh-into-your-vm)
 - [Connect over SSH on Windows](./linux/ssh-from-windows.md#connect-to-your-vm)
-- [Connect over SSH using Azure Bastion](../bastion/bastion-connect-vm-ssh-linux.md)
+- [Connect over SSH using Azure Bastion](/azure/bastion/bastion-connect-vm-ssh-linux)
 
 ## Set up VM
 

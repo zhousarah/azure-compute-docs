@@ -27,4 +27,4 @@ See [VM sizes](sizes.md) for more details.
 
 ## See also
 
-[Azure subscription and service limits, quotas, and constraints](../azure-resource-manager/management/azure-subscription-service-limits.md)
+[Azure subscription and service limits, quotas, and constraints](/azure/azure-resource-manager/management/azure-subscription-service-limits)

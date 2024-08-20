@@ -54,7 +54,7 @@ The following restrictions apply when you're using Run Command:
 * Outbound connectivity from the VM is required to return the results of the script.
 
 > [!NOTE]
-> To function correctly, Run Command requires connectivity (port 443) to Azure public IP addresses. If the extension doesn't have access to these endpoints, the scripts might run successfully but not return the results. If you're blocking traffic on the virtual machine, you can use [service tags](../../virtual-network/network-security-groups-overview.md#service-tags) to allow traffic to Azure public IP addresses by using the `AzureCloud` tag.
+> To function correctly, Run Command requires connectivity (port 443) to Azure public IP addresses. If the extension doesn't have access to these endpoints, the scripts might run successfully but not return the results. If you're blocking traffic on the virtual machine, you can use [service tags](/azure/virtual-network/network-security-groups-overview#service-tags) to allow traffic to Azure public IP addresses by using the `AzureCloud` tag.
 
 ## Available commands
 
@@ -105,11 +105,11 @@ Invoke-AzVMRunCommand -ResourceGroupName '<myResourceGroup>' -Name '<myVMName>' 
 
 ## Limiting access to Run Command
 
-Listing the run commands or showing the details of a command requires the `Microsoft.Compute/locations/runCommands/read` permission on Subscription level. The built-in [Reader](../../role-based-access-control/built-in-roles.md#reader) role and higher levels have this permission.
+Listing the run commands or showing the details of a command requires the `Microsoft.Compute/locations/runCommands/read` permission on Subscription level. The built-in [Reader](/azure/role-based-access-control/built-in-roles#reader) role and higher levels have this permission.
 
-Running a command requires the `Microsoft.Compute/virtualMachines/runCommands/write` permission. The [Virtual Machine Contributor](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor) role and higher levels have this permission.
+Running a command requires the `Microsoft.Compute/virtualMachines/runCommands/write` permission. The [Virtual Machine Contributor](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor) role and higher levels have this permission.
 
-You can use one of the [built-in roles](../../role-based-access-control/built-in-roles.md) or create a [custom role](../../role-based-access-control/custom-roles.md) to use Run Command.
+You can use one of the [built-in roles](/azure/role-based-access-control/built-in-roles) or create a [custom role](/azure/role-based-access-control/custom-roles) to use Run Command.
 
 ## Action Run Command Linux troubleshooting
 

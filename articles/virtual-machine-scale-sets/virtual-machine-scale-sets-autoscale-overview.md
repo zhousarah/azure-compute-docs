@@ -147,7 +147,7 @@ For more information, see the articles for how to enable the Azure diagnostics e
 ## Application-level metrics with App Insights
 To gain more visibility in to the performance of your applications, you can use Application Insights. You install a small instrumentation package in your application that monitors the app and sends telemetry to Azure. You can monitor metrics such as the response times of your application, the page load performance, and the session counts. These application metrics can be used to create autoscale rules at a granular and embedded level as you trigger rules based on actionable insights that may impact the customer experience.
 
-For more information about App Insights, see [What is Application Insights](../azure-monitor/app/app-insights-overview.md).
+For more information about App Insights, see [What is Application Insights](/azure/azure-monitor/app/app-insights-overview).
 
 ## Scheduled autoscale
 You can also create autoscale rules based on schedules. These schedule-based rules allow you to automatically scale the number of VM instances at fixed times. With performance-based rules, there may be a performance impact on the application before the autoscale rules trigger and the new VM instances are provisioned. If you can anticipate such demand, the additional VM instances are provisioned and ready for the additional customer use and application demand.
@@ -170,7 +170,7 @@ You can create autoscale rules that use host-based metrics with one of the follo
 
 For information on how to manage your VM instances, see [Manage Virtual Machine Scale Sets with Azure PowerShell](./virtual-machine-scale-sets-manage-powershell.md).
 
-To learn how to generate alerts when your autoscale rules trigger, see [Use autoscale actions to send email and webhook alert notifications in Azure Monitor](../azure-monitor/autoscale/autoscale-webhook-email.md). You can also [Use audit logs to send email and webhook alert notifications in Azure Monitor](../azure-monitor/alerts/alerts-log-webhook.md).
+To learn how to generate alerts when your autoscale rules trigger, see [Use autoscale actions to send email and webhook alert notifications in Azure Monitor](/azure/azure-monitor/autoscale/autoscale-webhook-email). You can also [Use audit logs to send email and webhook alert notifications in Azure Monitor](/azure/azure-monitor/alerts/alerts-log-webhook).
 
 
 

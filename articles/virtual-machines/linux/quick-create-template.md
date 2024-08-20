@@ -69,7 +69,7 @@ Several resources are defined in the template:
 
 Cost information isn't presented during the virtual machine creation process for ARM templates like it is for the [Azure portal](quick-create-portal.md). If you want to learn more about how cost works for virtual machines, see the [Cost optimization Overview page](../plan-to-manage-costs.md).
 
-The Azure portal is used to deploy the template. In addition to the Azure portal, you can also use the Azure CLI, Azure PowerShell, and REST API. To learn other deployment methods, see [Deploy templates](../../azure-resource-manager/templates/deploy-cli.md).
+The Azure portal is used to deploy the template. In addition to the Azure portal, you can also use the Azure CLI, Azure PowerShell, and REST API. To learn other deployment methods, see [Deploy templates](/azure/azure-resource-manager/templates/deploy-cli).
 
 ## Review deployed resources
 

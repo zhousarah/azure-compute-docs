@@ -14,7 +14,7 @@ ms.reviewer: jushiman
 
 **Applies to:** :heavy_check_mark: Linux VMs :heavy_check_mark: Windows VMs :heavy_check_mark: Flexible scale sets :heavy_check_mark: Uniform scale sets
 
-When you commit to an Azure reserved VM instance you can save money. The reservation discount is applied automatically to the number of running virtual machines that match the reservation scope and attributes. You don't need to assign a reservation to a virtual machine to get the discounts. A reserved instance purchase covers only the compute part of your VM usage. For Windows VMs, the usage meter is split into two separate meters. There's a compute meter, which is same as the Linux meter, and a Windows server license. The charges that you see when you make the purchase are only for the compute costs. Charges don't include Windows software costs. For more information about software costs, see [Software costs not included with Azure Reserved VM Instances](../cost-management-billing/reservations/reserved-instance-windows-software-costs.md).
+When you commit to an Azure reserved VM instance you can save money. The reservation discount is applied automatically to the number of running virtual machines that match the reservation scope and attributes. You don't need to assign a reservation to a virtual machine to get the discounts. A reserved instance purchase covers only the compute part of your VM usage. For Windows VMs, the usage meter is split into two separate meters. There's a compute meter, which is same as the Linux meter, and a Windows server license. The charges that you see when you make the purchase are only for the compute costs. Charges don't include Windows software costs. For more information about software costs, see [Software costs not included with Azure Reserved VM Instances](/azure/cost-management-billing/reservations/reserved-instance-windows-software-costs).
 
 ## Determine the right VM size before you buy
 
@@ -62,7 +62,7 @@ For more information about instance size flexibility, see [Virtual machine size 
 
 Analyze your usage information to help determine which reservations you should purchase. Usage data is available in the usage file and APIs. Use them together to determine which reservation to purchase. Check for VM instances that have high usage on daily basis to determine the quantity of reservations to purchase. Avoid the `Meter` subcategory and `Product` fields in usage data. They don't distinguish between VM sizes that use premium storage. If you use these fields to determine the VM size for reservation purchase, you may buy the wrong size. Then you won't get the reservation discount you expect. Instead, refer to the `AdditionalInfo` field in your usage file or usage API to determine the correct VM size.
 
-Your usage file shows your charges by billing period and daily usage. For information about downloading your usage file, see [View and download your Azure usage and charges](../cost-management-billing/understand/download-azure-daily-usage.md). Then, by using the usage file information, you can [determine what reservation to purchase](../cost-management-billing/reservations/determine-reservation-purchase.md).
+Your usage file shows your charges by billing period and daily usage. For information about downloading your usage file, see [View and download your Azure usage and charges](/azure/cost-management-billing/understand/download-azure-daily-usage). Then, by using the usage file information, you can [determine what reservation to purchase](/azure/cost-management-billing/reservations/determine-reservation-purchase).
 
 ### Purchase restriction considerations
 
@@ -74,13 +74,13 @@ Reserved VM Instances are available for most VM sizes with some exceptions. Rese
 
 - **Preview or Promo VMs** - Any VM-series or size that is in preview or uses promotional meter.
 
-- **Insufficient quota** - A reservation that is scoped to a single subscription must have vCPU quota available in the subscription for the new RI. For example, if the target subscription has a quota limit of 10 vCPUs for D-Series, then you can't buy a reservation for 11 Standard_D1 instances. The quota check for reservations includes the VMs already deployed in the subscription. For example, if the subscription has a quota of 10 vCPUs for D-Series and has two standard_D1 instances deployed, then you can buy a reservation for 10 standard_D1 instances in this subscription. You can [create quote increase request](../azure-portal/supportability/regional-quota-requests.md) to resolve this issue.
+- **Insufficient quota** - A reservation that is scoped to a single subscription must have vCPU quota available in the subscription for the new RI. For example, if the target subscription has a quota limit of 10 vCPUs for D-Series, then you can't buy a reservation for 11 Standard_D1 instances. The quota check for reservations includes the VMs already deployed in the subscription. For example, if the subscription has a quota of 10 vCPUs for D-Series and has two standard_D1 instances deployed, then you can buy a reservation for 10 standard_D1 instances in this subscription. You can [create quote increase request](/azure/azure-portal/supportability/regional-quota-requests) to resolve this issue.
 
 - **Capacity restrictions** - In rare circumstances, Azure limits the purchase of new reservations for subset of VM sizes, because of low capacity in a region.
 
 ## Buy a Reserved VM Instance
 
-You can buy a reserved VM instance in the [Azure portal](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/CreateBlade/referrer/documentation/filters/%7B%22reservedResourceType%22%3A%22VirtualMachines%22%7D). Pay for the reservation [up front or with monthly payments](../cost-management-billing/reservations/prepare-buy-reservation.md).
+You can buy a reserved VM instance in the [Azure portal](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/CreateBlade/referrer/documentation/filters/%7B%22reservedResourceType%22%3A%22VirtualMachines%22%7D). Pay for the reservation [up front or with monthly payments](/azure/cost-management-billing/reservations/prepare-buy-reservation).
 These requirements apply to buying a reserved VM instance:
 
 - To buy a reservation, you must have owner role or reservation purchaser role on an Azure subscription.
@@ -113,7 +113,7 @@ If you have an EA agreement, you can use the **Add more option** to quickly add 
 
 Your usage data has an effective price of zero for the usage that gets a reservation discount. You can see which VM instance received the reservation discount for each reservation.
 
-For more information about how reservation discounts appear in usage data, see [Understand Azure reservation usage for your Enterprise enrollment](../cost-management-billing/reservations/understand-reserved-instance-usage-ea.md) if you are an EA customer. If you have an individual subscription, see [Understand Azure reservation usage for your Pay-As-You-Go subscription](../cost-management-billing/reservations/understand-reserved-instance-usage.md).
+For more information about how reservation discounts appear in usage data, see [Understand Azure reservation usage for your Enterprise enrollment](/azure/cost-management-billing/reservations/understand-reserved-instance-usage-ea) if you are an EA customer. If you have an individual subscription, see [Understand Azure reservation usage for your Pay-As-You-Go subscription](/azure/cost-management-billing/reservations/understand-reserved-instance-usage).
 
 ## Change a reservation after purchase
 
@@ -136,7 +136,7 @@ However, you can *exchange* a reservation if you want to make changes.
 
 ## Cancel, exchange, or refund reservations
 
-You can cancel, exchange, or refund reservations with certain limitations. For more information, see [Self-service exchanges and refunds for Azure Reservations](../cost-management-billing/reservations/exchange-and-refund-azure-reservations.md).
+You can cancel, exchange, or refund reservations with certain limitations. For more information, see [Self-service exchanges and refunds for Azure Reservations](/azure/cost-management-billing/reservations/exchange-and-refund-azure-reservations).
 
 ## Need help? Contact us.
 
@@ -144,12 +144,12 @@ If you have questions or need help, [create a support request](https://portal.az
 
 ## Next steps
 
-- To learn how to manage a reservation, see [Manage Azure Reservations](../cost-management-billing/reservations/manage-reserved-vm-instance.md).
+- To learn how to manage a reservation, see [Manage Azure Reservations](/azure/cost-management-billing/reservations/manage-reserved-vm-instance).
 - To learn more about Azure Reservations, see the following articles:
-    - [What are Azure Reservations?](../cost-management-billing/reservations/save-compute-costs-reservations.md)
-    - [Manage Reservations in Azure](../cost-management-billing/reservations/manage-reserved-vm-instance.md)
-    - [Understand how the reservation discount is applied](../cost-management-billing/manage/understand-vm-reservation-charges.md)
-    - [Understand reservation usage for a subscription with pay-as-you-go rates](../cost-management-billing/reservations/understand-reserved-instance-usage.md)
-    - [Understand reservation usage for your Enterprise enrollment](../cost-management-billing/reservations/understand-reserved-instance-usage-ea.md)
-    - [Windows software costs not included with reservations](../cost-management-billing/reservations/reserved-instance-windows-software-costs.md)
+    - [What are Azure Reservations?](/azure/cost-management-billing/reservations/save-compute-costs-reservations)
+    - [Manage Reservations in Azure](/azure/cost-management-billing/reservations/manage-reserved-vm-instance)
+    - [Understand how the reservation discount is applied](/azure/cost-management-billing/manage/understand-vm-reservation-charges)
+    - [Understand reservation usage for a subscription with pay-as-you-go rates](/azure/cost-management-billing/reservations/understand-reserved-instance-usage)
+    - [Understand reservation usage for your Enterprise enrollment](/azure/cost-management-billing/reservations/understand-reserved-instance-usage-ea)
+    - [Windows software costs not included with reservations](/azure/cost-management-billing/reservations/reserved-instance-windows-software-costs)
     - [Azure Reservations in Partner Center Cloud Solution Provider (CSP) program](/partner-center/azure-reservations)

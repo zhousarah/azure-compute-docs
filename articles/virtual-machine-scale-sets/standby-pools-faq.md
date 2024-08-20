@@ -32,7 +32,7 @@ Standby pools are only supported on Virtual Machine Scale Sets with Flexible Orc
 Using a standby pool with deallocated instances doesn't guarantee capacity. When starting the deallocated virtual machine, there needs to be enough capacity in the region your instances are deployed in to start the machines. If using running virtual machines in your pool, those virtual machines are already allocated and consuming compute capacity. When the virtual machine moves from the standby pool to the Virtual Machine Scale Set, it doesn't release the compute resources and doesn't require any additional allocation of resources. 
 
 ### How long can my standby pool name be? 
-A standby pool can be anywhere between 3 and 24 characters. For more information, see [Resource naming restrictions for Azure resources](..//azure-resource-manager/management/resource-name-rules.md)
+A standby pool can be anywhere between 3 and 24 characters. For more information, see [Resource naming restrictions for Azure resources](/azure/azure-resource-manager/management/resource-name-rules)
 
 ### Can I use standby pools for Virtual Machine Scale Sets if I'm already using Azure autoscale? 
 Attaching a standby pool to a Virtual Machine Scale Set with Azure autoscale enabled isn't supported.  

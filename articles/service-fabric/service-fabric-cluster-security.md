@@ -148,6 +148,6 @@ By default the cluster certificate has admin client privileges. These additional
 [Node-to-Node]: ./media/service-fabric-cluster-security/node-to-node.png
 [Client-to-Node]: ./media/service-fabric-cluster-security/client-to-node.png
 
-[active-directory-howto-tenant]:../active-directory/develop/quickstart-create-new-tenant.md
+[active-directory-howto-tenant]:/azure/active-directory/develop/quickstart-create-new-tenant
 [service-fabric-visualizing-your-cluster]: service-fabric-visualizing-your-cluster.md
 [service-fabric-manage-application-in-visual-studio]: service-fabric-manage-application-in-visual-studio.md

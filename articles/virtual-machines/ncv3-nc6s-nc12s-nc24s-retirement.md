@@ -12,7 +12,7 @@ ms.subservice: sizes
 
 On September 30, 2025, Microsoft Azure will retire the Standard_NC6s_v3, Standard_NC12s_v3 and Standard_NC24s_v3 virtual machines (VMs) in NCv3-series virtual machines (VMs). To avoid any disruption to your service, we recommend that you change the VM sizing for your workloads from the current NCv3-series VMs to the newer VM series in the same NC product line.
 
-Microsoft is recommending, the Azure [NC A100 v4-series](./nc-a100-v4-series.md) VMs, which offer greater GPU memory bandwidth per GPU, improved [Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md) capabilities, larger and faster local solid state drives. Overall the NC A100 v4-series delivers [better cost performance](https://techcommunity.microsoft.com/t5/azure-high-performance-computing/a-quick-start-to-benchmarking-in-azure-nvidia-deep-learning/ba-p/3563884) across midrange AI training and inference workloads. 
+Microsoft is recommending, the Azure [NC A100 v4-series](./nc-a100-v4-series.md) VMs, which offer greater GPU memory bandwidth per GPU, improved [Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli) capabilities, larger and faster local solid state drives. Overall the NC A100 v4-series delivers [better cost performance](https://techcommunity.microsoft.com/t5/azure-high-performance-computing/a-quick-start-to-benchmarking-in-azure-nvidia-deep-learning/ba-p/3563884) across midrange AI training and inference workloads. 
 
 ## How does the retirement of the NC6s_v3, NC12s_v3, NC24s_v3 virtual machine sizes in NCv3-series affect me? 
 
@@ -38,7 +38,7 @@ The [NCads H100 v5-Series](./ncads-h100-v5.md) is another SKU in the same produc
 ## Steps to change VM size 
 
 1. Choose a series and size. Refer to the above tables for Microsoft’s recommendation. You can also file a support request if more assistance is needed.
-2. [Request quota for the new target VM](../azure-portal/supportability/per-vm-quota-requests.md)).
+2. [Request quota for the new target VM](/azure/azure-portal/supportability/per-vm-quota-requests)).
 3. You can [resize the virtual machine](resize-vm.md). 
 
    

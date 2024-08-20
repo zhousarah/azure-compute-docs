@@ -90,7 +90,7 @@ Azure then starts the migration of metadata from the classic deployment model to
 After the prepare operation is complete, you have the option of visualizing the resources in both the classic deployment model and Resource Manager. For every cloud service in the classic deployment model, the Azure platform creates a resource group name that has the pattern `cloud-service-name>-Migrated`.
 
 > [!NOTE]
-> It is not possible to select the name of a resource group created for migrated resources (that is, "-Migrated"). After migration is complete, however, you can use the move feature of Azure Resource Manager to move resources to any resource group you want. For more information, see [Move resources to new resource group or subscription](../azure-resource-manager/management/move-resource-group-and-subscription.md).
+> It is not possible to select the name of a resource group created for migrated resources (that is, "-Migrated"). After migration is complete, however, you can use the move feature of Azure Resource Manager to move resources to any resource group you want. For more information, see [Move resources to new resource group or subscription](/azure/azure-resource-manager/management/move-resource-group-and-subscription).
 
 The following two screenshots show the result after a successful prepare operation. The first one shows a resource group that contains the original cloud service. The second one shows the new "-Migrated" resource group that contains the equivalent Azure Resource Manager resources.
 
@@ -183,8 +183,8 @@ As part of migrating your resources from the classic deployment model to the Res
 * [Planning for migration of IaaS resources from classic to Azure Resource Manager](migration-classic-resource-manager-plan.md)
 * [Use PowerShell to migrate IaaS resources from classic to Azure Resource Manager](migration-classic-resource-manager-ps.md)
 * [Use CLI to migrate IaaS resources from classic to Azure Resource Manager](migration-classic-resource-manager-cli.md)
-* [VPN Gateway classic to Resource Manager migration](../vpn-gateway/vpn-gateway-classic-resource-manager-migration.md)
-* [Migrate ExpressRoute circuits and associated virtual networks from the classic to the Resource Manager deployment model](../expressroute/expressroute-migration-classic-resource-manager.md)
+* [VPN Gateway classic to Resource Manager migration](/azure/vpn-gateway/vpn-gateway-classic-resource-manager-migration)
+* [Migrate ExpressRoute circuits and associated virtual networks from the classic to the Resource Manager deployment model](/azure/expressroute/expressroute-migration-classic-resource-manager)
 * [Community tools for assisting with migration of IaaS resources from classic to Azure Resource Manager](migration-classic-resource-manager-community-tools.md)
 * [Review most common migration errors](migration-classic-resource-manager-errors.md)
 * [Review the most frequently asked questions about migrating IaaS resources from classic to Azure Resource Manager](migration-classic-resource-manager-faq.yml)

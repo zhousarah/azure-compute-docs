@@ -30,7 +30,7 @@ This article walks you through how to deploy an NGINX web server, Azure MySQL Fl
 > * Install WordPress
 This setup is for quick tests or proof of concept. For more on the LEMP stack, including recommendations for a production environment, see the [Ubuntu documentation](https://help.ubuntu.com/community/ApacheMySQLPHP).
 
-This tutorial uses the CLI within the [Azure Cloud Shell](../../cloud-shell/overview.md), which is constantly updated to the latest version. To open the Cloud Shell, select **Try it** from the top of any code block.
+This tutorial uses the CLI within the [Azure Cloud Shell](/azure/cloud-shell/overview), which is constantly updated to the latest version. To open the Cloud Shell, select **Try it** from the top of any code block.
 
 If you choose to install and use the CLI locally, this tutorial requires that you're running the Azure CLI version 2.0.30 or later. Find the version by running the `az --version` command. If you need to install or upgrade, see [Install Azure CLI]( /cli/azure/install-azure-cli).
 
@@ -158,7 +158,7 @@ Results:
 Use [az network public-ip create](/cli/azure/network/public-ip#az-network-public-ip-create) to create a standard zone-redundant public IPv4 address named `MY_PUBLIC_IP_NAME` in `$MY_RESOURCE_GROUP_NAME`.
 
 >[!NOTE]
->The below options for zones are only valid selections in regions with [Availability Zones](../../reliability/availability-zones-service-support.md).
+>The below options for zones are only valid selections in regions with [Availability Zones](/azure/reliability/availability-zones-service-support).
 ```bash
 az network public-ip create \
     --name $MY_PUBLIC_IP_NAME \
@@ -209,7 +209,7 @@ Results:
 
 ## Create an Azure Network Security Group
 
-Security rules in network security groups enable you to filter the type of network traffic that can flow in and out of virtual network subnets and network interfaces. To learn more about network security groups, see [Network security group overview](../../virtual-network/network-security-groups-overview.md).
+Security rules in network security groups enable you to filter the type of network traffic that can flow in and out of virtual network subnets and network interfaces. To learn more about network security groups, see [Network security group overview](/azure/virtual-network/network-security-groups-overview).
 
 ```bash
 az network nsg create \

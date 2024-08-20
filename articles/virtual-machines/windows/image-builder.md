@@ -85,7 +85,7 @@ az group create -n $imageResourceGroup -l $location
 
 ## Create a user-assigned identity and set permissions on the resource group
 
-VM Image Builder uses the provided [user-identity](../../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md#user-assigned-managed-identity) to inject the image into the resource group. In this example, you create an Azure role definition with specific permissions for distributing the image. The role definition is then assigned to the user identity.
+VM Image Builder uses the provided [user-identity](/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm#user-assigned-managed-identity) to inject the image into the resource group. In this example, you create an Azure role definition with specific permissions for distributing the image. The role definition is then assigned to the user identity.
 
 ## Create a user-assigned managed identity and grant permissions
 

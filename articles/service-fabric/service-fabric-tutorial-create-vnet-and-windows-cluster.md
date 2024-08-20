@@ -12,7 +12,7 @@ ms.date: 07/14/2022
 
 # Tutorial: Deploy a Service Fabric cluster running Windows into an Azure virtual network
 
-This tutorial is part one of a series. You learn how to deploy an Azure Service Fabric cluster running Windows into an [Azure virtual network](../virtual-network/virtual-networks-overview.md) and [network security group](../virtual-network/virtual-network-vnet-plan-design-arm.md) by using PowerShell and a template. When you're finished, you have a cluster running in the cloud to which you can deploy applications. To create a Linux cluster that uses the Azure CLI, see [Create a secure Linux cluster on Azure](service-fabric-tutorial-create-vnet-and-linux-cluster.md).
+This tutorial is part one of a series. You learn how to deploy an Azure Service Fabric cluster running Windows into an [Azure virtual network](/azure/virtual-network/virtual-networks-overview) and [network security group](/azure/virtual-network/virtual-network-vnet-plan-design-arm) by using PowerShell and a template. When you're finished, you have a cluster running in the cloud to which you can deploy applications. To create a Linux cluster that uses the Azure CLI, see [Create a secure Linux cluster on Azure](service-fabric-tutorial-create-vnet-and-linux-cluster.md).
 
 This tutorial describes a production scenario. If you want to create a smaller cluster for testing purposes, see [Create a test cluster](./scripts/service-fabric-powershell-create-secure-cluster-cert.md).
 
@@ -166,7 +166,7 @@ A Service Fabric cluster offers several entry points to its management functiona
 > [!NOTE]
 > You must complete the following steps before you create the cluster. Because the scripts expect cluster names and endpoints, the values should be planned and not values that you have already created.
 
-In this article, we assume that you've already created a tenant. If you haven't, start by reading [How to get a Microsoft Entra tenant](../active-directory/develop/quickstart-create-new-tenant.md).
+In this article, we assume that you've already created a tenant. If you haven't, start by reading [How to get a Microsoft Entra tenant](/azure/active-directory/develop/quickstart-create-new-tenant).
 
 To simplify steps involved in configuring Microsoft Entra ID with a Service Fabric cluster, we've created a set of Windows PowerShell scripts. [Download the scripts](https://github.com/Azure-Samples/service-fabric-aad-helpers) to your computer.
 

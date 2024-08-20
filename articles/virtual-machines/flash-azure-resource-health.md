@@ -22,7 +22,7 @@ For documentation specific to the other solutions offered by Flash, choose from 
 
 ## Azure Resource Health
 
-It offers immediate and user-friendly health checks for individual resources through the portal. Customers can quickly access the [resource health](../service-health/resource-health-overview.md) blade on the portal and also review a 30-day historical record of health checks, making it an excellent tool for fast and straightforward troubleshooting. The existing Azure Resource Health feature helps you to diagnose and get support for service problems that affect your Azure resources. It reports on the current and past health of your resources, showing any time ranges that each of your resources have been unavailable.
+It offers immediate and user-friendly health checks for individual resources through the portal. Customers can quickly access the [resource health](/azure/service-health/resource-health-overview) blade on the portal and also review a 30-day historical record of health checks, making it an excellent tool for fast and straightforward troubleshooting. The existing Azure Resource Health feature helps you to diagnose and get support for service problems that affect your Azure resources. It reports on the current and past health of your resources, showing any time ranges that each of your resources have been unavailable.
 
 But we know that our customers and partners are interested in understanding what causes underlying technical issues, and in improving how they can receive communications about any issues—to feed into monitoring processes, to explain hiccups to other stakeholders, and ultimately to inform business decisions.
 

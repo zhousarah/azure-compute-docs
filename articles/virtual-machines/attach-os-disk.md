@@ -84,7 +84,7 @@ $osDisk = Get-AzDisk `
 ```
 You can now attach this disk as the OS disk to a new VM.
 
-Create the [virtual network](../virtual-network/virtual-networks-overview.md) and subnet for the VM.
+Create the [virtual network](/azure/virtual-network/virtual-networks-overview) and subnet for the VM.
 
 1. Create the subnet. This example creates a subnet named *mySubNet*, in the resource group *myDestinationResourceGroup*, and sets the subnet address prefix to *10.0.0.0/24*.
    
@@ -125,9 +125,9 @@ $nsg = New-AzNetworkSecurityGroup `
 	
 ```
 
-For more information about endpoints and NSG rules, see [Filter network traffic with a network security group](../virtual-network/tutorial-filter-network-traffic-powershell.md).
+For more information about endpoints and NSG rules, see [Filter network traffic with a network security group](/azure/virtual-network/tutorial-filter-network-traffic-powershell).
 
-To enable communication with the virtual machine in the virtual network, you'll need a [public IP address](../virtual-network/ip-services/public-ip-addresses.md) and a network interface.
+To enable communication with the virtual machine in the virtual network, you'll need a [public IP address](/azure/virtual-network/ip-services/public-ip-addresses) and a network interface.
 
 1. Create the public IP. In this example, the public IP address name is set to *myIP*.
    

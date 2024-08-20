@@ -15,7 +15,7 @@ The Reliable Actors runtime emits [EventSource](/dotnet/api/system.diagnostics.t
 ## EventSource events
 The EventSource provider name for the Reliable Actors runtime is "Microsoft-ServiceFabric-Actors". Events from this event source appear in the [Diagnostics Events](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md#view-service-fabric-system-events-in-visual-studio) window when the actor application is being [debugged in Visual Studio](service-fabric-debugging-your-application.md).
 
-Examples of tools and technologies that help in collecting and/or viewing EventSource events are [PerfView](https://github.com/Microsoft/perfview/releases), [Azure Diagnostics](../cloud-services/cloud-services-dotnet-diagnostics.md), [Semantic Logging](/previous-versions/msp-n-p/dn774980(v=pandp.10)), and the [Microsoft TraceEvent Library](https://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent).
+Examples of tools and technologies that help in collecting and/or viewing EventSource events are [PerfView](https://github.com/Microsoft/perfview/releases), [Azure Diagnostics](/azure/cloud-services/cloud-services-dotnet-diagnostics), [Semantic Logging](/previous-versions/msp-n-p/dn774980(v=pandp.10)), and the [Microsoft TraceEvent Library](https://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent).
 
 ### Keywords
 All events that belong to the Reliable Actors EventSource are associated with one or more keywords. This enables filtering of events that are collected. The following keyword bits are defined.
@@ -37,7 +37,7 @@ The Reliable Actors runtime defines the following performance counter categories
 
 Each of the above categories has one or more counters.
 
-The [Windows Performance Monitor](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249(v=ws.11)) application that is available by default in the Windows operating system can be used to collect and view performance counter data. [Azure Diagnostics](../cloud-services/cloud-services-dotnet-diagnostics.md) is another option for collecting performance counter data and uploading it to Azure tables.
+The [Windows Performance Monitor](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249(v=ws.11)) application that is available by default in the Windows operating system can be used to collect and view performance counter data. [Azure Diagnostics](/azure/cloud-services/cloud-services-dotnet-diagnostics) is another option for collecting performance counter data and uploading it to Azure tables.
 
 ### Performance counter instance names
 A cluster that has a large number of actor services or actor service partitions will have a large number of actor performance counter instances. The performance counter instance names can help in identifying the specific [partition](service-fabric-reliable-actors-platform.md#service-fabric-partition-concepts-for-actors) and actor method (if applicable) that the performance counter instance is associated with.

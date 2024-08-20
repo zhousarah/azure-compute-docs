@@ -34,7 +34,7 @@ Maximize your Virtual Machine's performance with Accelerated Networking, by decl
   }
 ]
 ```
-Service Fabric cluster can be provisioned on [Linux with Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md), and [Windows with Accelerated Networking](../virtual-network/create-vm-accelerated-networking-powershell.md).
+Service Fabric cluster can be provisioned on [Linux with Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli), and [Windows with Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-powershell).
 
 Accelerated Networking is supported for Azure Virtual Machine Series SKUs: D/DSv2, D/DSv3, E/ESv3, F/FS, FSv2, and Ms/Mms. Accelerated Networking was tested successfully using the Standard_DS8_v3 SKU on 01/23/2019 for a Service Fabric Windows Cluster, and using Standard_DS12_v2 on 01/29/2019 for a Service Fabric Linux Cluster. Note that Accelerated Networking requires at least 4 vCPUs. 
 
@@ -42,7 +42,7 @@ To enable Accelerated Networking on an existing Service Fabric cluster, you need
 1. Provision a NodeType with Accelerated Networking enabled
 2. Migrate your services and their state to the provisioned NodeType with Accelerated Networking enabled
 
-Scaling out infrastructure is required to enable Accelerated Networking on an existing cluster, because enabling Accelerated Networking in place would cause downtime, as it requires all virtual machines in an availability set be [stop and deallocate before enabling Accelerated networking on any existing NIC](../virtual-network/create-vm-accelerated-networking-cli.md#enable-accelerated-networking-on-existing-vms).
+Scaling out infrastructure is required to enable Accelerated Networking on an existing cluster, because enabling Accelerated Networking in place would cause downtime, as it requires all virtual machines in an availability set be [stop and deallocate before enabling Accelerated networking on any existing NIC](/azure/virtual-network/create-vm-accelerated-networking-cli#enable-accelerated-networking-on-existing-vms).
 
 ## Cluster Networking
 
@@ -108,14 +108,14 @@ More information about the outbound security rules:
 
 * **Download Binaries**. The upgrade service is using the address download.microsoft.com to get the binaries, this relationship is needed for setup, re-image and runtime upgrades. In the scenario of an "internal only" load balancer, an [additional external load balancer](service-fabric-patterns-networking.md#internal-and-external-load-balancer) must be added with a rule allowing outbound traffic for port 443. Optionally, this port can be blocked after a successful setup, but in this case the upgrade package must be distributed to the nodes or the port has to be opened for the short period of time, afterwards a manual upgrade is needed.
 
-Use Azure Firewall with [NSG flow log](../network-watcher/network-watcher-nsg-flow-logging-overview.md) and [traffic analytics](../network-watcher/traffic-analytics.md) to track connectivity issues. The ARM template [Service Fabric with NSG](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Windows-1-NodeTypes-Secure-NSG) is a good example to start. 
+Use Azure Firewall with [NSG flow log](/azure/network-watcher/network-watcher-nsg-flow-logging-overview) and [traffic analytics](/azure/network-watcher/traffic-analytics) to track connectivity issues. The ARM template [Service Fabric with NSG](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Windows-1-NodeTypes-Secure-NSG) is a good example to start. 
 
 > [!NOTE]
-> The default network security rules should not be overwritten as they ensure the communication between the nodes. [Network Security Group - How it works](../virtual-network/network-security-group-how-it-works.md). Another example, outbound connectivity on port 80 is needed to do the Certificate Revocation List check.
+> The default network security rules should not be overwritten as they ensure the communication between the nodes. [Network Security Group - How it works](/azure/virtual-network/network-security-group-how-it-works). Another example, outbound connectivity on port 80 is needed to do the Certificate Revocation List check.
 
 ### Common scenarios needing additional rules
 
-All additional scenarios can be covered with [Azure Service Tags](../virtual-network/service-tags-overview.md).
+All additional scenarios can be covered with [Azure Service Tags](/azure/virtual-network/service-tags-overview).
 
 #### Azure DevOps
 

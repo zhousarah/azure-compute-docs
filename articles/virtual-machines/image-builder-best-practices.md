@@ -16,8 +16,8 @@ ms.custom: references_regions
 
 This article describes best practices to be followed while using Azure VM Image Builder (AIB).
 
-- To prevent image templates from being accidentally deleted, use resource locks at the image template resource level. For more information, see [Protect your Azure resources with a lock](../azure-resource-manager/management/lock-resources.md).
-- Make sure your image templates are set up for disaster recovery by following [reliability recommendation for AIB](../reliability/reliability-image-builder.md?toc=/azure/virtual-machines/toc.json&bc=/azure/virtual-machines/breadcrumb/toc.json).
+- To prevent image templates from being accidentally deleted, use resource locks at the image template resource level. For more information, see [Protect your Azure resources with a lock](/azure/azure-resource-manager/management/lock-resources).
+- Make sure your image templates are set up for disaster recovery by following [reliability recommendation for AIB](/azure/reliability/reliability-image-builder?toc=/azure/virtual-machines/toc.json&bc=/azure/virtual-machines/breadcrumb/toc.json).
 - Set up AIB [triggers](image-builder-triggers-how-to.md) to automatically rebuild your images and keep them updated.
 - Enable [VM Boot Optimization](vm-boot-optimization.md) in AIB to improve the create time for your VMs.
 - Specify your own Build VM and ACI subnets for a tighter control over deployment of networking related resource by AIB in your subscription. Specifying these subnets also leads to faster image build times. See [template reference](./linux/image-builder-json.md#vnetconfig-optional) to learn more about specifying these options.

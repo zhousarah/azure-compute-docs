@@ -153,7 +153,7 @@ sed -i -e "s/<vnetRgName>/$vnetRgName/g" aibRoleNetworking.json
 
 ## Set permissions on the resource group
 
-VM Image Builder uses the [user identity](../../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md#user-assigned-managed-identity) provided to inject the image into Azure Compute Gallery. In this example, you create an Azure role definition that can distribute the image to the gallery. The role definition is then assigned to the user identity.
+VM Image Builder uses the [user identity](/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm#user-assigned-managed-identity) provided to inject the image into Azure Compute Gallery. In this example, you create an Azure role definition that can distribute the image to the gallery. The role definition is then assigned to the user identity.
 
 ```azurecli
 # create user assigned identity for image builder

@@ -32,7 +32,7 @@ ms.reviewer: mattmcinnes, tomcassidy
 - [Live Migration](../../maintenance-and-updates.md): Supported 
 - [Memory Preserving Updates](../../maintenance-and-updates.md): Supported 
 - [VM Generation Support](../../generation-2.md): Generation 2 
-- [Accelerated Networking](../../../virtual-network/create-vm-accelerated-networking-cli.md): Supported 
+- [Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported 
 - [Ephemeral OS Disks](../../ephemeral-os-disks.md): Supported
 - [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Not supported
 
@@ -130,16 +130,16 @@ Network interface info for each size
 | Standard_D96pds_v6 | 8 | 60000 |
 
 #### Networking resources
-- [Virtual networks and virtual machines in Azure](../../../virtual-network/network-overview.md)
-- [Virtual machine network bandwidth](../../../virtual-network/virtual-machine-network-throughput.md)
+- [Virtual networks and virtual machines in Azure](/azure/virtual-network/network-overview)
+- [Virtual machine network bandwidth](/azure/virtual-network/virtual-machine-network-throughput)
 
 > [!NOTE]
 > Accelerated networking is required and turned on by default on all Dpdsv6 machines.
 
 #### Table definitions
-- Expected network bandwidth is the maximum aggregated bandwidth allocated per VM type across all NICs, for all destinations. For more information, see [Virtual machine network bandwidth](../../../virtual-network/virtual-machine-network-throughput.md)
-- Upper limits aren't guaranteed. Limits offer guidance for selecting the right VM type for the intended application. Actual network performance will depend on several factors including network congestion, application loads, and network settings. For information on optimizing network throughput, see [Optimize network throughput for Azure virtual machines](../../../virtual-network/virtual-network-optimize-network-bandwidth.md). 
--  To achieve the expected network performance on Linux or Windows, you may need to select a specific version or optimize your VM. For more information, see [Bandwidth/Throughput testing (NTTTCP)](../../../virtual-network/virtual-network-bandwidth-testing.md).
+- Expected network bandwidth is the maximum aggregated bandwidth allocated per VM type across all NICs, for all destinations. For more information, see [Virtual machine network bandwidth](/azure/virtual-network/virtual-machine-network-throughput)
+- Upper limits aren't guaranteed. Limits offer guidance for selecting the right VM type for the intended application. Actual network performance will depend on several factors including network congestion, application loads, and network settings. For information on optimizing network throughput, see [Optimize network throughput for Azure virtual machines](/azure/virtual-network/virtual-network-optimize-network-bandwidth). 
+-  To achieve the expected network performance on Linux or Windows, you may need to select a specific version or optimize your VM. For more information, see [Bandwidth/Throughput testing (NTTTCP)](/azure/virtual-network/virtual-network-bandwidth-testing).
 
 ### [Accelerators](#tab/sizeaccelerators)
 

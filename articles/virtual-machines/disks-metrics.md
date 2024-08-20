@@ -145,6 +145,6 @@ This metric tells us the data disks attached on LUN 3 and 2 are using around 85%
 
 ## Next steps
 
-- [Azure Monitor Metrics overview](../azure-monitor/essentials/data-platform-metrics.md)
-- [Metrics aggregation explained](../azure-monitor/essentials/metrics-aggregation-explained.md)
-- [Create, view, and manage metric alerts using Azure Monitor](../azure-monitor/alerts/alerts-metric.md)
+- [Azure Monitor Metrics overview](/azure/azure-monitor/essentials/data-platform-metrics)
+- [Metrics aggregation explained](/azure/azure-monitor/essentials/metrics-aggregation-explained)
+- [Create, view, and manage metric alerts using Azure Monitor](/azure/azure-monitor/alerts/alerts-metric)

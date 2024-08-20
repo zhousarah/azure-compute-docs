@@ -17,13 +17,13 @@ ms.date: 06/15/2022
 Azure Monitor Logs provides monitoring, alerting, and alert remediation capabilities across cloud and on-premises assets. The Log Analytics virtual machine extension for Linux is published and supported by Microsoft. The extension installs the Log Analytics agent on Azure virtual machines, and enrolls virtual machines into an existing Log Analytics workspace. This document details the supported platforms, configurations, and deployment options for the Log Analytics virtual machine extension for Linux.
 
 > [!NOTE]
-> Azure Arc-enabled servers enables you to deploy, remove, and update the Log Analytics agent VM extension to non-Azure Windows and Linux machines, simplifying the management of your hybrid machine through their lifecycle. For more information, see [VM extension management with Azure Arc-enabled servers](../../azure-arc/servers/manage-vm-extensions.md).
+> Azure Arc-enabled servers enables you to deploy, remove, and update the Log Analytics agent VM extension to non-Azure Windows and Linux machines, simplifying the management of your hybrid machine through their lifecycle. For more information, see [VM extension management with Azure Arc-enabled servers](/azure/azure-arc/servers/manage-vm-extensions).
 
 ## Prerequisites
 
 ### Operating system
 
-For details about the supported Linux distributions, refer to the [Overview of Azure Monitor agents](../../azure-monitor/agents/agents-overview.md#supported-operating-systems) article.
+For details about the supported Linux distributions, refer to the [Overview of Azure Monitor agents](/azure/azure-monitor/agents/agents-overview#supported-operating-systems) article.
 
 ### Agent and VM Extension version
 
@@ -77,7 +77,7 @@ The Log Analytics agent extension for Linux requires that the target virtual mac
 
 ## Extension schema
 
-The following JSON shows the schema for the Log Analytics agent extension. The extension requires the workspace ID and workspace key from the target Log Analytics workspace; these values can be [found in your Log Analytics workspace](../../azure-monitor/vm/monitor-virtual-machine.md) in the Azure portal. Because the workspace key should be treated as sensitive data, it should be stored in a protected setting configuration. Azure VM extension protected setting data is encrypted, and only decrypted on the target virtual machine. Note that **workspaceId** and **workspaceKey** are case-sensitive.
+The following JSON shows the schema for the Log Analytics agent extension. The extension requires the workspace ID and workspace key from the target Log Analytics workspace; these values can be [found in your Log Analytics workspace](/azure/azure-monitor/vm/monitor-virtual-machine) in the Azure portal. Because the workspace key should be treated as sensitive data, it should be stored in a protected setting configuration. Azure VM extension protected setting data is encrypted, and only decrypted on the target virtual machine. Note that **workspaceId** and **workspaceKey** are case-sensitive.
 > [!NOTE]
 > Because the [Container Monitoring solution](/previous-versions/azure/azure-monitor/containers/containers) is being retired, the following documentation uses the optional setting "skipDockerProviderInstall": true.
 
@@ -124,11 +124,11 @@ The following JSON shows the schema for the Log Analytics agent extension. The e
 ## Template deployment
 
 >[!NOTE]
->Certain components of the Log Analytics VM extension are also shipped in the [Diagnostics VM extension](./diagnostics-linux.md). Due to this architecture, conflicts can arise if both extensions are instantiated in the same ARM template. To avoid these install-time conflicts, use the [`dependsOn` directive](../../azure-resource-manager/templates/resource-dependency.md#dependson) to ensure the extensions are installed sequentially. The extensions can be installed in either order.
+>Certain components of the Log Analytics VM extension are also shipped in the [Diagnostics VM extension](./diagnostics-linux.md). Due to this architecture, conflicts can arise if both extensions are instantiated in the same ARM template. To avoid these install-time conflicts, use the [`dependsOn` directive](/azure/azure-resource-manager/templates/resource-dependency#dependson) to ensure the extensions are installed sequentially. The extensions can be installed in either order.
 
 Azure VM extensions can be deployed with Azure Resource Manager templates. Templates are ideal when deploying one or more virtual machines that require post deployment configuration such as onboarding to Azure Monitor Logs. A sample Resource Manager template that includes the Log Analytics agent VM extension can be found on the [Azure Quickstart Gallery](https://github.com/Azure/azure-quickstart-templates/tree/master/demos/oms-extension-ubuntu-vm). 
 
-The JSON configuration for a virtual machine extension can be nested inside the virtual machine resource, or placed at the root or top level of a Resource Manager JSON template. The placement of the JSON configuration affects the value of the resource name and type. For more information, see [Set name and type for child resources](../../azure-resource-manager/templates/child-resource-name-type.md). 
+The JSON configuration for a virtual machine extension can be nested inside the virtual machine resource, or placed at the root or top level of a Resource Manager JSON template. The placement of the JSON configuration affects the value of the resource name and type. For more information, see [Set name and type for child resources](/azure/azure-resource-manager/templates/child-resource-name-type). 
 
 The following example assumes the VM extension is nested inside the virtual machine resource. When nesting the extension resource, the JSON is placed in the `"resources": []` object of the virtual machine.
 
@@ -258,7 +258,7 @@ Get-AzVMExtension -ResourceGroupName my_resource_group  -VMName my_vm_name -Name
 | 53 | This extension failed due to missing or wrong configuration parameters | Check the output and logs for more information about what went wrong. Additionally, check the correctness of the workspace ID, and verify that the machine is connected to the internet. |
 | 55 | Cannot connect to the Azure Monitor service or required packages missing or dpkg package manager is locked| Check that the system either has internet access, or that a valid HTTP proxy has been provided. Additionally, check the correctness of the workspace ID, and verify that curl and tar utilities are installed. |
 
-Additional troubleshooting information can be found on the [Log Analytics-Agent-for-Linux Troubleshooting Guide](../../azure-monitor/visualize/vmext-troubleshoot.md).
+Additional troubleshooting information can be found on the [Log Analytics-Agent-for-Linux Troubleshooting Guide](/azure/azure-monitor/visualize/vmext-troubleshoot).
 
 ### Support
 

@@ -329,7 +329,7 @@ To learn more about a specific size family or series, click the tab for that fam
 - For information about pricing of the various sizes, see the pricing pages for [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/#Linux) or [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/Windows/#Windows).
 - Want to change the size of your VM? See [Change the size of a VM](./resize-vm.md).
 - For availability of VM sizes in Azure regions, see [Products available by region](https://azure.microsoft.com/regions/services/).
-- To see general limits on Azure VMs, see [Azure subscription and service limits, quotas, and constraints](../../azure-resource-manager/management/azure-subscription-service-limits.md).
+- To see general limits on Azure VMs, see [Azure subscription and service limits, quotas, and constraints](/azure/azure-resource-manager/management/azure-subscription-service-limits).
 - For more information on how Azure names its VMs, see [Azure virtual machine sizes naming conventions](../vm-naming-conventions.md).
 
 ## REST API

@@ -18,7 +18,7 @@ For clusters running on Azure, Microsoft Entra ID is recommended to secure acces
 
 On Linux, you must complete the following steps before you create the cluster. On Windows, you also have the option to [configure Microsoft Entra authentication for an existing cluster](https://github.com/Azure/Service-Fabric-Troubleshooting-Guides/blob/master/Security/Configure%20Azure%20Active%20Directory%20Authentication%20for%20Existing%20Cluster.md).
 
-In this article, the term "application" refers to [Microsoft Entra applications](../active-directory/develop/developer-glossary.md#client-application), not Service Fabric applications; the distinction is made where necessary. Microsoft Entra ID enables organizations (known as tenants) to manage user access to applications.
+In this article, the term "application" refers to [Microsoft Entra applications](/azure/active-directory/develop/developer-glossary#client-application), not Service Fabric applications; the distinction is made where necessary. Microsoft Entra ID enables organizations (known as tenants) to manage user access to applications.
 
 A Service Fabric cluster offers several entry points to its management functionality, including the web-based [Service Fabric Explorer][service-fabric-visualizing-your-cluster] and [Visual Studio][service-fabric-manage-application-in-visual-studio]. As a result, you'll create two Microsoft Entra applications to control access to the cluster: one web application and one native application. After the applications are created, you'll assign users to read-only and admin roles.
 
@@ -29,7 +29,7 @@ A Service Fabric cluster offers several entry points to its management functiona
 > It's a [known issue](https://github.com/microsoft/service-fabric/issues/399) that applications and nodes on Linux Microsoft Entra ID-enabled clusters cannot be viewed in Azure Portal.
 
 > [!NOTE]
-> Microsoft Entra ID now requires an application (app registration) publishers domain to be verified or use of default scheme. See [Configure an application's publisher domain](../active-directory/develop/howto-configure-publisher-domain.md) and [AppId Uri in single tenant applications requires use of default scheme or verified domains](../active-directory/develop/reference-breaking-changes.md#appid-uri-in-single-tenant-applications-will-require-use-of-default-scheme-or-verified-domains) for additional information.
+> Microsoft Entra ID now requires an application (app registration) publishers domain to be verified or use of default scheme. See [Configure an application's publisher domain](/azure/active-directory/develop/howto-configure-publisher-domain) and [AppId Uri in single tenant applications requires use of default scheme or verified domains](/azure/active-directory/develop/reference-breaking-changes#appid-uri-in-single-tenant-applications-will-require-use-of-default-scheme-or-verified-domains) for additional information.
 
 > [!NOTE]
 > Starting in Service Fabric 11.0, Service Fabric Explorer requires a Single-page application Redirect URI instead of a Web Redirect URI.
@@ -67,7 +67,7 @@ Run `SetupApplications.ps1` and provide the tenant ID, cluster name, web applica
 
 - **SpaApplicationReplyUrl:** *SpaApplicationReplyUrl* is the default endpoint that Microsoft Entra ID returns to your users after they finish signing in. Set this endpoint as the Service Fabric Explorer endpoint for your cluster. If you're creating Microsoft Entra applications to represent an existing cluster, make sure this URL matches your existing cluster's endpoint. If you're creating applications for a new cluster, plan the endpoint for your cluster and make sure not to use the endpoint of an existing cluster. By default the Service Fabric Explorer endpoint is: `https://<cluster_domain>:19080/Explorer/index.html`
 
-- **webApplicationUri:** *WebApplicationUri* is either the URI of a 'verified domain' or URI using API scheme format of API://{{tenant Id}}/{{cluster name}}. See [AppId Uri in single tenant applications requires use of default scheme or verified domains](../active-directory/develop/reference-breaking-changes.md#appid-uri-in-single-tenant-applications-will-require-use-of-default-scheme-or-verified-domains) for additional information.
+- **webApplicationUri:** *WebApplicationUri* is either the URI of a 'verified domain' or URI using API scheme format of API://{{tenant Id}}/{{cluster name}}. See [AppId Uri in single tenant applications requires use of default scheme or verified domains](/azure/active-directory/develop/reference-breaking-changes#appid-uri-in-single-tenant-applications-will-require-use-of-default-scheme-or-verified-domains) for additional information.
 
   Example API scheme: API://0e3d2646-78b3-4711-b8be-74a381d9890c/mysftestcluster
 
@@ -364,7 +364,7 @@ After setting up Microsoft Entra applications and setting roles for users, [conf
 
 [azure-cli]: /cli/azure/get-started-with-azure-cli
 [service-fabric-cluster-security]: service-fabric-cluster-security.md
-[active-directory-howto-tenant]:../active-directory/develop/quickstart-create-new-tenant.md
+[active-directory-howto-tenant]:/azure/active-directory/develop/quickstart-create-new-tenant
 [service-fabric-visualizing-your-cluster]: service-fabric-visualizing-your-cluster.md
 [service-fabric-manage-application-in-visual-studio]: service-fabric-manage-application-in-visual-studio.md
 [x509-certificates-and-service-fabric]: service-fabric-cluster-security.md#x509-certificates-and-service-fabric

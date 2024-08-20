@@ -21,7 +21,7 @@ To learn more about Apache Tomcat, see the [Apache Tomcat homepage](https://tomc
   * [Docker CE for Linux](https://docs.docker.com/engine/installation/#prior-releases). 
   * [Service Fabric CLI](service-fabric-cli.md)
 
-* A container registry in Azure Container Registry. You can create a container registry in your Azure subscription using [the Azure portal](../container-registry/container-registry-get-started-portal.md) or [the Azure CLI](./service-fabric-tutorial-create-container-images.md#deploy-azure-container-registry). 
+* A container registry in Azure Container Registry. You can create a container registry in your Azure subscription using [the Azure portal](/azure/container-registry/container-registry-get-started-portal) or [the Azure CLI](./service-fabric-tutorial-create-container-images.md#deploy-azure-container-registry). 
 
 ## Build a Tomcat image and run it locally
 Follow the steps in this section to build a Docker image based on an Apache Tomcat image and a simple Web app and then run it in a container on your local system. 
@@ -99,11 +99,11 @@ Follow the steps in this section to build a Docker image based on an Apache Tomc
    ```
 
 ## Push the Tomcat image to your container registry
-Now that you've verified that the Tomcat image runs in a container on your development computer, push it to a repository in a container registry to [reduce disruption](../container-registry/buffer-gate-public-content.md) to your image development and deployment workflows. This article uses Azure Container Registry to store the image, but, with some modification of steps, you can use any container registry you choose. In this article the registry name is assumed to be *myregistry* and the full registry name is myregistry.azurecr.io. Change these appropriately for your scenario. 
+Now that you've verified that the Tomcat image runs in a container on your development computer, push it to a repository in a container registry to [reduce disruption](/azure/container-registry/buffer-gate-public-content) to your image development and deployment workflows. This article uses Azure Container Registry to store the image, but, with some modification of steps, you can use any container registry you choose. In this article the registry name is assumed to be *myregistry* and the full registry name is myregistry.azurecr.io. Change these appropriately for your scenario. 
 
-1. Run `docker login` to sign in to your container registry with your [registry credentials](../container-registry/container-registry-authentication.md).
+1. Run `docker login` to sign in to your container registry with your [registry credentials](/azure/container-registry/container-registry-authentication).
 
-   The following example passes the ID and password of a Microsoft Entra [service principal](../active-directory/develop/app-objects-and-service-principals.md). For example, you might have assigned a service principal to your registry for an automation scenario. Or, you could sign in using your registry username and password.
+   The following example passes the ID and password of a Microsoft Entra [service principal](/azure/active-directory/develop/app-objects-and-service-principals). For example, you might have assigned a service principal to your registry for an automation scenario. Or, you could sign in using your registry username and password.
 
    ```bash
    docker login myregistry.azurecr.io -u xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -p myPassword

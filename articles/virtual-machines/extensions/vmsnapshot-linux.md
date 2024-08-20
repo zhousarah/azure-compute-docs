@@ -23,7 +23,7 @@ The VMSnapshot extension appears in the Azure portal only for non-managed VMs.
 ## Prerequisites
 
 ### Operating system
-For a list of supported operating systems, please refer to [Operating Systems supported by Azure Backup](../../backup/backup-azure-arm-vms-prepare.md#before-you-start)
+For a list of supported operating systems, please refer to [Operating Systems supported by Azure Backup](/azure/backup/backup-azure-arm-vms-prepare#before-you-start)
 
 ## Extension schema
 
@@ -114,7 +114,7 @@ Extension execution output is logged to the following file:
 
 ### Error codes and their meanings
 
-Troubleshooting information can be found on the [Azure VM backup troubleshooting guide](../../backup/backup-azure-vms-troubleshoot.md).
+Troubleshooting information can be found on the [Azure VM backup troubleshooting guide](/azure/backup/backup-azure-vms-troubleshoot).
 
 ### Support
 

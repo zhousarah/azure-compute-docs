@@ -150,7 +150,7 @@ New-AzSqlServerFirewallRule -ResourceGroupName $dbresourcegroupname `
 
 ## Create a container registry
 
-Now that the application runs locally, start preparing to deploy to Azure.  Container images need to be stored in a container registry.  Create an [Azure container registry](../container-registry/container-registry-intro.md) using the following script. The container registry name is visible by other Azure subscriptions, so it must be unique.
+Now that the application runs locally, start preparing to deploy to Azure.  Container images need to be stored in a container registry.  Create an [Azure container registry](/azure/container-registry/container-registry-intro) using the following script. The container registry name is visible by other Azure subscriptions, so it must be unique.
 Before deploying the application to Azure, you push the container image to this registry.  When the application deploys to the cluster in Azure, the container image is pulled from this registry.
 
 ```powershell

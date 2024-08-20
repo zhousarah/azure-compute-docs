@@ -24,7 +24,7 @@ The Eav4-series and Easv4-series run on 2nd Generation AMD EPYC<sup>TM</sup> 745
 [Live Migration](maintenance-and-updates.md): Supported<br>
 [Memory Preserving Updates](maintenance-and-updates.md): Supported<br>
 [VM Generation Support](generation-2.md): Generations 1 and 2<br>
-[Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md): Supported <br>
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported <br>
 [Ephemeral OS Disks](ephemeral-os-disks.md): Supported <br>
 [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Not Supported <br>
 <br>
@@ -54,7 +54,7 @@ The Eav4-series run on 2nd Generation AMD EPYC<sup>TM</sup> 7452 (up to 3.35GHz)
 [Live Migration](maintenance-and-updates.md): Supported<br>
 [Memory Preserving Updates](maintenance-and-updates.md): Supported<br>
 [VM Generation Support](generation-2.md): Generations 1 and 2<br>
-[Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md): Supported <br>
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported <br>
 [Ephemeral OS Disks](ephemeral-os-disks.md): Supported <br>
 [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Not Supported <br>
 <br>

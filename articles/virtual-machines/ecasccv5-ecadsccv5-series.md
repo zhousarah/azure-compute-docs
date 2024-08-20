@@ -21,13 +21,13 @@ ms.date: 03/29/2022
 > [!NOTE]
 > Confidential child capable VMs are currently enabled only through [Azure Kubernetes Service (AKS)](/azure/aks/) when you choose these VMs as your agent node sizes. If you wish to enable it outside AKS, please contact [azconfidentialpm@microsoft.com](mailto:azconfidentialpm@microsoft.com).
 
-Confidential child capable VMs allow you to borrow resources from the parent VM you deploy, to create AMD SEV-SNP protected child VMs. The parent VM has almost complete feature parity with any other general purpose Azure VM (for example, [E-series VMs](easv5-eadsv5-series.md)). This parent-child deployment model can help you achieve higher levels of isolation from the Azure host and parent VM. These confidential child capable VMs are built on the same hardware that powers our [Azure confidential VMs](../../articles/confidential-computing/confidential-vm-overview.md). Azure confidential VMs are now generally available.  
+Confidential child capable VMs allow you to borrow resources from the parent VM you deploy, to create AMD SEV-SNP protected child VMs. The parent VM has almost complete feature parity with any other general purpose Azure VM (for example, [E-series VMs](easv5-eadsv5-series.md)). This parent-child deployment model can help you achieve higher levels of isolation from the Azure host and parent VM. These confidential child capable VMs are built on the same hardware that powers our [Azure confidential VMs](/azure/confidential-computing/confidential-vm-overview). Azure confidential VMs are now generally available.  
 
 This series supports Standard SSD, Standard HDD, and Premium SSD disk types. Billing for disk storage and VMs is separate. To estimate your costs, use the [Pricing Calculator](https://azure.microsoft.com/pricing/calculator/). For more information on disk types, see [What disk types are available in Azure?](disks-types.md)
 
 
 > [!NOTE]
-> There are some [pricing differences based on your encryption settings](../../articles/confidential-computing/confidential-vm-overview.md#encryption-pricing-differences) for nested confidential VMs.
+> There are some [pricing differences based on your encryption settings](/azure/confidential-computing/confidential-vm-overview#encryption-pricing-differences) for nested confidential VMs.
 
 ### ECas_cc_v5-series products
 
@@ -40,7 +40,7 @@ The ECas_cc_v5-series sizes offer a combination of vCPU and memory for most prod
 [Live Migration](maintenance-and-updates.md): Not Supported <br>
 [Memory Preserving Updates](maintenance-and-updates.md): Not Supported <br>
 [VM Generation Support](generation-2.md): Generation 2 <br>
-[Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md): Supported <br>
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported <br>
 [Ephemeral OS Disks](ephemeral-os-disks.md): Supported <br>
 [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Supported <br>
 <br>
@@ -68,7 +68,7 @@ The ECads_cc_v5-series sizes offer a combination of vCPU, memory and temporary s
 [Live Migration](maintenance-and-updates.md): Not Supported <br>
 [Memory Preserving Updates](maintenance-and-updates.md): Not Supported <br>
 [VM Generation Support](generation-2.md): Generation 2 <br>
-[Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md): Supported <br>
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported <br>
 [Ephemeral OS Disks](ephemeral-os-disks.md): Supported <br>
 [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Supported <br>
 <br>
@@ -99,4 +99,4 @@ The ECads_cc_v5-series sizes offer a combination of vCPU, memory and temporary s
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Confidential virtual machine options on AMD processors](../../articles/confidential-computing/confidential-vm-overview.md)
+> [Confidential virtual machine options on AMD processors](/azure/confidential-computing/confidential-vm-overview)

@@ -19,7 +19,7 @@ Here are some of the benefits of using a NAT gateway for your managed cluster:
 * Improved security: Azure NAT Gateway is built on the zero trust network security model and is secure by default. With NAT gateway, private instances within a subnet don't need public IP addresses to reach the internet. Private resources can reach external sources outside the virtual network by Source Network Address Translating (SNAT) to the NAT gateway's static public IP addresses or prefixes. You can provide a contiguous set of IPs for outbound connectivity by using a public IP prefix, and you can configure destination firewall rules based on this predictable IP list.
 * Resiliency: Azure NAT Gateway is fully managed and distributed service. It doesn't depend on individual compute instances such as VMs or a single physical gateway device. A NAT gateway always has multiple fault domains and can sustain multiple failures without service outage. Software defined networking makes a NAT gateway highly resilient.
 * Simplified network architecture: NAT gateways allow you to simplify your network architecture by eliminating the need for a bastion host or VPN connection to access instances in private subnets. 
-* Performance: Azure NAT Gateway is [performant and stable](../nat-gateway/nat-gateway-resource.md#performance).
+* Performance: Azure NAT Gateway is [performant and stable](/azure/nat-gateway/nat-gateway-resource#performance).
 
 The following diagram depicts a cluster with a primary and secondary node type where each node type has their own subnet. The secondary node type is placed behind a NAT gateway, and all its outgoing traffic is routed through the gateway. When traffic originates from the secondary node type, the public IP address is that of the NAT gateway. Because all outgoing requests are routed through the NAT gateway, you can implement additional NSG rules, which improve security and prevents external services from discovering internal services.
 
@@ -41,7 +41,7 @@ For your scenario, make sure you follow the steps to configure your managed clus
 
 The following steps describe how to attach a NAT gateway to your virtual network subnets.
 
-1. Follow the steps in the [Azure NAT Gateway quickstart](../nat-gateway/quickstart-create-nat-gateway-portal.md) to create a NAT gateway.
+1. Follow the steps in the [Azure NAT Gateway quickstart](/azure/nat-gateway/quickstart-create-nat-gateway-portal) to create a NAT gateway.
 
 1. Provide the Service Fabric resource provider permission to modify the NAT gateway's settings using role assignment. Follow the first two steps in [Bring your own virtual network section of the Configure managed cluster network settings article](how-to-managed-cluster-networking.md#bring-your-own-virtual-network), injecting your NAT gateway's information into subnet parameters.
 
@@ -145,7 +145,7 @@ The following steps describe how to attach a NAT gateway to your virtual network
 > [!NOTE]
 > This scenario is only supported via ARM template.
 
-1. Follow the steps in the [Azure NAT Gateway quickstart](../nat-gateway/quickstart-create-nat-gateway-portal.md) to create a NAT gateway.
+1. Follow the steps in the [Azure NAT Gateway quickstart](/azure/nat-gateway/quickstart-create-nat-gateway-portal) to create a NAT gateway.
 
 1. Provide the Service Fabric resource provider permission to modify the NAT gateway's settings using role assignment. Follow the first two steps in [Bring your own virtual network section of the Configure managed cluster network settings article](how-to-managed-cluster-networking.md#bring-your-own-virtual-network), injecting your NAT gateway's information into subnet parameters.
 

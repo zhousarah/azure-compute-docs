@@ -28,16 +28,16 @@ This article helps to answer the following common questions about optimizing app
 We provide these guidelines specifically for premium storage because workloads running on premium storage are highly performance sensitive. We provide examples where appropriate. You can also apply some of these guidelines to applications running on infrastructure as a service (IaaS) VMs with standard storage disks.
 
 > [!NOTE]
-> Sometimes what appears to be a disk performance issue is actually a network bottleneck. In these situations, you should optimize your [network performance](../virtual-network/virtual-network-optimize-network-bandwidth.md).
+> Sometimes what appears to be a disk performance issue is actually a network bottleneck. In these situations, you should optimize your [network performance](/azure/virtual-network/virtual-network-optimize-network-bandwidth).
 >
 > If you're looking to benchmark your disk, see the following articles:
 >
 > * For Linux: [Benchmark your application on Azure Disk Storage](./disks-benchmarks.md)
 > * For Windows: [Benchmark a disk](./disks-benchmarks.md)
 >
-> If your VM supports accelerated networking, make sure it's enabled. If it's not enabled, you can enable it on already deployed VMs on both [Windows](../virtual-network/create-vm-accelerated-networking-powershell.md#enable-accelerated-networking-on-existing-vms) and [Linux](../virtual-network/create-vm-accelerated-networking-cli.md#enable-accelerated-networking-on-existing-vms).
+> If your VM supports accelerated networking, make sure it's enabled. If it's not enabled, you can enable it on already deployed VMs on both [Windows](/azure/virtual-network/create-vm-accelerated-networking-powershell#enable-accelerated-networking-on-existing-vms) and [Linux](/azure/virtual-network/create-vm-accelerated-networking-cli#enable-accelerated-networking-on-existing-vms).
 
-Before you begin, if you're new to premium storage, first read [Select an Azure disk type for IaaS VMs](disks-types.md) and [Scalability targets for premium page blob storage accounts](../storage/blobs/scalability-targets-premium-page-blobs.md).
+Before you begin, if you're new to premium storage, first read [Select an Azure disk type for IaaS VMs](disks-types.md) and [Scalability targets for premium page blob storage accounts](/azure/storage/blobs/scalability-targets-premium-page-blobs).
 
 ## Application performance indicators
 

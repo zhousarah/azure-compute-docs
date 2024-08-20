@@ -359,7 +359,7 @@ After you successfully install the `AHBForSLES` extension, you can use the `az v
 
 ## AHB for reserved instance VMs
 
-[Azure reservations](../../cost-management-billing/reservations/save-compute-costs-reservations.md) (Azure Reserved Virtual Machine Instances) help you save money by committing to one-year or three-year plans for multiple products. Azure Hybrid Benefit for pay-as-you-go virtual machines is available for reserved instances.
+[Azure reservations](/azure/cost-management-billing/reservations/save-compute-costs-reservations) (Azure Reserved Virtual Machine Instances) help you save money by committing to one-year or three-year plans for multiple products. Azure Hybrid Benefit for pay-as-you-go virtual machines is available for reserved instances.
 
 If you've purchased compute costs at a discounted rate by using reserved instances, you can apply Azure Hybrid Benefit on the licensing costs for RHEL and SUSE on top of it. The steps to apply Azure Hybrid Benefit for a reserved instance remain exactly same as they are for a regular virtual machine.
 

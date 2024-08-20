@@ -41,9 +41,9 @@ Register-AzProviderFeature -FeatureName MaxSurgeRollingUpgrade -ProviderNamespac
 
 - When using a rolling upgrade policy on Virtual Machine Scale Sets with Flexible Orchestration, the scale set must also use the [Application Health Extension](virtual-machine-scale-sets-health-extension.md) to monitor application health.
 
-- When using a rolling upgrade policy on Virtual Machine Scale Sets with Uniform Orchestration, the scale set must also have a [health probe](../load-balancer/load-balancer-custom-probe-overview.md) or use the [Application Health Extension](virtual-machine-scale-sets-health-extension.md) to monitor application health. 
+- When using a rolling upgrade policy on Virtual Machine Scale Sets with Uniform Orchestration, the scale set must also have a [health probe](/azure/load-balancer/load-balancer-custom-probe-overview) or use the [Application Health Extension](virtual-machine-scale-sets-health-extension.md) to monitor application health. 
 
-- When using rolling upgrades with MaxSurge, new VMs are created using the latest scale set model to replace VMs using the old scale set model. These newly created VMs have new instance Ids and IP addresses. Ensure you have enough quota and address space in your subnet to accommodate these new VMs before enabling MaxSurge. For more information on quotas and limits, see [Azure subscription and service limits](../azure-resource-manager/management/azure-subscription-service-limits.md).
+- When using rolling upgrades with MaxSurge, new VMs are created using the latest scale set model to replace VMs using the old scale set model. These newly created VMs have new instance Ids and IP addresses. Ensure you have enough quota and address space in your subnet to accommodate these new VMs before enabling MaxSurge. For more information on quotas and limits, see [Azure subscription and service limits](/azure/azure-resource-manager/management/azure-subscription-service-limits).
 
 
 ## Concepts

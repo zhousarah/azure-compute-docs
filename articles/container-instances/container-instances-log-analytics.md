@@ -22,8 +22,8 @@ The following sections describe how to create a logging-enabled container group 
 
 To enable logging in your container instances, you need the following:
 
-* [Log Analytics workspace](../azure-monitor/logs/quick-create-workspace.md)
-* [Azure CLI](/cli/azure/install-azure-cli) (or [Cloud Shell](../cloud-shell/overview.md))
+* [Log Analytics workspace](/azure/azure-monitor/logs/quick-create-workspace)
+* [Azure CLI](/cli/azure/install-azure-cli) (or [Cloud Shell](/azure/cloud-shell/overview))
 
 ## Get Log Analytics credentials
 
@@ -48,7 +48,7 @@ The following examples demonstrate two ways to create a container group that con
 To deploy with the Azure CLI, specify the `--log-analytics-workspace` and `--log-analytics-workspace-key` parameters in the [az container create][az-container-create] command. Replace the two workspace values with the values you obtained in the previous step (and update the resource group name) before running the following command.
 
 > [!NOTE]
-> The following example pulls a public container image from Docker Hub. We recommend that you set up a pull secret to authenticate using a Docker Hub account instead of making an anonymous pull request. To improve reliability when working with public content, import and manage the image in a private Azure container registry. [Learn more about working with public images.](../container-registry/buffer-gate-public-content.md)
+> The following example pulls a public container image from Docker Hub. We recommend that you set up a pull secret to authenticate using a Docker Hub account instead of making an anonymous pull request. To improve reliability when working with public content, import and manage the image in a private Azure container registry. [Learn more about working with public images.](/azure/container-registry/buffer-gate-public-content)
 
 ```azurecli-interactive
 az container create \
@@ -64,7 +64,7 @@ az container create \
 Use this method if you prefer to deploy container groups with YAML. The following YAML defines a container group with a single container. Copy the YAML into a new file, then replace `LOG_ANALYTICS_WORKSPACE_ID` and `LOG_ANALYTICS_WORKSPACE_KEY` with the values you obtained in the previous step. Save the file as **deploy-aci.yaml**.
 
 > [!NOTE]
-> The following example pulls a public container image from Docker Hub. We recommend that you set up a pull secret to authenticate using a Docker Hub account instead of making an anonymous pull request. To improve reliability when working with public content, import and manage the image in a private Azure container registry. [Learn more about working with public images.](../container-registry/buffer-gate-public-content.md)
+> The following example pulls a public container image from Docker Hub. We recommend that you set up a pull secret to authenticate using a Docker Hub account instead of making an anonymous pull request. To improve reliability when working with public content, import and manage the image in a private Azure container registry. [Learn more about working with public images.](/azure/container-registry/buffer-gate-public-content)
 
 ```yaml
 apiVersion: 2019-12-01
@@ -164,8 +164,8 @@ To learn more, see [Azure Monitor Log Analytics tables](monitor-azure-container-
 
 For more information about querying logs and configuring alerts in Azure Monitor logs, see:
 
-* [Understanding log searches in Azure Monitor logs](../azure-monitor/logs/log-query-overview.md)
-* [Unified alerts in Azure Monitor](../azure-monitor/alerts/alerts-overview.md)
+* [Understanding log searches in Azure Monitor logs](/azure/azure-monitor/logs/log-query-overview)
+* [Unified alerts in Azure Monitor](/azure/azure-monitor/alerts/alerts-overview)
 
 
 ### Monitor container CPU and memory

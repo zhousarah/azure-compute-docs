@@ -25,7 +25,7 @@ Before you get started, make sure you have the following:
 
 This article assumes you already have an Azure Compute Gallery. If you don't already have a gallery, create one first. To learn more, see [Create a gallery for storing and sharing resources](create-gallery.md).
 
-You should have uploaded your application to a container in an [Azure storage account](../storage/common/storage-account-create.md). Your application can be stored in a block or page blob. If you choose to use a page blob, you need to byte align the files before you upload them. Here's a sample that will byte align your file:
+You should have uploaded your application to a container in an [Azure storage account](/azure/storage/common/storage-account-create). Your application can be stored in a block or page blob. If you choose to use a page blob, you need to byte align the files before you upload them. Here's a sample that will byte align your file:
 
 ```azurepowershell-interactive
 $inputFile = <the file you want to pad>
@@ -44,7 +44,7 @@ if ($remainder -ne 0){
     }
 ```
 
-Ensure the storage account has public level access or use an SAS URI with read privilege, as other restriction levels fail deployments. You can use [Storage Explorer](../vs-azure-tools-storage-explorer-blobs.md) to quickly create a SAS URI if you don't already have one.
+Ensure the storage account has public level access or use an SAS URI with read privilege, as other restriction levels fail deployments. You can use [Storage Explorer](/azure/vs-azure-tools-storage-explorer-blobs) to quickly create a SAS URI if you don't already have one.
 
 If you're using PowerShell, you need to be using version 3.11.0 of the Az.Storage module.
 

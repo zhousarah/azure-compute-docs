@@ -20,7 +20,7 @@ The Key Vault VM extension provides automatic refresh of certificates stored in 
 The Key Vault VM extension supports these Linux distributions:
 
 - Ubuntu 20.04, 22.04
-- [Azure Linux](../../azure-linux/intro-azure-linux.md)
+- [Azure Linux](/azure/azure-linux/intro-azure-linux)
 
 > [!NOTE]
 > The Key Vault VM Extension downloads the certificates in the default location or to the location provided by "certStoreLocation" property in the VM Extension settings (version 1/2), or individual certificate settings (version 3). The Key Vault VM Extension updates the folder permission to 700 (drwx------) allowing read, write and execute permission to the owner of the folder only
@@ -42,7 +42,7 @@ Version 3.0+ of the Key Vault VM extension for Linux adds support for the follow
 
 ## Prerequisites
   - Key Vault instance with certificate. See [Create a Key Vault](/azure/key-vault/general/quick-create-portal)
-  - Assigned [managed identity](../../active-directory/managed-identities-azure-resources/overview.md) on VM/VMSS
+  - Assigned [managed identity](/azure/active-directory/managed-identities-azure-resources/overview) on VM/VMSS
   - The **Key Vault Secrets User** role at the Key Vault scope level for VMs and Azure Virtual Machine Scale Sets managed identity. This role retrieves a secret's portion of a certificate. For more information, see the following articles:
     - [Authentication in Azure Key Vault](/azure/key-vault/general/authentication)
     - [Use Azure RBAC secret, key, and certificate permissions with Azure Key Vault](/azure/key-vault/general/rbac-guide#using-azure-rbac-secret-key-and-certificate-permissions-with-key-vault)
@@ -254,7 +254,7 @@ Azure VM extensions can be deployed with Azure Resource Manager templates. Templ
 The JSON configuration for a virtual machine extension must be nested inside the virtual machine resource fragment of the template, specifically `"resources": []` object for the virtual machine template and for a virtual machine scale set under `"virtualMachineProfile":"extensionProfile":{"extensions" :[]` object.
 
  > [!NOTE]
-> The VM extension would require system or user managed identity to be assigned to authenticate to Key vault.  See [How to authenticate to Key Vault and assign a Key Vault access policy.](../../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md)
+> The VM extension would require system or user managed identity to be assigned to authenticate to Key vault.  See [How to authenticate to Key Vault and assign a Key Vault access policy.](/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm)
 >
 
 ### [Version-3.0](#tab/version3) 

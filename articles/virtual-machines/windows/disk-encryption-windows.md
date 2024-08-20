@@ -31,7 +31,7 @@ You can only apply disk encryption to virtual machines of [supported VM sizes an
 
 If you have previously used Azure Disk Encryption with Microsoft Entra ID to encrypt a VM, you must continue use this option to encrypt your VM. See [Azure Disk Encryption with Microsoft Entra ID (previous release)](disk-encryption-overview-aad.md) for details.
 
-You should [take a snapshot](snapshot-copy-managed-disk.md) and/or create a backup before disks are encrypted. Backups ensure that a recovery option is possible if an unexpected failure occurs during encryption. VMs with managed disks require a backup before encryption occurs. Once a backup is made, you can use the [Set-AzVMDiskEncryptionExtension cmdlet](/powershell/module/az.compute/set-azvmdiskencryptionextension) to encrypt managed disks by specifying the -skipVmBackup parameter. For more information about how to back up and restore encrypted VMs, see [Back up and restore encrypted Azure VM](../../backup/backup-azure-vms-encryption.md).
+You should [take a snapshot](snapshot-copy-managed-disk.md) and/or create a backup before disks are encrypted. Backups ensure that a recovery option is possible if an unexpected failure occurs during encryption. VMs with managed disks require a backup before encryption occurs. Once a backup is made, you can use the [Set-AzVMDiskEncryptionExtension cmdlet](/powershell/module/az.compute/set-azvmdiskencryptionextension) to encrypt managed disks by specifying the -skipVmBackup parameter. For more information about how to back up and restore encrypted VMs, see [Back up and restore encrypted Azure VM](/azure/backup/backup-azure-vms-encryption).
 
 Encrypting or disabling encryption may cause a VM to reboot.
 
@@ -57,8 +57,8 @@ Azure Disk Encryption does not work for the following scenarios, features, and t
 - Encrypting VMs in failover clusters.
 - Encryption of [Azure ultra disks](../disks-enable-ultra-ssd.md).
 - Encryption of [Premium SSD v2 disks](../disks-types.md#premium-ssd-v2-limitations).
-- Encryption of VMs in subscriptions that have the [`Secrets should have the specified maximum validity period`](https://ms.portal.azure.com/#view/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F342e8053-e12e-4c44-be01-c3c2f318400f) policy enabled with the [DENY effect](../../governance/policy/concepts/effects.md).
-- Encryption of VMs in subscriptions that have the [`Key Vault secrets should have an expiration date`](https://ms.portal.azure.com/#view/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F98728c90-32c7-4049-8429-847dc0f4fe37) policy enabled with the [DENY effect](../../governance/policy/concepts/effects.md)
+- Encryption of VMs in subscriptions that have the [`Secrets should have the specified maximum validity period`](https://ms.portal.azure.com/#view/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F342e8053-e12e-4c44-be01-c3c2f318400f) policy enabled with the [DENY effect](/azure/governance/policy/concepts/effects).
+- Encryption of VMs in subscriptions that have the [`Key Vault secrets should have an expiration date`](https://ms.portal.azure.com/#view/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F98728c90-32c7-4049-8429-847dc0f4fe37) policy enabled with the [DENY effect](/azure/governance/policy/concepts/effects)
 
 ## Install tools and connect to Azure
 
@@ -191,7 +191,7 @@ In addition to the scenarios listed in the [Restrictions](#restrictions) section
 
 - VMs encrypted with Azure Disk Encryption with Microsoft Entra ID (previous release)
 - NVMe disks with storage spaces
-- Azure Site Recovery of SKUs with NVMe disks (see [Support matrix for Azure VM disaster recovery between Azure regions: Replicated machines - storage](../../site-recovery/azure-to-azure-support-matrix.md#replicated-machines---storage)).
+- Azure Site Recovery of SKUs with NVMe disks (see [Support matrix for Azure VM disaster recovery between Azure regions: Replicated machines - storage](/azure/site-recovery/azure-to-azure-support-matrix#replicated-machines---storage)).
 
 ## New IaaS VMs created from customer-encrypted VHD and encryption keys
 

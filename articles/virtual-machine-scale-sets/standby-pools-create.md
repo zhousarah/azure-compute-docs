@@ -52,7 +52,7 @@ To allow standby pools to create virtual machines, you need to assign the approp
 
 If you're using images stored in Compute Gallery when deploying your scale set, also repeat the above steps for the **Compute Gallery Sharing Admin** and **Compute Gallery Artifacts Publisher** role.
 
-For more information on assigning roles, see [assign Azure roles using the Azure portal](../role-based-access-control/quickstart-assign-role-user-portal.md).
+For more information on assigning roles, see [assign Azure roles using the Azure portal](/azure/role-based-access-control/quickstart-assign-role-user-portal).
 
 ## Create a standby pool
 

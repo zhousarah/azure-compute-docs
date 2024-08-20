@@ -21,7 +21,7 @@ First, review these tips:
 * The size of the virtual machine controls how many data disks you can attach. For more information, see [Sizes for virtual machines](../sizes.md).
 * To use premium SSDs, you'll need a [premium storage-enabled VM type](../sizes-memory.md), like the DS-series or GS-series virtual machine.
 
-This article uses PowerShell within the [Azure Cloud Shell](../../cloud-shell/overview.md), which is constantly updated to the latest version. To open the Cloud Shell, select **Try it** from the top of any code block.
+This article uses PowerShell within the [Azure Cloud Shell](/azure/cloud-shell/overview), which is constantly updated to the latest version. To open the Cloud Shell, select **Try it** from the top of any code block.
 
 ## Lower latency
 

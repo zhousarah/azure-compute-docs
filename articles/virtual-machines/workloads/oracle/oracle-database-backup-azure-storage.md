@@ -177,7 +177,7 @@ To back up to Azure Files, complete these steps:
 
 In this section, you back up the Oracle database to Azure Files by using Oracle RMAN. Azure file shares are fully managed file shares that stay in the cloud. You can access them by using either the SMB protocol or the Network File System (NFS) protocol.
 
-The following procedures cover creating a file share that uses the SMB protocol to mount to your VM. For information about how to mount by using NFS, see [Create an NFS share](../../../storage/files/storage-files-how-to-create-nfs-shares.md).
+The following procedures cover creating a file share that uses the SMB protocol to mount to your VM. For information about how to mount by using NFS, see [Create an NFS share](/azure/storage/files/storage-files-how-to-create-nfs-shares).
 
 When you're mounting the Azure file share, use the `cache=none` option to disable caching of file share data. To ensure that the `oracle` user owns the files created in the share, set the `uid=oracle` and `gid=oinstall` options.
 
@@ -345,7 +345,7 @@ In this section, you use Oracle RMAN to take a full backup of the database and a
     RMAN> configure channel 2 device type disk format '/mnt/orabkup/%d/Full_%d_%U_%T_%s';
     ```
 
-2. In this example, you're limiting the size of RMAN backup pieces to 4 GiB. However, the RMAN backup `maxpiecesize` value can go up to 4 TiB, which is the file size limit for Azure standard file shares and premium file shares. For more information, see [Azure Files scalability and performance targets](../../../storage/files/storage-files-scale-targets.md).
+2. In this example, you're limiting the size of RMAN backup pieces to 4 GiB. However, the RMAN backup `maxpiecesize` value can go up to 4 TiB, which is the file size limit for Azure standard file shares and premium file shares. For more information, see [Azure Files scalability and performance targets](/azure/storage/files/storage-files-scale-targets).
 
     ```bash
     RMAN> configure channel device type disk maxpiecesize 4000G;

@@ -39,8 +39,8 @@ The VM availability metric is currently in public preview. This metric value ind
 
 | Display name | Description |
 | --- | --- |
-| Aggregation | *Average* (default aggregation): for prioritized investigations based on extent of downtime incurred. <br><br>*Min*: immediately pinpoints all the times where the VM was unavailable. <br><br>*Max*: immediately pinpoints all the instances where the VM was available. <br><br>For more information on chart range, granularity, and data aggregation, see [Azure Monitor metrics aggregation and display explained](../azure-monitor/essentials/metrics-aggregation-explained.md). |
-| Data retention | Data for the VM availability metric is [stored for 93 days](../azure-monitor/essentials/data-platform-metrics.md#retention-of-metrics) to help trend analysis and historical lookback. |
+| Aggregation | *Average* (default aggregation): for prioritized investigations based on extent of downtime incurred. <br><br>*Min*: immediately pinpoints all the times where the VM was unavailable. <br><br>*Max*: immediately pinpoints all the instances where the VM was available. <br><br>For more information on chart range, granularity, and data aggregation, see [Azure Monitor metrics aggregation and display explained](/azure/azure-monitor/essentials/metrics-aggregation-explained). |
+| Data retention | Data for the VM availability metric is [stored for 93 days](/azure/azure-monitor/essentials/data-platform-metrics#retention-of-metrics) to help trend analysis and historical lookback. |
 | Pricing | Refer to the [Pricing breakdown](https://azure.microsoft.com/pricing/details/monitor/#pricing), specifically in the *Metrics* and *Alert Rules* sections. |
 
 To learn how to use the VM availability metric to monitor Azure Virtual Machine availability, see [Use Azure Monitor to monitor Azure Virtual Machine availability](flash-azure-monitor.md).

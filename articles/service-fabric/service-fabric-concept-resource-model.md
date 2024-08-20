@@ -53,7 +53,7 @@ After the storage account is created, you create a blob container where the appl
 
 Resources in your cluster can be secured by setting the public access level to **private**. You can grant access in multiple ways:
 
-* Grant access to Azure blob and queue data by using [Azure RBAC in the Azure portal](../storage/blobs/assign-azure-role-data-access.md).
+* Grant access to Azure blob and queue data by using [Azure RBAC in the Azure portal](/azure/storage/blobs/assign-azure-role-data-access).
 * Delegate access by using a [shared access signature](/rest/api/storageservices/delegate-access-with-shared-access-signature).
 
 The example in the following screenshot uses anonymous read access for blobs.

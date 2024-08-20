@@ -11,7 +11,7 @@ ms.date: 10/05/2023
 
 # Use multiple network interface cards in a Service Fabric managed cluster
 
-Service Fabric managed cluster allows you to create node types with multiple virtual [network interface cards (NICs)](../virtual-network/virtual-network-network-interface.md). The NICs are attached to each virtual machine (VM) of the virtual machine scale set that backs the node type. A common use case is having different subnets for front-end and back-end connectivity. You can associate multiple NICs on a node type with multiple subnets, but all those subnets must be part of the same virtual network. Another use case is to enable the creation of multiple public IPs per node. Keep in mind that different VM sizes support varying numbers of NICs, so choose your VM size accordingly.
+Service Fabric managed cluster allows you to create node types with multiple virtual [network interface cards (NICs)](/azure/virtual-network/virtual-network-network-interface). The NICs are attached to each virtual machine (VM) of the virtual machine scale set that backs the node type. A common use case is having different subnets for front-end and back-end connectivity. You can associate multiple NICs on a node type with multiple subnets, but all those subnets must be part of the same virtual network. Another use case is to enable the creation of multiple public IPs per node. Keep in mind that different VM sizes support varying numbers of NICs, so choose your VM size accordingly.
 
 ## Prerequisites
 

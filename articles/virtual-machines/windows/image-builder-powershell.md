@@ -88,7 +88,7 @@ Write-Output $subscriptionID
 
 ## Create a resource group
 
-Create an [Azure resource group](../../azure-resource-manager/management/overview.md) by using the [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) cmdlet. A resource group is a logical container in which Azure resources are deployed and managed as a group.
+Create an [Azure resource group](/azure/azure-resource-manager/management/overview) by using the [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) cmdlet. A resource group is a logical container in which Azure resources are deployed and managed as a group.
 
 The following example creates a resource group that's based on the name in the `$imageResourceGroup` variable in the region that you've specified in the `$location` variable. This resource group is used to store the image configuration template artifact and the image.
 
@@ -156,7 +156,7 @@ Grant Azure image builder permissions to create images in the specified resource
    ```
 
 > [!NOTE]
-> If you receive the error "New-AzRoleDefinition: Role definition limit exceeded. No more role definitions can be created," see [Troubleshoot Azure RBAC (role-based access control)](../../role-based-access-control/troubleshooting.md).
+> If you receive the error "New-AzRoleDefinition: Role definition limit exceeded. No more role definitions can be created," see [Troubleshoot Azure RBAC (role-based access control)](/azure/role-based-access-control/troubleshooting).
 
 ## Create an Azure Compute Gallery
 

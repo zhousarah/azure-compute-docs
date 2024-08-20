@@ -54,7 +54,7 @@ Rolling upgrade policy is best suited for production workloads that require a se
 
 When using a rolling upgrade policy on Virtual Machine Scale Sets with Flexible Orchestration, the scale set must also use the [Application Health Extension](virtual-machine-scale-sets-health-extension.md) to monitor application health.
 
-When using a rolling upgrade policy on Virtual Machine Scale Sets with Uniform Orchestration, the scale set must also have a [health probe](../load-balancer/load-balancer-custom-probe-overview.md) or use the [Application Health Extension](virtual-machine-scale-sets-health-extension.md) to monitor application health. 
+When using a rolling upgrade policy on Virtual Machine Scale Sets with Uniform Orchestration, the scale set must also have a [health probe](/azure/load-balancer/load-balancer-custom-probe-overview) or use the [Application Health Extension](virtual-machine-scale-sets-health-extension.md) to monitor application health. 
 
 ## What triggers an upgrade
 

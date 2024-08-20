@@ -69,7 +69,7 @@ Maintenance control on extensions is currently only available via CLI and PowerS
 
 ### Hotpatch  
 
-[Hotpatching](../automanage/automanage-hotpatch.md?context=/azure/virtual-machines/context/context) is a new way to install updates on new Windows Server Azure Edition virtual machines (VMs) that doesn’t require a reboot after installation. Hotpatch for Windows Server Azure Edition VMs, has the following benefits:
+[Hotpatching](/azure/automanage/automanage-hotpatch?context=/azure/virtual-machines/context/context) is a new way to install updates on new Windows Server Azure Edition virtual machines (VMs) that doesn’t require a reboot after installation. Hotpatch for Windows Server Azure Edition VMs, has the following benefits:
 
 - Lower workload impact with less reboots
 - Faster deployment of updates as the packages are smaller, install faster, and have easier patch orchestration with Azure Update Manager
@@ -77,11 +77,11 @@ Maintenance control on extensions is currently only available via CLI and PowerS
 
 ### Azure update management  
 
-You can use [Update Management in Azure Automation](../automation/update-management/overview.md?context=/azure/virtual-machines/context/context) to manage to operate system updates for your Windows and Linux virtual machines in Azure, in on-premises environments, and in other cloud environments. You can quickly assess the status of available updates on all agent machines and manage the process of installing required updates for servers.
+You can use [Update Management in Azure Automation](/azure/automation/update-management/overview?context=/azure/virtual-machines/context/context) to manage to operate system updates for your Windows and Linux virtual machines in Azure, in on-premises environments, and in other cloud environments. You can quickly assess the status of available updates on all agent machines and manage the process of installing required updates for servers.
 
 ### Update manager  
 
-[Update Manager](../update-center/overview.md) is a new-age unified service in Azure to manage and govern updates (Windows and Linux), both on-premises and other cloud platforms, across hybrid environments from a single dashboard. The new functionality provides native and out-of-the-box experience, granular access controls, flexibility to create schedules or take action now, ability to check updates automatically and much more. The enhanced functionality ensures that the administrators have visibility into the health of all systems in the environment. For more information, see [key benefits](../update-center/overview.md#key-benefits).
+[Update Manager](/azure/update-center/overview) is a new-age unified service in Azure to manage and govern updates (Windows and Linux), both on-premises and other cloud platforms, across hybrid environments from a single dashboard. The new functionality provides native and out-of-the-box experience, granular access controls, flexibility to create schedules or take action now, ability to check updates automatically and much more. The enhanced functionality ensures that the administrators have visibility into the health of all systems in the environment. For more information, see [key benefits](/azure/update-center/overview#key-benefits).
 
 ## Next steps
 

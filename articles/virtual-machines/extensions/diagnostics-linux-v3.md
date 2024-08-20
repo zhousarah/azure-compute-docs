@@ -41,7 +41,7 @@ You can enable the extension by using Azure PowerShell cmdlets, Azure CLI script
 >[!NOTE]
 >Some components of the LAD VM extension are also shipped in the [Log Analytics VM extension](./oms-linux.md). Because of this architecture, conflicts can arise if both extensions are instantiated in the same ARM template.
 >
->To avoid install-time conflicts, use the [`dependsOn` directive](../../azure-resource-manager/templates/resource-dependency.md#dependson) to ensure the extensions are installed sequentially. The extensions can be installed in either order.
+>To avoid install-time conflicts, use the [`dependsOn` directive](/azure/azure-resource-manager/templates/resource-dependency#dependson) to ensure the extensions are installed sequentially. The extensions can be installed in either order.
 
 These installation instructions and a [downloadable sample configuration](https://raw.githubusercontent.com/Azure/azure-linux-extensions/master/Diagnostic/tests/lad_2_3_compatible_portal_pub_settings.json) to configure LAD 3.0 to:
 
@@ -222,7 +222,7 @@ storageAccountSasToken | An [Account SAS token](https://azure.microsoft.com/blog
 mdsdHttpProxy | (Optional) HTTP proxy information that the extension needs to connect to the specified storage account and endpoint.
 sinksConfig | (Optional) Details of alternative destinations to which metrics and events can be delivered. The following sections address details about each data sink supported by the extension.
 
-To get a SAS token within an ARM template, use the `listAccountSas` function. For an example template, see [List function example](../../azure-resource-manager/templates/template-functions-resource.md#list-example).
+To get a SAS token within an ARM template, use the `listAccountSas` function. For an example template, see [List function example](/azure/azure-resource-manager/templates/template-functions-resource#list-example).
 
 You can construct the required SAS token through the Azure portal:
 
@@ -829,10 +829,10 @@ The following screenshot of an Azure Storage Explorer session shows the generate
 :::image type="content" source="./media/diagnostics-linux/stg_explorer.png" alt-text="Screenshot shows Azure Storage Explorer.":::
 
 
-For more information about how to consume messages published to an Event Hubs endpoint, see the relevant [Event Hubs documentation](../../event-hubs/event-hubs-about.md).
+For more information about how to consume messages published to an Event Hubs endpoint, see the relevant [Event Hubs documentation](/azure/event-hubs/event-hubs-about).
 
 ## Next steps
 
-* In [Azure Monitor](../../azure-monitor/alerts/alerts-classic-portal.md), create alerts for the metrics you collect.
-* Create [monitoring charts](../../azure-monitor/data-platform.md) for your metrics.
+* In [Azure Monitor](/azure/azure-monitor/alerts/alerts-classic-portal), create alerts for the metrics you collect.
+* Create [monitoring charts](/azure/azure-monitor/data-platform) for your metrics.
 * [Create a virtual machine scale set](../linux/tutorial-create-vmss.md) by using your metrics to control autoscaling.

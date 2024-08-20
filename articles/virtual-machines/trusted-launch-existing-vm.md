@@ -29,8 +29,8 @@ Azure Virtual Machines supports enabling Azure Trusted launch on existing [Azure
   - [Trusted launch supported operating system (OS) image](trusted-launch.md#operating-systems-supported). For custom OS images or disks, the base image should be *Trusted launch capable*.
 - Azure Generation 2 VM isn't using [features currently not supported with Trusted launch](trusted-launch.md#unsupported-features).
 - Azure Generation 2 VMs should be *stopped and deallocated* before you enable the Trusted launch security type.
-- Azure Backup, if enabled, for VMs should be configured with the [Enhanced Backup policy](../backup/backup-azure-vms-enhanced-policy.md). The Trusted launch security type can't be enabled for Generation 2 VMs configured with *Standard policy* backup protection.
-  - Existing Azure VM backup can be migrated from the *Standard* to the *Enhanced* policy. Follow the steps in [Migrate Azure VM backups from Standard to Enhanced policy (preview)](../backup/backup-azure-vm-migrate-enhanced-policy.md).
+- Azure Backup, if enabled, for VMs should be configured with the [Enhanced Backup policy](/azure/backup/backup-azure-vms-enhanced-policy). The Trusted launch security type can't be enabled for Generation 2 VMs configured with *Standard policy* backup protection.
+  - Existing Azure VM backup can be migrated from the *Standard* to the *Enhanced* policy. Follow the steps in [Migrate Azure VM backups from Standard to Enhanced policy (preview)](/azure/backup/backup-azure-vm-migrate-enhanced-policy).
 
 ## Best practices
 

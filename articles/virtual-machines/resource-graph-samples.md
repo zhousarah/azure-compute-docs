@@ -11,7 +11,7 @@ ms.custom: subject-resourcegraph-sample, devx-track-azurepowershell, devx-track-
 
 # Azure Resource Graph sample queries for Azure Virtual Machines
 
-This page is a collection of [Azure Resource Graph](../governance/resource-graph/overview.md) sample queries for Azure Virtual Machines.
+This page is a collection of [Azure Resource Graph](/azure/governance/resource-graph/overview) sample queries for Azure Virtual Machines.
 
 ## Sample queries
 
@@ -19,5 +19,5 @@ This page is a collection of [Azure Resource Graph](../governance/resource-graph
 
 ## Next steps
 
-- Learn more about the [query language](../governance/resource-graph/concepts/query-language.md).
-- Learn more about how to [explore resources](../governance/resource-graph/concepts/explore-resources.md).
+- Learn more about the [query language](/azure/governance/resource-graph/concepts/query-language).
+- Learn more about how to [explore resources](/azure/governance/resource-graph/concepts/explore-resources).

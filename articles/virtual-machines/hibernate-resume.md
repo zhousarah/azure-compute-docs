@@ -129,5 +129,5 @@ Refer to the [Linux hibernation troubleshooting guide](./linux/hibernate-resume-
 
 ## Next steps
 - [Learn more about Azure billing](/azure/cost-management-billing/)
-- [Learn about Azure Virtual Desktop](../virtual-desktop/overview.md)
+- [Learn about Azure Virtual Desktop](/azure/virtual-desktop/overview)
 - [Look into Azure VM Sizes](sizes.md)

@@ -11,7 +11,7 @@ ms.date: 07/14/2022
 
 # Azure Files volume driver for Service Fabric
 
-The Azure Files volume driver is a [Docker volume plugin](https://docs.docker.com/engine/extend/plugins_volume/) that provides [Azure Files](../storage/files/storage-files-introduction.md) based volumes for Docker containers. It is packaged as a Service Fabric application that can be deployed to a Service Fabric cluster to provide volumes for other Service Fabric container applications within the cluster.
+The Azure Files volume driver is a [Docker volume plugin](https://docs.docker.com/engine/extend/plugins_volume/) that provides [Azure Files](/azure/storage/files/storage-files-introduction) based volumes for Docker containers. It is packaged as a Service Fabric application that can be deployed to a Service Fabric cluster to provide volumes for other Service Fabric container applications within the cluster.
 
 > [!NOTE]
 > Version 6.5.661.9590 of the Azure Files volume plugin has been released for general availability.
@@ -24,7 +24,7 @@ The Azure Files volume driver is a [Docker volume plugin](https://docs.docker.co
 
 * The Azure Files volume plugin only works on Service Fabric version 6.2 and newer.
 
-* Follow the instructions in the [Azure Files documentation](../storage/files/storage-how-to-create-file-share.md) to create a file share for the Service Fabric container application to use as volume.
+* Follow the instructions in the [Azure Files documentation](/azure/storage/files/storage-how-to-create-file-share) to create a file share for the Service Fabric container application to use as volume.
 
 * You will need [PowerShell with the Service Fabric module](./service-fabric-get-started.md) or [SFCTL](./service-fabric-cli.md) installed.
 

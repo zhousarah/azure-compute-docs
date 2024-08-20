@@ -67,7 +67,7 @@ sections:
       - question: |
           Can I copy or export a managed disk to a private storage account?
         answer: |
-          You can generate a read-only shared access signature (SAS) URI for the managed disk and use it to copy the contents to a private storage account or on-premises storage. You can use the SAS URI using the Azure portal, Azure PowerShell, the Azure CLI, or [AzCopy](../storage/common/storage-use-azcopy-v10.md).
+          You can generate a read-only shared access signature (SAS) URI for the managed disk and use it to copy the contents to a private storage account or on-premises storage. You can use the SAS URI using the Azure portal, Azure PowerShell, the Azure CLI, or [AzCopy](/azure/storage/common/storage-use-azcopy-v10).
           
       - question: |
           Can I create a copy of my managed disk?

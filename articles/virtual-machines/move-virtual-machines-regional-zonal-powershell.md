@@ -11,9 +11,9 @@ ms.author: ankitadutta
 
 # Move a virtual machine in an availability zone using Azure PowerShell and CLI 
 
-This article details using Azure PowerShell and CLI cmdlets to move Azure single instance VMs from regional to zonal availability zones. An [availability zone](../availability-zones/az-overview.md) is a physically separate zone in an Azure region. Use availability zones to protect your apps and data from an unlikely failure or loss of an entire data center.
+This article details using Azure PowerShell and CLI cmdlets to move Azure single instance VMs from regional to zonal availability zones. An [availability zone](/azure/availability-zones/az-overview) is a physically separate zone in an Azure region. Use availability zones to protect your apps and data from an unlikely failure or loss of an entire data center.
 
-To use an availability zone, create your virtual machine in a [supported Azure region](../availability-zones/az-region.md).
+To use an availability zone, create your virtual machine in a [supported Azure region](/azure/availability-zones/az-region).
 
 
 ## Prerequisites
@@ -22,8 +22,8 @@ Verify the following requirements before you start the move process:
 
 | Requirement | Description |
 | --- | --- |
-| **Subscription permissions** | Ensure you have *Owner* access on the subscription containing the resources that you want to move.<br/><br/> [Managed identity](../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) needs these permissions: <br> - Permission to write or create resources in user subscription, available with the *Contributor role*. <br> - Permission to create role assignments. Typically available with the *Owner* or *User Access Administrator* roles, or with a custom role that has the `Microsoft.Authorization` role assignments or write permission assigned. This permission isn't needed if the data share resource's managed identity is already granted access to the Azure data store. <br> [Learn more](../role-based-access-control/rbac-and-directory-admin-roles.md#azure-roles) about Azure roles. |
-| **VM support** |  [Review](../resource-mover/common-questions.md) the supported regions. <br><br>  - Check supported [compute](../resource-mover/support-matrix-move-region-azure-vm.md#supported-vm-compute-settings), [storage](../resource-mover/support-matrix-move-region-azure-vm.md#supported-vm-storage-settings), and [networking](../resource-mover/support-matrix-move-region-azure-vm.md#supported-vm-networking-settings) settings.|
+| **Subscription permissions** | Ensure you have *Owner* access on the subscription containing the resources that you want to move.<br/><br/> [Managed identity](/azure/active-directory/managed-identities-azure-resources/overview#managed-identity-types) needs these permissions: <br> - Permission to write or create resources in user subscription, available with the *Contributor role*. <br> - Permission to create role assignments. Typically available with the *Owner* or *User Access Administrator* roles, or with a custom role that has the `Microsoft.Authorization` role assignments or write permission assigned. This permission isn't needed if the data share resource's managed identity is already granted access to the Azure data store. <br> [Learn more](/azure/role-based-access-control/rbac-and-directory-admin-roles#azure-roles) about Azure roles. |
+| **VM support** |  [Review](/azure/resource-mover/common-questions) the supported regions. <br><br>  - Check supported [compute](/azure/resource-mover/support-matrix-move-region-azure-vm#supported-vm-compute-settings), [storage](/azure/resource-mover/support-matrix-move-region-azure-vm#supported-vm-storage-settings), and [networking](/azure/resource-mover/support-matrix-move-region-azure-vm#supported-vm-networking-settings) settings.|
 | **VM health status** | The VMs you want to move must be in a healthy state before attempting the  zonal move. Ensure that all pending reboots and mandatory updates are complete and the Virtual Machine is working and is in a healthy state before attempting the VM zonal move. |
 
 
@@ -65,7 +65,7 @@ The MoveCollection object stores metadata and configuration information about th
 
 - Create a resource group for the move collection.
 - Register the service provider to the subscription, so that the MoveCollection resource can be created.
-- Create the MoveCollection object with managed identity. For the MoveCollection object to access the subscription in which the Resource Mover service is located, it needs a [system-assigned managed identity](../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) (formerly known as Managed Service Identity (MSI)) that's trusted by the subscription.
+- Create the MoveCollection object with managed identity. For the MoveCollection object to access the subscription in which the Resource Mover service is located, it needs a [system-assigned managed identity](/azure/active-directory/managed-identities-azure-resources/overview#managed-identity-types) (formerly known as Managed Service Identity (MSI)) that's trusted by the subscription.
 - Grant access to the Resource Mover subscription for the managed identity.
 
 ## Create the resource group
@@ -210,7 +210,7 @@ Grant the managed identity access to the Resource Mover subscription as follows.
     $identityPrincipalId = $moveCollection.IdentityPrincipalId
     ```
 
-2. Assign the required roles to the identity so Azure Resource Mover can access your subscription to help move resources. Review the list of [required permissions](../resource-mover/common-questions.md#what-managed-identity-permissions-does-resource-mover-need) for the move.
+2. Assign the required roles to the identity so Azure Resource Mover can access your subscription to help move resources. Review the list of [required permissions](/azure/resource-mover/common-questions#what-managed-identity-permissions-does-resource-mover-need) for the move.
 
     # [PowerShell](#tab/PowerShell)
 
@@ -477,7 +477,7 @@ Check whether the regional VMs you added have any dependencies on other resource
     ```
     ---
 
-1. To remove resources from the resource collection, follow these [instructions](../resource-mover/remove-move-resources.md).
+1. To remove resources from the resource collection, follow these [instructions](/azure/resource-mover/remove-move-resources).
     
 ### Availability Zones VM SKU, Quota and Capacity validations
 
@@ -545,7 +545,7 @@ To address the situations where the VM SKU is not found or there is a capacity i
 
 Selected virtual machine can't be moved to availability zone due to insufficient quota.
 
-**Recommended Action:** In-sufficient quota found. Refer to link and contact [support](../azure-resource-manager/management/azure-subscription-service-limits.md).
+**Recommended Action:** In-sufficient quota found. Refer to link and contact [support](/azure/azure-resource-manager/management/azure-subscription-service-limits).
 
 
 
@@ -663,9 +663,9 @@ You can remove a single resource or multiple resources from a `MoveCollection` u
 
 After you commit the move and verify that the resources work as expected in the target region, you can delete each source resource using:
 
-- [Azure portal](../azure-resource-manager/management/manage-resources-portal.md#delete-resources)
-- [PowerShell](../azure-resource-manager/management/manage-resources-powershell.md#delete-resources)
-- [Azure CLI](../azure-resource-manager/management/manage-resource-groups-cli.md#delete-resource-groups)
+- [Azure portal](/azure/azure-resource-manager/management/manage-resources-portal#delete-resources)
+- [PowerShell](/azure/azure-resource-manager/management/manage-resources-powershell#delete-resources)
+- [Azure CLI](/azure/azure-resource-manager/management/manage-resource-groups-cli#delete-resource-groups)
 
 ## Next steps
 

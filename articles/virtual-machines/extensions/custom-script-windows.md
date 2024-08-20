@@ -46,7 +46,7 @@ You can set the extension to use your Azure Blob Storage credentials so that it 
 
 ### Internet connectivity
 
-To download a script externally, such as from GitHub or Azure Storage, you need to open other firewall or network security group (NSG) ports. For example, if your script is located in Azure Storage, you can allow access by using Azure NSG [service tags for Storage](../../virtual-network/network-security-groups-overview.md#service-tags).
+To download a script externally, such as from GitHub or Azure Storage, you need to open other firewall or network security group (NSG) ports. For example, if your script is located in Azure Storage, you can allow access by using Azure NSG [service tags for Storage](/azure/virtual-network/network-security-groups-overview#service-tags).
 
 The Custom Script Extension doesn't have any way to bypass certificate validation. If you're downloading from a secured location with, for example, a self-signed certificate, you might get errors like *The remote certificate is invalid according to the validation procedure*. Make sure that the certificate is correctly installed in the *Trusted Root Certification Authorities* store on the VM.
 
@@ -146,7 +146,7 @@ You can use this schema inside the VM resource or as a standalone resource. If t
 | timestamp | Optional | Change this value only to trigger a rerun of the script. Any integer value is acceptable, as long as it's different from the previous value. |
 | storageAccountName | Optional | The name of storage account. If you specify storage credentials, all `fileUris` values must be URLs for Azure blobs. |
 | storageAccountKey | Optional | The access key of the storage account. |
-| managedIdentity | Optional | The [managed identity](../../active-directory/managed-identities-azure-resources/overview.md) for downloading files. Valid values are `clientId` (optional, string), which is the client ID of the managed identity, and `objectId` (optional, string), which is the object ID of the managed identity.|
+| managedIdentity | Optional | The [managed identity](/azure/active-directory/managed-identities-azure-resources/overview) for downloading files. Valid values are `clientId` (optional, string), which is the client ID of the managed identity, and `objectId` (optional, string), which is the object ID of the managed identity.|
 
 *Public settings* are sent in clear text to the VM where the script runs. *Protected settings* are encrypted through a key known only to Azure and the VM. The settings are saved to the VM as they were sent. That is, if the settings were encrypted, they're saved encrypted on the VM. The certificate that's used to decrypt the encrypted values is stored on the VM. The certificate is also used to decrypt settings, if necessary, at runtime.
 
@@ -162,9 +162,9 @@ You can set the following values in either public or protected settings. The ext
 > [!NOTE]
 > This property *must* be specified in protected settings only.
 
-The Custom Script Extension, version 1.10 and later, supports [managed identities](../../active-directory/managed-identities-azure-resources/overview.md) for downloading files from URLs provided in the `fileUris` setting. The property allows the Custom Script Extension to access Azure Storage private blobs or containers without the user having to pass secrets like SAS tokens or storage account keys.
+The Custom Script Extension, version 1.10 and later, supports [managed identities](/azure/active-directory/managed-identities-azure-resources/overview) for downloading files from URLs provided in the `fileUris` setting. The property allows the Custom Script Extension to access Azure Storage private blobs or containers without the user having to pass secrets like SAS tokens or storage account keys.
 
-To use this feature, add a [system-assigned](../../app-service/overview-managed-identity.md?tabs=dotnet#add-a-system-assigned-identity) or [user-assigned](../../app-service/overview-managed-identity.md?tabs=dotnet#add-a-user-assigned-identity) identity to the VM or Virtual Machine Scale Set where the Custom Script Extension runs. Then [grant the managed identity access to the Azure Storage container or blob](../../active-directory/managed-identities-azure-resources/tutorial-vm-windows-access-storage.md#grant-access).
+To use this feature, add a [system-assigned](/azure/app-service/overview-managed-identity?tabs=dotnet#add-a-system-assigned-identity) or [user-assigned](/azure/app-service/overview-managed-identity?tabs=dotnet#add-a-user-assigned-identity) identity to the VM or Virtual Machine Scale Set where the Custom Script Extension runs. Then [grant the managed identity access to the Azure Storage container or blob](/azure/active-directory/managed-identities-azure-resources/tutorial-vm-windows-access-storage#grant-access).
 
 To use the system-assigned identity on the target VM or Virtual Machine Scale Set, set `managedidentity` to an empty JSON object.
 
@@ -201,7 +201,7 @@ To use the user-assigned identity on the target VM or Virtual Machine Scale Set,
 
 You can deploy Azure VM extensions by using Azure Resource Manager templates. The JSON schema detailed in the previous section can be used in an Azure Resource Manager template to run the Custom Script Extension during the template's deployment. The following samples show how to use the Custom Script Extension:
 
-- [Deploy virtual machine extensions with Azure Resource Manager templates](../../azure-resource-manager/templates/template-tutorial-deploy-vm-extensions.md)
+- [Deploy virtual machine extensions with Azure Resource Manager templates](/azure/azure-resource-manager/templates/template-tutorial-deploy-vm-extensions)
 - [Deploy Two Tier Application on Windows and Azure SQL Database](https://github.com/Microsoft/dotnet-core-sample-templates/tree/master/dotnet-core-music-windows)
 
 ## PowerShell deployment

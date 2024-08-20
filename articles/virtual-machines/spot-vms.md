@@ -91,15 +91,15 @@ You can see historical pricing and eviction rates per size in a region in the po
 
 ### Azure Resource Graph
 
-You can programmatically access relevant Spot VM SKU data through [Azure Resource Graph](../governance/resource-graph/overview.md). Get pricing history in the last 90 days and eviction rates for the last 28 trailing days to identify SKUs that better meet your specific needs. 
+You can programmatically access relevant Spot VM SKU data through [Azure Resource Graph](/azure/governance/resource-graph/overview). Get pricing history in the last 90 days and eviction rates for the last 28 trailing days to identify SKUs that better meet your specific needs. 
 
 Key benefits: 
-- Query Spot eviction rates and the last few months of Spot prices programmatically through ARM or the [ARG Explorer in Azure portal](../governance/resource-graph/first-query-portal.md)  
+- Query Spot eviction rates and the last few months of Spot prices programmatically through ARM or the [ARG Explorer in Azure portal](/azure/governance/resource-graph/first-query-portal)  
 - Create a custom query to extract the specific data relevant to your scenario with the ability to filter across a variety of parameters, such as SKU and region  
 - Easily compare data across multiple regions and SKUs  
 - Find a different Spot SKU or region with a lower price and/or eviction rate  
 
-Try out the following sample queries for Spot pricing history and eviction rates using the [ARG Explorer in Azure portal](../governance/resource-graph/first-query-portal.md). Spot pricing history and eviction rates data are available in the `SpotResources` table. 
+Try out the following sample queries for Spot pricing history and eviction rates using the [ARG Explorer in Azure portal](/azure/governance/resource-graph/first-query-portal). Spot pricing history and eviction rates data are available in the `SpotResources` table. 
 
 **Spot pricing history sample query**:
 
@@ -140,12 +140,12 @@ Alternatively, try out the [ARG REST API](/rest/api/azure-resourcegraph/) to get
 
 **Q:** How is quota managed for Azure Spot Virtual Machines?
 
-**A:** Azure Spot Virtual Machines will have a separate quota pool. Spot quota will be shared between VMs and scale-set instances. For more information, see [Azure subscription and service limits, quotas, and constraints](../azure-resource-manager/management/azure-subscription-service-limits.md).
+**A:** Azure Spot Virtual Machines will have a separate quota pool. Spot quota will be shared between VMs and scale-set instances. For more information, see [Azure subscription and service limits, quotas, and constraints](/azure/azure-resource-manager/management/azure-subscription-service-limits).
 
 
 **Q:** Can I request for additional quota for Azure Spot Virtual Machines?
 
-**A:** Yes, you'll be able to submit the request to increase your quota for Azure Spot Virtual Machines through the [standard quota request process](../azure-portal/supportability/per-vm-quota-requests.md).
+**A:** Yes, you'll be able to submit the request to increase your quota for Azure Spot Virtual Machines through the [standard quota request process](/azure/azure-portal/supportability/per-vm-quota-requests).
 
 
 **Q:** Where can I post questions?

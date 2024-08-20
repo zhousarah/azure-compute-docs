@@ -129,7 +129,7 @@ The final extension resource looks similar to the following JSON example:
 }
 ```
 
-If you're using template parameters to provide property values, you need to create them. When you're creating template parameters for protected setting values, use the `SecureString` parameter type to help secure sensitive values. For more information on using parameters, see [Authoring Azure Resource Manager templates](../../azure-resource-manager/templates/syntax.md).
+If you're using template parameters to provide property values, you need to create them. When you're creating template parameters for protected setting values, use the `SecureString` parameter type to help secure sensitive values. For more information on using parameters, see [Authoring Azure Resource Manager templates](/azure/azure-resource-manager/templates/syntax).
 
 In the example of the `IaasDiagnostic` extension, the following parameters would be created in the parameters section of the Resource Manager template:
 

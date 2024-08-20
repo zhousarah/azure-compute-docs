@@ -58,7 +58,7 @@ We are excited to introduce a new property for disks in the Azure Portal, Azure 
 
 #### Generally available: Azure VM Backup Support for Ultra Disks and Premium SSD v2
 
-Azure Backup enabled support on Azure VMs using Ultra Disks and Premium SSD v2 that offers high throughput, high IOPS, and low latency. Azure VM Backup support allows you to ensure business continuity for your virtual machines and to recover from any disasters or ransomware attacks. Enabling backup on VMs using Ultra Disks and Premium SSD v2 is available in all regions where creation of Ultra disks and Premium SSD v2 are supported. To learn more, refer to the [documentation](../backup/backup-support-matrix-iaas.md#vm-storage-support) and enable backup on your Azure VMs. 
+Azure Backup enabled support on Azure VMs using Ultra Disks and Premium SSD v2 that offers high throughput, high IOPS, and low latency. Azure VM Backup support allows you to ensure business continuity for your virtual machines and to recover from any disasters or ransomware attacks. Enabling backup on VMs using Ultra Disks and Premium SSD v2 is available in all regions where creation of Ultra disks and Premium SSD v2 are supported. To learn more, refer to the [documentation](/azure/backup/backup-support-matrix-iaas#vm-storage-support) and enable backup on your Azure VMs. 
 
 
 #### Generally available: Trusted launch support for Ultra Disks and Premium SSD v2

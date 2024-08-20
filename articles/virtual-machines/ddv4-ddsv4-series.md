@@ -31,7 +31,7 @@ The new Ddv4 VM sizes include fast, larger local SSD storage (up to 2,400 GiB) a
 [Live Migration](maintenance-and-updates.md): Supported<br>
 [Memory Preserving Updates](maintenance-and-updates.md): Supported<br>
 [VM Generation Support](generation-2.md): Generation 1 and 2<br>
-[Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md): Supported<br>
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported<br>
 [Ephemeral OS Disks](ephemeral-os-disks.md): Supported <br>
 [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Supported <br>
 <br> 
@@ -67,7 +67,7 @@ The new Ddsv4 VM sizes include fast, larger local SSD storage (up to 2,400 GiB) 
 [Live Migration](maintenance-and-updates.md): Supported<br>
 [Memory Preserving Updates](maintenance-and-updates.md): Supported<br>
 [VM Generation Support](generation-2.md): Generation 1 and 2<br>
-[Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md): Supported<br>
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported<br>
 [Ephemeral OS Disks](ephemeral-os-disks.md): Supported <br>
 [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Supported <br>
 <br> 

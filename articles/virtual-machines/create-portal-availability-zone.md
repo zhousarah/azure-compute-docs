@@ -14,9 +14,9 @@ ms.custom: references_regions
 
 **Applies to:** :heavy_check_mark: Linux VMs :heavy_check_mark: Windows VMs
 
-This article steps through using the Azure portal to create highly resilient virtual machines in [availability zones](../availability-zones/az-overview.md). Azure availability zones are physically separate locations within each Azure region that are tolerant to local failures. Use availability zones to protect your applications and data against unlikely datacenter failures.
+This article steps through using the Azure portal to create highly resilient virtual machines in [availability zones](/azure/availability-zones/az-overview). Azure availability zones are physically separate locations within each Azure region that are tolerant to local failures. Use availability zones to protect your applications and data against unlikely datacenter failures.
 
-To use availability zones, create your virtual machines in a [supported Azure region](../availability-zones/az-region.md).
+To use availability zones, create your virtual machines in a [supported Azure region](/azure/availability-zones/az-region).
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
 
@@ -56,7 +56,7 @@ To use availability zones, create your virtual machines in a [supported Azure re
    > After the VMs and application gateway are deployed, log in to the VMs to ensure that either the application gateway certificate is uploaded onto the VMs or the domain name of the VM certificate matches with the domain name of the application gateway.
 
    > [!NOTE]
-   > A separate subnet will be defined for Application Gateway upon creation. For more information, see [Application Gateway infrastructure configuration](../application-gateway/configuration-infrastructure.md).
+   > A separate subnet will be defined for Application Gateway upon creation. For more information, see [Application Gateway infrastructure configuration](/azure/application-gateway/configuration-infrastructure).
 
 1. Leave the remaining defaults and then select the **Review + create** button at the bottom of the page.
 

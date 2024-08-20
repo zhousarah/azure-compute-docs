@@ -98,7 +98,7 @@ This error indicates that due to heavy load in the region in which you are attem
 ## Issues during container group runtime
 ### Container had an isolated restart without explicit user input
 
-There are two broad categories for why a container group may restart without explicit user input. First, containers may experience restarts caused by an application process crash. The ACI service recommends applying observability solutions such as [Application Insights SDK](../azure-monitor/app/app-insights-overview.md), [container group metrics](monitor-azure-container-instances.md#get-metrics), and [container group logs](container-instances-get-logs.md) to determine why the application experienced issues. Second, customers may experience restarts initiated by the ACI infrastructure due to maintenance events. To increase the availability of your application, run multiple container groups behind an ingress component such as an [Application Gateway](../application-gateway/overview.md) or [Traffic Manager](../traffic-manager/traffic-manager-overview.md).
+There are two broad categories for why a container group may restart without explicit user input. First, containers may experience restarts caused by an application process crash. The ACI service recommends applying observability solutions such as [Application Insights SDK](/azure/azure-monitor/app/app-insights-overview), [container group metrics](monitor-azure-container-instances.md#get-metrics), and [container group logs](container-instances-get-logs.md) to determine why the application experienced issues. Second, customers may experience restarts initiated by the ACI infrastructure due to maintenance events. To increase the availability of your application, run multiple container groups behind an ingress component such as an [Application Gateway](/azure/application-gateway/overview) or [Traffic Manager](/azure/traffic-manager/traffic-manager-overview).
 
 ### Container continually exits and restarts (no long-running process)
 
@@ -188,11 +188,11 @@ The key to keeping image sizes small is ensuring that your final image does not 
 
 #### Image location
 
-Another way to reduce the impact of the image pull on your container's startup time is to host the container image in [Azure Container Registry](../container-registry/index.yml) in the same region where you intend to deploy container instances. This shortens the network path that the container image needs to travel, significantly shortening the download time.
+Another way to reduce the impact of the image pull on your container's startup time is to host the container image in [Azure Container Registry](/azure/container-registry/) in the same region where you intend to deploy container instances. This shortens the network path that the container image needs to travel, significantly shortening the download time.
 
 #### Cached images
 
-Azure Container Instances uses a caching mechanism to help speed container startup time for images built on common [Windows base images](./container-instances-faq.yml), including `nanoserver:1809`, `servercore:ltsc2019`, and `servercore:1809`. Commonly used Linux images such as `ubuntu:1604` and `alpine:3.6` are also cached. For both Windows and Linux images, avoid using the `latest` tag. Review Container Registry's [Image tag best practices](../container-registry/container-registry-image-tag-version.md) for guidance. For an up-to-date list of cached images and tags, use the [List Cached Images][list-cached-images] API.
+Azure Container Instances uses a caching mechanism to help speed container startup time for images built on common [Windows base images](./container-instances-faq.yml), including `nanoserver:1809`, `servercore:ltsc2019`, and `servercore:1809`. Commonly used Linux images such as `ubuntu:1604` and `alpine:3.6` are also cached. For both Windows and Linux images, avoid using the `latest` tag. Review Container Registry's [Image tag best practices](/azure/container-registry/container-registry-image-tag-version) for guidance. For an up-to-date list of cached images and tags, use the [List Cached Images][list-cached-images] API.
 
 > [!NOTE]
 > Use of Windows Server 2019-based images in Azure Container Instances is in preview.
@@ -248,7 +248,7 @@ Learn how to [retrieve container logs and events](container-instances-get-logs.m
 
 <!-- LINKS - External -->
 [azure-name-restrictions]: /azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging#naming-and-tagging-resources
-[naming-rules]: ../azure-resource-manager/management/resource-name-rules.md
+[naming-rules]: /azure/azure-resource-manager/management/resource-name-rules
 [windows-sac-overview]: /windows-server/get-started/semi-annual-channel-overview
 [docker-multi-stage-builds]: https://docs.docker.com/engine/userguide/eng-image/multistage-build/
 [docker-hub-windows-core]: https://hub.docker.com/_/microsoft-windows-servercore

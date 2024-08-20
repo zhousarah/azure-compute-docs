@@ -55,9 +55,9 @@ Multiple VMs have the highest uptime service level agreement (SLA) when deployed
 
 ### Distribute VMs and disks across availability zones
 
-Availability zones are separated groups of data centers within a region that have independent power, cooling, and networking infrastructure. They're close enough to have low-latency connections to other availability zones but far enough to reduce the possibility that more than one is affected by local outages or weather. See [What are availability zones?](../reliability/availability-zones-overview.md) for details.
+Availability zones are separated groups of data centers within a region that have independent power, cooling, and networking infrastructure. They're close enough to have low-latency connections to other availability zones but far enough to reduce the possibility that more than one is affected by local outages or weather. See [What are availability zones?](/azure/reliability/availability-zones-overview) for details.
 
-Multiple VMs have the highest [SLA](https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services?lang=1) when distributed across three availability zones. For VMs and disks distributed across multiple availability zones, the disks and their parent VMs are respectively collocated in the same zone, which prevents multiple VMs from going down even if an entire zone experiences an outage. Availability zones aren't currently available in every region, see [Azure regions with availability zone support](../reliability/availability-zones-service-support.md#azure-regions-with-availability-zone-support).
+Multiple VMs have the highest [SLA](https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services?lang=1) when distributed across three availability zones. For VMs and disks distributed across multiple availability zones, the disks and their parent VMs are respectively collocated in the same zone, which prevents multiple VMs from going down even if an entire zone experiences an outage. Availability zones aren't currently available in every region, see [Azure regions with availability zone support](/azure/reliability/availability-zones-service-support#azure-regions-with-availability-zone-support).
 
 VMs distributed across multiple availability zones may have higher network latency than VMs distributed in a single availability zone, which could be a concern for workloads that require ultra-low latency. If low latency is your top priority, consider the methods described in [Deploy VMs and disks across multiple fault domains](#deploy-vms-and-disks-across-multiple-fault-domains).
 
@@ -113,5 +113,5 @@ You should use ZRS when sharing a disk between multiple VMs. If you use LRS, the
 ## Next steps
 
 - [Zone-redundant storage for managed disks](disks-redundancy.md#zone-redundant-storage-for-managed-disks)
-- [What are availability zones?](../reliability/availability-zones-overview.md)
+- [What are availability zones?](/azure/reliability/availability-zones-overview)
 - [Create a Virtual Machine Scale Set that uses Availability Zones](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md)

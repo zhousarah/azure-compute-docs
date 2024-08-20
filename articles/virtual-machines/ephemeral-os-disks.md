@@ -100,14 +100,14 @@ For more information on [how to deploy a trusted launch VM](trusted-launch-porta
 
 ## Confidential VMs using Ephemeral OS disks
 
-AMD-based Confidential VMs cater to high security and confidentiality requirements of customers. These VMs provide a strong, hardware-enforced boundary to help meet your security needs. There are limitations to use Confidential VMs. Check the [region](../confidential-computing/confidential-vm-overview.md#regions), [size](../confidential-computing/confidential-vm-overview.md#size-support) and [OS supported](../confidential-computing/confidential-vm-overview.md#os-support) limitations for confidential VMs.
+AMD-based Confidential VMs cater to high security and confidentiality requirements of customers. These VMs provide a strong, hardware-enforced boundary to help meet your security needs. There are limitations to use Confidential VMs. Check the [region](/azure/confidential-computing/confidential-vm-overview#regions), [size](/azure/confidential-computing/confidential-vm-overview#size-support) and [OS supported](/azure/confidential-computing/confidential-vm-overview#os-support) limitations for confidential VMs.
 Virtual machine guest state (VMGS) blob contains the security information of the confidential VM.
 Confidential VMs using Ephemeral OS disks by default **1 GiB** from the **OS cache** or **temp storage** based on the chosen placement option is reserved for VMGS.The lifecycle of the VMGS blob is tied to that of the OS Disk.
 > [!IMPORTANT]
 >
-> When choosing a confidential VM with full OS disk encryption before VM deployment that uses a customer-managed key (CMK). [Updating a CMK key version](../storage/common/customer-managed-keys-overview.md#update-the-key-version) or [key rotation](/azure/key-vault/keys/how-to-configure-key-rotation) is not supported with Ephemeral OS disk. Confidential VMs using Ephemeral OS disks need to be deleted before updating or rotating the keys and can be re-created subsequently.
+> When choosing a confidential VM with full OS disk encryption before VM deployment that uses a customer-managed key (CMK). [Updating a CMK key version](/azure/storage/common/customer-managed-keys-overview#update-the-key-version) or [key rotation](/azure/key-vault/keys/how-to-configure-key-rotation) is not supported with Ephemeral OS disk. Confidential VMs using Ephemeral OS disks need to be deleted before updating or rotating the keys and can be re-created subsequently.
 >
-For more information on [confidential VM](../confidential-computing/confidential-vm-overview.md)
+For more information on [confidential VM](/azure/confidential-computing/confidential-vm-overview)
 
 ## Customer Managed key
 
@@ -115,7 +115,7 @@ You can choose to use customer managed keys or platform managed keys when you en
 
 > [!IMPORTANT]
 >
-> [Updating a CMK key version](../storage/common/customer-managed-keys-overview.md#update-the-key-version) or [key rotation](/azure/key-vault/keys/how-to-configure-key-rotation) of customer managed key is not supported with Ephemeral OS disk. VMs using Ephemeral OS disks need to be deleted before updating or rotating the keys and can be re-created subsequently.
+> [Updating a CMK key version](/azure/storage/common/customer-managed-keys-overview#update-the-key-version) or [key rotation](/azure/key-vault/keys/how-to-configure-key-rotation) of customer managed key is not supported with Ephemeral OS disk. VMs using Ephemeral OS disks need to be deleted before updating or rotating the keys and can be re-created subsequently.
 >
 For more information on [Encryption at host](./disk-encryption.md)
 

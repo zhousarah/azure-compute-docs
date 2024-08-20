@@ -27,7 +27,7 @@ Sign in to the [Azure portal](https://portal.azure.com).
 
 ## Create a load balancer
 
-Azure [load balancer](../load-balancer/load-balancer-overview.md) distributes incoming traffic among healthy virtual machine instances.
+Azure [load balancer](/azure/load-balancer/load-balancer-overview) distributes incoming traffic among healthy virtual machine instances.
 
 First, create a public Standard Load Balancer by using the portal. The name and public IP address you create are automatically configured as the load balancer's front end.
 

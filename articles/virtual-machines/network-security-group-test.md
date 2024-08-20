@@ -11,7 +11,7 @@ ms.custom: template-how-to, engagement-fy23
 
 # Network security group test
 
-You can use [network security groups](../virtual-network/network-security-groups-overview.md) to filter and control inbound and outbound network traffic to and from your virtual machines (VMs). You can also use [Azure Virtual Network Manager](../virtual-network-manager/overview.md) to apply admin security rules to your VMs to control network traffic.
+You can use [network security groups](/azure/virtual-network/network-security-groups-overview) to filter and control inbound and outbound network traffic to and from your virtual machines (VMs). You can also use [Azure Virtual Network Manager](/azure/virtual-network-manager/overview) to apply admin security rules to your VMs to control network traffic.
 
 In this article, you learn how to use **Network security group test** to check if a security rule is blocking traffic to or from your virtual machine by checking what security rules are applied to your VM traffic.
 
@@ -42,7 +42,7 @@ In this section, you test if RDP connections are allowed to your VM from a remot
 
     | Setting | Value |
     | --- | --- |
-    | Source type | - **My IP address**: your public IP address that you're using to access the Azure portal. <br> - **Any IP address**: any source IP address. <br> - **Other IP address/CIDR**: Source IP address or address prefix. <br> - **Service tag**: Source [service tag](../virtual-network/service-tags-overview.md). |
+    | Source type | - **My IP address**: your public IP address that you're using to access the Azure portal. <br> - **Any IP address**: any source IP address. <br> - **Other IP address/CIDR**: Source IP address or address prefix. <br> - **Service tag**: Source [service tag](/azure/virtual-network/service-tags-overview). |
     | IP address/CIDR | The IP address or address prefix that you want to use as the source. <br><br> **Note**: You see this option if you select **Other IP address/CIDR** for **Source type**. |
     | Service tag | The service tag that you want to use as the source. <br><br> **Note**: You see this option if you select **Service tag** for **Source type**. |
     | Service type | List of predefined services available for the test. <br><br> **Notes**:<br> - If you select a predefined service, the service port number and protocol are automatically selected. <br> - If you don't see the port and protocol information that you want, select **Custom**, and then enter the port number and select the protocol that you want. |
@@ -68,7 +68,7 @@ In this section, you test if RDP connections are allowed to your VM from a remot
 
     :::image type="content" source="./media/network-security-group-test/inbound-test-result.png" alt-text="Screenshot of inbound network security group test result." lightbox="./media/network-security-group-test/inbound-test-result.png":::
 
-    To allow the RDP connection to the VM from the remote IP address, add to the network security group a security rule that allows RDP connections from the remote IP address. This security rule must have a higher priority than the one that's blocking the traffic. For more information, see [Create, change, or delete a network security group](../virtual-network/manage-network-security-group.md).
+    To allow the RDP connection to the VM from the remote IP address, add to the network security group a security rule that allows RDP connections from the remote IP address. This security rule must have a higher priority than the one that's blocking the traffic. For more information, see [Create, change, or delete a network security group](/azure/virtual-network/manage-network-security-group).
 
 ## Test outbound connections
 
@@ -92,7 +92,7 @@ In this section, you test your VM can have connect to the internet.
     | Service type | List of predefined services available for the test. <br><br> **Notes**:<br> - If you select a predefined service, the service port number and protocol are automatically selected. <br> - If you don't see the port and protocol information that you want, select **Custom**, and then enter the port number and select the protocol that you want. |
     | Port | VM port number. <br><br> **Note**: If you select one of the predefined services, the correct port number is automatically selected. <br>Manually enter the port number when you select **Custom** for **Service type**. |
     | Protocol | Connection protocol. Available options are: **Any**, **TCP**, and **UDP**. <br><br> **Note**:  If you select one of the predefined services, the correct protocol used by the service is automatically selected. <br>Manually select the protocol when you select **Custom** for **Service type**. |
-    | Destination type | - **My IP address**: your public IP address that you're using to access the Azure portal. <br> - **Any IP address**: any source IP address. <br> - **Other IP address/CIDR**: Source IP address or address prefix. <br> - **Service tag**: Source [service tag](../virtual-network/service-tags-overview.md). |
+    | Destination type | - **My IP address**: your public IP address that you're using to access the Azure portal. <br> - **Any IP address**: any source IP address. <br> - **Other IP address/CIDR**: Source IP address or address prefix. <br> - **Service tag**: Source [service tag](/azure/virtual-network/service-tags-overview). |
     | IP address/CIDR | The IP address or address prefix that you want to use as the destination. <br><br> **Note**: You see this option if you select **Other IP address/CIDR** for **Source type**. |
     | Service tag | The service tag that you want to use as the destination. <br><br> **Note**: You see this option if you select **Service tag** for **Source type**. |
 
@@ -115,9 +115,9 @@ In this section, you test your VM can have connect to the internet.
 
     :::image type="content" source="./media/network-security-group-test/outbound-test-result.png" alt-text="Screenshot of outbound network security group test result." lightbox="./media/network-security-group-test/outbound-test-result.png":::
 
-    To allow internet connections from the VM, add to the network security group a security rule that allows connections to the internet service tag. This security rule must have a higher priority than the one that's blocking the traffic. For more information, see [Create, change, or delete a network security group](../virtual-network/manage-network-security-group.md).
+    To allow internet connections from the VM, add to the network security group a security rule that allows connections to the internet service tag. This security rule must have a higher priority than the one that's blocking the traffic. For more information, see [Create, change, or delete a network security group](/azure/virtual-network/manage-network-security-group).
 
 ## Next steps
 
-- To learn how to troubleshoot VM connections, see [Troubleshoot connections with Azure Network Watcher](../network-watcher/network-watcher-connectivity-portal.md).
-- To learn more about network security groups, see [Network security groups overview](../virtual-network/network-security-groups-overview.md).
+- To learn how to troubleshoot VM connections, see [Troubleshoot connections with Azure Network Watcher](/azure/network-watcher/network-watcher-connectivity-portal).
+- To learn more about network security groups, see [Network security groups overview](/azure/virtual-network/network-security-groups-overview).

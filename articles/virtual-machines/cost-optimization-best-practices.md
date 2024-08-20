@@ -34,18 +34,18 @@ The following are some best practices you can use to reduce the cost of your vir
         - Use the dedicated Standard pricing tier or higher
         - Use a Premium SSD v2 disk and programmatically adjust its performance to account for either higher or lower demand based on your workload patterns
         - For other disk types, size your disks to achieve your desired performance without the need for over-provisioning. Account for fluctuating workload patterns, and minimizing unused provisioned capacity
-- Use [role-based-access-control (RBAC)](../role-based-access-control/built-in-roles.md) to control who can create resources
+- Use [role-based-access-control (RBAC)](/azure/role-based-access-control/built-in-roles) to control who can create resources
 - Use [Azure Spot virtual machines](spot-vms.md) where you can
 - For Windows virtual machines, consider [Azure Hybrid Benefit for Windows Server](windows/hybrid-use-benefit-licensing.md) to save cost on licensing
-- Use [cost alerts](../cost-management-billing/costs/cost-mgt-alerts-monitor-usage-spending.md) to monitor usage and spending
+- Use [cost alerts](/azure/cost-management-billing/costs/cost-mgt-alerts-monitor-usage-spending) to monitor usage and spending
 - Minimize idle instances by configuring [autoscaling](../virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview.md)
 - Configure Azure Bastion for operational access
 
 ### Use policies to help manage and reduce costs for virtual machines
 
-You can use [Azure Policy](../governance/policy/overview.md) to help govern and optimize the costs of your resources.
+You can use [Azure Policy](/azure/governance/policy/overview) to help govern and optimize the costs of your resources.
 
-There are built-in policies for [virtual machines](policy-reference.md) and [networking services](../networking/policy-reference.md) that can help with cost savings:
+There are built-in policies for [virtual machines](policy-reference.md) and [networking services](/azure/networking/policy-reference) that can help with cost savings:
 
 - **Allowed virtual machine SKUs** - This policy enables you to specify a set of virtual machine size SKUs that your organization can deploy. You could use this policy to restrict any virtual machine sizes that exceed your desired budget. This policy would require updates to maintain as new virtual machine SKUs are added.
     - https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Compute/VMSkusAllowed_Deny.json
@@ -70,9 +70,9 @@ For more information on virtual machine cost optimization, see the following art
 
 - Learn how to [plan to manage costs for virtual machines](cost-optimization-plan-to-manage-costs.md).
 - Learn how to [monitor costs for virtual machines](cost-optimization-monitor-costs.md).
-- Learn [how to optimize your cloud investment with Microsoft Cost Management](../cost-management-billing/costs/cost-mgt-best-practices.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
-- Learn more about managing costs with [cost analysis](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
-- Learn about how to [prevent unexpected costs](../cost-management-billing/understand/analyze-unexpected-charges.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+- Learn [how to optimize your cloud investment with Microsoft Cost Management](/azure/cost-management-billing/costs/cost-mgt-best-practices?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+- Learn more about managing costs with [cost analysis](/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+- Learn about how to [prevent unexpected costs](/azure/cost-management-billing/understand/analyze-unexpected-charges?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
 - Take the [Cost Management](/training/paths/control-spending-manage-bills?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn) guided learning course.
 - Learn how to create [Linux](linux/quick-create-portal.md) and [Windows](windows/quick-create-portal.md) virtual machines.
 - Take the [Microsoft Azure Well-Architected Framework - Cost Optimization training](/training/modules/azure-well-architected-cost-optimization/).

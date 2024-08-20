@@ -17,7 +17,7 @@ This article provides an overview of the availability options for Azure virtual 
 
 
 ## Availability zones
-[Availability zones](../availability-zones/az-overview.md?context=/azure/virtual-machines/context/context) expands the level of control you have to maintain the availability of the applications and data on your VMs. An Availability Zone is a physically separate zone, within an Azure region. There are three Availability Zones per supported Azure region. 
+[Availability zones](/azure/availability-zones/az-overview?context=/azure/virtual-machines/context/context) expands the level of control you have to maintain the availability of the applications and data on your VMs. An Availability Zone is a physically separate zone, within an Azure region. There are three Availability Zones per supported Azure region. 
 
 Each Availability Zone has a distinct power source, network, and cooling. By designing your solutions to use replicated VMs in zones, you can protect your apps and data from the loss of a data center. If one zone is compromised, then replicated apps and data are instantly available in another zone. 
 
@@ -35,7 +35,7 @@ An [availability set](availability-set-overview.md) is a logical grouping of VMs
 
 
 ## Load balancer
-Combine the [Azure Load Balancer](../load-balancer/load-balancer-overview.md) with availability zones and scale sets to get the most application resiliency. The Azure Load Balancer distributes traffic between multiple virtual machines. For our Standard tier virtual machines, the Azure Load Balancer is included. Not all virtual machine tiers include the Azure Load Balancer. For more information about load balancing your virtual machines, see the Load Balancer quickstarts using the [CLI](../load-balancer/quickstart-load-balancer-standard-public-cli.md) or [PowerShell](../load-balancer/quickstart-load-balancer-standard-public-powershell.md).
+Combine the [Azure Load Balancer](/azure/load-balancer/load-balancer-overview) with availability zones and scale sets to get the most application resiliency. The Azure Load Balancer distributes traffic between multiple virtual machines. For our Standard tier virtual machines, the Azure Load Balancer is included. Not all virtual machine tiers include the Azure Load Balancer. For more information about load balancing your virtual machines, see the Load Balancer quickstarts using the [CLI](/azure/load-balancer/quickstart-load-balancer-standard-public-cli) or [PowerShell](/azure/load-balancer/quickstart-load-balancer-standard-public-powershell).
 
 
 ## Azure Storage redundancy
@@ -46,13 +46,13 @@ When deciding which redundancy option is best for your scenario, consider the tr
 - Whether your data is replicated to a second region that is geographically distant to the primary region, to protect against regional disasters
 - Whether your application requires read access to the replicated data in the secondary region if the primary region becomes unavailable for any reason
 
-For more information, see [Azure Storage redundancy](../storage/common/storage-redundancy.md)
+For more information, see [Azure Storage redundancy](/azure/storage/common/storage-redundancy)
 
 
 ## Azure Site Recovery
 As an organization you need to adopt a business continuity and disaster recovery (BCDR) strategy that keeps your data safe, and your apps and workloads online, when planned and unplanned outages occur.
 
-[Azure Site Recovery](../site-recovery/site-recovery-overview.md) helps ensure business continuity by keeping business apps and workloads running during outages. Site Recovery replicates workloads running on physical and virtual machines (VMs) from a primary site to a secondary location. When an outage occurs at your primary site, you fail over to secondary location, and access apps from there. After the primary location is running again, you can fail back to it.
+[Azure Site Recovery](/azure/site-recovery/site-recovery-overview) helps ensure business continuity by keeping business apps and workloads running during outages. Site Recovery replicates workloads running on physical and virtual machines (VMs) from a primary site to a secondary location. When an outage occurs at your primary site, you fail over to secondary location, and access apps from there. After the primary location is running again, you can fail back to it.
 
 Site Recovery can manage replication for:
 - Azure VMs replicating between Azure regions.

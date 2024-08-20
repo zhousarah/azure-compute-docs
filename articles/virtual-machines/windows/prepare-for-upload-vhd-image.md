@@ -80,7 +80,7 @@ After the SFC scan completes, install Windows Updates and restart the computer.
    ```
 
     If the VM needs to work with a specific proxy, add a proxy exception for the Azure IP address
-    ([168.63.129.16](../../virtual-network/what-is-ip-address-168-63-129-16.md))
+    ([168.63.129.16](/azure/virtual-network/what-is-ip-address-168-63-129-16))
     so the VM can connect to Azure:
 
     ```
@@ -266,7 +266,7 @@ Make sure the following settings are configured correctly for remote access:
    ```
   
  > [!IMPORTANT]
- > 168.63.129.16 is a special public IP address that is owned by Microsoft for Azure. For more information, see [What is IP address 168.63.129.16](../../virtual-network/what-is-ip-address-168-63-129-16.md).
+ > 168.63.129.16 is a special public IP address that is owned by Microsoft for Azure. For more information, see [What is IP address 168.63.129.16](/azure/virtual-network/what-is-ip-address-168-63-129-16).
 
 1. If the VM is part of a domain, check the following Microsoft Entra policies to make sure the previous
    settings aren't reverted.
@@ -620,7 +620,7 @@ to resize. Replace the value for **SizeBytes** with the new size in bytes for th
 
 ### Convert from VMware VMDK disk format
 
-If you have a Windows VM image in the [VMDK file format](https://en.wikipedia.org/wiki/VMDK), then you can use [Azure Migrate](../../migrate/server-migrate-overview.md) to convert the VMDK and upload it to Azure.
+If you have a Windows VM image in the [VMDK file format](https://en.wikipedia.org/wiki/VMDK), then you can use [Azure Migrate](/azure/migrate/server-migrate-overview) to convert the VMDK and upload it to Azure.
 
 ## Complete the recommended configurations
 

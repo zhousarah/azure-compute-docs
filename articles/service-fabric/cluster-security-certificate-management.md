@@ -282,7 +282,7 @@ As mentioned earlier, a certificate that's provisioned as a virtual machine scal
 
 You should deploy the next excerpts at the same time. They're listed individually only for play-by-play analysis and explanation.
 
-First, define a user-assigned identity (default values are included as examples). For more information, see the [official documentation](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-arm.md#create-a-user-assigned-managed-identity).
+First, define a user-assigned identity (default values are included as examples). For more information, see the [official documentation](/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-arm#create-a-user-assigned-managed-identity).
 
 ```json
 {

@@ -89,7 +89,7 @@ The following were issues discovered in many of the larger migrations. This isn'
   - The items below will need to be solved before the dry run, but a dry run test will also safely flush out these preparation steps if they're missed. During enterprise migration, we've found the dry run to be a safe and invaluable way to ensure migration readiness.
   - When prepare is running, the control plane (Azure management operations) will be locked for the whole virtual network, so no changes can be made to VM metadata during validate/prepare/abort.  But otherwise any application function (RD, VM usage, etc.) will be unaffected.  Users of the VMs won't know that the dry run is being executed.
 
-- **Express Route Circuits and VPN**. Currently Express Route Gateways with authorization links can't be migrated without downtime. For the workaround, see [Migrate ExpressRoute circuits and associated virtual networks from the classic to the Resource Manager deployment model](../expressroute/expressroute-migration-classic-resource-manager.md).
+- **Express Route Circuits and VPN**. Currently Express Route Gateways with authorization links can't be migrated without downtime. For the workaround, see [Migrate ExpressRoute circuits and associated virtual networks from the classic to the Resource Manager deployment model](/azure/expressroute/expressroute-migration-classic-resource-manager).
 
 - **VM Extensions** - Virtual Machine extensions are potentially one of the biggest roadblocks to migrating running VMs. Remediation of VM Extensions could take upwards of 1-2 days, so plan accordingly.  A working Azure agent is needed to report back VM Extension status of running VMs. If the status comes back as bad for a running VM, this will halt migration. The agent itself doesn't need to be in working order to enable migration, but if extensions exist on the VM, then both a working agent AND outbound internet connectivity (with DNS) will be needed for migration to move forward.
   - If connectivity to a DNS server is lost during migration, all VM Extensions except BGInfo v1.\* need to first be removed from every VM before migration prepare, and subsequently re-added back to the VM after Azure Resource Manager migration.  **This is only for VMs that are running.**  If the VMs are stopped deallocated, VM Extensions don't need to be removed. **Note:** Many extensions like Azure diagnostics and Defender for Cloud monitoring will reinstall themselves after migration, so removing them isn't a problem.
@@ -103,7 +103,7 @@ The following were issues discovered in many of the larger migrations. This isn'
 
 - **Availability Sets** - For a virtual network (vNet) to be migrated to Azure Resource Manager, the Classic deployment (i.e. cloud service) contained VMs must all be in one availability set, or the VMs must all not be in any availability set. Having more than one availability set in the cloud service isn't compatible with Azure Resource Manager and will halt migration.  Additionally, there can't be some VMs in an availability set, and some VMs not in an availability set. To resolve this, you'll need to remediate or reshuffle your cloud service.  Plan accordingly as this might be time consuming.
 
-- **Web/Worker Role Deployments** -  Cloud Services containing web and worker roles can't migrate to Azure Resource Manager. The web/worker roles must first be removed from the virtual network before migration can start.  A typical solution is to just move web/worker role instances to a separate Classic virtual network that is also linked to an ExpressRoute circuit, or to migrate the code to newer PaaS App Services (this discussion is beyond the scope of this document). In the former redeploy case, create a new Classic virtual network, move/redeploy the web/worker roles to that new virtual network, then delete the deployments from the virtual network being moved. No code changes required. The new [Virtual Network Peering](../virtual-network/virtual-network-peering-overview.md) capability can be used to peer together the classic virtual network containing the web/worker roles and other virtual networks in the same Azure region such as the virtual network being migrated (**after virtual network migration is completed as peered virtual networks cannot be migrated**), hence providing the same capabilities with no performance loss and no latency/bandwidth penalties. Given the addition of [Virtual Network Peering](../virtual-network/virtual-network-peering-overview.md), web/worker role deployments can now easily be mitigated and not block the migration to Azure Resource Manager.
+- **Web/Worker Role Deployments** -  Cloud Services containing web and worker roles can't migrate to Azure Resource Manager. The web/worker roles must first be removed from the virtual network before migration can start.  A typical solution is to just move web/worker role instances to a separate Classic virtual network that is also linked to an ExpressRoute circuit, or to migrate the code to newer PaaS App Services (this discussion is beyond the scope of this document). In the former redeploy case, create a new Classic virtual network, move/redeploy the web/worker roles to that new virtual network, then delete the deployments from the virtual network being moved. No code changes required. The new [Virtual Network Peering](/azure/virtual-network/virtual-network-peering-overview) capability can be used to peer together the classic virtual network containing the web/worker roles and other virtual networks in the same Azure region such as the virtual network being migrated (**after virtual network migration is completed as peered virtual networks cannot be migrated**), hence providing the same capabilities with no performance loss and no latency/bandwidth penalties. Given the addition of [Virtual Network Peering](/azure/virtual-network/virtual-network-peering-overview), web/worker role deployments can now easily be mitigated and not block the migration to Azure Resource Manager.
 
 - **Azure Resource Manager Quotas** - Azure regions have separate quotas/limits for both Classic and Azure Resource Manager. Even though in a migration scenario new hardware isn't being consumed *(we're swapping existing VMs from Classic to Azure Resource Manager)*, Azure Resource Manager quotas still need to be in place with enough capacity before migration can start. Listed below are the major limits we've seen cause problems.  Open a quota support ticket to raise the limits.
 
@@ -177,7 +177,7 @@ Not fully testing may cause issues and delay in the migration.
 
 ### Technical considerations and tradeoffs
 
-Now that you are in Azure Resource Manager, maximize the platform.  Read the [overview of Azure Resource Manager](../azure-resource-manager/management/overview.md) to find out about additional benefits.
+Now that you are in Azure Resource Manager, maximize the platform.  Read the [overview of Azure Resource Manager](/azure/azure-resource-manager/management/overview) to find out about additional benefits.
 
 Things to consider:
 
@@ -189,11 +189,11 @@ Things to consider:
 
 Be purposeful on what services you now want to enable in Azure Resource Manager.  Many customers find the below compelling for their Azure environments:
 
-- [Azure role-based access control (Azure RBAC)](../role-based-access-control/overview.md).
-- [Azure Resource Manager templates for easier and more controlled deployment](../azure-resource-manager/templates/overview.md).
-- [Tags](../azure-resource-manager/management/tag-resources.md).
-- [Activity Control](../azure-monitor/essentials/activity-log.md)
-- [Azure Policies](../governance/policy/overview.md)
+- [Azure role-based access control (Azure RBAC)](/azure/role-based-access-control/overview).
+- [Azure Resource Manager templates for easier and more controlled deployment](/azure/azure-resource-manager/templates/overview).
+- [Tags](/azure/azure-resource-manager/management/tag-resources).
+- [Activity Control](/azure/azure-monitor/essentials/activity-log)
+- [Azure Policies](/azure/governance/policy/overview)
 
 ### Pitfalls to avoid
 

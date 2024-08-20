@@ -12,7 +12,7 @@ ms.date: 07/11/2022
 
 # Configure network settings for Service Fabric managed clusters
 
-Service Fabric managed clusters are created with a default networking configuration. This configuration consists of an [Azure Load Balancer](../load-balancer/load-balancer-overview.md) with a public ip, a VNet with one subnet allocated, and an NSG configured for essential cluster functionality. There are also optional NSG rules applied such as allowing all outbound traffic by default that is intended to make customer configuration easier. This document walks through how to modify the following networking configuration options and more:
+Service Fabric managed clusters are created with a default networking configuration. This configuration consists of an [Azure Load Balancer](/azure/load-balancer/load-balancer-overview) with a public ip, a VNet with one subnet allocated, and an NSG configured for essential cluster functionality. There are also optional NSG rules applied such as allowing all outbound traffic by default that is intended to make customer configuration easier. This document walks through how to modify the following networking configuration options and more:
 
 - [Manage NSG Rules](#nsgrules)
 - [Manage RDP access](#rdp)
@@ -315,7 +315,7 @@ Service Fabric managed cluster nodes don't require their own public IP addresses
 * Gaming, where a console needs to make a direct connection to a cloud virtual machine that is doing game physics processing.
 * Virtual machines that need to make external connections to one another across regions in a distributed database.
 
-For more information about outbound connections in Azure, see [Understand outbound connections](../load-balancer/load-balancer-outbound-connections.md).
+For more information about outbound connections in Azure, see [Understand outbound connections](/azure/load-balancer/load-balancer-outbound-connections).
 
 Public IP can only be enabled on secondary node types, because primary node types are reserved for Service Fabric system services. Follow the steps in the [Bring your own load balancer section of this article](#bring-your-own-azure-load-balancer) to create a secondary node type for your managed cluster.
 
@@ -326,7 +326,7 @@ Azure dynamically assigns available IP addresses.
 
 The following steps describe enable public IP on your node.
 
-1. Download your [ARM template](../azure-resource-manager/templates/export-template-portal.md).
+1. Download your [ARM template](/azure/azure-resource-manager/templates/export-template-portal).
 
 1. For each node type in the template, add `enableNodePublicIP` to the ARM template:
 
@@ -345,7 +345,7 @@ The following steps describe enable public IP on your node.
    } 
     ```
 
-1. [Deloy your ARM template](../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md).
+1. [Deloy your ARM template](/azure/azure-resource-manager/templates/quickstart-create-templates-use-the-portal).
 
 1. Verify you have a public IP on your nodes by running the following PowerShell command:
 
@@ -532,7 +532,7 @@ This feature allows customers to use an existing virtual network by specifying a
       }
    ```
    > [!NOTE]
-   > VNetRoleAssignmentID has to be a [GUID](../azure-resource-manager/templates/template-functions-string.md#examples-16). If you deploy a template again including this role assignment, make sure the GUID is the same as the one originally used. We suggest you run this isolated or remove this resource from the cluster template post-deployment as it just needs to be created once.
+   > VNetRoleAssignmentID has to be a [GUID](/azure/azure-resource-manager/templates/template-functions-string#examples-16). If you deploy a template again including this role assignment, make sure the GUID is the same as the one originally used. We suggest you run this isolated or remove this resource from the cluster template post-deployment as it just needs to be created once.
 
    Here's a full sample [Azure Resource Manager (ARM) template that creates a VNet subnet and does role assignment](https://raw.githubusercontent.com/Azure-Samples/service-fabric-cluster-templates/master/SF-Managed-Standard-SKU-2-NT-BYOVNET/createVNet-assign-role.json) you can use for this step.
 
@@ -670,7 +670,7 @@ To configure with your own load balancer:
       }
    ```
    > [!NOTE]
-   > loadBalancerRoleAssignmentID has to be a [GUID](../azure-resource-manager/templates/template-functions-string.md#examples-16). If you deploy a template again including this role assignment, make sure the GUID is the same as the one originally used. We suggest you run this isolated or remove this resource from the cluster template post-deployment as it just needs to be created once.
+   > loadBalancerRoleAssignmentID has to be a [GUID](/azure/azure-resource-manager/templates/template-functions-string#examples-16). If you deploy a template again including this role assignment, make sure the GUID is the same as the one originally used. We suggest you run this isolated or remove this resource from the cluster template post-deployment as it just needs to be created once.
 
    See this example template to [create a public load balancer and assign a role](https://raw.githubusercontent.com/Azure-Samples/service-fabric-cluster-templates/master/SF-Managed-Standard-SKU-2-NT-BYOLB/createlb-and-assign-role.json).
 
@@ -720,7 +720,7 @@ To configure with your own load balancer:
 
 <a id="accelnet"></a>
 ## Enable Accelerated Networking
-Accelerated networking enables single root I/O virtualization (SR-IOV) to a virtual machine scale set VM that is the underlying resource for node types. This high-performance path bypasses the host from the data path, which reduces latency, jitter, and CPU utilization for the most demanding network workloads. Service Fabric managed cluster node types can be provisioned with Accelerated Networking on [supported VM SKUs](../virtual-machines/sizes.md). Reference these [limitations and constraints](../virtual-network/accelerated-networking-overview.md#limitations-and-constraints) for additional considerations. 
+Accelerated networking enables single root I/O virtualization (SR-IOV) to a virtual machine scale set VM that is the underlying resource for node types. This high-performance path bypasses the host from the data path, which reduces latency, jitter, and CPU utilization for the most demanding network workloads. Service Fabric managed cluster node types can be provisioned with Accelerated Networking on [supported VM SKUs](../virtual-machines/sizes.md). Reference these [limitations and constraints](/azure/virtual-network/accelerated-networking-overview#limitations-and-constraints) for additional considerations. 
 
 * Note that Accelerated Networking is supported on most general purpose and compute-optimized instance sizes with 2 or more vCPUs. On instances that support hyperthreading, Accelerated Networking is supported on VM instances with 4 or more vCPUs.
 
@@ -750,7 +750,7 @@ Scaling out infrastructure is required to enable Accelerated Networking on an ex
 
 <a id="auxsubnet"></a>
 ## Configure Auxiliary Subnets
-Auxiliary subnets provide the ability to create additional managed subnets without a node type for supporting scenarios such as [Private Link Service](../private-link/private-link-service-overview.md) and [Bastion Hosts](../bastion/bastion-overview.md).
+Auxiliary subnets provide the ability to create additional managed subnets without a node type for supporting scenarios such as [Private Link Service](/azure/private-link/private-link-service-overview) and [Bastion Hosts](/azure/bastion/bastion-overview).
 
 Configure auxiliary subnets by declaring `auxiliarySubnets` property and required parameters in your Resource Manager template as follows:
 

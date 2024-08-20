@@ -52,7 +52,7 @@ There are limits, per subscription, for deploying resources using Azure Compute 
 - Any disk attached to the image must be less than or equal to 2 TB in size
 - Resource move isn't supported for Azure compute gallery resources
 
-For more information, see [Check resource usage against limits](../networking/check-usage-against-limits.md) for examples on how to check your current usage.
+For more information, see [Check resource usage against limits](/azure/networking/check-usage-against-limits) for examples on how to check your current usage.
  
 ## Scaling
 Azure Compute Gallery allows you to specify the number of replicas you want to keep. In multi-VM deployment scenarios the VM deployments can be spread to different replicas reducing the chance of instance creation processing being throttled due to overloading of a single replica.
@@ -70,7 +70,7 @@ We always recommend that to over-provision the number of replicas due to factors
 
 [Azure Zone Redundant Storage (ZRS)](https://azure.microsoft.com/blog/azure-zone-redundant-storage-in-public-preview/) provides resilience against an Availability Zone failure in the region. With the general availability of Azure Compute Gallery, you can choose to store your images in ZRS accounts in regions with Availability Zones.
 
-You can also choose the account type for each of the target regions. The default storage account type is Standard_LRS, but you can choose Standard_ZRS for regions with Availability Zones. For more information on regional availability of ZRS, see [Data redundancy](../storage/common/storage-redundancy.md).
+You can also choose the account type for each of the target regions. The default storage account type is Standard_LRS, but you can choose Standard_ZRS for regions with Availability Zones. For more information on regional availability of ZRS, see [Data redundancy](/azure/storage/common/storage-redundancy).
 
 ![Graphic showing ZRS](./media/shared-image-galleries/zrs.png)
 
@@ -107,7 +107,7 @@ As the Azure Compute Gallery, definition, and version are all resources, they ca
 | Azure Compute Gallery | Yes                  | Yes          | Yes                  |
 | Image Definition     | No                   | Yes          | Yes                  |
 
-We recommend sharing at the Gallery level for the best experience. We don't recommend sharing individual image versions. For more information about Azure RBAC, see [Assign Azure roles](../role-based-access-control/role-assignments-portal.yml).
+We recommend sharing at the Gallery level for the best experience. We don't recommend sharing individual image versions. For more information about Azure RBAC, see [Assign Azure roles](/azure/role-based-access-control/role-assignments-portal).
 
 For more information, see [Share using RBAC](./share-gallery.md).
 
@@ -148,9 +148,9 @@ For more information, see [Share images using a community gallery](./share-galle
 
 
 ## Activity Log
-The [Activity log](../azure-monitor/essentials/activity-log.md) displays recent activity on the gallery, image, or version including any configuration changes and when it was created and deleted.  View the activity log in the Azure portal, or create a [diagnostic setting to send it to a Log Analytics workspace](../azure-monitor/essentials/activity-log.md#send-to-log-analytics-workspace), where you can view events over time or analyze them with other collected data
+The [Activity log](/azure/azure-monitor/essentials/activity-log) displays recent activity on the gallery, image, or version including any configuration changes and when it was created and deleted.  View the activity log in the Azure portal, or create a [diagnostic setting to send it to a Log Analytics workspace](/azure/azure-monitor/essentials/activity-log#send-to-log-analytics-workspace), where you can view events over time or analyze them with other collected data
 
-The following table lists a few example operations that relate to gallery operations in the activity log. For a complete list of possible log entries, see [Microsoft.Compute Resource Provider options](../role-based-access-control/resource-provider-operations.md#compute)
+The following table lists a few example operations that relate to gallery operations in the activity log. For a complete list of possible log entries, see [Microsoft.Compute Resource Provider options](/azure/role-based-access-control/resource-provider-operations#compute)
 
 | Operation | Description |
 |:---|:---|
@@ -171,10 +171,10 @@ For example, let's say you have an image of a 127 GB OS disk, that only occupies
 
 ## Best practices
 
-- To prevent images from being accidentally deleted, use resource locks at the Gallery level. For more information, see [Protect your Azure resources with a lock](../azure-resource-manager/management/lock-resources.md).
+- To prevent images from being accidentally deleted, use resource locks at the Gallery level. For more information, see [Protect your Azure resources with a lock](/azure/azure-resource-manager/management/lock-resources).
 
 - Use ZRS wherever available for high availability. You can configure ZRS in the replication tab when you create a version of the image or VM application.
- For more information about which regions support ZRS, see [Azure regions with availability zones](../availability-zones/az-overview.md#azure-regions-with-availability-zones).
+ For more information about which regions support ZRS, see [Azure regions with availability zones](/azure/availability-zones/az-overview#azure-regions-with-availability-zones).
 
 - Keep a minimum of 3 replicas for production images. For every 20 VMs that you create concurrently, we recommend you keep one replica.  For example, if you create 1000 VMs concurrently, you should keep 50 replicas (you can have a maximum of 50 replicas per region).  To update the replica count, please go to the gallery -> Image Definition -> Image Version -> Update replication.
 

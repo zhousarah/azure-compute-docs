@@ -61,8 +61,8 @@ You have several options for deploying resources with Resource Manager templates
 [vol-secret]: https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.containerinstance/aci-linuxcontainer-volume-secret
 
 <!-- LINKS - Internal -->
-[deploy-cli]: ../azure-resource-manager/templates/deploy-cli.md
-[deploy-portal]: ../azure-resource-manager/templates/deploy-portal.md
-[deploy-powershell]: ../azure-resource-manager/templates/deploy-powershell.md
-[deploy-rest]: ../azure-resource-manager/templates/deploy-rest.md
+[deploy-cli]: /azure/azure-resource-manager/templates/deploy-cli
+[deploy-portal]: /azure/azure-resource-manager/templates/deploy-portal
+[deploy-powershell]: /azure/azure-resource-manager/templates/deploy-powershell
+[deploy-rest]: /azure/azure-resource-manager/templates/deploy-rest
 [ref]: /azure/templates/microsoft.containerinstance/containergroups

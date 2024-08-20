@@ -13,7 +13,7 @@ ms.custom: mimckitt
 
 # Learn about Virtual Machine Scale Set templates
 
-[Azure Resource Manager templates](../azure-resource-manager/templates/overview.md#template-deployment-process) are a great way to deploy groups of related resources. This tutorial series shows how to create a basic scale set template and how to modify this template to suit various scenarios. All examples come from this [GitHub repository](https://github.com/gatneil/mvss).
+[Azure Resource Manager templates](/azure/azure-resource-manager/templates/overview#template-deployment-process) are a great way to deploy groups of related resources. This tutorial series shows how to create a basic scale set template and how to modify this template to suit various scenarios. All examples come from this [GitHub repository](https://github.com/gatneil/mvss).
 
 This template is intended to be simple. For more complete examples of scale set templates, see the [Azure Quickstart Templates GitHub repository](https://github.com/Azure/azure-quickstart-templates) and search for folders that contain the string `vmss`.
 
@@ -73,7 +73,7 @@ All resources require `type`, `name`, `apiVersion`, and `location` properties. T
 
 ## Specify location
 
-To specify the location for the virtual network, use a [Resource Manager template function](../azure-resource-manager/templates/template-functions.md). This function must be enclosed in quotes and square brackets like this: `"[<template-function>]"`. In this case, use the `resourceGroup` function. It takes in no arguments and returns a JSON object with metadata about the resource group this deployment is being deployed to. The resource group is set by the user at the time of deployment. This value is then indexed into this JSON object with `.location` to get the location from the JSON object.
+To specify the location for the virtual network, use a [Resource Manager template function](/azure/azure-resource-manager/templates/template-functions). This function must be enclosed in quotes and square brackets like this: `"[<template-function>]"`. In this case, use the `resourceGroup` function. It takes in no arguments and returns a JSON object with metadata about the resource group this deployment is being deployed to. The resource group is set by the user at the time of deployment. This value is then indexed into this JSON object with `.location` to get the location from the JSON object.
 
 ```json
   "location": "[resourceGroup().location]",

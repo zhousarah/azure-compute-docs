@@ -39,7 +39,7 @@ Scheduled events are designed to offer an early warning, giving up to 15-minute 
 
 On the other hand, Flash Health events are focused on real-time tracking of ongoing and completed availability disruptions, including VM degradation. This feature empowers you to effectively monitor and manage downtime, supporting automated mitigation, investigations, and post-mortem analysis.
 
-To get started on your observability journey, you can explore the suite of Azure products to which we emit high-quality VM availability data. These products include [resource health](../service-health/resource-health-overview.md), [activity logs](../azure-monitor/essentials/activity-log.md?tabs=powershell), [Azure resource graph](../governance/resource-graph/samples/samples-by-table.md?tabs=azure-cli#healthresources), [Azure monitor metrics](../virtual-machines/monitor-vm-reference.md) and [Azure Event Grid system topic](../event-grid/event-schema-health-resources.md?tabs=event-grid-event-schema).
+To get started on your observability journey, you can explore the suite of Azure products to which we emit high-quality VM availability data. These products include [resource health](/azure/service-health/resource-health-overview), [activity logs](/azure/azure-monitor/essentials/activity-log?tabs=powershell), [Azure resource graph](/azure/governance/resource-graph/samples/samples-by-table?tabs=azure-cli#healthresources), [Azure monitor metrics](../virtual-machines/monitor-vm-reference.md) and [Azure Event Grid system topic](/azure/event-grid/event-schema-health-resources?tabs=event-grid-event-schema).
 
 ## Next steps
 

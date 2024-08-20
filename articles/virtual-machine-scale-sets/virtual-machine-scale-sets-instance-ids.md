@@ -91,9 +91,9 @@ If you query the [instance metadata](../virtual-machines/windows/instance-metada
 
 ## Scale set VM computer name
 
-Each VM in a scale set also gets a computer name assigned to it. This computer name is the hostname of the VM in the [Azure-provided DNS name resolution within the virtual network](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md). The computer name naming convention differs by orchestration mode:
+Each VM in a scale set also gets a computer name assigned to it. This computer name is the hostname of the VM in the [Azure-provided DNS name resolution within the virtual network](/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances). The computer name naming convention differs by orchestration mode:
 
 * Flexible orchestration mode: {computer-name-prefix}{6-char-guid}
 * Uniform orchestration mode: {computer-name-prefix}{base-36-instance-id}
 
-The computer name prefix is a property of the scale set model that you can set, so it can be different from the scale set name itself. The scale set VM computer name can also be changed from inside the guest OS once the VM has been created. The maximum length of the computer name is operating system dependent. For more information, see [Naming rules and restrictions.](../azure-resource-manager/management/resource-name-rules.md).
+The computer name prefix is a property of the scale set model that you can set, so it can be different from the scale set name itself. The scale set VM computer name can also be changed from inside the guest OS once the VM has been created. The maximum length of the computer name is operating system dependent. For more information, see [Naming rules and restrictions.](/azure/azure-resource-manager/management/resource-name-rules).

@@ -142,4 +142,4 @@ ssh -o StrictHostKeyChecking=no $MY_USERNAME@$IP_ADDRESS
 * [Learn about virtual machines](../index.yml)
 * [Use Cloud-Init to initialize a Linux VM on first boot](tutorial-automate-vm-deployment.md)
 * [Create custom VM images](tutorial-custom-images.md)
-* [Load Balance VMs](../../load-balancer/quickstart-load-balancer-standard-public-cli.md)
+* [Load Balance VMs](/azure/load-balancer/quickstart-load-balancer-standard-public-cli)

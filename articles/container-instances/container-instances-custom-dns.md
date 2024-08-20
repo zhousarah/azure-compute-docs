@@ -12,14 +12,14 @@ ms.date: 05/25/2022
 
 # Deploy a container group with custom DNS settings
 
-In [Azure Virtual Network](../virtual-network/virtual-networks-overview.md), you can deploy container groups using the `az container create` command in the Azure CLI. You can also provide advanced configuration settings to the `az container create` command using a YAML configuration file.
+In [Azure Virtual Network](/azure/virtual-network/virtual-networks-overview), you can deploy container groups using the `az container create` command in the Azure CLI. You can also provide advanced configuration settings to the `az container create` command using a YAML configuration file.
 
 This article demonstrates how to deploy a container group with custom DNS settings using a YAML configuration file.
 
 For more information on deploying container groups to a virtual network, see the [Deploy in a virtual network article](container-instances-vnet.md).
 
 > [!IMPORTANT]
-> Previously, the process of deploying container groups on virtual networks used [network profiles](./container-instances-virtual-network-concepts.md#network-profile) for configuration. However, network profiles have been retired as of the `2021-07-01` API version. We recommend you use the latest API version, which relies on [subnet IDs](../virtual-network/subnet-delegation-overview.md) instead.
+> Previously, the process of deploying container groups on virtual networks used [network profiles](./container-instances-virtual-network-concepts.md#network-profile) for configuration. However, network profiles have been retired as of the `2021-07-01` API version. We recommend you use the latest API version, which relies on [subnet IDs](/azure/virtual-network/subnet-delegation-overview) instead.
 
 ## Prerequisites
 
@@ -45,7 +45,7 @@ Examples in this article are formatted for the Bash shell. For PowerShell or com
 
 You'll need a virtual network to deploy a container group with a custom DNS configuration. This virtual network will require a subnet with permissions to create Azure Container Instances resources and a linked private DNS zone to test name resolution.
 
-This guide uses a virtual network named `aci-vnet`, a subnet named `aci-subnet`, and a private DNS zone named `private.contoso.com`. We use **Azure Private DNS Zones**, which you can learn about in the [Private DNS Overview](../dns/private-dns-overview.md).
+This guide uses a virtual network named `aci-vnet`, a subnet named `aci-subnet`, and a private DNS zone named `private.contoso.com`. We use **Azure Private DNS Zones**, which you can learn about in the [Private DNS Overview](/azure/dns/private-dns-overview).
 
 If you have an existing virtual network that meets these criteria, you can skip to [Deploy your container group](#deploy-your-container-group).
 
@@ -62,7 +62,7 @@ If you have an existing virtual network that meets these criteria, you can skip 
      --address-prefix 10.0.0.0/16
    ```
 
-1. Create the subnet using the [az network vnet subnet create][az-network-vnet-subnet-create] command. The following command creates a subnet in your virtual network with a delegation that permits it to create container groups. For more information about working with subnets, see the [Add, change, or delete a virtual network subnet](../virtual-network/virtual-network-manage-subnet.md). For more information about subnet delegation, see the [Virtual Network Scenarios and Resources article section on delegated subnets](container-instances-virtual-network-concepts.md#subnet-delegated).
+1. Create the subnet using the [az network vnet subnet create][az-network-vnet-subnet-create] command. The following command creates a subnet in your virtual network with a delegation that permits it to create container groups. For more information about working with subnets, see the [Add, change, or delete a virtual network subnet](/azure/virtual-network/virtual-network-manage-subnet). For more information about subnet delegation, see the [Virtual Network Scenarios and Resources article section on delegated subnets](container-instances-virtual-network-concepts.md#subnet-delegated).
 
    ```azurecli-interactive
    az network vnet subnet create \
@@ -227,4 +227,4 @@ See the Azure quickstart template [Create an Azure container group with VNet](ht
 [az-container-delete]: /cli/azure/container#az-container-delete
 [az-network-vnet-delete]: /cli/azure/network/vnet#az-network-vnet-delete
 [az-group-delete]: /cli/azure/group#az-group-create
-[cloud-shell-bash]: ../cloud-shell/overview.md
+[cloud-shell-bash]: /azure/cloud-shell/overview

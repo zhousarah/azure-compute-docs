@@ -28,7 +28,7 @@ Use an API gateway service that communicates to back-end services that can then 
 
 - [Azure API Management](./service-fabric-api-management-overview.md), which is [integrated with Service Fabric](./service-fabric-tutorial-deploy-api-management.md).
 - [Træfik reverse proxy](https://techcommunity.microsoft.com/t5/azure-service-fabric/bg-p/Service-Fabric), using the [Azure Service Fabric provider](https://docs.traefik.io/v1.6/configuration/backends/servicefabric/).
-- [Azure Application Gateway](../application-gateway/index.yml).
+- [Azure Application Gateway](/azure/application-gateway/).
 
    > [!NOTE] 
    > Azure Application Gateway isn't directly integrated with Service Fabric. Azure API Management is typically the preferred choice.

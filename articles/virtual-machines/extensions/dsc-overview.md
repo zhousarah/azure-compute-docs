@@ -19,12 +19,12 @@ ms.devlang: azurecli
 # Introduction to the Azure Desired State Configuration extension handler
 
 > [!NOTE]
-> Before you enable DSC Extension, we would like you to know that a newer version of DSC is now generally available, managed by a feature of Azure Policy named [Azure Machine Configuration](../../governance/machine-configuration/overview.md). The Azure Machine Configuration service combines features of DSC Extension, Azure Automation State Configuration, and the most commonly requested features from customer feedback. Azure Machine Configuration also includes hybrid machine support through [Arc-enabled servers](../../azure-arc/servers/overview.md).
+> Before you enable DSC Extension, we would like you to know that a newer version of DSC is now generally available, managed by a feature of Azure Policy named [Azure Machine Configuration](/azure/governance/machine-configuration/overview). The Azure Machine Configuration service combines features of DSC Extension, Azure Automation State Configuration, and the most commonly requested features from customer feedback. Azure Machine Configuration also includes hybrid machine support through [Arc-enabled servers](/azure/azure-arc/servers/overview).
 
 The Azure VM Extension for Azure virtual machines (VM) and the associated extensions are part of Microsoft Azure infrastructure services. Azure VM extensions are software components that extend VM functionality and simplify various VM management operations.
 
 The primary use for the Azure Desired State Configuration (DSC) extension for Windows PowerShell is to bootstrap a VM to the
-[Azure Automation State Configuration (DSC) service](../../automation/automation-dsc-overview.md). This service provides [benefits](/powershell/dsc/managing-nodes/metaConfig#pull-service) that include ongoing management of the VM configuration and integration with other operational tools, such as Azure Monitor. You can use the extension to register your VMs to the service and gain a flexible solution that works across Azure subscriptions.
+[Azure Automation State Configuration (DSC) service](/azure/automation/automation-dsc-overview). This service provides [benefits](/powershell/dsc/managing-nodes/metaConfig#pull-service) that include ongoing management of the VM configuration and integration with other operational tools, such as Azure Monitor. You can use the extension to register your VMs to the service and gain a flexible solution that works across Azure subscriptions.
 
 You can run the DSC extension independently of the Automation DSC service, but this method only pushes a configuration to the VM. No ongoing reporting is available, other than locally in the VM. Before you enable the DSC extension, [review the available DSC versions](#available-dsc-versions), and choose the version that supports your configuration requirements.
 
@@ -36,7 +36,7 @@ Several versions of Desired State Configuration are available for implementation
 
 | Version | Availability | Description |
 | --- | --- | --- |
-| **2.0** | General availability | [Desired State Configuration 2.0](/powershell/dsc/overview?view=dsc-2.0&preserve-view=true) is supported for use with the Azure Automanage [Machine Configuration](../../governance/machine-configuration/overview.md) feature. The machine configuration feature combines features of the DSC extension handler, Azure Automation State Configuration, and the most commonly requested features from customer feedback. Machine configuration also includes hybrid machine support through [Arc-enabled servers](../../azure-arc/servers/overview.md). |
+| **2.0** | General availability | [Desired State Configuration 2.0](/powershell/dsc/overview?view=dsc-2.0&preserve-view=true) is supported for use with the Azure Automanage [Machine Configuration](/azure/governance/machine-configuration/overview) feature. The machine configuration feature combines features of the DSC extension handler, Azure Automation State Configuration, and the most commonly requested features from customer feedback. Machine configuration also includes hybrid machine support through [Arc-enabled servers](/azure/azure-arc/servers/overview). |
 | **1.1** | General availability | If your implementation doesn't use the Azure Automanage machine configuration feature, you should choose Desired State Configuration 1.1. For more information, see [PSDesiredStateConfiguration v1.1](/powershell/dsc/overview?view=dsc-1.1&preserve-view=true). |
 | **3.0** | Public preview | [Desired State Configuration 3.0 is available in public beta](/powershell/dsc/overview?view=dsc-3.0&preserve-view=true). This version should be used only with Azure machine configuration, or for nonproduction environments to test migrating away from Desired State Configuration 1.1. |
 
@@ -44,7 +44,7 @@ Several versions of Desired State Configuration are available for implementation
 
 - **Local machine**: To interact with the Azure DSC extension, you must use either the Azure portal or the Azure PowerShell SDK on the local machine.
 
-- **Guest agent**: The Azure VM that's prepared by the DSC configuration must use an operating system that supports Windows Management Framework (WMF) 4.0 or later. For the full list of supported operating system versions, see the [Azure DSC extension version history](../../automation/automation-dsc-extension-history.md).
+- **Guest agent**: The Azure VM that's prepared by the DSC configuration must use an operating system that supports Windows Management Framework (WMF) 4.0 or later. For the full list of supported operating system versions, see the [Azure DSC extension version history](/azure/automation/automation-dsc-extension-history).
 
 ## Terms and concepts
 
@@ -93,7 +93,7 @@ You can gather these values from the Azure portal, or run the following commands
 
 For the `NodeConfigurationName` parameter, be sure to provide the name of the node configuration and not the Configuration.
 
-The Configuration is defined in a script that's used [to compile the node configuration (MOF file)](../../automation/automation-dsc-compile.md). The name of the node configuration is always the name of the Configuration followed by a period `.` and either `localhost` or a specific computer name.
+The Configuration is defined in a script that's used [to compile the node configuration (MOF file)](/azure/automation/automation-dsc-compile). The name of the node configuration is always the name of the Configuration followed by a period `.` and either `localhost` or a specific computer name.
 
 > [!WARNING]
 > Make sure the node configuration exists in Azure Automation State Configuration. If this value doesn't exist, the extension deployment returns a failure.
@@ -214,7 +214,7 @@ To set up the DSC extension in the Azure portal, follow these steps:
 
    - **Data Collection**: Enable this setting if you want the DSC extension to collect telemetry about your VM. For more information, see [Azure DSC extension data collection](https://devblogs.microsoft.com/powershell/azure-dsc-extension-data-collection-2/).
 
-   - **Version**: (Required) Specify the version of the DSC extension to install. For information about versions, see [Azure DSC extension version history](../../automation/automation-dsc-extension-history.md).
+   - **Version**: (Required) Specify the version of the DSC extension to install. For information about versions, see [Azure DSC extension version history](/azure/automation/automation-dsc-extension-history).
 
    - **Auto Upgrade Minor Version**: This setting maps to the `AutoUpdate` switch in the cmdlets. Configure this setting to enable the DSC extension to automatically update to the latest version during installation. **Yes** instructs the DSC extension handler to use the latest available version. **No** (default) forces installation of the version you specify in the **Version** setting.
 

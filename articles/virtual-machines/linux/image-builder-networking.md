@@ -32,7 +32,7 @@ For more information, see one of the following examples:
 
 ### What is Azure Private Link?
 
-Azure Private Link provides private connectivity from a virtual network to Azure platform as a service (PaaS), or to customer-owned or Microsoft partner services. It simplifies the network architecture, and secures the connection between endpoints in Azure by eliminating data exposure to the public internet. For more information, see the [Private Link documentation](../../private-link/index.yml).
+Azure Private Link provides private connectivity from a virtual network to Azure platform as a service (PaaS), or to customer-owned or Microsoft partner services. It simplifies the network architecture, and secures the connection between endpoints in Azure by eliminating data exposure to the public internet. For more information, see the [Private Link documentation](/azure/private-link/).
 
 ### Required permissions for an existing virtual network
 
@@ -67,7 +67,7 @@ The deployed proxy VM size is *Standard A1_v2*, in addition to the build VM. The
 |---------|---------|
 | `subnetId` | Resource ID of a pre-existing subnet on which the build VM and validation VM is deployed. |
 
-Private Link requires an IP from the specified virtual network and subnet. Currently, Azure doesn’t support network policies on these IPs. Hence, you must disable network policies on the subnet. For more information, see the [Private Link documentation](../../private-link/index.yml).
+Private Link requires an IP from the specified virtual network and subnet. Currently, Azure doesn’t support network policies on these IPs. Hence, you must disable network policies on the subnet. For more information, see the [Private Link documentation](/azure/private-link/).
 
 ### Checklist for using your virtual network
 

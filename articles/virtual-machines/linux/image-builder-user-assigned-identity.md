@@ -15,7 +15,7 @@ ms.custom: devx-track-azurecli, linux-related-content
 
 **Applies to:** :heavy_check_mark: Linux VMs :heavy_check_mark: Flexible scale sets 
 
-This article shows how to create a customized image by using Azure VM Image Builder. The service uses a [user-assigned managed identity](../../active-directory/managed-identities-azure-resources/overview.md) to access files in an Azure storage account, and it can achieve blocking unauthenticated access to the storage account.
+This article shows how to create a customized image by using Azure VM Image Builder. The service uses a [user-assigned managed identity](/azure/active-directory/managed-identities-azure-resources/overview) to access files in an Azure storage account, and it can achieve blocking unauthenticated access to the storage account.
 
 Azure VM Image Builder supports using scripts and copying files from GitHub, Azure storage accounts, and other locations. If you want to use the locations, they must be externally accessible to VM Image Builder.
 
@@ -57,7 +57,7 @@ In the following example, you'll create two resource groups, one for the custom 
 
 1. Create a user-assigned identity, and set permissions on the resource group:
 
-    VM Image Builder uses the provided [user identity](../../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md#user-assigned-managed-identity) to inject the image into the resource group. In this example, you create an Azure role definition with specific actions for distributing the image. The role definition is then assigned to the user identity.
+    VM Image Builder uses the provided [user identity](/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm#user-assigned-managed-identity) to inject the image into the resource group. In this example, you create an Azure role definition with specific actions for distributing the image. The role definition is then assigned to the user identity.
 
     ```console
     # Create a user-assigned identity for VM Image Builder to access the storage account where the script is located

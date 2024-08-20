@@ -19,7 +19,7 @@ This tutorial uses the CLI within the Azure Cloud Shell, which is constantly upd
 
 ## Create a rules file
 
-In order to restrict what extensions are available, you need to create a [rule](../../governance/policy/concepts/definition-structure.md#policy-rule) to identify the extension.
+In order to restrict what extensions are available, you need to create a [rule](/azure/governance/policy/concepts/definition-structure#policy-rule) to identify the extension.
 
 This example demonstrates how to deny the installation of disallowed VM extensions by defining a rules file in Azure Cloud Shell. However, if you're working in Azure CLI locally, you can create a local file and replace the path (~/clouddrive) with the path to the file on your local file system.
 
@@ -53,7 +53,7 @@ This example demonstrates how to deny the installation of disallowed VM extensio
 
 ## Create a parameters file
 
-You also need a [parameters](../../governance/policy/concepts/definition-structure.md#parameters) file that creates a structure for you to use for passing in a list of the unauthorized extensions.
+You also need a [parameters](/azure/governance/policy/concepts/definition-structure#parameters) file that creates a structure for you to use for passing in a list of the unauthorized extensions.
 
 This example shows you how to create a parameter file for Linux VMs in Cloud Shell.
 
@@ -152,4 +152,4 @@ az policy definition delete --name 'not-allowed-vmextension-linux'
 
 ## Next steps
 
-For more information, see [Azure Policy](../../governance/policy/overview.md).
+For more information, see [Azure Policy](/azure/governance/policy/overview).

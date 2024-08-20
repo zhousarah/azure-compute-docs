@@ -1243,13 +1243,13 @@
       items:
       - name: Linux
         displayName: Network Watcher, extension, Azure Network Watcher
-        href: ../network-watcher/network-watcher-agent-linux.md?toc=/azure/virtual-machines/toc.json
+        href: /azure/network-watcher/network-watcher-agent-linux?toc=/azure/virtual-machines/toc.json
       - name: Windows
         displayName: Network Watcher, extension, Azure Network Watcher
-        href: ../network-watcher/network-watcher-agent-windows.md?toc=/azure/virtual-machines/toc.json
+        href: /azure/network-watcher/network-watcher-agent-windows?toc=/azure/virtual-machines/toc.json
       - name: Update to latest version
         displayName: Network Watcher, extension, Azure Network Watcher
-        href: ../network-watcher/network-watcher-agent-update.md?toc=/azure/virtual-machines/toc.json
+        href: /azure/network-watcher/network-watcher-agent-update?toc=/azure/virtual-machines/toc.json
     - name: InfiniBand Drivers
       items:
       - name: Linux
@@ -1867,7 +1867,7 @@
     - name: Azure CLI
       href: /azure/virtual-network/ip-services/virtual-network-multiple-ip-addresses-cli?toc=/azure/virtual-machines/toc.json
     - name: Add or remove network interfaces
-      href: ../virtual-network/virtual-network-network-interface-vm.yml?toc=/azure/virtual-machines/toc.json
+      href: /azure/virtual-network/virtual-network-network-interface-vm?toc=/azure/virtual-machines/toc.json
     - name: Create VM - multiple NICs
       items:
       - name: Azure PowerShell
@@ -2094,7 +2094,7 @@
   - name: Update Management in Azure Automation
     href: /azure/automation/update-management/overview?toc=/azure/virtual-machines/toc.json
   - name: Update Manager
-    href: ../update-center/index.yml
+    href: /azure/update-center/
   - name: Maintenance
     items:
     - name: Overview
@@ -2244,7 +2244,7 @@
       href: /azure/backup/azure-backup-pricing?toc=/azure/virtual-machines/toc.json
       displayName: backup VMs, Azure Backup, recovery
     - name: FAQ
-      href: ../backup/backup-azure-vm-backup-faq.yml?toc=/azure/virtual-machines/toc.json
+      href: /azure/backup/backup-azure-vm-backup-faq?toc=/azure/virtual-machines/toc.json
       displayName: backup VMs, Azure Backup, recovery
   - name: Disaster recovery
     items:

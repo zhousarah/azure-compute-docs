@@ -12,9 +12,9 @@ ms.reviewer: jamesser
 ---
 # Connect to a Linux VM
 
-When hosting a Linux virtual machine on Azure, the most common method for accessing that VM is through the Secure Shell Protocol (SSH). Any standard SSH client commonly found in Linux and Windows allows you to connect. You can also use [Azure Cloud Shell](../cloud-shell/overview.md) from any browser.
+When hosting a Linux virtual machine on Azure, the most common method for accessing that VM is through the Secure Shell Protocol (SSH). Any standard SSH client commonly found in Linux and Windows allows you to connect. You can also use [Azure Cloud Shell](/azure/cloud-shell/overview) from any browser.
 
-This document describes how to connect, via SSH, to a VM that has a public IP. If you need to connect to a VM without a public IP, see [Azure Bastion Service](../bastion/bastion-overview.md).
+This document describes how to connect, via SSH, to a VM that has a public IP. If you need to connect to a VM without a public IP, see [Azure Bastion Service](/azure/bastion/bastion-overview).
 
 > [!Note]
 > ED25519 SSH key support for Linux VMs is now in preview in all regions including sovereign clouds.
@@ -22,7 +22,7 @@ This document describes how to connect, via SSH, to a VM that has a public IP. I
 ## Prerequisites
 
 - You need an SSH key pair. If you don't already have one, Azure creates a key pair during the deployment process. If you need help with creating one manually, see [Create and use an SSH public-private key pair for Linux VMs in Azure](./linux/mac-create-ssh-keys.md).
-- You need an existing Network Security Group (NSG). Most VMs have an NSG by default, but if you don't already have one you can create one and attach it manually. For more information, see [Create, change, or delete a network security group](../virtual-network/manage-network-security-group.md).
+- You need an existing Network Security Group (NSG). Most VMs have an NSG by default, but if you don't already have one you can create one and attach it manually. For more information, see [Create, change, or delete a network security group](/azure/virtual-network/manage-network-security-group).
 - To connect to a Linux VM, you need the appropriate port open. Typically SSH uses port 22. The following instructions assume port 22 but the process is the same for other port numbers. You can validate an appropriate port is open for SSH using the troubleshooter or by checking manually in your VM settings. To check if port 22 is open:
 
     1. On the page for the VM, select **Networking** from the left menu.
@@ -47,7 +47,7 @@ This document describes how to connect, via SSH, to a VM that has a public IP. I
     :::image type="content" source="media/linux-vm-connect/no-public-ip.png" alt-text="Screenshot of how the networking section looks when you don't have a public I P.":::
 
 
-    To learn more about adding a public IP address to an existing VM, see  [Associate a public IP address to a virtual machine](../virtual-network/ip-services/associate-public-ip-address-vm.md)
+    To learn more about adding a public IP address to an existing VM, see  [Associate a public IP address to a virtual machine](/azure/virtual-network/ip-services/associate-public-ip-address-vm)
 
 - Verify your VM is running. On the Overview tab, in the **Essentials** section, verify the status of the VM is **Running**. To start the VM, select **Start** at the top of the page.
 
@@ -61,7 +61,7 @@ If you're having trouble connecting, you can also use portal:
 
 ## Connect to the VM
 
-Once the above prerequisites are met, you're ready to connect to your VM. Open your SSH client of choice. The SSH client command is typically included in Linux, macOS, and Windows. If you're using Windows 7 or older, where Win32 OpenSSH isn't included by default, consider installing [WSL](/windows/wsl/about) or using [Azure Cloud Shell](../cloud-shell/overview.md) from the browser.
+Once the above prerequisites are met, you're ready to connect to your VM. Open your SSH client of choice. The SSH client command is typically included in Linux, macOS, and Windows. If you're using Windows 7 or older, where Win32 OpenSSH isn't included by default, consider installing [WSL](/windows/wsl/about) or using [Azure Cloud Shell](/azure/cloud-shell/overview) from the browser.
 
 > [!NOTE]
 > The following examples assume the SSH key is in the key.pem format. If you used CLI or Azure PowerShell to download your keys, they may be in the id_rsa or ED25519 format.

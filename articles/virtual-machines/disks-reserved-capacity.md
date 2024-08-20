@@ -53,7 +53,7 @@ In rare circumstances, Azure limits the purchase of new reservations to a subset
 
 ## Buy a disk reservation
 
-You can purchase Azure Disk Storage reservations through the [Azure portal](https://portal.azure.com/). You can pay for the reservation either up front or with monthly payments. For more information about purchasing with monthly payments, see [Purchase reservations with monthly payments](../cost-management-billing/reservations/prepare-buy-reservation.md#buy-reservations-with-monthly-payments).
+You can purchase Azure Disk Storage reservations through the [Azure portal](https://portal.azure.com/). You can pay for the reservation either up front or with monthly payments. For more information about purchasing with monthly payments, see [Purchase reservations with monthly payments](/azure/cost-management-billing/reservations/prepare-buy-reservation#buy-reservations-with-monthly-payments).
 
 To buy a reservation, you must have owner role or reservation purchaser role on an Azure subscription.
 
@@ -89,7 +89,7 @@ After you purchase a reservation, it's automatically applied to any existing Dis
 
 ## Cancel, exchange, or refund reservations
 
-You can cancel, exchange, or refund reservations within certain limitations. For more information, see [Self-service exchanges and refunds for Azure Reservations](../cost-management-billing/reservations/exchange-and-refund-azure-reservations.md).
+You can cancel, exchange, or refund reservations within certain limitations. For more information, see [Self-service exchanges and refunds for Azure Reservations](/azure/cost-management-billing/reservations/exchange-and-refund-azure-reservations).
 
 ## Expiration of a reservation
 
@@ -103,5 +103,5 @@ If you have questions or need help, [create a support request](https://go.micros
 
 ## Next steps
 
-- [What are Azure Reservations?](../cost-management-billing/reservations/save-compute-costs-reservations.md)
-- [Understand how your reservation discount is applied to Azure Disk Storage](../cost-management-billing/reservations/understand-disk-reservations.md)
+- [What are Azure Reservations?](/azure/cost-management-billing/reservations/save-compute-costs-reservations)
+- [Understand how your reservation discount is applied to Azure Disk Storage](/azure/cost-management-billing/reservations/understand-disk-reservations)

@@ -13,17 +13,17 @@ ms.custom: devx-track-azurecli, devx-track-azurepowershell
 
 # Automatic instance repairs for Azure Virtual Machine Scale Sets
 
-Enabling automatic instance repairs for Azure Virtual Machine Scale Sets helps achieve high availability for applications by maintaining a set of healthy instances. If an unhealthy instance is found by [Application Health extension](./virtual-machine-scale-sets-health-extension.md) or [Load balancer health probes](../load-balancer/load-balancer-custom-probe-overview.md), automatic instance repairs will attempt to recover the instance by triggering repair actions such as deleting the unhealthy instance and creating a new one to replace it, reimaging the unhealthy instance, or restarting the unhealthy instance.
+Enabling automatic instance repairs for Azure Virtual Machine Scale Sets helps achieve high availability for applications by maintaining a set of healthy instances. If an unhealthy instance is found by [Application Health extension](./virtual-machine-scale-sets-health-extension.md) or [Load balancer health probes](/azure/load-balancer/load-balancer-custom-probe-overview), automatic instance repairs will attempt to recover the instance by triggering repair actions such as deleting the unhealthy instance and creating a new one to replace it, reimaging the unhealthy instance, or restarting the unhealthy instance.
 
 ## Requirements for using automatic instance repairs
 
 **Enable application health monitoring for scale set**
 
-The scale set should have application health monitoring for instances enabled. Health monitoring can be done using either [Application Health extension](./virtual-machine-scale-sets-health-extension.md) or [Load balancer health probes](../load-balancer/load-balancer-custom-probe-overview.md), where only one can be enabled at a time. The application health extension or the load balancer probes ping the application endpoint configured on virtual machine instances to determine the application health status. This health status is used by the scale set orchestrator to monitor instance health and perform repairs when required.
+The scale set should have application health monitoring for instances enabled. Health monitoring can be done using either [Application Health extension](./virtual-machine-scale-sets-health-extension.md) or [Load balancer health probes](/azure/load-balancer/load-balancer-custom-probe-overview), where only one can be enabled at a time. The application health extension or the load balancer probes ping the application endpoint configured on virtual machine instances to determine the application health status. This health status is used by the scale set orchestrator to monitor instance health and perform repairs when required.
 
 **Configure endpoint to provide health status**
 
-Before enabling automatic instance repairs policy, ensure that your scale set instances have an application endpoint configured to emit the application health status. To configure health status on Application Health extension, you can use either [Binary Health States](./virtual-machine-scale-sets-health-extension.md#binary-health-states) or [Rich Health States](./virtual-machine-scale-sets-health-extension.md#rich-health-states). To configure health status using Load balancer health probes, see [probe up behavior](../load-balancer/load-balancer-custom-probe-overview.md).
+Before enabling automatic instance repairs policy, ensure that your scale set instances have an application endpoint configured to emit the application health status. To configure health status on Application Health extension, you can use either [Binary Health States](./virtual-machine-scale-sets-health-extension.md#binary-health-states) or [Rich Health States](./virtual-machine-scale-sets-health-extension.md#rich-health-states). To configure health status using Load balancer health probes, see [probe up behavior](/azure/load-balancer/load-balancer-custom-probe-overview).
 
 For instances marked as "Unhealthy" or "Unknown" (*Unknown* state is only available with [Application Health extension - Rich Health States](./virtual-machine-scale-sets-health-extension.md#unknown-state)), automatic repairs are triggered by the scale set. Ensure the application endpoint is correctly configured before enabling the automatic repairs policy in order to avoid unintended instance repairs, while the endpoint is getting configured.
 
@@ -47,11 +47,11 @@ Automatic repairs currently do not support scenarios where a VM instance is mark
 
 ## How do automatic instance repairs work?
 
-Automatic instance repair feature relies on health monitoring of individual instances in a scale set. VM instances in a scale set can be configured to emit application health status using either the [Application Health extension](./virtual-machine-scale-sets-health-extension.md) or [Load balancer health probes](../load-balancer/load-balancer-custom-probe-overview.md). If an instance is found to be unhealthy, the scale set will perform a preconfigured repair action on the unhealthy instance. Automatic instance repairs can be enabled in the Virtual Machine Scale Set model by using the `automaticRepairsPolicy` object.
+Automatic instance repair feature relies on health monitoring of individual instances in a scale set. VM instances in a scale set can be configured to emit application health status using either the [Application Health extension](./virtual-machine-scale-sets-health-extension.md) or [Load balancer health probes](/azure/load-balancer/load-balancer-custom-probe-overview). If an instance is found to be unhealthy, the scale set will perform a preconfigured repair action on the unhealthy instance. Automatic instance repairs can be enabled in the Virtual Machine Scale Set model by using the `automaticRepairsPolicy` object.
 
 The automatic instance repairs process goes as follows:
 
-1. [Application Health extension](./virtual-machine-scale-sets-health-extension.md) or [Load balancer health probes](../load-balancer/load-balancer-custom-probe-overview.md) ping the application endpoint inside each virtual machine in the scale set to get application health status for each instance.
+1. [Application Health extension](./virtual-machine-scale-sets-health-extension.md) or [Load balancer health probes](/azure/load-balancer/load-balancer-custom-probe-overview) ping the application endpoint inside each virtual machine in the scale set to get application health status for each instance.
 2. If the endpoint responds with a status 200 (OK), then the instance is marked as "Healthy". In all the other cases (including if the endpoint is unreachable), the instance is marked "Unhealthy".
 3. When an instance is found to be unhealthy, the scale set applies the configured repair action (default is *Replace*) to the unhealthy instance.
 4. Instance repairs are performed in batches. At any given time, no more than 5% of the total instances in the scale set are repaired. If a scale set has fewer than 20 instances, the repairs are done for one unhealthy instance at a time.
@@ -191,7 +191,7 @@ After updating the model of an existing scale set, ensure that the latest model 
 You can modify the automatic repairs policy of an existing scale set through the Azure portal.
 
 > [!NOTE]
-> Enable the [Application Health extension](./virtual-machine-scale-sets-health-extension.md) or [Load Balancer health probes](../load-balancer/load-balancer-custom-probe-overview.md) on your Virtual Machine Scale Sets before you start the next steps.
+> Enable the [Application Health extension](./virtual-machine-scale-sets-health-extension.md) or [Load Balancer health probes](/azure/load-balancer/load-balancer-custom-probe-overview) on your Virtual Machine Scale Sets before you start the next steps.
 
 1. Go to an existing Virtual Machine Scale Set.0
 1. Under **Settings** in the menu on the left, select **Health and repair**.
@@ -439,4 +439,4 @@ In the Azure portal, you can see the health status as well. Go to an existing sc
 
 ## Next steps
 
-Learn how to configure [Application Health extension](./virtual-machine-scale-sets-health-extension.md) or [Load balancer health probes](../load-balancer/load-balancer-custom-probe-overview.md) for your scale sets.
+Learn how to configure [Application Health extension](./virtual-machine-scale-sets-health-extension.md) or [Load balancer health probes](/azure/load-balancer/load-balancer-custom-probe-overview) for your scale sets.

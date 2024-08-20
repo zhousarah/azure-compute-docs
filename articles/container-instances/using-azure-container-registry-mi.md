@@ -14,7 +14,7 @@ ms.custom: mvc, devx-track-azurecli, devx-track-arm-template
 
 [Azure Container Registry][acr-overview] (ACR) is an Azure-based, managed container registry service used to store private Docker container images. This article describes how to pull container images stored in an Azure container registry when deploying to container groups with Azure Container Instances. One way to configure registry access is to create a Microsoft Entra managed identity.
 
-When access to an Azure Container Registry (ACR) is [restricted using a private endpoint](../container-registry/container-registry-private-link.md), using a managed identity allows Azure Container Instances [deployed into a virtual network](container-instances-vnet.md) to access the container registry through the private endpoint.
+When access to an Azure Container Registry (ACR) is [restricted using a private endpoint](/azure/container-registry/container-registry-private-link), using a managed identity allows Azure Container Instances [deployed into a virtual network](container-instances-vnet.md) to access the container registry through the private endpoint.
 
 ## Prerequisites
 
@@ -239,10 +239,10 @@ az group delete --name myResourceGroup
 [use-service-principal]: ./container-instances-using-azure-container-registry.md
 [az-identity-show]: /cli/azure/identity#az-identity-show
 [az-identity-create]: /cli/azure/identity#az-identity-create
-[acr-overview]: ../container-registry/container-registry-intro.md
-[acr-get-started]: ../container-registry/container-registry-get-started-azure-cli.md
+[acr-overview]: /azure/container-registry/container-registry-intro
+[acr-get-started]: /azure/container-registry/container-registry-get-started-azure-cli
 [private-dns-zones]: ../dns/private-dns-privatednszone.md
-[allow-access-trusted-services]: ../container-registry/allow-access-trusted-services.md
+[allow-access-trusted-services]: /azure/container-registry/allow-access-trusted-services
 
 <!-- Links External -->
 [cloud-shell-bash]: https://shell.azure.com/bash

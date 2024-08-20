@@ -41,8 +41,8 @@ Azure infrastructure-as-a-service ([IaaS](https://azure.microsoft.com/overview/w
 
 Microsoft offers petabytes worth of storage for applications hosted in Azure, and you have several storage options. These range from SSD storage for high performance to low-cost blob storage for mass storage and archives. Additionally, Azure provides a data redundancy option for storage—something that takes more effort to set up in a mainframe environment.
 
-Azure storage is available as [Azure Disks](../../../managed-disks-overview.md), [Azure Files](../../../../storage/files/storage-files-introduction.md), and [Azure Blobs](../../../../storage/blobs/storage-blobs-overview.md) as the
-following table summarizes. Learn more about [when to use each](../../../../storage/common/storage-introduction.md).
+Azure storage is available as [Azure Disks](../../../managed-disks-overview.md), [Azure Files](/azure/storage/files/storage-files-introduction), and [Azure Blobs](/azure/storage/blobs/storage-blobs-overview) as the
+following table summarizes. Learn more about [when to use each](/azure/storage/common/storage-introduction).
 
 <!-- markdownlint-disable MD033 -->
 
@@ -105,7 +105,7 @@ Blob storage provides the largest volume of storage on Azure. In addition to sto
 - [Mainframe migration](/azure/architecture/cloud-adoption/infrastructure/mainframe-migration/overview)
 - [Mainframe rehosting on Azure Virtual Machines](../overview.md)
 - [Move mainframe compute to Azure](mainframe-compute-Azure.md)
-- [Deciding when to use Azure Blobs, Azure Files, or Azure Disks](../../../../storage/common/storage-introduction.md)
+- [Deciding when to use Azure Blobs, Azure Files, or Azure Disks](/azure/storage/common/storage-introduction)
 - [Standard SSD Managed Disks for Azure VM workloads](../../../disks-types.md#standard-ssds)
 
 ### IBM resources

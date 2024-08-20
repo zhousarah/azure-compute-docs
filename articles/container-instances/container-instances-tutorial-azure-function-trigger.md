@@ -12,7 +12,7 @@ ms.custom: devx-track-azurepowershell
 
 # Tutorial: Use an HTTP-triggered Azure function to create a container group
 
-[Azure Functions](../azure-functions/functions-overview.md) is a serverless compute service that can run scripts or code in response to a variety of events, such as an HTTP request, a timer, or a message in an Azure Storage queue.
+[Azure Functions](/azure/azure-functions/functions-overview) is a serverless compute service that can run scripts or code in response to a variety of events, such as an HTTP request, a timer, or a message in an Azure Storage queue.
 
 In this tutorial, you create an Azure function that takes an HTTP request and triggers deployment of a [container group](container-instances-container-groups.md). This example shows the basics of using Azure Functions to automatically create resources in Azure Container Instances. Modify or extend the example for more complex scenarios or other event triggers.
 
@@ -26,21 +26,21 @@ You learn how to:
 
 ## Prerequisites
 
-See [Create your first function in Azure using Visual Studio Code](../azure-functions/create-first-function-vs-code-csharp.md?pivots=programming-language-powershell#configure-your-environment) for prerequisites to install and use Visual Studio Code with the Azure Functions extension on your OS.
+See [Create your first function in Azure using Visual Studio Code](/azure/azure-functions/create-first-function-vs-code-csharp?pivots=programming-language-powershell#configure-your-environment) for prerequisites to install and use Visual Studio Code with the Azure Functions extension on your OS.
 
 Additional steps in this article use Azure PowerShell. If you need to install or upgrade, see [Install Azure PowerShell][azure-powershell-install] and [Sign into Azure](/powershell/azure/get-started-azureps#sign-in-to-azure).
 
 ## Create a basic PowerShell function
 
-Follow steps in [Create your first PowerShell function in Azure](../azure-functions/create-first-function-vs-code-csharp.md?pivots=programming-language-powershell) to create a PowerShell function using the HTTP Trigger template. Use the default Azure function name **HttpTrigger**. As shown in the quickstart, test the function locally, and publish the project to a function app in Azure. This example is a basic HTTP-triggered function that returns a text string. In later steps in this article, you modify the function to create a container group.
+Follow steps in [Create your first PowerShell function in Azure](/azure/azure-functions/create-first-function-vs-code-csharp?pivots=programming-language-powershell) to create a PowerShell function using the HTTP Trigger template. Use the default Azure function name **HttpTrigger**. As shown in the quickstart, test the function locally, and publish the project to a function app in Azure. This example is a basic HTTP-triggered function that returns a text string. In later steps in this article, you modify the function to create a container group.
 
 This article assumes you publish the project using the name *myfunctionapp*, in an Azure resource group automatically named according to the function app name (also *myfunctionapp*). Substitute your unique function app name and resource group name in later steps.
 
 ## Enable an Azure-managed identity in the function app
 
-The following commands enable a system-assigned [managed identity](../app-service/overview-managed-identity.md?toc=/azure/azure-functions/toc.json#add-a-system-assigned-identity) in your function app. The PowerShell host running the app can automatically authenticate to Azure using this identity, enabling functions to take actions on Azure services to which the identity is granted access. In this tutorial, you grant the managed identity permissions to create resources in the function app's resource group.
+The following commands enable a system-assigned [managed identity](/azure/app-service/overview-managed-identity?toc=/azure/azure-functions/toc.json#add-a-system-assigned-identity) in your function app. The PowerShell host running the app can automatically authenticate to Azure using this identity, enabling functions to take actions on Azure services to which the identity is granted access. In this tutorial, you grant the managed identity permissions to create resources in the function app's resource group.
 
-[Add an identity](../app-service/overview-managed-identity.md?tabs=ps%2Cdotnet) to the function app:
+[Add an identity](/azure/app-service/overview-managed-identity?tabs=ps%2Cdotnet) to the function app:
 
 ```azurepowershell-interactive
 Update-AzFunctionApp -Name myfunctionapp `
@@ -90,7 +90,7 @@ This example creates a container group consisting of a single container instance
 
 ## Test function app locally
 
-Ensure that the function runs locally before republishing the function app project to Azure. When run locally, the function doesn't create Azure resources. However, you can test the function flow with and without passing a name value in a query string. To debug the function, see [Debug PowerShell Azure Functions locally](../azure-functions/functions-debug-powershell-local.md).
+Ensure that the function runs locally before republishing the function app project to Azure. When run locally, the function doesn't create Azure resources. However, you can test the function flow with and without passing a name value in a query string. To debug the function, see [Debug PowerShell Azure Functions locally](/azure/azure-functions/functions-debug-powershell-local).
 
 ## Republish Azure function app
 
@@ -104,7 +104,7 @@ A notification is displayed after your function app is created and the deploymen
 
 ## Run the function in Azure
 
-After the deployment completes successfully, get the function URL. For example, use the **Azure: Functions** area in Visual Studio Code to copy the **HttpTrigger** function URL, or get the function URL in the [Azure portal](../azure-functions/functions-get-started.md).
+After the deployment completes successfully, get the function URL. For example, use the **Azure: Functions** area in Visual Studio Code to copy the **HttpTrigger** function URL, or get the function URL in the [Azure portal](/azure/azure-functions/functions-get-started).
 
 The function URL is of the form:
 
@@ -200,7 +200,7 @@ In this tutorial, you created an Azure function that takes an HTTP request and t
 
 For a detailed example to launch and monitor a containerized job, see the blog post [Event-Driven Serverless Containers with PowerShell Azure Functions and Azure Container Instances](https://dev.to/azure/event-driven-serverless-containers-with-powershell-azure-functions-and-azure-container-instances-e9b) and accompanying [code sample](https://github.com/anthonychu/functions-powershell-run-aci).
 
-See the [Azure Functions documentation](../azure-functions/index.yml) for detailed guidance on creating Azure functions and publishing a functions project.
+See the [Azure Functions documentation](/azure/azure-functions/) for detailed guidance on creating Azure functions and publishing a functions project.
 
 <!-- IMAGES -->
 

@@ -22,7 +22,7 @@ This tutorial shows you how to set up disaster recovery for Azure VMs running Wi
 > * Run a disaster recovery drill to check it works as expected
 > * Stop replicating the VM after the drill
 
-When you enable replication for a VM, the Site Recovery Mobility service extension installs on the VM, and registers it with [Azure Site Recovery](../../site-recovery/site-recovery-overview.md). During replication, VM disk writes are sent to a cache storage account in the source region. Data is sent from there to the target region, and recovery points are generated from the data.  When you fail over a VM during disaster recovery, a recovery point is used to create a VM in the target region.
+When you enable replication for a VM, the Site Recovery Mobility service extension installs on the VM, and registers it with [Azure Site Recovery](/azure/site-recovery/site-recovery-overview). During replication, VM disk writes are sent to a cache storage account in the source region. Data is sent from there to the target region, and recovery points are generated from the data.  When you fail over a VM during disaster recovery, a recovery point is used to create a VM in the target region.
 
 If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/pricing/free-trial/) before you begin.
 
@@ -208,4 +208,4 @@ The Site Recovery extension installed on the VM during replication isn't removed
 In this tutorial, you configured disaster recovery for an Azure VM, and ran a disaster recovery drill. Now, you can perform a full failover for the VM.
 
 > [!div class="nextstepaction"]
-> [Fail over a VM to another region](../../site-recovery/azure-to-azure-tutorial-dr-drill.md)
+> [Fail over a VM to another region](/azure/site-recovery/azure-to-azure-tutorial-dr-drill)

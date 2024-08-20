@@ -47,10 +47,10 @@ Examples of region pairs include:
 | North Europe |West Europe |
 | Southeast Asia |East Asia |
 
-You can see the full [list of regional pairs here](../availability-zones/cross-region-replication-azure.md#azure-paired-regions).
+You can see the full [list of regional pairs here](/azure/availability-zones/cross-region-replication-azure#azure-paired-regions).
 
 ## Feature availability
-Some services or VM features are only available in certain regions, such as specific VM sizes or storage types. There are also some global Azure services that do not require you to select a particular region, such as [Microsoft Entra ID](../active-directory/fundamentals/active-directory-whatis.md), [Traffic Manager](../traffic-manager/traffic-manager-overview.md), or [Azure DNS](../dns/dns-overview.md). To assist you in designing your application environment, you can check the [availability of Azure services across each region](https://azure.microsoft.com/regions/#services). You can also [programmatically query the supported VM sizes and restrictions in each region](../azure-resource-manager/templates/error-sku-not-available.md).
+Some services or VM features are only available in certain regions, such as specific VM sizes or storage types. There are also some global Azure services that do not require you to select a particular region, such as [Microsoft Entra ID](/azure/active-directory/fundamentals/active-directory-whatis), [Traffic Manager](/azure/traffic-manager/traffic-manager-overview), or [Azure DNS](/azure/dns/dns-overview). To assist you in designing your application environment, you can check the [availability of Azure services across each region](https://azure.microsoft.com/regions/#services). You can also [programmatically query the supported VM sizes and restrictions in each region](/azure/azure-resource-manager/templates/error-sku-not-available).
 
 ## Storage availability
 Understanding Azure regions and geographies becomes important when you consider the available storage replication options. Depending on the storage type, you have different replication options.
@@ -77,7 +77,7 @@ The following table provides a quick overview of the differences between the sto
 | Data can be read from the secondary location and from the primary location. |No |No |No |Yes |
 | Number of copies of data maintained on separate nodes. |3 |3 |6 |6 |
 
-You can read more about [Azure Storage replication options here](../storage/common/storage-redundancy.md). For more information about managed disks, see [Azure Managed Disks overview](./managed-disks-overview.md).
+You can read more about [Azure Storage replication options here](/azure/storage/common/storage-redundancy). For more information about managed disks, see [Azure Managed Disks overview](./managed-disks-overview.md).
 
 
 ## Next steps

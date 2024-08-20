@@ -11,7 +11,7 @@ ms.date: 07/14/2022
 
 # Azure Service Fabric security 
 
-For more information about [Azure Security Best Practices](../security/index.yml), review [Azure Service Fabric security best practices](../security/fundamentals/service-fabric-best-practices.md)
+For more information about [Azure Security Best Practices](/azure/security/), review [Azure Service Fabric security best practices](/azure/security/fundamentals/service-fabric-best-practices)
 
 ## Key Vault
 
@@ -86,7 +86,7 @@ To secure your Service Fabric cluster by certificate `Common Name`, use the Reso
 
 Azure domains, such as *\<YOUR SUBDOMAIN\>.cloudapp.azure.com or \<YOUR SUBDOMAIN\>.trafficmanager.net, are owned by Microsoft. Certificate Authorities will not issue certificates for domains to unauthorized users. Most users will need to purchase a domain from a registrar, or be an authorized domain admin, for a certificate authority to issue you a certificate with that common name.
 
-For additional details on how to configure DNS Service to resolve your domain to a Microsoft IP address, review how to configure [Azure DNS to host your domain](../dns/dns-delegate-domain-azure-dns.md).
+For additional details on how to configure DNS Service to resolve your domain to a Microsoft IP address, review how to configure [Azure DNS to host your domain](/azure/dns/dns-delegate-domain-azure-dns).
 
 > [!NOTE]
 > After delegating your domains name servers to your Azure DNS zone name servers, add the following two records to your DNS Zone:
@@ -172,9 +172,9 @@ To give your application access to secrets, include the certificate by adding a 
 ```
 ## Authenticate Service Fabric applications to Azure Resources using Managed Service Identity (MSI)
 
-To learn about managed identities for Azure resources, see [What is managed identities for Azure resources?](../active-directory/managed-identities-azure-resources/overview.md).
-Azure Service Fabric clusters are hosted on Virtual Machine Scale Sets, which support [Managed Service Identity](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-managed-identities-for-azure-resources).
-To get a list of services that MSI can be used to authenticate to, see [Azure Services that support Microsoft Entra authentication](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-services-that-support-azure-ad-authentication).
+To learn about managed identities for Azure resources, see [What is managed identities for Azure resources?](/azure/active-directory/managed-identities-azure-resources/overview).
+Azure Service Fabric clusters are hosted on Virtual Machine Scale Sets, which support [Managed Service Identity](/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities#azure-services-that-support-managed-identities-for-azure-resources).
+To get a list of services that MSI can be used to authenticate to, see [Azure Services that support Microsoft Entra authentication](/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities#azure-services-that-support-azure-ad-authentication).
 
 
 To enable system assigned managed identity during the creation of a virtual machines scale set or an existing virtual machines scale set, declare the following `"Microsoft.Compute/virtualMachinesScaleSets"` property:
@@ -184,9 +184,9 @@ To enable system assigned managed identity during the creation of a virtual mach
     "type": "SystemAssigned"
 }
 ```
-See [What is managed identities for Azure resources?](../active-directory/managed-identities-azure-resources/qs-configure-template-windows-vmss.md#system-assigned-managed-identity) for more information.
+See [What is managed identities for Azure resources?](/azure/active-directory/managed-identities-azure-resources/qs-configure-template-windows-vmss#system-assigned-managed-identity) for more information.
 
-If you created a  [user-assigned managed identity](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-arm.md#create-a-user-assigned-managed-identity), declare the following resource in your template to assign it to your virtual machine scale set. Replace `\<USERASSIGNEDIDENTITYNAME\>` with the name of the user-assigned managed identity you created:
+If you created a  [user-assigned managed identity](/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-arm#create-a-user-assigned-managed-identity), declare the following resource in your template to assign it to your virtual machine scale set. Replace `\<USERASSIGNEDIDENTITYNAME\>` with the name of the user-assigned managed identity you created:
 
 ```json
 "identity": {
@@ -206,7 +206,7 @@ PRINCIPAL_ID=$(az resource show --id /subscriptions/<YOUR SUBSCRIPTON>/resourceG
 az role assignment create --assignee $PRINCIPAL_ID --role 'Contributor' --scope "/subscriptions/<YOUR SUBSCRIPTION>/resourceGroups/<YOUR RG>/providers/<PROVIDER NAME>/<RESOURCE TYPE>/<RESOURCE NAME>"
 ```
 
-In your Service Fabric application code, [obtain an access token](../active-directory/managed-identities-azure-resources/how-to-use-vm-token.md#get-a-token-using-http) for Azure Resource Manager by making a REST all similar to the following:
+In your Service Fabric application code, [obtain an access token](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token#get-a-token-using-http) for Azure Resource Manager by making a REST all similar to the following:
 
 ```bash
 ACCESS_TOKEN=$(curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' -H Metadata:true | python -c "import sys, json; print json.load(sys.stdin)['access_token']")
@@ -223,7 +223,7 @@ COSMOS_DB_PASSWORD=$(curl 'https://management.azure.com/subscriptions/<YOUR SUBS
 [We recommend that you implement an industry-standard configuration that is broadly known and well-tested, such as Microsoft security baselines, as opposed to creating a baseline yourself](/windows/security/threat-protection/windows-security-baselines); an option for provisioning these on your Virtual Machine Scale Sets is to use Azure Desired State Configuration (DSC) extension handler, to configure the VMs as they come online, so they are running the production software.
 
 ## Azure Firewall
-[Azure Firewall is a managed, cloud-based network security service that protects your Azure Virtual Network resources. It is a fully stateful firewall as a service with built-in high availability and unrestricted cloud scalability.](../firewall/overview.md); this enables the ability to limit outbound HTTP/S traffic to a specified list of fully qualified domain names (FQDN) including wild cards. This feature does not require TLS/SSL termination. Its recommended that you leverage [Azure Firewall FQDN tags](../firewall/fqdn-tags.md) for Windows Updates, and to enable network traffic to Microsoft Windows Update endpoints can flow through your firewall. [Deploy Azure Firewall using a template](../firewall/deploy-template.md) provides a sample for Microsoft.Network/azureFirewalls resource template definition. Firewall rules common to Service Fabric Applications is to allow the following for your clusters virtual network:
+[Azure Firewall is a managed, cloud-based network security service that protects your Azure Virtual Network resources. It is a fully stateful firewall as a service with built-in high availability and unrestricted cloud scalability.](/azure/firewall/overview); this enables the ability to limit outbound HTTP/S traffic to a specified list of fully qualified domain names (FQDN) including wild cards. This feature does not require TLS/SSL termination. Its recommended that you leverage [Azure Firewall FQDN tags](/azure/firewall/fqdn-tags) for Windows Updates, and to enable network traffic to Microsoft Windows Update endpoints can flow through your firewall. [Deploy Azure Firewall using a template](/azure/firewall/deploy-template) provides a sample for Microsoft.Network/azureFirewalls resource template definition. Firewall rules common to Service Fabric Applications is to allow the following for your clusters virtual network:
 
 - *download.microsoft.com
 - *servicefabric.azure.com

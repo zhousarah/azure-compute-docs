@@ -16,7 +16,7 @@ ms.date: 07/14/2022
 > * [Windows](service-fabric-get-started-containers.md)
 > * [Linux](service-fabric-get-started-containers-linux.md)
 
-Running an existing application in a Windows container on a Service Fabric cluster doesn't require any changes to your application. This article walks you through creating a Docker image containing a Python [Flask](http://flask.pocoo.org/) web application and deploying it to an Azure Service Fabric cluster. You will also share your containerized application through [Azure Container Registry](../container-registry/index.yml). This article assumes a basic understanding of Docker. You can learn about Docker by reading the [Docker Overview](https://docs.docker.com/engine/understanding-docker/).
+Running an existing application in a Windows container on a Service Fabric cluster doesn't require any changes to your application. This article walks you through creating a Docker image containing a Python [Flask](http://flask.pocoo.org/) web application and deploying it to an Azure Service Fabric cluster. You will also share your containerized application through [Azure Container Registry](/azure/container-registry/). This article assumes a basic understanding of Docker. You can learn about Docker by reading the [Docker Overview](https://docs.docker.com/engine/understanding-docker/).
 
 > [!NOTE]
 > This article applies to a Windows development environment.  The Service Fabric cluster runtime and the Docker runtime must be running on the same OS.  You cannot run Windows containers on a Linux cluster.
@@ -37,7 +37,7 @@ Running an existing application in a Windows container on a Service Fabric clust
   
     To determine the version of Windows Server with Containers you need for your cluster, run the `ver` command from a Windows command prompt on your development machine. Refer to [Windows Server container OS and host OS compatibility](#windows-server-container-os-and-host-os-compatibility) before you [creating a cluster](service-fabric-cluster-creation-via-portal.md).
 
-* A registry in Azure Container Registry - [Create a container registry](../container-registry/container-registry-get-started-portal.md) in your Azure subscription.
+* A registry in Azure Container Registry - [Create a container registry](/azure/container-registry/container-registry-get-started-portal) in your Azure subscription.
 
 > [!NOTE]
 > Deploying containers to a Service Fabric cluster running on Windows 10 is supported.  See [this article](service-fabric-how-to-debug-windows-containers.md) for information on how to configure Windows 10 to run Windows containers.
@@ -109,7 +109,7 @@ if __name__ == "__main__":
 Next we'll create the image that runs your web application. When pulling public images from Docker (like `python:2.7-windowsservercore` in our Dockerfile), it's a best practice to authenticate with your Docker Hub account instead of making an anonymous pull request.
 
 > [!NOTE]
-> When making frequent anonymous pull requests you might see Docker errors similar to `ERROR: toomanyrequests: Too Many Requests.` or `You have reached your pull rate limit.` Authenticate to Docker Hub to prevent these errors. See [Manage public content with Azure Container Registry](../container-registry/buffer-gate-public-content.md) for more info.
+> When making frequent anonymous pull requests you might see Docker errors similar to `ERROR: toomanyrequests: Too Many Requests.` or `You have reached your pull rate limit.` Authenticate to Docker Hub to prevent these errors. See [Manage public content with Azure Container Registry](/azure/container-registry/buffer-gate-public-content) for more info.
 
 Open a PowerShell window and navigate to the directory containing the Dockerfile. Then run the following commands:
 
@@ -169,9 +169,9 @@ docker rm my-web-site
 
 After you verify that the container runs on your development machine, push the image to your registry in Azure Container Registry.
 
-Run ``docker login`` to sign in to your container registry with your [registry credentials](../container-registry/container-registry-authentication.md).
+Run ``docker login`` to sign in to your container registry with your [registry credentials](/azure/container-registry/container-registry-authentication).
 
-The following example passes the ID and password of a Microsoft Entra [service principal](../active-directory/develop/app-objects-and-service-principals.md). For example, you might have assigned a service principal to your registry for an automation scenario. Or, you could sign in using your registry username and password.
+The following example passes the ID and password of a Microsoft Entra [service principal](/azure/active-directory/develop/app-objects-and-service-principals). For example, you might have assigned a service principal to your registry for an automation scenario. Or, you could sign in using your registry username and password.
 
 ```
 docker login myregistry.azurecr.io -u xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -p myPassword

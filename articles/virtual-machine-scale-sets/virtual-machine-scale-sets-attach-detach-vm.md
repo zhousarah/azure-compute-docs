@@ -29,7 +29,7 @@ You can attach an existing VM to an existing Virtual Machine Scale Set by specif
 Attach a virtual machine to a Virtual Machine Scale Set at the time of VM creation by specifying the `virtualMachineScaleSet` property. 
 
 > [!NOTE]
-> Attaching a virtual machine to Virtual Machine Scale Set doesn't by itself update any VM networking parameters such as load balancers. If you would like this virtual machine to receive traffic from any load balancer, you must manually configure the VM network interface to receive traffic from the load balancer.  Learn more about [Load balancers](../virtual-network/network-overview.md#load-balancers).
+> Attaching a virtual machine to Virtual Machine Scale Set doesn't by itself update any VM networking parameters such as load balancers. If you would like this virtual machine to receive traffic from any load balancer, you must manually configure the VM network interface to receive traffic from the load balancer.  Learn more about [Load balancers](/azure/virtual-network/network-overview#load-balancers).
 
 #### [Azure portal](#tab/portal-1)
 
@@ -79,7 +79,7 @@ New-AzVm `
 Attach an existing virtual machine to a Virtual Machine Scale Set after the time of VM creation by specifying the `virtualMachineScaleSet` property. Attaching an existing VM to a scale set with a fault domain count of 1 doesn't require downtime. 
 
 > [!NOTE]
-> Attaching a virtual machine to Virtual Machine Scale Set doesn't by itself update any VM networking parameters such as load balancers. If you would like this virtual machine to receive traffic from any load balancer, you must manually configure the VM network interface to receive traffic from the load balancer. Learn more about [Load balancers](../virtual-network/network-overview.md#load-balancers).
+> Attaching a virtual machine to Virtual Machine Scale Set doesn't by itself update any VM networking parameters such as load balancers. If you would like this virtual machine to receive traffic from any load balancer, you must manually configure the VM network interface to receive traffic from the load balancer. Learn more about [Load balancers](/azure/virtual-network/network-overview#load-balancers).
 >
 
 #### [Azure portal](#tab/portal-2)

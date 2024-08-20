@@ -23,7 +23,7 @@ This tutorial shows you how to set up disaster recovery for Azure VMs running Li
 > * Run a disaster recovery drill to check it works as expected
 > * Stop replicating the VM after the drill
 
-When you enable replication for a VM, the Site Recovery Mobility service extension installs on the VM, and registers it with [Azure Site Recovery](../../site-recovery/site-recovery-overview.md). During replication, VM disk writes are sent to a cache storage account in the source VM region. Data is sent from there to the target region, and recovery points are generated from the data.  When you fail a VM over to another region during disaster recovery, a recovery point is used to create a VM in the target region.
+When you enable replication for a VM, the Site Recovery Mobility service extension installs on the VM, and registers it with [Azure Site Recovery](/azure/site-recovery/site-recovery-overview). During replication, VM disk writes are sent to a cache storage account in the source VM region. Data is sent from there to the target region, and recovery points are generated from the data.  When you fail a VM over to another region during disaster recovery, a recovery point is used to create a VM in the target region.
 
 If you don't have an Azure subscription, create a [free account](https://azure.microsoft.com/pricing/free-trial/) before you begin.
 
@@ -36,7 +36,7 @@ If you don't have an Azure subscription, create a [free account](https://azure.m
         - Write to an Azure storage account.
         - Write to an Azure managed disk.
      - The Site Recovery Contributor built-in role, to manage Site Recovery operations in the vault. 
-3. Check that the Linux VM is running a [supported operating system](../../site-recovery/azure-to-azure-support-matrix.md#linux).
+3. Check that the Linux VM is running a [supported operating system](/azure/site-recovery/azure-to-azure-support-matrix#linux).
 4. If VM outbound connections use a URL-based proxy, make sure it can access these URLs. Using an authenticated proxy isn't supported.
 
     **Name** | **Public cloud** | **Government cloud** | **Details**
@@ -200,4 +200,4 @@ The Site Recovery extension installed on the VM during replication isn't removed
 In this tutorial, you configured disaster recovery for an Azure VM, and ran a disaster recovery drill. Now, you can perform a full failover for the VM.
 
 > [!div class="nextstepaction"]
-> [Fail over a VM to another region](../../site-recovery/azure-to-azure-tutorial-dr-drill.md)
+> [Fail over a VM to another region](/azure/site-recovery/azure-to-azure-tutorial-dr-drill)

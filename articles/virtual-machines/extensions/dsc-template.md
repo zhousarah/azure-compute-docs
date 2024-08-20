@@ -17,17 +17,17 @@ ms.author: magoedte
 # Desired State Configuration extension with Azure Resource Manager templates
 
 > [!NOTE]
-> Before you enable the DSC extension, we would like you to know that a newer version of DSC is now generally available, managed by a feature of Azure Automange named [machine configuration](../../governance/machine-configuration/overview.md). The machine configuration feature combines features of the Desired State Configuration (DSC) extension handler, Azure Automation State Configuration, and the most commonly requested features from customer feedback. Machine configuration also includes hybrid machine support through [Arc-enabled servers](../../azure-arc/servers/overview.md).
+> Before you enable the DSC extension, we would like you to know that a newer version of DSC is now generally available, managed by a feature of Azure Automange named [machine configuration](/azure/governance/machine-configuration/overview). The machine configuration feature combines features of the Desired State Configuration (DSC) extension handler, Azure Automation State Configuration, and the most commonly requested features from customer feedback. Machine configuration also includes hybrid machine support through [Arc-enabled servers](/azure/azure-arc/servers/overview).
 
 This article describes the Azure Resource Manager template for the [Desired State Configuration
 (DSC) extension handler](dsc-overview.md). Many of the examples use **RegistrationURL** (provided
 as a String) and **RegistrationKey** (provided as a
 [PSCredential](/dotnet/api/system.management.automation.pscredential) to onboard with Azure
 Automation. For details about obtaining those values, see
-[Use DSC metaconfiguration to register hybrid machines](../../automation/automation-dsc-onboarding.md#use-dsc-metaconfiguration-to-register-hybrid-machines).
+[Use DSC metaconfiguration to register hybrid machines](/azure/automation/automation-dsc-onboarding#use-dsc-metaconfiguration-to-register-hybrid-machines).
 
 > [!NOTE]
-> Before you enable the DSC extension, we would like you to know that a newer version of DSC is now generally available, managed by a feature of Azure Automange named [machine configuration](../../governance/machine-configuration/overview.md). The machine configuration feature combines features of the Desired State Configuration (DSC) extension handler, Azure Automation State Configuration, and the most commonly requested features from customer feedback. Machine configuration also includes hybrid machine support through [Arc-enabled servers](../../azure-arc/servers/overview.md).
+> Before you enable the DSC extension, we would like you to know that a newer version of DSC is now generally available, managed by a feature of Azure Automange named [machine configuration](/azure/governance/machine-configuration/overview). The machine configuration feature combines features of the Desired State Configuration (DSC) extension handler, Azure Automation State Configuration, and the most commonly requested features from customer feedback. Machine configuration also includes hybrid machine support through [Arc-enabled servers](/azure/azure-arc/servers/overview).
 
 > [!NOTE]
 > You might encounter slightly different schema examples. The change in schema occurred in the October 2016 release. For details, see [Update from a previous format](#update-from-a-previous-format).

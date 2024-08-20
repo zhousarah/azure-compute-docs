@@ -45,7 +45,7 @@ The solutions in this article use the following tools. We recommend you have the
     ![AI App Map Blade](media/service-fabric-diagnostics-common-scenarios/app-map-blade.png)
     ![AI App Map](media/service-fabric-diagnostics-common-scenarios/app-map-new.png)
 
-    For more information on the application map, visit the [Application Map documentation](../azure-monitor/app/app-map.md)
+    For more information on the application map, visit the [Application Map documentation](/azure/azure-monitor/app/app-map)
 
 ## How do I create an alert when a node goes down
 
@@ -131,9 +131,9 @@ Check these links for the full list of performance counters on Reliable [Service
 ## Next steps
 
 * [Look Up Common Code Package Activation Errors](./service-fabric-diagnostics-code-package-errors.md)
-* [Set up Alerts in AI](../azure-monitor/alerts/alerts-log.md) to be notified about changes in performance or usage
-* [Smart Detection in Application Insights](../azure-monitor/alerts/proactive-diagnostics.md) performs a proactive analysis of the telemetry being sent to AI to warn you of potential performance problems
-* Learn more about Azure Monitor logs [alerting](../azure-monitor/alerts/alerts-overview.md) to aid in detection and diagnostics.
-* For on-premises clusters, Azure Monitor logs offers a gateway (HTTP Forward Proxy) that can be used to send data to Azure Monitor logs. Read more about that in [Connecting computers without Internet access to Azure Monitor logs using the Log Analytics gateway](../azure-monitor/agents/gateway.md)
-* Get familiarized with the [log search and querying](../azure-monitor/logs/log-query-overview.md) features offered as part of Azure Monitor logs
-* For a detailed overview of Azure Monitor logs and what it offers, read [What is Azure Monitor logs?](../azure-monitor/overview.md)
+* [Set up Alerts in AI](/azure/azure-monitor/alerts/alerts-log) to be notified about changes in performance or usage
+* [Smart Detection in Application Insights](/azure/azure-monitor/alerts/proactive-diagnostics) performs a proactive analysis of the telemetry being sent to AI to warn you of potential performance problems
+* Learn more about Azure Monitor logs [alerting](/azure/azure-monitor/alerts/alerts-overview) to aid in detection and diagnostics.
+* For on-premises clusters, Azure Monitor logs offers a gateway (HTTP Forward Proxy) that can be used to send data to Azure Monitor logs. Read more about that in [Connecting computers without Internet access to Azure Monitor logs using the Log Analytics gateway](/azure/azure-monitor/agents/gateway)
+* Get familiarized with the [log search and querying](/azure/azure-monitor/logs/log-query-overview) features offered as part of Azure Monitor logs
+* For a detailed overview of Azure Monitor logs and what it offers, read [What is Azure Monitor logs?](/azure/azure-monitor/overview)

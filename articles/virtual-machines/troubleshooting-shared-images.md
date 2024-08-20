@@ -49,7 +49,7 @@ If you have problems performing any operations on Azure Compute Gallery (formerl
 | Cannot bind parameter \<property\>. Cannot convert value \<value\> to type \<propertyType\>. Unable to match the identifier name \<value\> to a valid enumerator name. Specify one of the following enumerator names and try again: \<choice\_1\>, \<choice\_2\>, … | The property has a restricted list of possible values, and \<value\> is not one of them | Choose one of the possible \<choice\> values |
 | Cannot bind parameter \<property\>. Cannot convert value \<value\> to type &quot;System.DateTime&quot; | The value provided to the property is not properly formatted as a date. | Provide a date in the yyyy-MM-dd, yyyy-MM-dd'T'HH:mm:sszzz, or [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)-valid format |
 | Cannot bind parameter \<property\>. Cannot convert value \<value\> to type &quot;System.Int32&quot; | \<property\> accepts only integer values, and \<value\> is not an integer. | Choose an integer value |
-| ZRS storage account type is not supported in this region. | You've chosen standard zone-redundant storage (ZRS) in a region that does not yet support it | Change the storage account type to **Premium\_LRS** or **Standard\_LRS**. Check our documentation for the latest [list of regions](../storage/common/storage-redundancy.md#zone-redundant-storage) with ZRS preview enabled
+| ZRS storage account type is not supported in this region. | You've chosen standard zone-redundant storage (ZRS) in a region that does not yet support it | Change the storage account type to **Premium\_LRS** or **Standard\_LRS**. Check our documentation for the latest [list of regions](/azure/storage/common/storage-redundancy#zone-redundant-storage) with ZRS preview enabled
 
 ## Creating or updating image versions ##
 > [!div class="mx-tdBreakAll"]
@@ -121,7 +121,7 @@ If you have problems performing any operations on Azure Compute Gallery (formerl
 
 ## Sharing resources
 
-The sharing of gallery, image definition, and image version resources across subscriptions is enabled using [Azure role-based access control (Azure RBAC)](../role-based-access-control/rbac-and-directory-admin-roles.md). 
+The sharing of gallery, image definition, and image version resources across subscriptions is enabled using [Azure role-based access control (Azure RBAC)](/azure/role-based-access-control/rbac-and-directory-admin-roles). 
 
 ## Replication speed
 
@@ -129,7 +129,7 @@ Use the **--expand ReplicationStatus** flag to check if the replication to all t
 
 ## Azure limits and quotas 
 
-[Azure limits and quotas](../azure-resource-manager/management/azure-subscription-service-limits.md) apply to all Azure Compute Gallery, image definition, and image version resources. Make sure you're within the limits for your subscriptions. 
+[Azure limits and quotas](/azure/azure-resource-manager/management/azure-subscription-service-limits) apply to all Azure Compute Gallery, image definition, and image version resources. Make sure you're within the limits for your subscriptions. 
 
 
 ## Next steps

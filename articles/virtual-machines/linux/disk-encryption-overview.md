@@ -20,9 +20,9 @@ ms.custom: linux-related-content
 
 Azure Disk Encryption helps protect and safeguard your data to meet your organizational security and compliance commitments. It uses the [DM-Crypt](https://en.wikipedia.org/wiki/Dm-crypt) feature of Linux to provide volume encryption for the OS and data disks of Azure virtual machines (VMs), and is integrated with [Azure Key Vault](/azure/key-vault/) to help you control and manage the disk encryption keys and secrets.
 
-Azure Disk Encryption is zone resilient, the same way as Virtual Machines. For details, see [Azure Services that support Availability Zones](../../availability-zones/az-region.md).
+Azure Disk Encryption is zone resilient, the same way as Virtual Machines. For details, see [Azure Services that support Availability Zones](/azure/availability-zones/az-region).
 
-If you use [Microsoft Defender for Cloud](../../security-center/index.yml), you're alerted if you have VMs that aren't encrypted. The alerts show as High Severity and the recommendation is to encrypt these VMs.
+If you use [Microsoft Defender for Cloud](/azure/security-center/), you're alerted if you have VMs that aren't encrypted. The alerts show as High Severity and the recommendation is to encrypt these VMs.
 
 ![Microsoft Defender for Cloud disk encryption alert](media/disk-encryption/security-center-disk-encryption-fig1.png)
 

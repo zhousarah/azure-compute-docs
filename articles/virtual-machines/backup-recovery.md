@@ -20,9 +20,9 @@ You can protect your data by taking backups at regular intervals. There are seve
 
 You'll use Azure Backup for most use-cases involving backup operations on Azure VMs running production workloads. Azure Backup supports application-consistent backups for both Windows and Linux VMs. Azure Backup creates recovery points that are stored in geo-redundant recovery vaults. When you restore from a recovery point, you can restore entire VM or specific files.
 
-For a simple, hands-on introduction to Azure Backup for Azure VMs, see the [Azure Backup quickstart](../backup/quick-backup-vm-portal.md).
+For a simple, hands-on introduction to Azure Backup for Azure VMs, see the [Azure Backup quickstart](/azure/backup/quick-backup-vm-portal).
 
-For more information on how Azure Backup works, see [Plan your VM backup infrastructure in Azure](../backup/backup-azure-vms-introduction.md)
+For more information on how Azure Backup works, see [Plan your VM backup infrastructure in Azure](/azure/backup/backup-azure-vms-introduction)
 
 ## Azure Site Recovery
 
@@ -30,7 +30,7 @@ Azure Site Recovery protects your VMs from a major disaster scenario. These scen
 
 You can run disaster-recovery drills with on-demand test failovers, without affecting your production workloads or ongoing replication. Create recovery plans to orchestrate failover and failback of the entire application running on multiple VMs. The recovery plan feature is integrated with Azure Automation runbooks.
 
-You can get started by [replicating your virtual machines](../site-recovery/azure-to-azure-quickstart.md).
+You can get started by [replicating your virtual machines](/azure/site-recovery/azure-to-azure-quickstart).
 
 ## Managed snapshots
 
@@ -53,6 +53,6 @@ Once created, VM restore points can then be used to restore individual disks. To
 Learn more about [working with VM restore points](virtual-machines-create-restore-points.md) and the [restore point collections](/rest/api/compute/restore-point-collections) API.
 
 ## Next steps
-You can try out Azure Backup by following the [Azure Backup quickstart](../backup/quick-backup-vm-portal.md).
+You can try out Azure Backup by following the [Azure Backup quickstart](/azure/backup/quick-backup-vm-portal).
 
 You can also plan and implement reliability for your virtual machine configuration. For more information see [Virtual Machine Reliability](./reliability-virtual-machines.md).

@@ -119,7 +119,7 @@ To run the command using CLI, use [`az vm run-command invoke`](/cli/azure/vm/run
 
 If you specified a passphrase when you created your key pair, enter that passphrase when prompted during the sign-in process. The VM is added to your ~/.ssh/known_hosts file, and you won't be asked to connect again until either the public key on your Azure VM changes or the server name is removed from ~/.ssh/known_hosts.
 
-If the VM is using the just-in-time access policy, you need to request access before you can connect to the VM. For more information about the just-in-time policy, see [Manage virtual machine access using the just in time policy](../../security-center/security-center-just-in-time.md).
+If the VM is using the just-in-time access policy, you need to request access before you can connect to the VM. For more information about the just-in-time policy, see [Manage virtual machine access using the just in time policy](/azure/security-center/security-center-just-in-time).
 
 ## Next steps
 

@@ -106,7 +106,7 @@ Learn how to [set up authentication](/azure/developer/java/sdk/get-started#set-u
 
 ### Create the resource group
 
-All resources must be contained in a [Resource group](../../azure-resource-manager/management/overview.md).
+All resources must be contained in a [Resource group](/azure/azure-resource-manager/management/overview).
 
 To specify values for the application and create the resource group, add this code to the try block in the main method:
 
@@ -134,7 +134,7 @@ AvailabilitySet availabilitySet = azure.availabilitySets()
 ```
 ### Create the public IP address
 
-A [Public IP address](../../virtual-network/ip-services/public-ip-addresses.md) is needed to communicate with the virtual machine.
+A [Public IP address](/azure/virtual-network/ip-services/public-ip-addresses) is needed to communicate with the virtual machine.
 
 To create the public IP address for the virtual machine, add this code to the try block in the main method:
 
@@ -150,7 +150,7 @@ PublicIpAddress publicIPAddress = azure.publicIpAddresses()
 
 ### Create the virtual network
 
-A virtual machine must be in a subnet of a [Virtual network](../../virtual-network/virtual-networks-overview.md).
+A virtual machine must be in a subnet of a [Virtual network](/azure/virtual-network/virtual-networks-overview).
 
 To create a subnet and a virtual network, add this code to the try block in the main method:
 

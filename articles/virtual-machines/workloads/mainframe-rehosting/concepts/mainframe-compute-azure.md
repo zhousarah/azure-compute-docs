@@ -96,7 +96,7 @@ The approach is to migrate LPARs to individual VMs. Then Azure easily scales up 
 
 One of the advantages of an Azure–based solution is the ability to scale out. Scaling makes nearly limitless compute capacity available to an application. Azure supports multiple methods to scale out compute power:
 
-- **Load balancing across a cluster.** In this scenario, an application can use a [load balancer](../../../../load-balancer/load-balancer-overview.md) or resource manager to spread out the workload among multiple VMs in a cluster. If more compute capacity is needed, additional VMs are added to the cluster.
+- **Load balancing across a cluster.** In this scenario, an application can use a [load balancer](/azure/load-balancer/load-balancer-overview) or resource manager to spread out the workload among multiple VMs in a cluster. If more compute capacity is needed, additional VMs are added to the cluster.
 
 - **Virtual machine scale sets.** In this burst scenario, an application can scale to additional [compute resources](../../../../virtual-machine-scale-sets/overview.md) based on VM usage. When demand falls, the number of VMs in a scale set can also go down, ensuring efficient use of compute power.
 

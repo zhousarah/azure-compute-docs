@@ -19,9 +19,9 @@ ms.custom: compute-evergreen, devx-track-arm-template
 
 
 
-This article provides overview on platform-supported migration tool, how to migrate resources from the Azure Service Manager (ASM) also known as Classic to Resource Manager (ARM) deployment models and details how to connect resources from the two deployment models that coexist in your subscription by using virtual network site-to-site gateways. You can read more about [Azure Resource Manager features and benefits](../azure-resource-manager/management/overview.md). 
+This article provides overview on platform-supported migration tool, how to migrate resources from the Azure Service Manager (ASM) also known as Classic to Resource Manager (ARM) deployment models and details how to connect resources from the two deployment models that coexist in your subscription by using virtual network site-to-site gateways. You can read more about [Azure Resource Manager features and benefits](/azure/azure-resource-manager/management/overview). 
 
-ASM supports two different compute products, Azure Virtual Machines (classic) also known as IaaS VMs & [Azure Cloud Services (classic)](../cloud-services/index.yml) also known as PaaS VMs or Web/Worker Roles. This document only talks about migrating Azure Virtual Machines (classic).
+ASM supports two different compute products, Azure Virtual Machines (classic) also known as IaaS VMs & [Azure Cloud Services (classic)](/azure/cloud-services/) also known as PaaS VMs or Web/Worker Roles. This document only talks about migrating Azure Virtual Machines (classic).
 
 ## Goal for migration
 Resource Manager enables deploying complex applications through templates, configures virtual machines by using VM extensions, and incorporates access management and tagging. Azure Resource Manager includes scalable, parallel deployment for virtual machines into availability sets. The new deployment model also provides lifecycle management of compute, network, and storage independently. Finally, there’s a focus on enabling security by default with the enforcement of virtual machines in a virtual network.
@@ -32,12 +32,12 @@ Almost all the features from the classic deployment model are supported for comp
 
 ### Supported resources for migration
 * Virtual Machines (Cloud Service with VMs)
-* [Cloud Services (with Web/Worker Roles)](../cloud-services-extended-support/in-place-migration-overview.md)
+* [Cloud Services (with Web/Worker Roles)](/azure/cloud-services-extended-support/in-place-migration-overview)
 * Availability Sets
 * Storage Accounts
 * Virtual Networks
 * VPN Gateways
-* [Express Route Gateways](../expressroute/expressroute-howto-move-arm.md) _(in the same subscription as Virtual Network only)_
+* [Express Route Gateways](/azure/expressroute/expressroute-howto-move-arm) _(in the same subscription as Virtual Network only)_
 * Network Security Groups
 * Route Tables
 * Reserved IPs
@@ -47,7 +47,7 @@ These classic IaaS resources are supported during migration
 
 | Service | Configuration |
 | --- | --- |
-| Microsoft Entra Domain Services | [Virtual networks that contain Microsoft Entra Domain Services](../active-directory-domain-services/overview.md) |
+| Microsoft Entra Domain Services | [Virtual networks that contain Microsoft Entra Domain Services](/azure/active-directory-domain-services/overview) |
 
 ## Supported scopes of migration
 There are four different ways to complete migration of compute, network, and storage resources:
@@ -116,7 +116,7 @@ The following features are not currently supported. You can optionally remove th
 | Compute | Virtual machine images. | The VHD blobs behind these disks will get migrated when the Storage Account is migrated |
 | Network | Endpoint ACLs. | Remove Endpoint ACLs and retry migration. |
 | Network | Application Gateway | Remove the Application Gateway before beginning migration and then recreate the Application Gateway once migration is complete. |
-| Network | Virtual networks using VNet Peering. | Migrate Virtual Network to Resource Manager, then peer. Learn more about [VNet Peering](../virtual-network/virtual-network-peering-overview.md). |
+| Network | Virtual networks using VNet Peering. | Migrate Virtual Network to Resource Manager, then peer. Learn more about [VNet Peering](/azure/virtual-network/virtual-network-peering-overview). |
 
 ### Unsupported configurations
 The following configurations are not currently supported.
@@ -134,7 +134,7 @@ The following configurations are not currently supported.
 | Compute | VM with backup or snapshot extension | These extensions are installed on a Virtual Machine configured with the Azure Backup service. While the migration of these VMs is not supported, follow the guidance in [Frequently asked questions about classic to Azure Resource Manager migration](./migration-classic-resource-manager-faq.yml) to keep backups that were taken prior to migration.  |
 | Compute | VM with Azure Site Recovery extension | These extensions are installed on a Virtual Machine configured with the Azure Site Recovery service. While the migration of storage used with Site Recovery will work, current replication will be impacted. You need to disable and enable VM replication after storage migration. |
 | Network |Virtual networks that contain virtual machines and web/worker roles |This is currently not supported. Move the Web/Worker roles to their own Virtual Network before migrating. Once the classic Virtual Network is migrated, the migrated Azure Resource Manager Virtual Network can be peered with the classic Virtual Network to achieve similar configuration as before.|
-| Network | Classic Express Route circuits |This is currently not supported. These circuits need to be migrated to Azure Resource Manager before beginning IaaS migration. To learn more, see [Moving ExpressRoute circuits from the classic to the Resource Manager deployment model](../expressroute/expressroute-move.md).|
+| Network | Classic Express Route circuits |This is currently not supported. These circuits need to be migrated to Azure Resource Manager before beginning IaaS migration. To learn more, see [Moving ExpressRoute circuits from the classic to the Resource Manager deployment model](/azure/expressroute/expressroute-move).|
 | Azure App Service |Virtual networks that contain App Service environments |This is currently not supported. |
 | Azure HDInsight |Virtual networks that contain HDInsight services |This is currently not supported. |
 | Microsoft Dynamics Lifecycle Services |Virtual networks that contain virtual machines that are managed by Dynamics Lifecycle Services |This is currently not supported. |

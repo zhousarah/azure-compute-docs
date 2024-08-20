@@ -42,7 +42,7 @@ This extension works with both Azure deployment models: Azure Resource Manager a
 
 ### Supported Linux distributions
 
-See [Supported agent operating systems](../../azure-monitor/agents/agents-overview.md#linux).
+See [Supported agent operating systems](/azure/azure-monitor/agents/agents-overview#linux).
 
 ### Python requirement
 
@@ -80,7 +80,7 @@ You can enable this extension for your VM and Virtual Machine Scale Set by using
 >
 > Some components of the Linux Diagnostic VM extension are also shipped in the [Log Analytics VM extension](./oms-linux.md). Conflicts can arise if both extensions are instantiated in the same ARM template.
 >
->To avoid install-time conflicts, use the [`dependsOn` directive](../../azure-resource-manager/templates/resource-dependency.md#dependson) to install the extensions sequentially. The extensions can be installed in either order.
+>To avoid install-time conflicts, use the [`dependsOn` directive](/azure/azure-resource-manager/templates/resource-dependency#dependson) to install the extensions sequentially. The extensions can be installed in either order.
 
 Use the installation instructions and a [downloadable sample configuration](https://raw.githubusercontent.com/Azure/azure-linux-extensions/master/Diagnostic/tests/lad_2_3_compatible_portal_pub_settings.json) to configure LAD 4.0 to:
 
@@ -159,7 +159,7 @@ In these examples, the sample configuration collects a set of standard data and 
 
 In most cases, you should download a copy of the portal settings JSON file and customize it for your needs. Use templates or your own automation to use a customized version of the configuration file rather than downloading from the URL each time.
 
-When you enable the new Azure Monitor sink, the VMs need to have system-assigned identity enabled to generate Managed Service Identity (MSI) authentication tokens. You can add these settings during or after VM creation. For instructions for the Azure portal, the Azure CLI, PowerShell, and Azure Resource Manager, see [Configure managed identities](../../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md).
+When you enable the new Azure Monitor sink, the VMs need to have system-assigned identity enabled to generate Managed Service Identity (MSI) authentication tokens. You can add these settings during or after VM creation. For instructions for the Azure portal, the Azure CLI, PowerShell, and Azure Resource Manager, see [Configure managed identities](/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm).
 
 # [Azure CLI](#tab/azcli)
 
@@ -325,7 +325,7 @@ This set of configuration information contains sensitive information that should
 | mdsdHttpProxy | (Optional) HTTP proxy information the extension needs to connect to the specified storage account and endpoint. |
 | sinksConfig | (Optional) Details of alternative destinations to which metrics and events can be delivered. The following sections provide details about each data sink the extension supports. |
 
-To get a SAS token within an ARM template, use the `listAccountSas` function. For an example template, see [List function example](../../azure-resource-manager/templates/template-functions-resource.md#list-example).
+To get a SAS token within an ARM template, use the `listAccountSas` function. For an example template, see [List function example](/azure/azure-resource-manager/templates/template-functions-resource#list-example).
 
 You can construct the required shared access signature token through the Azure portal:
 
@@ -581,7 +581,7 @@ The optional public `sinksConfig` section enables sending metrics to the Azure M
 
 > [!NOTE]
 > The `sinksConfig` section requires system-assigned identity to be enabled on the VMs or virtual machine scale set.
-> You can enable system-assigned identity through the Azure portal, CLI, PowerShell, or Azure Resource Manager. Follow the [detailed instructions](../../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm.md) or see the previous installations samples in this article.
+> You can enable system-assigned identity through the Azure portal, CLI, PowerShell, or Azure Resource Manager. Follow the [detailed instructions](/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm) or see the previous installations samples in this article.
 
 ```json
   "sinksConfig": {
@@ -909,10 +909,10 @@ The following screenshot of an Azure Storage Explorer session shows the generate
 
 :::image type="content" source="./media/diagnostics-linux/stg_explorer.png" alt-text="Screenshot shows Azure Storage Explorer.":::
 
-For more information about how to consume messages published to an Event Hubs endpoint, see the relevant [Event Hubs documentation](../../event-hubs/event-hubs-about.md).
+For more information about how to consume messages published to an Event Hubs endpoint, see the relevant [Event Hubs documentation](/azure/event-hubs/event-hubs-about).
 
 ## Next steps
 
-- In [Azure Monitor](../../azure-monitor/alerts/alerts-classic-portal.md), create alerts for the metrics you collect.
-- [Create monitoring charts](../../azure-monitor/data-platform.md) for your metrics.
+- In [Azure Monitor](/azure/azure-monitor/alerts/alerts-classic-portal), create alerts for the metrics you collect.
+- [Create monitoring charts](/azure/azure-monitor/data-platform) for your metrics.
 - [Create a Virtual Machine Scale Set](../linux/tutorial-create-vmss.md) by using your metrics to control autoscaling.

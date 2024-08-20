@@ -25,7 +25,7 @@ The Msv3 and Mdsv3 Medium Memory(MM) Virtual Machine (VM) series, powered by 4<s
 [Memory Preserving Updates](maintenance-and-updates.md): Not Supported<br>
 [VM Generation Support](generation-2.md): Generation 2<br>
 [Write Accelerator](./how-to-enable-write-accelerator.md): Supported<br>
-[Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md): Supported<br>
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported<br>
 [Ephemeral OS Disks](ephemeral-os-disks.md): Not Supported<br>
 [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Not Supported <br>
 
@@ -49,7 +49,7 @@ These virtual machines feature local SSD storage (up to 400 GiB).
 [Memory Preserving Updates](maintenance-and-updates.md): Not Supported<br>
 [VM Generation Support](generation-2.md): Generation 2<br>
 [Write Accelerator](./how-to-enable-write-accelerator.md): Supported<br>
-[Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md): Supported<br>
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported<br>
 [Ephemeral OS Disks](ephemeral-os-disks.md): Supported<br>
 [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Not Supported <br>
 

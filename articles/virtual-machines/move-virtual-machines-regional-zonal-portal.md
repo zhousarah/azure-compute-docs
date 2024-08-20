@@ -17,16 +17,16 @@ This article provides information on how to move Azure single instance Virtual M
 
 Ensure the following before you begin:
 
-- **Availability zone regions support**: Ensure that the regions you want to move to are supported by Availability Zones. [Learn more](../reliability/availability-zones-service-support.md) about the supported regions.
+- **Availability zone regions support**: Ensure that the regions you want to move to are supported by Availability Zones. [Learn more](/azure/reliability/availability-zones-service-support) about the supported regions.
 
 - **VM SKU availability**: The availability of VM sizes, or SKUs, can differ based on the region and zone. Ensure to plan for the use of Availability Zones. [Learn more](../virtual-machines/windows/create-powershell-availability-zone.md#check-vm-sku-availability) about the available VM SKUs for each Azure region and zone. 
 
 - **Subscription permissions**: Check that you have *Owner* access on the subscription containing the VMs that you want to move.
-   The first time you add a VM to be moved to Zonal configuration, a [system-assigned managed identity](../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types) (formerly, Managed Service Identify (MSI)) that's trusted by the subscription is necessary. To create the identity, and to assign it the required role (Contributor or User Access administrator in the source subscription), the account you use to add resources needs Owner permissions on the subscription. [Learn more](../role-based-access-control/rbac-and-directory-admin-roles.md#azure-roles) about Azure roles.
+   The first time you add a VM to be moved to Zonal configuration, a [system-assigned managed identity](/azure/active-directory/managed-identities-azure-resources/overview#managed-identity-types) (formerly, Managed Service Identify (MSI)) that's trusted by the subscription is necessary. To create the identity, and to assign it the required role (Contributor or User Access administrator in the source subscription), the account you use to add resources needs Owner permissions on the subscription. [Learn more](/azure/role-based-access-control/rbac-and-directory-admin-roles#azure-roles) about Azure roles.
 
-- **VM support**: Check that the VMs you want to move are supported. [Learn more](../reliability/migrate-vm.md). Check supported VM settings.
+- **VM support**: Check that the VMs you want to move are supported. [Learn more](/azure/reliability/migrate-vm). Check supported VM settings.
       
-- **Subscription quota**: The subscription must have enough quota to create the new VM and associated networking resources in target zonal configuration (in same region). If the subscription doesn't have enough quota, you need to [request additional limits](../azure-resource-manager/management/azure-subscription-service-limits.md). 
+- **Subscription quota**: The subscription must have enough quota to create the new VM and associated networking resources in target zonal configuration (in same region). If the subscription doesn't have enough quota, you need to [request additional limits](/azure/azure-resource-manager/management/azure-subscription-service-limits). 
 - **VM health status**: The VMs you want to move must be in a healthy state before attempting the  zonal move. Ensure that all pending reboots and mandatory updates are complete. 
 
 ## Select and move VMs
@@ -54,7 +54,7 @@ To select the target availability zones, follow these steps:
     :::image type="content" source="./media/tutorial-move-regional-zonal/availability-scaling-home.png" alt-text="Screenshot of Availability + scaling homepage."::: 
     
     >[!Important]
-    >If you select an unsupported VM to move, the validation fails. In this case, you must restart the workflow with the correct selection of VM. Refer to the [Support Matrix](../reliability/migrate-vm.md#support-matrix) to learn more about unsupported VMs type.
+    >If you select an unsupported VM to move, the validation fails. In this case, you must restart the workflow with the correct selection of VM. Refer to the [Support Matrix](/azure/reliability/migrate-vm#support-matrix) to learn more about unsupported VMs type.
 
 1. If Azure recommends optimizing the VM size, you must select the appropriate VM size that can increase the chances of successful deployment in the selected zone. Alternatively, you can also change the zone while keeping the same source VM size. 
    

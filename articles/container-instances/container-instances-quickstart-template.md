@@ -60,7 +60,7 @@ More Azure Container Instances template samples can be found in the [quickstart 
 
     ![Portal notification](media/container-instances-quickstart-template/deployment-notification.png)
 
- The Azure portal is used to deploy the template. In addition to the Azure portal, you can use the Azure PowerShell, Azure CLI, and REST API. To learn other deployment methods, see [Deploy templates](../azure-resource-manager/templates/deploy-cli.md).
+ The Azure portal is used to deploy the template. In addition to the Azure portal, you can use the Azure PowerShell, Azure CLI, and REST API. To learn other deployment methods, see [Deploy templates](/azure/azure-resource-manager/templates/deploy-cli).
 
 ## Review deployed resources
 
@@ -98,4 +98,4 @@ In this quickstart, you created an Azure container instance from a public Micros
 For a step-by-step tutorial that guides you through the process of creating a template, see:
 
 > [!div class="nextstepaction"]
-> [Tutorial: Create and deploy your first ARM template](../azure-resource-manager/templates/template-tutorial-create-first-template.md)
+> [Tutorial: Create and deploy your first ARM template](/azure/azure-resource-manager/templates/template-tutorial-create-first-template)

@@ -103,7 +103,7 @@ Add-AzVhd -ResourceGroupName "myResourceGroup" -LocalFilePath "C:\Path\To\myvhd.
 
 
 **Deploy using Azure Resource Manager Template Deployment**
-Within your Resource Manager templates, an additional parameter for `licenseType` can be specified. You can read more about [authoring Azure Resource Manager templates](../../azure-resource-manager/templates/syntax.md). Once you've your VHD uploaded to Azure, edit your Resource Manager template to include the license type as part of the compute provider and deploy your template as normal:
+Within your Resource Manager templates, an additional parameter for `licenseType` can be specified. You can read more about [authoring Azure Resource Manager templates](/azure/azure-resource-manager/templates/syntax). Once you've your VHD uploaded to Azure, edit your Resource Manager template to include the license type as part of the compute provider and deploy your template as normal:
 ```json
 "properties": {
     "licenseType": "Windows_Client",

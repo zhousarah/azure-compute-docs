@@ -26,7 +26,7 @@ Custom images are like marketplace images, but you create them yourself. Custom 
 > * Share a gallery
 
 
-This tutorial uses the CLI within the [Azure Cloud Shell](../../cloud-shell/overview.md), which is constantly updated to the latest version. To open the Cloud Shell, select **Try it** from the top of any code block.
+This tutorial uses the CLI within the [Azure Cloud Shell](/azure/cloud-shell/overview), which is constantly updated to the latest version. To open the Cloud Shell, select **Try it** from the top of any code block.
 
 If you choose to install and use the CLI locally, this tutorial requires that you're running the Azure CLI version 2.35.0 or later. Run `az --version` to find the version. If you need to install or upgrade, see [Install Azure CLI]( /cli/azure/install-azure-cli).
 
@@ -131,7 +131,7 @@ az sig image-version create \
 > [!NOTE]
 > You need to wait for the image version to completely finish being built and replicated before you can use the same managed image to create another image version.
 >
-> You can also store your image in Premium storage by a adding `--storage-account-type  premium_lrs`, or [Zone Redundant Storage](../../storage/common/storage-redundancy.md) by adding `--storage-account-type  standard_zrs` when you create the image version.
+> You can also store your image in Premium storage by a adding `--storage-account-type  premium_lrs`, or [Zone Redundant Storage](/azure/storage/common/storage-redundancy) by adding `--storage-account-type  standard_zrs` when you create the image version.
 >
 
  
@@ -173,7 +173,7 @@ az role assignment create \
    --scope <gallery ID>
 ```
 
-For more information about how to share resources using Azure RBAC, see [Add or remove Azure role assignments using Azure CLI](../../role-based-access-control/role-assignments-cli.md).
+For more information about how to share resources using Azure RBAC, see [Add or remove Azure role assignments using Azure CLI](/azure/role-based-access-control/role-assignments-cli).
 
 ## Azure Image Builder
 

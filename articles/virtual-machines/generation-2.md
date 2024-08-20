@@ -256,7 +256,7 @@ You can also create Generation 2 VMs by using virtual machine scale sets. In the
   You might see a warning for OS disks larger than 2 TiB. The warning doesn't apply to Generation 2 VMs. However, OS disk sizes larger than 4 TiB are not supported.
 
 * **Do Generation 2 VMs support accelerated networking?**  
-    Yes. For more information, see [Create a VM with accelerated networking](../virtual-network/create-vm-accelerated-networking-cli.md).
+    Yes. For more information, see [Create a VM with accelerated networking](/azure/virtual-network/create-vm-accelerated-networking-cli).
 
 * **Do Generation 2 VMs support Secure Boot or vTPM in Azure?**
     Both vTPM and Secure Boot are features of trusted launch for Generation 2 VMs. For more information, see [Trusted launch](trusted-launch.md).

@@ -19,7 +19,7 @@ This article covers the steps to add the Log Analytics agent as a virtual machin
 
 ## Add the agent extension via Azure CLI
 
-The best way to add the Log Analytics agent to your cluster is via the virtual machine scale set APIs available with the Azure CLI. If you don't have Azure CLI set up yet, head over to Azure portal and open up a [Cloud Shell](../cloud-shell/overview.md) instance, or [Install the Azure CLI](/cli/azure/install-azure-cli).
+The best way to add the Log Analytics agent to your cluster is via the virtual machine scale set APIs available with the Azure CLI. If you don't have Azure CLI set up yet, head over to Azure portal and open up a [Cloud Shell](/azure/cloud-shell/overview) instance, or [Install the Azure CLI](/cli/azure/install-azure-cli).
 
 1. Once your Cloud Shell is requested, make sure you work in the same subscription as your resource. Check this with `az account show` and make sure the "name" value matches that of your cluster's subscription.
 
@@ -87,6 +87,6 @@ Now that you have added the Log Analytics agent, head on over to the Log Analyti
 
 ## Next steps
 
-* Collect relevant [performance counters](monitor-service-fabric-reference.md#performance-metrics). To configure the Log Analytics agent to collect specific performance counters, review [configuring data sources](../azure-monitor/agents/agent-data-sources.md#configure-data-sources).
-* Configure Azure Monitor logs to set up [automated alerting](../azure-monitor/alerts/alerts-overview.md) to aid in detecting and diagnostics
+* Collect relevant [performance counters](monitor-service-fabric-reference.md#performance-metrics). To configure the Log Analytics agent to collect specific performance counters, review [configuring data sources](/azure/azure-monitor/agents/agent-data-sources#configure-data-sources).
+* Configure Azure Monitor logs to set up [automated alerting](/azure/azure-monitor/alerts/alerts-overview) to aid in detecting and diagnostics
 * As an alternative you can collect performance counters through [Azure Diagnostics extension and send them to Application Insights](service-fabric-diagnostics-event-aggregation-wad.md#add-the-application-insights-sink-to-the-resource-manager-template)

@@ -12,7 +12,7 @@ ms.date: 07/05/2023
 
 # Use a Public IP address prefix in a Service Fabric managed cluster
 
-A public IP address prefix allows you to reserve a range of [public IP addresses](../virtual-network/ip-services/public-ip-addresses.md) for your public endpoints in Azure. Service Fabric managed cluster supports using IP addresses from [Azure Public IP prefix](../virtual-network/ip-services/public-ip-address-prefix.md). Public IP prefixes are assigned from a pool of addresses in each Azure region. You can create a public IP address prefix in an Azure region and subscription by specifying a name and [prefix size](../virtual-network/ip-services/public-ip-address-prefix.md#prefix-sizes), which is the number of addresses available for use. For example, if you would like to configure virtual machine scale sets, application gateways, or load balancers to be public facing, you need public IP addresses for them. A public IP prefix enables you to use one prefix to manage all IP addresses effectively.
+A public IP address prefix allows you to reserve a range of [public IP addresses](/azure/virtual-network/ip-services/public-ip-addresses) for your public endpoints in Azure. Service Fabric managed cluster supports using IP addresses from [Azure Public IP prefix](/azure/virtual-network/ip-services/public-ip-address-prefix). Public IP prefixes are assigned from a pool of addresses in each Azure region. You can create a public IP address prefix in an Azure region and subscription by specifying a name and [prefix size](/azure/virtual-network/ip-services/public-ip-address-prefix#prefix-sizes), which is the number of addresses available for use. For example, if you would like to configure virtual machine scale sets, application gateways, or load balancers to be public facing, you need public IP addresses for them. A public IP prefix enables you to use one prefix to manage all IP addresses effectively.
 In regions with Availability Zones, Public IP address prefixes can be created as zone-redundant or associated with a specific availability zone. If public IP prefix is created as zone-redundant, the IPs in the prefix are chosen from the pool that is replicated across SLB servers in all zones.
 
 Here are some of the benefits of using a Public IP Prefix for your managed cluster:
@@ -40,7 +40,7 @@ As seen in the diagram, a service fabric managed cluster with three node types h
 ### Steps
 The following section describes the steps that should be taken to implement public IP prefix in a Service Fabric managed cluster:
 
-1.	Follow the steps in the [Create a public IP address prefix](../virtual-network/ip-services/create-public-ip-prefix-portal.md).
+1.	Follow the steps in the [Create a public IP address prefix](/azure/virtual-network/ip-services/create-public-ip-prefix-portal).
 2.  Use a [sample ARM deployment template](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/SF-Managed-Standard-SKU-1-NT-PIPrefix) for public IP prefix configuration as part of the service fabric managed cluster creation.
 3.	You can also modify your existing ARM template and add new property `PublicIPPrefixId` under `Microsoft.ServiceFabric/managedClusters` resource that takes the resource ID of the public IP prefix.
 #### ARM Template:
@@ -56,7 +56,7 @@ The following section describes the steps that should be taken to implement publ
 
 #### Azure CLI:
 
-1. Create a resource group and a public IP address prefix as outlined in the [Create public IP prefix - Azure CLI](../virtual-network/ip-services/create-public-ip-prefix-cli.md)
+1. Create a resource group and a public IP address prefix as outlined in the [Create public IP prefix - Azure CLI](/azure/virtual-network/ip-services/create-public-ip-prefix-cli)
 2. Modify your existing ARM template and add new property `PublicIPPrefixId` under `Microsoft.ServiceFabric/managedClusters` resource that takes the resource ID of the public IP prefix and deploy the template.
 
   ```azurecli-interactive
@@ -69,7 +69,7 @@ The following section describes the steps that should be taken to implement publ
 
 #### Azure PowerShell:
 
-1. Create a resource group and a public IP address prefix as outlined in the [Create public IP prefix - PowerShell](../virtual-network/ip-services/create-public-ip-prefix-powershell.md)
+1. Create a resource group and a public IP address prefix as outlined in the [Create public IP prefix - PowerShell](/azure/virtual-network/ip-services/create-public-ip-prefix-powershell)
 2. Modify your existing ARM template and add new property `PublicIPPrefixId` under `Microsoft.ServiceFabric/managedClusters` resource that takes the resource ID of the public IP prefix and deploy the template.
 
 ```azurepowershell-interactive

@@ -30,4 +30,4 @@ This article assumes that you've already created a VM. If needed, you can create
 
 ## Next steps
 
-You can also manage DNS using [Azure DNS zones](../dns/dns-getstarted-portal.md).
+You can also manage DNS using [Azure DNS zones](/azure/dns/dns-getstarted-portal).

@@ -12,11 +12,11 @@ ms.custom: mvc, devx-track-azurecli, devx-track-arm-template
 
 # Deploy to Azure Container Instances from Azure Container Registry using a service principal
 
-[Azure Container Registry](../container-registry/container-registry-intro.md) is an Azure-based, managed container registry service used to store private Docker container images. This article describes how to pull container images stored in an Azure container registry when deploying to Azure Container Instances. One way to configure registry access is to create a Microsoft Entra service principal and password, and store the login credentials in an Azure key vault.
+[Azure Container Registry](/azure/container-registry/container-registry-intro) is an Azure-based, managed container registry service used to store private Docker container images. This article describes how to pull container images stored in an Azure container registry when deploying to Azure Container Instances. One way to configure registry access is to create a Microsoft Entra service principal and password, and store the login credentials in an Azure key vault.
 
 ## Prerequisites
 
-**Azure container registry**: You need an Azure container registry--and at least one container image in the registry--to complete the steps in this article. If you need a registry, see [Create a container registry using the Azure CLI](../container-registry/container-registry-get-started-azure-cli.md).
+**Azure container registry**: You need an Azure container registry--and at least one container image in the registry--to complete the steps in this article. If you need a registry, see [Create a container registry using the Azure CLI](/azure/container-registry/container-registry-get-started-azure-cli).
 
 **Azure CLI**: The command-line examples in this article use the [Azure CLI](/cli/azure/) and are formatted for the Bash shell. You can [install the Azure CLI](/cli/azure/install-azure-cli) locally, or use the [Azure Cloud Shell][cloud-shell-bash].
 
@@ -25,9 +25,9 @@ ms.custom: mvc, devx-track-azurecli, devx-track-arm-template
 
 ## Configure registry authentication
 
-In a production scenario where you provide access to "headless" services and applications, it's recommended to configure registry access by using a [service principal](../container-registry/container-registry-auth-service-principal.md). A service principal allows you to provide [Azure role-based access control (Azure RBAC)](../container-registry/container-registry-roles.md) to your container images. For example, you can configure a service principal with pull-only access to a registry.
+In a production scenario where you provide access to "headless" services and applications, it's recommended to configure registry access by using a [service principal](/azure/container-registry/container-registry-auth-service-principal). A service principal allows you to provide [Azure role-based access control (Azure RBAC)](/azure/container-registry/container-registry-roles) to your container images. For example, you can configure a service principal with pull-only access to a registry.
 
-Azure Container Registry provides additional [authentication options](../container-registry/container-registry-authentication.md).
+Azure Container Registry provides additional [authentication options](/azure/container-registry/container-registry-authentication).
 
 In the following section, you create an Azure key vault and a service principal, and store the service principal's credentials in the vault.
 
@@ -138,11 +138,11 @@ You can specify the properties of your Azure container registry in an Azure Reso
 
 For complete container group settings, see the [Resource Manager template reference](/azure/templates/Microsoft.ContainerInstance/2019-12-01/containerGroups).    
 
-For details on referencing Azure Key Vault secrets in a Resource Manager template, see [Use Azure Key Vault to pass secure parameter value during deployment](../azure-resource-manager/templates/key-vault-parameter.md).
+For details on referencing Azure Key Vault secrets in a Resource Manager template, see [Use Azure Key Vault to pass secure parameter value during deployment](/azure/azure-resource-manager/templates/key-vault-parameter).
 
 ## Deploy with Azure portal
 
-If you maintain container images in an Azure container registry, you can easily create a container in Azure Container Instances using the Azure portal. When using the portal to deploy a container instance from a container registry, you must enable the registry's [admin account](../container-registry/container-registry-authentication.md#admin-account). The admin account is designed for a single user to access the registry, mainly for testing purposes. 
+If you maintain container images in an Azure container registry, you can easily create a container in Azure Container Instances using the Azure portal. When using the portal to deploy a container instance from a container registry, you must enable the registry's [admin account](/azure/container-registry/container-registry-authentication#admin-account). The admin account is designed for a single user to access the registry, mainly for testing purposes. 
 
 1. In the Azure portal, navigate to your container registry.
 
@@ -162,7 +162,7 @@ If you maintain container images in an Azure container registry, you can easily 
 
 ## Next steps
 
-For more information about Azure Container Registry authentication, see [Authenticate with an Azure container registry](../container-registry/container-registry-authentication.md).
+For more information about Azure Container Registry authentication, see [Authenticate with an Azure container registry](/azure/container-registry/container-registry-authentication).
 
 <!-- IMAGES -->
 [acr-create-deeplink]: ./media/container-instances-using-azure-container-registry/acr-create-deeplink.png

@@ -12,7 +12,7 @@ ms.custom: engagement-fy23, devx-track-arm-template
 # Deploy a Service Fabric managed cluster across availability zones
 Availability Zones in Azure are a high-availability offering that protects your applications and data from datacenter failures. An Availability Zone is a unique physical location equipped with independent power, cooling, and networking within an Azure region.
 
-Service Fabric managed cluster supports deployments that span across multiple Availability Zones to provide zone resiliency. This configuration ensures high-availability of the critical system services and your applications to protect from single-points-of-failure. Azure Availability Zones are only available in select regions. For more information, see [Azure Availability Zones Overview](../availability-zones/az-overview.md).
+Service Fabric managed cluster supports deployments that span across multiple Availability Zones to provide zone resiliency. This configuration ensures high-availability of the critical system services and your applications to protect from single-points-of-failure. Azure Availability Zones are only available in select regions. For more information, see [Azure Availability Zones Overview](/azure/availability-zones/az-overview).
 
 >[!NOTE]
 >Availability Zone spanning is only available on Standard SKU clusters.
@@ -77,7 +77,7 @@ Existing Service Fabric managed clusters that aren't spanned across availability
 
 Requirements:
 * Standard SKU cluster.
-* Three [availability zones in the region](../availability-zones/az-overview.md#azure-regions-with-availability-zones).
+* Three [availability zones in the region](/azure/availability-zones/az-overview#azure-regions-with-availability-zones).
 
 >[!NOTE]
 >Migration to a zone resilient configuration can cause a brief loss of external connectivity through the load balancer, but will not affect cluster health. This occurs when a new Public IP needs to be created in order to make the networking resilient to Zone failures. Please plan the migration accordingly.
@@ -118,7 +118,7 @@ Requirements:
 
     If the Public IP resource isn't zone resilient, migration of the cluster will cause a brief loss of external connectivity. This connection loss is due to the migration setting up new Public IP and updating the cluster  Fully qualified domain name (FQDN) to the new IP. If the Public IP resource is zone resilient, migration won't modify the Public IP resource nor the FQDN, and there will be no external connectivity impact.
    
-2) Initiate conversion of the underlying storage account created for managed cluster from Locally redundant storage (LRS) to Zone Redundant Storage (ZRS) using [customer-initiated conversion](../storage/common/redundancy-migration.md#customer-initiated-conversion). The resource group of storage account that needs to be migrated would be of the form "SFC_ClusterId"(ex SFC_9240df2f-71ab-4733-a641-53a8464d992d) under the same subscription as the managed cluster resource.
+2) Initiate conversion of the underlying storage account created for managed cluster from Locally redundant storage (LRS) to Zone Redundant Storage (ZRS) using [customer-initiated conversion](/azure/storage/common/redundancy-migration#customer-initiated-conversion). The resource group of storage account that needs to be migrated would be of the form "SFC_ClusterId"(ex SFC_9240df2f-71ab-4733-a641-53a8464d992d) under the same subscription as the managed cluster resource.
 
 3) Add zones property to existing node types
 

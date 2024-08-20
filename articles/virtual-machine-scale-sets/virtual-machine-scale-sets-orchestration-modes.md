@@ -88,7 +88,7 @@ resources
 | order by resourceGroup desc, name desc
 ```
 
-Querying resources with [Azure Resource Graph](../governance/resource-graph/overview.md) is a convenient and efficient way to query Azure resources and minimizes API calls to the resource provider. Azure Resource Graph is an eventually consistent cache where new or updated resources may not be reflected for up to 60 seconds. You can:
+Querying resources with [Azure Resource Graph](/azure/governance/resource-graph/overview) is a convenient and efficient way to query Azure resources and minimizes API calls to the resource provider. Azure Resource Graph is an eventually consistent cache where new or updated resources may not be reflected for up to 60 seconds. You can:
 - List VMs in a resource group or subscription.
 - Use the expand option to retrieve the instance view (fault domain assignment, power and provisioning states) for all VMs in your subscription.
 - Use the Get VM API and commands to get model and instance view for a single instance.
@@ -99,7 +99,7 @@ Application health monitoring allows your application to provide Azure with a he
 
 ### List scale sets VM API changes
 
-Virtual Machine Scale Sets allows you to list the instances that belong to the scale set. With Flexible orchestration, the list Virtual Machine Scale Sets VM command provides a list of scale sets VM IDs. You can then call the GET Virtual Machine Scale Sets VM commands to get more details on how the scale set is working with the VM instance. To get the details for many VMs in the scale set, use [Azure Resource Graph](../governance/resource-graph/overview.md) or the standard List VM API and commands. Use the standard GET VM API and commands to get information on a single instance.
+Virtual Machine Scale Sets allows you to list the instances that belong to the scale set. With Flexible orchestration, the list Virtual Machine Scale Sets VM command provides a list of scale sets VM IDs. You can then call the GET Virtual Machine Scale Sets VM commands to get more details on how the scale set is working with the VM instance. To get the details for many VMs in the scale set, use [Azure Resource Graph](/azure/governance/resource-graph/overview) or the standard List VM API and commands. Use the standard GET VM API and commands to get information on a single instance.
 
 ### Retrieve boot diagnostics data
 
@@ -136,7 +136,7 @@ The following table compares the Flexible orchestration mode, Uniform orchestrat
 | Write Accelerator   | Yes  | Yes  | Yes |
 | Proximity Placement Groups   | Yes, when using one Availability Zone or none. Cannot be changed after deployment. Read [Proximity Placement Groups documentation](../virtual-machine-scale-sets/proximity-placement-groups.md) | Yes, when using one Availability Zone or none. Can be changed after deployment stopping all instances. Read [Proximity Placement Groups documentation](../virtual-machine-scale-sets/proximity-placement-groups.md) | Yes |
 | Azure Dedicated Hosts   | Yes  | Yes  | Yes |
-| Managed Identity  | [User Assigned Identity](../active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vmss.md#user-assigned-managed-identity) only<sup>1</sup>  | System Assigned or User Assigned  | N/A (can specify Managed Identity on individual instances) |
+| Managed Identity  | [User Assigned Identity](/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vmss#user-assigned-managed-identity) only<sup>1</sup>  | System Assigned or User Assigned  | N/A (can specify Managed Identity on individual instances) |
 | Add/remove existing VM to the group  | Yes  | No  | No |
 | Service Fabric  | No  | Yes  | No |
 | Azure Kubernetes Service (AKS) / AKE  | No  | Yes  | No |
@@ -182,7 +182,7 @@ The following table compares the Flexible orchestration mode, Uniform orchestrat
 
 | Feature | Supported by Flexible orchestration for scale sets | Supported by Uniform orchestration for scale sets | Supported by Availability Sets |
 |---|---|---|---|
-| Default outbound connectivity | No, must have [explicit outbound connectivity](../virtual-network/ip-services/default-outbound-access.md) | Yes | Yes |
+| Default outbound connectivity | No, must have [explicit outbound connectivity](/azure/virtual-network/ip-services/default-outbound-access) | Yes | Yes |
 | Azure Load Balancer Standard SKU | Yes | Yes | Yes |
 | Application Gateway | Yes | Yes | Yes |
 | Infiniband Networking | No | Yes, single placement group only | Yes |

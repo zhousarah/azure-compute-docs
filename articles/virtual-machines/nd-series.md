@@ -21,13 +21,13 @@ The ND-series virtual machines are a new addition to the GPU family designed for
 [Live Migration](maintenance-and-updates.md): Not Supported<br>
 [Memory Preserving Updates](maintenance-and-updates.md): Not Supported<br>
 [VM Generation Support](generation-2.md): Generation 1 and 2<br>
-[Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md): Not Supported<br>
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Not Supported<br>
 [Ephemeral OS Disks](ephemeral-os-disks.md): Supported<br>
 Nvidia NVLink Interconnect: Not Supported<br>
 [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Not Supported <br>
 
 > [!IMPORTANT]
-> For this VM series, the vCPU (core) quota per region in your subscription is initially set to 0. [Request a vCPU quota increase](../azure-portal/supportability/regional-quota-requests.md) for this series in an [available region](https://azure.microsoft.com/regions/services/).
+> For this VM series, the vCPU (core) quota per region in your subscription is initially set to 0. [Request a vCPU quota increase](/azure/azure-portal/supportability/regional-quota-requests) for this series in an [available region](https://azure.microsoft.com/regions/services/).
 >
 | Size | vCPU | Memory: GiB | Temp storage (SSD) GiB | GPU | GPU memory: GiB | Max data disks | Max uncached disk throughput: IOPS/MBps | Max NICs |
 |---|---|---|---|---|---|---|---|---|

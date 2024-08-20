@@ -107,7 +107,7 @@ If a proximity placement group is `Not Aligned`, you can stop\deallocate, and th
 If there is an allocation failure due to deployment constraints, you may have to stop\deallocate all resources in the affected proximity placement group (including the aligned resources) first, and then restart them to restore alignment.
 
 ## Best practices 
-- For the lowest latency, use proximity placement groups together with accelerated networking. For more information, see [Create a Linux virtual machine with Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md) or [Create a Windows virtual machine with Accelerated Networking](../virtual-network/create-vm-accelerated-networking-powershell.md).
+- For the lowest latency, use proximity placement groups together with accelerated networking. For more information, see [Create a Linux virtual machine with Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli) or [Create a Windows virtual machine with Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-powershell).
 - In order to avoid landing on hardware that doesn't support all the VM SKUs and sizes you require, use intent for proximity placement groups. If it is an already existing proximity placement group without intent, you can use a single ARM template with all VM sizes specified to avoid this issue.
 - When reusing an existing placement group from which VMs were deleted, wait for the deletion to fully complete before adding VMs to it.
 - If latency is your first priority, put VMs in a proximity placement group and the entire solution in an availability zone. But, if resiliency is your top priority, spread your instances across multiple availability zones (a single proximity placement group cannot span zones).
@@ -115,6 +115,6 @@ If there is an allocation failure due to deployment constraints, you may have to
 ## Next steps
 
 - Deploy a VM to a proximity placement group using the [Azure CLI](./linux/proximity-placement-groups.md) or [PowerShell](./windows/proximity-placement-groups.md).
-- Learn how to [test network latency](../virtual-network/virtual-network-test-latency.md).
-- Learn how to [optimize network throughput](../virtual-network/virtual-network-optimize-network-bandwidth.md).
+- Learn how to [test network latency](/azure/virtual-network/virtual-network-test-latency).
+- Learn how to [optimize network throughput](/azure/virtual-network/virtual-network-optimize-network-bandwidth).
 - Learn how to [use proximity placement groups with SAP applications](./workloads/sap/sap-proximity-placement-scenarios.md).

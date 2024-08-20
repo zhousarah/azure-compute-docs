@@ -25,7 +25,7 @@ You must set up permissions and privileges prior to building an image. The follo
 
 ## Create a user-assigned managed identity
 
-VM Image Builder requires you to create an [Azure user-assigned managed identity](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md). VM Image Builder uses this identity to read images, write images, and access Azure storage accounts. You grant the identity permission to do specific actions in your subscription.
+VM Image Builder requires you to create an [Azure user-assigned managed identity](/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli). VM Image Builder uses this identity to read images, write images, and access Azure storage accounts. You grant the identity permission to do specific actions in your subscription.
 
 > [!NOTE]
 > User-assigned managed identity is the correct way to grant permissions to the image resource groups. The SPN is deprecated for this purpose.
@@ -45,7 +45,7 @@ az identity create \
     --name $identityName
 ```
 
-For more information, see [Azure user-assigned managed identity](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md).
+For more information, see [Azure user-assigned managed identity](/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli).
 
 ## Allow VM Image Builder to distribute images
 

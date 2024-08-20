@@ -18,13 +18,13 @@ If you're interested in learning more about maximizing the performance of your O
 
 ## Prerequisites
 
-- An understanding of the different concepts of Azure such as [availability zones](../../../availability-zones/az-overview.md)
+- An understanding of the different concepts of Azure such as [availability zones](/azure/availability-zones/az-overview)
 - Oracle Database Enterprise Edition 12c or later
 - Awareness of the licensing implications when using the solutions in this article
 
 ## High availability for Oracle databases
 
-Achieving high availability in the cloud is an important part of every organization's planning and design. Azure offers [availability zones](../../../availability-zones/az-overview.md) and *availability sets* to be used in regions where availability zones are unavailable. For more information about how to design for the cloud, see [Availability options for Azure Virtual Machines](../../availability.md).
+Achieving high availability in the cloud is an important part of every organization's planning and design. Azure offers [availability zones](/azure/availability-zones/az-overview) and *availability sets* to be used in regions where availability zones are unavailable. For more information about how to design for the cloud, see [Availability options for Azure Virtual Machines](../../availability.md).
 
 In addition to cloud-native tools and offerings, Oracle provides solutions for high availability that can be set up on Azure:
 
@@ -43,7 +43,7 @@ Oracle Real Application Cluster (RAC) is a solution by Oracle to help customers 
 
 Customers generally require a high SLA to run mission critical applications. Oracle doesn't currently certify or support Oracle RAC on Azure. However, Azure offers features such as availability zones and planned maintenance windows to help protect against instance-level failures. In addition to these offerings, you can use Oracle Data Guard, Oracle GoldenGate, and Oracle Sharding for high performance and resiliency. These technologies can help protect your databases from rack-level, datacenter-level, and geo-political failures.
 
-When you run Oracle Databases on multiple [availability zones](../../../availability-zones/az-overview.md) with Oracle Data Guard or GoldenGate, you can get an uptime SLA of 99.99%. In Azure regions where availability zones aren't yet present, you can use [availability sets](../../availability-set-overview.md) and achieve an uptime SLA of 99.95%.
+When you run Oracle Databases on multiple [availability zones](/azure/availability-zones/az-overview) with Oracle Data Guard or GoldenGate, you can get an uptime SLA of 99.99%. In Azure regions where availability zones aren't yet present, you can use [availability sets](../../availability-set-overview.md) and achieve an uptime SLA of 99.95%.
 
 > [!NOTE]
 > You can have a uptime target that is much higher than the uptime SLA provided by Microsoft.
@@ -52,7 +52,7 @@ When you run Oracle Databases on multiple [availability zones](../../../availabi
 
 When hosting your mission-critical applications in the cloud, it's important to design for high availability and disaster recovery.
 
-For Oracle Database Enterprise Edition, Oracle Data Guard is a useful feature for disaster recovery. You can set up a standby database instance in a [paired Azure region](../../../availability-zones/cross-region-replication-azure.md) and set up Data Guard failover for disaster recovery. For zero data loss, we recommend that you deploy an Oracle Data Guard Far Sync instance in addition to Active Data Guard.
+For Oracle Database Enterprise Edition, Oracle Data Guard is a useful feature for disaster recovery. You can set up a standby database instance in a [paired Azure region](/azure/availability-zones/cross-region-replication-azure) and set up Data Guard failover for disaster recovery. For zero data loss, we recommend that you deploy an Oracle Data Guard Far Sync instance in addition to Active Data Guard.
 
 If your application permits the latency, consider setting up the Data Guard Far Sync instance in a different availability zone than your Oracle primary database. Test the configuration thoroughly. Use a *Maximum Availability* mode to set up synchronous transport of your redo files to the Far Sync instance. These files are then transferred asynchronously to the standby database.
 
@@ -131,7 +131,7 @@ While the preceding architecture diagram shows the Data Pump and Replicat proces
 
 When setting up Oracle GoldenGate bidirectional replication in different availability zones or different regions, it's important to ensure that the latency between the different components is acceptable for your application. The latency between availability zones and regions can  vary. Latency depends on multiple factors. We recommend that you set up performance tests between your application tier and your database tier in different availability zones or regions. The tests can confirm that the configuration meets your application performance requirements.
 
-The application tier can be set up in its own subnet and the database tier can be separated into its own subnet. When possible, consider using [Azure Application Gateway](../../../application-gateway/overview.md) to load-balance traffic between your application servers. Application Gateway is a robust web traffic load balancer. It provides cookie-based session affinity that keeps a user session on the same server, minimizing the conflicts on the database. Alternatives to Application Gateway are [Azure Load Balancer](../../../load-balancer/load-balancer-overview.md) and [Azure Traffic Manager](../../../traffic-manager/traffic-manager-overview.md).
+The application tier can be set up in its own subnet and the database tier can be separated into its own subnet. When possible, consider using [Azure Application Gateway](/azure/application-gateway/overview) to load-balance traffic between your application servers. Application Gateway is a robust web traffic load balancer. It provides cookie-based session affinity that keeps a user session on the same server, minimizing the conflicts on the database. Alternatives to Application Gateway are [Azure Load Balancer](/azure/load-balancer/load-balancer-overview) and [Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview).
 
 ### Oracle Sharding
 
@@ -222,7 +222,7 @@ During the initial request, the application server connects to the shard directo
 
 When you deploy your Oracle workloads to Azure, Microsoft takes care of all host operating system level patching. Microsoft communicates any planned operating system level maintenance to customers in advance. Two servers from two different availability zones are never patched simultaneously. For more information on VM maintenance and patching, see [Availability options for Azure Virtual Machines](../../availability.md).
 
-Patching your virtual machine operating system can be automated using [Azure Automation Update Management](../../../automation/update-management/overview.md). Patching and maintaining your Oracle database can be automated and scheduled using [Azure Pipelines](/azure/devops/pipelines/get-started/what-is-azure-pipelines) or [Azure Automation Update Management](../../../automation/update-management/overview.md) to minimize downtime. For more information about continuous delivery and blue/green deployments, see [Progressive exposure techniques](/devops/deliver/what-is-continuous-delivery#progressive-exposure-techniques).
+Patching your virtual machine operating system can be automated using [Azure Automation Update Management](/azure/automation/update-management/overview). Patching and maintaining your Oracle database can be automated and scheduled using [Azure Pipelines](/azure/devops/pipelines/get-started/what-is-azure-pipelines) or [Azure Automation Update Management](/azure/automation/update-management/overview) to minimize downtime. For more information about continuous delivery and blue/green deployments, see [Progressive exposure techniques](/devops/deliver/what-is-continuous-delivery#progressive-exposure-techniques).
 
 ## Architecture and design considerations
 
@@ -232,7 +232,7 @@ Patching your virtual machine operating system can be automated using [Azure Aut
 - Consider using ultra disks when available or premium disks for your Oracle database.
 - Consider setting up a standby Oracle database in another Azure region using Oracle Data Guard.
 - Consider using [proximity placement groups](../../co-location.md#proximity-placement-groups) to reduce the latency between your application and database tier.
-- Azure VMs maximum network bandwidth is (typically) higher than the maximum disk throughput on the same SKU. You can achieve higher throughput on the same VM SKU or use a smaller VM SKU by using high-performance, low-latency networked storage such as [Azure NetApp Files](../../../azure-netapp-files/azure-netapp-files-introduction.md). for the database.
+- Azure VMs maximum network bandwidth is (typically) higher than the maximum disk throughput on the same SKU. You can achieve higher throughput on the same VM SKU or use a smaller VM SKU by using high-performance, low-latency networked storage such as [Azure NetApp Files](/azure/azure-netapp-files/azure-netapp-files-introduction). for the database.
 - Set up [Oracle Enterprise Manager](https://docs.oracle.com/en/enterprise-manager/) for management, monitoring, and logging.
 - Consider using Oracle Automatic Storage Management for streamlined storage management for your database.
 - Use [Azure Pipelines](/azure/devops/pipelines/get-started/what-is-azure-pipelines) to manage patching and updates to your database without any downtime.

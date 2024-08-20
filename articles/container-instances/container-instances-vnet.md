@@ -12,7 +12,7 @@ ms.custom: devx-track-azurecli
 
 # Deploy container instances into an Azure virtual network
 
-[Azure Virtual Network](../virtual-network/virtual-networks-overview.md) provides secure, private networking for your Azure and on-premises resources. By deploying container groups into an Azure virtual network, your containers can communicate securely with other resources in the virtual network.
+[Azure Virtual Network](/azure/virtual-network/virtual-networks-overview) provides secure, private networking for your Azure and on-premises resources. By deploying container groups into an Azure virtual network, your containers can communicate securely with other resources in the virtual network.
 
 This article shows how to use the [az container create][az-container-create] command in the Azure CLI to deploy container groups to either a new virtual network or an existing virtual network.
 
@@ -37,7 +37,7 @@ To deploy to a new virtual network and have Azure create the network resources f
 * Subnet name
 * Subnet address prefix in CIDR format
 
-The virtual network and subnet address prefixes specify the address spaces for the virtual network and subnet, respectively. These values are represented in Classless Inter-Domain Routing (CIDR) notation, for example `10.0.0.0/16`. For more information about working with subnets, see [Add, change, or delete a virtual network subnet](../virtual-network/virtual-network-manage-subnet.md).
+The virtual network and subnet address prefixes specify the address spaces for the virtual network and subnet, respectively. These values are represented in Classless Inter-Domain Routing (CIDR) notation, for example `10.0.0.0/16`. For more information about working with subnets, see [Add, change, or delete a virtual network subnet](/azure/virtual-network/virtual-network-manage-subnet).
 
 Once you've deployed your first container group with this method, you can deploy to the same subnet by specifying the virtual network and subnet names, or the network profile that Azure automatically creates for you. Because Azure delegates the subnet to Azure Container Instances, you can deploy *only* container groups to the subnet.
 

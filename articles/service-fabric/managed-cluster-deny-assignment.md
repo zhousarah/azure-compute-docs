@@ -13,7 +13,7 @@ ms.date: 07/17/2024
 
 Deny assignment policies for Service Fabric managed clusters enable customers to protect their clusters' resources. Limiting access to certain actions can help users prevent inadvertent damage to their clusters when they delete, deallocate, restart, or reimage their clusters' scale sets. These actions, when done directly in the infrastructure resource group, can cause the resources of the cluster to desynchronize with the data in the cluster.
 
-Deny assignments deny access by attaching a set of deny actions to a user, group, or service principal at a particular scope. You can learn more about deny assignments in the [Azure role-based access control (RBAC) documentation](../role-based-access-control/deny-assignments.md).
+Deny assignments deny access by attaching a set of deny actions to a user, group, or service principal at a particular scope. You can learn more about deny assignments in the [Azure role-based access control (RBAC) documentation](/azure/role-based-access-control/deny-assignments).
 
 This article pertains to Service Fabric managed clusters, but we make callouts when the information pertains to classic clusters as well.
 

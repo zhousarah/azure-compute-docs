@@ -43,7 +43,7 @@ The following headers are required:
 | subscriptionId | The subscription ID that identifies an Azure subscription. If you have multiple subscriptions, see [Working with multiple subscriptions](/cli/azure/manage-azure-subscriptions-azure-cli). |
 | resourceGroupName | The name of the Azure resource group associated with the resource. You can get this value from the Azure Resource Manager API, CLI, or the portal. |
 | vmname | The name of the Azure Virtual Machine. |
-| metricnames | Comma-separated list of valid  [Load Balancer metrics](../../load-balancer/load-balancer-standard-diagnostics.md). |
+| metricnames | Comma-separated list of valid  [Load Balancer metrics](/azure/load-balancer/load-balancer-standard-diagnostics). |
 | api-version | The API version to use for the request.<br /><br /> This document covers api-version `2018-01-01`, included in the above URL.  |
 | timespan | String with the following format `startDateTime_ISO/endDateTime_ISO` that defines the time range of the returned metrics. This optional parameter is set to return a day's worth of data in the example. |
 | &nbsp; | &nbsp; |

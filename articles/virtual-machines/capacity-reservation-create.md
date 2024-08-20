@@ -26,7 +26,7 @@ A Capacity Reservation creation succeeds or fails in its entirety. For a request
 The Capacity Reservation must meet the following rules: 
 - The location parameter must match the location property for the parent Capacity Reservation group. A mismatch results in an error. 
 - The VM size must be available in the target region. Otherwise, the reservation creation fails. 
-- The subscription must have available quota equal to or more than the quantity of VMs being reserved for the VM series and for the region overall. If needed, [request more quota](../azure-portal/supportability/per-vm-quota-requests.md). 
+- The subscription must have available quota equal to or more than the quantity of VMs being reserved for the VM series and for the region overall. If needed, [request more quota](/azure/azure-portal/supportability/per-vm-quota-requests). 
     - As needed to satisfy existing quota limits, single VMs can be done in stages. Create a capacity reservation with a smaller quantity and reallocate that quantity of virtual machines. This frees up quota to increase the quantity reserved and add more virtual machines. Alternatively, if the subscription uses different VM sizes in the same series, reserve and redeploy VMs for the first size. Then add a reservation to the group for another size and redeploy the VMs for the new size to the reservation group. Repeat until complete. 
     - For Scale Sets, available quota is required unless the Scale Set or you delete its VM instances, capacity is reserved, and the Scale Set instances are added using reserved capacity. If the Scale Set is updated using blue green deployment, then reserve the capacity and deploy the new Scale Set to the reserved capacity at the next update. 
 - Each Capacity Reservation group can have exactly one reservation for a given VM size. For example, only one Capacity Reservation can be created for the VM size `Standard_D2s_v3`. Attempt to create a second reservation for `Standard_D2s_v3` in the same Capacity Reservation group results in an error. However, another reservation can be created in the same group for other VM sizes, such as `Standard_D4s_v3`, `Standard_D8s_v3`, and so on.  
@@ -225,7 +225,7 @@ To learn more, go to Azure PowerShell commands [New-AzResourceGroup](/powershell
 
 ### [ARM template](#tab/arm1)
 
-An [ARM template](../azure-resource-manager/templates/overview.md) is a JavaScript Object Notation (JSON) file that defines the infrastructure and configuration for your project. The template uses declarative syntax. In declarative syntax, you describe your intended deployment without writing the sequence of programming commands to create the deployment. 
+An [ARM template](/azure/azure-resource-manager/templates/overview) is a JavaScript Object Notation (JSON) file that defines the infrastructure and configuration for your project. The template uses declarative syntax. In declarative syntax, you describe your intended deployment without writing the sequence of programming commands to create the deployment. 
 
 ARM templates let you deploy groups of related resources. In a single template, you can create Capacity Reservation group and Capacity Reservations. You can deploy templates through the Azure portal, Azure CLI, or Azure PowerShell, or from continuous integration/continuous delivery (CI/CD) pipelines. 
 

@@ -23,7 +23,7 @@ Mv2-series VM’s feature Intel® Hyper-Threading Technology
 [Memory Preserving Updates](maintenance-and-updates.md): Not Supported<br>
 [VM Generation Support](generation-2.md): Generation 2<br>
 [Write Accelerator](./how-to-enable-write-accelerator.md): Supported<br>
-[Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md): Supported<br>
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported<br>
 [Ephemeral OS Disks](ephemeral-os-disks.md): Supported <br>
 [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Not Supported <br>
 <br>

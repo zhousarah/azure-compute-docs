@@ -88,7 +88,7 @@ You can create a key vault by using the [Resource Manager template](https://gith
 
 
 ## <a name="bkmk_ADapp"></a> Set up a Microsoft Entra app and service principal
-When you need encryption to be enabled on a running VM in Azure, Azure Disk Encryption generates and writes the encryption keys to your key vault. Managing encryption keys in your key vault requires Microsoft Entra authentication. Create a Microsoft Entra application for this purpose. For authentication purposes, you can use either client secret-based authentication or [client certificate-based Microsoft Entra authentication](../../active-directory/authentication/active-directory-certificate-based-authentication-get-started.md).
+When you need encryption to be enabled on a running VM in Azure, Azure Disk Encryption generates and writes the encryption keys to your key vault. Managing encryption keys in your key vault requires Microsoft Entra authentication. Create a Microsoft Entra application for this purpose. For authentication purposes, you can use either client secret-based authentication or [client certificate-based Microsoft Entra authentication](/azure/active-directory/authentication/active-directory-certificate-based-authentication-get-started).
 
 
 ### <a name="bkmk_ADappPSH"></a> Set up a Microsoft Entra app and service principal with Azure PowerShell
@@ -118,12 +118,12 @@ You can manage your service principals with Azure CLI using the [az ad sp](/cli/
 3.  The appId returned is the Microsoft Entra ClientID used in other commands. It's also the SPN you'll use for az keyvault set-policy. The password is the client secret that you should use later to enable Azure Disk Encryption. Safeguard the Microsoft Entra client secret appropriately.
 
 ### <a name="bkmk_ADappRM"></a> Set up a Microsoft Entra app and service principal through the Azure portal
-Use the steps from the [Use portal to create a Microsoft Entra application and service principal that can access resources](../../active-directory/develop/howto-create-service-principal-portal.md) article to create a Microsoft Entra application. Each step listed below will take you directly to the article section to complete.
+Use the steps from the [Use portal to create a Microsoft Entra application and service principal that can access resources](/azure/active-directory/develop/howto-create-service-principal-portal) article to create a Microsoft Entra application. Each step listed below will take you directly to the article section to complete.
 
-1. [Verify required permissions](../../active-directory/develop/howto-create-service-principal-portal.md#permissions-required-for-registering-an-app)
-2. [Create a Microsoft Entra application](../../active-directory/develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal)
+1. [Verify required permissions](/azure/active-directory/develop/howto-create-service-principal-portal#permissions-required-for-registering-an-app)
+2. [Create a Microsoft Entra application](/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal)
      - You can use any name and sign-on URL you would like when creating the application.
-3. [Get the application ID and the authentication key](../../active-directory/develop/howto-create-service-principal-portal.md#sign-in-to-the-application).
+3. [Get the application ID and the authentication key](/azure/active-directory/develop/howto-create-service-principal-portal#sign-in-to-the-application).
      - The authentication key is the client secret and is used as the AadClientSecret for Set-AzVMDiskEncryptionExtension.
         - The authentication key is used by the application as a credential to sign in to Microsoft Entra ID. In the Azure portal, this secret is called keys, but has no relation to key vaults. Secure this secret appropriately.
      - The application ID will be used later as the AadClientId for Set-AzVMDiskEncryptionExtension and as the ServicePrincipalName for Set-AzKeyVaultAccessPolicy.

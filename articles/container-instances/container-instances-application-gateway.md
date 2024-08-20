@@ -12,7 +12,7 @@ ms.date: 04/09/2024
 
 # Expose a static IP address for a container group
 
-This article shows one way to expose a static, public IP address for a [container group](container-instances-container-groups.md) by using an Azure [application gateway](../application-gateway/overview.md). Follow these steps when you need a static entry point for an external-facing containerized app that runs in Azure Container Instances.
+This article shows one way to expose a static, public IP address for a [container group](container-instances-container-groups.md) by using an Azure [application gateway](/azure/application-gateway/overview). Follow these steps when you need a static entry point for an external-facing containerized app that runs in Azure Container Instances.
 
 In this article, you use the Azure CLI to create the resources for this scenario:
 
@@ -23,7 +23,7 @@ In this article, you use the Azure CLI to create the resources for this scenario
 As long as the application gateway runs and the container group exposes a stable private IP address in the network's delegated subnet, the container group is accessible at this public IP address.
 
 > [!NOTE]
-> Azure Application Gateway [supports HTTP, HTTPS, HTTP/2, and WebSocket protocols](../application-gateway/application-gateway-faq.yml).
+> Azure Application Gateway [supports HTTP, HTTPS, HTTP/2, and WebSocket protocols](/azure/application-gateway/application-gateway-faq).
 >
 > Azure charges for an application gateway based on the amount of time that the gateway is provisioned and available, as well as the amount of data it processes. See [pricing](https://azure.microsoft.com/pricing/details/application-gateway/).
 
@@ -108,7 +108,7 @@ ACI_IP=$(az container show \
 
 ## Create application gateway
 
-Create an application gateway in the virtual network, following the steps in the [application gateway quickstart](../application-gateway/quick-create-cli.md). The following [az network application-gateway create][az-network-application-gateway-create] command creates a gateway with a public frontend IP address and a route to the backend container group. See the [Application Gateway documentation](../application-gateway/index.yml) for details about the gateway settings.
+Create an application gateway in the virtual network, following the steps in the [application gateway quickstart](/azure/application-gateway/quick-create-cli). The following [az network application-gateway create][az-network-application-gateway-create] command creates a gateway with a public frontend IP address and a route to the backend container group. See the [Application Gateway documentation](/azure/application-gateway/) for details about the gateway settings.
 
 ```azurecli
 az network application-gateway create \
@@ -151,8 +151,8 @@ To view the running web app when successfully configured, navigate to the gatewa
 ## Next steps
 
 * See a [quickstart template](https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/wordpress/aci-wordpress-vnet) to create a container group with a WordPress container instance as a backend server behind an application gateway.
-* You can also configure an application gateway with a certificate for SSL termination. See the [overview](../application-gateway/ssl-overview.md) and the [tutorial](../application-gateway/create-ssl-portal.md).
-* Depending on your scenario, consider using other Azure load-balancing solutions with Azure Container Instances. For example, use [Azure Traffic Manager](../traffic-manager/traffic-manager-overview.md) to distribute traffic across multiple container instances and across multiple regions. See this [blog post](https://aaronmsft.com/posts/azure-container-instances/).
+* You can also configure an application gateway with a certificate for SSL termination. See the [overview](/azure/application-gateway/ssl-overview) and the [tutorial](/azure/application-gateway/create-ssl-portal).
+* Depending on your scenario, consider using other Azure load-balancing solutions with Azure Container Instances. For example, use [Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview) to distribute traffic across multiple container instances and across multiple regions. See this [blog post](https://aaronmsft.com/posts/azure-container-instances/).
 
 [az-network-vnet-create]:  /cli/azure/network/vnet#az_network_vnet_create
 [az-network-vnet-subnet-create]: /cli/azure/network/vnet/subnet#az_network_vnet_subnet_create

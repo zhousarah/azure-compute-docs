@@ -46,7 +46,7 @@ Follow the steps in the following procedures to bind and create a Trusted Launch
 
 1. Copy an OS VHD by using an SAS URI to the storage account:
 
-   1. Use [azcopy](../storage/common/storage-use-azcopy-v10.md) to perform the copy operation.
+   1. Use [azcopy](/azure/storage/common/storage-use-azcopy-v10) to perform the copy operation.
    1. Use this storage account and the copied VHD as input for the SIG creation.
 
 ### Create a SIG image by using a VHD

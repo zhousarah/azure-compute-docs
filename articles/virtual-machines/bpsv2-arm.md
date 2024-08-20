@@ -23,7 +23,7 @@ Bpsv2 VMs offer up to 16 vCPU and 64 GiB of RAM and are optimized for scale-out 
 [Live Migration](maintenance-and-updates.md): Supported<br>
 [Memory Preserving Updates](maintenance-and-updates.md): Supported<br>
 [VM Generation Support](generation-2.md): Generation 2<br>
-[Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md)<sup>1</sup>: Supported<br>
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli)<sup>1</sup>: Supported<br>
 [Ephemeral OS Disks](ephemeral-os-disks.md): Not Supported <br>
 [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Not Supported <br>
 <br> 

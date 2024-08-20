@@ -13,15 +13,15 @@ ms.author: rogarana
 
 **Applies to:** :heavy_check_mark: Linux VMs :heavy_check_mark: Flexible scale sets 
 
-[Azure premium SSDs](../disks-types.md) delivers high-performance, low-latency disk support for virtual machines (VMs) that are running I/O-intensive workloads. This guide helps you migrate your VM disks from a standard storage account to a premium storage account by using [Azure Site Recovery](../../site-recovery/site-recovery-overview.md).
+[Azure premium SSDs](../disks-types.md) delivers high-performance, low-latency disk support for virtual machines (VMs) that are running I/O-intensive workloads. This guide helps you migrate your VM disks from a standard storage account to a premium storage account by using [Azure Site Recovery](/azure/site-recovery/site-recovery-overview).
 
 Site Recovery is an Azure service that contributes to your strategy for business continuity and disaster recovery by orchestrating the replication of on-premises physical servers and VMs to the cloud (Azure) or to a secondary datacenter. When outages occur in your primary location, you fail over to the secondary location to keep applications and workloads available. You fail back to your primary location when it returns to normal operation. 
 
-Site Recovery provides test failovers to support disaster recovery drills without affecting production environments. You can run failovers with minimal data loss (depending on replication frequency) for unexpected disasters. In the scenario of migrating to Premium Storage, you can use the [failover in Site Recovery](../../site-recovery/site-recovery-failover.md) to migrate target disks to a premium storage account.
+Site Recovery provides test failovers to support disaster recovery drills without affecting production environments. You can run failovers with minimal data loss (depending on replication frequency) for unexpected disasters. In the scenario of migrating to Premium Storage, you can use the [failover in Site Recovery](/azure/site-recovery/site-recovery-failover) to migrate target disks to a premium storage account.
 
 We recommend migrating to Premium Storage by using Site Recovery because this option provides minimal downtime. This option also avoids the manual execution of copying disks and creating new VMs. Site Recovery will systematically copy your disks and create new VMs during failover. 
 
-Site Recovery supports a number of types of failover with minimal or no downtime. To plan your downtime and estimate data loss, see the [types of failover in Site Recovery](../../site-recovery/site-recovery-failover.md). If you [prepare to connect to Azure VMs after failover](../../site-recovery/vmware-azure-tutorial.md), you should be able to connect to the Azure VM by using RDP after failover.
+Site Recovery supports a number of types of failover with minimal or no downtime. To plan your downtime and estimate data loss, see the [types of failover in Site Recovery](/azure/site-recovery/site-recovery-failover). If you [prepare to connect to Azure VMs after failover](/azure/site-recovery/vmware-azure-tutorial), you should be able to connect to the Azure VM by using RDP after failover.
 
 ![Disaster recovery diagram][1]
 
@@ -29,7 +29,7 @@ Site Recovery supports a number of types of failover with minimal or no downtime
 
 These Site Recovery components are relevant to this migration scenario:
 
-* **Configuration server** is an Azure VM that coordinates communication and manages data replication and recovery processes. On this VM, you run a single setup file to install the configuration server and an additional component, called a process server, as a replication gateway. Read about [configuration server prerequisites](../../site-recovery/vmware-azure-tutorial.md). You set up the configuration server only once, and you can use it for all migrations to the same region.
+* **Configuration server** is an Azure VM that coordinates communication and manages data replication and recovery processes. On this VM, you run a single setup file to install the configuration server and an additional component, called a process server, as a replication gateway. Read about [configuration server prerequisites](/azure/site-recovery/vmware-azure-tutorial). You set up the configuration server only once, and you can use it for all migrations to the same region.
 
 * **Process server** is a replication gateway that: 
 
@@ -37,9 +37,9 @@ These Site Recovery components are relevant to this migration scenario:
   2. Optimizes the data with caching, compression, and encryption.
   3. Sends the data to a storage account. 
 
-  It also handles push installation of the mobility service to source VMs and performs automatic discovery of source VMs. The default process server is installed on the configuration server. You can deploy additional standalone process servers to scale your deployment. Read about [best practices for process server deployment](https://azure.microsoft.com/blog/best-practices-for-process-server-deployment-when-protecting-vmware-and-physical-workloads-with-azure-site-recovery/) and [deploying additional process servers](../../site-recovery/site-recovery-plan-capacity-vmware.md#deploy-additional-process-servers). You set up the process server only once, and you can use it for all migrations to the same region.
+  It also handles push installation of the mobility service to source VMs and performs automatic discovery of source VMs. The default process server is installed on the configuration server. You can deploy additional standalone process servers to scale your deployment. Read about [best practices for process server deployment](https://azure.microsoft.com/blog/best-practices-for-process-server-deployment-when-protecting-vmware-and-physical-workloads-with-azure-site-recovery/) and [deploying additional process servers](/azure/site-recovery/site-recovery-plan-capacity-vmware#deploy-additional-process-servers). You set up the process server only once, and you can use it for all migrations to the same region.
 
-* **Mobility service** is a component that is deployed on every standard VM that you want to replicate. It captures data writes on the standard VM and forwards them to the process server. Read about [replicated machine prerequisites](../../site-recovery/vmware-azure-tutorial.md).
+* **Mobility service** is a component that is deployed on every standard VM that you want to replicate. It captures data writes on the standard VM and forwards them to the process server. Read about [replicated machine prerequisites](/azure/site-recovery/vmware-azure-tutorial).
 
 This graphic shows how these components interact:
 
@@ -48,7 +48,7 @@ This graphic shows how these components interact:
 > [!NOTE]
 > Site Recovery does not support the migration of Storage Spaces disks.
 
-For additional components for other scenarios, see [Scenario architecture](../../site-recovery/vmware-azure-tutorial.md).
+For additional components for other scenarios, see [Scenario architecture](/azure/site-recovery/vmware-azure-tutorial).
 
 ## Azure essentials
 
@@ -62,11 +62,11 @@ These are the Azure requirements for this migration scenario:
 ## Prerequisites
 
 * Understand the relevant migration scenario components in the preceding section.
-* Plan your downtime by learning about [failover in Site Recovery](../../site-recovery/site-recovery-failover.md).
+* Plan your downtime by learning about [failover in Site Recovery](/azure/site-recovery/site-recovery-failover).
 
 ## Setup and migration steps
 
-You can use Site Recovery to migrate Azure IaaS VMs between regions or within same region. The following instructions are tailored for this migration scenario from the article [Replicate VMware VMs or physical servers to Azure](../../site-recovery/vmware-azure-tutorial.md). Please follow the links for detailed steps in addition to the instructions in this article.
+You can use Site Recovery to migrate Azure IaaS VMs between regions or within same region. The following instructions are tailored for this migration scenario from the article [Replicate VMware VMs or physical servers to Azure](/azure/site-recovery/vmware-azure-tutorial). Please follow the links for detailed steps in addition to the instructions in this article.
 
 ### Step 1: Create a Recovery Services vault
 
@@ -97,7 +97,7 @@ You can use Site Recovery to migrate Azure IaaS VMs between regions or within sa
 
    ![Add Server pane with Configuration Server selected][5]
 
-3. On the VM that you're using as the configuration server, run Unified Setup to install the configuration server and the process server. You can [walk through the screenshots](../../site-recovery/vmware-azure-tutorial.md) to complete the installation. You can refer to the following screenshots for steps specified for this migration scenario.
+3. On the VM that you're using as the configuration server, run Unified Setup to install the configuration server and the process server. You can [walk through the screenshots](/azure/site-recovery/vmware-azure-tutorial) to complete the installation. You can refer to the following screenshots for steps specified for this migration scenario.
 
    1. In **Before You Begin**, select **Install the configuration server and process server**.
 
@@ -131,22 +131,22 @@ Site Recovery checks that you have one or more compatible Azure storage accounts
 
 ### Step 5: Set up replication settings
 
-To verify that your configuration server is successfully associated with the replication policy that you create, follow [Set up replication settings](../../site-recovery/vmware-azure-tutorial.md).
+To verify that your configuration server is successfully associated with the replication policy that you create, follow [Set up replication settings](/azure/site-recovery/vmware-azure-tutorial).
 
 ### Step 6: Plan capacity
 
-1. Use the [capacity planner](../../site-recovery/site-recovery-capacity-planner.md) to accurately estimate network bandwidth, storage, and other requirements to meet your replication needs. 
+1. Use the [capacity planner](/azure/site-recovery/site-recovery-capacity-planner) to accurately estimate network bandwidth, storage, and other requirements to meet your replication needs. 
 2. When you're done, select **Yes, I have done it** in **Have you completed capacity planning?**.
 
    ![Box for confirming that you completed capacity planning][11]
 
 ### Step 7: Install the mobility service and enable replication
 
-1. You can choose to [push installation](../../site-recovery/vmware-azure-tutorial.md) to your source VMs or to [manually install the mobility service](../../site-recovery/vmware-azure-install-mobility-service.md) on your source VMs. You can find the requirement of pushing installation and the path of the manual installer in the provided link. If you're doing a manual installation, you might need to use an internal IP address to find the configuration server.
+1. You can choose to [push installation](/azure/site-recovery/vmware-azure-tutorial) to your source VMs or to [manually install the mobility service](/azure/site-recovery/vmware-azure-install-mobility-service) on your source VMs. You can find the requirement of pushing installation and the path of the manual installer in the provided link. If you're doing a manual installation, you might need to use an internal IP address to find the configuration server.
 
    ![Configuration Server Details page][12]
 
-   The failed-over VM will have two temporary disks: one from the primary VM and the other created during the provisioning of the VM in the recovery region. To exclude the temporary disk before replication, install the mobility service before you enable replication. To learn more about how to exclude the temporary disk, see [Exclude disks from replication](../../site-recovery/vmware-azure-tutorial.md).
+   The failed-over VM will have two temporary disks: one from the primary VM and the other created during the provisioning of the VM in the recovery region. To exclude the temporary disk before replication, install the mobility service before you enable replication. To learn more about how to exclude the temporary disk, see [Exclude disks from replication](/azure/site-recovery/vmware-azure-tutorial).
 
 2. Enable replication as follows:
    1. Select **Replicate Application** > **Source**. After you've enabled replication for the first time, select **+Replicate** in the vault to enable replication for additional machines.
@@ -172,16 +172,16 @@ You can choose a post-failover deployment model according to your need. If you c
 
 To check whether your replication is complete, select your Site Recovery instance and then select **Settings** > **Replicated Items**. You will see the status and percentage of your replication process. 
 
-After initial replication is complete, run a test failover to validate your replication strategy. For detailed steps of a test failover, see [Run a test failover in Site Recovery](../../site-recovery/vmware-azure-tutorial.md). 
+After initial replication is complete, run a test failover to validate your replication strategy. For detailed steps of a test failover, see [Run a test failover in Site Recovery](/azure/site-recovery/vmware-azure-tutorial). 
 
 > [!NOTE]
-> Before you run any failover, make sure that your VMs and replication strategy meet the requirements. For more information about running a test failover, see [Test failover to Azure in Site Recovery](../../site-recovery/site-recovery-test-failover-to-azure.md).
+> Before you run any failover, make sure that your VMs and replication strategy meet the requirements. For more information about running a test failover, see [Test failover to Azure in Site Recovery](/azure/site-recovery/site-recovery-test-failover-to-azure).
 
 You can see the status of your test failover in **Settings** > **Jobs** > *YOUR_FAILOVER_PLAN_NAME*. In the pane, you  can see a breakdown of the steps and success/failure results. If the test failover fails at any step, select the step to check the error message. 
 
 ### Step 9: Run a failover
 
-After the test failover is completed, run a failover to migrate your disks to Premium Storage and replicate the VM instances. Follow the detailed steps in [Run a failover](../../site-recovery/site-recovery-failover.md#run-a-failover). 
+After the test failover is completed, run a failover to migrate your disks to Premium Storage and replicate the VM instances. Follow the detailed steps in [Run a failover](/azure/site-recovery/site-recovery-failover#run-a-failover). 
 
 Be sure to select **Shut down VMs and synchronize the latest data**. This option specifies that Site Recovery should try to shut down the protected VMs and synchronize the data so that the latest version of the data will be failed over. If you don't select this option or the attempt doesn't succeed, the failover will be from the latest available recovery point for the VM. 
 
@@ -199,7 +199,7 @@ Site Recovery will create a VM instance whose type is the same as or similar to 
 
 ## Troubleshooting
 
-* [Monitor and troubleshoot protection for virtual machines and physical servers](../../site-recovery/site-recovery-monitor-and-troubleshoot.md)
+* [Monitor and troubleshoot protection for virtual machines and physical servers](/azure/site-recovery/site-recovery-monitor-and-troubleshoot)
 * [Microsoft Q&A question page for Microsoft Azure Site Recovery](/answers/topics/azure-site-recovery.html)
 
 ## Next steps
@@ -212,7 +212,7 @@ For specific scenarios for migrating virtual machines, see the following resourc
 
 Also, see the following resources to learn more about Azure Storage and Azure Virtual Machines:
 
-* [Azure Storage](../../storage/index.yml)
+* [Azure Storage](/azure/storage/)
 * [Azure Virtual Machines](../index.yml)
 * [Select a disk type for IaaS VMs](../disks-types.md)
 

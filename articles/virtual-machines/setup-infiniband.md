@@ -48,14 +48,14 @@ Azure provides several options to create clusters of HPC VMs that can communicat
 
 - **Virtual machines**  - Deploy the RDMA-capable HPC VMs in the same scale set or availability set (when you use the Azure Resource Manager deployment model). If you use the classic deployment model, deploy the VMs in the same cloud service.
 
-- **Virtual machine scale sets** - In a virtual machine scale set, ensure that you limit the deployment to a single placement group for InfiniBand communication within the scale set. For example, in a Resource Manager template, set the `singlePlacementGroup` property to `true`. Note that the maximum scale set size that can be spun up with `singlePlacementGroup=true` is capped at 100 VMs by default. If your HPC job scale needs are higher than 100 VMs in a single tenant, you may request an increase, [open an online customer support request](../azure-portal/supportability/how-to-create-azure-support-request.md) at no charge. The limit on the number of VMs in a single scale set can be increased to 300. Note that when deploying VMs using Availability Sets the maximum limit is at 200 VMs per Availability Set.
+- **Virtual machine scale sets** - In a virtual machine scale set, ensure that you limit the deployment to a single placement group for InfiniBand communication within the scale set. For example, in a Resource Manager template, set the `singlePlacementGroup` property to `true`. Note that the maximum scale set size that can be spun up with `singlePlacementGroup=true` is capped at 100 VMs by default. If your HPC job scale needs are higher than 100 VMs in a single tenant, you may request an increase, [open an online customer support request](/azure/azure-portal/supportability/how-to-create-azure-support-request) at no charge. The limit on the number of VMs in a single scale set can be increased to 300. Note that when deploying VMs using Availability Sets the maximum limit is at 200 VMs per Availability Set.
 
   > [!NOTE]
   > **MPI among virtual machines**: If RDMA (e.g. using MPI communication) is required between virtual machines (VMs), ensure that the VMs are in the same virtual machine scale set or availability set.
 
 - **Azure CycleCloud** - Create an HPC cluster using [Azure CycleCloud](/azure/cyclecloud/) to run MPI jobs.
 
-- **Azure Batch** - Create an [Azure Batch](../batch/index.yml) pool to run MPI workloads. To use compute-intensive instances when running MPI applications with Azure Batch, see [Use multi-instance tasks to run Message Passing Interface (MPI) applications in Azure Batch](../batch/batch-mpi.md).
+- **Azure Batch** - Create an [Azure Batch](/azure/batch/) pool to run MPI workloads. To use compute-intensive instances when running MPI applications with Azure Batch, see [Use multi-instance tasks to run Message Passing Interface (MPI) applications in Azure Batch](/azure/batch/batch-mpi).
 
 - **Microsoft HPC Pack** - [HPC Pack](/powershell/high-performance-computing/overview) includes a runtime environment for MS-MPI that uses the Azure RDMA network when deployed on RDMA-capable Linux VMs. For example deployments, see [Set up a Linux RDMA cluster with HPC Pack to run MPI applications](/powershell/high-performance-computing/hpcpack-linux-openfoam).
 
@@ -65,12 +65,12 @@ Azure provides several options to create clusters of HPC VMs that can communicat
 
 - **Pricing and availability** - Check [VM pricing](https://azure.microsoft.com/pricing/details/virtual-machines/linux/) and [availability](https://azure.microsoft.com/global-infrastructure/services/) by Azure regions.
 
-- **Cores quota** – You might need to increase the cores quota in your Azure subscription from the default value. Your subscription might also limit the number of cores you can deploy in certain VM size families, including the H-series. To request a quota increase, [open an online customer support request](../azure-portal/supportability/how-to-create-azure-support-request.md) at no charge. (Default limits may vary depending on your subscription category.)
+- **Cores quota** – You might need to increase the cores quota in your Azure subscription from the default value. Your subscription might also limit the number of cores you can deploy in certain VM size families, including the H-series. To request a quota increase, [open an online customer support request](/azure/azure-portal/supportability/how-to-create-azure-support-request) at no charge. (Default limits may vary depending on your subscription category.)
 
   > [!NOTE]
   > Contact Azure Support if you have large-scale capacity needs. Azure quotas are credit limits, not capacity guarantees. Regardless of your quota, you are only charged for cores that you use.
   
-- **Virtual network** – An Azure [virtual network](../virtual-network/index.yml) is not required to use the compute-intensive instances. However, for many deployments you need at least a cloud-based Azure virtual network, or a site-to-site connection if you need to access on-premises resources. When needed, create a new virtual network to deploy the instances. Adding compute-intensive VMs to a virtual network in an affinity group is not supported.
+- **Virtual network** – An Azure [virtual network](/azure/virtual-network/) is not required to use the compute-intensive instances. However, for many deployments you need at least a cloud-based Azure virtual network, or a site-to-site connection if you need to access on-premises resources. When needed, create a new virtual network to deploy the instances. Adding compute-intensive VMs to a virtual network in an affinity group is not supported.
 
 - **Resizing** – Because of their specialized hardware, you can only resize compute-intensive instances within the same size family (H-series or N-series). For example, you can only resize an H-series VM from one H-series size to another. Additional considerations around InfiniBand driver support and NVMe disks may need to be considered for certain VMs.
 

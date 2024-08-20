@@ -111,7 +111,7 @@ az sig image-version create \
 > [!NOTE]
 > You need to wait for the image version to completely finish being built and replicated before you can use the same managed image to create another image version.
 >
-> You can also store your image in Premium storage by a adding `--storage-account-type  premium_lrs`, or [Zone Redundant Storage](../storage/common/storage-redundancy.md) by adding `--storage-account-type  standard_zrs` when you create the image version.
+> You can also store your image in Premium storage by a adding `--storage-account-type  premium_lrs`, or [Zone Redundant Storage](/azure/storage/common/storage-redundancy) by adding `--storage-account-type  standard_zrs` when you create the image version.
 
 
 ## Create a scale set from the image
@@ -162,7 +162,7 @@ az role assignment create \
    --scope <gallery ID>
 ```
 
-For more information about how to share resources using Azure RBAC, see [Add or remove Azure role assignments using Azure CLI](../role-based-access-control/role-assignments-cli.md).
+For more information about how to share resources using Azure RBAC, see [Add or remove Azure role assignments using Azure CLI](/azure/role-based-access-control/role-assignments-cli).
 
 
 ## Clean up resources

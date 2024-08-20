@@ -22,7 +22,7 @@ If you're providing a backup solution for IaaS VMs in Azure, you should use dire
 
 ## Secure uploads with Microsoft Entra ID
 
-If you're using [Microsoft Entra ID](../../active-directory/fundamentals/active-directory-whatis.md) to control resource access, you can now use it to restrict uploading of Azure managed disks. This feature is available as a GA offering in all regions. When a user attempts to upload a disk, Azure validates the identity of the requesting user in Microsoft Entra ID, and confirms that user has the required permissions. At a higher level, a system administrator could set a policy at the Azure account or subscription level to ensure that a Microsoft Entra identity has the necessary permissions for uploading before allowing a disk or a disk snapshot to be uploaded. If you have any questions on securing uploads with Microsoft Entra ID, reach out to this email: azuredisks@microsoft .com
+If you're using [Microsoft Entra ID](/azure/active-directory/fundamentals/active-directory-whatis) to control resource access, you can now use it to restrict uploading of Azure managed disks. This feature is available as a GA offering in all regions. When a user attempts to upload a disk, Azure validates the identity of the requesting user in Microsoft Entra ID, and confirms that user has the required permissions. At a higher level, a system administrator could set a policy at the Azure account or subscription level to ensure that a Microsoft Entra identity has the necessary permissions for uploading before allowing a disk or a disk snapshot to be uploaded. If you have any questions on securing uploads with Microsoft Entra ID, reach out to this email: azuredisks@microsoft .com
 
 ### Prerequisites
 [!INCLUDE [disks-azure-ad-upload-download-prereqs](../../../includes/disks-azure-ad-upload-download-prereqs.md)]
@@ -32,14 +32,14 @@ If you're using [Microsoft Entra ID](../../active-directory/fundamentals/active-
 
 ### Assign RBAC role
 
-To access managed disks secured with Microsoft Entra ID, the requesting user must have either the [Data Operator for Managed Disks](../../role-based-access-control/built-in-roles.md#data-operator-for-managed-disks) role, or a [custom role](../../role-based-access-control/custom-roles-powershell.md) with the following permissions: 
+To access managed disks secured with Microsoft Entra ID, the requesting user must have either the [Data Operator for Managed Disks](/azure/role-based-access-control/built-in-roles#data-operator-for-managed-disks) role, or a [custom role](/azure/role-based-access-control/custom-roles-powershell) with the following permissions: 
 
 - **Microsoft.Compute/disks/download/action**
 - **Microsoft.Compute/disks/upload/action**
 - **Microsoft.Compute/snapshots/download/action**
 - **Microsoft.Compute/snapshots/upload/action**
 
-For detailed steps on assigning a role, see [Assign Azure roles using Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md). To create or update a custom role, see [Create or update Azure custom roles using Azure PowerShell](../../role-based-access-control/custom-roles-powershell.md).
+For detailed steps on assigning a role, see [Assign Azure roles using Azure PowerShell](/azure/role-based-access-control/role-assignments-powershell). To create or update a custom role, see [Create or update Azure custom roles using Azure PowerShell](/azure/role-based-access-control/custom-roles-powershell).
 
 ## Get started
 
@@ -63,7 +63,7 @@ For guidance on how to copy a managed disk from one region to another, see [Copy
 
 ### (Optional) Grant access to the disk
 
-If Microsoft Entra ID is used to enforce upload restrictions on a subscription or at the account level, [Add-AzVHD](/powershell/module/az.compute/add-azvhd) only succeeds if attempted by a user that has the [appropriate RBAC role or necessary permissions](#assign-rbac-role). You'll need to [assign RBAC permissions](../../role-based-access-control/role-assignments-powershell.md) to grant access to the disk and generate a writeable SAS.
+If Microsoft Entra ID is used to enforce upload restrictions on a subscription or at the account level, [Add-AzVHD](/powershell/module/az.compute/add-azvhd) only succeeds if attempted by a user that has the [appropriate RBAC role or necessary permissions](#assign-rbac-role). You'll need to [assign RBAC permissions](/azure/role-based-access-control/role-assignments-powershell) to grant access to the disk and generate a writeable SAS.
 
 ```azurepowershell
 New-AzRoleAssignment -SignInName <emailOrUserprincipalname> `
@@ -99,7 +99,7 @@ Add-AzVhd -LocalFilePath $path -ResourceGroupName $resourceGroup -Location $loca
 
 ### Prerequisites
 
-- Download the latest [version of AzCopy v10](../../storage/common/storage-use-azcopy-v10.md#download-and-install-azcopy).
+- Download the latest [version of AzCopy v10](/azure/storage/common/storage-use-azcopy-v10#download-and-install-azcopy).
 - [Install the Azure PowerShell module](/powershell/azure/install-azure-powershell).
 - A fixed size VHD that [has been prepared for Azure](prepare-for-upload-vhd-image.md), stored locally.
 
@@ -107,7 +107,7 @@ To upload your VHD to Azure, you'll need to create an empty managed disk that is
 
 This kind of managed disk has two unique states:
 
-- ReadyToUpload, which means the disk is ready to receive an upload but, no [secure access signature (SAS)](../../storage/common/storage-sas-overview.md) has been generated.
+- ReadyToUpload, which means the disk is ready to receive an upload but, no [secure access signature (SAS)](/azure/storage/common/storage-sas-overview) has been generated.
 - ActiveUpload, which means that the disk is ready to receive an upload and the SAS has been generated.
 
 > [!NOTE]

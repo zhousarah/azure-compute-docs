@@ -170,7 +170,7 @@ With the ARM template that you crafted and the Azure CLI confcom extension, you 
 
 ## Deploy the template
 
-In the following steps, you use the Azure portal to deploy the template. You can also use Azure PowerShell, the Azure CLI, or the REST API. To learn about other deployment methods, see [Deploy templates](../azure-resource-manager/templates/deploy-cli.md).
+In the following steps, you use the Azure portal to deploy the template. You can also use Azure PowerShell, the Azure CLI, or the REST API. To learn about other deployment methods, see [Deploy templates](/azure/azure-resource-manager/templates/deploy-cli).
 
 1. Select the **Deploy to Azure** button to sign in to Azure and begin a Container Instances deployment.
 

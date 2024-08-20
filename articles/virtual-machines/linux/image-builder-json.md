@@ -260,8 +260,8 @@ The Image Builder service User Assigned Identity:
 - Supports a single identity only.
 - Doesn't support custom domain names.
 
-To learn more, see [What is managed identities for Azure resources?](../../active-directory/managed-identities-azure-resources/overview.md).
-For more information on deploying this feature, see [Configure managed identities for Azure resources on an Azure VM using Azure CLI](../../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md#user-assigned-managed-identity).
+To learn more, see [What is managed identities for Azure resources?](/azure/active-directory/managed-identities-azure-resources/overview).
+For more information on deploying this feature, see [Configure managed identities for Azure resources on an Azure VM using Azure CLI](/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm#user-assigned-managed-identity).
 
 ### User-assigned identity for the Image Builder Build VM
 
@@ -306,8 +306,8 @@ The Image Builder Build VM User Assigned Identity:
 
 To learn more, see:
 
-- [How to use managed identities for Azure resources on an Azure VM to acquire an access token](../../active-directory/managed-identities-azure-resources/how-to-use-vm-token.md)
-- [How to use managed identities for Azure resources on an Azure VM for sign-in](../../active-directory/managed-identities-azure-resources/how-to-use-vm-sign-in.md)
+- [How to use managed identities for Azure resources on an Azure VM to acquire an access token](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token)
+- [How to use managed identities for Azure resources on an Azure VM for sign-in](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-sign-in)
 
 ## Properties: buildTimeoutInMinutes
 
@@ -1736,8 +1736,8 @@ Resource ID of a pre-existing subnet on which Azure Container Instance (ACI) is 
 This field can be specified only if `subnetId` is also specified and must meet the following requirements:
 - This subnet must be on the same Virtual Network as the subnet specified in `subnetId`.
 - This subnet must not be the same subnet as the one specified in `subnetId`.
-- This subnet must be delegated to the ACI service so that it can be used to deploy ACI resources. You can read more about subnet delegation for Azure services [here](../../virtual-network/manage-subnet-delegation.md). ACI specific subnet delegation information is available [here](../../container-instances/container-instances-virtual-network-concepts.md).
-- This subnet must allow outbound access to the Internet and to the subnet specified in `subnetId`. These accesses are required so that the ACI can be provisioned and it can communicate with the build VM to perform customizations/validations. On the other end, the subnet specified in `subnetId` must allow inbound access from this subnet. In general, [default security rules of Azure Network Security Groups (NSGs)](../../virtual-network/network-security-groups-overview.md#default-security-rules) allow these accesses. However, if you add more security rules to your NSGs then the following accesses must still be allowed:
+- This subnet must be delegated to the ACI service so that it can be used to deploy ACI resources. You can read more about subnet delegation for Azure services [here](/azure/virtual-network/manage-subnet-delegation). ACI specific subnet delegation information is available [here](../../container-instances/container-instances-virtual-network-concepts.md).
+- This subnet must allow outbound access to the Internet and to the subnet specified in `subnetId`. These accesses are required so that the ACI can be provisioned and it can communicate with the build VM to perform customizations/validations. On the other end, the subnet specified in `subnetId` must allow inbound access from this subnet. In general, [default security rules of Azure Network Security Groups (NSGs)](/azure/virtual-network/network-security-groups-overview#default-security-rules) allow these accesses. However, if you add more security rules to your NSGs then the following accesses must still be allowed:
    1. Outbound access from the subnet specified in `containerInstanceSubnetId` to:
       1. To the Internet on port 443 (*for provisioning the container image*).
       1. To the Internet on port 445 (*for mounting file share from Azure Storage*).

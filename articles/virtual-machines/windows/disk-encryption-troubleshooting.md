@@ -38,7 +38,7 @@ When encrypting a VM fails with the error message "Failed to send DiskEncryption
 - Make sure the Key Vault exists in the same region and subscription as the Virtual Machine
 - Ensure that you have [set key vault advanced access policies](disk-encryption-key-vault.yml#set-key-vault-advanced-access-policies) properly
 - If you are using KEK, ensure the key exists and is enabled in Key Vault
-- Check VM name, data disks, and keys follow [key vault resource naming restrictions](../../azure-resource-manager/management/resource-name-rules.md#microsoftkeyvault)
+- Check VM name, data disks, and keys follow [key vault resource naming restrictions](/azure/azure-resource-manager/management/resource-name-rules#microsoftkeyvault)
 - Check for any typos in the Key Vault name or KEK name in your PowerShell or CLI command
 >[!NOTE]
    > The syntax for the value of disk-encryption-keyvault parameter is the full identifier string:
@@ -60,7 +60,7 @@ Any network security group settings that are applied must still allow the endpoi
 When encryption is being enabled with [Microsoft Entra credentials](disk-encryption-windows-aad.md#), the target VM must allow connectivity to both Microsoft Entra endpoints and Key Vault endpoints. Current Microsoft Entra authentication endpoints are maintained in sections 56 and 59 of the [Microsoft 365 URLs and IP address ranges](/microsoft-365/enterprise/urls-and-ip-address-ranges) documentation. Key Vault instructions are provided in the documentation on how to [Access Azure Key Vault behind a firewall](/azure/key-vault/general/access-behind-firewall).
 
 ### Azure Instance Metadata Service 
-The VM must be able to access the [Azure Instance Metadata service](../windows/instance-metadata-service.md) endpoint (`169.254.169.254`) and the [virtual public IP address](../../virtual-network/what-is-ip-address-168-63-129-16.md) (`168.63.129.16`) used for communication with Azure platform resources. Proxy configurations that alter local HTTP traffic to these addresses (for example, adding an X-Forwarded-For header) are not supported.
+The VM must be able to access the [Azure Instance Metadata service](../windows/instance-metadata-service.md) endpoint (`169.254.169.254`) and the [virtual public IP address](/azure/virtual-network/what-is-ip-address-168-63-129-16) (`168.63.129.16`) used for communication with Azure platform resources. Proxy configurations that alter local HTTP traffic to these addresses (for example, adding an X-Forwarded-For header) are not supported.
 
 ## Troubleshooting Windows Server 2016 Server Core
 
@@ -109,5 +109,5 @@ To disable Azure Disk Encryption with CLI, use [az vm encryption disable](/cli/a
 
 In this document, you learned more about some common problems in Azure Disk Encryption and how to troubleshoot those problems. For more information about this service and its capabilities, see the following articles:
 
-- [Apply disk encryption in Microsoft Defender for Cloud](../../security-center/asset-inventory.md)
-- [Azure data encryption at rest](../../security/fundamentals/encryption-atrest.md)
+- [Apply disk encryption in Microsoft Defender for Cloud](/azure/security-center/asset-inventory)
+- [Azure data encryption at rest](/azure/security/fundamentals/encryption-atrest)

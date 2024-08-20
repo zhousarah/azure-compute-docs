@@ -25,7 +25,7 @@ All HBv4-series VMs feature 400 Gb/s NDR InfiniBand from NVIDIA Networking to en
 [Live Migration](maintenance-and-updates.md): Not Supported\
 [Memory Preserving Updates](maintenance-and-updates.md): Not Supported\
 [VM Generation Support](generation-2.md): Generation 2\
-[Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md)\
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli)\
 [Ephemeral OS Disks](ephemeral-os-disks.md): Supported  
 <br>
 

@@ -13,9 +13,9 @@ ms.custom: mimckitt, devx-track-azurecli, devx-track-azurepowershell, devx-track
 
 # Create a Virtual Machine Scale Set that uses Availability Zones
 
-Azure availability zones are fault-isolated locations within an Azure region that provide redundant power, cooling, and networking. They allow you to run applications with high availability and fault tolerance to data center failures. Azure regions that support Availability Zones have a minimum of three separate zones. Each availability zone consists of one or more data centers equipped with independent infrastructure power, network, and cooling. Availability zones are connected by a high-performance network with a round-trip latency of less than 2 milliseconds. For more information, see [Overview of Availability Zones](../availability-zones/az-overview.md).
+Azure availability zones are fault-isolated locations within an Azure region that provide redundant power, cooling, and networking. They allow you to run applications with high availability and fault tolerance to data center failures. Azure regions that support Availability Zones have a minimum of three separate zones. Each availability zone consists of one or more data centers equipped with independent infrastructure power, network, and cooling. Availability zones are connected by a high-performance network with a round-trip latency of less than 2 milliseconds. For more information, see [Overview of Availability Zones](/azure/availability-zones/az-overview).
 
-To protect your Virtual Machine Scale Sets from datacenter-level failures, you can create a scale set across Availability Zones. To use Availability Zones, your scale set must be created in a [supported Azure region](../availability-zones/az-region.md).
+To protect your Virtual Machine Scale Sets from datacenter-level failures, you can create a scale set across Availability Zones. To use Availability Zones, your scale set must be created in a [supported Azure region](/azure/availability-zones/az-region).
 
 ## Design considerations for availability zones
 
@@ -156,7 +156,7 @@ The process to create a scale set that uses an Availability Zone is the same as 
 }
 ```
 
-If you create a public IP address or a load balancer, specify the `"sku": {"name":"Standard"}` property to create zone-redundant network resources. You also need to create a Network Security Group and rules to permit any traffic. For more information, see [Azure Load Balancer Standard Overview](../load-balancer/load-balancer-overview.md) and [Standard Load Balancer and Availability Zones](../load-balancer/load-balancer-standard-availability-zones.md).
+If you create a public IP address or a load balancer, specify the `"sku": {"name":"Standard"}` property to create zone-redundant network resources. You also need to create a Network Security Group and rules to permit any traffic. For more information, see [Azure Load Balancer Standard Overview](/azure/load-balancer/load-balancer-overview) and [Standard Load Balancer and Availability Zones](/azure/load-balancer/load-balancer-standard-availability-zones).
 
 For a complete example of a zone-redundant scale set and network resources, see our [sample Resource Manager template](https://github.com/Azure/vm-scale-sets/blob/master/z_deprecated/preview/zones/multizone.json).
 

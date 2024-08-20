@@ -40,7 +40,7 @@ Here are a few best practices that we recommend as you evaluate migrating IaaS r
 > [!IMPORTANT]
 > Application Gateways are not currently supported for migration from classic to Resource Manager. To migrate a classic virtual network with an Application gateway, remove the gateway before running a Prepare operation to move the network. After you complete the migration, reconnect the gateway in Azure Resource Manager.
 >
->ExpressRoute gateways connecting to ExpressRoute circuits in another subscription cannot be migrated automatically. In such cases, remove the ExpressRoute gateway, migrate the virtual network and recreate the gateway. Please see [Migrate ExpressRoute circuits and associated virtual networks from the classic to the Resource Manager deployment model](../expressroute/expressroute-migration-classic-resource-manager.md) for more information.
+>ExpressRoute gateways connecting to ExpressRoute circuits in another subscription cannot be migrated automatically. In such cases, remove the ExpressRoute gateway, migrate the virtual network and recreate the gateway. Please see [Migrate ExpressRoute circuits and associated virtual networks from the classic to the Resource Manager deployment model](/azure/expressroute/expressroute-migration-classic-resource-manager) for more information.
 >
 >
 
@@ -91,7 +91,7 @@ For this step you'll need to switch to `arm` mode. Do this with the following co
 azure config mode arm
 ```
 
-You can use the following CLI command to check the current number of vCPUs you have in Azure Resource Manager. To learn more about vCPU quotas, see [Limits and the Azure Resource Manager](../azure-resource-manager/management/azure-subscription-service-limits.md#managing-limits).
+You can use the following CLI command to check the current number of vCPUs you have in Azure Resource Manager. To learn more about vCPU quotas, see [Limits and the Azure Resource Manager](/azure/azure-resource-manager/management/azure-subscription-service-limits#managing-limits).
 
 ```azurecli-interactive
 azure vm list-usage -l "<Your VNET or Deployment's Azure region"

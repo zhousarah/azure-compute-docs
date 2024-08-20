@@ -11,7 +11,7 @@ ms.date: 04/06/2021
 
 **Applies to:** :heavy_check_mark: Linux VMs :heavy_check_mark: Windows VMs :heavy_check_mark: Flexible scale sets :heavy_check_mark: Uniform scale sets
 
-When you buy a Reserved VM Instance, you can choose to optimize for instance size flexibility or capacity priority. For more information about setting or changing the optimize setting for reserved VM instances, see [Change the optimize setting for reserved VM instances](../cost-management-billing/reservations/manage-reserved-vm-instance.md#change-optimize-setting-for-reserved-vm-instances).
+When you buy a Reserved VM Instance, you can choose to optimize for instance size flexibility or capacity priority. For more information about setting or changing the optimize setting for reserved VM instances, see [Change the optimize setting for reserved VM instances](/azure/cost-management-billing/reservations/manage-reserved-vm-instance#change-optimize-setting-for-reserved-vm-instances).
 
 With a reserved virtual machine instance that's optimized for instance size flexibility, the reservation you buy can apply to the virtual machines (VMs) sizes in the same instance size flexibility group. In other words, when you buy a reserved VM instance of any size within an instance flexibility group, the instance applies to all sizes within the group. For example, if you buy a reservation for a VM size that's listed in the DSv2 Series, like Standard_DS3_v2, the reservation discount can apply to the other sizes that are listed in that same instance size flexibility group:
 
@@ -53,4 +53,4 @@ Azure shows VM size recommendations in the purchase experience. When enabled, th
 
 ## Next steps
 
-For more information, see [What are Azure Reservations](../cost-management-billing/reservations/save-compute-costs-reservations.md).
+For more information, see [What are Azure Reservations](/azure/cost-management-billing/reservations/save-compute-costs-reservations).

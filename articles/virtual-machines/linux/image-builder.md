@@ -79,7 +79,7 @@ az group create -n $sigResourceGroup -l $location
 
 ## Create a user-assigned identity and set permissions on the resource group
 
-VM Image Builder uses the provided [user-identity](../../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm.md#user-assigned-managed-identity) to inject the image into an Azure Compute Gallery. In this example, you create an Azure role definition with specific actions for distributing the image. The role definition is then assigned to the user identity.
+VM Image Builder uses the provided [user-identity](/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm#user-assigned-managed-identity) to inject the image into an Azure Compute Gallery. In this example, you create an Azure role definition with specific actions for distributing the image. The role definition is then assigned to the user identity.
 
 ```azurecli-interactive
 # Create user-assigned identity for VM Image Builder to access the storage account where the script is stored

@@ -22,24 +22,24 @@ For documentation specific to the other solutions offered by Flash, choose from 
 
 ## Azure Resource Graph - HealthResources
 
-This feature is currently generally available. It's useful for conducting large-scale investigations. It offers a highly user-friendly experience for [information retrieval](../governance/resource-graph/samples/samples-by-table.md) with its use of [kusto query language (KQL)](../governance/resource-graph/concepts/query-language.md). It can also serve as a central hub for resource information and allows easy retrieval of historical data.
+This feature is currently generally available. It's useful for conducting large-scale investigations. It offers a highly user-friendly experience for [information retrieval](/azure/governance/resource-graph/samples/samples-by-table) with its use of [kusto query language (KQL)](/azure/governance/resource-graph/concepts/query-language). It can also serve as a central hub for resource information and allows easy retrieval of historical data.
 
-In addition to already flowing [VM availability states](../service-health/resource-health-overview.md#health-status), we published [VM availability annotations](../service-health/resource-health-vm-annotation.md) to [Azure Resource Graph (ARG)](../governance/resource-graph/overview.md) for detailed failure attribution and downtime analysis, along with enabling a 14-day [change tracking](../governance/resource-graph/how-to/get-resource-changes.md?tabs=azure-cli) mechanism to trace historical changes in VM availability for quick debugging. With these new additions, we're excited to announce the general availability of VM availability information in the HealthResources dataset in ARG! With this offering users can:
+In addition to already flowing [VM availability states](/azure/service-health/resource-health-overview#health-status), we published [VM availability annotations](/azure/service-health/resource-health-vm-annotation) to [Azure Resource Graph (ARG)](/azure/governance/resource-graph/overview) for detailed failure attribution and downtime analysis, along with enabling a 14-day [change tracking](/azure/governance/resource-graph/how-to/get-resource-changes?tabs=azure-cli) mechanism to trace historical changes in VM availability for quick debugging. With these new additions, we're excited to announce the general availability of VM availability information in the HealthResources dataset in ARG! With this offering users can:
 
 - Efficiently query the latest snapshot of VM availability across all Azure subscriptions at once and at low latencies for periodic and fleetwide monitoring.
 - Accurately assess the impact to fleetwide business SLAs and quickly trigger decisive mitigation actions, in response to disruptions and type of failure signature.
-- Set up custom dashboards to supervise the comprehensive health of applications by [joining VM availability information](../governance/resource-graph/concepts/work-with-data.md) with [resource metadata present in ARG](../governance/resource-graph/samples/samples-by-table.md?tabs=azure-cli).
-- Track relevant changes in VM availability across a rolling 14-day window, by using the [change-tracking mechanism](../governance/resource-graph/how-to/get-resource-changes.md?tabs=azure-cli) for conducting detailed investigations.
+- Set up custom dashboards to supervise the comprehensive health of applications by [joining VM availability information](/azure/governance/resource-graph/concepts/work-with-data) with [resource metadata present in ARG](/azure/governance/resource-graph/samples/samples-by-table?tabs=azure-cli).
+- Track relevant changes in VM availability across a rolling 14-day window, by using the [change-tracking mechanism](/azure/governance/resource-graph/how-to/get-resource-changes?tabs=azure-cli) for conducting detailed investigations.
 
 ### Sample queries
 
-- [Azure Resource Graph sample queries for Azure Service Health - Azure Service Health | Microsoft Learn](../service-health/resource-graph-samples.md#resource-health)
+- [Azure Resource Graph sample queries for Azure Service Health - Azure Service Health | Microsoft Learn](/azure/service-health/resource-graph-samples#resource-health)
 - [VM availability information in Azure Resource Graph - Azure Virtual Machines | Microsoft Learn](resource-graph-availability.md)
-- [List of sample Azure Resource Graph queries by table - Azure Resource Graph | Microsoft Learn](../governance/resource-graph/samples/samples-by-table.md?tabs=azure-cli#healthresources)
+- [List of sample Azure Resource Graph queries by table - Azure Resource Graph | Microsoft Learn](/azure/governance/resource-graph/samples/samples-by-table?tabs=azure-cli#healthresources)
 
 ### Get started
 
-Users can query ARG via [PowerShell](../governance/resource-graph/first-query-powershell.md), [REST API](../governance/resource-graph/first-query-rest-api.md), [Azure CLI](../governance/resource-graph/first-query-azurecli.md), or even the [Azure portal](https://portal.azure.com/). The following steps detail how data can be accessed from Azure portal.
+Users can query ARG via [PowerShell](/azure/governance/resource-graph/first-query-powershell), [REST API](/azure/governance/resource-graph/first-query-rest-api), [Azure CLI](/azure/governance/resource-graph/first-query-azurecli), or even the [Azure portal](https://portal.azure.com/). The following steps detail how data can be accessed from Azure portal.
 
 1. Once on the Azure portal, navigate to Resource Graph Explorer.
 
@@ -76,7 +76,7 @@ To poll the latest VM availability state, refer to the properties field, which c
 
 ### Property description
 
-| **Property** | **Description** | **[Corresponding resource health category (RHC)](../azure-monitor/essentials/activity-log-schema.md#resource-health-category)** |
+| **Property** | **Description** | **[Corresponding resource health category (RHC)](/azure/azure-monitor/essentials/activity-log-schema#resource-health-category)** |
 | - | - | - |
 | targetResourceType | Type of resource for which health data is flowing | resourceType |
 | targetResourceId | Resource ID | resourceId |
@@ -84,11 +84,11 @@ To poll the latest VM availability state, refer to the properties field, which c
 | previousAvailabilityState | Previous availability state of the VM | previousHealthStatus |
 | availabilityState | Current availability state of the VM | currentHealthStatus |
 
-See the [HealthResources section of the samples queries documentation](../governance/resource-graph/samples/samples-by-table.md?tabs=azure-cli#healthresources) for a list of starter queries to further explore this data.
+See the [HealthResources section of the samples queries documentation](/azure/governance/resource-graph/samples/samples-by-table?tabs=azure-cli#healthresources) for a list of starter queries to further explore this data.
 
 - resourcehealth/resourceannotations (NEWLY ADDED)
 
-This event contextualizes any changes to VM availability, by detailing necessary failure attributes to help users investigate and mitigate the disruption as needed. [See the full list of VM availability annotations](../service-health/resource-health-vm-annotation.md) emitted by the platform.
+This event contextualizes any changes to VM availability, by detailing necessary failure attributes to help users investigate and mitigate the disruption as needed. [See the full list of VM availability annotations](/azure/service-health/resource-health-vm-annotation) emitted by the platform.
  These annotations can be broadly classified into three buckets:
 
 - Downtime Annotations: These annotations are emitted when the platform detects VM availability transitioning to Unavailable. (For example, during unexpected host crashes, rebootful repair operations).
@@ -115,7 +115,7 @@ To poll the associated VM availability annotations for a resource, if any, refer
 
 ### Property description
 
-| **Property** | **Description** | **[Corresponding RHC](../azure-monitor/essentials/activity-log-schema.md#resource-health-category)** |
+| **Property** | **Description** | **[Corresponding RHC](/azure/azure-monitor/essentials/activity-log-schema#resource-health-category)** |
 | - | - | - |
 | targetResourceType | Type of resource for which health data is flowing | resourceType |
 | targetResourceId | Resource ID | resourceId |
@@ -126,7 +126,7 @@ To poll the associated VM availability annotations for a resource, if any, refer
 | context | Denotes whether the activity that triggered the annotation was due to an authorized user or process (customer-initiated), the Azure platform (platform-initiated), or activity in the guest OS that resulted in availability impact (VM initiated). Possible values: Platform-initiated, User-initiated, VM-initiated, Not Applicable, Null | context |
 | summary | Statement detailing the cause for annotation emission, along with remediation steps that users can take | summary |
 
-See the [HealthResources section of the samples queries documentation](../governance/resource-graph/samples/samples-by-table.md?tabs=azure-cli#healthresources) for a list of starter queries to further explore this data.
+See the [HealthResources section of the samples queries documentation](/azure/governance/resource-graph/samples/samples-by-table?tabs=azure-cli#healthresources) for a list of starter queries to further explore this data.
 
 We have multiple enhancements planned for the annotation metadata that is surfaced in the HealthResources dataset. These enrichments give users access to richer failure attributes to decisively prepare a response to a disruption. In parallel, we aim to extend the duration of historical lookback to a minimum of 30 days so users can comprehensively track past changes in VM availability.
 

@@ -44,12 +44,12 @@ You can use scale sets to deploy and manage a collection of virtual machines as 
 For more information, read [Service Fabric node types and virtual machine scale sets](service-fabric-cluster-nodetypes.md).
 
 ### Azure Load Balancer
-VM instances are joined behind an [Azure load balancer](../load-balancer/load-balancer-overview.md), which is associated with a [public IP address](../virtual-network/ip-services/public-ip-addresses.md) and DNS label.  When you provision a cluster with *&lt;clustername&gt;*, the DNS name, *&lt;clustername&gt;.&lt;location&gt;.cloudapp.azure.com* is the DNS label associated with the load balancer in front of the scale set.
+VM instances are joined behind an [Azure load balancer](/azure/load-balancer/load-balancer-overview), which is associated with a [public IP address](/azure/virtual-network/ip-services/public-ip-addresses) and DNS label.  When you provision a cluster with *&lt;clustername&gt;*, the DNS name, *&lt;clustername&gt;.&lt;location&gt;.cloudapp.azure.com* is the DNS label associated with the load balancer in front of the scale set.
 
-VMs in a cluster have only [private IP addresses](../virtual-network/ip-services/private-ip-addresses.md).  Management traffic and service traffic are routed through the public facing load balancer.  Network traffic is routed to these machines through NAT rules (clients connect to specific nodes/instances) or load-balancing rules (traffic goes to VMs round robin).  A load balancer has an associated public IP with a DNS name in the format: *&lt;clustername&gt;.&lt;location&gt;.cloudapp.azure.com*.  A public IP is another Azure resource in the resource group.  If you define multiple node types in a cluster, a load balancer is created for each node type/scale set. Or, you can set up a single load balancer for multiple node types.  The primary node type has the DNS label *&lt;clustername&gt;.&lt;location&gt;.cloudapp.azure.com*, other node types have the DNS label *&lt;clustername&gt;-&lt;nodetype&gt;.&lt;location&gt;.cloudapp.azure.com*.
+VMs in a cluster have only [private IP addresses](/azure/virtual-network/ip-services/private-ip-addresses).  Management traffic and service traffic are routed through the public facing load balancer.  Network traffic is routed to these machines through NAT rules (clients connect to specific nodes/instances) or load-balancing rules (traffic goes to VMs round robin).  A load balancer has an associated public IP with a DNS name in the format: *&lt;clustername&gt;.&lt;location&gt;.cloudapp.azure.com*.  A public IP is another Azure resource in the resource group.  If you define multiple node types in a cluster, a load balancer is created for each node type/scale set. Or, you can set up a single load balancer for multiple node types.  The primary node type has the DNS label *&lt;clustername&gt;.&lt;location&gt;.cloudapp.azure.com*, other node types have the DNS label *&lt;clustername&gt;-&lt;nodetype&gt;.&lt;location&gt;.cloudapp.azure.com*.
 
 ### Storage accounts
-Each cluster node type is supported by an [Azure storage account](../storage/common/storage-introduction.md) and managed disks.
+Each cluster node type is supported by an [Azure storage account](/azure/storage/common/storage-introduction) and managed disks.
 
 ## Cluster security
 A Service Fabric cluster is a resource that you own.  It is your responsibility to secure your clusters to help prevent unauthorized users from connecting to them. A secure cluster is especially important when you are running production workloads on the cluster. 
@@ -68,7 +68,7 @@ For more information, read [Client-to-node security](service-fabric-cluster-secu
 
 ### Role-based access control
 
-Azure role-based access control (Azure RBAC) allows you to assign fine-grained access controls on Azure resources.  You can assign different access rules to subscriptions, resource groups, and resources.  Azure RBAC rules are inherited along the resource hierarchy unless overridden at a lower level.  You can assign any user or user groups on your Microsoft Entra ID with Azure RBAC rules so that designated users and groups can modify your cluster.  For more information, read the [Azure RBAC overview](../role-based-access-control/overview.md).
+Azure role-based access control (Azure RBAC) allows you to assign fine-grained access controls on Azure resources.  You can assign different access rules to subscriptions, resource groups, and resources.  Azure RBAC rules are inherited along the resource hierarchy unless overridden at a lower level.  You can assign any user or user groups on your Microsoft Entra ID with Azure RBAC rules so that designated users and groups can modify your cluster.  For more information, read the [Azure RBAC overview](/azure/role-based-access-control/overview).
 
 Service Fabric also supports access control to limit access to certain cluster operations for different groups of users. This helps make the cluster more secure. Two access control types are supported for clients that connect to a cluster: Administrator role and User role.  
 
@@ -77,7 +77,7 @@ For more information, read [Service Fabric role-based access control](service-fa
 ### Network security groups 
 Network security groups (NSGs) control inbound and outbound traffic of a subnet, VM, or specific NIC.  By default, when multiple VMs are put on the same virtual network they can communicate with each other through any port.  If you want to constrain communications among the machines you can define NSGs to segment the network or isolate VMs from each other.  If you have multiple node types in a cluster, you can apply NSGs to subnets to prevent machines belonging to different node types from communicating with each other.  
 
-For more information, read about [security groups](../virtual-network/network-security-groups-overview.md)
+For more information, read about [security groups](/azure/virtual-network/network-security-groups-overview)
 
 ## Scaling
 

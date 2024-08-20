@@ -20,7 +20,7 @@ ms.date: 11/14/2023
 > These virtual machines are in public preview and not recommended for production usage.
 > These VMs are available in West Europe, Central US, East US 2 and North Europe.
 
-The ECesv5-series and ECedsv5-series are [Azure confidential VMs](../confidential-computing/confidential-vm-overview.md) that can be used to protect the confidentiality and integrity of your code and data while it's being processed in the public cloud. Organizations can use these VMs to seamlessly bring confidential workloads to the cloud without any code changes to the application. 
+The ECesv5-series and ECedsv5-series are [Azure confidential VMs](/azure/confidential-computing/confidential-vm-overview) that can be used to protect the confidentiality and integrity of your code and data while it's being processed in the public cloud. Organizations can use these VMs to seamlessly bring confidential workloads to the cloud without any code changes to the application. 
 
 These machines are powered by Intel® 4th Generation Xeon® Scalable processors with Base Frequency of 2.1 GHz, All Core Turbo Frequency of reach 2.9 GHz and [Intel® Advanced Matrix Extensions (AMX)](https://www.intel.com/content/www/us/en/products/docs/accelerator-engines/advanced-matrix-extensions/overview.html) for AI acceleration. 
 
@@ -29,10 +29,10 @@ Featuring [Intel® Trust Domain Extensions (TDX)](https://www.intel.com/content/
 These VMs have native support for [confidential disk encryption](disk-encryption-overview.md) meaning organizations can encrypt their VM disks at boot with either a customer-managed key (CMK), or platform-managed key (PMK). This feature is fully integrated with [Azure KeyVault](/azure/key-vault/general/overview) or [Azure Managed HSM](/azure/key-vault/managed-hsm/overview) with validation for FIPS 140-2 Level 3. 
 
 > [!NOTE]
-> There are some [pricing differences based on your encryption settings](../confidential-computing/confidential-vm-overview.md#encryption-pricing-differences) for confidential VMs.
+> There are some [pricing differences based on your encryption settings](/azure/confidential-computing/confidential-vm-overview#encryption-pricing-differences) for confidential VMs.
 
 > [!NOTE]
-> Certain applications which are time sensitive may experience asynchronous time at VM boot. Whilst a long-term fix is in development, a [workaround is available](../confidential-computing/confidential-vm-faq.yml#what-can-i-do-if-the-time-on-my-dcesv5-ecesv5-series-vm-differs-from-utc-) for Linux and Windows customers today. If you need additional support, please create a support request.
+> Certain applications which are time sensitive may experience asynchronous time at VM boot. Whilst a long-term fix is in development, a [workaround is available](/azure/confidential-computing/confidential-vm-faq#what-can-i-do-if-the-time-on-my-dcesv5-ecesv5-series-vm-differs-from-utc-) for Linux and Windows customers today. If you need additional support, please create a support request.
 
 ### ECesv5 and ECedsv5-series feature support
 
@@ -47,7 +47,7 @@ These VMs have native support for [confidential disk encryption](disk-encryption
 
 - [Live Migration](maintenance-and-updates.md)
 - [Memory Preserving Updates](maintenance-and-updates.md)
-- [Accelerated Networking](../virtual-network/create-vm-accelerated-networking-cli.md)
+- [Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli)
 - [Ephemeral OS Disks](ephemeral-os-disks.md) - ECedsv5 only
 - [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization)
 
@@ -96,5 +96,5 @@ This series supports Standard SSD, Standard HDD, and Premium SSD disk types. Bil
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Create a confidential VM in Azure Portal](../confidential-computing/quick-create-confidential-vm-portal.md)
-> [Create a confidential VM in Azure CLI](../confidential-computing/quick-create-confidential-vm-azure-cli.md)
+> [Create a confidential VM in Azure Portal](/azure/confidential-computing/quick-create-confidential-vm-portal)
+> [Create a confidential VM in Azure CLI](/azure/confidential-computing/quick-create-confidential-vm-azure-cli)

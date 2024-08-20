@@ -198,7 +198,7 @@ Information from your image definitions is also publicly available, like what yo
 
 ### Prerequisites
 
- Only the owner of a subscription, or a user or service principal assigned to the `Compute Gallery Sharing Admin` role at the subscription or gallery level, can enable a gallery to go public to the community. To assign a role to a user, group, service principal or managed identity, see [Steps to assign an Azure role](../role-based-access-control/role-assignments-steps.md).
+ Only the owner of a subscription, or a user or service principal assigned to the `Compute Gallery Sharing Admin` role at the subscription or gallery level, can enable a gallery to go public to the community. To assign a role to a user, group, service principal or managed identity, see [Steps to assign an Azure role](/azure/role-based-access-control/role-assignments-steps).
 
 ### [CLI](#tab/cli2)
 

@@ -140,5 +140,5 @@ az group delete --name $destinationResourceGroup --subscription $destinationSubs
 
 ## Next steps
 
-- [Move VMs to another Azure region](../site-recovery/azure-to-azure-tutorial-migrate.md)
+- [Move VMs to another Azure region](/azure/site-recovery/azure-to-azure-tutorial-migrate)
 - [Move a VM to another subscription or resource group](/azure/azure-resource-manager/management/move-resource-group-and-subscription#use-azure-cli)

@@ -54,7 +54,7 @@ Features and limitations unique to this scope include:
 
 ### Guest
 
-The guest scope integrates with [Azure Update Manager](../update-center/overview.md). You can use it to save recurring deployment schedules to install updates for your Windows Server and Linux machines in Azure, in on-premises environments, and in other cloud environments connected through Azure Arc-enabled servers.
+The guest scope integrates with [Azure Update Manager](/azure/update-center/overview). You can use it to save recurring deployment schedules to install updates for your Windows Server and Linux machines in Azure, in on-premises environments, and in other cloud environments connected through Azure Arc-enabled servers.
 
 Features and limitations unique to this scope include:
 
@@ -71,11 +71,11 @@ Features and limitations unique to this scope include:
 >
 > The character count for the resource group name and the maintenance configuration name should be less than 128.
 
-Maintenance Configurations provides two scheduled patching modes for VMs in the guest scope: Static Mode and [Dynamic Scope](../update-manager/dynamic-scope-overview.md) Mode. By default, the system operates in Static Mode if you don't configure a Dynamic Scope Mode.
+Maintenance Configurations provides two scheduled patching modes for VMs in the guest scope: Static Mode and [Dynamic Scope](/azure/update-manager/dynamic-scope-overview) Mode. By default, the system operates in Static Mode if you don't configure a Dynamic Scope Mode.
 
 To schedule or modify the maintenance configuration in either mode, a buffer of 15 minutes before the scheduled patch time is required. For instance, if you schedule the patch for 3:00 PM, all modifications (including adding VMs, removing VMs, or altering the dynamic scope) should finish before 2:45 PM.
 
-To learn more about this topic, see [Schedule recurring updates for machines by using the Azure portal and Azure Policy](../update-center/scheduled-patching.md).
+To learn more about this topic, see [Schedule recurring updates for machines by using the Azure portal and Azure Policy](/azure/update-center/scheduled-patching).
 
 > [!IMPORTANT]
 > If you move a resource to a different resource group or subscription, scheduled patching for the resource stops working, because the system currently doesn't support this scenario. As a workaround, follow the steps in the [troubleshooting article](troubleshoot-maintenance-configurations.md#scheduled-patching-stops-working-after-the-resource-is-moved).

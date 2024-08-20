@@ -70,7 +70,7 @@ This table shows some of the ways you can get a list of available locations.
 
 ## Availability
 There are multiple options to manage the availability of your virtual machines in Azure. 
-- **[Availability Zones](../availability-zones/az-overview.md)** are physically separated zones within an Azure region. Availability zones guarantee virtual machine connectivity to at least one instance at least 99.99% of the time when you have two or more instances deployed across two or more Availability Zones in the same Azure region. 
+- **[Availability Zones](/azure/availability-zones/az-overview)** are physically separated zones within an Azure region. Availability zones guarantee virtual machine connectivity to at least one instance at least 99.99% of the time when you have two or more instances deployed across two or more Availability Zones in the same Azure region. 
 - **[Virtual Machine Scale Sets](../virtual-machine-scale-sets/overview.md)** let you create and manage a group of load balanced virtual machines. The number of virtual machine instances can automatically increase or decrease in response to demand or a defined schedule. Scale sets provide high availability to your applications, and allow you to centrally manage, configure, and update many virtual machines. Virtual machines in a scale set can also be deployed into multiple availability zones, a single availability zone, or regionally.
 
 Fore more information see [Availability options for Azure virtual machines](availability.md) and [SLA for Azure virtual machines](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_9/). 
@@ -81,7 +81,7 @@ The [size](sizes.md) of the virtual machine that you use is determined by the wo
 Azure charges an [hourly price](https://azure.microsoft.com/pricing/details/virtual-machines/linux/) based on the virtual machine’s size and operating system. For partial hours, Azure charges only for the minutes used. Storage is priced and charged separately.
 
 ## Virtual machine total core limits
-Your subscription has default [quota limits](../azure-resource-manager/management/azure-subscription-service-limits.md) in place that could impact the deployment of many virtual machines for your project. The current limit on a per subscription basis is 20 virtual machine total cores per region. Limits can be raised by [filing a support ticket requesting an increase](../azure-portal/supportability/regional-quota-requests.md)
+Your subscription has default [quota limits](/azure/azure-resource-manager/management/azure-subscription-service-limits) in place that could impact the deployment of many virtual machines for your project. The current limit on a per subscription basis is 20 virtual machine total cores per region. Limits can be raised by [filing a support ticket requesting an increase](/azure/azure-portal/supportability/regional-quota-requests)
 
 ## Managed Disks
 
@@ -111,13 +111,13 @@ Azure supports for [cloud-init](https://cloud-init.io/) across most Linux distri
 For more information, see [Using cloud-init on Azure Linux virtual machines](linux/using-cloud-init.md).
 
 ## Storage
-* [Introduction to Microsoft Azure Storage](../storage/common/storage-introduction.md)
+* [Introduction to Microsoft Azure Storage](/azure/storage/common/storage-introduction)
 * [Add a disk to a Linux virtual machine using the azure-cli](linux/add-disk.md)
 * [How to attach a data disk to a Linux virtual machine in the Azure portal](linux/attach-disk-portal.yml)
 
 ## Networking
-* [Virtual Network Overview](../virtual-network/virtual-networks-overview.md)
-* [IP addresses in Azure](../virtual-network/ip-services/public-ip-addresses.md)
+* [Virtual Network Overview](/azure/virtual-network/virtual-networks-overview)
+* [IP addresses in Azure](/azure/virtual-network/ip-services/public-ip-addresses)
 * [Opening ports to a Linux virtual machine in Azure](linux/nsg-quickstart.md)
 * [Create a Fully Qualified Domain Name in the Azure portal](create-fqdn.md)
 
@@ -134,7 +134,7 @@ This article covers a true disaster recovery scenario, when a whole region exper
 In the case of a service disruption of the entire region where your Azure virtual machine application is deployed, we provide the following guidance for Azure virtual machines.
 
 ### Option 1: Initiate a failover by using Azure Site Recovery
-You can configure Azure Site Recovery for your VMs so that you can recover your application with a single click in matter of minutes. You can replicate to Azure region of your choice and not restricted to paired regions. You can get started by [replicating your virtual machines](../site-recovery/azure-to-azure-quickstart.md). You can [create a recovery plan](../site-recovery/site-recovery-create-recovery-plans.md) so that you can automate the entire failover process for your application. You can [test your failovers](../site-recovery/site-recovery-test-failover-to-azure.md) beforehand without impacting production application or the ongoing replication. In the event of a primary region disruption, you just [initiate a failover](../site-recovery/site-recovery-failover.md) and bring your application in target region.
+You can configure Azure Site Recovery for your VMs so that you can recover your application with a single click in matter of minutes. You can replicate to Azure region of your choice and not restricted to paired regions. You can get started by [replicating your virtual machines](/azure/site-recovery/azure-to-azure-quickstart). You can [create a recovery plan](/azure/site-recovery/site-recovery-create-recovery-plans) so that you can automate the entire failover process for your application. You can [test your failovers](/azure/site-recovery/site-recovery-test-failover-to-azure) beforehand without impacting production application or the ongoing replication. In the event of a primary region disruption, you just [initiate a failover](/azure/site-recovery/site-recovery-failover) and bring your application in target region.
 
 
 ### Option 2: Wait for recovery
@@ -150,11 +150,11 @@ This option is the best if you don't set up Azure Site Recovery, read-access geo
 
 ### Resources for service disruptions
 
-- Start [protecting your applications running on Azure virtual machines](../site-recovery/azure-to-azure-quickstart.md) using Azure Site Recovery
+- Start [protecting your applications running on Azure virtual machines](/azure/site-recovery/azure-to-azure-quickstart) using Azure Site Recovery
 
 - To learn more about how to implement a disaster recovery and high availability strategy, see [Disaster recovery and high availability for Azure applications](/azure/architecture/framework/resiliency/backup-and-recovery).
 
-- To develop a detailed technical understanding of a cloud platform’s capabilities, see [Azure resiliency technical guidance](../data-lake-store/data-lake-store-disaster-recovery-guidance.md).
+- To develop a detailed technical understanding of a cloud platform’s capabilities, see [Azure resiliency technical guidance](/azure/data-lake-store/data-lake-store-disaster-recovery-guidance).
 
 
 - If the instructions aren't clear, or if you would like Microsoft to do the operations on your behalf, contact [Customer Support](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade).

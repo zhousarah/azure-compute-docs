@@ -21,7 +21,7 @@ This information includes the SKU, storage, network configurations, and upcoming
 IMDS is available for running instances of virtual machines (VMs) and scale set instances. All endpoints support VMs created and managed by using [Azure Resource Manager](/rest/api/resources/). Only the Attested category and Network portion of the Instance category support VMs created by using the classic deployment model. The Attested endpoint does so only to a limited extent.
 
 IMDS is a REST API that's available at a well-known, non-routable IP address (`169.254.169.254`). You can only access it from within the VM. Communication between the VM and IMDS never leaves the host.
-Have your HTTP clients bypass web proxies within the VM when querying IMDS, and treat `169.254.169.254` the same as [`168.63.129.16`](../virtual-network/what-is-ip-address-168-63-129-16.md).
+Have your HTTP clients bypass web proxies within the VM when querying IMDS, and treat `169.254.169.254` the same as [`168.63.129.16`](/azure/virtual-network/what-is-ip-address-168-63-129-16).
 
 ## Usage
 
@@ -384,16 +384,16 @@ Schema breakdown:
 | `provider` | Provider of the VM | 2018-10-01
 | `publicKeys` | [Collection of Public Keys](/rest/api/compute/virtualmachines/createorupdate#sshpublickey) assigned to the VM and paths | 2018-04-02
 | `publisher` | Publisher of the VM image | 2017-04-02
-| `resourceGroupName` | [Resource group](../azure-resource-manager/management/overview.md) for your Virtual Machine | 2017-08-01
+| `resourceGroupName` | [Resource group](/azure/azure-resource-manager/management/overview) for your Virtual Machine | 2017-08-01
 | `resourceId` | The [fully qualified](/rest/api/resources/resources/getbyid) ID of the resource | 2019-03-11
 | `sku` | Specific SKU for the VM image | 2017-04-02
 | `securityProfile.secureBootEnabled` | Identifies if UEFI secure boot is enabled on the VM | 2020-06-01
 | `securityProfile.virtualTpmEnabled` | Identifies if the virtual Trusted Platform Module (TPM) is enabled on the VM | 2020-06-01
 | `securityProfile.encryptionAtHost` | Identifies if [Encryption at Host](disks-enable-host-based-encryption-portal.md) is enabled on the VM | 2021-11-01
-| `securityProfile.securityType` | Identifies if the VM is a [Trusted VM](trusted-launch.md) or a [Confidential VM](../confidential-computing/confidential-vm-overview.md) | 2021-12-13
+| `securityProfile.securityType` | Identifies if the VM is a [Trusted VM](trusted-launch.md) or a [Confidential VM](/azure/confidential-computing/confidential-vm-overview) | 2021-12-13
 | `storageProfile` | See Storage Profile below | 2019-06-01
 | `subscriptionId` | Azure subscription for the Virtual Machine | 2017-08-01
-| `tags` | [Tags](../azure-resource-manager/management/tag-resources.md) for your Virtual Machine  | 2017-08-01
+| `tags` | [Tags](/azure/azure-resource-manager/management/tag-resources) for your Virtual Machine  | 2017-08-01
 | `tagsList` | Tags formatted as a JSON array for easier programmatic parsing  | 2019-06-04
 | `userData` | The set of data specified when the VM was created for use during or after provisioning (Base64 encoded)  | 2021-01-01
 | `version` | Version of the VM image | 2017-04-02
@@ -401,7 +401,7 @@ Schema breakdown:
 | `vmId` | [Unique identifier](https://azure.microsoft.com/blog/accessing-and-using-azure-vm-unique-id/) for the VM. The blog referenced only suits for VMs that have SMBIOS < 2.6. For VMs that have SMBIOS >= 2.6, the UUID from DMI is displayed in little-endian format, thus, there's no requirement to switch bytes. | 2017-04-02
 | `vmScaleSetName` | [Virtual Machine Scale Set Name](../virtual-machine-scale-sets/overview.md) of your scale set | 2017-12-01
 | `vmSize` | [VM size](sizes.md) | 2017-04-02
-| `zone` | [Availability Zone](../availability-zones/az-overview.md) of your virtual machine | 2017-12-01
+| `zone` | [Availability Zone](/azure/availability-zones/az-overview) of your virtual machine | 2017-12-01
 
 † This version isn't fully available yet and may not be supported in all regions.
 
@@ -544,7 +544,7 @@ curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance/co
 
 For certain scenarios, placement of different data replicas is of prime importance. For example, [HDFS replica placement](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html#Replica_Placement:_The_First_Baby_Steps)
 or container placement via an [orchestrator](https://kubernetes.io/docs/concepts/architecture/nodes/) might require you to know the `platformFaultDomain` and `platformUpdateDomain` the VM is running on.
-You can also use [Availability Zones](../availability-zones/az-overview.md) for the instances to make these decisions.
+You can also use [Availability Zones](/azure/availability-zones/az-overview) for the instances to make these decisions.
 You can query this data directly via IMDS.
 
 **Request**
@@ -1073,7 +1073,7 @@ curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance/ne
 ---
 
 >[!NOTE]
-> * If you're looking to retrieve IMDS information for **Standard** SKU Public IP address, review [Load Balancer Metadata API](../load-balancer/howto-load-balancer-imds.md?tabs=windows) for more infomration.
+> * If you're looking to retrieve IMDS information for **Standard** SKU Public IP address, review [Load Balancer Metadata API](/azure/load-balancer/howto-load-balancer-imds?tabs=windows) for more infomration.
 
 ## Attested data
 
@@ -1273,11 +1273,11 @@ The `nonce` in the signed document can be compared if you provided a `nonce` par
 A managed identity, assigned by the system, can be enabled on the VM. You can also assign one or more user-assigned managed identities to the VM.
 You can then request tokens for managed identities from IMDS. Use these tokens to authenticate with other Azure services, such as Azure Key Vault.
 
-For detailed steps to enable this feature, see [Acquire an access token](../active-directory/managed-identities-azure-resources/how-to-use-vm-token.md).
+For detailed steps to enable this feature, see [Acquire an access token](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).
 
 ## Load Balancer Metadata
 
-When you place virtual machine or virtual machine set instances behind an Azure Standard Load Balancer, you can use IMDS to retrieve metadata related to the load balancer and the instances. For more information, see [Retrieve load balancer information](../load-balancer/instance-metadata-service-load-balancer.md).
+When you place virtual machine or virtual machine set instances behind an Azure Standard Load Balancer, you can use IMDS to retrieve metadata related to the load balancer and the instances. For more information, see [Retrieve load balancer information](/azure/load-balancer/instance-metadata-service-load-balancer).
 
 ## Scheduled events
 
@@ -1323,13 +1323,13 @@ If there's a data element not found or a malformed request, the Instance Metadat
   - Currently, IMDS only supports instances created with Azure Resource Manager.
 
 - **I created my VM through Azure Resource Manager some time ago. Why am I not seeing compute metadata information?**
-  - If you created your VM after September 2016, add a [tag](../azure-resource-manager/management/tag-resources.md) to start seeing compute metadata. If you created your VM before September 2016, add or remove extensions or data disks to the VM instance to refresh metadata.
+  - If you created your VM after September 2016, add a [tag](/azure/azure-resource-manager/management/tag-resources) to start seeing compute metadata. If you created your VM before September 2016, add or remove extensions or data disks to the VM instance to refresh metadata.
 
 - **Is user data the same as custom data?**
   - User data offers the similar functionality to custom data, allowing you to pass your own metadata to the VM instance. The difference is, user data is retrieved through IMDS, and is persistent throughout the lifetime of the VM instance. Existing custom data feature will continue to work as described in [this article](custom-data.md). However you can only get custom data through local system folder, not through IMDS.
 
 - **Why am I not seeing all data populated for a new version?**
-  - If you created your VM after September 2016, add a [tag](../azure-resource-manager/management/tag-resources.md) to start seeing compute metadata. If you created your VM before September 2016, add or remove extensions or data disks to the VM instance to refresh metadata.
+  - If you created your VM after September 2016, add a [tag](/azure/azure-resource-manager/management/tag-resources) to start seeing compute metadata. If you created your VM before September 2016, add or remove extensions or data disks to the VM instance to refresh metadata.
 
 - **Why am I getting the error `500 Internal Server Error` or `410 Resource Gone`?**
   - Retry your request. For more information, see [Transient fault handling](/azure/architecture/best-practices/transient-faults). If the problem persists, create a support issue in the Azure portal for the VM.
@@ -1522,7 +1522,7 @@ You can provide product feedback and ideas to our user feedback channel under Vi
 
 ## Next steps
 
-- [Acquire an access token for the VM](../active-directory/managed-identities-azure-resources/how-to-use-vm-token.md)
+- [Acquire an access token for the VM](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token)
 
 - [Scheduled events for Linux](./linux/scheduled-events.md)
 

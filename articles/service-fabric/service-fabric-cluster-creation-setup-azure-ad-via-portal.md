@@ -9,14 +9,14 @@ ms.date: 8/8/2022
 
 For clusters running on Azure, you can use Microsoft Entra ID to help secure access to management endpoints. This article describes how to set up Microsoft Entra ID to authenticate clients for an Azure Service Fabric cluster in the Azure portal.
 
-In this article, the term *application* generally refers to [Microsoft Entra applications](../active-directory/develop/developer-glossary.md#client-application), not Service Fabric applications. Microsoft Entra ID enables organizations (known as *tenants*) to manage user access to applications.
+In this article, the term *application* generally refers to [Microsoft Entra applications](/azure/active-directory/develop/developer-glossary#client-application), not Service Fabric applications. Microsoft Entra ID enables organizations (known as *tenants*) to manage user access to applications.
 
 A Service Fabric cluster offers several entry points to its management functionality, including the web-based [Service Fabric Explorer][service-fabric-visualizing-your-cluster] and [Visual Studio][service-fabric-manage-application-in-visual-studio]. As a result, you'll create two Microsoft Entra applications to control access to the cluster: one web application and one native application. After you create the applications, you'll assign users to read-only and admin roles.
 
 > [!NOTE]
 > - On Linux, you must complete the following steps before you create the cluster. On Windows, you also have the option to [configure Microsoft Entra authentication for an existing cluster](https://github.com/Azure/Service-Fabric-Troubleshooting-Guides/blob/master/Security/Configure%20Azure%20Active%20Directory%20Authentication%20for%20Existing%20Cluster.md).
 > - It's a [known issue](https://github.com/microsoft/service-fabric/issues/399) that applications and nodes on Linux Microsoft Entra ID-enabled clusters can't be viewed in the Azure portal.
-> - Microsoft Entra ID now requires an application's (app registration) publisher domain to be verified or use a default scheme. For more information, see [Configure an application's publisher domain](../active-directory/develop/howto-configure-publisher-domain.md) and [AppId URI in single-tenant applications will require use of default scheme or verified domains](../active-directory/develop/reference-breaking-changes.md#appid-uri-in-single-tenant-applications-will-require-use-of-default-scheme-or-verified-domains).
+> - Microsoft Entra ID now requires an application's (app registration) publisher domain to be verified or use a default scheme. For more information, see [Configure an application's publisher domain](/azure/active-directory/develop/howto-configure-publisher-domain) and [AppId URI in single-tenant applications will require use of default scheme or verified domains](/azure/active-directory/develop/reference-breaking-changes#appid-uri-in-single-tenant-applications-will-require-use-of-default-scheme-or-verified-domains).
 
 ## Prerequisites
 
@@ -59,7 +59,7 @@ Select **Authentication**. Under **Implicit grant and hybrid flows**, select the
 
 Select **Expose an API** and then the **Set** link to enter a value for **Application ID URI**. Enter either the URI of a verified domain or a URI that uses an API scheme format of `api://{{tenant Id}}/{{cluster name}}`. For example: `api://0e3d2646-78b3-4711-b8be-74a381d9890c/mysftestcluster`.
 
-For more information, see [AppId URI in single-tenant applications will require use of default scheme or verified domains](../active-directory/develop/reference-breaking-changes.md#appid-uri-in-single-tenant-applications-will-require-use-of-default-scheme-or-verified-domains).
+For more information, see [AppId URI in single-tenant applications will require use of default scheme or verified domains](/azure/active-directory/develop/reference-breaking-changes#appid-uri-in-single-tenant-applications-will-require-use-of-default-scheme-or-verified-domains).
 
 ![Screenshot of entering an application ID URI in the portal.](media/service-fabric-cluster-creation-setup-azure-ad-via-portal/portal-cluster-expose-application-id.png)
 
@@ -346,7 +346,7 @@ After you set up Microsoft Entra applications and set roles for users, [configur
 
 [azure-cli]: /cli/azure/get-started-with-azure-cli
 [service-fabric-cluster-security]: service-fabric-cluster-security.md
-[active-directory-howto-tenant]:../active-directory/develop/quickstart-create-new-tenant.md
+[active-directory-howto-tenant]:/azure/active-directory/develop/quickstart-create-new-tenant
 [service-fabric-visualizing-your-cluster]: service-fabric-visualizing-your-cluster.md
 [service-fabric-manage-application-in-visual-studio]: service-fabric-manage-application-in-visual-studio.md
 [x509-certificates-and-service-fabric]: service-fabric-cluster-security.md#x509-certificates-and-service-fabric

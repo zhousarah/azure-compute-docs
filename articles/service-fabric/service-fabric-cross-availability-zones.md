@@ -13,7 +13,7 @@ ms.date: 07/14/2022
 
 Availability Zones in Azure are a high-availability offering that protects your applications and data from datacenter failures. An Availability Zone is a unique physical location equipped with independent power, cooling, and networking within an Azure region.
 
-To support clusters that span across Availability Zones, Azure Service Fabric provides the two configuration methods as described in the article below. Availability Zones are available only in select regions. For more information, see the [Availability Zones overview](../availability-zones/az-overview.md).
+To support clusters that span across Availability Zones, Azure Service Fabric provides the two configuration methods as described in the article below. Availability Zones are available only in select regions. For more information, see the [Availability Zones overview](/azure/availability-zones/az-overview).
 
 Sample templates are available at [Service Fabric cross-Availability Zone templates](https://github.com/Azure-Samples/service-fabric-cluster-templates).
 
@@ -161,7 +161,7 @@ The inbound network address translation (NAT) rules for the load balancer should
 
 ### Outbound rules for a Standard SKU load balancer
 
-The Standard SKU load balancer and public IP introduce new abilities and different behaviors to outbound connectivity when compared to using Basic SKUs. If you want outbound connectivity when you're working with Standard SKUs, you must explicitly define it with either a Standard SKU public IP addresses or a Standard SKU load balancer. For more information, see [Outbound connections](../load-balancer/load-balancer-outbound-connections.md) and [What is Azure Load Balancer?](../load-balancer/load-balancer-overview.md).
+The Standard SKU load balancer and public IP introduce new abilities and different behaviors to outbound connectivity when compared to using Basic SKUs. If you want outbound connectivity when you're working with Standard SKUs, you must explicitly define it with either a Standard SKU public IP addresses or a Standard SKU load balancer. For more information, see [Outbound connections](/azure/load-balancer/load-balancer-outbound-connections) and [What is Azure Load Balancer?](/azure/load-balancer/load-balancer-overview).
 
 >[!NOTE]
 > The standard template references an NSG that allows all outbound traffic by default. Inbound traffic is limited to the ports that are required for Service Fabric management operations. The NSG rules can be modified to meet your requirements.

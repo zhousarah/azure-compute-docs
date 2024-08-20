@@ -15,7 +15,7 @@ Azure managed disks are block-level storage volumes that are managed by Azure an
 
 The available types of disks are ultra disks, premium solid-state drives (SSD), standard SSDs, and standard hard disk drives (HDD). For information about each individual disk type, see [Select a disk type for IaaS VMs](disks-types.md).
 
-Alternatively, you could use an Azure Elastic SAN as your VM's storage. An Elastic SAN allows you to consolidate the storage for all your workloads into a single storage backend and can be more cost effective if you've a sizeable amount of large scale IO-intensive workloads and top tier databases. To learn more, see [What is Azure Elastic SAN?](../storage/elastic-san/elastic-san-introduction.md)
+Alternatively, you could use an Azure Elastic SAN as your VM's storage. An Elastic SAN allows you to consolidate the storage for all your workloads into a single storage backend and can be more cost effective if you've a sizeable amount of large scale IO-intensive workloads and top tier databases. To learn more, see [What is Azure Elastic SAN?](/azure/storage/elastic-san/elastic-san-introduction)
 
 ## Benefits of managed disks
 
@@ -35,19 +35,19 @@ Managed disks are integrated with availability sets to ensure that the disks of 
 
 ### Integration with Availability Zones
 
-Managed disks support [Availability Zones](../availability-zones/az-overview.md), which is a high-availability offering that protects your applications from datacenter failures. Availability Zones are unique physical locations within an Azure region. Each zone is made up of one or more datacenters equipped with independent power, cooling, and networking. To ensure resiliency, there's a minimum of three separate zones in all enabled regions. With Availability Zones, Azure offers industry best 99.99% VM uptime SLA.
+Managed disks support [Availability Zones](/azure/availability-zones/az-overview), which is a high-availability offering that protects your applications from datacenter failures. Availability Zones are unique physical locations within an Azure region. Each zone is made up of one or more datacenters equipped with independent power, cooling, and networking. To ensure resiliency, there's a minimum of three separate zones in all enabled regions. With Availability Zones, Azure offers industry best 99.99% VM uptime SLA.
 
 ### Azure Backup support
 
-To protect against regional disasters, [Azure Backup](../backup/backup-overview.md) can be used to create a backup job with time-based backups and backup retention policies. This allows you to perform VM or managed disk restorations at will. Currently Azure Backup supports disk sizes up to 32 tebibyte (TiB) disks. [Learn more](../backup/backup-support-matrix-iaas.md) about Azure VM backup support.
+To protect against regional disasters, [Azure Backup](/azure/backup/backup-overview) can be used to create a backup job with time-based backups and backup retention policies. This allows you to perform VM or managed disk restorations at will. Currently Azure Backup supports disk sizes up to 32 tebibyte (TiB) disks. [Learn more](/azure/backup/backup-support-matrix-iaas) about Azure VM backup support.
 
 #### Azure Disk Backup
 
-Azure Backup offers Azure Disk Backup as a native, cloud-based backup solution that protects your data in managed disks. It's a simple, secure, and cost-effective solution that enables you to configure protection for managed disks in a few steps. Azure Disk Backup offers a turnkey solution that provides snapshot lifecycle management for managed disks by automating periodic creation of snapshots and retaining it for configured duration using backup policy. For details on Azure Disk Backup, see [Overview of Azure Disk Backup](../backup/disk-backup-overview.md).
+Azure Backup offers Azure Disk Backup as a native, cloud-based backup solution that protects your data in managed disks. It's a simple, secure, and cost-effective solution that enables you to configure protection for managed disks in a few steps. Azure Disk Backup offers a turnkey solution that provides snapshot lifecycle management for managed disks by automating periodic creation of snapshots and retaining it for configured duration using backup policy. For details on Azure Disk Backup, see [Overview of Azure Disk Backup](/azure/backup/disk-backup-overview).
 
 ### Granular access control
 
-You can use [Azure role-based access control (Azure RBAC)](../role-based-access-control/overview.md) to assign specific permissions for a managed disk to one or more users. Managed disks expose a variety of operations, including read, write (create/update), delete, and retrieving a [shared access signature (SAS) URI](../storage/common/storage-sas-overview.md) for the disk. You can grant access to only the operations a person needs to perform their job. For example, if you don't want a person to copy a managed disk to a storage account, you can choose not to grant access to the export action for that managed disk. Similarly, if you don't want a person to use an SAS URI to copy a managed disk, you can choose not to grant that permission to the managed disk.
+You can use [Azure role-based access control (Azure RBAC)](/azure/role-based-access-control/overview) to assign specific permissions for a managed disk to one or more users. Managed disks expose a variety of operations, including read, write (create/update), delete, and retrieving a [shared access signature (SAS) URI](/azure/storage/common/storage-sas-overview) for the disk. You can grant access to only the operations a person needs to perform their job. For example, if you don't want a person to copy a managed disk to a storage account, you can choose not to grant access to the export action for that managed disk. Similarly, if you don't want a person to use an SAS URI to copy a managed disk, you can choose not to grant that permission to the managed disk.
 
 ### Upload your vhd
 
@@ -59,7 +59,7 @@ To learn how to transfer your vhd to Azure, see the [CLI](linux/disks-upload-vhd
 
 ### Private Links
 
-Private Link support for managed disks can be used to import or export a managed disk internal to your network. Private Links allow you to generate a time bound Shared Access Signature (SAS) URI for unattached managed disks and snapshots that you can use to export the data to other regions for regional expansion, disaster recovery, and forensic analysis. You can also use the SAS URI to directly upload a VHD to an empty disk from on-premises. Now you can leverage [Private Links](../private-link/private-link-overview.md) to restrict the export and import of managed disks so that it can only occur within your Azure virtual network. Private Links allows you to ensure your data only travels within the secure Microsoft backbone network.
+Private Link support for managed disks can be used to import or export a managed disk internal to your network. Private Links allow you to generate a time bound Shared Access Signature (SAS) URI for unattached managed disks and snapshots that you can use to export the data to other regions for regional expansion, disaster recovery, and forensic analysis. You can also use the SAS URI to directly upload a VHD to an empty disk from on-premises. Now you can leverage [Private Links](/azure/private-link/private-link-overview) to restrict the export and import of managed disks so that it can only occur within your Azure virtual network. Private Links allows you to ensure your data only travels within the secure Microsoft backbone network.
 
 To learn how to enable Private Links for importing or exporting a managed disk, see the [CLI](linux/disks-export-import-private-links-cli.md) or [Portal](disks-enable-private-links-for-import-export-portal.yml) articles.
 
@@ -116,7 +116,7 @@ On Azure Linux VMs, the temporary disk is typically /dev/sdb and on Windows VMs 
 
 A managed disk snapshot is a read-only crash-consistent full copy of a managed disk that is stored as a standard managed disk by default. With snapshots, you can back up your managed disks at any point in time. These snapshots exist independent of the source disk and can be used to create new managed disks. 
 
-Snapshots are billed based on the used size. For example, if you create a snapshot of a managed disk with provisioned capacity of 64 GiB and actual used data size of 10 GiB, that snapshot is billed only for the used data size of 10 GiB. You can see the used size of your snapshots by looking at the [Azure usage report](../cost-management-billing/understand/review-individual-bill.md). For example, if the used data size of a snapshot is 10 GiB, the **daily** usage report will show 10 GiB/(31 days) = 0.3226 as the consumed quantity.
+Snapshots are billed based on the used size. For example, if you create a snapshot of a managed disk with provisioned capacity of 64 GiB and actual used data size of 10 GiB, that snapshot is billed only for the used data size of 10 GiB. You can see the used size of your snapshots by looking at the [Azure usage report](/azure/cost-management-billing/understand/review-individual-bill). For example, if the used data size of a snapshot is 10 GiB, the **daily** usage report will show 10 GiB/(31 days) = 0.3226 as the consumed quantity.
 
 To learn more about how to create snapshots for managed disks, see the [Create a snapshot of a managed disk](windows/snapshot-copy-managed-disk.md) article.
 

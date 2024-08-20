@@ -35,7 +35,7 @@ This article reviews two flows for encrypting data with a customer-managed key:
 [!INCLUDE [azure-cli-prepare-your-environment.md](~/reusable-content/azure-cli/azure-cli-prepare-your-environment.md)]
 ### Create Service Principal for ACI
 
-The first step is to ensure that your [Azure tenant](../active-directory/develop/quickstart-create-new-tenant.md) has a service principal assigned for granting permissions to the Azure Container Instances service. 
+The first step is to ensure that your [Azure tenant](/azure/active-directory/develop/quickstart-create-new-tenant) has a service principal assigned for granting permissions to the Azure Container Instances service. 
 
 > [!IMPORTANT]
 > In order to run the following command and create a service principal successfully, confirm that you have permissions to create service principals in your tenant.

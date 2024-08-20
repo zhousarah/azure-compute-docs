@@ -37,7 +37,7 @@ When a container group is created, Azure Monitor data is available in the Azure 
 
 :::image type="content" source="media/container-instances-monitor/metrics.png" alt-text="Screenshot of pre-created charts for available metrics.":::
 
-In a container group that contains multiple containers, use a [dimension](../azure-monitor/essentials/data-platform-metrics.md#multi-dimensional-metrics) to display metrics by container. To create a chart with individual container metrics, perform the following steps:
+In a container group that contains multiple containers, use a [dimension](/azure/azure-monitor/essentials/data-platform-metrics#multi-dimensional-metrics) to display metrics by container. To create a chart with individual container metrics, perform the following steps:
 
 1. In the **Overview** page, select one of the metric charts, such as **CPU**.
 1. Select the **Apply splitting** button, and select **Container Name**.

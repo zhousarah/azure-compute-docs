@@ -100,5 +100,5 @@ We have open-sourced sidecar container implementations that provide an easy rest
 
 ## Next steps
 
-- [Learn how to use attestation to release a secret to your container group](../confidential-computing/skr-flow-confidential-containers-azure-container-instance.md)
+- [Learn how to use attestation to release a secret to your container group](/azure/confidential-computing/skr-flow-confidential-containers-azure-container-instance)
 - [Deploy a confidential container group with Azure Resource Manager](./container-instances-tutorial-deploy-confidential-containers-cce-arm.md)

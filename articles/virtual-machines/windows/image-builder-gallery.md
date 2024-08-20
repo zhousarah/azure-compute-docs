@@ -95,7 +95,7 @@ New-AzResourceGroup `
 
 ## Create a user-assigned identity and set permissions on the resource group
 
-VM Image Builder uses the provided [user-identity](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell.md) to inject the image into Azure Compute Gallery. In this example, you create an Azure role definition with specific actions for distributing the image. The role definition is then assigned to the user identity.
+VM Image Builder uses the provided [user-identity](/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-powershell) to inject the image into Azure Compute Gallery. In this example, you create an Azure role definition with specific actions for distributing the image. The role definition is then assigned to the user identity.
 
 ```powershell
 # setup role def names, these need to be unique
@@ -137,7 +137,7 @@ New-AzRoleAssignment -ObjectId $identityNamePrincipalId -RoleDefinitionName $ima
 ```
 
 > [!NOTE]
-> If you receive the error "New-AzRoleDefinition: Role definition limit exceeded. No more role definitions can be created," see [Troubleshoot Azure RBAC (role-based access control)](../../role-based-access-control/troubleshooting.md).
+> If you receive the error "New-AzRoleDefinition: Role definition limit exceeded. No more role definitions can be created," see [Troubleshoot Azure RBAC (role-based access control)](/azure/role-based-access-control/troubleshooting).
 
 
 

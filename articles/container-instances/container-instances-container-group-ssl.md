@@ -239,6 +239,6 @@ While this article uses Nginx in the sidecar, you can use another TLS provider s
 
 If you deploy your container group in an [Azure virtual network](container-instances-vnet.md), you can consider other options to enable a TLS endpoint for a backend container instance, including:
 
-* [Azure Functions Proxies](../azure-functions/functions-proxies.md)
-* [Azure API Management](../api-management/api-management-key-concepts.md)
-* [Azure Application Gateway](../application-gateway/overview.md) - see a sample [deployment template](https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/wordpress/aci-wordpress-vnet).
+* [Azure Functions Proxies](/azure/azure-functions/functions-proxies)
+* [Azure API Management](/azure/api-management/api-management-key-concepts)
+* [Azure Application Gateway](/azure/application-gateway/overview) - see a sample [deployment template](https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/wordpress/aci-wordpress-vnet).
