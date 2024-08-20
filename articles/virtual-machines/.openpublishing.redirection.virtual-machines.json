@@ -5151,17 +5151,17 @@
             "redirect_document_id": false
         },
         {
-            "source_path": "articles/virtual-machines/linux/tutorial-azure-devops-blue-green-strategy.md",
+            "source_path_from_root": "/articles/virtual-machines/linux/tutorial-azure-devops-blue-green-strategy.md",
             "redirect_url": "/previous-versions/azure/virtual-machines/linux/tutorial-azure-devops-blue-green-strategy",
             "redirect_document_id": false
         },
         {
-            "source_path": "articles/virtual-machines/linux/tutorial-azure-devops-canary-strategy.md",
+            "source_path_from_root": "/articles/virtual-machines/linux/tutorial-azure-devops-canary-strategy.md",
             "redirect_url": "/previous-versions/azure/virtual-machines/linux/tutorial-azure-devops-canary-strategy",
             "redirect_document_id": false
         },
         {
-            "source_path": "articles/virtual-machines/linux/tutorial-build-deploy-azure-pipelines.md",
+            "source_path_from_root": "/articles/virtual-machines/linux/tutorial-build-deploy-azure-pipelines.md",
             "redirect_url": "/previous-versions/azure/virtual-machines/linux/tutorial-build-deploy-azure-pipelines",
             "redirect_document_id": false
         },
