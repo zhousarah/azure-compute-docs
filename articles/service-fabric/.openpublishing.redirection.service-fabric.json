@@ -219,6 +219,46 @@
             "source_path_from_root": "/articles/service-fabric/service-fabric-vso-load-test.md",
             "redirect_url": "/azure/service-fabric/service-fabric-tutorial-deploy-app-with-cicd-vsts",
             "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/articles/service-fabric/service-fabric-api-management-quick-start.md",
+            "redirect_url": "/azure/service-fabric/service-fabric-tutorial-deploy-api-management",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/articles/service-fabric/security-baseline.md",
+            "redirect_url": "/security/benchmark/azure/baselines/service-fabric-security-baseline",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/articles/service-fabric/service-fabric-best-practices-overview.md",
+            "redirect_url": "/azure/service-fabric/service-fabric-best-practices-security",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/articles/service-fabric/service-fabric-diagnostics-event-generation-app.md",
+            "redirect_url": "/azure/service-fabric/monitor-service-fabric#application-monitoring",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/articles/service-fabric/service-fabric-diagnostics-event-generation-perf.md",
+            "redirect_url": "/azure/service-fabric/monitor-service-fabric-reference#performance-metrics",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/articles/service-fabric/service-fabric-diagnostics-overview.md",
+            "redirect_url": "/azure/service-fabric/monitor-service-fabric",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/articles/service-fabric/service-fabric-rest-based-application-lifecycle-sample.md",
+            "redirect_url": "/rest/api/servicefabric/",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/articles/service-fabric/upgrade-managed-disks.md",
+            "redirect_url": "/azure/service-fabric/service-fabric-scale-up-primary-node-type",
+            "redirect_document_id": false
         }
     ]
 }
