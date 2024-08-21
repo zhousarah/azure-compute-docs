@@ -84,7 +84,7 @@ Esv3-series VM’s feature Intel® Hyper-Threading Technology.
 <sup>4</sup> Accelerated networking can only be applied to a single NIC. 
 
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machine-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## Other sizes and information
 

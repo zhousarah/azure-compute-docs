@@ -74,7 +74,7 @@ Falsv6, Fasv6, and Famsv6-series offer up to 64 full core vCPUs and 512 GiB of R
 | Standard_F64ams_v6 | 64   | 512         | Remote Storage Only                      | 32             | 115200/2880                                         | 115200/3400                                                | 230400/2880                                                           | 230400/3400                                                                  | 8        | 36000                        |
 
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machinemmon-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## Other sizes and information
 

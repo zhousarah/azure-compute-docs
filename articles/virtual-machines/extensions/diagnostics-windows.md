@@ -62,7 +62,7 @@ The [Remove-AzVmDiagnosticsExtension](/powershell/module/az.compute/remove-azvmd
 
 ## Enable the diagnostics extension if you use the classic deployment model
 
-[!INCLUDE [classic-vm-deprecation](../includes/service-fabric-sfctl.md)]
+[!INCLUDE [classic-vm-deprecation](../includes/classic-vm-deprecation.md)]
 
 You can use the [Set-AzureVMDiagnosticsExtension](/powershell/module/servicemanagement/azure/set-azurevmdiagnosticsextension) cmdlet to enable a diagnostics extension on a VM that you create through the classic deployment model. The following example shows how to create a new VM through the classic deployment model with the diagnostics extension enabled.
 

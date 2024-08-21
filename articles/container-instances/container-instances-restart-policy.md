@@ -28,7 +28,7 @@ When you create a [container group](container-instances-container-groups.md) in 
 | `Never` | Containers in the container group are never restarted. The containers run at most once. |
 | `OnFailure` | Containers in the container group are restarted only when the process executed in the container fails (when it terminates with a nonzero exit code). The containers are run at least once. |
 
-[!INCLUDE [container-instances-restart-ip](./includes/mvss-next-steps.md-restart-ip.md)]
+[!INCLUDE [container-instances-restart-ip](./includes/container-instances-restart-ip.md)]
 
 ## Specify a restart policy
 

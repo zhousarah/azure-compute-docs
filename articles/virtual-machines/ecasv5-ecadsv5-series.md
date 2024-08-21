@@ -101,7 +101,7 @@ This series supports Standard SSD, Standard HDD, and Premium SSD disk types. Bil
 > [!NOTE]
 > To achieve these IOPs, use [Gen2 VMs](generation-2.md).
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machinemmon-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## Next steps
 

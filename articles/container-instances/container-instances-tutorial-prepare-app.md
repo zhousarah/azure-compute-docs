@@ -25,7 +25,7 @@ In tutorial parts two and three, you upload your image to Azure Container Regist
 
 ## Before you begin
 
-[!INCLUDE [container-instances-tutorial-prerequisites](./includes/mvss-next-steps.md-tutorial-prerequisites.md)]
+[!INCLUDE [container-instances-tutorial-prerequisites](./includes/container-instances-tutorial-prerequisites.md)]
 
 ## Get application code
 

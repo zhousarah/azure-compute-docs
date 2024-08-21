@@ -12,7 +12,7 @@ ms.date: 06/17/2022
 
 The [restart policy](container-instances-restart-policy.md) setting of a container group determines how container instances start or stop by default. You can override the default setting by manually stopping or starting a container group.
 
-[!INCLUDE [container-instances-restart-ip](./includes/mvss-next-steps.md-restart-ip.md)]
+[!INCLUDE [container-instances-restart-ip](./includes/container-instances-restart-ip.md)]
 
 ## Stop
 

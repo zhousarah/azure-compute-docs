@@ -24,7 +24,7 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-[!INCLUDE [container-instances-tutorial-prerequisites-confidential-containers](./includes/mvss-next-steps.md-tutorial-prerequisites-confidential-containers.md)]
+[!INCLUDE [container-instances-tutorial-prerequisites-confidential-containers](./includes/container-instances-tutorial-prerequisites-confidential-containers.md)]
 
 ## Create an ARM template for a Container Instances container group
 

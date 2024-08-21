@@ -91,7 +91,7 @@ This series supports Standard SSD, Standard HDD, and Premium SSD disk types. Bil
 | Standard_EC64eds_v5  |64  |512  |2823  |32  |306200/4000  |80000/1740  |80000/3000  	|8  	|20000    |
 | Standard_EC128eds_v5   	|128 |768 |2832 |32 |459200/4000 |80000/2600 |120000/4000   	    |8   	    |30000 |
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machine-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## Next steps
 

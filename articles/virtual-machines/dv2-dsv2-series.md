@@ -65,7 +65,7 @@ DSv2-series sizes run on the 3rd Generation Intel® Xeon® Platinum 8370C (Ice L
 
 <sup>1</sup> Accelerated networking can only be applied to a single NIC. 
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machinemmon-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## Other sizes and information
 

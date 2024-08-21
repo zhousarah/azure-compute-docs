@@ -87,7 +87,7 @@ Edsv4-series sizes run on the 3rd Generation Intel® Xeon® Platinum 8370C (Ice 
 
 
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machine-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## Other sizes and information
 

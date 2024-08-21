@@ -25,9 +25,9 @@ In the next article, the last in the series, you deploy the container from your 
 
 ## Before you begin
 
-[!INCLUDE [container-instances-tutorial-prerequisites](./includes/mvss-next-steps.md-tutorial-prerequisites.md)]
+[!INCLUDE [container-instances-tutorial-prerequisites](./includes/container-instances-tutorial-prerequisites.md)]
 
-[!INCLUDE [container-instances-create-registry](./includes/mvss-next-steps.md-create-registry.md)]
+[!INCLUDE [container-instances-create-registry](./includes/container-instances-create-registry.md)]
 
 ## Tag container image
 

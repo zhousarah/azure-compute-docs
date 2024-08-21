@@ -78,7 +78,7 @@ The Easv4-series run on 2nd Generation AMD EPYC<sup>TM</sup> 7452 (up to 3.35GHz
 <sup>3</sup> Accelerated networking can only be applied to a single NIC. 
 
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machinemmon-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## Other sizes and information
 
