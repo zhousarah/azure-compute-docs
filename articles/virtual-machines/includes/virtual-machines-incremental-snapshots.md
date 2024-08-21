@@ -90,7 +90,7 @@ The following steps describe how to take snapshots of *mypremiumdisk* and mainta
 6. Take a snapshot of the backup page blob *mybackupstdpageblob*, called *mybackupstdpageblob_ss2*. Delete the previous snapshot *mypremiumdisk_ss1* from premium storage account.
 7. Repeat steps 4-6 every backup window. In this way, you can maintain backups of *mypremiumdisk* in a standard storage account.
 
-![Back up disk using incremental snapshots](../articles/virtual-machines/windows/media/incremental-snapshots/storage-incremental-snapshots-1.png)
+![Back up disk using incremental snapshots](../windows/media/incremental-snapshots/storage-incremental-snapshots-1.png)
 
 ## Steps to restore a disk from snapshots
 The following steps, describe how to restore the premium disk, *mypremiumdisk* to an earlier snapshot from the backup storage account *mybackupstdaccount*.
@@ -103,7 +103,7 @@ The following steps, describe how to restore the premium disk, *mypremiumdisk* t
 6. Point the DS series VM to the restored disk *mypremiumdiskrestored* and detach the old *mypremiumdisk* from the VM.
 7. Begin the Backup process described in previous section for the restored disk *mypremiumdiskrestored*, using the *mybackupstdpageblobrestored* as the backup page blob.
 
-![Restore disk from snapshots](../articles/virtual-machines/windows/media/incremental-snapshots/storage-incremental-snapshots-2.png)
+![Restore disk from snapshots](../windows/media/incremental-snapshots/storage-incremental-snapshots-2.png)
 
 ## Next Steps
 Use the following links to learn more about creating snapshots of a blob and planning your VM backup infrastructure.
