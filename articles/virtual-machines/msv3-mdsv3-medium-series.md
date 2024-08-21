@@ -65,7 +65,7 @@ These virtual machines feature local SSD storage (up to 400 GiB).
 
 <sup>*</sup> Read iops is optimized for sequential reads<br>
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## Other sizes and information
 

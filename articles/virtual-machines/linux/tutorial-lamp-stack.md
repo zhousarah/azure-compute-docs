@@ -164,7 +164,7 @@ Now you can check the PHP info page you created. Open a browser and go to `http:
 
 ![PHP info page][2]
 
-[!INCLUDE [virtual-machines-linux-tutorial-wordpress.md](../../../includes/virtual-machines-linux-tutorial-wordpress.md)]
+[!INCLUDE [virtual-machines-linux-tutorial-wordpress.md](../includes/virtual-machines-linux-tutorial-wordpress.md)]
 
 ## Next steps
 

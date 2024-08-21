@@ -14,11 +14,11 @@ ms.devlang: azurecli
 
 **Applies to:** :heavy_check_mark: Linux VMs :heavy_check_mark: Windows VMs :heavy_check_mark: Flexible scale sets :heavy_check_mark: Uniform scale sets
 
-[!INCLUDE [virtual-machines-disks-incremental-snapshots-description](../../includes/virtual-machines-disks-incremental-snapshots-description.md)]
+[!INCLUDE [virtual-machines-disks-incremental-snapshots-description](./includes/virtual-machines-disks-incremental-snapshots-description.md)]
 
 ## Restrictions
 
-[!INCLUDE [virtual-machines-disks-incremental-snapshots-restrictions](../../includes/virtual-machines-disks-incremental-snapshots-restrictions.md)]
+[!INCLUDE [virtual-machines-disks-incremental-snapshots-restrictions](./includes/virtual-machines-disks-incremental-snapshots-restrictions.md)]
 
 ## Create incremental snapshots
 
@@ -106,7 +106,7 @@ $incrementalSnapshots
 ```
 
 # [Portal](#tab/azure-portal)
-[!INCLUDE [virtual-machines-disks-incremental-snapshots-portal](../../includes/virtual-machines-disks-incremental-snapshots-portal.md)]
+[!INCLUDE [virtual-machines-disks-incremental-snapshots-portal](./includes/virtual-machines-disks-incremental-snapshots-portal.md)]
 
 # [Resource Manager Template](#tab/azure-resource-manager)
 

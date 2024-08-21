@@ -58,7 +58,7 @@ Due to increased GPU memory I/O footprint, the NCads H100 v5 requires the use of
 <sup>2</sup> Local NVMe disks are ephemeral. Data is lost on these disks if you stop/deallocate your VM. Local NVMe disks aren't encrypted by Azure Storage encryption, even if you enable encryption at host. <br>
 
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## Other sizes and information
 

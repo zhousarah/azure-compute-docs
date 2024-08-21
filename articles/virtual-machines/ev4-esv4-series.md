@@ -95,7 +95,7 @@ Esv4-series sizes run on Intel® Xeon® Platinum 8473C (Sapphire Rapids), Intel�
 
 
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machine-sizes-table-defs.md)]
 
 ## Other sizes and information
 

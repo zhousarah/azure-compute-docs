@@ -28,7 +28,7 @@ Or
 
 ## Limitations
 
-[!INCLUDE [virtual-machines-disks-shared-limitations](../../includes/virtual-machines-disks-shared-limitations.md)]
+[!INCLUDE [virtual-machines-disks-shared-limitations](./includes/virtual-machines-disks-shared-limitations.md)]
 
 ## Supported operating systems
 
@@ -36,7 +36,7 @@ Shared disks support several operating systems. See the [Windows](./disks-shared
 
 ## Disk sizes
 
-[!INCLUDE [virtual-machines-disks-shared-sizes](../../includes/virtual-machines-disks-shared-sizes.md)]
+[!INCLUDE [virtual-machines-disks-shared-sizes](./includes/virtual-machines-disks-shared-sizes.md)]
 
 ## Deploy shared disks
 

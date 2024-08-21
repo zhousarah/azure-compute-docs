@@ -12,4 +12,4 @@ ms.author: rogarana
 
 **Applies to:** :heavy_check_mark: Linux VMs
 
-[!INCLUDE [virtual-machines-incremental-snapshots](../../../includes/virtual-machines-incremental-snapshots.md)]
+[!INCLUDE [virtual-machines-incremental-snapshots](../includes/virtual-machines-incremental-snapshots.md)]

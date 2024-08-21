@@ -53,7 +53,7 @@ The architecture can also be adapted for deployment entirely on Azure with highl
 
 The following sections describe the different components at a high level.
 
-[!INCLUDE [virtual-machines-oracle-applications-bastion](../../../../includes/virtual-machines-oracle-applications-bastion.md)]
+[!INCLUDE [virtual-machines-oracle-applications-bastion](../../includes/virtual-machines-oracle-applications-bastion.md)]
 
 ### Application (middle) tier
 
@@ -102,7 +102,7 @@ The architecture can also be adapted for deployment entirely on Azure with highl
 
 The following sections describe the different components at a high level.
 
-[!INCLUDE [virtual-machines-oracle-applications-bastion](../../../../includes/virtual-machines-oracle-applications-bastion.md)]
+[!INCLUDE [virtual-machines-oracle-applications-bastion](../../includes/virtual-machines-oracle-applications-bastion.md)]
 
 ### Administrative tier
 
@@ -138,9 +138,9 @@ The following two components are in the middle tier:
 - **Logic server** - Contain the business logic or business functions.
 - **Batch server** - Used for batch processing
 
-[!INCLUDE [virtual-machines-oracle-applications-database](../../../../includes/virtual-machines-oracle-applications-database.md)]
+[!INCLUDE [virtual-machines-oracle-applications-database](../../includes/virtual-machines-oracle-applications-database.md)]
 
-[!INCLUDE [virtual-machines-oracle-applications-identity](../../../../includes/virtual-machines-oracle-applications-identity.md)]
+[!INCLUDE [virtual-machines-oracle-applications-identity](../../includes/virtual-machines-oracle-applications-identity.md)]
 
 ## PeopleSoft
 
@@ -164,7 +164,7 @@ The architecture can also be adapted for deployment entirely on Azure with highl
 
 The following sections describe the different components at a high level.
 
-[!INCLUDE [virtual-machines-oracle-applications-bastion](../../../../includes/virtual-machines-oracle-applications-bastion.md)]
+[!INCLUDE [virtual-machines-oracle-applications-bastion](../../includes/virtual-machines-oracle-applications-bastion.md)]
 
 ### Application tier
 
@@ -176,9 +176,9 @@ For high availability, consider setting up redundant instances of each server in
 
 The PeopleTools Client is used to perform administration activities, such as development, migration, and upgrade. Because the PeopleTools Client isn't required for achieving high availability of your application, redundant servers of PeopleTools Client aren't needed.
 
-[!INCLUDE [virtual-machines-oracle-applications-database](../../../../includes/virtual-machines-oracle-applications-database.md)]
+[!INCLUDE [virtual-machines-oracle-applications-database](../../includes/virtual-machines-oracle-applications-database.md)]
 
-[!INCLUDE [virtual-machines-oracle-applications-identity](../../../../includes/virtual-machines-oracle-applications-identity.md)]
+[!INCLUDE [virtual-machines-oracle-applications-identity](../../includes/virtual-machines-oracle-applications-identity.md)]
 
 ## Next steps
 

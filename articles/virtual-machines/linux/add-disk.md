@@ -33,7 +33,7 @@ az vm disk attach \
 
 In select regions, the disk attach latency has been reduced, so you'll see an improvement of up to 15%. This is useful if you have planned/unplanned failovers between VMs, you're scaling your workload, or are running a high scale stateful workload such as Azure Kubernetes Service. However, this improvement is limited to the explicit disk attach command, `az vm disk attach`. You won't see the performance improvement if you call a command that may implicitly perform an attach, like `az vm update`. You don't need to take any action other than calling the explicit attach command to see this improvement.
 
-[!INCLUDE [virtual-machines-disks-fast-attach-detach-regions](../../../includes/virtual-machines-disks-fast-attach-detach-regions.md)]
+[!INCLUDE [virtual-machines-disks-fast-attach-detach-regions](.././includes/virtual-machines-disks-fast-attach-detach-regions.md)]
 
 ## Attach an existing disk
 
@@ -200,7 +200,7 @@ sudo fstrim /datadrive
 
 ## Troubleshooting
 
-[!INCLUDE [virtual-machines-linux-lunzero](../../../includes/virtual-machines-linux-lunzero.md)]
+[!INCLUDE [virtual-machines-linux-lunzero](.././includes/virtual-machines-linux-lunzero.md)]
 
 ## Next steps
 

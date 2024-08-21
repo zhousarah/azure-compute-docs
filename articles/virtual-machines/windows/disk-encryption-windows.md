@@ -62,7 +62,7 @@ Azure Disk Encryption does not work for the following scenarios, features, and t
 
 ## Install tools and connect to Azure
 
-[!INCLUDE [disk-encryption-install-cli-powershell](../../../includes/disk-encryption-install-cli-powershell.md)]
+[!INCLUDE [disk-encryption-install-cli-powershell](../includes/disk-encryption-install-cli-powershell.md)]
 
 ## Enable encryption on an existing or running Windows VM
 In this scenario, you can enable encryption by using the Resource Manager template, PowerShell cmdlets, or CLI commands. If you need schema information for the virtual machine extension, see the [Azure Disk Encryption for Windows extension](../extensions/azure-disk-enc-windows.md) article.

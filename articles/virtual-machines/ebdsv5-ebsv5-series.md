@@ -113,7 +113,7 @@ Ebsv5-series sizes run on the Intel® Xeon® Platinum 8272CL (Cascade Lake). The
 | Standard_E64bs_v5 | 64 | 512 | 32 | 120000/4000 | 120000/4000 | 160800/6500 | 160800/6500 | 8 | 20000 |
 | Standard_E96bs_v5 | 96 | 672 | 32 | 120000/4000 | 120000/4000 | 180000/6500 | 180000/6500 | 8 | 25000 |
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machinemmon-sizes-table-defs.md)]
 
 ## Ebsv5 NVMe FAQ
 

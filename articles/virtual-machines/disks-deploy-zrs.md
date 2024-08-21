@@ -18,11 +18,11 @@ For conceptual information on ZRS, see [Zone-redundant storage for managed disks
 
 ## Limitations
 
-[!INCLUDE [disk-storage-zrs-limitations](../../includes/disk-storage-zrs-limitations.md)]
+[!INCLUDE [disk-storage-zrs-limitations](./includes/disk-storage-zrs-limitations.md)]
 
 ## Regional availability
 
-[!INCLUDE [disk-storage-zrs-regions](../../includes/disk-storage-zrs-regions.md)]
+[!INCLUDE [disk-storage-zrs-regions](./includes/disk-storage-zrs-regions.md)]
 
 # [Azure portal](#tab/portal)
 

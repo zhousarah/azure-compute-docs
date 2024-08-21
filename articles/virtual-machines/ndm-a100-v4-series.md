@@ -54,7 +54,7 @@ Ubuntu 20.04: 5.4.0-1046-azure <br>
 |---|---|---|---|---|---|---|---|---|---|
 | Standard_ND96amsr_A100_v4 | 96 | 1900 | 6400 | 8 A100 80 GB GPUs (NVLink 3.0) | 80 | 32 | 80,000 / 800 | 24,000 Mbps | 8 |
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## Other sizes and information
 

@@ -20,7 +20,7 @@ Temporary disks and ephemeral OS disks are encrypted at rest with platform-manag
 
 ## Restrictions
 
-[!INCLUDE [virtual-machines-disks-encryption-at-host-restrictions](../../includes/virtual-machines-disks-encryption-at-host-restrictions.md)]
+[!INCLUDE [virtual-machines-disks-encryption-at-host-restrictions](./includes/virtual-machines-disks-encryption-at-host-restrictions.md)]
 
 ### Supported VM sizes
 
@@ -90,7 +90,7 @@ Alternatively, you can use customer-managed keys to encrypt your disk caches.
 
 Once the feature is enabled, you need to set up an Azure Key Vault and a disk encryption set, if you haven't already.
 
-[!INCLUDE [virtual-machines-disks-encryption-create-key-vault-portal](../../includes/virtual-machines-disks-encryption-create-key-vault-portal.md)]
+[!INCLUDE [virtual-machines-disks-encryption-create-key-vault-portal](./includes/virtual-machines-disks-encryption-create-key-vault-portal.md)]
 
 ### Deploy a VM
 

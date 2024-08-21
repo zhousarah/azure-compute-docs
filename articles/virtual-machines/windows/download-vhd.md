@@ -60,7 +60,7 @@ Your snapshot will be created shortly, and can then be used to download or creat
 
 ## Secure downloads and uploads with Microsoft Entra ID
 
-[!INCLUDE [disks-azure-ad-upload-download-portal](../../../includes/disks-azure-ad-upload-download-portal.md)]
+[!INCLUDE [disks-azure-ad-upload-download-portal](../includes/disks-azure-ad-upload-download-portal.md)]
 
 ## Generate download URL
 

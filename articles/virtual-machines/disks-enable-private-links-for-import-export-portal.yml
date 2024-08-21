@@ -24,7 +24,7 @@ procedureSection:
   - title: |
       Limitations
     summary: |
-      [!INCLUDE [virtual-machines-disks-private-links-limitations](../../includes/virtual-machines-disks-private-links-limitations.md)]
+      [!INCLUDE [virtual-machines-disks-private-links-limitations](./includes/virtual-machines-disks-private-links-limitations.md)]
 
       ## Create a disk access resource
     steps:

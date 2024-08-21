@@ -33,7 +33,7 @@ This article shows how to add GPU resources when you deploy a container group by
 
 In preview, the following limitations apply when using GPU resources in container groups.
 
-[!INCLUDE [container-instances-gpu-regions](../../includes/container-instances-gpu-regions.md)]
+[!INCLUDE [container-instances-gpu-regions](./includes/mvss-next-steps.md-gpu-regions.md)]
 
 Support will be added for additional regions over time.
 
@@ -54,7 +54,7 @@ To use GPUs in a container instance, specify a *GPU resource* with the following
   | --- | --- |
   | V100 | [NCv3](../virtual-machines/ncv3-series.md) |
 
-[!INCLUDE [container-instances-gpu-limits](../../includes/container-instances-gpu-limits.md)]
+[!INCLUDE [container-instances-gpu-limits](./includes/mvss-next-steps.md-gpu-limits.md)]
 
 When deploying GPU resources, set CPU and memory resources appropriate for the workload, up to the maximum values shown in the preceding table. These values are currently larger than the CPU and memory resources available in container groups without GPU resources.
 

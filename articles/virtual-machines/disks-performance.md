@@ -11,10 +11,10 @@ ms.service: azure-disk-storage
 
 **Applies to:** :heavy_check_mark: Linux VMs :heavy_check_mark: Windows VMs :heavy_check_mark: Flexible scale sets :heavy_check_mark: Uniform scale sets
 
-[!INCLUDE [VM and Disk Performance](../../includes/virtual-machine-disk-performance.md)]
+[!INCLUDE [VM and Disk Performance](./includes/virtual-machine-disk-performance.md)]
 
 ## Virtual machine uncached vs cached limits
 Virtual machines that are enabled for both premium storage and premium storage caching have two different storage bandwidth limits. Let's look at the Standard_D8s_v3 virtual machine as an example. Here is the documentation on the [Dsv3-series](dv3-dsv3-series.md) and the Standard_D8s_v3:
 
-[!INCLUDE [VM and Disk Performance](../../includes/virtual-machine-disk-performance-2.md)]
+[!INCLUDE [VM and Disk Performance](./includes/virtual-machine-disk-performance-2.md)]
 

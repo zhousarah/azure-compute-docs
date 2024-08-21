@@ -90,7 +90,7 @@ Edsv5-series virtual machines support Standard SSD and Standard HDD disk types. 
 - Max burst uncached Ultra Disk and Premium v2 SSD disk throughput (IOPS/ MBps): 120000/4000
 
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machineable-defs.md)]
 
 ## Other sizes and information
 

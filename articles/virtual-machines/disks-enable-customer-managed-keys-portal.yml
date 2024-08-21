@@ -25,11 +25,11 @@ procedureSection:
     summary: |
       For now, customer-managed keys have the following restrictions:
 
-      [!INCLUDE [virtual-machines-managed-disks-customer-managed-keys-restrictions](../../includes/virtual-machines-managed-disks-customer-managed-keys-restrictions.md)]
+      [!INCLUDE [virtual-machines-managed-disks-customer-managed-keys-restrictions](./includes/virtual-machines-managed-disks-customer-managed-keys-restrictions.md)]
 
       The following sections cover how to enable and use customer-managed keys for managed disks:
 
-      [!INCLUDE [virtual-machines-disks-encryption-create-key-vault-portal](../../includes/virtual-machines-disks-encryption-create-key-vault-portal.md)]
+      [!INCLUDE [virtual-machines-disks-encryption-create-key-vault-portal](./includes/virtual-machines-disks-encryption-create-key-vault-portal.md)]
 
       ## Deploy a VM
 

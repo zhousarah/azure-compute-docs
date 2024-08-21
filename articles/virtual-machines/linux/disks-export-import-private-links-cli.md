@@ -21,7 +21,7 @@ You can set the NetworkAccessPolicy property to `DenyAll` to prevent anybody fro
 
 ## Limitations
 
-[!INCLUDE [virtual-machines-disks-private-links-limitations](../../../includes/virtual-machines-disks-private-links-limitations.md)]
+[!INCLUDE [virtual-machines-disks-private-links-limitations](../includes/virtual-machines-disks-private-links-limitations.md)]
 
 
 ## Log in into your subscription and set your variables

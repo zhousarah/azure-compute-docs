@@ -91,7 +91,7 @@ It's possible for a performance resize operation to fail because of a lack of pe
 
 ### Ultra Disk limitations
 
-[!INCLUDE [managed-disks-ultra-disks-GA-scope-and-limitations](../../includes/managed-disks-ultra-disks-GA-scope-and-limitations.md)]
+[!INCLUDE [managed-disks-ultra-disks-GA-scope-and-limitations](./includes/managed-disks-ultra-disks-GA-scope-and-limitations.md)]
 
 If you would like to start using Ultra Disks, see the article on [using Azure Ultra Disks](disks-enable-ultra-ssd.md).
 
@@ -110,11 +110,11 @@ Unlike Premium SSDs, Premium SSD v2 doesn't have dedicated sizes. You can set a 
 
 ### Premium SSD v2 limitations
 
-[!INCLUDE [disks-prem-v2-limitations](../../includes/disks-prem-v2-limitations.md)]
+[!INCLUDE [disks-prem-v2-limitations](./includes/disks-prem-v2-limitations.md)]
 
 #### Regional availability
 
-[!INCLUDE [disks-premv2-regions](../../includes/disks-premv2-regions.md)]
+[!INCLUDE [disks-premv2-regions](./includes/disks-premv2-regions.md)]
 
 ### Premium SSD v2 performance
 
@@ -141,7 +141,7 @@ Premium SSD v2 supports a 4k physical sector size by default. A 512E sector size
 
 The following table provides an overview of disk capacities and performance maximums to help you decide which to use.
 
-[!INCLUDE [disks-premv2-performance](../../includes/disks-premv2-performance.md)]
+[!INCLUDE [disks-premv2-performance](./includes/disks-premv2-performance.md)]
 
 To deploy a Premium SSD v2, see [Deploy a Premium SSD v2](disks-deploy-premium-v2.md).
 

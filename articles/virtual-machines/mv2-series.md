@@ -48,7 +48,7 @@ Mv2-series VM’s feature Intel® Hyper-Threading Technology
 <sup>2</sup> [Constrained core sizes available](./constrained-vcpu.md).
 
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## Other sizes and information
 

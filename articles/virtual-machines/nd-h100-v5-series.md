@@ -46,7 +46,7 @@ NVIDIA NVLink Interconnect: Supported <br>
 |---------------------|------|------------|------------------------|----------------------------|----------------|----------------|-----------------------------------------|------------------------------|----------|
 | Standard_ND96isr_H100_v5 | 96   | 1900       | 28000                   | 8 H100 80 GB GPUs(NVLink)  | 80             | 32             | 40800/612                               | 80,000 Mbps                         | 8        |
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## Other sizes and information
 

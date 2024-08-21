@@ -38,11 +38,11 @@ For more information on ZRS disks, see [Zone Redundant Storage (ZRS) option for 
 
 ### Limitations
 
-[!INCLUDE [disk-storage-zrs-limitations](../../includes/disk-storage-zrs-limitations.md)]
+[!INCLUDE [disk-storage-zrs-limitations](./includes/disk-storage-zrs-limitations.md)]
 
 ### Regional availability
 
-[!INCLUDE [disk-storage-zrs-regions](../../includes/disk-storage-zrs-regions.md)]
+[!INCLUDE [disk-storage-zrs-regions](./includes/disk-storage-zrs-regions.md)]
 
 ### Billing implications
 

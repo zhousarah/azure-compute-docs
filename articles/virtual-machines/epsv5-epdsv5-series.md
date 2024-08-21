@@ -67,7 +67,7 @@ Epdsv5-series virtual machines feature the Ampere® Altra® Arm-based processor 
 > [!NOTE]
 > Accelerated networking is required and turned on by default on all Epsv5 machines.
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machine-sizes-table-defs.md)]
 
 ## Other sizes and information
 

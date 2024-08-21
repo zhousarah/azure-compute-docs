@@ -82,7 +82,7 @@ The DCads_cc_v5-series sizes offer a combination of vCPU, memory and temporary s
 | Standard_DC64ads_cc_v5 | 64 | 256 | 2400 | 32 | 80000/1200 | 8 |
 | Standard_DC96ads_cc_v5 | 96 | 384 | 3600 | 32 | 80000/1600 | 8 |
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## Other sizes and information
 

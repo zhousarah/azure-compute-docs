@@ -19,13 +19,13 @@ Azure Disk Storage allows you to manage your own keys when using server-side enc
 
 For now, customer-managed keys have the following restrictions:
 
-[!INCLUDE [virtual-machines-managed-disks-customer-managed-keys-restrictions](../../../includes/virtual-machines-managed-disks-customer-managed-keys-restrictions.md)]
+[!INCLUDE [virtual-machines-managed-disks-customer-managed-keys-restrictions](.././includes/virtual-machines-managed-disks-customer-managed-keys-restrictions.md)]
 
 ## Create resources
 
 Once the feature is enabled, you'll need to set up a DiskEncryptionSet and either an [Azure Key Vault](/azure/key-vault/general/overview) or an [Azure Key Vault Managed HSM](/azure/key-vault/managed-hsm/overview).
 
-[!INCLUDE [virtual-machines-disks-encryption-create-key-vault](../../../includes/virtual-machines-disks-encryption-create-key-vault-cli.md)]
+[!INCLUDE [virtual-machines-disks-encryption-create-key-vault](.././includes/virtual-machines-disks-encryption-create-key-vault-cli.md)]
 
 Now that you've created and configured these resources, you can use them to secure your managed disks. The following links contain example scripts, each with a respective scenario, that you can use to secure your managed disks.
 
@@ -115,7 +115,7 @@ az disk-encryption-set update -n keyrotationdes -g keyrotationtesting --key-url 
 
 ### Find the status of server-side encryption of a disk
 
-[!INCLUDE [virtual-machines-disks-encryption-status-cli](../../../includes/virtual-machines-disks-encryption-status-cli.md)]
+[!INCLUDE [virtual-machines-disks-encryption-status-cli](.././includes/virtual-machines-disks-encryption-status-cli.md)]
 
 > [!IMPORTANT]
 > Customer-managed keys rely on managed identities for Azure resources, a feature of Microsoft Entra ID. When you configure customer-managed keys, a managed identity is automatically assigned to your resources under the covers. If you subsequently move the subscription, resource group, or managed disk from one Microsoft Entra directory to another, the managed identity associated with the managed disks is not transferred to the new tenant, so customer-managed keys may no longer work. For more information, see [Transferring a subscription between Microsoft Entra directories](/azure/active-directory/managed-identities-azure-resources/known-issues#transferring-a-subscription-between-azure-ad-directories).

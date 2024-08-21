@@ -64,7 +64,7 @@ Due to increased GPU memory I/O footprint, the NC A100 v4 requires the use of [G
 
 <sup>3</sup>1 GPU = one A100 80GB PCIe GPU card <br>
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## Other sizes and information
 

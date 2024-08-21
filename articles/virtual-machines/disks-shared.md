@@ -25,7 +25,7 @@ Shared managed disks offer shared block storage that can be accessed from multip
 
 ## Limitations
 
-[!INCLUDE [virtual-machines-disks-shared-limitations](../../includes/virtual-machines-disks-shared-limitations.md)]
+[!INCLUDE [virtual-machines-disks-shared-limitations](./includes/virtual-machines-disks-shared-limitations.md)]
 
 ### Operating system requirements
 
@@ -45,7 +45,7 @@ Once you've determined your total provisioned IOPS and total provisioned through
 
 ## Disk sizes
 
-[!INCLUDE [virtual-machines-disks-shared-sizes](../../includes/virtual-machines-disks-shared-sizes.md)]
+[!INCLUDE [virtual-machines-disks-shared-sizes](./includes/virtual-machines-disks-shared-sizes.md)]
 
 ## Sample workloads
 

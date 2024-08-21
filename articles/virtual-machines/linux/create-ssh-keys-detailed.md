@@ -24,9 +24,9 @@ To create SSH keys and use them to connect to a Linux VM from a **Windows** comp
 > [!Note]
 > ED25519 SSH key support for Linux VMs is now in preview in all regions including sovereign clouds.
 
-[!INCLUDE [virtual-machines-common-ssh-overview](../../../includes/virtual-machines-common-ssh-overview.md)]
+[!INCLUDE [virtual-machines-common-ssh-overview](.././includes/virtual-machines-common-ssh-overview.md)]
 
-[!INCLUDE [virtual-machines-common-ssh-support](../../../includes/virtual-machines-common-ssh-support.md)]
+[!INCLUDE [virtual-machines-common-ssh-support](.././includes/virtual-machines-common-ssh-support.md)]
 
 ## SSH keys use and benefits
 

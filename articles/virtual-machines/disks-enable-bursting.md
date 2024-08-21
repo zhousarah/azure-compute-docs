@@ -22,11 +22,11 @@ For the max burst targets on each supported disk, see [Scalability and performan
 
 Before you enable on-demand bursting, understand the following:
 
-[!INCLUDE [managed-disk-bursting-regions-limitations](../../includes/managed-disk-bursting-regions-limitations.md)]
+[!INCLUDE [managed-disk-bursting-regions-limitations](./includes/managed-disk-bursting-regions-limitations.md)]
 
 ### Regional availability
 
-[!INCLUDE [managed-disk-bursting-availability](../../includes/managed-disk-bursting-availability.md)]
+[!INCLUDE [managed-disk-bursting-availability](./includes/managed-disk-bursting-availability.md)]
 
 ## Get started
 

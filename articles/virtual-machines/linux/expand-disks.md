@@ -66,7 +66,7 @@ You can expand your managed disks without deallocating your VM. The host cache s
 
 This feature has the following limitations:
 
-[!INCLUDE [virtual-machines-disks-expand-without-downtime-restrictions](../../../includes/virtual-machines-disks-expand-without-downtime-restrictions.md)]
+[!INCLUDE [virtual-machines-disks-expand-without-downtime-restrictions](../includes/virtual-machines-disks-expand-without-downtime-restrictions.md)]
 
 ### Expand Azure Managed Disk
 

@@ -15,7 +15,7 @@ As with other platforms, an application on Azure Service Fabric usually goes thr
 [Check this page for a training video that describes how to manage your application lifecycle:](/shows/building-microservices-applications-on-azure-service-fabric/application-lifetime-management-in-action)
 
 
-[!INCLUDE [links to azure cli and service fabric cli](../../includes/service-fabric-sfctl.md)]
+[!INCLUDE [links to azure cli and service fabric cli](./includes/service-fabric-sfctl.md)]
 
 ## Service model roles
 The service model roles are:

@@ -23,7 +23,7 @@ In this tutorial, you:
 
 ## Before you begin
 
-[!INCLUDE [container-instances-tutorial-prerequisites](../../includes/container-instances-tutorial-prerequisites.md)]
+[!INCLUDE [container-instances-tutorial-prerequisites](./includes/mvss-next-steps.md-tutorial-prerequisites.md)]
 
 ## Deploy the container using the Azure CLI
 

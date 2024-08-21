@@ -53,7 +53,7 @@ The Lasv3-series of Azure Virtual Machines (Azure VMs) features high-throughput,
 > [!NOTE]
 > Lasv3-series VMs don't provide a host cache for the data disk because this configuration doesn't benefit the Lasv3 workloads. 
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## Other sizes and information 
 

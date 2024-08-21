@@ -25,7 +25,7 @@ For this quickstart, you need Docker Desktop version 2.3.0.5 or later, available
 > [!IMPORTANT]
 > Not all features of Azure Container Instances are supported. Provide feedback about the Docker-Azure integration by creating an issue in the [aci-integration-beta](https://github.com/docker/aci-integration-beta) GitHub repository.
 
-[!INCLUDE [container-instances-create-docker-context](../../includes/container-instances-create-docker-context.md)]
+[!INCLUDE [container-instances-create-docker-context](./includes/mvss-next-steps.md-create-docker-context.md)]
 
 ## Create a container
 
