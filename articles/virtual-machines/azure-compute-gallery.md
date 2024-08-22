@@ -11,7 +11,7 @@ ms.reviewer: cynthn, mattmcinnes
 ---
 
 # Store and share resources in an Azure Compute Gallery
- 
+
 **Applies to:** :heavy_check_mark: Linux VMs :heavy_check_mark: Windows VMs :heavy_check_mark: Flexible scale sets :heavy_check_mark: Uniform scale sets
 
 An Azure Compute Gallery helps you build structure and organization around your Azure resources, like images and [applications](vm-applications.md). An Azure Compute Gallery provides:
