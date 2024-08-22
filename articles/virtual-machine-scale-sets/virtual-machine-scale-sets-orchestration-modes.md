@@ -153,7 +153,7 @@ The following table compares the Flexible orchestration mode, Uniform orchestrat
 | List VMs in Set | Yes | Yes | Yes, list VMs in AvSet |
 | Automatic Scaling (manual, metrics based, schedule based) | Yes | Yes | No |
 | Auto-Remove NICs and Disks when deleting VM instances | Yes | Yes | No |
-| Upgrade Policy (Virtual Machine Scale Set) | No, upgrade policy must be null or [] during create | Automatic, Rolling, Manual | N/A |
+| Upgrade Policy (Virtual Machine Scale Set) | Automatic, Rolling, Manual | Automatic, Rolling, Manual | N/A |
 | Automatic OS Updates (Virtual Machine Scale Set) | No | Yes | N/A |
 | In Guest Security Patching | Yes, read [Auto VM Guest Patching](../virtual-machines/automatic-vm-guest-patching.md) | No | Yes |
 | Terminate Notifications (Virtual Machine Scale Set) | Yes, read [Terminate Notifications documentation](../virtual-machine-scale-sets/virtual-machine-scale-sets-terminate-notification.md) | Yes, read [Terminate Notifications documentation](../virtual-machine-scale-sets/virtual-machine-scale-sets-terminate-notification.md) | N/A |
