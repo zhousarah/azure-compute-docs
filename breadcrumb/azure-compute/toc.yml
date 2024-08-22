@@ -1,3 +1,48 @@
-- name: '<please enter product name here>'
-  tocHref: /
-  topicHref: /
+items:
+- name: Azure
+  tocHref: /azure/
+  topicHref: /azure/index
+  items:
+  - name: Container Instances
+    tocHref: /azure/container-instances/
+    topicHref: /azure/container-instances/
+  - name: SAP on Azure
+    tocHref: /azure/sap/
+    topicHref: /azure/sap/index
+  - name: Service Fabric
+    tocHref: /azure/service-fabric/
+    topicHref: /azure/service-fabric/
+  - name: Virtual Machines
+    tocHref: /azure/virtual-machines/
+    topicHref: /azure/virtual-machines/
+    items:
+    - name: Workloads
+      tocHref: /azure/virtual-machines/workloads/
+      topicHref: /azure/virtual-machines/workloads/workloads/
+      items:
+      - name: Azure VMs for SAP workloads
+        tocHref: /azure/virtual-machines/workloads/sap/
+        topicHref: /azure/virtual-machines/workloads/sap/index
+      - name: High Performance Computing
+        tocHref: /azure/virtual-machines/workloads/hpc/
+        topicHref: /azure/virtual-machines/linux/high-performance-computing?toc=%2fazure%2fvirtual-machines%2fworkloads%2fhpc%2ftoc.json
+    - name: Linux
+      tocHref: /azure/virtual-machines/linux/
+      topicHref: /azure/virtual-machines/linux/
+      items:
+      - name: Linux classic deployments
+        tocHref: /azure/virtual-machines/linux/classic/
+        topicHref: /previous-versions/azure/virtual-machines/linux/classic/
+    - name: Windows
+      tocHref: /azure/virtual-machines/windows/
+      topicHref: /azure/virtual-machines/windows/
+      items:
+      - name: Windows classic deployments
+        tocHref: /azure/virtual-machines/windows/classic/
+        topicHref: /previous-versions/azure/virtual-machines/windows/classic/
+      - name: SQL VM
+        tocHref: /azure/virtual-machines/windows/sql
+        topicHref: /azure/virtual-machines/windows/sql
+  - name: Virtual Machine Scale Sets
+    tocHref: /azure/virtual-machine-scale-sets/
+    topicHref: /azure/virtual-machine-scale-sets/
