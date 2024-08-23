@@ -41,4 +41,4 @@ Currently only available in the following regions:
 - West US 2 (Three availability zones)
 - West US 3 (Three availability zones)
 
-To learn when support for particular regions was added, see either [Azure Updates](https://azure.microsoft.com/updates/?query=disk%20storage) or [What's new for Azure Disk Storage](../articles/virtual-machines/disks-whats-new.md).
+To learn when support for particular regions was added, see either [Azure Updates](https://azure.microsoft.com/updates/?query=disk%20storage) or [What's new for Azure Disk Storage](../disks-whats-new.md).

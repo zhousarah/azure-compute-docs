@@ -56,7 +56,7 @@ The [NVIDIA GPU Driver Extension](./extensions/hpccompute-gpu-linux.md) installs
 
 If you choose to install NVIDIA GPU drivers manually, see [N-series GPU driver setup for Linux](./linux/n-series-driver-setup.md).
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## Other sizes and information
 

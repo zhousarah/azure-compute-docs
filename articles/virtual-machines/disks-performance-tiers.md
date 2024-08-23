@@ -13,11 +13,11 @@ ms.custom: references_regions, devx-track-azurecli, devx-track-azurepowershell
 
 **Applies to:** :heavy_check_mark: Linux VMs :heavy_check_mark: Windows VMs :heavy_check_mark: Flexible scale sets
 
-[!INCLUDE [virtual-machines-disks-performance-tiers-intro](../../includes/virtual-machines-disks-performance-tiers-intro.md)]
+[!INCLUDE [virtual-machines-disks-performance-tiers-intro](./includes/virtual-machines-disks-performance-tiers-intro.md)]
 
 ## Restrictions
 
-[!INCLUDE [virtual-machines-disks-performance-tiers-restrictions](../../includes/virtual-machines-disks-performance-tiers-restrictions.md)]
+[!INCLUDE [virtual-machines-disks-performance-tiers-restrictions](./includes/virtual-machines-disks-performance-tiers-restrictions.md)]
 
 ## Prerequisites
 # [Azure CLI](#tab/azure-cli)

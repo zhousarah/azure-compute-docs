@@ -148,9 +148,9 @@ resource allowSSH 'Microsoft.Network/networkSecurityGroups/securityRules@2021-08
 
 You can authenticate to Windows machines using either username and password or SSH keys. Azure doesn't support provisioning public keys to Windows machines automatically, however you can copy the key using the RunCommand extension.
 
-[!INCLUDE [virtual-machines-common-ssh-overview](../../../includes/virtual-machines-common-ssh-overview.md)]
+[!INCLUDE [virtual-machines-common-ssh-overview](../includes/virtual-machines-common-ssh-overview.md)]
 
-[!INCLUDE [virtual-machines-common-ssh-support](../../../includes/virtual-machines-common-ssh-support.md)]
+[!INCLUDE [virtual-machines-common-ssh-support](../includes/virtual-machines-common-ssh-support.md)]
 
 ### Copy a public key using the RunCommand extension.
 

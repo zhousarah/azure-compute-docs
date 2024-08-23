@@ -66,7 +66,7 @@ DCsv3-series instances run on a 3rd Generation Intel&reg; Xeon Scalable Processo
 | Standard_DC32ds_v3  | 32           | 256         | 2400                    | 32             | 8     |  192               |
 | Standard_DC48ds_v3  | 48           | 384         | 2400                    | 32             | 8     |  256               |
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## More sizes and information
 

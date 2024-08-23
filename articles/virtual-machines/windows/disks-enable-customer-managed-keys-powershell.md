@@ -19,13 +19,13 @@ Azure Disk Storage allows you to manage your own keys when using server-side enc
 
 For now, customer-managed keys have the following restrictions:
 
-[!INCLUDE [virtual-machines-managed-disks-customer-managed-keys-restrictions](../../../includes/virtual-machines-managed-disks-customer-managed-keys-restrictions.md)]
+[!INCLUDE [virtual-machines-managed-disks-customer-managed-keys-restrictions](../includes/virtual-machines-managed-disks-customer-managed-keys-restrictions.md)]
 
 ## Set up an Azure Key Vault and DiskEncryptionSet optionally with automatic key rotation
 
 To use customer-managed keys with SSE, you must set up an Azure Key Vault and a DiskEncryptionSet resource.
 
-[!INCLUDE [virtual-machines-disks-encryption-create-key-vault-powershell](../../../includes/virtual-machines-disks-encryption-create-key-vault-powershell.md)]
+[!INCLUDE [virtual-machines-disks-encryption-create-key-vault-powershell](../includes/virtual-machines-disks-encryption-create-key-vault-powershell.md)]
 
 
 ## Examples
@@ -205,7 +205,7 @@ Update-AzDiskEncryptionSet -Name $diskEncryptionSetName -ResourceGroupName $Reso
 
 ### Find the status of server-side encryption of a disk
 
-[!INCLUDE [virtual-machines-disks-encryption-status-powershell](../../../includes/virtual-machines-disks-encryption-status-powershell.md)]
+[!INCLUDE [virtual-machines-disks-encryption-status-powershell](../includes/virtual-machines-disks-encryption-status-powershell.md)]
 
 > [!IMPORTANT]
 > Customer-managed keys rely on managed identities for Azure resources, a feature of Microsoft Entra ID. When you configure customer-managed keys, a managed identity is automatically assigned to your resources under the covers. If you subsequently move the subscription, resource group, or managed disk from one Microsoft Entra directory to another, the managed identity associated with the managed disks is not transferred to the new tenant, so customer-managed keys may no longer work. For more information, see [Transferring a subscription between Microsoft Entra directories](/azure/active-directory/managed-identities-azure-resources/known-issues#transferring-a-subscription-between-azure-ad-directories).

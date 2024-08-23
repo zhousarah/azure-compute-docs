@@ -33,7 +33,7 @@ The following example creates a gallery named *myGallery* in the *myGalleryRG* r
 
 Image definitions create a logical grouping for images. They are used to manage information about the image versions that are created within them. 
 
-Image definition names can be made up of uppercase or lowercase letters, digits, dots, dashes and periods. For more information about the values you can specify for an image definition, see [Image definitions](../articles/virtual-machines/shared-image-galleries.md#image-definitions).
+Image definition names can be made up of uppercase or lowercase letters, digits, dots, dashes and periods. For more information about the values you can specify for an image definition, see [Image definitions](../shared-image-galleries.md#image-definitions).
 
 Create the gallery image definition inside of your gallery. 
 
@@ -41,8 +41,8 @@ Create the gallery image definition inside of your gallery.
 1. In the **Add new image definition to shared image gallery**, for **Region**, select *East US*.
 1. For **Image definition name**, type a name like *myImageDefinition*.
 1. For **Operating system**, select the correct option based on your source VM.  
-1. For **VM generation**, select the option based on your source VM. In most cases, this will be *Gen 1*. For more information, see [Support for generation 2 VMs](../articles/virtual-machines/generation-2.md).
-1. For **Operating system state**, select the option based on your source VM. For more information, see [Generalized and specialized](../articles/virtual-machines/shared-image-galleries.md#generalized-and-specialized-images).
+1. For **VM generation**, select the option based on your source VM. In most cases, this will be *Gen 1*. For more information, see [Support for generation 2 VMs](../generation-2.md).
+1. For **Operating system state**, select the option based on your source VM. For more information, see [Generalized and specialized](../shared-image-galleries.md#generalized-and-specialized-images).
 1. For **Publisher**, type *myPublisher*. 
 1. For **Offer**, type *myOffer*.
 1. For **SKU**, type *mySKU*.
@@ -81,7 +81,7 @@ The steps for creating an image version are slightly different, depending on whe
 
 It can take a while to replicate the image to all of the target regions.
 
-You can also capture an existing VM as an image, from the portal. For more information, see [Create an image of a VM in the portal](../articles/virtual-machines/capture-image-portal.md).
+You can also capture an existing VM as an image, from the portal. For more information, see [Create an image of a VM in the portal](../capture-image-portal.md).
 
 ## Share the gallery
 

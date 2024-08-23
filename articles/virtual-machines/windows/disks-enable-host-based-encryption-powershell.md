@@ -19,7 +19,7 @@ When you enable encryption at host, data stored on the VM host is encrypted at r
 
 ## Restrictions
 
-[!INCLUDE [virtual-machines-disks-encryption-at-host-restrictions](../../../includes/virtual-machines-disks-encryption-at-host-restrictions.md)]
+[!INCLUDE [virtual-machines-disks-encryption-at-host-restrictions](../includes/virtual-machines-disks-encryption-at-host-restrictions.md)]
 
 ### Supported VM sizes
 
@@ -50,7 +50,7 @@ You must enable the feature for your subscription before you use the EncryptionA
 
 Once the feature is enabled, you need to set up an Azure Key Vault and a DiskEncryptionSet, if you haven't already.
 
-[!INCLUDE [virtual-machines-disks-encryption-create-key-vault-powershell](../../../includes/virtual-machines-disks-encryption-create-key-vault-powershell.md)]
+[!INCLUDE [virtual-machines-disks-encryption-create-key-vault-powershell](../includes/virtual-machines-disks-encryption-create-key-vault-powershell.md)]
 
 ## Enable encryption at host for disks attached to VM and Virtual Machine Scale Sets
 

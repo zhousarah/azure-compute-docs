@@ -14,7 +14,7 @@ ms.date: 07/14/2022
 
 The following table includes links to samples on how to manage Service Fabric clusters, applications, and services.
 
-[!INCLUDE [links to azure cli and service fabric cli](../../includes/service-fabric-sfctl.md)]
+[!INCLUDE [links to azure cli and service fabric cli](./includes/service-fabric-sfctl.md)]
 
 | Sample | Description |
 |-|-|

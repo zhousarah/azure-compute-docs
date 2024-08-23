@@ -13,4 +13,4 @@ ms.collection: windows
 
 **Applies to:** :heavy_check_mark: Windows VMs 
 
-[!INCLUDE [virtual-machines-incremental-snapshots](../../../includes/virtual-machines-incremental-snapshots.md)]
+[!INCLUDE [virtual-machines-incremental-snapshots](../includes/virtual-machines-incremental-snapshots.md)]

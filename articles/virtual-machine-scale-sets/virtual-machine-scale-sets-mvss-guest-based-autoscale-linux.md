@@ -178,4 +178,4 @@ Finally, add an `autoscaleSettings` resource to configure autoscale based on the
 
 ## Next steps
 
-[!INCLUDE [mvss-next-steps-include](../../includes/mvss-next-steps.md)]
+[!INCLUDE [mvss-next-steps-include](./includes/mvss-next-steps.md)]

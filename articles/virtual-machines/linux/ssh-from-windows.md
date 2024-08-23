@@ -39,7 +39,7 @@ Depending on your organization's security policies, you can reuse a single key p
 
 Your public key can be shared with anyone, but only you (or your local security infrastructure) should have access to your private key.
 
-[!INCLUDE [virtual-machines-common-ssh-support](../../../includes/virtual-machines-common-ssh-support.md)]
+[!INCLUDE [virtual-machines-common-ssh-support](../includes/virtual-machines-common-ssh-support.md)]
 
 > [!NOTE]
 > During preview, ED25519 keys can only be used with Linux VMs.

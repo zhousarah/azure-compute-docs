@@ -75,7 +75,7 @@ The Dasv4-series run on 2nd Generation AMD EPYC<sup>TM</sup> 7452  (up to 3.35GH
 
 
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## Other sizes and information
 

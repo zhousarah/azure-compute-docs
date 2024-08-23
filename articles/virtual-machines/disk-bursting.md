@@ -40,7 +40,7 @@ Additionally, the [performance tier of managed disks can be changed](disks-chang
 |**Availability**     |Only available for premium SSD managed disks 512 GiB and smaller, and standard SSDs 1024 GiB and smaller.         |Only available for premium SSD managed disks larger than 512 GiB.         |Available to all premium SSD sizes.         |
 |**Enablement**     |Enabled by default on eligible disks.         |Must be enabled by user.         |User must manually change their tier.         |
 
-[!INCLUDE [managed-disks-bursting](../../includes/managed-disks-bursting-2.md)]
+[!INCLUDE [managed-disks-bursting](./includes/managed-disks-bursting-2.md)]
 
 ## Next steps
 

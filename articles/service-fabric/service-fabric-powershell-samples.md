@@ -14,7 +14,7 @@ ms.date: 07/11/2022
 
 The following table includes links to PowerShell scripts samples that create and manage Service Fabric clusters, applications, and services.
 
-[!INCLUDE [links to azure CLI and service fabric CLI](../../includes/service-fabric-powershell.md)]
+[!INCLUDE [links to azure CLI and service fabric CLI](./includes/service-fabric-powershell.md)]
 
 | Script | Description |
 |-|-|

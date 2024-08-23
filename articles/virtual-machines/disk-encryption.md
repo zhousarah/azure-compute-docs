@@ -86,7 +86,7 @@ If you can't enable automatic key rotation, you can use other methods to alert y
 
 For now, customer-managed keys have the following restrictions:
 
-[!INCLUDE [virtual-machines-managed-disks-customer-managed-keys-restrictions](../../includes/virtual-machines-managed-disks-customer-managed-keys-restrictions.md)]
+[!INCLUDE [virtual-machines-managed-disks-customer-managed-keys-restrictions](./includes/virtual-machines-managed-disks-customer-managed-keys-restrictions.md)]
 
 #### Supported regions
 
@@ -107,7 +107,7 @@ Temporary disks and ephemeral OS disks are encrypted at rest with platform-manag
 
 ### Restrictions
 
-[!INCLUDE [virtual-machines-disks-encryption-at-host-restrictions](../../includes/virtual-machines-disks-encryption-at-host-restrictions.md)]
+[!INCLUDE [virtual-machines-disks-encryption-at-host-restrictions](./includes/virtual-machines-disks-encryption-at-host-restrictions.md)]
 
 #### Supported VM sizes
 

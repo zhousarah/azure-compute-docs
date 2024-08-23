@@ -55,7 +55,7 @@ The Lsv3-series VMs are available in sizes from 8 to 80 vCPUs. There are 8 GiB o
 > [!NOTE]
 > Lsv3-series VMs don't provide host cache for data disk as it doesn't benefit the Lsv3 workloads. 
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## Other sizes and information 
 

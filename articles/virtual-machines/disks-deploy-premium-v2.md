@@ -17,11 +17,11 @@ Premium SSD v2 support a 4k physical sector size by default, but can be configur
 
 ## Limitations
 
-[!INCLUDE [disks-prem-v2-limitations](../../includes/disks-prem-v2-limitations.md)]
+[!INCLUDE [disks-prem-v2-limitations](./includes/disks-prem-v2-limitations.md)]
 
 ### Regional availability
 
-[!INCLUDE [disks-premv2-regions](../../includes/disks-premv2-regions.md)]
+[!INCLUDE [disks-premv2-regions](./includes/disks-premv2-regions.md)]
 
 ## Prerequisites
 
