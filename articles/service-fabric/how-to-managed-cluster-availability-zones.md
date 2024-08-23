@@ -72,7 +72,7 @@ To enable a zone resilient Azure Service Fabric managed cluster, you must includ
 }
 ```
 
-## Migrate an existing nonzone resilient cluster to Zone Resilient (Preview) 
+## Migrate an existing nonzone resilient cluster to Zone Resilient
 Existing Service Fabric managed clusters that aren't spanned across availability zones can now be migrated in-place to span availability zones. Supported scenarios include clusters created in regions that have three availability zones and clusters in regions where three availability zones are made available post-deployment.
 
 Requirements:
@@ -254,7 +254,7 @@ Requirements:
    ```
    If you run in to any problems, reach out to support for assistance.
 
-## Enable FastZonalUpdate on Service Fabric managed clusters (preview)
+## Enable FastZonalUpdate on Service Fabric managed clusters
 Service Fabric managed clusters support faster cluster and application upgrades by reducing the max upgrade domains per availability zone. The default configuration right now can have at most 15 upgrade domains (UDs) in multiple AZ nodetype. This huge number of UDs reduced the upgrade velocity. The new configuration reduces the max UDs, which result in faster updates, keeping the safety of the upgrades intact.   
 
 The update should be done via ARM template by setting the zonalUpdateMode property to "fast" and then modifying a node type attribute, such as adding a node and then removing the node to each nodetype (see required steps 2 and 3).  The Service Fabric managed cluster resource apiVersion should be 2022-10-01-preview or later.

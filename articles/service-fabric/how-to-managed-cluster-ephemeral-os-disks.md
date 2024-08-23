@@ -2,11 +2,15 @@
 title:  Create a Service Fabric managed cluster (SFMC) with Ephemeral OS disks for node types
 description: Learn how to create a Service Fabric managed cluster (SFMC) with Ephemeral OS disks for node types
 ms.topic: how-to
-ms.date: 7/14/2022
+ms.author: tomcassidy
+author: tomvcassidy
+ms.service: azure-service-fabric
+services: service-fabric
+ms.date: 08/23/2024
 ---
 
-# Introduction to Service Fabric managed cluster with Ephemeral OS disks for node types (Preview)
-Azure Service Fabric managed clusters by default use managed OS disks for the nodes in a given node type. To be more cost efficient, managed clusters provide the ability to configure Ephemeral OS disks. Ephemeral OS disks are created on the local virtual machine (VM) storage and not saved to the remote Azure Storage. Ephemeral OS disks are free and replace the need to use managed OS disks.
+# Introduction to Service Fabric managed cluster with Ephemeral OS disks for node types
+Azure Service Fabric managed clusters by default use managed OS disks for the nodes in a given node type. To be more cost efficient, managed clusters provide configuration of Ephemeral OS disks. Ephemeral OS disks are created on the local virtual machine (VM) storage and not saved to the remote Azure Storage. Ephemeral OS disks are free and replace the need to use managed OS disks.
 
 The key benefits of ephemeral OS disks are: 
 
@@ -15,7 +19,7 @@ The key benefits of ephemeral OS disks are:
 * Ability to fast reset or reimage VMs and scale set instances to the original boot state. 
 * Available in all Azure regions. 
 
-Ephemeral OS disks work well where applications are tolerant of individual VM failures but are more affected by VM deployment time or reimaging of individual VM instances. They don't provide data backup / restore guarantee as managed OS disks do.
+Ephemeral OS disks work well where applications are tolerant of individual VM failures but affected by VM deployment time or reimaging of individual VM instances. They don't provide data backup / restore guarantee as managed OS disks do.
 
 This article describes how to create a Service Fabric managed cluster node types specifically with Ephemeral OS disks using an Azure Resource Manager template (ARM template).
 
@@ -78,7 +82,7 @@ If you need to create a new client certificate, follow the steps in [set and ret
     Wait for the deployment to be completed successfully.
 
 4. To configure a node type to use Ephemeral OS disks through your own template:
-   * Use Service Fabric API version 2022-06-01-preview and above
+   * Use Service Fabric API version 2022-06-01-preview or more recent
    * Edit the template, azuredeploy.json, and add the following properties under the node type section:
        ```JSON
       "properties": { 

@@ -6,7 +6,7 @@ ms.author: tomcassidy
 author: tomvcassidy
 ms.service: azure-service-fabric
 services: service-fabric
-ms.date: 07/14/2022
+ms.date: 08/23/2024
 ---
 
 # Restoring backup in Azure Service Fabric
@@ -25,7 +25,7 @@ For example, you can configure a service to back up its data to protect against 
 - To trigger a restore, the _Fault Analysis Service (FAS)_ must be enabled for the cluster.
 - The _Backup Restore Service (BRS)_ created the backup.
 - The restore can only be triggered at a partition.
-- Install Microsoft.ServiceFabric.Powershell.Http Module (Preview) for making configuration calls.
+- Install Microsoft.ServiceFabric.Powershell.Http Module for making configuration calls.
 
 ```powershell
     Install-Module -Name Microsoft.ServiceFabric.Powershell.Http -AllowPrerelease

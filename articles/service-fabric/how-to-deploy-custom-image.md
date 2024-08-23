@@ -10,7 +10,7 @@ services: service-fabric
 ms.date: 09/12/2023
 ---
 
-# Deploy a custom Windows or Azure Marketplace virtual machine scale set image on new node types within a Service Fabric Managed Cluster (preview)
+# Deploy a custom Windows or Azure Marketplace virtual machine scale set image on new node types within a Service Fabric Managed Cluster
 
 Custom windows images are like marketplace images, but you create them yourself for each new node type within a cluster. Custom images can be used to bootstrap configurations such as preloading applications, application configurations, and other OS configurations. Once you create a custom windows image, you can then deploy to one or more new node types within a Service Fabric Managed Cluster. Customers can also use a marketplace image. Azure Marketplace images are clones of entire computer systems including operating system, application, and state information. Service Fabric managed clusters allow you to utilize these images for your node types within your Service Fabric managed cluster.
 

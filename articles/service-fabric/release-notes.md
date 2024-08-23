@@ -1,7 +1,7 @@
 ---
 title: Azure Service Fabric releases
 description: Release notes for Azure Service Fabric. Includes information on the latest features and improvements in Service Fabric.
-ms.date: 07/31/2024
+ms.date: 08/23/2024
 ms.topic: reference
 ms.author: tomcassidy
 author: tomvcassidy
@@ -24,12 +24,12 @@ The following resources are also available:
 
 ## Service Fabric 10.1
 
-We're excited to announce that the 10.1 release of the Service Fabric runtime has started rolling out to the various Azure regions along with tooling and SDK updates. The updates for .NET SDK, Java SDK, and Service Fabric runtimes can be downloaded from the links provided in Release Notes. The SDK, NuGet packages, and Maven repositories are available in all regions within 7-10 days.
+We're excited to announce that the 10.1 release of the Service Fabric runtime started rolling out to the various Azure regions along with tooling and SDK updates. The updates for .NET SDK, Java SDK, and Service Fabric runtimes can be downloaded from the links provided in Release Notes. The SDK, NuGet packages, and Maven repositories are available in all regions within 7-10 days.
 
 ### Key announcements
-- Service Fabric runtime defines two client roles - Admin and Client. The Admin role is highly privileged, and undistinguishable from the runtime itself which can be problematic in shared clusters, where all tenants have Admin privileges and can perform unintended destructive operations on the services of another tenant. In this release we are introducing third client role - ElevatedAdmin, which, combined with properly configured Security/ClientAccess section of cluster manifest, can prevent the described scenario.
+- Service Fabric runtime defines two client roles - Admin and Client. The Admin role is highly privileged, and undistinguishable from the runtime itself, which can be problematic in shared clusters, where all tenants have Admin privileges and can perform unintended destructive operations on the services of another tenant. In this release, we introduce a third client role - ElevatedAdmin, which, combined with properly configured Security/ClientAccess section of cluster manifest, can prevent the described scenario.
 - Service Fabric now emits a health event visible in SFX/SFE when Sessions are exhausted.
-- This allows the weight of InBuild Auxiliary replicas to be set when applied to InBuild throttling. A higher weight means that an InBuild Auxiliary replica will take up more of the InBuild limit, and likewise a lower weight would consume less of the limit, allowing more replicas to be placed InBuild before the limit is reached.
+- This allows the weight of InBuild Auxiliary replicas to be set when applied to InBuild throttling. A higher weight means that an InBuild Auxiliary replica takes up more of the InBuild limit, and likewise a lower weight would consume less of the limit, allowing more replicas to be placed InBuild before the limit is reached.
 - Starting with Cumulative Update 3.0 (CU3) of the Service Fabric 10.1 runtime, the .NET 8 runtime is supported.
     - For those interested in using .NET 8, keep the following in mind:
         - You need to rebuild and redeploy your applications with .NET 8. This step isn't necessary if you want to continue using older versions of .NET.
@@ -107,9 +107,9 @@ We're excited to announce that 9.0 release of the Service Fabric runtime has sta
 - Enforce a configurable Max value on the InstanceCloseDelayDuration
 - Added ability to enumerate actor reminders
 - Made updates to platform events
-- Introduced a property in Service Fabric runtime that can be set via SFRP as the ARM resource ID
+- Introduced a property in Service Fabric runtime that can be set via SFRP as the Azure Resource Manager resource ID
 - Exposed application type provision timestamp
-- Support added for Service Fabric Resource Provider (SFRP) metadata to application type + version entities, starting with ARM resource ID
+- Support added for Service Fabric Resource Provider (SFRP) metadata to application type + version entities, starting with Azure Resource Manager resource ID
 - Windows Server 2022 is now supported as of the 9.0 CU2 release.
 - Mirantis Container runtime support on Windows for Service Fabric containers
 - The Microsoft Web Platform Installer (WebPI) used for installing Service Fabric SDK and Tools was retired on July 1, 2022.
@@ -132,12 +132,12 @@ We're excited to announce that 9.0 release of the Service Fabric runtime has sta
 
 ## Service Fabric 8.2
 
-We're excited to announce that 8.2 release of the Service Fabric runtime has started rolling out to the various Azure regions along with tooling and SDK updates. The updates for .NET SDK, Java SDK and Service Fabric runtime are available through Web Platform Installer, NuGet packages and Maven repositories.
+We're excited to announce that 8.2 release of the Service Fabric runtime started rollout to the various Azure regions along with tooling and SDK updates. The updates for .NET SDK, Java SDK, and Service Fabric runtime are available through Web Platform Installer, NuGet packages, and Maven repositories.
 
 ### Key announcements
 - Expose an API in Cluster Manager to note if upgrade is impactful
 - Azure Service Fabric blocks deployments that don't meet Silver or Gold durability requirements starting on 11/10/2022 (The date is extended from 10/30/2022 to 11/10/2022). Five VMs or more will be enforced with this change for newer clusters created after 11/10/2022 to help avoid data loss from VM-level infrastructure requests for production workloads. VM count requirement isn't changing for Bronze durability. Enforcement for existing clusters will be rolled out in the coming months.
-- Azure Service Fabric node types with Virtual Machine Scale Set durability of Silver or Gold should always have the property "virtualMachineProfile.osProfile.windowsConfiguration.enableAutomaticUpdates" set to false in the scale set model definition. Setting enableAutomaticUpdates to false will prevent unintended OS restarts due to the Windows updates like patching, which can impact the production workloads.
+- Azure Service Fabric node types with Virtual Machine Scale Set durability of Silver or Gold should always have the property "virtualMachineProfile.osProfile.windowsConfiguration.enableAutomaticUpdates" set to false in the scale set model definition. Setting enableAutomaticUpdates to false prevents unintended OS restarts due to the Windows updates like patching, which can impact the production workloads.
 Instead, you should enable Automatic OS upgrades through Virtual Machine Scale Set OS Image updates by setting "enableAutomaticOSUpgrade" to true. With automatic OS image upgrades enabled on your scale set, an extra patching process through Windows Update isn't required.
 
 ### Service Fabric 8.2 releases
@@ -155,7 +155,7 @@ Instead, you should enable Automatic OS upgrades through Virtual Machine Scale S
 
 ## Service Fabric 8.1
 
-We're excited to announce that 8.1 release of the Service Fabric runtime has started rolling out to the various Azure regions along with tooling and SDK updates. The updates for .NET SDK, Java SDK and Service Fabric runtime are available through Web Platform Installer, NuGet packages and Maven repositories.
+We're excited to announce that 8.1 release of the Service Fabric runtime started rollout to the various Azure regions along with tooling and SDK updates. The updates for .NET SDK, Java SDK and Service Fabric runtime are available through Web Platform Installer, NuGet packages and Maven repositories.
 
 ### Key announcements
 - Added support for Auxiliary Replica
@@ -177,7 +177,7 @@ We're excited to announce that 8.1 release of the Service Fabric runtime has sta
 
 ## Service Fabric 8.0
 
-We are excited to announce that 8.0 release of the Service Fabric runtime has started rolling out to the various Azure regions along with tooling and SDK updates. The updates for .NET SDK, Java SDK and Service Fabric runtime are available through Web Platform Installer, NuGet packages and Maven repositories.
+We're excited to announce that 8.0 release of the Service Fabric runtime has started rolling out to the various Azure regions along with tooling and SDK updates. The updates for .NET SDK, Java SDK and Service Fabric runtime are available through Web Platform Installer, NuGet packages and Maven repositories.
 
 ### Key announcements
 
@@ -296,21 +296,21 @@ We also have published updates to end of support date for major releases startin
 
 Azure Service Fabric 7.0 is now available! You are able to update to 7.0 through the Azure portal or via an Azure Resource Manager deployment. Due to customer feedback on releases around the holiday period we will not begin automatically updating clusters set to receive automatic upgrades until January.
    In January, we resume the standard roll-out procedure and clusters with automatic upgrades enabled will begin to receive the 7.0 update automatically. We provide another announcement before the roll-out begins.
-We will also update our planned release dates to indicate that we take this policy into consideration. Look here for updates on our future [release schedules](https://github.com/Microsoft/service-fabric/#service-fabric-release-schedule).
+We also update our planned release dates to indicate that we take this policy into consideration. Look here for updates on our future [release schedules](https://github.com/Microsoft/service-fabric/#service-fabric-release-schedule).
 
 #### Key announcements
- - [**KeyVaultReference support for application secrets (Preview)**](./service-fabric-keyvault-references.md): Service Fabric applications that have enabled [Managed Identities](./concepts-managed-identity.md) can now directly reference a Key Vault secret URL as an environment variable, application parameter, or container repository credential. Service Fabric will automatically resolve the secret using the application's managed identity. 
+ - [**KeyVaultReference support for application secrets**](./service-fabric-keyvault-references.md): Service Fabric applications that have enabled [Managed Identities](./concepts-managed-identity.md) can now directly reference a Key Vault secret URL as an environment variable, application parameter, or container repository credential. Service Fabric will automatically resolve the secret using the application's managed identity. 
      
 - **Improved upgrade safety for stateless services**: To guarantee availability during an application upgrade, we have introduced new 
   configurations to define the [minimum number of instances for stateless services](/dotnet/api/system.fabric.description.statelessservicedescription) to be considered available. Previously this value 
-  was 1 for all services and was not changeable. With this new per-service safety check, you can ensure that your services retain a 
+  was 1 for all services and wasn't changeable. With this new per-service safety check, you can ensure that your services retain a 
   minimum number of up instances during application upgrades, cluster upgrades, and other maintenance that relies on Service Fabric’s 
   health and safety checks.
   
 - [**Resource Limits for User Services**](./service-fabric-resource-governance.md#enforcing-the-resource-limits-for-user-services): Users can set up resource limits for the user services on a node to prevent scenarios such as 
   resource exhaustion of the Service Fabric system services. 
   
-- [**Very High service move cost**](./service-fabric-cluster-resource-manager-movement-cost.md) for a replica type. Replicas with Very High move cost will be moved only if there is a constraint violation in the cluster that cannot be fixed in any other way. Refer to the linked document for additional information on when usage of a “Very High” move cost is reasonable and for more considerations.
+- [**Very High service move cost**](./service-fabric-cluster-resource-manager-movement-cost.md) for a replica type. Replicas with Very High move cost will be moved only if there's a constraint violation in the cluster that can't be fixed in any other way. Refer to the linked document for additional information on when usage of a “Very High” move cost is reasonable and for more considerations.
   
 -  **Additional cluster safety checks**: In this release, we introduced a configurable seed node quorum safety check. This allows you to 
    customize how many seed nodes must be available during cluster life-cycle and management scenarios. Operations that would take the 
@@ -323,9 +323,9 @@ We will also update our planned release dates to indicate that we take this poli
 - Announcing availability of the [**ReliableCollectionsMissingTypesTool**](https://github.com/hiadusum/ReliableCollectionsMissingTypesTool): 
 This tool helps validate that types used in reliable collections are forward and backward compatible during a rolling application upgrade. This helps prevent upgrade failures or data loss and data corruption due to missing or incompatible types.
 
-- [**Enable stable reads on secondary replicas**](./service-fabric-reliable-services-configuration.md#configuration-names-1): Stable reads restrict secondary replicas to returning values which have been quorum-acked.
+- [**Enable stable reads on secondary replicas**](./service-fabric-reliable-services-configuration.md#configuration-names-1): Stable reads restrict secondary replicas to returning values, which are quorum-acked.
 
-In addition, this release contains other new features, bug fixes, and supportability, reliability, and performance improvements. For the full list of changes, please refer to the [release notes](https://github.com/Azure/service-fabric/blob/master/release_notes/Service_Fabric_ReleaseNotes_70.md).
+In addition, this release contains other new features, bug fixes, and supportability, reliability, and performance improvements. For the full list of changes, refer to the [release notes](https://github.com/Azure/service-fabric/blob/master/release_notes/Service_Fabric_ReleaseNotes_70.md).
 
 #### Service Fabric 7.0 releases
 
@@ -347,11 +347,11 @@ This release includes supportability, reliability, and performance improvements,
 
 What's new in Service Fabric 6.5:
 
-- Service Fabric Explorer includes an [Image Store Viewer](service-fabric-visualizing-your-cluster.md#image-store-viewer) for inspecting applications you've uploaded to image store.
+- Service Fabric Explorer includes an [Image Store Viewer](service-fabric-visualizing-your-cluster.md#image-store-viewer) for inspecting applications you upload to image store.
 
 - [Patch Orchestration Application (POA)](service-fabric-patch-orchestration-application.md) version [1.4.0](https://github.com/microsoft/Service-Fabric-POA/releases/tag/v1.4.0) includes many self-diagnostic improvements. Customers of POA are recommended to move to this version.
 
-- [EventStore Service is enabled by default](service-fabric-visualizing-your-cluster.md#event-store) for Service Fabric 6.5 clusters unless you have opted out.
+- [EventStore Service is enabled by default](service-fabric-visualizing-your-cluster.md#event-store) for Service Fabric 6.5 clusters unless you opt out.
 
 - Added [replica lifecycle events](service-fabric-diagnostics-event-generation-operational.md#replica-events) for stateful services.
 
@@ -361,7 +361,7 @@ What's new in Service Fabric 6.5:
 
 - Visual Studio support for [publishing .NET Core apps to Linux-based clusters](service-fabric-how-to-publish-linux-app-vs.md).
 
-- [Azure Service Fabric CLI (SFCTL)](./service-fabric-cli.md) will be installed automatically for Service Fabric 6.5 (and later versions) when you upgrade or create a new Linux cluster on Azure.
+- [Azure Service Fabric CLI (SFCTL)](./service-fabric-cli.md) installs automatically for Service Fabric 6.5 (and later versions) when you upgrade or create a new Linux cluster on Azure.
 
 - [SFCTL](./service-fabric-cli.md) is installed by default on MacOS/Linux OneBox clusters.
 
