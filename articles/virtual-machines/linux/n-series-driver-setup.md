@@ -26,7 +26,7 @@ If you choose to install NVIDIA GPU drivers manually, this article provides supp
 
 For N-series VM specs, storage capacities, and disk details, see [GPU Linux VM sizes](../sizes-gpu.md?toc=/azure/virtual-machines/linux/toc.json).
 
-[!INCLUDE [virtual-machines-n-series-linux-support](../../../includes/virtual-machines-n-series-linux-support.md)]
+[!INCLUDE [virtual-machines-n-series-linux-support](../includes/virtual-machines-n-series-linux-support.md)]
 
 ## Install CUDA drivers on N-series VMs
 
@@ -172,7 +172,7 @@ Deploy RDMA-capable N-series VMs from one of the images in the Azure Marketplace
 
 * **Ubuntu 16.04 LTS** - Configure RDMA drivers on the VM and register with Intel to download Intel MPI:
 
-  [!INCLUDE [virtual-machines-common-ubuntu-rdma](../../../includes/virtual-machines-common-ubuntu-rdma.md)]
+  [!INCLUDE [virtual-machines-common-ubuntu-rdma](../includes/virtual-machines-common-ubuntu-rdma.md)]
 
 * **CentOS-based 7.4 HPC** - RDMA drivers and Intel MPI 5.1 are installed on the VM.
 

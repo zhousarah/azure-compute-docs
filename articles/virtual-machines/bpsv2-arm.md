@@ -46,7 +46,7 @@ Bpsv2 VMs offer up to 16 vCPU and 64 GiB of RAM and are optimized for scale-out 
 
 
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## Other sizes and information
 

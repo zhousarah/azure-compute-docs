@@ -80,7 +80,7 @@ Daldsv6-series virtual machines support Standard SSD, Standard HDD, and Premium 
 | Standard_D64alds_v6 | 64   | 128         | 4x880 GiB                          | 32             | 115200/2880                                         | 120000/3400                                                | 115200/2880                                                           | 120000/3400                                                                  | 8        | 36000                        | 32000                        | 1200000/5760                                  |
 | Standard_D96alds_v6 | 96   | 192         | 6x880 GiB                          | 32             | 175000/4320                                         | 175000/5090                                                | 175000/4320                                                           | 175000/5090                                                                  | 8        | 40000                        | 40000                        | 1800000/8640                                  |
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## Other sizes and information
 

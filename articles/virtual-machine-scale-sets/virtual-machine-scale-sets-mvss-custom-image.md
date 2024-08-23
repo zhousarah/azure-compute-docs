@@ -106,4 +106,4 @@ In this example, use the `resourceId` function to get the resource ID of the ima
 
 ## Next Steps
 
-[!INCLUDE [mvss-next-steps-include](../../includes/mvss-next-steps.md)]
+[!INCLUDE [mvss-next-steps-include](./includes/mvss-next-steps.md)]

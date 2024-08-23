@@ -6,10 +6,10 @@ ms.author: tomcassidy
 author: tomvcassidy
 ms.service: azure-service-fabric
 services: service-fabric
-ms.date: 07/14/2022
+ms.date: 08/23/2024
 ---
 
-# Docker Compose deployment support in Azure Service Fabric (Preview)
+# Docker Compose deployment support in Azure Service Fabric
 
 Docker uses the [docker-compose.yml](https://docs.docker.com/compose) file for defining multi-container applications. To make it easy for customers familiar with Docker to orchestrate existing container applications on Azure Service Fabric, we have included preview support for Docker Compose deployment natively in the platform. Service Fabric can accept version 3 and later of `docker-compose.yml` files. 
 
@@ -52,7 +52,7 @@ To start a Compose deployment upgrade through PowerShell, use the following comm
 Start-ServiceFabricComposeDeploymentUpgrade -DeploymentName TestContainerApp -Compose docker-compose-v2.yml -Monitored -FailureAction Rollback
 ```
 
-To rollback the Compose deployment upgrade through PowerShell, use the following command:
+To roll back the Compose deployment upgrade through PowerShell, use the following command:
 
 ```powershell
 Start-ServiceFabricComposeDeploymentRollback -DeploymentName TestContainerApp
@@ -90,7 +90,7 @@ To start a Compose deployment upgrade, use the following command:
 sfctl compose upgrade --deployment-name TestContainerApp --file-path docker-compose-v2.yml [ [ --user --encrypted-pass ] | [ --user --has-pass ] ] [--upgrade-mode Monitored] [--failure-action Rollback] [ --timeout ]
 ```
 
-To rollback the Compose deployment upgrade, use the following command:
+To roll back the Compose deployment upgrade, use the following command:
 
 ```shell
 sfctl compose upgrade-rollback --deployment-name TestContainerApp [ --timeout ]

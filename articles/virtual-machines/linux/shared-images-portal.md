@@ -38,7 +38,7 @@ To complete the example in this article, you must have an existing managed image
 When working through this article, replace the resource group and VM names where needed.
 
  
-[!INCLUDE [virtual-machines-common-shared-images-portal](../../../includes/virtual-machines-common-shared-images-portal.md)]
+[!INCLUDE [virtual-machines-common-shared-images-portal](../includes/virtual-machines-common-shared-images-portal.md)]
 
 ## Create VMs 
 

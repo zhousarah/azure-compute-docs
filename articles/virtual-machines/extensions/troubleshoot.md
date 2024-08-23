@@ -12,7 +12,7 @@ ms.collection: windows
 ms.date: 04/21/2023
 ---
 # Troubleshooting Azure Windows VM extension failures
-[!INCLUDE [virtual-machines-common-extensions-troubleshoot](../../../includes/virtual-machines-common-extensions-troubleshoot.md)]
+[!INCLUDE [virtual-machines-common-extensions-troubleshoot](../includes/virtual-machines-common-extensions-troubleshoot.md)]
 
 ## Viewing extension status
 Azure Resource Manager templates can be executed from Azure PowerShell. Once the template is executed, the extension status can be viewed from Azure Resource Explorer or the command-line tools.

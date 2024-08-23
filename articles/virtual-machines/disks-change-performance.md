@@ -24,7 +24,7 @@ To learn more about how the performance of a disk works with the performance of 
 
 ## Restrictions
 
-[!INCLUDE [virtual-machines-disks-performance-tiers-restrictions](../../includes/virtual-machines-disks-performance-tiers-restrictions.md)]
+[!INCLUDE [virtual-machines-disks-performance-tiers-restrictions](./includes/virtual-machines-disks-performance-tiers-restrictions.md)]
 
 ## How it works
 

@@ -42,7 +42,7 @@ Learn more about the:
 
 [!INCLUDE [hpc-include.md](./includes/hpc-include.md)]
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## Other sizes and information
 

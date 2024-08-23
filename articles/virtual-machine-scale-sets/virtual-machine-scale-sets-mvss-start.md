@@ -212,4 +212,4 @@ However, the identifier of the virtual network is not enough. Provide the specif
 
 ## Next steps
 
-[!INCLUDE [mvss-next-steps-include](../../includes/mvss-next-steps.md)]
+[!INCLUDE [mvss-next-steps-include](./includes/mvss-next-steps.md)]

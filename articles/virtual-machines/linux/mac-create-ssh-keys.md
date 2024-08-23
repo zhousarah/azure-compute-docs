@@ -26,7 +26,7 @@ For more background and examples, see [Detailed steps to create SSH key pairs](c
 
 For additional ways to generate and use SSH keys on a Windows computer, see [How to use SSH keys with Windows on Azure](ssh-from-windows.md).
 
-[!INCLUDE [virtual-machines-common-ssh-support](../../../includes/virtual-machines-common-ssh-support.md)]
+[!INCLUDE [virtual-machines-common-ssh-support](../includes/virtual-machines-common-ssh-support.md)]
 
 > [!Note]
 > ED25519 SSH key support for Linux VMs is now in preview in all regions including sovereign clouds.

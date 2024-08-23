@@ -7,7 +7,7 @@ author: tomvcassidy
 ms.service: azure-service-fabric
 ms.custom: devx-track-arm-template
 services: service-fabric
-ms.date: 07/14/2022
+ms.date: 08/23/2024
 ---
 
 # Convert cluster certificates from thumbprint-based declarations to common names
@@ -88,7 +88,7 @@ Ensure you have a good understanding of the differences and the implications of 
 
 ## Update the cluster's Azure Resource Manager template and deploy
 
-Manage your Service Fabric clusters with Azure Resource Manager (ARM) templates. An alternative, which also uses JSON artifacts, is the [Azure Resource Explorer (preview)](https://resources.azure.com). An equivalent experience isn't available in the Azure portal at this time.
+Manage your Service Fabric clusters with Azure Resource Manager (ARM) templates. An alternative, which also uses JSON artifacts, is the [Azure Resource Explorer](https://resources.azure.com). An equivalent experience isn't available in the Azure portal at this time.
 
 If the original template corresponding to an existing cluster isn't available, an equivalent template can be obtained in the Azure portal. Go to the resource group that contains the cluster, and select **Export template** from the **Automation** menu on the left. Then select the resources you want. At a minimum, the virtual machine scale set and cluster resources, respectively, should be exported. The generated template can also be downloaded. This template might require changes before it's fully deployable. The template also might not match the original one exactly. It's a reflection of the current state of the cluster resource.
 

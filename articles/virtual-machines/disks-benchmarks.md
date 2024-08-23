@@ -17,7 +17,7 @@ We have used common benchmarking tools DiskSpd and FIO, for Windows and Linux re
 
 To follow the examples below, create a Standard_D8ds_v4 and attach four premium SSDs to the VM. Of the four disks, configure three with host caching as "None" and stripe them into a volume called NoCacheWrites. Configure host caching as "ReadOnly" on the remaining disk and create a volume called CacheReads with this disk. Using this setup, you are able to see the maximum Read and Write performance from a Standard_D8ds_v4 VM. For detailed steps about creating a Standard_D8ds_v4 with premium SSDs, see [Designing for high performance](premium-storage-performance.md).
 
-[!INCLUDE [virtual-machines-disks-benchmarking](../../includes/virtual-machines-managed-disks-benchmarking.md)]
+[!INCLUDE [virtual-machines-disks-benchmarking](./includes/virtual-machines-managed-disks-benchmarking.md)]
 
 ## Next steps
 

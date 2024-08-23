@@ -41,7 +41,7 @@ All HX-series VMs feature 400 Gb/s NDR InfiniBand from NVIDIA Networking to enab
 
 [!INCLUDE [hpc-include](./includes/hpc-include.md)]
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 
 ## Other sizes and information

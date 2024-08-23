@@ -6,7 +6,7 @@ ms.author: tomcassidy
 author: tomvcassidy
 ms.service: azure-service-fabric
 services: service-fabric
-ms.date: 07/14/2022
+ms.date: 08/23/2024
 ---
 
 # Service Fabric cluster capacity planning considerations
@@ -156,7 +156,9 @@ The capacity needs of your cluster will be determined by your specific workload 
 
 #### Virtual machine sizing
 
-**For production workloads, the recommended VM size (SKU) is [Standard D2_V2](../virtual-machines/dv2-dsv2-series.md) (or equivalent) with a minimum of 50 GB of local SSD, 2 cores, and 4 GiB of memory.** A minimum of 50 GB local SSD is recommended, however some workloads (such as those running Windows containers) will require larger disks. 
+For production workloads, we recommend a VM size (SKU) with the following:
+* At least 2 cores.
+* A minimum of 50 GB local SSD. However, some workloads, such as those running Windows containers, require larger disks.
 
 By default, local SSD is configured to 64 GB. The size can be configured in the MaxDiskQuotaInMB setting of the Diagnostics section of cluster settings.
 

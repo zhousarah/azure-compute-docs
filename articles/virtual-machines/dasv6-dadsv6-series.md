@@ -80,7 +80,7 @@ Daldsv6-series virtual machines support Standard SSD, Standard HDD, and Premium 
 
 <sup>1</sup> Dadsv6-series VMs can [burst](disk-bursting.md) their disk performance and get up to their bursting max for up to 30 minutes at a time.
 
-[!INCLUDE [virtual-machines-common-sizes-table-defs](../../includes/virtual-machines-common-sizes-table-defs.md)]
+[!INCLUDE [virtual-machines-common-sizes-table-defs](./includes/virtual-machines-common-sizes-table-defs.md)]
 
 ## Other sizes and information
 

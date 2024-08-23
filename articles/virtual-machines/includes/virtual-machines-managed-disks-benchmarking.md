@@ -43,7 +43,7 @@ Run the following command for 30 seconds of warm-up and 30 seconds of measuremen
 
 Results show that the Standard_D8ds_v4 VM is delivering its maximum write IOPS limit of 12,800.
 
-:::image type="content" source="../articles/virtual-machines/linux/media/premium-storage-performance/disks-benchmarks-diskspd-max-write-io-per-second.png" alt-text="For 3208642560 total bytes, max total I/Os of 391680, with a total of 101.97 MiB/s, and a total of 13052.65 I/O per second.":::
+:::image type="content" source="../linux/media/premium-storage-performance/disks-benchmarks-diskspd-max-write-io-per-second.png" alt-text="For 3208642560 total bytes, max total I/Os of 391680, with a total of 101.97 MiB/s, and a total of 13052.65 I/O per second.":::
 
 ### Maximum read IOPS
 
@@ -55,7 +55,7 @@ Run the following command for two hours of warm-up and 30 seconds of measurement
 
 Results show that the Standard_D8ds_v4 VM is delivering its maximum read IOPS limit of 77,000.
 
-:::image type="content" source="../articles/virtual-machines/linux/media/premium-storage-performance/disks-benchmarks-diskspd-max-read-io-per-second.png" alt-text="For 9652785152 total bytes, there were 2356637 total I/Os, at 306.72 total MiB/s, and a total of 78521.23 I/Os per second.":::
+:::image type="content" source="../linux/media/premium-storage-performance/disks-benchmarks-diskspd-max-read-io-per-second.png" alt-text="For 9652785152 total bytes, there were 2356637 total I/Os, at 306.72 total MiB/s, and a total of 78521.23 I/Os per second.":::
 
 ### Maximum throughput
 
@@ -105,7 +105,7 @@ sudo fio --runtime 30 fiowrite.ini
 ```
 
 While the test runs, you are able to see the number of write IOPS the VM and Premium disks are delivering. As shown in the sample below, the Standard_D8ds_v4 VM is delivering its maximum write IOPS limit of 12,800 IOPS.  
-    :::image type="content" source="../articles/virtual-machines/linux/media/premium-storage-performance/fio-uncached-writes-1.jpg" alt-text="Number of write IOPS VM and premium SSDs are delivering, shows that writes are 13.1k IOPS.":::
+    :::image type="content" source="../linux/media/premium-storage-performance/fio-uncached-writes-1.jpg" alt-text="Number of write IOPS VM and premium SSDs are delivering, shows that writes are 13.1k IOPS.":::
 
 ### Maximum read IOPS
 
@@ -138,7 +138,7 @@ sudo fio --runtime 30 fioread.ini
 ```
 
 While the test runs, you are able to see the number of read IOPS the VM and Premium disks are delivering. As shown in the sample below, the Standard_D8ds_v4 VM is delivering more than 77,000 Read IOPS. This is a combination of the disk and the cache performance.  
-    :::image type="content" source="../articles/virtual-machines/linux/media/premium-storage-performance/fio-cached-reads-1.jpg" alt-text="Screenshot of the number of write IOPS VM and premium SSDs are delivering, shows that reads are 78.6k.":::
+    :::image type="content" source="../linux/media/premium-storage-performance/fio-cached-reads-1.jpg" alt-text="Screenshot of the number of write IOPS VM and premium SSDs are delivering, shows that reads are 78.6k.":::
 
 ### Maximum read and write IOPS
 
@@ -176,7 +176,7 @@ sudo fio --runtime 30 fioreadwrite.ini
 ```
 
 While the test runs, you are able to see the number of combined read and write IOPS the VM and Premium disks are delivering. As shown in the sample below, the Standard_D8ds_v4 VM is delivering more than 90,000 combined Read and Write IOPS. This is a combination of the disk and the cache performance.  
-    :::image type="content" source="../articles/virtual-machines/linux/media/premium-storage-performance/fio-both-1.jpg" alt-text="Combined read and write IOPS, shows that reads are 78.3k and writes are 12.6k IOPS.":::
+    :::image type="content" source="../linux/media/premium-storage-performance/fio-both-1.jpg" alt-text="Combined read and write IOPS, shows that reads are 78.3k and writes are 12.6k IOPS.":::
 
 ### Maximum combined throughput
 

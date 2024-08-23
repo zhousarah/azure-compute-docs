@@ -176,7 +176,7 @@ For your dev/test workload, you might want a mix of Standard and Premium disks t
 
 # [Azure PowerShell](#tab/azure-powershell)
 
-[!INCLUDE [managed-disk-premium-ssd-v2-conversion-preview](../../includes/managed-disk-premium-ssd-v2-conversion-preview.md)]
+[!INCLUDE [managed-disk-premium-ssd-v2-conversion-preview](./includes/managed-disk-premium-ssd-v2-conversion-preview.md)]
 
 ```azurepowershell-interactive
 
@@ -212,7 +212,7 @@ Start-AzVM -ResourceGroupName $vm.ResourceGroupName -Name $vm.Name
 
 # [Azure CLI](#tab/azure-cli)
 
-[!INCLUDE [managed-disk-premium-ssd-v2-conversion-preview](../../includes/managed-disk-premium-ssd-v2-conversion-preview.md)]
+[!INCLUDE [managed-disk-premium-ssd-v2-conversion-preview](./includes/managed-disk-premium-ssd-v2-conversion-preview.md)]
 
  ```azurecli
 
@@ -247,7 +247,7 @@ az vm start --ids $vmId
 
 # [Portal](#tab/azure-portal)
 
-[!INCLUDE [managed-disk-premium-ssd-v2-conversion-preview](../../includes/managed-disk-premium-ssd-v2-conversion-preview.md)]
+[!INCLUDE [managed-disk-premium-ssd-v2-conversion-preview](./includes/managed-disk-premium-ssd-v2-conversion-preview.md)]
 
 Follow these steps:
 
@@ -266,7 +266,7 @@ The disk type conversion is instantaneous. You can start your VM after the conve
 
 ## Migrate to Premium SSD v2 or Ultra Disk using snapshots
 
-[!INCLUDE [managed-disk-premium-ssd-v2-conversion-preview](../../includes/managed-disk-premium-ssd-v2-conversion-preview.md)]
+[!INCLUDE [managed-disk-premium-ssd-v2-conversion-preview](./includes/managed-disk-premium-ssd-v2-conversion-preview.md)]
 
 Currently, you can only migrate an existing disk to either a Premium SSD v2 or an Ultra Disk through snapshots stored on Standard Storage (Incremental Standard HDD Snapshot). Migration with snapshots stored on Premium storage and other options isn't supported. Migration via snapshot from Premium SSD v2 or Ultra Disk to Premium SSD v1, Standard SSD and Standard HDD is not supported.
 

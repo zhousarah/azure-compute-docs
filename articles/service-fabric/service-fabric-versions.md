@@ -7,7 +7,7 @@ author: tomvcassidy
 ms.service: azure-service-fabric
 ms.custom: linux-related-content
 services: service-fabric
-ms.date: 07/31/2024
+ms.date: 08/23/2024
 ---
 
 # Service Fabric supported versions
@@ -50,7 +50,7 @@ For currently supported versions, all releases are listed. For currently unsuppo
 | 8.2 CU9<br>8.2.1748.9590 | 8.0 CU3<br>8.0.536.9590 | 8.0 | Version 5.2 or earlier | .NET 6 <br> .NET Framework >= 4.6.2 | [See supported OS version](#supported-windows-versions-and-support-end-date) | March 31, 2023 | [Release notes](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service_Fabric_ReleaseNotes_82CU9.md) |
 | 8.1 CU4<br>8.1.388.9590 | 7.2 CU7<br>7.2.477.9590 | 8.0 | Version 5.1 or earlier | .NET 5.0, .NET Core >= 3.1, <br> .NET Framework >= 4.5 | [See supported OS version](#supported-windows-versions-and-support-end-date) | June 30, 2022 | Release notes not available |
 | 8.0 CU3<br>8.0.536.9590 | 7.1 CU10<br>7.1.510.9590 | 7.2 | Version 5.0 or earlier | .NET 5.0, .NET Core >= 2.1, <br> .NET Framework >= 4.5 | [See supported OS version](#supported-windows-versions-and-support-end-date) | February 28, 2022 | [Release notes](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service_Fabric_ReleaseNotes_80CU3.md) |
-| 7.2 CU7<br>7.2.477.9590 | 7.0 CU9<br>7.0.478.9590 | 7.1 | Version 4.2 or earlier | .NET 5.0 (Preview), .NET Core >= 2.1, <br> .NET Framework >= 4.5 | [See supported OS version](#supported-windows-versions-and-support-end-date) | November 30, 2021 | [Release notes](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-72CU7-releasenotes.md) |
+| 7.2 CU7<br>7.2.477.9590 | 7.0 CU9<br>7.0.478.9590 | 7.1 | Version 4.2 or earlier | .NET 5.0, .NET Core >= 2.1, <br> .NET Framework >= 4.5 | [See supported OS version](#supported-windows-versions-and-support-end-date) | November 30, 2021 | [Release notes](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-72CU7-releasenotes.md) |
 | 7.1 CU10 <br>7.1.510.9590 |7.0 CU3<br>7.0.466.9590 | Not applicable | Version 4.1 or earlier | .NET Core >= 2.1 <br> .NET Framework >= 4.5 | [See supported OS version](#supported-windows-versions-and-support-end-date) | July 31, 2021 | [Release notes](https://github.com/microsoft/service-fabric/blob/master/release_notes/Service-Fabric-71CU10-releasenotes.md) |
 
 <sup>1</sup> The version shouldn't be out of support.
