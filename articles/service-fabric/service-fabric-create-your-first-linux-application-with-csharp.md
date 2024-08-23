@@ -7,25 +7,25 @@ author: tomvcassidy
 ms.service: azure-service-fabric
 ms.custom: devx-track-dotnet, linux-related-content
 services: service-fabric
-ms.date: 07/14/2022
+ms.date: 08/23/2024
 ---
 
 # Create your first Azure Service Fabric application
 > [!div class="op_single_selector"]
-> * [Java - Linux (Preview)](service-fabric-create-your-first-linux-application-with-java.md)
-> * [C# - Linux (Preview)](service-fabric-create-your-first-linux-application-with-csharp.md)
+> * [Java - Linux](service-fabric-create-your-first-linux-application-with-java.md)
+> * [C# - Linux](service-fabric-create-your-first-linux-application-with-csharp.md)
 >
 >
 
 Service Fabric provides SDKs for building services on Linux in both .NET Core and Java. In this tutorial, we look at how to create an application for Linux and build a service using C# on .NET Core 2.0.
 
 ## Prerequisites
-Before you get started, make sure that you have [set up your Linux development environment](service-fabric-get-started-linux.md). If you are using Mac OS X, you can [set up a Linux one-box environment in a virtual machine using Vagrant](service-fabric-get-started-mac.md).
+Before you get started, make sure that you have [set up your Linux development environment](service-fabric-get-started-linux.md). If you use macOS X, you can [set up a Linux one-box environment in a virtual machine using Vagrant](service-fabric-get-started-mac.md).
 
-You will also want to install the [Service Fabric CLI](service-fabric-cli.md)
+You also want to install the [Service Fabric CLI](service-fabric-cli.md)
 
 ### Install and set up the generators for C#
-Service Fabric provides scaffolding tools which help you create Service Fabric applications from a terminal using Yeoman template generators. Follow these steps to set up the Service Fabric Yeoman template generators for C#:
+Service Fabric provides scaffolding tools that help you create Service Fabric applications from a terminal using Yeoman template generators. Follow these steps to set up the Service Fabric Yeoman template generators for C#:
 
 1. Install nodejs and NPM on your machine
 
@@ -88,17 +88,17 @@ detailed instructions.
 
 Parameters to these commands can be found in the generated manifests inside the application package.
 
-Once the application has been deployed, open a browser and navigate to
+Once the application deploys, open a browser and navigate to
 [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) at
 `http://localhost:19080/Explorer`. Then, expand the **Applications** node and note
-that there is now an entry for your application type and another for the first instance of that type.
+that there's now an entry for your application type and another for the first instance of that type.
 
 > [!IMPORTANT]
 > To deploy the application to a secure Linux cluster in Azure, you need to configure a certificate to validate your application with the Service Fabric runtime. Doing so enables your Reliable Services services to communicate with the underlying Service Fabric runtime APIs. To learn more, see [Configure a Reliable Services app to run on Linux clusters](./service-fabric-configure-certificates-linux.md#configure-a-reliable-services-app-to-run-on-linux-clusters).  
 >
 
 ## Start the test client and perform a failover
-Actor projects do not do anything on their own. They require another service or client to send them messages. The actor
+Actor projects don't do anything on their own. They require another service or client to send them messages. The actor
 template includes a simple test script that you can use to interact with the actor service.
 
 1. Run the script using the watch utility to see the output of the actor service.

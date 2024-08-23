@@ -50,7 +50,7 @@ Sample templates are available: [Service Fabric Stateless Node types template](h
 }
 ```
 
-## Enabling stateless node types using Spot VMs in a Service Fabric managed cluster (Preview)
+## Enabling stateless node types using Spot VMs in a Service Fabric managed cluster
 
 [Azure Spot Virtual Machines on scale sets](../virtual-machine-scale-sets/use-spot.md) enables users to take advantage of unused compute capacity at a significant cost savings. At any point in time when Azure needs the capacity back, the Azure infrastructure evicts these Azure Spot Virtual Machine instances. Therefore, Spot VM node types are great for workloads that can handle interruptions and don't need to be completed within a specific time frame. Recommended workloads include development, testing, batch processing jobs, big data, or other large-scale stateless scenarios.
 

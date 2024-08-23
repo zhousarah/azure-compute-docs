@@ -47,7 +47,7 @@ Service Fabric provides a set of APIs to achieve the following functionality rel
 * X.509 Certificate for encryption of secrets needed to connect to storage to store backups. Refer [article](service-fabric-cluster-creation-via-arm.md) to know how to get or create an X.509 certificate.
 * Service Fabric Reliable Stateful application built using Service Fabric SDK version 3.0 or above. For applications targeting .NET Core 2.0, application should be built using Service Fabric SDK version 3.1 or above.
 * Create Azure Storage account for storing application backups.
-* Install Microsoft.ServiceFabric.Powershell.Http Module (Preview) for making configuration calls.
+* Install Microsoft.ServiceFabric.Powershell.Http Module for making configuration calls.
 
 ```powershell
     Install-Module -Name Microsoft.ServiceFabric.Powershell.Http -AllowPrerelease

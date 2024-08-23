@@ -299,7 +299,7 @@ Azure Service Fabric 7.0 is now available! You are able to update to 7.0 through
 We will also update our planned release dates to indicate that we take this policy into consideration. Look here for updates on our future [release schedules](https://github.com/Microsoft/service-fabric/#service-fabric-release-schedule).
 
 #### Key announcements
- - [**KeyVaultReference support for application secrets (Preview)**](./service-fabric-keyvault-references.md): Service Fabric applications that have enabled [Managed Identities](./concepts-managed-identity.md) can now directly reference a Key Vault secret URL as an environment variable, application parameter, or container repository credential. Service Fabric will automatically resolve the secret using the application's managed identity. 
+ - [**KeyVaultReference support for application secrets**](./service-fabric-keyvault-references.md): Service Fabric applications that have enabled [Managed Identities](./concepts-managed-identity.md) can now directly reference a Key Vault secret URL as an environment variable, application parameter, or container repository credential. Service Fabric will automatically resolve the secret using the application's managed identity. 
      
 - **Improved upgrade safety for stateless services**: To guarantee availability during an application upgrade, we have introduced new 
   configurations to define the [minimum number of instances for stateless services](/dotnet/api/system.fabric.description.statelessservicedescription) to be considered available. Previously this value 
