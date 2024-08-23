@@ -401,6 +401,8 @@
           href: mv2-series.md
         - name: Msv3 and Mdsv3 Medium Memory series
           href: msv3-mdsv3-medium-series.md
+        - name: Msv3 and Mdsv3 High Memory series
+          href: ./sizes/memory-optimized/msv3-mdsv3-high-memory-series.md
       - name: Constrained vCPUs
         href: constrained-vcpu.md
     - name: Storage optimized
@@ -410,8 +412,6 @@
         href: ./sizes/overview.md#storage-optimized
       - name: L family
         items:
-        - name: Msv3 and Mdsv3 High Memory series
-          href: ./sizes/memory-optimized/msv3-mdsv3-high-memory-series.md
         - name: Overview
           displayName: L-series, sizes, size, vm size
           href: ./sizes/storage-optimized/l-family.md
