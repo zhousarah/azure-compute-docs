@@ -5,7 +5,7 @@
  author: roygara
  ms.service: azure-virtual-machines
  ms.topic: include
- ms.date: 01/18/2023
+ ms.date: 08/26/2024
  ms.author: rogarana
  ms.custom: include file
 ---    
@@ -19,3 +19,13 @@
     - The [Azure portal](https://portal.azure.com/)
     - Or an Azure Resource Manager template with an API version that's `2021-04-01` or newer.
 - Not available on some classic VMs. Use [this script](#expanding-without-downtime-classic-vm-sku-support) to get a list of classic VM SKUs that support expanding without downtime.
+- Ultra Disks and Premium SSD v2 disks have preview support for expanding without downtime.
+
+### Preview for Ultra Disk and Premium SSD v2
+
+Currently, you can sign up for a public preview for expanding Ultra Disks and Premium SSD v2 disks without downtime.
+
+The preview has the following additional limitations:
+- You can't expand a disk while a background copy of data is also occurring on the disk.
+- You can't currently expand a VM using NVMe controllers.
+- You can't currently expand a shared Ultra Disk or Premium SSD v2.
