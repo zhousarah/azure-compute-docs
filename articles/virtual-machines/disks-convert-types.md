@@ -41,6 +41,7 @@ The preview allowing direct switching to Premium SSD v2 disks has some additiona
 - If your existing disk is using double encryption, [switch to one of the single encryption options](#disable-double-encryption) before changing to Premium SSD v2.
 - You can't directly switch from a Premium SSD v2 to another disk type. If you want to change a Premium SSD v2 to another disk type, migrate using [snapshots](#migrate-to-premium-ssd-v2-or-ultra-disk-using-snapshots).
 - You can't directly switch from Ultra Disks to Premium SSD v2 disks, migrate using [snapshots](#migrate-to-premium-ssd-v2-or-ultra-disk-using-snapshots).
+- If your disk has Azure Site Recovery configured on it, disable it before changing to Premium SSD v2.
 - If you're using the rest API, use an API version `2020-12-01` or newer for both the Compute Resource Provider and the Disk Resource Provider.
 - Until the conversion process from your previous disk type to Premium SSD v2 is completed, the performance of the disk is degraded, and you can't change or rotate customer-managed keys for the disk if they're in use.
     - You can use the following command to check the conversion process, replace `$diskName` and `$resourceGroupName` with your values: `az disk show -n $diskName  -g  $resourceGroupName --query [completionPercent] -o tsv`
@@ -59,6 +60,9 @@ This preview is currently only available in the following regions:
 - Southeast Asia
 - Central India
 - France Central
+
+> [!NOTE]
+> If you're using Azure Backup and you convert a disk to Premium SSD v2, a full snapshot is taken of the new disk. This is a billable event and you'll be charged for that snapshot.
 
 ### Disable host caching
 
