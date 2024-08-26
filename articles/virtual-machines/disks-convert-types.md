@@ -35,13 +35,13 @@ The preview allowing direct switching to Premium SSD v2 disks has some additiona
 - You can't switch an OS disk to a Premium SSD v2 disk.
 - Existing disks can only be directly switched to 512 sector size Premium SSD v2 disks.
 - You can only perform 40 conversions at the same time per subscription per region.
-- If your existing disk is a shared disk, you must detach all VMs before changing to Premium SSD v2.
-- If your existing disk is using host caching, you must [set it to none](#disable-host-caching) before changing to Premium SSD v2.
-- If your existing disk is using bursting, you must [disable it](#disable-bursting) before changing to Premium SSD v2.
-- If your existing disk is using double encryption, you must [switch to one of the single encryption options](#disable-double-encryption) before changing to Premium SSD v2.
-- You can't directly switch from a Premium SSD v2 to another disk type. If you want to change a Premium SSD v2 to another disk type, you must migrate using [snapshots](#migrate-to-premium-ssd-v2-or-ultra-disk-using-snapshots).
-- You can't directly switch from Ultra Disks to Premium SSD v2 disks, you must migrate using [snapshots](#migrate-to-premium-ssd-v2-or-ultra-disk-using-snapshots).
-- If you're using the rest API, you must use an API version `2020-12-01` or newer for both the Compute Resource Provider and the Disk Resource Provider.
+- If your existing disk is a shared disk, detach all VMs before changing to Premium SSD v2.
+- If your existing disk is using host caching, [set it to none](#disable-host-caching) before changing to Premium SSD v2.
+- If your existing disk is using bursting, [disable it](#disable-bursting) before changing to Premium SSD v2.
+- If your existing disk is using double encryption, [switch to one of the single encryption options](#disable-double-encryption) before changing to Premium SSD v2.
+- You can't directly switch from a Premium SSD v2 to another disk type. If you want to change a Premium SSD v2 to another disk type, migrate using [snapshots](#migrate-to-premium-ssd-v2-or-ultra-disk-using-snapshots).
+- You can't directly switch from Ultra Disks to Premium SSD v2 disks, migrate using [snapshots](#migrate-to-premium-ssd-v2-or-ultra-disk-using-snapshots).
+- If you're using the rest API, use an API version `2020-12-01` or newer for both the Compute Resource Provider and the Disk Resource Provider.
 
 This preview is currently only available in the following regions:
 
