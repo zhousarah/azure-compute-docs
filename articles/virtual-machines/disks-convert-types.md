@@ -43,7 +43,7 @@ The preview allowing direct switching to Premium SSD v2 disks has some additiona
 - You can't directly switch from Ultra Disks to Premium SSD v2 disks, migrate using [snapshots](#migrate-to-premium-ssd-v2-or-ultra-disk-using-snapshots).
 - If you're using the rest API, use an API version `2020-12-01` or newer for both the Compute Resource Provider and the Disk Resource Provider.
 - Until the conversion process from your previous disk type to Premium SSD v2 is completed, the performance of the disk is degraded, and you can't change or rotate customer-managed keys for the disk if they're in use.
-    - You can use the following command to check the conversion process: `az disk show -n $diskName  -g  $resourceGroupName --query [completionPercent] -o tsv`
+    - You can use the following command to check the conversion process, replace `$diskName` and `$resourceGroupName` with your values: `az disk show -n $diskName  -g  $resourceGroupName --query [completionPercent] -o tsv`
 
 
 This preview is currently only available in the following regions:
