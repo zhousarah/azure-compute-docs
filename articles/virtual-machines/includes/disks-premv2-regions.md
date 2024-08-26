@@ -25,7 +25,7 @@ Currently only available in the following regions:
 - Italy North (Three availability zones)
 - Japan East (Three availability zones)
 - Korea Central (Three availability zones)
-- Mexico Central (Thhree availability zones)
+- Mexico Central (Three availability zones)
 - North Europe (Three availability zones)
 - Norway East (Three availability zones)
 - Poland Central (Three availability zones)
