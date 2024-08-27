@@ -4,7 +4,7 @@ description: Use the backup and restore feature in Service Fabric to back up you
 ms.topic: conceptual
 ms.author: tomcassidy
 author: tomvcassidy
-ms.service: service-fabric
+ms.service: azure-service-fabric
 services: service-fabric
 ms.date: 08/23/2024
 ---
@@ -15,10 +15,10 @@ You can back up data of Reliable Stateful services and Reliable Actors to addres
 
 Azure Service Fabric has features for the [periodic backup of data](service-fabric-backuprestoreservice-quickstart-azurecluster.md) and the backup of data on a need basis. On-demand backup is useful because it guards against _data loss_/_data corruption_ because of planned changes in the underlying service or its environment.
 
-The on-demand backup features are helpful for capturing the state of the services before you manually trigger a service or service environment operation. For example, if you make a change in service binaries when  upgrading or downgrading the service. In such a case, on-demand backup can help guard the data against corruption by application code bugs.
+The on-demand backup features are helpful for capturing the state of the services before you manually trigger a service or service environment operation. For example, if you make a change in service binaries when upgrading or downgrading the service. In such a case, on-demand backup can help guard the data against corruption by application code bugs.
 ## Prerequisites
 
-- Install Microsoft.ServiceFabric.Powershell.Http Module (Preview) for making configuration calls.
+- Install Microsoft.ServiceFabric.Powershell.Http Module for making configuration calls.
 
 ```powershell
     Install-Module -Name Microsoft.ServiceFabric.Powershell.Http -AllowPrerelease
@@ -46,7 +46,7 @@ On-demand backup requires storage details for uploading backup files. You specif
 
 You can configure the periodic backup policy to use a partition of a Reliable Stateful service or Reliable Actor for extra on-demand backup to storage.
 
-The following case is the continuation of the scenario in [Enabling periodic backup for Reliable Stateful service and Reliable Actors](service-fabric-backuprestoreservice-quickstart-azurecluster.md#enabling-periodic-backup-for-reliable-stateful-service-and-reliable-actors). In this case, you enable a backup policy to use a partition and a backup occurs at a set frequency in Azure Storage.
+The following case is the continuation of the scenario in [Enabling periodic backup for Reliable Stateful service and Reliable Actors](service-fabric-backuprestoreservice-quickstart-azurecluster.md#enabling-periodic-backup-for-reliable-stateful-service-and-reliable-actors). In this case, you enable a backup policy to use a partition, and a backup occurs at a set frequency in Azure Storage.
 
 #### Powershell using Microsoft.ServiceFabric.Powershell.Http Module
 
@@ -77,12 +77,11 @@ You can request on-demand backup for a partition of a Reliable Stateful service 
 
 ```powershell
 
-  Backup-SFPartition -PartitionId '974bd92a-b395-4631-8a7f-53bd4ae9cf22' -ManagedIdentityAzureBlobStore -FriendlyName "AzureMI_storagesample" -BlobServiceUri 'https://<account-name>.blob.core.windows.net' -ContainerName 'backup-container' -ManagedIdentityType "VMSS" -ManagedIdentityClientId "<clien-ID of User-Assigned MI>"
-
-  # Use Optional parameter `ManagedIdentityClientId` with clien-ID of User-Assigned Managed Identity in case of multiple User-Assigned managed identities assigned to your resource, else no need of this paramter.
+  Backup-SFPartition -PartitionId '974bd92a-b395-4631-8a7f-53bd4ae9cf22' -ManagedIdentityAzureBlobStore -FriendlyName "AzureMI_storagesample" -BlobServiceUri 'https://<account-name>.blob.core.windows.net' -ContainerName 'backup-container' -ManagedIdentityType "VMSS" -ManagedIdentityClientId "<Client-Id of User-Assigned MI>"
+  # Use Optional parameter `ManagedIdentityClientId` with Client-Id of User-Assigned Managed Identity in case of multiple User-Assigned Managed Identities assigned to your resource, or both SAMI & UAMI assigned and we need to use UAMI as the default, else no need of this paramter.
 ```
 
-#### Rest Call using Powershell
+#### Rest Call using PowerShell
 
 Use the [BackupPartition](/rest/api/servicefabric/sfclient-api-backuppartition) API to set up triggering for the on-demand backup for partition ID `974bd92a-b395-4631-8a7f-53bd4ae9cf22`. Include the following Azure Storage information:
 
@@ -93,7 +92,7 @@ $StorageInfo = @{
     BlobServiceUri = "https://<account-name>.blob.core.windows.net"
     ContainerName = "backup-container"
     ManagedIdentityType = "VMSS"
-    ManagedIdentityClientId = "<clien-ID of User-Assigned MI>"  # Use Optional parameter `ManagedIdentityClientId` with clien-ID of User-Assigned Managed Identity in case of multiple User-Assigned managed identities assigned to your resource, else no need of this paramter.
+    ManagedIdentityClientId = "<Client-Id of User-Assigned MI>"  # Use Optional parameter `ManagedIdentityClientId` with Client-Id of User-Assigned Managed Identity in case of multiple User-Assigned Managed Identities assigned to your resource, or both SAMI & UAMI assigned and we need to use UAMI as the default, else no need of this paramter.
 }
 
 $OnDemandBackupRequest = @{
@@ -110,7 +109,7 @@ You can use the [GetBackupProgress](/rest/api/servicefabric/sfclient-api-getpart
 
 ### Using Service Fabric Explorer
 Make sure Advanced Mode has been enabled in Service Fabric Explorer settings.
-1. Select the desired partitions and click on Actions. 
+1. Select the desired partitions and select on Actions. 
 2. Select Trigger Partition Backup, and fill in information for Azure:
 
     ![Trigger Partition Backup][0]
@@ -121,9 +120,9 @@ Make sure Advanced Mode has been enabled in Service Fabric Explorer settings.
 
 ## Tracking on-demand backup progress
 
-A partition of a Reliable Stateful service or Reliable Actor accepts only one on-demand backup request at a time. Another request can be accepted only after the current on-demand backup request has completed.
+A partition of a Reliable Stateful service or Reliable Actor accepts only one on-demand backup request at a time. Another request can be accepted only after the current on-demand backup request been completed.
 
-Different partitions can trigger on-demand backup requests at a same time.
+Different partitions can trigger on-demand backup requests at the same time.
 
 
 #### Powershell using Microsoft.ServiceFabric.Powershell.Http Module
@@ -156,7 +155,7 @@ On-demand backup requests can be in the following states:
   FailureError            :
   ```
 - **Success**, **Failure**, or **Timeout**: A requested on-demand backup can be completed in any of the following states:
-  - **Success**: A _Success_ backup state indicates that the partition state has  backed up successfully. The response provides _BackupEpoch_ and _BackupLSN_ for the partition along with the time in UTC.
+  - **Success**: A _Success_ backup state indicates that the partition state has backed up successfully. The response provides _BackupEpoch_ and _BackupLSN_ for the partition along with the time in UTC.
     ```
     BackupState             : Success
     TimeStampUtc            : 2018-11-21T20:00:01Z

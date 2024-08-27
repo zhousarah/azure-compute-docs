@@ -4,9 +4,9 @@ description: Use the periodic backup and restore feature in Service Fabric for r
 ms.topic: conceptual
 ms.author: tomcassidy
 author: tomvcassidy
-ms.service: service-fabric
+ms.service: azure-service-fabric
 services: service-fabric
-ms.date: 08/23/2024
+ms.date: 07/14/2022
 ---
 
 # Restoring backup in Azure Service Fabric
@@ -25,7 +25,7 @@ For example, you can configure a service to back up its data to protect against 
 - To trigger a restore, the _Fault Analysis Service (FAS)_ must be enabled for the cluster.
 - The _Backup Restore Service (BRS)_ created the backup.
 - The restore can only be triggered at a partition.
-- Install Microsoft.ServiceFabric.Powershell.Http Module (Preview) for making configuration calls.
+- Install Microsoft.ServiceFabric.Powershell.Http Module for making configuration calls.
 
 ```powershell
     Install-Module -Name Microsoft.ServiceFabric.Powershell.Http -AllowPrerelease
@@ -60,27 +60,28 @@ For the following example, assume that the lost cluster is the same cluster that
 
 #### Powershell using Microsoft.ServiceFabric.Powershell.Http Module
 
+Replace `account-name` with your storage account name.
+
 ```powershell
 
-    Get-SFBackupsFromBackupLocation -Application -ApplicationName 'fabric:/SampleApp' -ManagedIdentityAzureBlobStore -BlobServiceUri "https://<account-name>.blob.core.windows.net" -ContainerName 'backup-container' -ManagedIdentityType "VMSS" -FriendlyName "AzureMI_storagesample" -ManagedIdentityClientId = "<clien-ID of User-Assigned MI>"
+    Get-SFBackupsFromBackupLocation -Application -ApplicationName 'fabric:/SampleApp' -ManagedIdentityAzureBlobStore -BlobServiceUri "https://<account-name>.blob.core.windows.net" -ContainerName 'backup-container' -ManagedIdentityType "VMSS" -FriendlyName "AzureMI_storagesample" -ManagedIdentityClientId = "<Client-Id of User-Assigned MI>"
 
-    # Use Optional parameter `ManagedIdentityClientId` with clien-ID of User-Assigned Managed Identity in case of multiple User-Assigned managed identities assigned to your resource, else no need of this paramter.
+    # Use Optional parameter `ManagedIdentityClientId` with Client-Id of User-Assigned Managed Identity in case of multiple User-Assigned Managed Identities assigned to your resource, or both SAMI & UAMI assigned and we need to use UAMI as the default, else no need of this paramter.
 
 ```
 
-#### Rest Call using Powershell
+#### Rest Call using PowerShell
 
-Execute a PowerShell script to use the REST API to return a list of the backups created for all partitions inside the `SampleApp` application. The API requires the backup storage information to list the available backups. Replace `account-name` with your storage account name.
+Execute a PowerShell script to use the REST API to return a list of the backups created for all partitions inside the `SampleApp` application. The API requires the backup storage information to list the available backups.
 
 ```powershell
-
 $StorageInfo = @{
     StorageKind = "ManagedIdentityAzureBlobStore"
     FriendlyName = "AzureMI_storagesample"
     BlobServiceUri = "https://<account-name>.blob.core.windows.net"
     ContainerName = "backup-container"
     ManagedIdentityType = "VMSS"
-    ManagedIdentityClientId = "<clien-ID of User-Assigned MI>"  # Use Optional parameter `ManagedIdentityClientId` with clien-ID of User-Assigned Managed Identity in case of multiple User-Assigned managed identities assigned to your resource, else no need of this paramter.
+    ManagedIdentityClientId = "<Client-Id of User-Assigned MI>"  # Use Optional parameter `ManagedIdentityClientId` with Client-Id of User-Assigned Managed Identity in case of multiple User-Assigned Managed Identities assigned to your resource, or both SAMI & UAMI assigned and we need to use UAMI as the default, else no need of this paramter.
 }
 
 $BackupEntity = @{
@@ -163,23 +164,19 @@ You also need to choose a destination partition in the alternate cluster as deta
 
 If the partition ID on alternate cluster is `1c42c47f-439e-4e09-98b9-88b8f60800c6`, you can map it to the original cluster partition ID `974bd92a-b395-4631-8a7f-53bd4ae9cf22` by comparing the high key and low key for _Ranged Partitioning (UniformInt64Partition)_.
 
-For _Named Partitioning_, the name value is compared to identify the target partition in alternate cluster.
+For _Named Partitioning_, the name value is compared to identifying the target partition in alternate cluster.
 
 #### Powershell using Microsoft.ServiceFabric.Powershell.Http Module
 
-Replace `account-name` with your storage account name.
-
 ```powershell
 
-Restore-SFPartition -PartitionId 1c42c47f-439e-4e09-98b9-88b8f60800c6 -BackupId b0035075-b327-41a5-a58f-3ea94b68faa4 -BackupLocation 'SampleApp\MyStatefulService\974bd92a-b395-4631-8a7f-53bd4ae9cf22\2018-04-06 21.10.27.zip' -ManagedIdentityAzureBlobStore -BlobServiceUri "https://<account-name>.blob.core.windows.net" -ContainerName "backup-container" -ManagedIdentityType "VMSS" -FriendlyName "AzureMI_storagesample" ManagedIdentityClientId "clien-ID of User-Assigned MI" 
+Restore-SFPartition -PartitionId 1c42c47f-439e-4e09-98b9-88b8f60800c6 -BackupId b0035075-b327-41a5-a58f-3ea94b68faa4 -BackupLocation 'SampleApp\MyStatefulService\974bd92a-b395-4631-8a7f-53bd4ae9cf22\2018-04-06 21.10.27.zip' -ManagedIdentityAzureBlobStore -BlobServiceUri "https://<account-name>.blob.core.windows.net" -ContainerName "backup-container" -ManagedIdentityType "VMSS" -FriendlyName "AzureMI_storagesample" ManagedIdentityClientId "<Client-Id of User-Assigned MI>" 
 
 ```
 
 #### Rest Call using Powershell
 
 You request the restore against the backup cluster partition by using the following [Restore API](/rest/api/servicefabric/sfclient-api-restorepartition):
-
-Replace `account-name` with your storage account name.
 
 ```powershell
 
@@ -189,7 +186,7 @@ $StorageInfo = @{
     BlobServiceUri = "https://<account-name>.blob.core.windows.net"
     ContainerName = "backup-container"
     ManagedIdentityType = "VMSS"
-    ManagedIdentityClientId = "<clien-ID of User-Assigned MI>"  # Use Optional parameter `ManagedIdentityClientId` with clien-ID of User-Assigned Managed Identity in case of multiple User-Assigned managed identities assigned to your resource, else no need of this paramter.
+    ManagedIdentityClientId = "<Client-Id of User-Assigned MI>" 
 }
 
 $RestorePartitionReference = @{
@@ -212,7 +209,7 @@ You can track the progress of a restore with TrackRestoreProgress.
 
 ### Using Service Fabric Explorer
 You can trigger a restore from Service Fabric Explorer. Make sure Advanced Mode has been enabled in Service Fabric Explorer settings.
-1. Select the desired partitions and click on Actions. 
+1. Select the desired partitions and select on Actions. 
 2. Select Trigger Partition Restore and fill in information for Azure:
 
     ![Trigger Partition Restore][2]
@@ -227,7 +224,7 @@ For _data loss_ or _data corruption_, backed-up partitions for Reliable Stateful
 
 The following example is a continuation of [Enabling periodic backup for Reliable Stateful service and Reliable Actors](service-fabric-backuprestoreservice-quickstart-azurecluster.md#enabling-periodic-backup-for-reliable-stateful-service-and-reliable-actors). In this example, a backup policy is enabled for the partition, and the service is making backups at a desired frequency in Azure Storage.
 
-Select a backup from the output of  [GetBackupAPI](service-fabric-backuprestoreservice-quickstart-azurecluster.md#list-backups). In this scenario, the backup is generated from the same cluster as before.
+Select a backup from the output of [GetBackupAPI](service-fabric-backuprestoreservice-quickstart-azurecluster.md#list-backups). In this scenario, the backup is generated from the same cluster as before.
 
 To trigger the restore, choose a backup from the list. For the current _data loss_/_data corruption_, select the following backup:
 
@@ -314,7 +311,7 @@ The restore request progresses in the following order:
     ```
     
 3. **Success**, **Failure**, or **Timeout**: A requested restore can be completed in any of the following states. Each state has the following significance and response details:
-    - **Success**: A _Success_ restore state indicates a regained  partition state. The partition reports _RestoredEpoch_ and _RestoredLSN_ states along with the time in UTC.
+    - **Success**: A _Success_ restore state indicates a regained partition state. The partition reports _RestoredEpoch_ and _RestoredLSN_ states along with the time in UTC.
 
         ```
         RestoreState  : Success
