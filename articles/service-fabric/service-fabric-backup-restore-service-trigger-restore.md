@@ -70,7 +70,7 @@ Replace `account-name` with your storage account name.
 
 ```
 
-#### Rest Call using PowerShell
+#### Rest Call using Powershell
 
 Execute a PowerShell script to use the REST API to return a list of the backups created for all partitions inside the `SampleApp` application. The API requires the backup storage information to list the available backups.
 

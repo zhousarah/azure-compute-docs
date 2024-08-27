@@ -241,16 +241,15 @@ Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/j
 ```
 
 #### Using Service Fabric Explorer
-Make sure the [advanced mode](service-fabric-visualizing-your-cluster.md#backup-and-restore) for Service Fabric Explorer is enabled
+Make sure the BackupRestoreService is enable on cluster.
 
-1. Click the gear at the top right of the SF Explorer Window.
-2. Check the box for "Advanced mode" and refresh the SF Explorer page. 
-3. Select an application and go to action. Click Enable/Update Application Backup.
-
+1. Open Service Fabric Exploler.
+2. Select an application and go to Backup section. Click on Backup Action.
+3. Click Enable/Update Application Backup.
 
     ![Enable Application Backup][3]
 
-2. Finally, select the desired policy and click Enable Backup.
+4. Finally, select the desired policy and click Enable Backup.
 
     ![Select Policy][4]
 

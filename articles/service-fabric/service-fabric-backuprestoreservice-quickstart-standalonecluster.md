@@ -209,11 +209,15 @@ Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/j
 
 #### Using Service Fabric Explorer
 
-1. Select an application and go to action. Select Enable/Update Application Backup.
+Make sure the BackupRestoreService is enable on cluster.
 
-    ![Enable Application Backup][3] 
+1. Open Service Fabric Exploler.
+2. Select an application and go to Backup section. Click on Backup Action.
+3. Click Enable/Update Application Backup.
 
-2. Finally, select the desired policy and select *Enable Backup*.
+    ![Enable Application Backup][3]
+
+4. Finally, select the desired policy and select *Enable Backup*.
 
     ![Select Policy][4]
 

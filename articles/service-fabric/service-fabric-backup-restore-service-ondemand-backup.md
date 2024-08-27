@@ -81,7 +81,7 @@ You can request on-demand backup for a partition of a Reliable Stateful service 
   # Use Optional parameter `ManagedIdentityClientId` with Client-Id of User-Assigned Managed Identity in case of multiple User-Assigned Managed Identities assigned to your resource, or both SAMI & UAMI assigned and we need to use UAMI as the default, else no need of this paramter.
 ```
 
-#### Rest Call using PowerShell
+#### Rest Call using Powershell
 
 Use the [BackupPartition](/rest/api/servicefabric/sfclient-api-backuppartition) API to set up triggering for the on-demand backup for partition ID `974bd92a-b395-4631-8a7f-53bd4ae9cf22`. Include the following Azure Storage information:
 
