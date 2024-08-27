@@ -7,7 +7,7 @@
  ms.topic: include
  ms.date: 08/26/2024
  ms.author: rogarana
- ms.custom: include file
+ ms.custom: include file, references_regions
 ---    
 - Only supported for data disks.
 - If a Standard HDD, Standard SSD, or Premium SSD disk is 4 TiB or less, deallocate your VM and detach the disk before expanding it beyond 4 TiB. If one of those disk types is already greater than 4 TiB, you can expand it without deallocating the VM and detaching the disk. This doesn't apply to Premium SSD v2 or Ultra Disks.
@@ -26,3 +26,18 @@ Currently, you can sign up for a public preview for expanding Ultra Disks and Pr
 The preview has the following additional limitations:
 - You can't expand a disk while a [background copy](../scripts/create-managed-disk-from-snapshot.md#performance-impact---background-copy-process) of data is also occurring on the disk, like when the disk is being hydrated from snapshots.
 - You can't currently expand a VM that's using [NVMe controllers](../nvme-overview.md) and Ultra Disks or Premium SSD v2 disks without downtime.
+
+#### Regional availability
+
+Resizing Ultra Disks and Premium SSD v2 disks is currently available in the following regions:
+
+- Australia East
+- Brazil South
+- Canada Central
+- Central India
+- France Central
+- Japan East
+- Korea Central
+- North Central US
+- North Europe
+- Southeast Asia
