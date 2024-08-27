@@ -4,9 +4,9 @@ description: Use the backup and restore feature in Service Fabric to back up you
 ms.topic: conceptual
 ms.author: tomcassidy
 author: tomvcassidy
-ms.service: azure-service-fabric
+ms.service: service-fabric
 services: service-fabric
-ms.date: 07/14/2022
+ms.date: 08/23/2024
 ---
 
 # On-demand backup in Azure Service Fabric
@@ -18,7 +18,7 @@ Azure Service Fabric has features for the [periodic backup of data](service-fabr
 The on-demand backup features are helpful for capturing the state of the services before you manually trigger a service or service environment operation. For example, if you make a change in service binaries when  upgrading or downgrading the service. In such a case, on-demand backup can help guard the data against corruption by application code bugs.
 ## Prerequisites
 
-- Install Microsoft.ServiceFabric.Powershell.Http Module for making configuration calls.
+- Install Microsoft.ServiceFabric.Powershell.Http Module (Preview) for making configuration calls.
 
 ```powershell
     Install-Module -Name Microsoft.ServiceFabric.Powershell.Http -AllowPrerelease
@@ -77,8 +77,9 @@ You can request on-demand backup for a partition of a Reliable Stateful service 
 
 ```powershell
 
-Backup-SFPartition -PartitionId '974bd92a-b395-4631-8a7f-53bd4ae9cf22' -AzureBlobStore -ConnectionString  'DefaultEndpointsProtocol=https;AccountName=<account-name>;AccountKey=<account-key>;EndpointSuffix=core.windows.net' -ContainerName 'backup-container'
+  Backup-SFPartition -PartitionId '974bd92a-b395-4631-8a7f-53bd4ae9cf22' -ManagedIdentityAzureBlobStore -FriendlyName "AzureMI_storagesample" -BlobServiceUri 'https://<account-name>.blob.core.windows.net' -ContainerName 'backup-container' -ManagedIdentityType "VMSS" -ManagedIdentityClientId "<clien-ID of User-Assigned MI>"
 
+  # Use Optional parameter `ManagedIdentityClientId` with clien-ID of User-Assigned Managed Identity in case of multiple User-Assigned managed identities assigned to your resource, else no need of this paramter.
 ```
 
 #### Rest Call using Powershell
@@ -87,9 +88,12 @@ Use the [BackupPartition](/rest/api/servicefabric/sfclient-api-backuppartition) 
 
 ```powershell
 $StorageInfo = @{
-    ConnectionString = 'DefaultEndpointsProtocol=https;AccountName=<account-name>;AccountKey=<account-key>;EndpointSuffix=core.windows.net'
-    ContainerName = 'backup-container'
-    StorageKind = 'AzureBlobStore'
+    StorageKind = "ManagedIdentityAzureBlobStore"
+    FriendlyName = "AzureMI_storagesample"
+    BlobServiceUri = "https://<account-name>.blob.core.windows.net"
+    ContainerName = "backup-container"
+    ManagedIdentityType = "VMSS"
+    ManagedIdentityClientId = "<clien-ID of User-Assigned MI>"  # Use Optional parameter `ManagedIdentityClientId` with clien-ID of User-Assigned Managed Identity in case of multiple User-Assigned managed identities assigned to your resource, else no need of this paramter.
 }
 
 $OnDemandBackupRequest = @{

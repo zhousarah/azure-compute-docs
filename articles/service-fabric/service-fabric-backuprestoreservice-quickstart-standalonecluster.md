@@ -4,9 +4,9 @@ description: Use a standalone Service Fabric's periodic backup and restore featu
 ms.topic: how-to
 ms.author: tomcassidy
 author: tomvcassidy
-ms.service: azure-service-fabric
+ms.service: service-fabric
 services: service-fabric
-ms.date: 07/14/2022
+ms.date: 08/23/2024
 ---
 
 # Periodic backup and restore in a standalone Service Fabric
@@ -46,7 +46,7 @@ Service Fabric provides a set of APIs to achieve the following functionality rel
 * X.509 Certificate for encryption of secrets needed to connect to storage to store backups. Refer [article](service-fabric-windows-cluster-x509-security.md) to know how to acquire or to Create a self-signed X.509 certificate.
 
 * Service Fabric Reliable Stateful application built using Service Fabric SDK version 3.0 or above. For applications targeting .NET Core 2.0, application should be built using Service Fabric SDK version 3.1 or later.
-* Install Microsoft.ServiceFabric.PowerShell.Http Module for making configuration calls.
+* Install Microsoft.ServiceFabric.PowerShell.Http Module (Preview) for making configuration calls.
 
 ```powershell
     Install-Module -Name Microsoft.ServiceFabric.PowerShell.Http -AllowPrerelease
