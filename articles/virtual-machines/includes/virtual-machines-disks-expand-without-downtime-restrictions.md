@@ -10,7 +10,7 @@
  ms.custom: include file
 ---    
 - Only supported for data disks.
-- If a disk is 4 TiB or less, you should deallocate your VM and detach the disk before expanding it beyond 4 TiB. If a disk is already greater than 4 TiB, you can expand it without deallocating the VM and detaching the disk.
+- If a Standard HDD, Standard SSD, or Premium SSD disk is 4 TiB or less, deallocate your VM and detach the disk before expanding it beyond 4 TiB. If a disk is already greater than 4 TiB, you can expand it without deallocating the VM and detaching the disk. This doesn't apply to Premium SSD v2 or Ultra Disks.
 - Not supported for shared disks.
 - Install and use either:
     - The [latest Azure CLI](/cli/azure/install-azure-cli)
@@ -22,9 +22,10 @@
 
 ### Preview for Ultra Disk and Premium SSD v2
 
-Currently, you can sign up for a public preview for expanding Ultra Disks and Premium SSD v2 disks without downtime.
+Currently, you can sign up for a public preview for expanding Ultra Disks and Premium SSD v2 disks without downtimes [here.](https://aka.ms/DDLiveResizeCustomerSurvey)
 
 The preview has the following additional limitations:
-- You can't expand a disk while a background copy of data is also occurring on the disk.
+- You can't expand a disk while a background copy of data is also occurring on the disk, such as when the disk is getting hydrated from
+[snapshots](https://learn.microsoft.com/en-us/azure/virtual-machines/snapshot-copy-managed-disk?tabs=portal)
+.
 - You can't currently expand a VM using NVMe controllers.
-- You can't currently expand a shared Ultra Disk or Premium SSD v2.
