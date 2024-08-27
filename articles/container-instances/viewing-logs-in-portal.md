@@ -1,3 +1,13 @@
+---
+title: View container group logs in a log analytics workspace via Aaure portal 
+description: How to view container group logs in a log analytics workspace via Aaure portal 
+ms.author: tysonfms
+author: tomvcassidy
+ms.service: azure-container-instances
+services: container-instances
+ms.topic: how-to
+ms.date: 08/27/2024
+---
 # View Container Group Logs in a Log Analytics Workspace via Azure Portal 
 
 Log Analytics workspaces provide a centralized location for storing and querying log data not only from Azure resources, but also on-premises resources and resources in other clouds. Azure Container Instances includes built-in support for sending logs and event data to Azure Monitor logs. While creating a container instance within Azure Portal, you will be able to optionally set up Log Analytics. Once your container group is created with Log Analytics enabled you can view logs within the page for your Azure Container Instance by navigating to “Logs” on the left panel. If you didn’t set up Log Analytics initially, you can also navigate to “Logs” to set it up after you have already created your container instance also. 
