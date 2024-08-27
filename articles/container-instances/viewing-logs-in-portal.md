@@ -1,7 +1,7 @@
 ---
 title: View container group logs in a log analytics workspace via Aaure portal 
 description: How to view container group logs in a log analytics workspace via Aaure portal 
-ms.author: tysonfms
+ms.author: tomvcassidy
 author: tomvcassidy
 ms.service: azure-container-instances
 services: container-instances
