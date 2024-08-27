@@ -366,7 +366,7 @@ az disk create -g $resourceGroupName -n $newDiskName --source $snapshot --logica
 
 # [Portal](#tab/azure-portal)
 
-The following steps assume you already have a snapshot. To learn how to create one, see [Create a snapshot of a virtual hard disk](snapshot-copy-managed-disk.md),
+The following steps assume you already have a snapshot. To learn how to create one, see [Create a snapshot of a virtual hard disk](snapshot-copy-managed-disk.md).
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
 1. Select the search bar at the top. Search for and select Disks.
