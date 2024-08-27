@@ -115,4 +115,4 @@ Cost information isn't presented during the virtual machine creation process for
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Azure Linux virtual machine tutorials](./tutorial-manage-vm.md)
+> [Azure Windows virtual machine tutorials](./tutorial-manage-vm.md)
