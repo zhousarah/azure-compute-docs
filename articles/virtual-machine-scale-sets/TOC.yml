@@ -173,6 +173,8 @@
       href: virtual-machine-scale-sets-deploy-app.md
     - name: Custom image templates
       href: virtual-machine-scale-sets-mvss-custom-image.md
+    - name: Relocate to another region
+      href: /azure/operational-excellence/relocation-virtual-machine-scale-sets.md?toc=/azure/virtual-machine-scale-sets/toc.json&bc=/azure/virtual-machine-scale-sets/breadcrumb/toc.json
   - name: Manage fault domains in scale sets
     href: virtual-machine-scale-sets-manage-fault-domains.md
   - name: Understand instance IDs
