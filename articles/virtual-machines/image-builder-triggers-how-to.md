@@ -1,6 +1,6 @@
 ---
-title: How to use Azure Image Builder triggers to set up an automatic image build
-description: Use triggers in Azure Image Builder to set up automatic image builds when criteria are met in a build pipeline
+title: How to enable Automatic Image Creation with Azure Image Builder triggers
+description: Use triggers in Azure Image Builder to enable automatic image creation when criteria are met in a build pipeline
 author: kof-f
 ms.author: kofiforson
 ms.reviewer: jushiman
@@ -11,8 +11,8 @@ ms.date: 11/10/2023
 ms.custom: template-how-to-pattern, devx-track-azurecli
 ---
 
-# How to use Azure Image Builder triggers to set up an automatic image build
-You can use triggers in Azure Image Builder (AIB) to set up automatic image builds when certain criteria are met in your build pipeline.
+# How to enable Automatic Image Creation with Azure Image Builder triggers
+You can use triggers in Azure Image Builder (AIB) to enable automatic image creation when certain criteria are met in your build pipeline.
 
 > [!IMPORTANT]
 > Please be informed that there exists a restriction on the number of triggers allowable per region, specifically 100 per region per subscription.
@@ -140,7 +140,7 @@ az sig image-definition create \
 ```
 
 ### Create the image template
-Download the example JSON template and configure it with your variables. The following image template uses a Platform Image as its source, but you can change the source to an Azure Compute Gallery image if you'd like to set up automatic image builds anytime there's a new image version in your Azure Compute Gallery.
+Download the example JSON template and configure it with your variables. The following image template uses a Platform Image as its source, but you can change the source to an Azure Compute Gallery image if you'd like to enable automatic image creation anytime there's a new image version in your Azure Compute Gallery.
 
 ```azurecli-interactive
 curl https://raw.githubusercontent.com/Azure/azvmimagebuilder/main/quickquickstarts/9_Setting_up_a_Trigger_with_a_Custom_Linux_Image/helloImageTemplate.json -o helloImageTemplateforTriggers.json
