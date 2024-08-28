@@ -37,12 +37,11 @@ If you do not have a Log Analytics workspace you can select “Create New” to 
 
 Lastly, fill out the following tabs then go to the “Review + Create” tab and click “Create” to create your container instance. 
 
-View Logs 
+## View Logs 
 
 This section outlines how to view logs for your container instance that you created. 
 
 1. Once your container instance is already created, click “Logs” on the left panel. 
-
  
  ![logs in left panel](./media/monitor-azure-container-instances/queries-hub.png)
 
