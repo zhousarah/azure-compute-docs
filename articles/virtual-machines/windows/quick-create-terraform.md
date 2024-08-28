@@ -105,4 +105,4 @@ Cost information isn't presented during the virtual machine creation process for
 In this quickstart, you deployed a simple virtual machine using Terraform. To learn more about Azure virtual machines, continue to the tutorial for Linux VMs.
 
 > [!div class="nextstepaction"]
-> [Azure Linux virtual machine tutorials](./tutorial-manage-vm.md)
+> [Azure Windows virtual machine tutorials](./tutorial-manage-vm.md)
