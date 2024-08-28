@@ -29,7 +29,7 @@ This section shows how to create a container instance with Log Analytics.
 
 If you have a Log Analytics workspace you can enter the information for it. 
 
- [Screenshot]
+ ![log analytics screen](./media/monitor-azure-container-instances/monitor-tab.png)
 
 If you do not have a Log Analytics workspace you can select “Create New” to create a new one. 
 
