@@ -10,7 +10,11 @@ ms.author: archat
 ms.reviewer: mattmcinnes
 ---
 
-# FXmsv2 sizes series
+# FXmsv2 sizes series (Preview)
+
+>[!NOTE]
+>This VM series is currently in **Preview**. See the [Preview Terms Of Use | Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability. For more information and to sign up for the preview, [please visit our announcement and follow the link to signup](https://aka.ms/FXv2-series-Preview-Signup). 
+
 
 [!INCLUDE [fxmsv2-summary](./includes/fxmsv2-series-summary.md)]
 
@@ -18,7 +22,7 @@ ms.reviewer: mattmcinnes
 [!INCLUDE [fxmsv2-series-specs](./includes/fxmsv2-series-specs.md)]
 
 ## Feature support
-[Premium Storage](../../premium-storage-performance.md): Supported <br>[Premium Storage caching](../../premium-storage-performance.md): Supported <br>[Live Migration](../../maintenance-and-updates.md): Not Supported <br>[Memory Preserving Updates](../../maintenance-and-updates.md): Supported <br>[Generation 2 VMs](../../generation-2.md): Supported <br>[Generation 1 VMs](../../generation-2.md): Not Supported <br>[Accelerated Networking](../../../virtual-network/create-vm-accelerated-networking-cli.md): Supported <br>[Ephemeral OS Disk](../../ephemeral-os-disks.md): Not Supported <br>[Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Supported <br>
+[Premium Storage](../../premium-storage-performance.md): Supported <br>[Premium Storage caching](../../premium-storage-performance.md): Supported <br>[Live Migration](../../maintenance-and-updates.md): Not Supported <br>[Memory Preserving Updates](../../maintenance-and-updates.md): Supported <br>[Generation 2 VMs](../../generation-2.md): Supported <br>[Generation 1 VMs](../../generation-2.md): Not Supported <br>[Accelerated Networking](../../../virtual-network/create-vm-accelerated-networking-cli.md): Supported <br>[Ephemeral OS Disk](../../ephemeral-os-disks.md): Not Supported <br>[Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Supported <br> [NVMe storage](https://learn.microsoft.com/azure/virtual-machines/nvme-overview): Supported <br> [Constrained core](https://learn.microsoft.com/azure/virtual-machines/constrained-vcpu?tabs=family-M) : Suppported
 
 ## Sizes in series
 
