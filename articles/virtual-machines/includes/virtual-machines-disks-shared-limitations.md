@@ -12,7 +12,7 @@
 
 ### General limitations
 
-Shared disks have general limitations that apply to all shared disks, regardless of disk type. As well as additional limitations that only apply to specific types of shared disks. The following list is the list of general limitations:
+Shared disks have general limitations that apply to all shared disks, regardless of disk type. They also have more limitations that only apply to specific types of shared disks. The following list is the list of general limitations:
 
 - Currently, only Ultra Disks, Premium SSD v2, Premium SSD, and Standard SSDs can be used as a shared disk
 - Shared disks can be attached to individual Virtual Machine Scale Sets but can't be defined in the Virtual Machine Scale Set models or automatically deployed
