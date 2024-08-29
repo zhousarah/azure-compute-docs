@@ -43,25 +43,25 @@ This section outlines how to view logs for your container instance that you crea
 
 1. Once your container instance is already created, click “Logs” on the left panel. 
  
- ![Screenshot of logs in left panel](./media/monitor-azure-container-instances/queries-hub.png)
+ ![Screenshot of logs in left panel](./media/viewing-logs-in-portal/logs-in-portal-running.png)
 
 2. You’ll see the Queries Hub where you can find queries to run in Log Analytics. If these are not needed, then you can close this screen. 
 
 After closing the previous screen, if you created the ACI with the log-generating image, you should see data for your container group here. 
  
-![Screenshot of logs in portal](./media/monitor-azure-container-instances/logs-in-portal.png)
+![Screenshot of logs in portal](./media/viewing-logs-in-portal/logs-in-portal.png)
  
 3. If you created a container instance without Log Analytics enabled, then you will see this screen and be able to enable it. 
 
 You can enter an already existing Log Analytics workspace: 
 
- ![Screenshot of create existing log analytics workspace screen](./media/monitor-azure-container-instances/connect-logs.png)
+ ![Screenshot of create existing log analytics workspace screen](./media/viewing-logs-in-portal/connect-logs.png)
 
 You can also view logs for your container instances by navigating to “Containers” on the left pane, then selecting “Logs” in the middle pane. 
 
 If your container instance is in running state, you’ll be able to see the logs: 
  
-![Screenshot of logs in running state](./media/monitor-azure-container-instances/logs-in-portal-running.png)
+![Screenshot of logs in running state](./media/viewing-logs-in-portal/logs-in-portal-running.png)
 
 Now you’re ready to run your container group with Log Analytics. 
 
