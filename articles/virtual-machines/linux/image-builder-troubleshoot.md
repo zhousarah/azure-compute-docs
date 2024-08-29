@@ -287,7 +287,7 @@ To effectively monitor the progress of your image build, you can access the live
 
 1. **Start the Image Build**: Initiate the image build process.
 2. **Navigate to Resource Groups**: Go to the Azure portal and select "Resource Groups." Filter by the subscription where the image build was initiated.
-3. **Select the Resource Group**: Find and select the resource group named "IT_<ImageResourceGroupName><TemplateName><GUID>." This is the resource group created by the AIB service for the build resources.
+3. **Select the Resource Group**: Find and select the resource group named "IT_\<ImageResourceGroupName\>\<TemplateName\>\<GUID\>." This is the resource group created by the AIB service for the build resources.
 4. **Locate the Build Container**: Within this resource group, look for the resource named "vmimagebuilder-build-container-**********." If it’s not visible, wait a few minutes and refresh the page.
 5. **Access Container Settings**: In the left pane, under "Settings," select "Containers."
 6. **View Logs**: Go to the "Logs" tab to view the live logs during the image build process.
