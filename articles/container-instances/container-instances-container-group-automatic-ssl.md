@@ -7,12 +7,12 @@ ms.service: azure-container-instances
 ms.custom: devx-track-azurecli
 services: container-instances
 ms.topic: how-to
-ms.date: 06/12/2023
+ms.date: 08/29/2024
 ---
 
 # Enable automatic HTTPS with Caddy in a sidecar container
 
-This article describes how Caddy can be used as a sidecar container in a [container group](container-instances-container-groups.md) acting as a reverse proxy to provide an automatically managed HTTPS endpoint for your application. 
+This article describes how Caddy can be used as a sidecar container in a [container group](container-instances-container-groups.md) and act as a reverse proxy to provide an automatically managed HTTPS endpoint for your application. 
 
 Caddy is a powerful, enterprise-ready, open source web server with automatic HTTPS written in Go and represents an alternative to Nginx. 
 
@@ -300,7 +300,7 @@ Navigate to ``` https://my-app.westeurope.azurecontainer.io ``` and verify the c
 
 :::image type="content" source="media/container-instances-container-group-automatic-ssl/url-padlock.png" alt-text="Screenshot highlighting the padlock next to the URL that verifies the certificate.":::
 
-To see the certificate details, click on "Connection is secure" followed by "certificate is valid".
+To see the certificate details, select on "Connection is secure" followed by "certificate is valid".
 
 :::image type="content" source="media/container-instances-container-group-automatic-ssl/lets-encrypt-certificate.png" alt-text="Screenshot of the certificate issued by Let's Encrypt":::
 
