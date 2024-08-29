@@ -79,30 +79,30 @@ As a content publisher, you might want to share a gallery to the community:
 - If you have non-commercial, non-proprietary content to share widely on Azure.
 - You want greater control over the number of versions, regions, and the duration of image availability.  
 - You want to quickly share daily or nightly builds with your customers.  
-- You don’t want to deal with the complexity of multi-tenant authentication when sharing with multiple tenants on Azure.
+- You don’t want to deal with the complexity of multitenant authentication when sharing with multiple tenants on Azure.
 
-## When to Publish to Azure Marketplace:
+## When to publish to Azure Marketplace:
 - Publisher has signed Marketplace terms
 - Publish commercial images
 - Publish a stable version (or) major release
 
-## When to Publish to Community Gallery:
+## When to publish to Community Gallery:
 - Publisher cannot sign Marketplace terms and still want to share their image publicly on Azure
 - Publish non-commercial image
 - Publish daily/nightly builds
 
-## As a consumer of images, how to choose between Marketplace image and Community images ?
+## As a consumer of images, how to choose between Marketplace image and Community images?
 
 There are a variety of reasons why you might want to use an Azure Marketplace image instead of a community gallery image. The primary reason to choose an Azure Marketplace image is that they're supported by Microsoft, while community images aren't. 
 
-When to use an Azure marketplace Image?
+When to use an Azure Marketplace Images?
 - You want to use Microsoft certified images
 - Use for production workloads
 - First party and third party images
 - Paid images with additional software offerings
 - Supported by Microsoft
 
-When to use a community image?
+When to use a Community Images?
 - You're looking for a community version of an image published by open-source community
 - You trust and know how to contact the publisher
 - Using the image for testing
