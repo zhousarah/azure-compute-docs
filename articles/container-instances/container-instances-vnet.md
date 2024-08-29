@@ -21,7 +21,7 @@ This article shows how to use the [az container create][az-container-create] com
 > * Before deploying container groups in virtual networks, we suggest checking the limitation first. For networking scenarios and limitations, see [Virtual network scenarios and resources for Azure Container Instances](container-instances-virtual-network-concepts.md).
 > * Container group deployment to a virtual network is generally available for Linux and Windows containers, in most regions where Azure Container Instances is available. For details, see [available-regions][available-regions].
 
-[!INCLUDE [network profile callout](./includes/network-profile/network-profile-callout.md)]
+[!INCLUDE [network profile callout](./includes/network-profile-callout.md)]
 
 Examples in this article are formatted for the Bash shell. If you prefer another shell such as PowerShell or Command Prompt, adjust the line continuation characters accordingly.
 
