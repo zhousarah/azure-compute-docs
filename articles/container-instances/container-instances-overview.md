@@ -6,7 +6,7 @@ ms.author: tomcassidy
 author: tomvcassidy
 ms.service: azure-container-instances
 services: container-instances
-ms.date: 06/17/2022
+ms.date: 08/29/2024
 ms.custom: mvc, linux-related-content
 ---
 
@@ -20,7 +20,7 @@ Azure Container Instances is a great solution for any scenario that can operate 
 
 Containers offer significant startup benefits over virtual machines (VMs). Azure Container Instances can start containers in Azure in seconds, without the need to provision and manage VMs.
 
-Bring Linux or Windows container images from Docker Hub, a private [Azure container registry](/azure/container-registry/), or another cloud-based docker registry. Visit the [FAQ](container-instances-faq.yml) to learn which registries are supported by ACI. Azure Container Instances caches several common base OS images, helping speed deployment of your custom application images.
+Bring Linux or Windows container images from Docker Hub, a private [Azure container registry](/azure/container-registry/), or another cloud-based docker registry. Visit the [FAQ](container-instances-faq.yml) to learn which registries ACI supports. Azure Container Instances caches several common base OS images, helping speed deployment of your custom application images.
 
 ## Container access
 
@@ -35,7 +35,7 @@ Azure Container Instances also supports executing a command in a running contain
 
 ### Hypervisor-level security
 
-Historically, containers have offered application dependency isolation and resource governance but haven't been considered sufficiently hardened for hostile multi-tenant usage. Azure Container Instances guarantees your application is as isolated in a container as it would be in a VM.
+Historically, containers offered application dependency isolation and resource governance but were insufficiently hardened for hostile multitenant usage. Azure Container Instances guarantees your application is as isolated in a container as it would be in a VM.
 
 ### Customer data
 
@@ -64,7 +64,7 @@ Some features are currently restricted to Linux containers:
 
 For Windows container deployments, use images based on common [Windows base images](./container-instances-faq.yml#what-windows-base-os-images-are-supported-).
 
-## Co-scheduled groups
+## Coscheduled groups
 
 Azure Container Instances supports scheduling of [multi-container groups](container-instances-container-groups.md) that share a host machine, local network, storage, and lifecycle. This enables you to combine your main application container with other supporting role containers, such as logging sidecars.
 
@@ -78,11 +78,11 @@ Confidential containers on ACI enable you to run containers in a trusted executi
 
 ## Spot container deployment
 
-ACI Spot containers allow customers to run interruptible, containerized workloads on unused Azure capacity at significantly discounted prices of up to 70% compared to regular-priority ACI containers. ACI spot containers may be preempted when Azure encounters a shortage of surplus capacity, and they're suitable for workloads without strict availability requirements. Customers are billed for per-second memory and core usage. To utilize ACI Spot containers, you can deploy your workload with a specific property flag indicating that you want to use Spot container groups and take advantage of the discounted pricing model. 
+ACI Spot containers allow customers to run interruptible, containerized workloads on unused Azure capacity at discounted prices of up to 70% compared to regular-priority ACI containers. ACI spot containers may be preempted when Azure encounters a shortage of surplus capacity, and they're suitable for workloads without strict availability requirements. Customers are billed for per-second memory and core usage. To utilize ACI Spot containers, you can deploy your workload with a specific property flag indicating that you want to use Spot container groups and take advantage of the discounted pricing model. 
 For more information, see [spot container groups](container-instances-spot-containers-overview.md).
 
 ## Considerations
-User’s credentials passed via command line interface (CLI) are stored as plain text in the backend. Storing credentials in plain text is a security risk; Microsoft advises customers to store user credentials in CLI environment variables to ensure they are encrypted/transformed when stored in the backend.
+User’s credentials passed via command line interface (CLI) are stored as plain text in the backend. Storing credentials in plain text is a security risk; Microsoft advises customers to store user credentials in CLI environment variables to ensure they're encrypted/transformed when stored in the backend.
 
 If your container group stops working, we suggest trying to restart your container, checking your application code, or your local network configuration before opening a [support request][azure-support]. 
 
@@ -93,7 +93,7 @@ Some Windows Server base images are no longer compatible with Azure Container In
 
 If a container group restarts, the container group’s IP may change. We advise against using a hard coded IP address in your scenario. If you need a static public IP address, use Application Gateway: [Static IP address for container group - Azure Container Instances | Microsoft Learn](./container-instances-application-gateway.md)
 
-There are ports that are reserved for service functionality. We advise you not to use these ports since this will lead to unexpected behavior: [Does the ACI service reserve ports for service functionality?](./container-instances-faq.yml)
+There are ports that are reserved for service functionality. We advise you not to use these ports because using them leads to unexpected behavior: [Does the ACI service reserve ports for service functionality?](./container-instances-faq.yml)
 
  If you’re having trouble deploying or running your container, first check the [Troubleshooting Guide](./container-instances-troubleshooting.md) for common mistakes and issues 
 
