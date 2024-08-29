@@ -16,9 +16,9 @@ ms.custom: template-how-to, devx-track-azurecli, devx-track-azurepowershell
 
 Capacity reservation groups can be used with new or existing virtual machines (VMs). To learn more about capacity reservations, see the [Capacity reservation overview](capacity-reservation-overview.md).
 
-## Associate a new VM
+## Associate a new virtual machine
 
-To associate a new VM to the capacity reservation group, the group must be explicitly referenced as a property of the VM. This reference protects the matching reservation in the group for applications and workloads intended to use it.
+To associate a new virtual machine to the capacity reservation group, the group must be explicitly referenced as a property of the VM. This reference protects the matching reservation in the group for applications and workloads intended to use it.
 
 ### [API](#tab/api1)
 
@@ -116,18 +116,18 @@ ARM templates let you deploy groups of related resources. In a single template, 
 --- 
 <!-- The three dashes above show that your section of tabbed content is complete. Don't remove them :) -->
 
-## Associate an existing VM
+## Associate an existing virtual machine
 
-For the initial release of a capacity reservation, a VM must be allocated to a capacity reservation:
+For the initial release of a capacity reservation, a virtual machine must be allocated to a capacity reservation:
 
 - If not already complete, follow guidance to create a capacity reservation group and capacity reservation. Or increment the quantity of an existing capacity reservation so there's unused reserved capacity.
-- Deallocate the VM.
+- Deallocate the virtual machine.
 - Update the capacity reservation group property on the VM.
 - Restart the VM.
 
 ### [API](#tab/api2)
 
-1. Deallocate the VM:
+1. Deallocate the virtual machine:
 
     ```rest
     PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourcegroupname}/providers/Microsoft.Compute/virtualMachines/{VirtualMachineName}/deallocate?api-version=2021-04-01
@@ -166,7 +166,7 @@ For the initial release of a capacity reservation, a VM must be allocated to a c
 
 ### [CLI](#tab/cli2)
 
-1. Deallocate the VM:
+1. Deallocate the virtual machine:
 
     ```azurecli-interactive
     az vm deallocate 
@@ -185,7 +185,7 @@ For the initial release of a capacity reservation, a VM must be allocated to a c
 
 ### [PowerShell](#tab/powershell2)
 
-1. Deallocate the VM:
+1. Deallocate the virtual machine:
 
     ```powershell-interactive
     Stop-AzVM

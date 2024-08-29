@@ -138,7 +138,7 @@ If you then deploy a D2s_v3 VM and specify reservation property, the capacity re
 
 Both used and unused capacity reservations are eligible for Savings Plan and Reserved Instances term commitment discounts. In the previous example, if you have reserved instances for two D2s_v3 VMs in the same Azure region, the billing for two resources (either VM or unused capacity reservation) is zeroed out. The remaining eight D2s_v3 are billed normally. The term commitment discounts could be applied on either the VM or the unused capacity reservation.
 
-## Difference between On-demand capacity reservation and reserved instances
+## Difference between on-demand capacity reservation and reserved instances
 
 
 | Differences | On-demand capacity reservation | Reserved instances|
