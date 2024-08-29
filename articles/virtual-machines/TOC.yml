@@ -314,6 +314,10 @@
         - name: Overview
           displayName: FX-series, sizes, size, vm size
           href: ./sizes/compute-optimized/fx-family.md
+        - name: FXmsv2 series
+          href: ./sizes/compute-optimized/fxmsv2-series.md
+        - name: FXmdsv2 series
+          href: /sizes/compute-optimzed/fxmdsv2-series.md
         - name: FX series
           href: fx-series.md
     - name: Memory optimized
