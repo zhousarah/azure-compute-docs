@@ -16,13 +16,13 @@ ms.custom: template-how-to
 
 Azure permits the association of extra virtual machines (VMs) above the number of capacity reservations. These VMs are available to allow for burst and other scale-out scenarios without the limits of reserved capacity. The only difference is that the count of VMs beyond the quantity reserved doesn't receive the capacity availability service-level agreement (SLA) benefit. As long as Azure has available capacity that meets the VM requirements, the extra allocation succeeds.
 
-The instance view of a capacity reservation group provides a snapshot of usage for each member capacity reservation. You can use the instance view to see how overallocation works.
+The Instance View of a capacity reservation group provides a snapshot of usage for each member capacity reservation. You can use the Instance View to see how overallocation works.
 
 This article assumes you created a capacity reservation group (`myCapacityReservationGroup`), a member capacity reservation (`myCapacityReservation`), and a VM (*myVM1*) that's associated to the group. For more information, see [Create a capacity reservation](capacity-reservation-create.md) and [Associate a VM to a capacity reservation](capacity-reservation-associate-vm.md).
 
-## Instance view for capacity reservation group
+## Instance View for a capacity reservation group
 
-The instance view for a capacity reservation group looks like this example:
+The Instance View for a capacity reservation group looks like this example:
 
 ```rest
 GET 
@@ -74,7 +74,7 @@ https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{reso
 
 Let's say we create another VM named *myVM2* and associate it with the preceding capacity reservation group.
 
-The instance view for the capacity reservation group now looks like this example:
+The Instance View for the capacity reservation group now looks like this example:
 
 ```json
 { 
