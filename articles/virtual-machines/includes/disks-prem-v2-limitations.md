@@ -5,7 +5,7 @@
  ms.service: azure-disk-storage
  ms.topic: include
  ms.date: 08/27/2024
- ms.author: luiraymond
+ ms.author: rogarana
 ms.custom:
   - include file
   - ignite-2023
