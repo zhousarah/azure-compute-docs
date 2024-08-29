@@ -10,7 +10,7 @@ ms.custom:
   - include file
   - ignite-2023
 ---
-- Premium SSD v2 can be used with any premium storage-enabled [virtual machine size](../sizes/overview.md). Navigate to your desired virtual machines (VMs) size article to determine support for premium storage.
+- Premium SSD v2 can be used with any premium storage-enabled [virtual machine size](/azure/virtual-machines/sizes/overview). Navigate to your desired virtual machines (VMs) size article to determine support for premium storage.
 - Premium SSD v2 disks can't be used as an OS disk.
 - Premium SSD v2 disks can't be used with Azure Compute Gallery.
 - Currently, Premium SSD v2 disks are only available in [select regions](/azure/virtual-machines/disks-deploy-premium-v2#regional-availability).
