@@ -167,7 +167,7 @@
     - name: Monitor Container Instances
       href: monitor-azure-container-instances.md
     - name: Viewing logs in Azure portal
-      href: container-instances-viewing-logs-in-portal.md
+      href: viewing-logs-in-portal.md
     - name: Monitor CPU and memory usage
       href: container-instances-monitor.md
     - name: Get container logs and events
