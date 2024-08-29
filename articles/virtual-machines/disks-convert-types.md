@@ -5,7 +5,7 @@ author: roygara
 ms.service: azure-disk-storage
 ms.custom: devx-track-azurecli, devx-track-azurepowershell, references_regions
 ms.topic: how-to
-ms.date: 08/12/2024
+ms.date: 08/26/2024
 ms.author: rogarana
 ---
 
@@ -35,13 +35,17 @@ The preview allowing direct switching to Premium SSD v2 disks has some additiona
 - You can't switch an OS disk to a Premium SSD v2 disk.
 - Existing disks can only be directly switched to 512 sector size Premium SSD v2 disks.
 - You can only perform 40 conversions at the same time per subscription per region.
-- If your existing disk is a shared disk, you must detach all VMs before changing to Premium SSD v2.
-- If your existing disk is using host caching, you must [set it to none](#disable-host-caching) before changing to Premium SSD v2.
-- If your existing disk is using bursting, you must [disable it](#disable-bursting) before changing to Premium SSD v2.
-- If your existing disk is using double encryption, you must [switch to one of the single encryption options](#disable-double-encryption) before changing to Premium SSD v2.
-- You can't directly switch from a Premium SSD v2 to another disk type. If you want to change a Premium SSD v2 to another disk type, you must migrate using [snapshots](#migrate-to-premium-ssd-v2-or-ultra-disk-using-snapshots).
-- You can't directly switch from Ultra Disks to Premium SSD v2 disks, you must migrate using [snapshots](#migrate-to-premium-ssd-v2-or-ultra-disk-using-snapshots).
-- If you're using the rest API, you must use an API version `2020-12-01` or newer for both the Compute Resource Provider and the Disk Resource Provider.
+- If your existing disk is a shared disk, detach all VMs before changing to Premium SSD v2.
+- If your existing disk is using host caching, [set it to none](#disable-host-caching) before changing to Premium SSD v2.
+- If your existing disk is using bursting, [disable it](#disable-bursting) before changing to Premium SSD v2.
+- If your existing disk is using double encryption, [switch to one of the single encryption options](#disable-double-encryption) before changing to Premium SSD v2.
+- You can't directly switch from a Premium SSD v2 to another disk type. If you want to change a Premium SSD v2 to another disk type, migrate using [snapshots](#migrate-to-premium-ssd-v2-or-ultra-disk-using-snapshots).
+- You can't directly switch from Ultra Disks to Premium SSD v2 disks, migrate using [snapshots](#migrate-to-premium-ssd-v2-or-ultra-disk-using-snapshots).
+- If your disk has Azure Site Recovery configured on it, disable it before changing to Premium SSD v2.
+- If you're using the rest API, use an API version `2020-12-01` or newer for both the Compute Resource Provider and the Disk Resource Provider.
+- Until the conversion process from your previous disk type to Premium SSD v2 is completed, the performance of the disk is degraded, and you can't change or rotate customer-managed keys for the disk if they're in use.
+    - You can use the following command to check the conversion process, replace `$diskName` and `$resourceGroupName` with your values: `az disk show -n $diskName  -g  $resourceGroupName --query [completionPercent] -o tsv`
+
 
 This preview is currently only available in the following regions:
 
@@ -57,15 +61,24 @@ This preview is currently only available in the following regions:
 - Central India
 - France Central
 
+> [!NOTE]
+> If you're using Azure Backup and you convert a disk to Premium SSD v2, a full snapshot is taken of the new disk. This is a billable event and you'll be charged for that snapshot.
+
 ### Disable host caching
 
-If your disk is using host caching, you must disable it before converting to Premium SSD v2. You can use the following CLI script to identify your disk's LUN and disable host caching. Replace `yourResourceGroup` and `nameOfYourVM` with your own values, then run the script.
+If your disk is using host caching, you must disable it before converting to Premium SSD v2. You'll need the LUN of the disk you want to disable host caching on. The following script outputs the name of the disks attached to your VM, and their LUNs. You can use this to identify the LUN of the disk. Replace `yourResourceGroup` and `nameOfYourVM` with your own values, then run the script.
 
 ```azurecli
-$myRG="yourResourceGroup"
-$myVM="nameOfYourVM"
+myRG="yourResourceGroup"
+myVM="nameOfYourVM"
 
-lun=$(az vm show -g $myRG -n $myVM --query "storageProfile.dataDisks[].lun")
+az vm show -g $myRG -n $myVM --query "[storageProfile.dataDisks[].name, storageProfile.dataDisks[].lun]"
+```
+
+Once you've got the disk's LUN, replace `LunHere` with the LUN and run the following command to disable host caching:
+
+```azurecli
+lun=LunHere
 
 az vm update --resource-group $myRG --name $myVM --disk-caching $lun=None
 ```
@@ -353,7 +366,7 @@ az disk create -g $resourceGroupName -n $newDiskName --source $snapshot --logica
 
 # [Portal](#tab/azure-portal)
 
-The following steps assume you already have a snapshot. To learn how to create one, see [Create a snapshot of a virtual hard disk](snapshot-copy-managed-disk.md),
+The following steps assume you already have a snapshot. To learn how to create one, see [Create a snapshot of a virtual hard disk](snapshot-copy-managed-disk.md).
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
 1. Select the search bar at the top. Search for and select Disks.
