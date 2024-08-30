@@ -7,7 +7,7 @@ ms.subservice: security
 ms.collection: linux
 ms.topic: conceptual
 ms.author: mbaldwin
-ms.date: 02/20/2024
+ms.date: 08/25/2024
 ms.custom: linux-related-content
 ---
 
@@ -165,10 +165,8 @@ sudo mount -a
 
 To enable the Azure Disk Encryption feature, the Linux VMs must meet the following network endpoint configuration requirements:
 
-  - To get a token to connect to your key vault, the Linux VM must be able to connect to a Microsoft Entra endpoint, \[login.microsoftonline.com\].
-  - To write the encryption keys to your key vault, the Linux VM must be able to connect to the key vault endpoint.
   - The Linux VM must be able to connect to an Azure storage endpoint that hosts the Azure extension repository and an Azure storage account that hosts the VHD files.
-  -  If your security policy limits access from Azure VMs to the Internet, you can resolve the preceding URI and configure a specific rule to allow outbound connectivity to the IPs. For more information, see [Azure Key Vault behind a firewall](/azure/key-vault/general/access-behind-firewall).
+  - If your security policy limits access from Azure VMs to the Internet, you can resolve the preceding URI and configure a specific rule to allow outbound connectivity to the IPs. For more information, see [Azure Key Vault behind a firewall](/azure/key-vault/general/access-behind-firewall).
 
 ## Encryption key storage requirements
 

@@ -7,7 +7,7 @@ author: tomvcassidy
 ms.service: azure-container-instances
 ms.custom: devx-track-azurecli
 services: container-instances
-ms.date: 06/17/2022
+ms.date: 08/29/2024
 ---
 
 # How to use managed identities with Azure Container Instances
@@ -35,7 +35,7 @@ Azure Container Instances supports both types of managed Azure identities: user-
 
 ### Use a managed identity
 
-To use a managed identity, the identity must be granted access to one or more Azure service resources (such as a web app, a key vault, or a storage account) in the subscription. Using a managed identity in a running container is similar to using an identity in an Azure VM. See the VM guidance for using a [token](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token), [Azure PowerShell or Azure CLI](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-sign-in), or the [Azure SDKs](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-sdk).
+To use a managed identity, the identity must be granted access to one or more Azure service resources (such as a web app, a key vault, or a storage account) in the subscription. Using a managed identity in a running container is similar to using an identity in an Azure Virtual Machine (VM). See the VM guidance for using a [token](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token), [Azure PowerShell or Azure CLI](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-sign-in), or the [Azure SDKs](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-sdk).
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](~/reusable-content/azure-cli/azure-cli-prepare-your-environment.md)]
 
@@ -126,7 +126,7 @@ az container create \
   --command-line "tail -f /dev/null"
 ```
 
-Within a few seconds, you should get a response from the Azure CLI indicating that the deployment has completed. Check its status with the [az container show](/cli/azure/container#az-container-show) command.
+Within a few seconds, you should get a response from the Azure CLI indicating that the deployment completed. Check its status with the [az container show](/cli/azure/container#az-container-show) command.
 
 ```azurecli-interactive
 az container show \
@@ -176,7 +176,7 @@ Output:
 {"access_token":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Imk2bEdrM0ZaenhSY1ViMkMzbkVRN3N5SEpsWSIsImtpZCI6Imk2bEdrM0ZaenhSY1ViMkMzbkVRN3N5SEpsWSJ9......xxxxxxxxxxxxxxxxx","refresh_token":"","expires_in":"28799","expires_on":"1539927532","not_before":"1539898432","resource":"https://vault.azure.net/","token_type":"Bearer"}
 ```
 
-For Windows containers, metadata server (169.254.169.254) is not available. Run the following or equivalent commands to get an access token.
+For Windows containers, metadata server (169.254.169.254) isn't available. Run the following or equivalent commands to get an access token.
 
 ```console
 curl -G -v %IDENTITY_ENDPOINT% --data-urlencode resource=https://vault.azure.net --data-urlencode principalId=<principal id> -H secret:%IDENTITY_HEADER%
@@ -222,7 +222,7 @@ az container create \
   --command-line "tail -f /dev/null"
 ```
 
-Within a few seconds, you should get a response from the Azure CLI indicating that the deployment has completed. Check its status with the [az container show](/cli/azure/container#az-container-show) command.
+Within a few seconds, you should get a response from the Azure CLI indicating that the deployment completed. Check its status with the [az container show](/cli/azure/container#az-container-show) command.
 
 ```azurecli-interactive
 az container show \
@@ -295,7 +295,7 @@ The value of the secret is retrieved:
 "Hello Container Instances"
 ```
 
-For Windows containers, the 'az login' command will not work because the metadata server is unavailable. Additionally, a managed identity token cannot be generated in a Windows VNet container.
+For Windows containers, the 'az login' command won't work because the metadata server is unavailable. Additionally, a managed identity token can't be generated in a Windows virtual network container.
 
 ## Enable managed identity using Resource Manager template
 
