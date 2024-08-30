@@ -6,7 +6,7 @@ ms.service: azure-container-instances
 services: container-instances
 author: tomvcassidy
 ms.author: tomcassidy
-ms.date: 03/18/2022
+ms.date: 08/29/2024
 ---
 
 # Deploy on dedicated hosts
@@ -15,7 +15,7 @@ ms.date: 03/18/2022
 
 The dedicated sku is appropriate for container workloads that require workload isolation from a physical server perspective.
 
-A dedicated host for Azure Container Instances provides [double encryption at rest](../virtual-machines/windows/disk-encryption.md#double-encryption-at-rest) for your container data when it is persisted by the service to the cloud. This encryption protects your data to help meet your organization's security and compliance requirements. ACI also gives you the option to [encrypt this data with your own key](container-instances-encrypt-data.md), giving you greater control over the data related to your ACI deployments.
+A dedicated host for Azure Container Instances provides [double encryption at rest](../virtual-machines/windows/disk-encryption.md#double-encryption-at-rest) for your container data when the service persists it to the cloud. This encryption protects your data to help meet your organization's security and compliance requirements. ACI also gives you the option to [encrypt this data with your own key](container-instances-encrypt-data.md), giving you greater control over the data related to your ACI deployments.
 
 ## Prerequisites
 
@@ -29,7 +29,7 @@ A dedicated host for Azure Container Instances provides [double encryption at re
 > [!IMPORTANT]
 > Using the dedicated sku is only available in **API version 2019-12-01 or later**. Specify this API version or a more recent one in your deployment template.
 
-Starting with API version 2019-12-01, there is a `sku` property under the container group properties section of a deployment template, which is required for an ACI deployment. Currently, you can use this property as part of an Azure Resource Manager deployment template for ACI. Learn more about deploying ACI resources with a template in the [Tutorial: Deploy a multi-container group using a Resource Manager template](./container-instances-multi-container-group.md). 
+Starting with API version 2019-12-01, there's a `sku` property under the container group properties section of a deployment template, which is required for an ACI deployment. Currently, you can use this property as part of an Azure Resource Manager deployment template for ACI. Learn more about deploying ACI resources with a template in the [Tutorial: Deploy a multi-container group using a Resource Manager template](./container-instances-multi-container-group.md). 
 
 The `sku` property can have one of the following values:
 * `Standard` - the standard ACI deployment choice, which still guarantees hypervisor-level security 
@@ -41,7 +41,7 @@ In your deployment template, modify or add the following properties:
 * Under `resources`, set `apiVersion` to `2019-12-01`.
 * Under the container group properties, add a `sku` property with value `Dedicated`.
 
-Here is an example snippet for the resources section of a container group deployment template that uses the dedicated sku:
+Here's an example snippet for the resources section of a container group deployment template that uses the dedicated sku:
 
 ```json
 [...]

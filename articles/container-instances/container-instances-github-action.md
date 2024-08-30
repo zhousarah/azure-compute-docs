@@ -6,7 +6,7 @@ ms.author: tomcassidy
 author: tomvcassidy
 ms.service: azure-container-instances
 services: container-instances
-ms.date: 05/07/2024
+ms.date: 08/29/2024
 ms.custom: github-actions-azure, devx-track-azurecli
 ---
 
@@ -86,7 +86,7 @@ Output is similar to:
 }
 ```
 
-Save the JSON output because it is used in a later step. Also, take note of the `clientId`, which you need to update the service principal in the next section.
+Save the JSON output because it's used in a later step. Also, take note of the `clientId`, which you need to update the service principal in the next section.
 
 ### Update for registry authentication
 
@@ -207,7 +207,7 @@ Alternatively, use the [Deploy to Azure extension](https://github.com/Azure/depl
 
 The workflow created by the Azure CLI is similar to the workflow you can [create manually using GitHub](#configure-github-workflow).
 
-### Additional prerequisite
+### Additional prerequisites
 
 In addition to the [prerequisites](#prerequisites) and [repo setup](#set-up-repo) for this scenario, you need to install the  **Deploy to Azure extension** for the Azure CLI.
 

@@ -159,6 +159,8 @@
       href: virtual-machine-scale-sets-perform-manual-upgrades.md
     - name: Reimage a virtual machine
       href: virtual-machine-scale-sets-reimage-virtual-machine.md
+    - name: Relocate to another region
+      href: /azure/operational-excellence/relocation-virtual-machine-scale-sets.md?toc=/azure/virtual-machine-scale-sets/toc.json&bc=/azure/virtual-machine-scale-sets/breadcrumb/toc.json
   - name: Common management tasks
     items:
     - name: Use the Azure CLI
