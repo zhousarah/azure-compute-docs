@@ -287,7 +287,7 @@ To effectively monitor the progress of your image build, you can access the live
 
 1. **Start the Image Build**: Initiate the image build process.
 2. **Navigate to Resource Groups**: Go to the Azure portal and select "Resource Groups." Filter by the subscription where the image build was initiated.
-3. **Select the Resource Group**: Find and select the resource group named "IT_\<ImageResourceGroupName\>\<TemplateName\>\<GUID\>." This is the resource group created by the AIB service for the build resources.
+3. **Select the Resource Group**: Find and select the staging resource group associated with the image build. This is the resource group that contains the AIB service build resources. For more information on the staging resource group, see [Properties: stagingResourceGroup](./image-builder-json.md#properties-stagingresourcegroup).
 4. **Locate the Build Container**: Within this resource group, look for the resource named "vmimagebuilder-build-container-**********." If it’s not visible, wait a few minutes and refresh the page.
 5. **Access Container Settings**: In the left pane, under "Settings," select "Containers."
 6. **View Logs**: Go to the "Logs" tab to view the live logs during the image build process.
@@ -296,9 +296,7 @@ If you don't see any logs, try refreshing the container after a few minutes.
 
 #### Downloading Customization Log After Image Build
 
-When the image build is running, logs are created and stored in a container inside a storage account. VM Image Builder creates the storage account in the temporary resource group when you create an image template artifact.
-
-The temporary resource group uses the pattern IT_\<ImageResourceGroupName\>_\<TemplateName\>_\<GUID\> (for example, *IT_aibmdi_helloImageTemplateLinux01*).
+When the image build is running, logs are created and stored in a container inside a storage account. VM Image Builder creates the storage account in the staging resource group when you create an image template artifact. For more information on the staging resource group, see [Properties: stagingResourceGroup](./image-builder-json.md#properties-stagingresourcegroup).
 
 > [!NOTE]
 > When accessing the `customization.log` file, it's important to note that if the image build has been run multiple times, there will be multiple folders within the `packerlogs` container. These folders are arranged in order from the oldest build to the most recent.
