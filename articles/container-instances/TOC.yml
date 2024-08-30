@@ -166,8 +166,6 @@
     items:
     - name: Monitor Container Instances
       href: monitor-azure-container-instances.md
-    - name: Monitor CPU and memory usage
-      href: container-instances-monitor.md
     - name: Get container logs and events
       href: container-instances-get-logs.md
     - name: Logging with Azure Monitor logs
