@@ -55,8 +55,8 @@ For basic specs, storage capacities, and disk details, see [GPU Windows VM sizes
 | OS | Driver |
 | -------- |------------- |
 | Windows 11 64-bit 21H2, 22H2, 23H2<br/><br/>Windows 10 64-bit 21H2, 22H2, 20H2 <br/><br/> | [23.Q3](https://download.microsoft.com/download/0/8/1/081db0c3-d2c0-44ae-be45-90a63610b16e/AMD-Azure-NVv4-Driver-23Q3-win10-win11.exe) (.exe) |
-| Windows Server 2022 <br/><br/> | [23.Q3](https://download.microsoft.com/download/2/d/3/2d328d15-4188-4fdb-8912-fb300a212dfc/AMD-Azure-NVv4-Driver-23Q3-winsvr2022.exe) (.exe)
-| Windows Server 2019 <br/><br/> | [23.Q3](https://download.microsoft.com/download/e/8/8/e88bb244-b8e8-47cc-9f86-9ba2632b3cb6/AMD-Azure-NVv4-Driver-23Q3-winsvr2019.exe) (.exe)
+| Windows Server 2022, Windows 11 EMS <br/><br/> | [23.Q3](https://download.microsoft.com/download/2/d/3/2d328d15-4188-4fdb-8912-fb300a212dfc/AMD-Azure-NVv4-Driver-23Q3-winsvr2022.exe) (.exe)
+| Windows Server 2019, Windows 10 EMS <br/><br/> | [23.Q3](https://download.microsoft.com/download/e/8/8/e88bb244-b8e8-47cc-9f86-9ba2632b3cb6/AMD-Azure-NVv4-Driver-23Q3-winsvr2019.exe) (.exe)
 
 Previous supported driver versions for Windows builds up to 1909 are [20.Q4-1](https://download.microsoft.com/download/0/e/6/0e611412-093f-40b8-8bf9-794a1623b2be/AMD-Azure-NVv4-Driver-20Q4-1.exe) (.exe) and [21.Q2-1](https://download.microsoft.com/download/4/e/a/4ea28d3f-28e2-4eaa-8ef2-4f7d32882a0b/AMD-Azure-NVv4-Driver-21Q2-1.exe) (.exe) 
  
@@ -68,6 +68,15 @@ Previous supported driver versions for Windows builds up to 1909 are [20.Q4-1](h
 
  
 ### Driver installation
+> [!NOTE]
+   >  Follow these steps if you see "Error 184 - AMD Installer cannot cpontinue due to an unsupported Operating System" error on Windows 10 EMS / Windows 11 EMS.
+   >  
+   >  Go to C:\AMD\AMD Software Azure NVv4 Guest Driver 23Q3\Packages\Drivers\Display\WT6A_INF
+   >  Right click and  install on the *.inf file.
+  > 
+  >   For Windows10 EMS: u9397288.inf
+  > 
+  >   For Windows11 EMS: u2397344.inf 
 
 1. Connect by Remote Desktop to each NVv4-series VM.
 
