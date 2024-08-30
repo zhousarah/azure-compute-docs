@@ -14,7 +14,7 @@ ms.custom: template-how-to
 
 **Applies to:** :heavy_check_mark: Flexible scale sets
 
-Virtual machine scale sets have two modes:
+Azure Virtual Machine Scale Sets has two modes:
 
 - **Uniform Orchestration**: In this mode, virtual machine scale sets use a virtual machine (VM) profile or a template to scale up to the capacity you want. Although there's some ability to manage or customize individual VM instances, Uniform Orchestration uses identical VM instances. These instances are exposed through the virtual machine scale set's VM APIs and aren't compatible with the standard Azure infrastructure as a service (IaaS) VM API commands. Because the scale set performs all the actual VM operations, reservations are associated with the virtual machine scale set directly. After the scale set is associated with the reservation, all the subsequent VM allocations are done against the reservation.
 - **Flexible Orchestration**: In this mode, you get more flexibility to manage the individual virtual machine scale set VM instances. They can use the standard Azure IaaS VM APIs instead of using the scale set interface. To use reservations with Flexible Orchestration mode, define both the virtual machine scale set property and the capacity reservation property on each VM.
