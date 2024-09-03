@@ -33,7 +33,7 @@ The increased remote storage performance of these VMs is ideal for storage throu
 
 ## Mbdsv3 series
 
-| **Size** | **vCPU** | **Memory: GiB** | **Temp storage (SSD) GiB** | **Max data disks** | **Max temp storage throughput: IOPS/MBps*** | **Max uncached Premium** **SSD  throughput: IOPS/MBps** | **Max uncached Ultra Disk and Premium SSD V2 disk throughput: IOPS/MBps** | **Max NICs** | **Max network bandwidth (Mbps)** |
+| **Size** | **vCPU** | **Memory: GiB** | **Temp storage (SSD) GiB** | **Max data disks** | **Max temp storage throughput: IOPS/MBps** | **Max uncached Premium** **SSD  throughput: IOPS/MBps** | **Max uncached Ultra Disk and Premium SSD V2 disk throughput: IOPS/MBps** | **Max NICs** | **Max network bandwidth (Mbps)** |
 |---|---|---|---|---|---|---|---|---|---|
 | **Standard_M16bds_v3** | 16 | 128 | 400 | 64 | 10,000/100 | 44,000/1,000 | 64,000/1,000 | 8 | 8,000 |
 | **Standard_M32bds_v3** | 32 | 256 | 400 | 64 | 20,000/200 | 88,000/2,000 | 88,000/2,000 | 8 | 16,000 |
