@@ -33,7 +33,7 @@ If you have a Log Analytics workspace you can enter the information for it.
 
 If you do not have a Log Analytics workspace you can select “Create New” to create a new one. 
 
-:::image type="content" source="./media/viewing-logs-in-portal/monitor-tab-create-new.png" alt-text="Screenshot of log analytics create new screen" lightbox=media/viewing-logs-in-portal/monitor-tab-create-new.png":::
+:::image type="content" source="./media/viewing-logs-in-portal/monitor-tab-create-new.png" alt-text="Screenshot of log analytics create new screen" lightbox="./media/viewing-logs-in-portal/monitor-tab-create-new.png":::
 
 Lastly, fill out the following tabs then go to the “Review + Create” tab and click “Create” to create your container instance. 
 
