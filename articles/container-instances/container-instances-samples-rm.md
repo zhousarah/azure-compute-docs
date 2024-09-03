@@ -7,7 +7,7 @@ ms.service: azure-container-instances
 ms.custom: devx-track-arm-template
 services: container-instances
 ms.topic: sample
-ms.date: 06/17/2022
+ms.date: 08/29/2024
 ---
 
 # Azure Resource Manager templates for Azure Container Instances

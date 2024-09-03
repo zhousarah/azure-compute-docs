@@ -6,7 +6,7 @@ ms.author: tomcassidy
 author: tomvcassidy
 ms.service: azure-container-instances
 services: container-instances
-ms.date: 06/17/2022
+ms.date: 08/29/2024
 ms.custom: devx-track-azurecli
 ---
 
@@ -39,7 +39,7 @@ To deploy to a new virtual network and have Azure create the network resources f
 
 The virtual network and subnet address prefixes specify the address spaces for the virtual network and subnet, respectively. These values are represented in Classless Inter-Domain Routing (CIDR) notation, for example `10.0.0.0/16`. For more information about working with subnets, see [Add, change, or delete a virtual network subnet](/azure/virtual-network/virtual-network-manage-subnet).
 
-Once you've deployed your first container group with this method, you can deploy to the same subnet by specifying the virtual network and subnet names, or the network profile that Azure automatically creates for you. Because Azure delegates the subnet to Azure Container Instances, you can deploy *only* container groups to the subnet.
+Once you deploy your first container group with this method, you can deploy to the same subnet by specifying the virtual network and subnet names, or the network profile that Azure automatically creates for you. Because Azure delegates the subnet to Azure Container Instances, you can deploy *only* container groups to the subnet.
 
 ### Example
 
@@ -56,7 +56,7 @@ az container create \
   --subnet-address-prefix 10.0.0.0/24
 ```
 
-When you deploy to a new virtual network by using this method, the deployment can take a few minutes while the network resources are created. After the initial deployment, additional container group deployments to the same subnet complete more quickly.
+When you deploy to a new virtual network by using this method, the deployment can take a few minutes while the network resources are created. After the initial deployment, further container group deployments to the same subnet complete more quickly.
 
 ## Deploy to existing virtual network
 
@@ -100,7 +100,7 @@ az container create \
   --subnet aci-subnet
 ```
 
-After this second container deployment has completed, pull its logs so you can see the output of the `wget` command it executed:
+After this second container deployment completes, pull its logs so you can see the output of the `wget` command it executed:
 
 ```azurecli-interactive
 az container logs --resource-group myResourceGroup --name commchecker
@@ -191,7 +191,7 @@ az container delete --resource-group myResourceGroup --name appcontaineryaml -y
 
 This feature currently requires several additional commands to delete the network resources you created earlier. If you used the example commands in previous sections of this article to create your virtual network and subnet, then you can use the following script to delete those network resources. The script assumes that your resource group contains a single virtual network with a single network profile.
 
-Before executing the script, set the `RES_GROUP` variable to the name of the resource group containing the virtual network and subnet that should be deleted. Update the name of the virtual network if you did not use the `aci-vnet` name suggested earlier. The script is formatted for the Bash shell. If you prefer another shell such as PowerShell or Command Prompt, you'll need to adjust variable assignment and accessors accordingly.
+Before executing the script, set the `RES_GROUP` variable to the name of the resource group containing the virtual network and subnet that should be deleted. Update the name of the virtual network if you didn't use the `aci-vnet` name suggested earlier. The script is formatted for the Bash shell. If you prefer another shell such as PowerShell or Command Prompt, you need to adjust variable assignment and accessors accordingly.
 
 > [!WARNING]
 > This script deletes resources! It deletes the virtual network and all subnets it contains. Be sure that you no longer need *any* of the resources in the virtual network, including any subnets it contains, prior to running this script. Once deleted, **these resources are unrecoverable**.
@@ -214,7 +214,7 @@ az network vnet delete --resource-group $RES_GROUP --name aci-vnet
 
 ## Next steps
 
-* To deploy a new virtual network, subnet, network profile, and container group using a Resource Manager template, see [Create an Azure container group with VNet](https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.containerinstance/aci-vnet).
+* To deploy a new virtual network, subnet, network profile, and container group using a Resource Manager template, see [Create an Azure container group with virtual network](https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.containerinstance/aci-vnet).
 
 * To deploy Azure Container Instances that can pull images from an Azure Container Registry through a private endpoint, see [Deploy to Azure Container Instances from Azure Container Registry using a managed identity](../container-instances/using-azure-container-registry-mi.md).
 
