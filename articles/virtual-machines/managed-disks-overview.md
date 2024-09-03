@@ -71,7 +71,7 @@ For example, if you don't want a person to copy a managed disk to a storage acco
 
 ### Ability to upload your VHD
 
-You can use direct upload to transfer your VHD to an Azure managed disk. Previously, you had to follow a process that included staging your data in a storage account. Now, there are fewer steps. It's easier to upload on-premises VMs to Azure and upload to large managed disks. The backup and restore process is also simplified.
+You can use direct upload to transfer your VHD to an Azure managed disk. Previously, you had to follow a process that included staging your data in a storage account. Now, there are fewer steps. It's easier to upload on-premises VMs to Azure and upload VMs to large managed disks. The backup and restore process is also simplified.
 
 You can also save costs by uploading data to managed disks directly, without attaching them to VMs. You can use direct upload to upload VHDs up to 32 TiB in size.
 
@@ -138,7 +138,7 @@ Generally, you should use the data disk to store your applications and data, ins
 - Easier maintenance
 - Improved security and access control
 
-For more details on these benefits, see [Why should I use the data disk to store applications and data instead of the OS disk?](faq-for-disks.yml#why-should-i-use-the-data-disk-to-store-applications-and-data-instead-of-the-os-disk-).
+For more information on these benefits, see [Why should I use the data disk to store applications and data instead of the OS disk?](faq-for-disks.yml#why-should-i-use-the-data-disk-to-store-applications-and-data-instead-of-the-os-disk-).
 
 ### Temporary disk
 
@@ -167,7 +167,7 @@ For information on creating images, see [Create a legacy managed image of a gene
 
 #### Images versus snapshots
 
-It's important to understand the difference between images and snapshots. With managed disks, you can take an image of a generalized VM that has been deallocated. This image includes all of the disks attached to the VM. You can use this image to create a VM.
+It's important to understand the difference between images and snapshots. With managed disks, you can take an image of a generalized VM that you deallocated. This image includes all of the disks attached to the VM. You can use this image to create a VM.
 
 A snapshot is a copy of a disk at a point in time. It applies only to one disk. If you have a VM that has one disk (the OS disk), you can take a snapshot or an image of it and create a VM from either the snapshot or the image.
 
