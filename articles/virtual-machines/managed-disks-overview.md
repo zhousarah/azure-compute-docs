@@ -13,9 +13,9 @@ ms.author: rogarana
 
 Azure managed disks are block-level storage volumes that are managed by Azure and used with Azure virtual machines (VMs). Managed disks are like physical disks in an on-premises server, but they're virtualized. With managed disks, all you have to do is specify the disk size, specify the disk type, and provision the disk. After you provision the disk, Azure handles the rest.
 
-The available types of disks are ultra disks, premium solid-state drives (SSD), standard SSDs, and standard hard disk drives (HDDs). For information about each disk type, see [Azure managed disk types](disks-types.md).
+The available types of managed disks are ultra disks, premium solid-state drives (SSD), standard SSDs, and standard hard disk drives (HDDs). For information about each disk type, see [Azure managed disk types](disks-types.md).
 
-Alternatively, you could use Azure Elastic SAN as your VM's storage. Elastic SAN allows you to consolidate the storage for all your workloads into a single storage back end. It can be more cost effective if you have many large-scale, I/O-intensive workloads and top-tier databases. To learn more, see [What is Azure Elastic SAN?](/azure/storage/elastic-san/elastic-san-introduction)
+An alternative is to use Azure Elastic SAN as your VM's storage. With Elastic SAN, you can consolidate the storage for all your workloads into a single storage back end. This choice can be more cost effective if you have many large-scale, I/O-intensive workloads and top-tier databases. To learn more, see [What is Azure Elastic SAN?](/azure/storage/elastic-san/elastic-san-introduction).
 
 ## Benefits of managed disks
 
@@ -57,7 +57,7 @@ Currently, Azure Backup supports disk sizes up to 32 tebibytes (TiB). [Learn mor
 
 #### Azure Disk Backup
 
-Azure Backup offers Azure Disk Backup as a native, cloud-based backup solution that helps protect your data in managed disks. You can use it to configure protection for managed disks in only a few steps.
+Azure Backup offers Azure Disk Backup as a native, cloud-based backup solution that helps protect your data in managed disks. You can use this solution to configure protection for managed disks in only a few steps.
 
 Azure Disk Backup provides snapshot lifecycle management for managed disks. It automates the periodic creation of snapshots and retains them for a configured duration by using a backup policy. For more information, see [Overview of Azure Disk Backup](/azure/backup/disk-backup-overview).
 
@@ -73,7 +73,7 @@ For example, if you don't want a person to copy a managed disk to a storage acco
 
 You can use direct upload to transfer your VHD to an Azure managed disk. Previously, you had to follow a process that included staging your data in a storage account. Now, there are fewer steps. It's easier to upload on-premises VMs to Azure and upload VMs to large managed disks. The backup and restore process is also simplified.
 
-You can also save costs by uploading data to managed disks directly, without attaching them to VMs. You can use direct upload to upload VHDs up to 32 TiB in size.
+You can also save costs by uploading data to managed disks directly, without attaching them to VMs. With direct upload, you can upload VHDs up to 32 TiB in size.
 
 To learn how to transfer your VHD to Azure, see the [Azure CLI](linux/disks-upload-vhd-to-managed-disk-cli.md) or [Azure PowerShell](windows/disks-upload-vhd-to-managed-disk-powershell.md) article.
 
@@ -85,7 +85,7 @@ You can use [Azure Private Link](/azure/private-link/private-link-overview) supp
 
 Private Link can help you restrict the export and import of managed disks so that it occurs only within your Azure virtual network. Using Private Link helps ensure that your data travels only within the secure Microsoft backbone network.
 
-To learn how to enable Private Link for importing or exporting a managed disk, see the [Azure CLI](linux/disks-export-import-private-links-cli.md) or [Azure portal](disks-enable-private-links-for-import-export-portal.yml) articles.
+To learn how to enable Private Link for importing or exporting a managed disk, see the [Azure CLI](linux/disks-export-import-private-links-cli.md) or [Azure portal](disks-enable-private-links-for-import-export-portal.yml) article.
 
 ### Encryption
 
@@ -120,7 +120,7 @@ There are three main disk roles in Azure: the OS disk, the data disk, and the te
 
 Every virtual machine has one attached OS disk. This disk has a pre-installed operating system, which was selected when the VM was created. This disk contains the boot volume.
 
-Generally, you should store only your OS information on the OS disk. You should store all applications and data on data disks. However, if cost is a concern, you can use the OS disk instead of creating a data disk.
+Generally, you should store only your OS information on the OS disk. You should store all applications and data on data disks. But if cost is a concern, you can use the OS disk instead of creating a data disk.
 
 The OS disk has a maximum capacity of 4,095 gibibytes (GiB). However, many operating systems are partitioned with [master boot records (MBRs)](/windows/win32/fileio/basic-and-dynamic-disks#master-boot-record) by default. An MBR limits the usable size to 2 TiB. If you need more than 2 TiB, create and attach [data disks](#data-disk) and use them for data storage. If you need to store data on the OS disk and require the additional space, [convert it to a GUID partition table (GPT)](/windows-server/storage/disk-management/change-an-mbr-disk-into-a-gpt-disk). To learn about the differences between an MBR and a GPT on Windows deployments, see [Windows and GPT FAQ](/windows-hardware/manufacture/desktop/windows-and-gpt-faq).
 
@@ -144,7 +144,7 @@ For more information on these benefits, see [Why should I use the data disk to s
 
 Most VMs contain a temporary disk, which is not a managed disk. The temporary disk provides short-term storage for applications and processes. It's intended for storing only data such as page files, swap files, or SQL Server tempdb files.
 
-Data on the temporary disk might be lost during a [maintenance event](./understand-vm-reboots.md), when you [redeploy a VM](/troubleshoot/azure/virtual-machines/redeploy-to-new-node-windows?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json), or when you stop the VM. During a successful standard reboot of the VM, data on the temporary disk persists. For more information about VMs without temporary disks, see [Azure VM sizes with no local temporary disk](azure-vms-no-temp-disk.yml).
+Data on the temporary disk might be lost during a [maintenance event](./understand-vm-reboots.md), when you [redeploy a VM](/troubleshoot/azure/virtual-machines/redeploy-to-new-node-windows?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json), or when you stop the VM. During a successful standard restart of the VM, data on the temporary disk persists. For more information about VMs without temporary disks, see [Azure VM sizes with no local temporary disk](azure-vms-no-temp-disk.yml).
 
 On Azure Linux VMs, the temporary disk is typically */dev/sdb*. On Windows VMs, the temporary disk is drive D by default. The temporary disk is not encrypted unless:
 
@@ -153,7 +153,7 @@ On Azure Linux VMs, the temporary disk is typically */dev/sdb*. On Windows VMs, 
 
 ## Managed disk snapshots
 
-A managed disk snapshot is a read-only, crash-consistent full copy of a managed disk that's stored as a standard managed disk by default. With snapshots, you can back up your managed disks at any point in time. These snapshots exist independently of the source disk and can be used to create new managed disks.
+A managed disk snapshot is a read-only, crash-consistent full copy of a managed disk that's stored as a standard managed disk by default. With snapshots, you can back up your managed disks at any point in time. These snapshots exist independently of the source disk, and you can use them to create new managed disks.
 
 Snapshots are billed based on the used size. For example, if you create a snapshot of a managed disk with provisioned capacity of 64 GiB and an actual used data size of 10 GiB, that snapshot is billed only for the used data size of 10 GiB. You can see the used size of your snapshots by checking the [Azure usage report](/azure/cost-management-billing/understand/review-individual-bill). For example, if the used data size of a snapshot is 10 GiB, the *daily* usage report will show 10 GiB/(31 days) = 0.3226 as the consumed quantity.
 
@@ -161,7 +161,7 @@ To learn more about how to create snapshots for managed disks, see [Create a sna
 
 ### Images
 
-Managed disks support creating a managed custom image. You can create an image from your custom VHD in a storage account or directly from a generalized (via Sysprep) VM. The image contains all managed disks associated with a VM, including both the OS and data disks. A managed custom image enables the creation of hundreds of VMs without the need to copy or manage any storage accounts.
+Managed disks support creating managed custom images. You can create an image from your custom VHD in a storage account or directly from a generalized (via Sysprep) VM. The image contains all managed disks associated with a VM, including both the OS and data disks. A managed custom image enables the creation of hundreds of VMs without the need to copy or manage any storage accounts.
 
 For information on creating images, see [Create a legacy managed image of a generalized VM in Azure](windows/capture-image-resource.yml).
 
@@ -171,7 +171,7 @@ It's important to understand the difference between images and snapshots. With m
 
 A snapshot is a copy of a disk at a point in time. It applies only to one disk. If you have a VM that has one disk (the OS disk), you can take a snapshot or an image of it and create a VM from either the snapshot or the image.
 
-A snapshot doesn't have awareness of any disk except the one that it contains. It's problematic to use snapshots in scenarios that require the coordination of multiple disks, such as striping. Snapshots would need to be able to coordinate with each other, and that's currently not supported.
+A snapshot doesn't have awareness of any disk except the one that it contains. Using snapshots in scenarios that require the coordination of multiple disks, such as striping, is problematic. Snapshots would need to be able to coordinate with each other, and that's currently not supported.
 
 ## Disk allocation and performance
 
