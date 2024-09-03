@@ -5,7 +5,7 @@
  author: roygara
  ms.service: azure-virtual-machines
  ms.topic: include
- ms.date: 08/26/2024
+ ms.date: 09/03/2024
  ms.author: rogarana
  ms.custom: include file, references_regions
 ---    
@@ -24,12 +24,12 @@
 Currently, you can sign up for a public preview for expanding Ultra Disks and Premium SSD v2 disks without downtimes [here.](https://aka.ms/DDLiveResizeCustomerSurvey)
 
 The preview has the following additional limitations:
-- You can't expand a disk while a [background copy](../scripts/create-managed-disk-from-snapshot.md#performance-impact---background-copy-process) of data is also occurring on the disk, like when the disk is being hydrated from snapshots.
+- You can't expand a disk while a [background copy](../scripts/create-managed-disk-from-snapshot.md#performance-impact---background-copy-process) of data is also occurring on that disk, like when a disk is being hydrated from snapshots.
 - You can't currently expand a VM that's using [NVMe controllers](../nvme-overview.md) and Ultra Disks or Premium SSD v2 disks without downtime.
 
 #### Regional availability
 
-Resizing Ultra Disks and Premium SSD v2 disks is currently available in the following regions:
+Resizing Ultra Disks and Premium SSD v2 disks is currently available as a preview in the following regions:
 
 - Australia East
 - Brazil South
