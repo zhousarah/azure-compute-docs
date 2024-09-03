@@ -307,6 +307,8 @@
           href: ./sizes/compute-optimized/fasv6-series.md
         - name: Falsv6 series
           href: ./sizes/compute-optimized/falsv6-series.md
+        - name: Famsv6 series
+          href: ./sizes/compute-optimized/famsv6-series.md
         - name: Fsv2 series
           href: ./sizes/compute-optimized/fsv2-series.md
       - name: FX family
