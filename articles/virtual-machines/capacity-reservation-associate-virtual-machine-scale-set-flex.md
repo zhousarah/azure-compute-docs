@@ -10,7 +10,7 @@ ms.reviewer: cynthn, jushiman
 ms.custom: template-how-to
 ---
 
-# Associate a virtual machine scale set with Flexible Orchestration to a capacity reservation group
+# Associate a virtual machine scale set with Flexible Orchestration to a capacity reservation group (preview)
 
 **Applies to:** :heavy_check_mark: Flexible scale sets
 
