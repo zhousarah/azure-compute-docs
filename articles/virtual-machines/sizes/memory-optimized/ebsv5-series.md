@@ -3,6 +3,8 @@ title: Ebdsv5 and Ebsv5 series
 description: Specifications for the Ebdsv5-series and Ebsv5-series Azure virtual machines.
 ms.service: azure-virtual-machines
 ms.date: 07/08/2024
+ms.author: mattmcinnes
+author: mattmcinnes
 ms.subservice: sizes
 ms.topic: conceptual
 ms.custom: references_regions
