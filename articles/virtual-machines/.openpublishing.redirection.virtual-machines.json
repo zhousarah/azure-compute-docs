@@ -6304,6 +6304,22 @@
             "source_path_from_root": "/articles/virtual-machines/dlsv6-dldsv6-series.md",
             "redirect_url": "/azure/virtual-machines/sizes/general-purpose/dlsv6-series",
             "redirect_document_id": true
+        },
+                {
+            "source_path_from_root": "/articles/virtual-machines/fx-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/compute-optimized/fx-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/fsv2-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/compute-optimized/fsv2-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/fasv6-falsv6-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/compute-optimized/fasv6-series",
+            "redirect_document_id": true
         }
+
     ]
 }
