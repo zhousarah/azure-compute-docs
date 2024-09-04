@@ -5,7 +5,7 @@
  author: roygara
  ms.service: azure-virtual-machines
  ms.topic: include
- ms.date: 09/03/2024
+ ms.date: 09/04/2024
  ms.author: rogarana
  ms.custom: include file, references_regions
 ---    
