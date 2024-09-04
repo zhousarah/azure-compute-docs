@@ -6331,6 +6331,11 @@
             "redirect_document_id": true
         },
         {
+            "source_path_from_root": "/articles/virtual-machines/easv5-eadsv5-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/memory-optimized/easv5-series",
+            "redirect_document_id": true
+        },
+        {
             "source_path_from_root": "/articles/virtual-machines/edv4-edsv4-series.md",
             "redirect_url": "/azure/virtual-machines/sizes/memory-optimized/edv4-series",
             "redirect_document_id": true
