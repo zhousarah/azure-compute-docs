@@ -73,7 +73,7 @@ For example, if you don't want a person to copy a managed disk to a storage acco
 
 You can use direct upload to transfer your VHD to an Azure managed disk. Previously, you had to follow a process that included staging your data in a storage account. Now, there are fewer steps. It's easier to upload on-premises VMs to Azure and upload VMs to large managed disks. The backup and restore process is also simplified.
 
-You can also save costs by uploading data to managed disks directly, without attaching them to VMs. With direct upload, you can upload VHDs up to 32 TiB in size.
+You can reduce costs by uploading data to managed disks directly, without attaching them to VMs. With direct upload, you can upload VHDs up to 32 TiB in size.
 
 To learn how to transfer your VHD to Azure, see the [Azure CLI](linux/disks-upload-vhd-to-managed-disk-cli.md) or [Azure PowerShell](windows/disks-upload-vhd-to-managed-disk-powershell.md) article.
 
