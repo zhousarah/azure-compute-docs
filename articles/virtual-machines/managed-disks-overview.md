@@ -31,7 +31,7 @@ This architecture has helped Azure consistently deliver high durability for infr
 
 By using managed disks, you can create up to 50,000 VM disks of a type in a subscription per region. You can then create thousands of VMs in a single subscription.
 
-This feature also increases the scalability of [virtual machine scale sets](../virtual-machine-scale-sets/overview.md). You can use it to create up to 1,000 VMs in a virtual machine scale set by using an Azure Marketplace image or an Azure Compute Gallery image.
+Managed disks increase the scalability of [virtual machine scale sets](../virtual-machine-scale-sets/overview.md). You can create up to 1,000 VMs in a virtual machine scale set by using an Azure Marketplace image or an Azure Compute Gallery image with managed disks.
 
 ### Integration with availability sets
 
