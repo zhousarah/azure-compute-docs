@@ -108,7 +108,7 @@ For more information, see [Server-side encryption of Azure Disk Storage](./disk-
 
 You can use Azure Disk Encryption to encrypt the OS and data disks that an IaaS virtual machine uses. This encryption includes managed disks.
 
-For Windows, the drives are encrypted through industry-standard BitLocker encryption technology. For Linux, the disks are encrypted through DM-Crypt technology. The encryption process is integrated with Azure Key Vault so that you can control and manage the disk encryption keys. For more information, see [Azure Disk Encryption for Linux VMs](linux/disk-encryption-overview.md) or [Azure Disk Encryption for Windows VMs](windows/disk-encryption-overview.md).
+On Windows VMs, the drives are encrypted through industry-standard BitLocker encryption technology. On Linux VMs, the disks are encrypted through DM-Crypt technology. The encryption process is integrated with Azure Key Vault so that you can control and manage the disk encryption keys. For more information, see [Azure Disk Encryption for Linux VMs](linux/disk-encryption-overview.md) or [Azure Disk Encryption for Windows VMs](windows/disk-encryption-overview.md).
 
 ## Disk roles
 
