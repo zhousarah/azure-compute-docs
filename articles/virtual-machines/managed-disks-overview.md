@@ -67,7 +67,7 @@ You can use [Azure role-based access control (Azure RBAC)](/azure/role-based-acc
 
 Managed disks expose a variety of operations, including read, write (create/update), and delete, along with retrieving a [shared access signature (SAS) URI](/azure/storage/common/storage-sas-overview) for the disk. You can grant access to only the operations that a person needs to perform a job.
 
-For example, if you don't want a person to copy a managed disk to a storage account, you can choose not to grant access to the export action for that managed disk. Similarly, if you don't want a person to use a SAS URI to copy a managed disk, you can choose not to grant that permission to the managed disk.
+For example, if you don't want a person to copy a managed disk to a storage account, don't grant access to the export action for that managed disk. Similarly, if you don't want a person to use a SAS URI to copy a managed disk, don't grant that permission to the managed disk.
 
 ### Ability to upload your VHD
 
