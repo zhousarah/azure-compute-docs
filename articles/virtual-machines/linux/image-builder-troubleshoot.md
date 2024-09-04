@@ -279,7 +279,7 @@ az image builder show --name $imageTemplateName  --resource-group $imageResource
 Get-AzImageBuilderTemplate -ImageTemplateName  <imageTemplateName> -ResourceGroupName <imageTemplateResourceGroup> | Select-Object LastRunStatus, LastRunStatusMessage
 ```
 
-### Customization and Validation Log
+### Customization Log
 
 #### Accessing Live Logs During Image Build
 
