@@ -51,7 +51,7 @@ With availability zones, Azure offers a service-level agreement of 99.99% for VM
 
 ### Azure Backup support
 
-To help protect against regional disasters, you can use [Azure Backup](/azure/backup/backup-overview) to create a backup job with time-based backups and backup retention policies. You can then perform VM or managed disk restorations at will.
+To help protect against regional disasters, you use [Azure Backup](/azure/backup/backup-overview) to create a backup job with time-based backups and backup retention policies. You can then perform VM or managed disk restorations at will.
 
 Currently, Azure Backup supports disk sizes up to 32 tebibytes (TiB). [Learn more about Azure VM backup support](/azure/backup/backup-support-matrix-iaas).
 
