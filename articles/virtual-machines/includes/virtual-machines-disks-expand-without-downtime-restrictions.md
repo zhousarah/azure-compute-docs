@@ -38,6 +38,5 @@ Resizing Ultra Disks and Premium SSD v2 disks is currently available as a previe
 - France Central
 - Japan East
 - Korea Central
-- North Central US
 - North Europe
 - Southeast Asia
