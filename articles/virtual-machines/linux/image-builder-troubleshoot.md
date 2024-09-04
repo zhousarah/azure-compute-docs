@@ -279,7 +279,7 @@ az image builder show --name $imageTemplateName  --resource-group $imageResource
 Get-AzImageBuilderTemplate -ImageTemplateName  <imageTemplateName> -ResourceGroupName <imageTemplateResourceGroup> | Select-Object LastRunStatus, LastRunStatusMessage
 ```
 
-### Customization Log
+### Customization and Validation Log
 
 #### Accessing Live Logs During Image Build
 
@@ -294,20 +294,20 @@ To effectively monitor the progress of your image build, you can access the live
 
 If you don't see any logs, try refreshing the container after a few minutes.
 
-#### Downloading Customization Log After Image Build
+#### Downloading the Customization and/or Validation Log After Image Build
 
-When the image build is running, logs are created and stored in a container inside a storage account. VM Image Builder creates the storage account in the staging resource group when you create an image template artifact. For more information on the staging resource group, see [Properties: stagingResourceGroup](./image-builder-json.md#properties-stagingresourcegroup).
+Once the image build completes, the customization and validation logs are stored in a container within the storage account in the staging resource group created by the VM Image Builder service. For more information on the staging resource group, see [Properties: stagingResourceGroup](./image-builder-json.md#properties-stagingresourcegroup).
 
 > [!NOTE]
-> When accessing the `customization.log` file, it's important to note that if the image build has been run multiple times, there will be multiple folders within the `packerlogs` container. These folders are arranged in order from the oldest build to the most recent.
+> When accessing the `customization.log` or `validation.log` file, it's important to note that if the image build has been run multiple times, there will be multiple folders within the `packerlogs` container. These folders are arranged in order from the oldest build to the most recent.
 
-Follow the steps below to locate and download the `customization.log` file:
+Follow the steps below to locate and download the `customization.log` or `validation.log` file:
 
-1. **Select Storage Account**: In the Azure portal, navigate to the relevant **Storage Account** by filtering for storage accounts within the temporary resource group created by the VM Image Builder service.
+1. **Select Storage Account**: In the Azure portal, navigate to the relevant **Storage Account** by filtering for storage accounts within the staging resource group created by the VM Image Builder service. For more information on the staging resource group, see [Properties: stagingResourceGroup](./image-builder-json.md#properties-stagingresourcegroup).
 2. **Access Data Storage**: Under the storage account, go to **Data Storage**.
 3. **Open Container**: Select the **Container** option and then choose the `packerlogs` container.
 4. **Choose the Correct Folder**: Within the `packerlogs` container, you will see multiple folders if the image build has been run multiple times. These folders are arranged from the oldest build to the most recent. Select the folder corresponding to the build you are interested in.
-5. **Download the Log File**: Inside the selected folder, select the `customization.log` file and then click **Download** to download its contents.
+5. **Download the Log File**: Inside the selected folder, select the `customization.log` and/or `validation.log` file and then click **Download** to download its contents.
 
 ### Understanding the customization log
 
