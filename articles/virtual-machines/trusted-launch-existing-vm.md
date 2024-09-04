@@ -92,14 +92,12 @@ Make sure that you install the latest [Azure CLI](/cli/azure/install-az-cli2) an
 
 2. Deallocate the VM.
 
-3. Enable Trusted launch by setting `--security-type` to `TrustedLaunch`.
-
-    ```azurecli-interactive
+     ```azurecli-interactive
     az vm deallocate \
         --resource-group myResourceGroup --name myVm
     ```
 
-4. Validate the output of the previous command. Ensure that the `securityProfile` configuration is returned with the command output.
+3. Enable Trusted launch by setting `--security-type` to `TrustedLaunch`.
 
     ```azurecli-interactive
     az vm update \
@@ -108,7 +106,7 @@ Make sure that you install the latest [Azure CLI](/cli/azure/install-az-cli2) an
         --enable-secure-boot true --enable-vtpm true
     ```
 
-5. Validate the output of the previous command. Ensure that the `securityProfile` configuration is returned with the command output.
+4. Validate the output of the previous command. Ensure that the `securityProfile` configuration is returned with the command output.
 
     ```json
     {
@@ -122,14 +120,14 @@ Make sure that you install the latest [Azure CLI](/cli/azure/install-az-cli2) an
     }
     ```
 
-6. Start the VM.
+5. Start the VM.
 
     ```azurecli-interactive
     az vm start \
         --resource-group myResourceGroup --name myVm
     ```
 
-7. Start the upgraded Trusted launch VM. Verify that you can sign in to the VM by using either RDP (for Windows VMs) or SSH (for Linux VMs).
+6. Start the upgraded Trusted launch VM. Verify that you can sign in to the VM by using either RDP (for Windows VMs) or SSH (for Linux VMs).
 
 ### [PowerShell](#tab/powershell)
 
