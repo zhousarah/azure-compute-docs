@@ -47,7 +47,7 @@ Managed disks support [availability zones](/azure/availability-zones/az-overview
 
 Availability zones are unique physical locations within an Azure region. Each zone consists of one or more datacenters equipped with independent power, cooling, and networking. To ensure resiliency, there's a minimum of three separate zones in all enabled regions.
 
-With availability zones, Azure offers a service-level agreement of 99.99% for VM uptime.
+For information about the service-level agreement (SLA) for VM uptime with availability zones, see the [page for Azure SLAs](https://azure.microsoft.com/support/legal/sla/).
 
 ### Azure Backup support
 
