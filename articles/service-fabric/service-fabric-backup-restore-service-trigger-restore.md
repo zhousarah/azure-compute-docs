@@ -58,7 +58,7 @@ If an entire Service Fabric cluster is lost, you can recover the data for the pa
 
 For the following example, assume that the lost cluster is the same cluster that's referred to in [Enabling periodic backup for Reliable Stateful service and Reliable Actors](service-fabric-backuprestoreservice-quickstart-azurecluster.md#enabling-periodic-backup-for-reliable-stateful-service-and-reliable-actors). In this case, `SampleApp` is deployed with backup policy enabled, and the backups are configured to Azure Storage.
 
-#### Powershell using Microsoft.ServiceFabric.Powershell.Http Module
+#### PowerShell using Microsoft.ServiceFabric.Powershell.Http Module
 
 Replace `account-name` with your storage account name.
 
@@ -70,7 +70,7 @@ Replace `account-name` with your storage account name.
 
 ```
 
-#### Rest Call using Powershell
+#### Rest Call using PowerShell
 
 Execute a PowerShell script to use the REST API to return a list of the backups created for all partitions inside the `SampleApp` application. The API requires the backup storage information to list the available backups.
 
@@ -166,7 +166,7 @@ If the partition ID on alternate cluster is `1c42c47f-439e-4e09-98b9-88b8f60800c
 
 For _Named Partitioning_, the name value is compared to identifying the target partition in alternate cluster.
 
-#### Powershell using Microsoft.ServiceFabric.Powershell.Http Module
+#### PowerShell using Microsoft.ServiceFabric.Powershell.Http Module
 
 ```powershell
 
@@ -174,7 +174,7 @@ Restore-SFPartition -PartitionId 1c42c47f-439e-4e09-98b9-88b8f60800c6 -BackupId 
 
 ```
 
-#### Rest Call using Powershell
+#### Rest Call using PowerShell
 
 You request the restore against the backup cluster partition by using the following [Restore API](/rest/api/servicefabric/sfclient-api-restorepartition):
 
@@ -204,7 +204,7 @@ Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/j
 You can track the progress of a restore with TrackRestoreProgress.
 
 > [!NOTE]
-> When using Powershell to restore partition, if backuplocation has '$', escape it using '~'
+> When using PowerShell to restore partition, if backuplocation has '$', escape it using '~'
 >
 
 ### Using Service Fabric Explorer
@@ -245,14 +245,14 @@ FailureError            :
 For the restore API, provide the _BackupId_ and _BackupLocation_ details. The cluster has backup enabled so the Service Fabric _Backup Restore Service (BRS)_ identifies the correct storage location from the associated backup policy.
 
 
-#### Powershell using Microsoft.ServiceFabric.Powershell.Http Module
+#### PowerShell using Microsoft.ServiceFabric.Powershell.Http Module
 
 ```powershell
 Restore-SFPartition  -PartitionId '974bd92a-b395-4631-8a7f-53bd4ae9cf22' -BackupId 'b0035075-b327-41a5-a58f-3ea94b68faa4' -BackupLocation 'SampleApp\MyStatefulService\974bd92a-b395-4631-8a7f-53bd4ae9cf22\2018-04-06 21.10.27.zip'
 
 ```
 
-#### Rest Call using Powershell
+#### Rest Call using PowerShell
 
 ```powershell
 $RestorePartitionReference = @{
@@ -269,20 +269,20 @@ Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/j
 You can track the restore progress by using TrackRestoreProgress.
 
 > [!NOTE]
-> When using Powershell to restore partition, if backuplocation has '$', escape it using '~'
+> When using PowerShell to restore partition, if backuplocation has '$', escape it using '~'
 >
 
 ## Track restore progress
 
 A partition of a Reliable Stateful service or Reliable Actor accepts only one restore request at a time. A partition only accepts another request after the current restore request is completed. Multiple restore requests can be triggered on different partitions at the same time.
 
-#### Powershell using Microsoft.ServiceFabric.Powershell.Http Module
+#### PowerShell using Microsoft.ServiceFabric.Powershell.Http Module
 
 ```powershell
     Get-SFPartitionRestoreProgress -PartitionId '974bd92a-b395-4631-8a7f-53bd4ae9cf22'
 ```
 
-#### Rest Call using Powershell
+#### Rest Call using PowerShell
 
 ```powershell
 $url = "https://mysfcluster-backup.southcentralus.cloudapp.azure.com:19080/Partitions/974bd92a-b395-4631-8a7f-53bd4ae9cf22/$/GetRestoreProgress?api-version=6.4"
