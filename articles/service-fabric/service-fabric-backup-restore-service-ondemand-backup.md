@@ -48,7 +48,7 @@ You can configure the periodic backup policy to use a partition of a Reliable St
 
 The following case is the continuation of the scenario in [Enabling periodic backup for Reliable Stateful service and Reliable Actors](service-fabric-backuprestoreservice-quickstart-azurecluster.md#enabling-periodic-backup-for-reliable-stateful-service-and-reliable-actors). In this case, you enable a backup policy to use a partition, and a backup occurs at a set frequency in Azure Storage.
 
-#### Powershell using Microsoft.ServiceFabric.Powershell.Http Module
+#### PowerShell using Microsoft.ServiceFabric.Powershell.Http Module
 
 ```powershell
 
@@ -56,7 +56,7 @@ Backup-SFPartition -PartitionId '974bd92a-b395-4631-8a7f-53bd4ae9cf22'
 
 ```
 
-#### Rest Call using Powershell
+#### Rest Call using PowerShell
 
 Use the [BackupPartition](/rest/api/servicefabric/sfclient-api-backuppartition) API to set up triggering for the on-demand backup for partition ID `974bd92a-b395-4631-8a7f-53bd4ae9cf22`.
 
@@ -73,7 +73,7 @@ Use the [GetBackupProgress](/rest/api/servicefabric/sfclient-api-getpartitionbac
 You can request on-demand backup for a partition of a Reliable Stateful service or Reliable Actor. Provide the storage information as a part of the on-demand backup request.
 
 
-#### Powershell using Microsoft.ServiceFabric.Powershell.Http Module
+#### PowerShell using Microsoft.ServiceFabric.Powershell.Http Module
 
 ```powershell
 
@@ -81,7 +81,7 @@ You can request on-demand backup for a partition of a Reliable Stateful service 
   # Use Optional parameter `ManagedIdentityClientId` with Client-Id of User-Assigned Managed Identity in case of multiple User-Assigned Managed Identities assigned to your resource, or both SAMI & UAMI assigned and we need to use UAMI as the default, else no need of this paramter.
 ```
 
-#### Rest Call using Powershell
+#### Rest Call using PowerShell
 
 Use the [BackupPartition](/rest/api/servicefabric/sfclient-api-backuppartition) API to set up triggering for the on-demand backup for partition ID `974bd92a-b395-4631-8a7f-53bd4ae9cf22`. Include the following Azure Storage information:
 
@@ -125,14 +125,14 @@ A partition of a Reliable Stateful service or Reliable Actor accepts only one on
 Different partitions can trigger on-demand backup requests at the same time.
 
 
-#### Powershell using Microsoft.ServiceFabric.Powershell.Http Module
+#### PowerShell using Microsoft.ServiceFabric.Powershell.Http Module
 
 ```powershell
 
 Get-SFPartitionBackupProgress -PartitionId '974bd92a-b395-4631-8a7f-53bd4ae9cf22'
 
 ```
-#### Rest Call using Powershell
+#### Rest Call using PowerShell
 
 ```powershell
 $url = "https://mysfcluster-backup.southcentralus.cloudapp.azure.com:19080/Partitions/974bd92a-b395-4631-8a7f-53bd4ae9cf22/$/GetBackupProgress?api-version=6.4"
