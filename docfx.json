@@ -7,14 +7,9 @@
           "**/*.yml"
         ],
         "exclude": [
-          "iot-edge/**",
-          "ai-services/document-intelligence/**",
           "**/_themes/**",
           "**/includes/**",
-          "**/obj/**",
-          "**/*.graffle",
-          "machine-learning/**",
-          "machine-learning/v1/**"
+          "**/obj/**"
         ],
         "src": "articles",
         "dest": "."
@@ -25,6 +20,13 @@
         ],
         "src": "breadcrumb/azure-compute",
         "dest": "breadcrumb/azure-compute"
+      },
+      {
+        "files": [
+          "zone-pivot-groups.yml"
+        ],
+        "src": "zone-pivots",
+        "dest": "zone-pivots/azure-compute"
       }
     ],
     "resource": [
@@ -37,12 +39,8 @@
           "**/*.svg"
         ],
         "exclude": [
-          "iot-edge/**",
-          "ai-services/document-intelligence/**",
           "**/_themes/**",
-          "**/obj/**",
-          "machine-learning/**",
-          "machine-learning/v1/**"
+          "**/obj/**"
         ],
         "src": "articles",
         "dest": "."
@@ -140,7 +138,8 @@
         "Certification"
       ],
       "uhfHeaderId": "azure",
-      "ms.suite": "office"
+      "ms.suite": "office",
+      "zone_pivot_group_filename": "zone-pivots/azure-compute/zone-pivot-groups.json"
     },
     "fileMetadata": {
       "author": {
@@ -243,7 +242,7 @@
     "overwrite": [],
     "externalReference": [],
     "template": [],
-	"rules": {
+	  "rules": {
       "sensitive-language-ma": {
         "exclude": [
           "articles/virtual-machines/workloads/sap/dbms-guide-ha-ibm.md",
