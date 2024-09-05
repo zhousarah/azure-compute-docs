@@ -27,10 +27,10 @@ The capacity reservation must meet the following rules:
 - The location parameter must match the location property for the parent capacity reservation group. A mismatch results in an error. 
 - The VM size must be available in the target region. Otherwise, the reservation creation fails. 
 - The subscription must have available quota equal to or more than the quantity of VMs being reserved for the VM series and for the region overall. If needed, [request more quota](/azure/quotas/per-vm-quota-requests). 
-    - As needed to satisfy existing quota limits, single VMs can be done in stages. Create a capacity reservation with a smaller quantity and reallocate that quantity of VMs. This approach frees up quota to increase the quantity reserved and add more VMs. Alternatively, if the subscription uses different VM sizes in the same series, reserve and redeploy VMs for the first size. Then add a reservation to the group for another size and redeploy the VMs for the new size to the reservation group. Repeat the process until it's complete. 
+    - As needed to satisfy existing quota limits, you can do single VMs in stages. Create a capacity reservation with a smaller quantity and reallocate that quantity of VMs. This approach frees up quota to increase the quantity reserved and add more VMs. Alternatively, if the subscription uses different VM sizes in the same series, reserve and redeploy VMs for the first size. Then add a reservation to the group for another size and redeploy the VMs for the new size to the reservation group. Repeat the process until it's complete. 
     - For scale sets, available quota is required unless the scale set or you delete its VM instances, capacity is reserved, and the scale set instances are added by using reserved capacity. If the scale set is updated by using blue green deployment, then reserve the capacity and deploy the new scale set to the reserved capacity at the next update. 
-- Each capacity reservation group can have exactly one reservation for a given VM size. For example, you can create only one capacity reservation for the VM size `Standard_D2s_v3`. Attempting to create a second reservation for `Standard_D2s_v3` in the same capacity reservation group results in an error. However, you can create another reservation in the same group for other VM sizes, such as `Standard_D4s_v3`, `Standard_D8s_v3`, and so on.  
-- For a capacity reservation group that supports zones, each reservation type is defined by the combination of **VM size** and **zone**. For example, one capacity reservation for `Standard_D2s_v3` in `Zone 1`, another capacity reservation for `Standard_D2s_v3` in `Zone 2`, and a third capacity reservation for `Standard_D2s_v3` in `Zone 3` is supported.
+- Each capacity reservation group can have exactly one reservation for a specific VM size. For example, you can create only one capacity reservation for the VM size `Standard_D2s_v3`. Attempting to create a second reservation for `Standard_D2s_v3` in the same capacity reservation group results in an error. However, you can create another reservation in the same group for other VM sizes, such as `Standard_D4s_v3` and `Standard_D8s_v3`.  
+- For a capacity reservation group that supports zones, each reservation type is defined by the combination of **VM size** and **zone**. For example, one capacity reservation for `Standard_D2s_v3` in `Zone 1`, another capacity reservation for `Standard_D2s_v3` in `Zone 2`, and a third capacity reservation for `Standard_D2s_v3` in `Zone 3` are supported.
 
 ## Check VM sizes that are available for capacity reservation in a region
 
@@ -51,11 +51,11 @@ Before you create a capacity reservation, you can check the VM sizes that are av
     1. Select a region.
     1. Optionally, select **Availability zones** or allow Azure to choose for you.
 1. Select **Next**.
-1. On VM size, select **See all sizes** to check what VM sizes are available for capacity reservation.
+1. On **VM size**, select **See all sizes** to check what VM sizes are available for capacity reservation.
 
   ### [CLI](#tab/cli1)
 
-Before you create a capacity reservation, you can check the reservation available VM sizes for the region you selected. The following example lists the capacity reservation VM sizes that are available in the East US location by using the Azure CLI:
+Before you create a capacity reservation, you can check the reservation's available VM sizes for the region that you selected. The following example lists the capacity reservation VM sizes that are available in the East US location by using the Azure CLI:
 
    ```azurecli-interactive
     az vm list-skus -l eastus --resource-type virtualMachines --query "[?contains(capabilities[?name == 'CapacityReservationSupported' && value == 'True'].name,'CapacityReservationSupported')].name"
@@ -308,7 +308,7 @@ To learn more, see the Azure PowerShell command [Get-AzCapacityReservation](/pow
 --- 
 <!-- The three dashes above show that your section of tabbed content is complete. Do not remove them :) -->
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Learn how to modify your capacity reservation](capacity-reservation-modify.md)

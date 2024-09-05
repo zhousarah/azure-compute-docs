@@ -61,10 +61,9 @@ The first option is to deallocate the virtual machine, change the capacity reser
 1. Go to your VM and select **Overview**.
 1. Select **Stop**.
     - You know your VM is deallocated when the status changes to *Stopped (deallocated)*.
-    - At this point in the process, the VM is still associated with the capacity reservation group. This association is reflected in the `virtualMachinesAssociated` property of the capacity reservation.
+    - At this point in the process, the VM is still associated to the capacity reservation group. This association is reflected in the `virtualMachinesAssociated` property of the capacity reservation.
 1. Select **Configuration**.
-1. Set the **Capacity Reservation group** value to **None**.
-    - The VM is no longer associated with the capacity reservation group.
+1. Set the **Capacity Reservation group** value to **None**. The VM is no longer associated to the capacity reservation group.
 
 ### [CLI](#tab/cli1)
 
@@ -174,12 +173,9 @@ This option works well when the VM can't be deallocated and when a reservation i
 1. Go to your capacity reservation group and select **Overview**.
 1. Select **Reservations**.
 1. Select **Manage Reservation** at the top of the page.
-1. On the **Manage Reservations** pane:
-    1. Enter **0** in the **Instances** field.
-    1. Select **Save**.
+1. On the **Manage Reservations** pane, enter **0** in the **Instances** field and select **Save**.
 1. Go to your VM and select **Configuration**.
-1. Set the **Capacity Reservation group** value to **None**.
-    - Note that the VM is no longer associated with the capacity reservation group.
+1. Set the **Capacity Reservation group** value to **None**. The VM is no longer associated to the capacity reservation group.
 
 ### [CLI](#tab/cli2)
 
@@ -233,7 +229,7 @@ To learn more, see the Azure PowerShell commands [New-AzCapacityReservation](/po
 --- 
 <!-- The three dashes above show that your section of tabbed content is complete. Don't remove them :) -->
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Learn how to associate a scale set to a capacity reservation group](capacity-reservation-associate-virtual-machine-scale-set.md)

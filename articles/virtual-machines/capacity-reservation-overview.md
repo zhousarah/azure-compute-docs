@@ -31,8 +31,8 @@ After Azure accepts your reservation request, it's available for VMs with matchi
 ## Benefits of capacity reservation 
 
 - After deployment, capacity is reserved for your use and is always available within the scope of applicable service-level agreements (SLAs).
-- Can be deployed and deleted at any time with no term commitment.
-- Can be combined automatically with reserved instances to use term commitment discounts.
+- Capacity can be deployed and deleted at any time with no term commitment.
+- Capacity can be combined automatically with reserved instances to use term-commitment discounts.
 
 ## SLA for capacity reservation 
 
@@ -41,7 +41,7 @@ Read the SLA details in the [SLA for capacity reservation](https://aka.ms/Capaci
 Any claim against the SLA requires that you calculate the Minutes Not Available for the reserved capacity. Here's an example of how to calculate Minutes Not Available:
 
 - An on-demand capacity reservation has a total capacity of five reserved units. The on-demand capacity reservation starts in the Unused Capacity state with zero VMs allocated. 
-- A Supported Deployment with a quantity of 5 is allocated to the on-demand capacity reservation. Three VMs succeed and two fail with a VM capacity error. The result is that two reserved units begin to accumulate Minutes Not Available. 
+- A supported deployment with a quantity of 5 is allocated to the on-demand capacity reservation. Three VMs succeed and two fail with a VM capacity error. The result is that two reserved units begin to accumulate Minutes Not Available. 
 - No action is taken for 20 minutes. The result is that two reserved units each accumulate 15 Minutes Not Available. 
 - At 20 minutes, a supported deployment with a quantity of 2 is attempted. One VM succeeds and the other VM fails with a VM capacity error. The result is one reserved unit stays at 15 accumulated Minutes Not Available. Another reserved unit resumes accumulating Minutes Not Available.
 - Four more supported deployments with a quantity of 1 are made at 10-minute intervals. On the fourth attempt (60 minutes after the first capacity error), the VM is deployed. The result is that the last reserved unit adds 40 minutes of Minutes Not Available (four attempts x 10 minutes between attempts) for a total of 55 Minutes Not Available.
@@ -89,7 +89,8 @@ From this example accumulation of Minutes Not Available, here's the calculation 
     - Fasv6 and Falsv6 series
     - Fx series
     - Lsv3 (Intel) and Lasv3 (AMD)
-    - At VM deployment, you can set a fault domain (FD) count of up to three by using Azure Virtual Machine Scale Sets. A deployment with more than three FDs fails to deploy against a capacity reservation.
+
+    At VM deployment, you can set a fault domain (FD) count of up to three by using Azure Virtual Machine Scale Sets. A deployment with more than three FDs fails to deploy against a capacity reservation.
 - At VM deployment for the following VM series for capacity reservation, you can set an FD count of one by using Virtual Machine Scale Sets. A deployment with more than one FD fails to deploy against a capacity reservation:
     - NC-series, v3
     - NCasT4_v3 series
@@ -102,7 +103,8 @@ From this example accumulation of Minutes Not Available, here's the calculation 
     - M-series, v2
     - M-series, v3
     - Lsv2
-    - For the preceding M series, at VM deployment, you can set an FD count of one by using Virtual Machine Scale Sets. A deployment with more than one FD fails to deploy against a capacity reservation.
+
+   For the preceding M series, at VM deployment, you can set an FD count of one by using Virtual Machine Scale Sets. A deployment with more than one FD fails to deploy against a capacity reservation.
 - Support for other VM series isn't currently available:
     - M series, v1
     - ND-series 
@@ -114,13 +116,13 @@ From this example accumulation of Minutes Not Available, here's the calculation 
     - Virtual Machine Scale Sets with Flexible Orchestration (preview)
 - The following deployment types aren't supported: 
     - Spot VMs 
-    - Azure Dedicated Host nodes or VMs deployed to Dedicated Hosts 
+    - Azure Dedicated Host nodes or VMs deployed to dedicated hosts 
     - Availability sets 
 - Other deployment constraints aren't supported. For example: 
     - Proximity placement group 
     - Update domains 
     - Virtual Machine Scale Sets with single placement group set to `true` 
-    - UltraSSD storage
+    - Azure Ultra Disk Storage (formerly UltraSSD)
     - VMs resuming from hibernation 
     - VMs requiring virtual network encryption
 - A pinned subscription can't use the feature.
@@ -134,7 +136,7 @@ From this example accumulation of Minutes Not Available, here's the calculation 
 
 Capacity reservations are priced at the same rate as the underlying VM size. For example, if you create a reservation for 10 D2s_v3 VMs, you start getting billed for 10 D2s_v3 VMs, even if the reservation isn't being used.
 
-If you then deploy a D2s_v3 VM and specify reservation property, the capacity reservation gets used. Once in use, you pay for only the VM and not the capacity reservation. Let's say you deploy six D2s_v3 VMs against the previously mentioned capacity reservation. You see a bill for six D2s_v3 VMs and four unused capacity reservations, both charged at the same rate as a D2s_v3 VM.
+If you then deploy a D2s_v3 VM and specify the reservation property, the capacity reservation gets used. After the VM is in use, you pay for only the VM and not the capacity reservation. Let's say you deploy six D2s_v3 VMs against the previously mentioned capacity reservation. You see a bill for six D2s_v3 VMs and four unused capacity reservations, both charged at the same rate as a D2s_v3 VM.
 
 Both used and unused capacity reservations are eligible for Savings Plan and Reserved Instances term commitment discounts. In the previous example, if you have reserved instances for two D2s_v3 VMs in the same Azure region, the billing for two resources (either VM or unused capacity reservation) is zeroed out. The remaining eight D2s_v3 are billed normally. The term commitment discounts could be applied on either the VM or the unused capacity reservation.
 
@@ -143,7 +145,7 @@ Both used and unused capacity reservations are eligible for Savings Plan and Res
 
 | Differences | On-demand capacity reservation | Reserved instances|
 |---|---|---|
-| Term | No term commitment required. Can be created and deleted as per the customer requirement | Fixed-term commitment of either one year or three years.|
+| Term | No term commitment required. Can be created and deleted as per the customer requirement. | Fixed-term commitment of either one year or three years.|
 | Billing discount | Charged at pay-as-you-go rates for the underlying VM size.* | Significant cost savings over pay-as-you-go rates. |
 | Capacity SLA | Provides capacity guarantee in the specified location (region or availability zone). | Doesn't provide a capacity guarantee. Customers can choose **Capacity priority** to gain better access, but that option doesn't carry an SLA. |
 | Region vs. availability zones | Can be deployed per region or per availability zone. | Only available at the regional level. |
@@ -180,7 +182,7 @@ Track the state of the overall reservation through the following properties:
  
 - `capacity`: Total quantity of instances reserved by the customer. 
 - `virtualMachinesAllocated`: List of VMs allocated against the capacity reservation and count toward consuming the capacity. These VMs are either **Running** or **Stopped** (**Allocated**), or they're in a transitional state such as **Starting** or **Stopping**. This list doesn't include the VMs that are in a deallocated state, which are referred to as **Stopped** (deallocated). 
-- `virtualMachinesAssociated`: List of VMs associated with the capacity reservation. This list has all the VMs that were configured to use the reservation, including the ones that are in a deallocated state.
+- `virtualMachinesAssociated`: List of VMs associated to the capacity reservation. This list has all the VMs that were configured to use the reservation, including the ones that are in a deallocated state.
 
 The previous example starts with `capacity` as 2 and the length of `virtualMachinesAllocated` and `virtualMachinesAssociated` as 0.
 
@@ -202,7 +204,7 @@ Now suppose the application scales down to the minimum of two VMs. Because the V
 
 ![Diagram that shows capacity reservation scaled down to the minimum of two VMs.](./media/capacity-reservation-overview/capacity-reservation-4.jpg) 
 
-The `capacity` and the length of `virtualMachinesAllocated` are both 2. However, the length for `virtualMachinesAssociated` is still 3 because VM 0, although deallocated, is still associated with the capacity reservation. To prevent a quota overrun, the deallocated VM 0 still counts against the quota allocated to the reservation. If you have enough unused quota, you can deploy new VMs to the capacity reservation and receive the SLA from any unused reserved capacity. Or you can delete VM 0 to remove its use of the quota. 
+The `capacity` and the length of `virtualMachinesAllocated` are both 2. However, the length for `virtualMachinesAssociated` is still 3 because VM 0, although deallocated, is still associated to the capacity reservation. To prevent a quota overrun, the deallocated VM 0 still counts against the quota allocated to the reservation. If you have enough unused quota, you can deploy new VMs to the capacity reservation and receive the SLA from any unused reserved capacity. Or you can delete VM 0 to remove its use of the quota. 
 
 The capacity reservation exists until it's explicitly deleted. To delete a capacity reservation, the first step is to dissociate all the VMs in the `virtualMachinesAssociated` property. After disassociation is finished, the capacity reservation should look like this diagram: 
 
@@ -224,7 +226,7 @@ For example, let's say that a capacity reservation with the reserved quantity of
 
 In the previous diagram, a reserved VM instance discount is applied to one of the unused instances and the cost for that instance is zeroed out. For the other instance, the pay-as-you-go rate is charged for the VM size reserved.
 
-When a VM is allocated against the capacity reservation, the other VM components such as disks, network, extensions, and any other requested components must also be allocated. In this state, the VM usage reflects one allocated VM and one unused capacity instance. The reserved VM instance will zero out the cost of either the VM or the unused capacity instance. The other charges for disks, networking, and other components associated with the allocated VM also appear on the bill. 
+When a VM is allocated against the capacity reservation, the other VM components such as disks, network, extensions, and any other requested components must also be allocated. In this state, the VM usage reflects one allocated VM and one unused capacity instance. The reserved VM instance will zero out the cost of either the VM or the unused capacity instance. The other charges for disks, networking, and other components associated to the allocated VM also appear on the bill. 
 
 ![Diagram that shows one allocated VM and one unused capacity instance.](./media/capacity-reservation-overview/capacity-reservation-8.jpg)
 
@@ -234,13 +236,13 @@ In the previous image, the VM reserved instance discount is applied to VM 0, whi
 
 - **What's the price of on-demand capacity reservation?**
 
-    The price of your on-demand capacity reservation is the same as the price of the underlying VM size associated with the reservation. When you use capacity reservation, you're charged for the VM size you selected at pay-as-you-go rates, whether the VM was provisioned or not. For more information, see the [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows/) and [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux/) VM pricing pages. 
+    The price of your on-demand capacity reservation is the same as the price of the underlying VM size associated to the reservation. When you use capacity reservation, you're charged for the VM size you selected at pay-as-you-go rates, whether the VM was provisioned or not. For more information, see the [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows/) and [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux/) VM pricing pages. 
 
 - **Will I get charged twice for the cost of on-demand capacity reservation and for the actual VM when I finally provision it?**
 
     No, you only get charged once for on-demand capacity reservation. 
 
-- **Can I apply Reserved Virtual Machine Instances to on-demand capacity reservations to lower my costs?**
+- **Can I apply Azure Reserved Virtual Machine Instances to on-demand capacity reservations to lower my costs?**
 
     Yes, you can apply existing or future reserved instances to on-demand capacity reservations and receive reserved instance discounts. Available reserved instances are applied automatically to capacity reservations the same way they're applied to VMs.
 
@@ -263,6 +265,6 @@ Get started reserving compute capacity. Check out other capacity reservation art
 - [Modify a capacity reservation](capacity-reservation-modify.md)
 - [Associate a VM](capacity-reservation-associate-vm.md)
 - [Remove a VM](capacity-reservation-remove-vm.md)
-- [Associate a Virtual Machine Scale Set - Flexible](capacity-reservation-associate-virtual-machine-scale-set-flex.md)
-- [Associate a Virtual Machine Scale Set - Uniform](capacity-reservation-associate-virtual-machine-scale-set.md)
-- [Remove a Virtual Machine Scale Set](capacity-reservation-remove-virtual-machine-scale-set.md)
+- [Associate a virtual machine scale set - Flexible Orchestration](capacity-reservation-associate-virtual-machine-scale-set-flex.md)
+- [Associate a virtual machine scale set - Uniform Orchestration](capacity-reservation-associate-virtual-machine-scale-set.md)
+- [Remove a virtual machine scale set](capacity-reservation-remove-virtual-machine-scale-set.md)

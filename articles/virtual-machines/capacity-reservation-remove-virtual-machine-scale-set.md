@@ -14,7 +14,7 @@ ms.custom: template-how-to, devx-track-azurepowershell
 
 **Applies to:** :heavy_check_mark: Uniform scale set :heavy_check_mark: Flexible scale sets
 
-This article walks you through removing a virtual machine scale set association from a capacity reservation group. To learn more about capacity reservations, see the [Capacity reservation overview](capacity-reservation-overview.md).
+This article walks you through removing a virtual machine scale set association from a capacity reservation group. To learn more about capacity reservations, see the [overview of capacity reservations](capacity-reservation-overview.md).
 
 Because both the virtual machine (VM) and the underlying capacity reservation logically occupy capacity, Azure imposes some constraints on this process to avoid ambiguous allocation states and unexpected errors.
 
@@ -221,7 +221,7 @@ To learn more, see the Azure PowerShell commands [New-AzCapacityReservation](/po
 - **Rolling upgrade**: In this mode, the scale set VM instances are dissociated from the capacity reservation group without any further action from you. However, they're updated in batches with an optional pause time between them.
 - **Manual upgrade**: In this mode, nothing happens to the scale set VM instances when the virtual machine scale set is updated. You need to individually remove each scale set VM by [upgrading it with the latest scale set model](../virtual-machine-scale-sets/virtual-machine-scale-sets-upgrade-policy.md).
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Learn about overallocating a capacity reservation](capacity-reservation-overallocate.md)

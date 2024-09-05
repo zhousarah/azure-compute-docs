@@ -72,7 +72,7 @@ https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{reso
 } 
 ```
 
-Let's say we create another VM named *myVM2* and associate it with the preceding capacity reservation group.
+Let's say we create another VM named *myVM2* and associate it to the preceding capacity reservation group.
 
 The Instance View for the capacity reservation group now looks like this example:
 
@@ -132,7 +132,7 @@ The length of `virtualMachinesAllocated` (2) is greater than `capacity` (1). Thi
 
 ## States and considerations
 
-There are three valid states for a given capacity reservation:
+There are three valid states for a specific capacity reservation:
 
 | State  | Status  | Considerations  |
 |---|---|---|
@@ -140,7 +140,7 @@ There are three valid states for a given capacity reservation:
 | Reservation consumed  | Length of `virtualMachinesAllocated` == `capacity`  | More VMs won't receive the capacity SLA unless some existing VMs are deallocated. Optionally, try to increase the capacity so that extra planned VMs receive an SLA.  |
 | Reservation overallocated  | Length of `virtualMachinesAllocated` > `capacity`  | More VMs won't receive the capacity SLA. Also, the quantity of VMs (length of `virtualMachinesAllocated` – `capacity`) won't receive a capacity SLA if deallocated. Optionally, increase the capacity to add capacity SLA to more of the existing VMs.  |
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Learn how to remove VMs from a capacity reservation](capacity-reservation-remove-vm.md)

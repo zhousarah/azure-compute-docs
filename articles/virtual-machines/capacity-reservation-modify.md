@@ -18,7 +18,7 @@ After you create a capacity reservation group and a capacity reservation, you mi
 
 > [!div class="checklist"]
 > * Update the number of instances reserved in a capacity reservation.
-> * Resize VMs associated with a capacity reservation group.
+> * Resize VMs associated to a capacity reservation group.
 > * Delete the capacity reservation group and capacity reservation.
 
 ## Update the number of instances reserved
@@ -86,7 +86,7 @@ To learn more, see the Azure PowerShell command [Update-AzCapacityReservation](/
 --- 
 <!-- The three dashes above show that your section of tabbed content is complete. Don't remove them :) -->
 
-## Resize VMs associated with a capacity reservation group
+## Resize VMs associated to a capacity reservation group
 
 You must do one of the following options if the VM being resized is currently attached to a capacity reservation group and that group doesn't have a reservation for the target size:
 
@@ -154,8 +154,8 @@ Check if the target size is part of the reservation group.
 
 1. Consider the following scenarios:
 
-    1. If the target VM size isn't part of the group, [create a new capacity reservation](capacity-reservation-create.md) for the target VM.
-    1. If the target VM size already exists in the group, [resize the VM](resize-vm.md).
+   - If the target VM size isn't part of the group, [create a new capacity reservation](capacity-reservation-create.md) for the target VM.
+   - If the target VM size already exists in the group, [resize the VM](resize-vm.md).
 
 ### [Portal](#tab/portal2)
 
@@ -190,8 +190,8 @@ Check if the target size is part of the reservation group.
 
 1. Consider the following scenarios:
 
-    1. If the target VM size isn't part of the group, [create a new capacity reservation](capacity-reservation-create.md) for the target VM.
-    1. If the target VM size already exists in the group, [resize the VM](resize-vm.md).
+   - If the target VM size isn't part of the group, [create a new capacity reservation](capacity-reservation-create.md) for the target VM.
+   - If the target VM size already exists in the group, [resize the VM](resize-vm.md).
 
 ### [PowerShell](#tab/powershell2)
 
@@ -219,8 +219,8 @@ Check if the target size is part of the reservation group.
 
 1. Consider the following scenarios:
 
-    1. If the target VM size isn't part of the group, [create a new capacity reservation](capacity-reservation-create.md) for the target VM.
-    1. If the target VM size already exists in the group, [resize the VM](resize-vm.md).
+   - If the target VM size isn't part of the group, [create a new capacity reservation](capacity-reservation-create.md) for the target VM.
+   - If the target VM size already exists in the group, [resize the VM](resize-vm.md).
 
 To learn more, see the Azure PowerShell commands [Get-AzCapacityReservationGroup](/powershell/module/az.compute/get-azcapacityreservationgroup) and [Get-AzCapacityReservation](/powershell/module/az.compute/get-azcapacityreservation).
 
@@ -235,7 +235,7 @@ To delete a capacity reservation, first find out all of the VMs that are associa
 
 ### [API](#tab/api3)
 
-First, find all the VMs associated with the capacity reservation group and dissociate them:
+First, find all the VMs associated to the capacity reservation group and dissociate them:
  
 ```rest
     GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/CapacityReservationGroups/{CapacityReservationGroupName}?$expand=instanceView&api-version=2021-04-01
@@ -306,7 +306,7 @@ DELETE https://management.azure.com/subscriptions/{subscriptionId}/resourceGroup
 1. Open the [Azure portal](https://portal.azure.com).
 1. Go to your capacity reservation group.
 1. Select **Resources**.
-1. Find out all the VMs that are associated with the group.
+1. Find out all the VMs that are associated to the group.
 1. [Disassociate every VM](capacity-reservation-remove-vm.md).
 1. Delete every capacity reservation in the group:
     1. Go to **Reservations**.
@@ -318,7 +318,7 @@ DELETE https://management.azure.com/subscriptions/{subscriptionId}/resourceGroup
 
 ### [CLI](#tab/cli3)
 
-Find out all the VMs associated with the capacity reservation group and dissociate them.
+Find out all the VMs associated to the capacity reservation group and dissociate them.
 
 1. Run the following command:
     
@@ -349,7 +349,7 @@ Find out all the VMs associated with the capacity reservation group and dissocia
 
 ### [PowerShell](#tab/powershell3)
 
-Find out all the VMs associated with the capacity reservation group and dissociate them.
+Find out all the VMs associated to the capacity reservation group and dissociate them.
 
 1. Run the following command:
     
@@ -385,10 +385,10 @@ To learn more, see the Azure PowerShell commands [Get-AzCapacityReservationGroup
 
 ## Restore instance quantity
 
-A well-formed request for reducing the reserved quantity should always succeed no matter the number of VMs associated with the reservation. However, increasing the reserved quantity might require more quota and for Azure to fulfill the request for more capacity. In a rare scenario in which Azure can't fulfill the request to increase the reserved quantity for existing reservations, the reservation might go into a *Failed* state and become unavailable until the reserved quantity is restored to the original amount.
+A well-formed request for reducing the reserved quantity should always succeed no matter the number of VMs associated to the reservation. However, increasing the reserved quantity might require more quota and for Azure to fulfill the request for more capacity. In a rare scenario in which Azure can't fulfill the request to increase the reserved quantity for existing reservations, the reservation might go into a *Failed* state and become unavailable until the reserved quantity is restored to the original amount.
 
 > [!NOTE]
-> If a reservation is in a *Failed* state, all the VMs that are associated with the reservation continue to work as normal.
+> If a reservation is in a *Failed* state, all the VMs that are associated to the reservation continue to work as normal.
 
 For example, let's say `myCapacityReservation` has 5 instances reserved. You request 5 extra instances, which makes the total reserved quantity equal to 10. However, because of a constrained capacity situation in the region, Azure can't fulfill the extra 5 instances that you requested. In this case, `myCapacityReservation` fails to meet its intended state of 10 reserved instances and goes into a *Failed* state.
 
@@ -396,14 +396,14 @@ To resolve this failure, follow these steps to locate the old quantity reserved 
 
 1. In the Azure portal, go to [Application Change Analysis](https://portal.azure.com/#blade/Microsoft_Azure_ChangeAnalysis/ChangeAnalysisBaseBlade).
 1. Select the applicable **Subscription**, **Resource group**, and **Time range** settings in the filters.
-    - You can only go back up to 14 days in the past in the **Time range** filter.
+   You can only go back up to 14 days in the past in the **Time range** filter.
 1. Search for the name of the capacity reservation.
 1. Look for the change in the `sku.capacity` property for that reservation.
-    - The old quantity reserved is the value under the **Old Value** column.
+   The old quantity reserved is the value under the **Old Value** column.
 
 Update `myCapacityReservation` to the old quantity reserved. After it's updated, the reservation is available immediately for use with your VMs.
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Learn how to remove VMs from a capacity reservation](capacity-reservation-remove-vm.md)
