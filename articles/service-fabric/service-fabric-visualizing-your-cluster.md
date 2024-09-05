@@ -104,7 +104,8 @@ Image store viewer is a feature offered if using Native Image Store that allows 
 ![Screenshot that shows the Image Store Viewer.][sfx-imagestore]
 
 ## Backup and Restore
-Service Fabric Explorer offers the ability to interface with [Backup and Restore](./service-fabric-reliable-services-backup-restore.md).In order to see Backup and Restore features in SFX BackupRestoreService must be enable on cluster (Validate cluster manifest file).
+Service Fabric Explorer offers the ability to interface with [Backup and Restore](./service-fabric-reliable-services-backup-restore.md).In order to see Backup and Restore features in SFX BackupRestoreService must be enabled on cluster (Validate cluster manifest file).
+
 
 The following operations are possible:
 

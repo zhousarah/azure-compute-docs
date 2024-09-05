@@ -120,7 +120,7 @@ Make sure Advanced Mode has been enabled in Service Fabric Explorer settings.
 
 ## Tracking on-demand backup progress
 
-A partition of a Reliable Stateful service or Reliable Actor accepts only one on-demand backup request at a time. Another request can be accepted only after the current on-demand backup request been completed.
+A partition of a Reliable Stateful service or Reliable Actor accepts only one on-demand backup request at a time. Another request can be accepted only after the current on-demand backup request has been completed.
 
 Different partitions can trigger on-demand backup requests at the same time.
 

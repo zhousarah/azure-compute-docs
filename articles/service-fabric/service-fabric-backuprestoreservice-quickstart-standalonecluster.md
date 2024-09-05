@@ -211,7 +211,7 @@ Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/j
 
 Make sure the BackupRestoreService is enable on cluster.
 
-1. Open Service Fabric Exploler.
+1. Open Service Fabric Explorer.
 2. Select an application and go to Backup section. Click on Backup Action.
 3. Click Enable/Update Application Backup.
 
