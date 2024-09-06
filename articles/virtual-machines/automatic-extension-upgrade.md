@@ -74,11 +74,23 @@ Automatic Extension Upgrade supports the following extensions (and more are adde
 - [Azure Diagnostics extension for Linux](/azure/azure-monitor/agents/diagnostics-extension-overview)
 - Service Fabric – [Linux](../service-fabric/service-fabric-tutorial-create-vnet-and-linux-cluster.md#service-fabric-extension)
 
+--- 
+
 ## Enabling Automatic Extension Upgrade
 
 To enable Automatic Extension Upgrade for an extension, you must ensure the property `enableAutomaticUpgrade` is set to `true` and added to every extension definition individually.
 
-### REST API for Virtual Machines
+### Using Azure portal
+You can use Azure portal - Extension blade to enable automatic upgrade of extensions on existing Virtual Machines and Virtual Machine Scale Sets. 
+1. Navigate to [Virtual Machines](https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FVirtualMachines) or [Virtual Machines Scale Sets](https://ms.portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FvirtualMachineScaleSets) blade and select the resource by clicking on its name.
+2. Navigate to "Extenisons + applications" blade under Settings to view all extensions installed on the resource. The "Automatic Upgrade Status" column tells if Automatic upgrade of the extension is enabled, disabled or not-supported.
+3. Navigate to Extension details blade by clicking on the extension name.
+:::image type="content" source="media/auto-extension.png" alt-text="Screenshot of Azure portal - Extension blade." lightbox="media/auto-extension.png":::
+4. Click "Enable automatic upgrade" to enable automatic upgrade of the extension. This button can also be used to disable automatic upgrade when required.   
+:::image type="content" source="media/auto-extension-upgrade.png" alt-text="Screenshot of Azure portal to enable automatic upgrade of the extension.":::
+
+### For Virtual Machines
+#### [REST API](tab/RestAPI)
 To enable automatic extension upgrade for an extension (in this example the Dependency Agent extension) on an Azure VM, use the following call:
 
 ```
@@ -100,8 +112,62 @@ PUT on `/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/provi
 }
 ```
 
-### REST API for Virtual Machine Scale Sets
-Use the following call to add the extension to the scale set model:
+#### [PowerShell](tab/powershell)
+Use the [Set-AzVMExtension](/powershell/module/az.compute/set-azvmextension) cmdlet:
+
+```azurepowershell-interactive
+Set-AzVMExtension -ExtensionName "Microsoft.Azure.Monitoring.DependencyAgent" `
+    -ResourceGroupName "myResourceGroup" `
+    -VMName "myVM" `
+    -Publisher "Microsoft.Azure.Monitoring.DependencyAgent" `
+    -ExtensionType "DependencyAgentWindows" `
+    -TypeHandlerVersion 9.5 `
+    -Location WestUS `
+    -EnableAutomaticUpgrade $true
+```
+
+#### [CLI](tab/cli)
+Use the [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set) cmdlet:
+
+```azurecli-interactive
+az vm extension set \
+    --resource-group myResourceGroup \
+    --vm-name myVM \
+    --name DependencyAgentLinux \
+    --publisher Microsoft.Azure.Monitoring.DependencyAgent \
+    --version 9.5 \
+    --enable-auto-upgrade true
+```
+
+
+#### [Template](tab/template)
+The following example describes how to set automatic extension upgrades for an extension (Dependency Agent Extension in this example) on a Virtual Machine using Azure Resource Manager
+
+```json
+{
+    "type": "Microsoft.Compute/virtualMachines/extensions",
+    "location": "[resourceGroup().location]",
+    "name": "<extensionName>",
+    "dependsOn": [
+        "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
+    ],
+    "properties": {
+        "publisher": "Microsoft.Azure.Monitoring.DependencyAgent",
+        "type": "DependencyAgentWindows",
+        "typeHandlerVersion": "9.5",
+        "autoUpgradeMinorVersion": true,
+        "enableAutomaticUpgrade": true,
+        "settings": {
+            "enableAMA": "true"
+        }
+    }
+}
+```
+
+
+### For Virtual Machine Scale Sets
+
+#### [REST API](tab/RestAPI)
 
 ```
 PUT on `/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Compute/virtualMachineScaleSets/<vmssName>?api-version=2019-12-01`
@@ -131,22 +197,7 @@ PUT on `/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/provi
 }
 ```
 
-### Azure PowerShell for Virtual Machines
-Use the [Set-AzVMExtension](/powershell/module/az.compute/set-azvmextension) cmdlet:
-
-```azurepowershell-interactive
-Set-AzVMExtension -ExtensionName "Microsoft.Azure.Monitoring.DependencyAgent" `
-    -ResourceGroupName "myResourceGroup" `
-    -VMName "myVM" `
-    -Publisher "Microsoft.Azure.Monitoring.DependencyAgent" `
-    -ExtensionType "DependencyAgentWindows" `
-    -TypeHandlerVersion 9.5 `
-    -Location WestUS `
-    -EnableAutomaticUpgrade $true
-```
-
-
-### Azure PowerShell for Virtual Machine Scale Sets
+#### [PowerShell](tab/powershell)
 Use the [Add-AzVmssExtension](/powershell/module/az.compute/add-azvmssextension) cmdlet to add the extension to the scale set model:
 
 ```azurepowershell-interactive
@@ -160,21 +211,7 @@ Add-AzVmssExtension -VirtualMachineScaleSet $vmss
 
 Update the scale set using [Update-AzVmss](/powershell/module/az.compute/update-azvmss) after adding the extension.
 
-
-### Azure CLI for Virtual Machines
-Use the [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set) cmdlet:
-
-```azurecli-interactive
-az vm extension set \
-    --resource-group myResourceGroup \
-    --vm-name myVM \
-    --name DependencyAgentLinux \
-    --publisher Microsoft.Azure.Monitoring.DependencyAgent \
-    --version 9.5 \
-    --enable-auto-upgrade true
-```
-
-### Azure CLI for Virtual Machine Scale Sets
+#### [CLI](tab/cli)
 Use the [az vmss extension set](/cli/azure/vmss/extension#az-vmss-extension-set) cmdlet to add the extension to the scale set model:
 
 ```azurecli-interactive
@@ -187,31 +224,7 @@ az vmss extension set \
     --enable-auto-upgrade true
 ```
 
-### ARM template for Virtual Machines
-The following example describes how to set automatic extension upgrades for an extension (Dependency Agent Extension in this example) on a Virtual Machine using Azure Resource Manager
-
-```json
-{
-    "type": "Microsoft.Compute/virtualMachines/extensions",
-    "location": "[resourceGroup().location]",
-    "name": "<extensionName>",
-    "dependsOn": [
-        "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
-    ],
-    "properties": {
-        "publisher": "Microsoft.Azure.Monitoring.DependencyAgent",
-        "type": "DependencyAgentWindows",
-        "typeHandlerVersion": "9.5",
-        "autoUpgradeMinorVersion": true,
-        "enableAutomaticUpgrade": true,
-        "settings": {
-            "enableAMA": "true"
-        }
-    }
-}
-```
-
-### ARM template for Virtual Machine Scale Sets
+#### [Template](tab/template)
 Use the following example to set automatic extension upgrade on the extension within the scale set model:
 
 ```json
@@ -238,15 +251,7 @@ Use the following example to set automatic extension upgrade on the extension wi
     }
 }
 ```
-
-### Using Azure portal
-You can use Azure portal - Extension blade to enable automatic upgrade of extensions on existing Virtual Machines and Virtual Machine Scale Sets. 
-1. Navigate to [Virtual Machines](https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FVirtualMachines) or [Virtual Machines Scale Sets](https://ms.portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FvirtualMachineScaleSets) blade and select the resource by clicking on its name.
-2. Navigate to "Extenisons + applications" blade under Settings to view all extensions installed on the resource. The "Automatic Upgrade Status" column tells if Automatic upgrade of the extension is enabled, disabled or not-supported.
-3. Navigate to Extension details blade by clicking on the extension name.
-:::image type="content" source="media/auto-extension.png" alt-text="Screenshot of Azure portal - Extension blade." lightbox="media/auto-extension.png":::
-4. Click "Enable automatic upgrade" to enable automatic upgrade of the extension. This button can also be used to disable automatic upgrade when required.   
-:::image type="content" source="media/auto-extension-upgrade.png" alt-text="Screenshot of Azure portal to enable automatic upgrade of the extension.":::
+--- 
 
 ## Extension upgrades with multiple extensions
 
