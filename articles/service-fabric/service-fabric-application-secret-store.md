@@ -144,6 +144,8 @@ secretValue = IO.ReadFile(Path.Join(Environment.GetEnvironmentVariable("SecretPa
 ```
    
 ## Rotating the Central Secret Service Encryption Certificate
+This guidance is in the case that you have CSS configured with your own encryption certificate, declared using `EncryptionCertificateThumbprint`. If you are using the cluster-managed credential option, the cluster manages the lifecycle of the credential and no action is needed. 
+
 It is important to note that certificates remain valid for decryption beyond their expiry. At this time, we recommend continuing to provision past encryption certificates after rotation, to reduce the chance of a lockout. Rotating the CSS encryption certificate requires the following steps:
 
 1. Provision the new certificate to each node of the cluster. At this time, do not remove/continue provisioning the previous encryption certificate.
