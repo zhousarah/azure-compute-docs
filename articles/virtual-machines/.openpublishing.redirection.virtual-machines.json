@@ -6446,6 +6446,11 @@
             "redirect_document_id": true
         },
         {
+            "source_path_from_root": "/articles/virtual-machines/ncv3-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/ncv3-series",
+            "redirect_document_id": true
+        },
+        {
             "source_path_from_root": "/articles/virtual-machines/nct4-v3-series.md",
             "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/ncast4v3-series",
             "redirect_document_id": true
