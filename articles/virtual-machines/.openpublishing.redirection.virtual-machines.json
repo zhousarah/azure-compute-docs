@@ -6397,7 +6397,7 @@
         },
         {
             "source_path_from_root": "/articles/virtual-machines/nva10v5-series.md",
-            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/nva10v5-series",
+            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/nvadsa10v5-series",
             "redirect_document_id": true
         },
         {
@@ -6407,7 +6407,7 @@
         },
         {
             "source_path_from_root": "/articles/virtual-machines/np-series.md",
-            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/np-series",
+            "redirect_url": "/azure/virtual-machines/sizes/fpga-accelerated/np-series",
             "redirect_document_id": true
         },
         {
@@ -6427,7 +6427,7 @@
         },
         {
             "source_path_from_root": "/articles/virtual-machines/nda100-v4-series.md",
-            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/nda100v4-series",
+            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/ndasra100v4-series",
             "redirect_document_id": true
         },
         {
@@ -6441,18 +6441,13 @@
             "redirect_document_id": true
         },
         {
-            "source_path_from_root": "/articles/virtual-machines/nvv3-series.md",
-            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/nvv3-series",
-            "redirect_document_id": true
-        },
-        {
             "source_path_from_root": "/articles/virtual-machines/ncv2-series.md",
             "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/ncv2-series",
             "redirect_document_id": true
         },
         {
             "source_path_from_root": "/articles/virtual-machines/nct4-v3-series.md",
-            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/nct4v3-series",
+            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/ncast4v3-series",
             "redirect_document_id": true
         },
         {
@@ -6467,7 +6462,7 @@
         },
                 {
             "source_path_from_root": "/articles/virtual-machines/hx-series.md",
-            "redirect_url": "/azure/virtual-machines/sizes/high-performance-compute/hx-series.",
+            "redirect_url": "/azure/virtual-machines/sizes/high-performance-compute/hx-series",
             "redirect_document_id": true
         },
         {
