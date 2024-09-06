@@ -21,6 +21,12 @@
 
 ### Preview for Ultra Disk and Premium SSD v2
 
+ > [!IMPORTANT]
+> Expanding without downtime for Ultra Disks and Premium SSD v2 disks is currently in PREVIEW.
+> See the [Supplemental Terms of Use for Microsoft Azure Previews](
+https://azure.microsoft.com/support/legal/preview-supplemental-terms/)
+for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+
 Currently, you can sign up for a public preview for expanding Ultra Disks and Premium SSD v2 disks without downtimes [here.](https://aka.ms/DDLiveResizeCustomerSurvey)
 
 The preview has the following additional limitations:
