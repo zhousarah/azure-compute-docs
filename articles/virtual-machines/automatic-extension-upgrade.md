@@ -90,7 +90,7 @@ You can use Azure portal - Extension blade to enable automatic upgrade of extens
 :::image type="content" source="media/auto-extension-upgrade.png" alt-text="Screenshot of Azure portal to enable automatic upgrade of the extension.":::
 
 ### For Virtual Machines
-#### [REST API](#tab/RestAPI)
+#### [REST API](#tab/RestAPI1)
 To enable automatic extension upgrade for an extension (in this example the Dependency Agent extension) on an Azure VM, use the following call:
 
 ```
@@ -112,7 +112,7 @@ PUT on `/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/provi
 }
 ```
 
-#### [PowerShell](#tab/powershell)
+#### [PowerShell](#tab/powershell1)
 Use the [Set-AzVMExtension](/powershell/module/az.compute/set-azvmextension) cmdlet:
 
 ```azurepowershell-interactive
@@ -126,7 +126,7 @@ Set-AzVMExtension -ExtensionName "Microsoft.Azure.Monitoring.DependencyAgent" `
     -EnableAutomaticUpgrade $true
 ```
 
-#### [CLI](#tab/cli)
+#### [CLI](#tab/cli1)
 Use the [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set) cmdlet:
 
 ```azurecli-interactive
@@ -140,7 +140,7 @@ az vm extension set \
 ```
 
 
-#### [Template](#tab/template)
+#### [Template](#tab/template1)
 The following example describes how to set automatic extension upgrades for an extension (Dependency Agent Extension in this example) on a Virtual Machine using Azure Resource Manager
 
 ```json
@@ -167,7 +167,7 @@ The following example describes how to set automatic extension upgrades for an e
 
 ### For Virtual Machine Scale Sets
 
-#### [REST API](#tab/RestAPI)
+#### [REST API](#tab/RestAPI2)
 
 ```
 PUT on `/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Compute/virtualMachineScaleSets/<vmssName>?api-version=2019-12-01`
@@ -197,7 +197,7 @@ PUT on `/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/provi
 }
 ```
 
-#### [PowerShell](#tab/powershell)
+#### [PowerShell](#tab/powershell2)
 Use the [Add-AzVmssExtension](/powershell/module/az.compute/add-azvmssextension) cmdlet to add the extension to the scale set model:
 
 ```azurepowershell-interactive
@@ -211,7 +211,7 @@ Add-AzVmssExtension -VirtualMachineScaleSet $vmss
 
 Update the scale set using [Update-AzVmss](/powershell/module/az.compute/update-azvmss) after adding the extension.
 
-#### [CLI](#tab/cli)
+#### [CLI](#tab/cli2)
 Use the [az vmss extension set](/cli/azure/vmss/extension#az-vmss-extension-set) cmdlet to add the extension to the scale set model:
 
 ```azurecli-interactive
@@ -224,7 +224,7 @@ az vmss extension set \
     --enable-auto-upgrade true
 ```
 
-#### [Template](#tab/template)
+#### [Template](#tab/template2)
 Use the following example to set automatic extension upgrade on the extension within the scale set model:
 
 ```json
