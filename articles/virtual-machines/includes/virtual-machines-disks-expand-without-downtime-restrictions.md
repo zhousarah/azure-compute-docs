@@ -5,7 +5,7 @@
  author: roygara
  ms.service: azure-virtual-machines
  ms.topic: include
- ms.date: 09/04/2024
+ ms.date: 09/06/2024
  ms.author: rogarana
  ms.custom: include file, references_regions
 ---    
@@ -31,7 +31,7 @@ Currently, you can sign up for a public preview for expanding Ultra Disks and Pr
 
 The preview has the following additional limitations:
 - You can't expand a disk while a [background copy](../scripts/create-managed-disk-from-snapshot.md#performance-impact---background-copy-process) of data is also occurring on that disk, like when a disk is being hydrated from snapshots.
-- You can't currently expand a VM that's using [NVMe controllers](../nvme-overview.md) and Ultra Disks or Premium SSD v2 disks without downtime.
+- You can't expand a VM that's using [NVMe controllers](../nvme-overview.md) for Ultra Disks or Premium SSD v2 disks without downtime.
 
 #### Regional availability
 
