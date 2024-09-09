@@ -1,5 +1,5 @@
 ---
-title: Associate a virtual machine scale set with Flexible Orchestration to a capacity reservation group (preview)
+title: Associate a virtual machine scale set with Flexible Orchestration to a capacity reservation group
 description: Learn how to associate a new virtual machine scale set with Flexible Orchestration mode to a capacity reservation group.
 author: bdeforeest
 ms.author: bidefore
@@ -10,7 +10,7 @@ ms.reviewer: cynthn, jushiman
 ms.custom: template-how-to
 ---
 
-# Associate a virtual machine scale set with Flexible Orchestration to a capacity reservation group (preview)
+# Associate a virtual machine scale set with Flexible Orchestration to a capacity reservation group
 
 **Applies to:** :heavy_check_mark: Flexible scale sets
 
