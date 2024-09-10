@@ -29,7 +29,7 @@ Currently only available in the following regions:
 - North Europe (Three availability zones)
 - Norway East (Three availability zones)
 - Poland Central (Three availability zones)
-- Spain Central (One availability zone)
+- Spain Central (Two availability zones)
 - South Africa North (Three availability zones)
 - South Central US (Three availability zones)
 - Southeast Asia (Three availability zones)
