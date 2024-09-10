@@ -207,13 +207,13 @@ Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/j
 
 #### Using Service Fabric Explorer
 
-1. In Service Fabric Explorer, navigate to the Backups tab and select Actions > Create Backup Policy.
+1. In Service Fabric Explorer, Click on Cluster at left side panel, navigate to the Backups tab and select Actions > Create Backup Policy.
 
     ![Create Backup Policy][6]
 
-2. Fill out the information. For details out how to specify a frequency-based interval, see the [TimeGrain property](/dotnet/api/microsoft.azure.management.monitor.models.metricavailability.timegrain?view=azure-dotnet&preserve-view=true). For Azure clusters, AzureBlobStore should be selected.
+2. Fill out the information. For details out how to specify a frequency-based interval, see the [TimeGrain property](/dotnet/api/microsoft.azure.management.monitor.models.metricavailability.timegrain?view=azure-dotnet&preserve-view=true). For Azure clusters, ManagedIdentityAzureBlobStore should be selected.
 
-    ![Create Backup Policy Azure Blob Storage][7]
+    ![Create Backup Policy Managed Identity Azure Blob Storage][7]
 
 ### Enable periodic backup
 After defining backup policy to fulfill data protection requirements of the application, the backup policy should be associated with the application. Depending on the requirement, the backup policy can be associated with an application, service, or a partition.
@@ -344,4 +344,4 @@ To view backups in Service Fabric Explorer, navigate to a partition and select t
 [4]: ./media/service-fabric-backuprestoreservice/enable-application-backup-policy.png
 [5]: ./media/service-fabric-backuprestoreservice/backup-enumeration.png
 [6]: ./media/service-fabric-backuprestoreservice/create-bp.png
-[7]: ./media/service-fabric-backuprestoreservice/creation-bp-fileshare.png
+[7]: ./media/service-fabric-backuprestoreservice/creation-bp-mi.png
