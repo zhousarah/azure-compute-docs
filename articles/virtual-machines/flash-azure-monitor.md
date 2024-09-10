@@ -43,10 +43,10 @@ To navigate to the [metrics explorer](/azure/azure-monitor/essentials/metrics-ge
 
 For a description of the metric's display values, see [VM availability metric](monitor-vm-reference.md#vm-availability-metric-preview).
 
-[NEW] Users can now split the VM availability by the 'Context' property.
+Users can split the VM availability by the 'Context' property.
    :::image type="content" source="media/flash/context-property-filter.png" alt-text="Screenshot of the newly added Context property of VM availability Metric on Azure portal." lightbox="media/flash/context-property-filter.png" :::
 
-The legend at the bottom indicates the color associated with the possible Context values: Unknown, Platform Initiated, and User Initiated.
+The legend at the bottom indicates the color associated with the possible Context: Unknown, Platform Initiated, and User Initiated.
    :::image type="content" source="media/flash/split-by-context-property.png" alt-text="Screenshot of the VM availability Metric split by Context on Azure portal." lightbox="media/flash/split-by-context-property.png" :::
 
 Users can also create an alert rule based on dimension values. Under the Condition tab, choose VM Availability Metric as the Signal name. In the Split by dimensions section, enter Context as the dimension name and select the corresponding dimension values.
