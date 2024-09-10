@@ -57,7 +57,7 @@ For a group of virtual machines undergoing an upgrade, the Azure platform orches
 
 4. The upgrade orchestrator also tracks the percentage of VMs that become unhealthy after an upgrade. The upgrade stops if more than 20% of upgraded instances become unhealthy during the upgrade process.
 
-The above process continues until all instances in the scale set have been upgraded.
+This process continues until all instances in the scale set are upgraded.
 
 The scale set upgrade orchestrator checks for the overall scale set health before upgrading every batch. During a batch upgrade, there could be other concurrent planned or unplanned maintenance activities that could impact the health of your scale set virtual machines. In such cases, if more than 20% of the scale set's instances become unhealthy, then the scale set upgrade stops at the end of current batch.
 
@@ -83,7 +83,7 @@ To enable Automatic Extension Upgrade for an extension, you must ensure the prop
 ### Using Azure portal
 You can use Azure portal - Extension blade to enable automatic upgrade of extensions on existing Virtual Machines and Virtual Machine Scale Sets. 
 1. Navigate to [Virtual Machines](https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FVirtualMachines) or [Virtual Machines Scale Sets](https://ms.portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FvirtualMachineScaleSets) blade and select the resource by clicking on its name.
-2. Navigate to "Extenisons + applications" blade under Settings to view all extensions installed on the resource. The "Automatic Upgrade Status" column tells if Automatic upgrade of the extension is enabled, disabled or not-supported.
+2. Navigate to "Extenisons + applications" blade under Settings which shows all extensions installed on the resource. The "Automatic Upgrade Status" column tells if Automatic upgrade of the extension is enabled, disabled or not-supported.
 3. Navigate to Extension details blade by clicking on the extension name.
 :::image type="content" source="media/auto-extension.png" alt-text="Screenshot of Azure portal - Extension blade." lightbox="media/auto-extension.png":::
 4. Click "Enable automatic upgrade" to enable automatic upgrade of the extension. This button can also be used to disable automatic upgrade when required.   
@@ -253,9 +253,9 @@ Use the following example to set automatic extension upgrade on the extension wi
 ```
 ----
 [!NOTE]
-The above operation sets the "enableAutomaticUpgrade" property to true on the VMSS resource but not on the underlying VMs. 
-If the VMSS defines [automatic or rolling upgrade mode in the upgradeProfile](./azure/virtual-machine-scale-sets/virtual-machine-scale-sets-change-upgrade-policy), then VMSS will automatically propagate the change to each underlying VM. 
-If the VMSS defines manual mode in the upgradePofile, then you also need to [manually update each instance](./azure/virtual-machine-scale-sets/virtual-machine-scale-sets-perform-manual-upgrades). This is required to propagate the change to each underlying VM. 
+These operations sets the "enableAutomaticUpgrade" property to true on the VMSS resource but not on the underlying VMs. 
+If the VMSS defines [automatic or rolling upgrade mode in the upgradeProfile](./azure/virtual-machine-scale-sets/virtual-machine-scale-sets-change-upgrade-policy), then VMSS automatically propagates the change to each underlying VM. 
+If the VMSS defines manual mode in the upgradePofile, then you also need to [manually update each instance](./azure/virtual-machine-scale-sets/virtual-machine-scale-sets-perform-manual-upgrades) and propagate the change to each underlying VM.
 
 --- 
 
@@ -263,7 +263,7 @@ If the VMSS defines manual mode in the upgradePofile, then you also need to [man
 
 A VM or Virtual Machine Scale Set can have multiple extensions with automatic extension upgrade enabled. The same VM or scale set can also have other extensions without automatic extension upgrade enabled.  
 
-If multiple extension upgrades are available for a virtual machine, the upgrades may be batched together, but each extension upgrade is applied individually on a virtual machine. A failure on one extension doesn't impact the other extension(s) that may be upgrading. For example, if two extensions are scheduled for an upgrade, and the first extension upgrade fails, the second extension will still be upgraded.
+If multiple extension upgrades are available for a virtual machine, the upgrades may be batched together, but each extension upgrade is applied individually on a virtual machine. A failure on one extension doesn't impact the other extensions that may be upgrading. For example, if two extensions are scheduled for an upgrade, and the first extension upgrade fails, the second extension is still be upgraded.
 
 Automatic Extension Upgrades can also be applied when a VM or virtual machine scale set has multiple extensions configured with [extension sequencing](../virtual-machine-scale-sets/virtual-machine-scale-sets-extension-sequencing.md). Extension sequencing is applicable for the first-time deployment of the VM, and any future extension upgrades on an extension are applied independently.
 
@@ -285,7 +285,7 @@ Automatic Extension Upgrades can also be applied when a VM or virtual machine sc
 
 It is recommemded to enable both properties to keep all VMs secure and up-to-date. 
 
-Upgrades to major extension versions are never performed automatically by either property since they could cause breaking change. You must manually set the TypeHandlerVersion to a major version and manually upgrade each existing VM to the latest major version.
+Upgrades to major extension versions are never performed automatically by either properties since major versions can include breaking changes. You must manually set the TypeHandlerVersion to a major version and manually upgrade each existing VM to the latest major version.
 
 ## Next steps
 > [!div class="nextstepaction"]
