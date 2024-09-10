@@ -340,8 +340,8 @@ To view backups in Service Fabric Explorer, navigate to a partition and select t
 
 [0]: ./media/service-fabric-backuprestoreservice/partition-backedup-health-event-azure.png
 [1]: ./media/service-fabric-backuprestoreservice/enable-backup-restore-service-with-portal.png
-[3]: ./media/service-fabric-backuprestoreservice/enable-application-backup-policy.png
-[4]: ./media/service-fabric-backuprestoreservice/enable-application-backup.png
+[3]: ./media/service-fabric-backuprestoreservice/enable-application-backup.png
+[4]: ./media/service-fabric-backuprestoreservice/enable-application-backup-policy.png
 [5]: ./media/service-fabric-backuprestoreservice/backup-enumeration.png
 [6]: ./media/service-fabric-backuprestoreservice/create-bp.png
 [7]: ./media/service-fabric-backuprestoreservice/creation-bp-fileshare.png
