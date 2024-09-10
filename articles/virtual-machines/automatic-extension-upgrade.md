@@ -251,6 +251,11 @@ Use the following example to set automatic extension upgrade on the extension wi
     }
 }
 ```
+[!NOTE]
+The above operation sets the "enableAutomaticUpgrade" property to true on the VMSS resource but not on the underlying VMs. 
+If the VMSS defines [automatic or rolling upgrade mode in the upgradeProfile](./azure/virtual-machine-scale-sets/virtual-machine-scale-sets-change-upgrade-policy), then VMSS will automatically propagate the change to each underlying VM. 
+If the VMSS defines manual mode in the upgradePofile, then you also need to [manually update each instance](./azure/virtual-machine-scale-sets/virtual-machine-scale-sets-perform-manual-upgrades). This is required to propagate the change to each underlying VM. 
+
 --- 
 
 ## Extension upgrades with multiple extensions
