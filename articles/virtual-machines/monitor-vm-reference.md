@@ -39,7 +39,7 @@ To learn how to use the VM availability metric to monitor Azure Virtual Machine 
 | 0 | VM is unavailable. The VM could be stopped or rebooting. If you shut down a VM from within the VM, it emits this value. |
 | Null (dashed line) | State of the VM is unknown. If you stop a VM from the Azure portal, CLI, or PowerShell, it immediately stops emitting the availability metric, and you see null values. |
 
-**Context** dimension: Informs whether VM availability was influenced due to Azure or user orchestrated activity. It can assume values of _Platform | Customer | Unknown_.
+**Context dimension** informs whether VM availability was influenced due to Azure or user orchestrated activity. It can assume values of *Platform*, *Customer*, or *Unknown*.
 
 | Display name | Description |
 | --- | --- |
