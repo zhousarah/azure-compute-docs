@@ -16,9 +16,6 @@ ms.reviewer: mattmcinnes, tomcassidy
 
 **Applies to:** :heavy_check_mark: Linux VMs :heavy_check_mark: Windows Client VMs :heavy_check_mark: Flexible scale sets :heavy_check_mark: Uniform scale sets
 
-> [!NOTE]
-> These VMs are broadly available at Australia East, Canada central, Central US, East US 2, East US, France Central, Germany West Central, India Central, Japan East, Mexico Central, North Europe, South Central US, Southeast Asia, Sweden Central, Switzerland Noth, UAE north, UK South, West Europe, West US 2, West US 3, West US. Explore future regional availability options by visiting the [Azure product availability page](https://azure.microsoft.com/explore/global-infrastructure/products-by-region/?cdn=disable&products=virtual-machines).
-
 [!INCLUDE [dplsv6-summary](./includes/dplsv6-series-summary.md)]
 
 ## Host specifications
