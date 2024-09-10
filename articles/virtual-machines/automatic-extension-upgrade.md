@@ -9,9 +9,9 @@ ms.date: 11/7/2023
 ms.custom: devx-track-azurepowershell
 ---
 
-# Automatic Extension Upgrade for VMs and Scale Sets in Azure
+# Automatic Extension Upgrade for Virtual Machines (VM) and Scale Sets (VMSS) in Azure
 
-Automatic Extension Upgrade is available for Azure VMs and Azure Virtual Machine Scale Sets. When Automatic Extension Upgrade is enabled on a VM or scale set, the extension is upgraded automatically whenever the extension publisher releases a new version for that extension.
+Automatic Extension Upgrade is available for Azure VMs and Azure Virtual Machine Scale Sets. When Automatic Extension Upgrade is enabled on a virtual machine or scale set, the extension is upgraded automatically whenever the extension publisher releases a new version for that extension.
 
  Automatic Extension Upgrade has the following features:
 - Supported for Azure VMs and Azure Virtual Machine Scale Sets.
@@ -36,7 +36,7 @@ For a group of virtual machines undergoing an upgrade, the Azure platform orches
 **Across regions:**
 - An upgrade moves across Azure globally in a phased manner to prevent Azure-wide deployment failures.
 - A 'phase' can have one or more regions, and an upgrade moves across phases only if eligible VMs in the previous phase upgrade successfully.
-- Geo-paired regions won't be upgraded concurrently and can't be in the same regional phase.
+- Geo-paired regions aren't upgraded concurrently and can't be in the same regional phase.
 - The success of an upgrade is measured by tracking the health of a VM post upgrade. VM health is tracked through platform health indicators for the VM. For Virtual Machine Scale Sets, the VM health is tracked through application health probes or the Application Health extension, if applied to the scale set.
 
 **Within a region:**
@@ -46,7 +46,7 @@ For a group of virtual machines undergoing an upgrade, the Azure platform orches
 **Within a 'set':**
 - All VMs in a common availability set or scale set aren't upgraded concurrently.  
 - VMs in a common availability set are upgraded within Update Domain boundaries and VMs across multiple Update Domains aren't upgraded concurrently.  
-- VMs in a common virtual machine scale set are grouped in batches and upgrded within Update Domain boundaries. [Upgrade policies](../virtual-machine-scale-sets/virtual-machine-scale-sets-upgrade-policy.md) defined on the scale set are honored during the upgrade. If upgrade policy is set to Manual, VMs won't get upgraded even if automatic extension upgrade is enabled. 
+- VMs in a common virtual machine scale set are grouped in batches and upgraded within Update Domain boundaries. [Upgrade policies](../virtual-machine-scale-sets/virtual-machine-scale-sets-upgrade-policy.md) defined on the scale set are honored during the upgrade. Each group is upgraded using rolling upgrade strategy. 
 
 ### Upgrade process for Virtual Machine Scale Sets
 1. Before the upgrade process starts, the orchestrator ensures that no more than 20% of VMs in the entire scale set are unhealthy (for any reason).
@@ -74,7 +74,7 @@ Automatic Extension Upgrade supports the following extensions (and more are adde
 - [Azure Diagnostics extension for Linux](/azure/azure-monitor/agents/diagnostics-extension-overview)
 - Service Fabric – [Linux](../service-fabric/service-fabric-tutorial-create-vnet-and-linux-cluster.md#service-fabric-extension)
 
---- 
+---
 
 ## Enabling Automatic Extension Upgrade
 
@@ -163,7 +163,7 @@ The following example describes how to set automatic extension upgrades for an e
     }
 }
 ```
-
+----
 
 ### For Virtual Machine Scale Sets
 
@@ -251,6 +251,7 @@ Use the following example to set automatic extension upgrade on the extension wi
     }
 }
 ```
+----
 [!NOTE]
 The above operation sets the "enableAutomaticUpgrade" property to true on the VMSS resource but not on the underlying VMs. 
 If the VMSS defines [automatic or rolling upgrade mode in the upgradeProfile](./azure/virtual-machine-scale-sets/virtual-machine-scale-sets-change-upgrade-policy), then VMSS will automatically propagate the change to each underlying VM. 
