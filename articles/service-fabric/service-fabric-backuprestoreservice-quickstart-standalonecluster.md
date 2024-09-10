@@ -305,7 +305,7 @@ To view backups in Service Fabric Explorer, navigate to a partition and select t
 - [Backup restore REST API reference](/rest/api/servicefabric/sfclient-index-backuprestore)
 
 [0]: ./media/service-fabric-backuprestoreservice/partition-backedup-health-event.png
-[3]: ./media/service-fabric-backuprestoreservice/enable-app-backup.png
+[3]: ./media/service-fabric-backuprestoreservice/enable-application-backup-policy.png
 [4]: ./media/service-fabric-backuprestoreservice/enable-application-backup.png
 [5]: ./media/service-fabric-backuprestoreservice/backup-enumeration.png
 [6]: ./media/service-fabric-backuprestoreservice/create-bp.png
