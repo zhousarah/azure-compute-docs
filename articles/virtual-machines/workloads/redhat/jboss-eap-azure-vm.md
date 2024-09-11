@@ -189,7 +189,7 @@ Use the following steps to deploy the Java EE Cafe sample application to the Red
    1. Use the following command to clone the source code from GitHub and check out the tag corresponding to this version of the article:
 
       ```bash
-      git clone https://github.com/Azure/rhel-jboss-templates.git --branch 20230418 --single-branch
+      git clone https://github.com/Azure/rhel-jboss-templates.git --branch 20240904 --single-branch
       ```
 
       If you see an error message with the text `You are in 'detached HEAD' state`, you can safely ignore it.

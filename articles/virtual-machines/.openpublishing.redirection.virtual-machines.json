@@ -6194,6 +6194,306 @@
             "source_path_from_root": "/articles/virtual-machines/workloads/sap/high-availability-guide-rhel-with-hana-ascs-ers-dialog-instance.md",
             "redirect_url": "/azure/sap/workloads/high-availability-guide-rhel-with-hana-ascs-ers-dialog-instance",
             "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/bsv2-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/bsv2-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/dv2-dsv2-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/dv2-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/dv3-dsv3-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/dv3-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/dv4-dsv4-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/dv4-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/dv5-dsv5-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/dv5-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/dcv3-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/dcsv3-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/dcv2-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/dcsv2-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/dcasv5-dcadsv5-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/dcasv5-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/dcasccv5-dcadsccv5-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/dcasccv5-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/dcesv5-dcedsv5-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/dcesv5-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/dpsv5-dpdsv5-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/dpsv5-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/dplsv5-dpldsv5-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/dplsv5-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/ddv5-ddsv5-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/ddv5-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/ddv4-ddsv4-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/ddv4-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/dav4-dasv4-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/dav4-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/dasv6-dadsv6-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/dasv6-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/dasv5-dadsv5-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/dasv5-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/dalsv6-daldsv6-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/dalsv6-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/bpsv2-arm.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/bpsv2-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/av2-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/av2-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/dsv6-ddsv6-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/dsv6-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/dlsv6-dldsv6-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/dlsv6-series",
+            "redirect_document_id": true
+        },
+                {
+            "source_path_from_root": "/articles/virtual-machines/fx-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/compute-optimized/fx-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/fsv2-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/compute-optimized/fsv2-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/fasv6-falsv6-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/compute-optimized/fasv6-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/ev4-esv4-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/memory-optimized/ev4-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/ev5-esv5-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/memory-optimized/ev5-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/easv5-eadsv5-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/memory-optimized/easv5-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/edv4-edsv4-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/memory-optimized/edv4-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/edv5-edsv5-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/memory-optimized/edv5-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/epsv5-epdsv5-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/memory-optimized/epsv5-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/easv6-eadsv6-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/memory-optimized/easv6-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/eav4-easv4-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/memory-optimized/eav4-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/esv6-edsv6-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/memory-optimized/esv6-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/sizes-b-series-burstable.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/bv1-series",
+            "redirect_document_id": true
+        },
+                {
+            "source_path_from_root": "/articles/virtual-machines/lsv2-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/storage-optimized/lsv2-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/lsv3-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/storage-optimized/lsv3-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/lasv3-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/storage-optimized/lasv3-series",
+            "redirect_document_id": true
+        },
+                {
+            "source_path_from_root": "/articles/virtual-machines/nvv4-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/nvv4-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/nvv3-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/nvv3-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/nva10v5-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/nvadsa10v5-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/nv-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/nv-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/np-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/fpga-accelerated/np-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/ngads-v-620-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/ngadsv620-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/ndv2-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/ndv2-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/ndm-a100-v4-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/ndma100v4-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/nda100-v4-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/ndasra100v4-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/nd-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/nd-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/nd-h100-v5-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/ndh100v5-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/ncv2-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/ncv2-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/ncv3-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/ncv3-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/nct4-v3-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/ncast4v3-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/nc-a100-v4-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/nca100v4-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/nc-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/gpu-accelerated/nc-series",
+            "redirect_document_id": true
+        },
+                {
+            "source_path_from_root": "/articles/virtual-machines/hx-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/high-performance-compute/hx-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/hc-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/high-performance-compute/hc-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/hbv4-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/high-performance-compute/hbv4-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/hbv3-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/high-performance-compute/hbv3-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/hbv2-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/high-performance-compute/hbv2-series",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/hb-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/high-performance-compute/hb-series",
+            "redirect_document_id": true
         }
     ]
 }
