@@ -344,4 +344,4 @@ To view backups in Service Fabric Explorer, navigate to a partition and select t
 [4]: ./media/service-fabric-backuprestoreservice/enable-application-backup-policy.png
 [5]: ./media/service-fabric-backuprestoreservice/backup-enumeration.png
 [6]: ./media/service-fabric-backuprestoreservice/create-bp.png
-[7]: ./media/service-fabric-backuprestoreservice/creation-bp-mi.png
+[7]: ./media/service-fabric-backuprestoreservice/creation-bp-managedIdentity.png
