@@ -5,7 +5,7 @@ author: pagienge
 ms.service: azure-disk-storage
 ms.collection: linux
 ms.topic: how-to
-ms.date: 01/25/2024
+ms.date: 09/10/2024
 ms.author: pagienge
 ms.custom: references_regions, devx-track-azurecli, linux-related-content
 ---
