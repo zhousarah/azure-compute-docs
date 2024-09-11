@@ -388,6 +388,8 @@
           href: ecasccv5-ecadsccv5-series.md
       - name: M family
         items:
+        - name: Mv3 Very High Memory Series
+          href: ./sizes/memory-optimized/mv3-very-high-memory-series.md
         - name: Overview
           displayName: M-series, sizes, size, vm size
           href: ./sizes/memory-optimized/m-family.md
