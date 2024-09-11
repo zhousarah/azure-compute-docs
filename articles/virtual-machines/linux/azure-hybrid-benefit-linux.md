@@ -9,7 +9,7 @@ ms.subservice: billing
 ms.collection: linux
 ms.topic: conceptual
 ms.date: 06/27/2024
-ms.author: vvarshney
+ms.author: clausw
 ms.reviewer: mattmcinnes
 ms.custom: kr2b-contr-experiment, linux-related-content, devx-track-azurecli
 ---
@@ -18,7 +18,7 @@ ms.custom: kr2b-contr-experiment, linux-related-content, devx-track-azurecli
 
 Azure Hybrid Benefit (AHB) for Linux lets you easily switch the software subscription model for your VM. You can remove licensing cost by bringing your Red Hat and SUSE Linux subscriptions directly to Azure, or utilize a model where you pay for subscriptions as you use them. This article defines 'BYOS' and 'PAYG' licensing models, compares the benefits of each model, and shows how you can use the Azure Hybrid Benefit to switch between the two at any point. This process applies to Virtual Machine Scale Sets, Spot Virtual Machines, and custom images. It allows for seamless bi-directional conversions between the two models.
 
-Customers may see savings estimated to up to 76% with Azure Hybrid Benefit for Linux. Savings estimates are based on one standard D2s v3 Azure VM with RHEL or SLES subscription in the East US region running at a pay-as-you-go rate vs a reduced rate for a 3-year reserved instance plan. Based on Azure pricing as of October 2022. Prices subject to change. Actual savings may vary based on location, instance type, or usage.
+Customers may see combined savings estimated to up to 76% with Azure Hybrid Benefit for Linux and three-year Azure Reserved VM Instances. Savings estimates are based on one standard D2s v5 Azure VM with RHEL or SLES subscription in the East US region running at a pay-as-you-go rate vs a reduced rate for a three-year reserved instance plan. Based on Azure pricing as of September 2024. Prices subject to change. Actual savings may vary based on location, instance type, or usage.
 
 > [!TIP]
 > Try the **[Azure Hybrid Benefit Savings Calculator](https://azure.microsoft.com/pricing/hybrid-benefit/#calculator)** to visualize the cost saving benefits of this feature.
@@ -61,7 +61,7 @@ To enable Azure Hybrid Benefit when you create a virtual machine, use the follow
 1. On the **Operating System** pane, confirm that the option is enabled.
 
    ![Screenshot of the Azure Hybrid Benefit configuration pane after you create a virtual machine.](./media/azure-hybrid-benefit/azure-hybrid-benefit.png)
-
+   
 #### [Azure CLI](#tab/ahbNewCli)
 
 You can use the `az vm extension` and `az vm update` commands to update new virtual machines after they've been created.
