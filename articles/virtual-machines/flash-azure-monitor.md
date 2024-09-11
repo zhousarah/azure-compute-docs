@@ -46,6 +46,8 @@ For a description of the metric's display values, see [VM availability metric](m
 Users can split the VM availability by the 'Context' property.
    :::image type="content" source="media/flash/context-property-filter.png" alt-text="Screenshot of the newly added Context property of VM availability Metric on Azure portal." lightbox="media/flash/context-property-filter.png" :::
 
+Note: The context for migrations (Service Healing and Live Migration) is unknown by default. We are working on making this information available in the future.
+
 The legend at the bottom indicates the color associated with the possible Context: Unknown, Platform Initiated, and User Initiated.
    :::image type="content" source="media/flash/split-by-context-property.png" alt-text="Screenshot of the VM availability Metric split by Context on Azure portal." lightbox="media/flash/split-by-context-property.png" :::
 
