@@ -9,7 +9,7 @@ ms.subservice: billing
 ms.collection: linux
 ms.topic: conceptual
 ms.date: 06/27/2024
-ms.author: vvarshney
+ms.author: clausw
 ms.reviewer: mattmcinnes
 ms.custom: kr2b-contr-experiment, linux-related-content, devx-track-azurecli
 ---
