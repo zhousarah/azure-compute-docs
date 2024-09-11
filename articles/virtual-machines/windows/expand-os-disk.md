@@ -6,7 +6,7 @@ manager: roshar
 ms.service: azure-disk-storage
 ms.collection: windows
 ms.topic: article
-ms.date: 01/25/2024
+ms.date: 09/10/2024
 ms.author: kirpas
 ms.custom: devx-track-azurepowershell, references_regions
 ---
