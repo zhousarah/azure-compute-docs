@@ -272,7 +272,7 @@ Automatic Extension Upgrades can also be applied when a VM or virtual machine sc
    - This property is used during VM creation and while upgrading the VM with a new configuration.  
    - When set to “true,” it ensures that the latest minor version of the extension is automatically installed on the virtual machine.
    - It overrides the TypeHandlerVersion with the latest stable minor version available.
-   - While upgrading the VM configuration, if a new minor version is available, then its considered a configuration change and the extension is reinstalled with latest minor version. 
+   - While upgrading the VM configuration, if a new minor version is available, then it's considered a configuration change and the extension is reinstalled with latest minor version. 
    - This helps keep newly created VMs up-to-date with the latest stable minor extension version.
    - If you want to manually set the extension to a specific version, set this property to “false.”
      
@@ -280,10 +280,10 @@ Automatic Extension Upgrades can also be applied when a VM or virtual machine sc
    - This property affects existing virtual machines.
    - It does not impact the version installed during VM creation.
    - After VM creation, if the VM is not running the latest minor version of the extension, enabling this property triggers an automatic upgrade.
-   - Upgrades do not cause VM reboot, are rolled out in a safe rolling manner and failed upgrades are rolled back immediately to provide high service availability and reliablity. 
+   - Upgrades do not cause VM reboot, are rolled out in a safe rolling manner and failed upgrades are rolled back immediately to provide high service availability and reliability. 
    - It ensures that existing VMs stay secure and up-to-date by automatically updating them to the latest minor version.
 
-It is recommemded to enable both properties to keep all VMs secure and up-to-date. 
+It is recommended to enable both properties to keep all VMs secure and up-to-date. 
 
 Upgrades to major extension versions are never performed automatically by either properties since major versions can include breaking changes. You must manually set the TypeHandlerVersion to a major version and manually upgrade each existing VM to the latest major version.
 
