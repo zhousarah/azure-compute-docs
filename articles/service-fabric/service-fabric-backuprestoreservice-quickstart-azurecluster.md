@@ -148,7 +148,7 @@ For backup storage, use the Azure Storage account created above. Container `back
 
 Follow steps for managed-identity assignment on Azure resource:
 
-1. Enable system assigned or User assigned managed identity in the VMSS [Configure managed identities on virtual machine scale set](https://learn.microsoft.com/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities-scale-sets?pivots=identity-mi-methods-azp)
+1. Enable system assigned or User assigned managed identity in the Virtual Machine Scale Sets [Configure managed identities on virtual machine scale set](https://learn.microsoft.com/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities-scale-sets?pivots=identity-mi-methods-azp)
 
 2. Assign role to the VMSS managed identity to storage account [Assign Azure roles using the Azure portal - Azure RBAC](https://learn.microsoft.com/azure/role-based-access-control/role-assignments-portal?tabs=current#step-2-open-the-add-role-assignment-pane)
     1. Storage Blob Data Contributor Role at minimum 
@@ -344,4 +344,4 @@ To view backups in Service Fabric Explorer, navigate to a partition and select t
 [4]: ./media/service-fabric-backuprestoreservice/enable-application-backup-policy.png
 [5]: ./media/service-fabric-backuprestoreservice/backup-enumeration.png
 [6]: ./media/service-fabric-backuprestoreservice/create-bp.png
-[7]: ./media/service-fabric-backuprestoreservice/creation-bp-managedIdentity.png
+[7]: ./media/service-fabric-backuprestoreservice/creation-backup-policy-managed-identity.png
