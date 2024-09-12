@@ -307,6 +307,8 @@
           href: ./sizes/compute-optimized/fasv6-series.md
         - name: Falsv6 series
           href: ./sizes/compute-optimized/falsv6-series.md
+        - name: Famsv6 series
+          href: ./sizes/compute-optimized/famsv6-series.md
         - name: Fsv2 series
           href: ./sizes/compute-optimized/fsv2-series.md
       - name: FX family
@@ -405,6 +407,8 @@
           href: mv2-series.md
         - name: Msv3 and Mdsv3 Medium Memory series
           href: msv3-mdsv3-medium-series.md
+        - name: Msv3 and Mdsv3 High Memory series
+          href: ./sizes/memory-optimized/msv3-mdsv3-high-memory-series.md
       - name: Constrained vCPUs
         href: constrained-vcpu.md
     - name: Storage optimized

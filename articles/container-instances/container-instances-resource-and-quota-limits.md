@@ -6,7 +6,7 @@ author: tomvcassidy
 ms.service: azure-container-instances
 services: container-instances
 ms.topic: conceptual
-ms.date: 1/19/2023
+ms.date: 08/29/2024
 ms.custom: references_regions
 
 ---
@@ -68,7 +68,7 @@ The following limits are default limits that can’t be increased through a quot
 
 By default, the following resources are available general purpose (standard core SKU) containers in general deployments and [Azure virtual network](container-instances-vnet.md) deployments) for Linux & Windows containers. These maximums are hard limits and can't be increased.
 
-| Max CPU | Max Memory (GB) | VNET Max CPU | VNET Max Memory (GB) | Storage (GB) | 
+| Max CPU | Max Memory (GB) | Virtual network Max CPU | Virtual network Max Memory (GB) | Storage (GB) | 
 | :---: | :---: | :----: | :-----: | :-------: |
 | 4 | 16 | 4 | 16 | 50 | 
 
@@ -102,7 +102,7 @@ The following maximum resources are available to a container group deployed usin
 > [!NOTE]
 > Spot Containers are only available in the following regions at this time: East US 2, West Europe, and West US.
 
-| Max CPU | Max Memory (GB) | VNET Max CPU | VNET Max Memory (GB) | Storage (GB) | 
+| Max CPU | Max Memory (GB) | Virtual network Max CPU | Virtual network Max Memory (GB) | Storage (GB) | 
 | :---: | :---: | :----: | :-----: | :-------: |
 | 4 | 16 | N/A | N/A | 50 | 
 
@@ -113,7 +113,7 @@ The following maximum resources are available to a container group deployed usin
 > [!NOTE]
 > Confidential Containers are only available in the following regions at this time: East US, North Europe, West Europe, and West US.
 
-| Max CPU | Max Memory (GB) | VNET Max CPU | VNET Max Memory (GB) | Storage (GB) | 
+| Max CPU | Max Memory (GB) | Virtual network Max CPU | Virtual network Max Memory (GB) | Storage (GB) | 
 | :---: | :---: | :----: | :-----: | :-------: |
 | 4 | 16 | 4 | 16 | 50 | 
 

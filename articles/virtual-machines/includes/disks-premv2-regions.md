@@ -29,7 +29,7 @@ Currently only available in the following regions:
 - North Europe (Three availability zones)
 - Norway East (Three availability zones)
 - Poland Central (Three availability zones)
-- Spain Central (One availability zone)
+- Spain Central (Two availability zones)
 - South Africa North (Three availability zones)
 - South Central US (Three availability zones)
 - Southeast Asia (Three availability zones)
@@ -42,4 +42,4 @@ Currently only available in the following regions:
 - West US 2 (Three availability zones)
 - West US 3 (Three availability zones)
 
-To learn when support for particular regions was added, see either [Azure Updates](https://azure.microsoft.com/updates/?query=disk%20storage) or [What's new for Azure Disk Storage](../disks-whats-new.md).
+To learn when support for particular regions was added, see either [Azure Updates](https://azure.microsoft.com/updates/?query=disk%20storage) or [What's new for Azure Disk Storage](/azure/virtual-machines/disks-whats-new).
