@@ -348,5 +348,5 @@ You can configure Reliable Stateful service and Reliable Actors partitions in th
 - [Understanding periodic backup configuration](./service-fabric-backuprestoreservice-configure-periodic-backup.md)
 - [Backup restore REST API reference](/rest/api/servicefabric/sfclient-index-backuprestore)
 
-[2]: ./media/service-fabric-backuprestoreservice/restore-partition-backup.png
-[3]: ./media/service-fabric-backuprestoreservice/restore-partition-fileshare.png
+[2]: ./media/service-fabric-backuprestoreservice/restore-partition-backup-managed-identity.png
+[3]: ./media/service-fabric-backuprestoreservice/restore-partition-backup-fileshare.png

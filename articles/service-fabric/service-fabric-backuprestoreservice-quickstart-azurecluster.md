@@ -148,9 +148,9 @@ For backup storage, use the Azure Storage account created above. Container `back
 
 Follow steps for managed-identity assignment on Azure resource:
 
-1. Enable system assigned or User assigned managed identity in the VMSS [Configure managed identities on virtual machine scale set](https://learn.microsoft.com/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities-scale-sets?pivots=identity-mi-methods-azp)
+1. Enable system assigned or User assigned managed identity in the Virtual Machine Scale Sets [Configure managed identities on virtual machine scale set](https://learn.microsoft.com/entra/identity/managed-identities-azure-resources/how-to-configure-managed-identities-scale-sets?pivots=identity-mi-methods-azp)
 
-2. Assign role to the VMSS managed identity to storage account [Assign Azure roles using the Azure portal - Azure RBAC](https://learn.microsoft.com/azure/role-based-access-control/role-assignments-portal?tabs=current#step-2-open-the-add-role-assignment-pane)
+2. Assign role to the Virtual Machine Scale Sets managed identity to storage account [Assign Azure roles using the Azure portal - Azure RBAC](https://learn.microsoft.com/azure/role-based-access-control/role-assignments-portal?tabs=current#step-2-open-the-add-role-assignment-pane)
     1. Storage Blob Data Contributor Role at minimum 
 
 [For more information on Managed Identity](https://learn.microsoft.com/entra/identity/managed-identities-azure-resources/overview)
@@ -207,13 +207,13 @@ Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/j
 
 #### Using Service Fabric Explorer
 
-1. In Service Fabric Explorer, navigate to the Backups tab and select Actions > Create Backup Policy.
+1. In Service Fabric Explorer, Click on Cluster at left side panel, navigate to the Backups tab and select Actions > Create Backup Policy.
 
     ![Create Backup Policy][6]
 
-2. Fill out the information. For details out how to specify a frequency-based interval, see the [TimeGrain property](/dotnet/api/microsoft.azure.management.monitor.models.metricavailability.timegrain?view=azure-dotnet&preserve-view=true). For Azure clusters, AzureBlobStore should be selected.
+2. Fill out the information. For details out how to specify a frequency-based interval, see the [TimeGrain property](/dotnet/api/microsoft.azure.management.monitor.models.metricavailability.timegrain?view=azure-dotnet&preserve-view=true). For Azure clusters, ManagedIdentityAzureBlobStore should be selected.
 
-    ![Create Backup Policy Azure Blob Storage][7]
+    ![Create Backup Policy Managed Identity Azure Blob Storage][7]
 
 ### Enable periodic backup
 After defining backup policy to fulfill data protection requirements of the application, the backup policy should be associated with the application. Depending on the requirement, the backup policy can be associated with an application, service, or a partition.
@@ -340,8 +340,8 @@ To view backups in Service Fabric Explorer, navigate to a partition and select t
 
 [0]: ./media/service-fabric-backuprestoreservice/partition-backedup-health-event-azure.png
 [1]: ./media/service-fabric-backuprestoreservice/enable-backup-restore-service-with-portal.png
-[3]: ./media/service-fabric-backuprestoreservice/enable-app-backup.png
-[4]: ./media/service-fabric-backuprestoreservice/enable-application-backup.png
+[3]: ./media/service-fabric-backuprestoreservice/enable-application-backup.png
+[4]: ./media/service-fabric-backuprestoreservice/enable-application-backup-policy.png
 [5]: ./media/service-fabric-backuprestoreservice/backup-enumeration.png
 [6]: ./media/service-fabric-backuprestoreservice/create-bp.png
-[7]: ./media/service-fabric-backuprestoreservice/creation-bp-fileshare.png
+[7]: ./media/service-fabric-backuprestoreservice/creation-backup-policy-managed-identity.png
