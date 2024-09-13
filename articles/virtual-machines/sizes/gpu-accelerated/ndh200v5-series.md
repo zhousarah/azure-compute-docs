@@ -5,8 +5,8 @@
 
 title: 'ND-H200-v5 size series '
 description: Infromation on and specifications of the ND-H200-v5 series sizes
-author:      iamwilliew # GitHub alias
-ms.author:   iamwilliew # Microsoft alias
+author:      iamwilliew
+ms.author:   wwilliams
 ms.service: azure-virtual-machines
 ms.topic: conceptual
 ms.date:     09/12/2024
