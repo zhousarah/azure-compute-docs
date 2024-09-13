@@ -88,7 +88,8 @@ POST https://management.azure.com/subscriptions/{subscription}/providers/Microso
 "desiredSizes": [{ 
    "sku": "" 
    }], 
-"desiredCount": "" 
+"desiredCount": "",
+"availabilityZones": ""
 } 
 ```
 Some important terminology to consider:
