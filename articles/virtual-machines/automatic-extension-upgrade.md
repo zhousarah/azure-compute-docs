@@ -9,9 +9,9 @@ ms.date: 11/7/2023
 ms.custom: devx-track-azurepowershell
 ---
 
-# Automatic Extension Upgrade for VMs and Scale Sets in Azure
+# Automatic Extension Upgrade for Virtual Machines (VM) and Scale Sets (VMSS) in Azure
 
-Automatic Extension Upgrade is available for Azure VMs and Azure Virtual Machine Scale Sets. When Automatic Extension Upgrade is enabled on a VM or scale set, the extension is upgraded automatically whenever the extension publisher releases a new version for that extension.
+Automatic Extension Upgrade is available for Azure VMs and Azure Virtual Machine Scale Sets. When Automatic Extension Upgrade is enabled on a virtual machine or scale set, the extension is upgraded automatically whenever the extension publisher releases a new version for that extension.
 
  Automatic Extension Upgrade has the following features:
 - Supported for Azure VMs and Azure Virtual Machine Scale Sets.
@@ -36,7 +36,7 @@ For a group of virtual machines undergoing an upgrade, the Azure platform orches
 **Across regions:**
 - An upgrade moves across Azure globally in a phased manner to prevent Azure-wide deployment failures.
 - A 'phase' can have one or more regions, and an upgrade moves across phases only if eligible VMs in the previous phase upgrade successfully.
-- Geo-paired regions won't be upgraded concurrently and can't be in the same regional phase.
+- Geo-paired regions aren't upgraded concurrently and can't be in the same regional phase.
 - The success of an upgrade is measured by tracking the health of a VM post upgrade. VM health is tracked through platform health indicators for the VM. For Virtual Machine Scale Sets, the VM health is tracked through application health probes or the Application Health extension, if applied to the scale set.
 
 **Within a region:**
@@ -46,7 +46,7 @@ For a group of virtual machines undergoing an upgrade, the Azure platform orches
 **Within a 'set':**
 - All VMs in a common availability set or scale set aren't upgraded concurrently.  
 - VMs in a common availability set are upgraded within Update Domain boundaries and VMs across multiple Update Domains aren't upgraded concurrently.  
-- VMs in a common virtual machine scale set are grouped in batches and upgrded within Update Domain boundaries. [Upgrade policies](../virtual-machine-scale-sets/virtual-machine-scale-sets-upgrade-policy.md) defined on the scale set are honored during the upgrade. If upgrade policy is set to Manual, VMs won't get upgraded even if automatic extension upgrade is enabled. 
+- VMs in a common virtual machine scale set are grouped in batches and upgraded within Update Domain boundaries. [Upgrade policies](../virtual-machine-scale-sets/virtual-machine-scale-sets-upgrade-policy.md) defined on the scale set are honored during the upgrade. Each group is upgraded using rolling upgrade strategy. 
 
 ### Upgrade process for Virtual Machine Scale Sets
 1. Before the upgrade process starts, the orchestrator ensures that no more than 20% of VMs in the entire scale set are unhealthy (for any reason).
@@ -57,7 +57,7 @@ For a group of virtual machines undergoing an upgrade, the Azure platform orches
 
 4. The upgrade orchestrator also tracks the percentage of VMs that become unhealthy after an upgrade. The upgrade stops if more than 20% of upgraded instances become unhealthy during the upgrade process.
 
-The above process continues until all instances in the scale set have been upgraded.
+This process continues until all instances in the scale set are upgraded.
 
 The scale set upgrade orchestrator checks for the overall scale set health before upgrading every batch. During a batch upgrade, there could be other concurrent planned or unplanned maintenance activities that could impact the health of your scale set virtual machines. In such cases, if more than 20% of the scale set's instances become unhealthy, then the scale set upgrade stops at the end of current batch.
 
@@ -74,11 +74,23 @@ Automatic Extension Upgrade supports the following extensions (and more are adde
 - [Azure Diagnostics extension for Linux](/azure/azure-monitor/agents/diagnostics-extension-overview)
 - Service Fabric – [Linux](../service-fabric/service-fabric-tutorial-create-vnet-and-linux-cluster.md#service-fabric-extension)
 
+---
+
 ## Enabling Automatic Extension Upgrade
 
 To enable Automatic Extension Upgrade for an extension, you must ensure the property `enableAutomaticUpgrade` is set to `true` and added to every extension definition individually.
 
-### REST API for Virtual Machines
+### Using Azure portal
+You can use Azure portal - Extension blade to enable automatic upgrade of extensions on existing Virtual Machines and Virtual Machine Scale Sets. 
+1. Navigate to [Virtual Machines](https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FVirtualMachines) or [Virtual Machines Scale Sets](https://ms.portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FvirtualMachineScaleSets) blade and select the resource by clicking on its name.
+2. Navigate to "Extenisons + applications" blade under Settings which shows all extensions installed on the resource. The "Automatic Upgrade Status" column tells if Automatic upgrade of the extension is enabled, disabled or not-supported.
+3. Navigate to Extension details blade by clicking on the extension name.
+:::image type="content" source="media/auto-extension.png" alt-text="Screenshot of Azure portal - Extension blade." lightbox="media/auto-extension.png":::
+4. Click "Enable automatic upgrade" to enable automatic upgrade of the extension. This button can also be used to disable automatic upgrade when required.   
+:::image type="content" source="media/auto-extension-upgrade.png" alt-text="Screenshot of Azure portal to enable automatic upgrade of the extension.":::
+
+### For Virtual Machines
+#### [REST API](#tab/RestAPI1)
 To enable automatic extension upgrade for an extension (in this example the Dependency Agent extension) on an Azure VM, use the following call:
 
 ```
@@ -100,8 +112,62 @@ PUT on `/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/provi
 }
 ```
 
-### REST API for Virtual Machine Scale Sets
-Use the following call to add the extension to the scale set model:
+#### [PowerShell](#tab/powershell1)
+Use the [Set-AzVMExtension](/powershell/module/az.compute/set-azvmextension) cmdlet:
+
+```azurepowershell-interactive
+Set-AzVMExtension -ExtensionName "Microsoft.Azure.Monitoring.DependencyAgent" `
+    -ResourceGroupName "myResourceGroup" `
+    -VMName "myVM" `
+    -Publisher "Microsoft.Azure.Monitoring.DependencyAgent" `
+    -ExtensionType "DependencyAgentWindows" `
+    -TypeHandlerVersion 9.5 `
+    -Location WestUS `
+    -EnableAutomaticUpgrade $true
+```
+
+#### [CLI](#tab/cli1)
+Use the [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set) cmdlet:
+
+```azurecli-interactive
+az vm extension set \
+    --resource-group myResourceGroup \
+    --vm-name myVM \
+    --name DependencyAgentLinux \
+    --publisher Microsoft.Azure.Monitoring.DependencyAgent \
+    --version 9.5 \
+    --enable-auto-upgrade true
+```
+
+
+#### [Template](#tab/template1)
+The following example describes how to set automatic extension upgrades for an extension (Dependency Agent Extension in this example) on a Virtual Machine using Azure Resource Manager
+
+```json
+{
+    "type": "Microsoft.Compute/virtualMachines/extensions",
+    "location": "[resourceGroup().location]",
+    "name": "<extensionName>",
+    "dependsOn": [
+        "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
+    ],
+    "properties": {
+        "publisher": "Microsoft.Azure.Monitoring.DependencyAgent",
+        "type": "DependencyAgentWindows",
+        "typeHandlerVersion": "9.5",
+        "autoUpgradeMinorVersion": true,
+        "enableAutomaticUpgrade": true,
+        "settings": {
+            "enableAMA": "true"
+        }
+    }
+}
+```
+----
+
+### For Virtual Machine Scale Sets
+
+#### [REST API](#tab/RestAPI2)
 
 ```
 PUT on `/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.Compute/virtualMachineScaleSets/<vmssName>?api-version=2019-12-01`
@@ -131,22 +197,7 @@ PUT on `/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/provi
 }
 ```
 
-### Azure PowerShell for Virtual Machines
-Use the [Set-AzVMExtension](/powershell/module/az.compute/set-azvmextension) cmdlet:
-
-```azurepowershell-interactive
-Set-AzVMExtension -ExtensionName "Microsoft.Azure.Monitoring.DependencyAgent" `
-    -ResourceGroupName "myResourceGroup" `
-    -VMName "myVM" `
-    -Publisher "Microsoft.Azure.Monitoring.DependencyAgent" `
-    -ExtensionType "DependencyAgentWindows" `
-    -TypeHandlerVersion 9.5 `
-    -Location WestUS `
-    -EnableAutomaticUpgrade $true
-```
-
-
-### Azure PowerShell for Virtual Machine Scale Sets
+#### [PowerShell](#tab/powershell2)
 Use the [Add-AzVmssExtension](/powershell/module/az.compute/add-azvmssextension) cmdlet to add the extension to the scale set model:
 
 ```azurepowershell-interactive
@@ -160,21 +211,7 @@ Add-AzVmssExtension -VirtualMachineScaleSet $vmss
 
 Update the scale set using [Update-AzVmss](/powershell/module/az.compute/update-azvmss) after adding the extension.
 
-
-### Azure CLI for Virtual Machines
-Use the [az vm extension set](/cli/azure/vm/extension#az-vm-extension-set) cmdlet:
-
-```azurecli-interactive
-az vm extension set \
-    --resource-group myResourceGroup \
-    --vm-name myVM \
-    --name DependencyAgentLinux \
-    --publisher Microsoft.Azure.Monitoring.DependencyAgent \
-    --version 9.5 \
-    --enable-auto-upgrade true
-```
-
-### Azure CLI for Virtual Machine Scale Sets
+#### [CLI](#tab/cli2)
 Use the [az vmss extension set](/cli/azure/vmss/extension#az-vmss-extension-set) cmdlet to add the extension to the scale set model:
 
 ```azurecli-interactive
@@ -187,31 +224,7 @@ az vmss extension set \
     --enable-auto-upgrade true
 ```
 
-### ARM template for Virtual Machines
-The following example describes how to set automatic extension upgrades for an extension (Dependency Agent Extension in this example) on a Virtual Machine using Azure Resource Manager
-
-```json
-{
-    "type": "Microsoft.Compute/virtualMachines/extensions",
-    "location": "[resourceGroup().location]",
-    "name": "<extensionName>",
-    "dependsOn": [
-        "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
-    ],
-    "properties": {
-        "publisher": "Microsoft.Azure.Monitoring.DependencyAgent",
-        "type": "DependencyAgentWindows",
-        "typeHandlerVersion": "9.5",
-        "autoUpgradeMinorVersion": true,
-        "enableAutomaticUpgrade": true,
-        "settings": {
-            "enableAMA": "true"
-        }
-    }
-}
-```
-
-### ARM template for Virtual Machine Scale Sets
+#### [Template](#tab/template2)
 Use the following example to set automatic extension upgrade on the extension within the scale set model:
 
 ```json
@@ -238,21 +251,19 @@ Use the following example to set automatic extension upgrade on the extension wi
     }
 }
 ```
+----
+> [!NOTE]
+> These operations sets the "enableAutomaticUpgrade" property to true on the VMSS resource but not on the underlying VMs. 
+If the VMSS defines [automatic or rolling upgrade mode in the upgradeProfile](../virtual-machine-scale-sets/virtual-machine-scale-sets-change-upgrade-policy.md), then VMSS automatically propagates the change to each underlying VM. 
+If the VMSS defines manual mode in the upgradePofile, then you also need to [manually update each instance](../virtual-machine-scale-sets/virtual-machine-scale-sets-perform-manual-upgrades.md) and propagate the change to each underlying VM.
 
-### Using Azure portal
-You can use Azure portal - Extension blade to enable automatic upgrade of extensions on existing Virtual Machines and Virtual Machine Scale Sets. 
-1. Navigate to [Virtual Machines](https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FVirtualMachines) or [Virtual Machines Scale Sets](https://ms.portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FvirtualMachineScaleSets) blade and select the resource by clicking on its name.
-2. Navigate to "Extenisons + applications" blade under Settings to view all extensions installed on the resource. The "Automatic Upgrade Status" column tells if Automatic upgrade of the extension is enabled, disabled or not-supported.
-3. Navigate to Extension details blade by clicking on the extension name.
-:::image type="content" source="media/auto-extension.png" alt-text="Screenshot of Azure portal - Extension blade." lightbox="media/auto-extension.png":::
-4. Click "Enable automatic upgrade" to enable automatic upgrade of the extension. This button can also be used to disable automatic upgrade when required.   
-:::image type="content" source="media/auto-extension-upgrade.png" alt-text="Screenshot of Azure portal to enable automatic upgrade of the extension.":::
+--- 
 
 ## Extension upgrades with multiple extensions
 
 A VM or Virtual Machine Scale Set can have multiple extensions with automatic extension upgrade enabled. The same VM or scale set can also have other extensions without automatic extension upgrade enabled.  
 
-If multiple extension upgrades are available for a virtual machine, the upgrades may be batched together, but each extension upgrade is applied individually on a virtual machine. A failure on one extension doesn't impact the other extension(s) that may be upgrading. For example, if two extensions are scheduled for an upgrade, and the first extension upgrade fails, the second extension will still be upgraded.
+If multiple extension upgrades are available for a virtual machine, the upgrades may be batched together, but each extension upgrade is applied individually on a virtual machine. A failure on one extension doesn't impact the other extensions that may be upgrading. For example, if two extensions are scheduled for an upgrade, and the first extension upgrade fails, the second extension is still be upgraded.
 
 Automatic Extension Upgrades can also be applied when a VM or virtual machine scale set has multiple extensions configured with [extension sequencing](../virtual-machine-scale-sets/virtual-machine-scale-sets-extension-sequencing.md). Extension sequencing is applicable for the first-time deployment of the VM, and any future extension upgrades on an extension are applied independently.
 
@@ -261,7 +272,7 @@ Automatic Extension Upgrades can also be applied when a VM or virtual machine sc
    - This property is used during VM creation and while upgrading the VM with a new configuration.  
    - When set to “true,” it ensures that the latest minor version of the extension is automatically installed on the virtual machine.
    - It overrides the TypeHandlerVersion with the latest stable minor version available.
-   - While upgrading the VM configuration, if a new minor version is available, then its considered a configuration change and the extension is reinstalled with latest minor version. 
+   - While upgrading the VM configuration, if a new minor version is available, then it's considered a configuration change and the extension is reinstalled with latest minor version. 
    - This helps keep newly created VMs up-to-date with the latest stable minor extension version.
    - If you want to manually set the extension to a specific version, set this property to “false.”
      
@@ -269,12 +280,12 @@ Automatic Extension Upgrades can also be applied when a VM or virtual machine sc
    - This property affects existing virtual machines.
    - It does not impact the version installed during VM creation.
    - After VM creation, if the VM is not running the latest minor version of the extension, enabling this property triggers an automatic upgrade.
-   - Upgrades do not cause VM reboot, are rolled out in a safe rolling manner and failed upgrades are rolled back immediately to provide high service availability and reliablity. 
+   - Upgrades do not cause VM reboot, are rolled out in a safe rolling manner and failed upgrades are rolled back immediately to provide high service availability and reliability. 
    - It ensures that existing VMs stay secure and up-to-date by automatically updating them to the latest minor version.
 
-It is recommemded to enable both properties to keep all VMs secure and up-to-date. 
+It is recommended to enable both properties to keep all VMs secure and up-to-date. 
 
-Upgrades to major extension versions are never performed automatically by either property since they could cause breaking change. You must manually set the TypeHandlerVersion to a major version and manually upgrade each existing VM to the latest major version.
+Upgrades to major extension versions are never performed automatically by either properties since major versions can include breaking changes. You must manually set the TypeHandlerVersion to a major version and manually upgrade each existing VM to the latest major version.
 
 ## Next steps
 > [!div class="nextstepaction"]
