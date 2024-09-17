@@ -25,6 +25,14 @@ This article shows how to use the [az container create][az-container-create] com
 
 Examples in this article are formatted for the Bash shell. If you prefer another shell such as PowerShell or Command Prompt, adjust the line continuation characters accordingly.
 
+## Prerequisites
+
+You need a resource group to manage all the resources used in the following examples. To create a resource group, use [az group create][az-group-create]:
+
+```azurecli-interactive
+az group create --name myResourceGroup --location eastus
+```
+
 ## Deploy to new virtual network
 
 > [!NOTE]
@@ -225,6 +233,7 @@ az network vnet delete --resource-group $RES_GROUP --name aci-vnet
 [aci-helloworld]: https://hub.docker.com/_/microsoft-azuredocs-aci-helloworld
 
 <!-- LINKS - Internal -->
+[az-group-create]: /cli/azure/group#az-group-create
 [az-container-create]: /cli/azure/container#az_container_create
 [az-container-show]: /cli/azure/container#az_container_show
 [az-network-vnet-create]: /cli/azure/network/vnet#az_network_vnet_create
