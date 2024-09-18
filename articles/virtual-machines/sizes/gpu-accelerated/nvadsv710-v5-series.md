@@ -39,7 +39,7 @@ vCPUs (Qty.) and Memory for each size
 
 ### [Local Storage](#tab/sizestoragelocal)
 
-Local (temp) storage info for each size
+Local (temp) storage information for each size.
 
 | Size Name | Max Temp Storage Disks (Qty.) | Temp Disk Size (GiB) | Temp Disk Random Read (RR)<sup>1</sup> IOPS | Temp Disk Random Read (RR)<sup>1</sup> Speed (MBps) | Temp Disk Random Write (RW)<sup>1</sup> IOPS | Temp Disk Random Write (RW)<sup>1</sup> Speed (MBps) |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -62,7 +62,7 @@ Local (temp) storage info for each size
 
 ### [Remote Storage](#tab/sizestorageremote)
 
-Remote (uncached) storage info for each size
+Remote (uncached) storage information for each size.
 
 | Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS | Uncached Disk Speed (MBps) | Uncached Disk Burst<sup>1</sup> IOPS | Uncached Disk Burst<sup>1</sup> Speed (MBps) | Uncached Special<sup>2</sup> Disk IOPS | Uncached Special<sup>2</sup> Disk Speed (MBps) | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk IOPS | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk Speed (MBps) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -88,7 +88,7 @@ Remote (uncached) storage info for each size
 
 ### [Network](#tab/sizenetwork)
 
-Network interface info for each size
+Network interface information for each size.
 
 | Size Name | Max NICs (Qty.) | Max Bandwidth (Mbps) |
 | --- | --- | --- |
@@ -109,7 +109,7 @@ Network interface info for each size
 
 ### [Accelerators](#tab/sizeaccelerators)
 
-Accelerator (GPUs, FPGAs, etc.) info for each size
+Accelerator (GPUs, FPGAs, etc.) information for each size.
 
 > [!NOTE]
 > No accelerators are present in this series.
