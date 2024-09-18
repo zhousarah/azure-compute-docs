@@ -57,9 +57,9 @@ ms.author: mattmcinnes
 ### NVads-v710 v5-series
 [!INCLUDE [nvadsv710-v5-series-summary](./includes/nvadsv710-v5-summary.md)]    
 
-[View the full NVads-A10 v5-series page](../../nvadsv710-v5-series.md).
+[View the full NVadsv710 v5-series page](./nvadsv710-v5-series.md).
 
-[!INCLUDE [nvads-a10-v5-series-specs](./includes/nvadsv710-v5-series-specs.md)]
+[!INCLUDE [nvadsv710-v5-series-specs](./includes/nvadsv710-v5-series-specs.md)]
 
 
 
