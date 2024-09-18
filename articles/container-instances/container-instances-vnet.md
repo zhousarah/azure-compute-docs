@@ -341,7 +341,7 @@ Deploy the container group with the [az container create][az-container-create] c
 
 ```azurecli-interactive
 az container create --resource-group $MY_RESOURCE_GROUP_NAME \
-  --file vnet-deploy-aci.yaml
+  --file container-instances-vnet.yaml
 ```
 
 Once the deployment completes, run the [az container show][az-container-show] command to display its status. Sample output:
