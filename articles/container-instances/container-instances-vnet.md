@@ -270,7 +270,7 @@ CONTAINER_GROUP_IP=10.0.0.4
 az container create \
   --resource-group $MY_RESOURCE_GROUP_NAME \
   --name $MY_COMM_CHECKER_NAME \
-  --image mcr.microsoft.com/mirror/docker/library/alpine:3.5 \
+  --image alpine:latest \
   --command-line "wget $CONTAINER_GROUP_IP" \
   --restart-policy never \
   --vnet $MY_VNET_NAME \
