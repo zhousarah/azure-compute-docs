@@ -309,10 +309,13 @@ cat container-instances-vnet.yaml > container-instances-vnet-temp.yaml
 cat container-instances-vnet-temp.yaml
 ```
 
+```bash
+echo -e "apiVersion: '2021-07-01'\nlocation: eastus\nname: appcontaineryaml\nproperties:\n  containers:\n  - name: appcontaineryaml\n    properties:\n      image: mcr.microsoft.com/azuredocs/aci-helloworld\n      ports:\n      - port: 80\n        protocol: TCP\n      resources:\n        requests:\n          cpu: 1.0\n          memoryInGB: 1.5\n  ipAddress:\n    type: Private\n    ports:\n    - protocol: tcp\n      port: '80'\n  osType: Linux\n  restartPolicy: Always\n  subnetIds:\n    - id: $MY_SUBNET_ID\n      name: default\ntags: null\ntype: Microsoft.ContainerInstance/containerGroups"
+```
+
 <!-- ```bash
 rm container-instances-vnet-temp.yaml
 ``` -->
-
 
 ### Example - YAML
 
