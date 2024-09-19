@@ -29,7 +29,7 @@ Examples in this article are formatted for the Bash shell. If you prefer another
 
 ### Define environment variables
 
-We use the following environment variables throughout this guide:
+The automated deployment patheway uses the following environment variables and resource names throughout this guide. Users proceeding through the guide manually can use their own variables and names as preferred.
 
 ```azurecli-interactive
 export RANDOM_ID="$(openssl rand -hex 3)"
@@ -264,6 +264,7 @@ Now, set `CONTAINER_GROUP_IP` to the IP you retrieved with the `az container sho
 > Message: An error response is received from the docker registry 'index.docker.io'. Please retry later.
 >
 > You can get around this by pulling the container and saving it to a private container repository that you own, or you can periodically keep retrying the command. Also, you can continue to the third example without successfully deploying the *commchecker* container.
+
 <!--
 ```azurecli-interactive
 CONTAINER_GROUP_IP=10.0.0.4
@@ -292,14 +293,6 @@ index.html           100% |*******************************|  1663   0:00:00 ETA
 ```
 
 The log output should show that `wget` was able to connect and download the index file from the first container using its private IP address on the local subnet. Network traffic between the two container groups remained within the virtual network. -->
-
-```bash
-echo -e "apiVersion: '2021-07-01'\nlocation: eastus\nname: appcontaineryaml\nproperties:\n  containers:\n  - name: appcontaineryaml\n    properties:\n      image: mcr.microsoft.com/azuredocs/aci-helloworld\n      ports:\n      - port: 80\n        protocol: TCP\n      resources:\n        requests:\n          cpu: 1.0\n          memoryInGB: 1.5\n  ipAddress:\n    type: Private\n    ports:\n    - protocol: tcp\n      port: '80'\n  osType: Linux\n  restartPolicy: Always\n  subnetIds:\n    - id: $MY_SUBNET_ID\n      name: default\ntags: null\ntype: Microsoft.ContainerInstance/containerGroups" > container-instances-vnet-temp.yaml
-```
-
-```bash
-cat container-instances-vnet-temp.yaml
-```
 
 ### Example - YAML
 
@@ -346,6 +339,12 @@ tags: null
 type: Microsoft.ContainerInstance/containerGroups
 ```
 
+The following Bash command is for the automated deployment pathway.
+
+```bash
+echo -e "apiVersion: '2021-07-01'\nlocation: eastus\nname: appcontaineryaml\nproperties:\n  containers:\n  - name: appcontaineryaml\n    properties:\n      image: mcr.microsoft.com/azuredocs/aci-helloworld\n      ports:\n      - port: 80\n        protocol: TCP\n      resources:\n        requests:\n          cpu: 1.0\n          memoryInGB: 1.5\n  ipAddress:\n    type: Private\n    ports:\n    - protocol: tcp\n      port: '80'\n  osType: Linux\n  restartPolicy: Always\n  subnetIds:\n    - id: $MY_SUBNET_ID\n      name: default\ntags: null\ntype: Microsoft.ContainerInstance/containerGroups" > container-instances-vnet.yaml
+```
+
 Deploy the container group with the [az container create][az-container-create] command, specifying the YAML file name for the `--file` parameter:
 
 ```azurecli-interactive
@@ -353,8 +352,10 @@ az container create --resource-group $MY_RESOURCE_GROUP_NAME \
   --file container-instances-vnet-temp.yaml
 ```
 
+The following command Bash is for the automated deployment pathway.
+
 ```bash
-rm container-instances-vnet-temp.yaml
+rm container-instances-vnet.yaml
 ```
 
 Once the deployment completes, run the [az container show][az-container-show] command to display its status. Sample output:
