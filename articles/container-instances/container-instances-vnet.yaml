@@ -21,7 +21,7 @@ properties:
   osType: Linux
   restartPolicy: Always
   subnetIds:
-    - id: /subscriptions/5e25eb41-5aa9-4303-a707-de69e7a2dfdb/resourceGroups/myACIResourceGroupf6b2df/providers/Microsoft.Network/virtualNetworks/aci-vnet/subnets/aci-subnet-yaml
+    - id: $MY_SUBNET_ID
       name: default
 tags: null
 type: Microsoft.ContainerInstance/containerGroups

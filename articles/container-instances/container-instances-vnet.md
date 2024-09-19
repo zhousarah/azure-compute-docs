@@ -263,14 +263,14 @@ Now, set `CONTAINER_GROUP_IP` to the IP you retrieved with the `az container sho
 > Message: An error response is received from the docker registry 'index.docker.io'. Please retry later.
 >
 > You can get around this by pulling the container and saving it to a private container repository that you own, or you can periodically keep retrying the command. Also, you can continue to the third example without successfully deploying the *commchecker* container.
-
+<!--
 ```azurecli-interactive
 CONTAINER_GROUP_IP=10.0.0.4
 
 az container create \
   --resource-group $MY_RESOURCE_GROUP_NAME \
   --name $MY_COMM_CHECKER_NAME \
-  --image mcr.microsoft.com/azurelinux/distroless/minimal:latest \
+  --image alpine:3.5 \
   --command-line "wget $CONTAINER_GROUP_IP" \
   --restart-policy never \
   --vnet $MY_VNET_NAME \
@@ -290,7 +290,19 @@ Connecting to 10.0.0.4 (10.0.0.4:80)
 index.html           100% |*******************************|  1663   0:00:00 ETA
 ```
 
-The log output should show that `wget` was able to connect and download the index file from the first container using its private IP address on the local subnet. Network traffic between the two container groups remained within the virtual network.
+The log output should show that `wget` was able to connect and download the index file from the first container using its private IP address on the local subnet. Network traffic between the two container groups remained within the virtual network. -->
+
+```bash
+MY_SUBNET_ID=`az container show --resource-group myACIResourceGroup123 --name appcontainer --query subnetIds[0].id --output tsv`
+```
+
+```bash
+echo $MY_SUBNET_ID
+```
+
+```bash
+cat container-instances-vnet.yaml
+```
 
 ### Example - YAML
 
