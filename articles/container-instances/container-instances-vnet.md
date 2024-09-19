@@ -36,6 +36,7 @@ export RANDOM_ID="$(openssl rand -hex 3)"
 export MY_RESOURCE_GROUP_NAME="myACIResourceGroup$RANDOM_ID"
 export MY_VNET_NAME="aci-vnet"
 export MY_SUBNET_NAME="aci-subnet"
+export MY_SUBNET_ID=MY_"/subscriptions/$(az account show --query id --output tsv)/resourceGroups/$MY_RESOURCE_GROUP_NAME/providers/Microsoft.Network/virtualNetworks/$MY_VNET_NAME/subnets/$MY_SUBNET_NAME"
 export MY_APP_CONTAINER_NAME="appcontainer"
 export MY_COMM_CHECKER_NAME="commchecker"
 export MY_YAML_APP_CONTAINER_NAME="appcontaineryaml"
@@ -291,10 +292,6 @@ index.html           100% |*******************************|  1663   0:00:00 ETA
 ```
 
 The log output should show that `wget` was able to connect and download the index file from the first container using its private IP address on the local subnet. Network traffic between the two container groups remained within the virtual network. -->
-
-```bash
-MY_SUBNET_ID="$(az container show --resource-group myACIResourceGroup123 --name appcontainer --query subnetIds[0].id --output tsv)"
-```
 
 ```bash
 echo $RANDOM_ID
