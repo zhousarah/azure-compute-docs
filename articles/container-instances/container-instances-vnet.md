@@ -301,10 +301,6 @@ echo -e "apiVersion: '2021-07-01'\nlocation: eastus\nname: appcontaineryaml\npro
 cat container-instances-vnet-temp.yaml
 ```
 
-<!-- ```bash
-rm container-instances-vnet-temp.yaml
-``` -->
-
 ### Example - YAML
 
 You can also deploy a container group to an existing virtual network by using a YAML file, a [Resource Manager template](https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.containerinstance/aci-vnet), or another programmatic method such as with the Python SDK.
@@ -354,7 +350,11 @@ Deploy the container group with the [az container create][az-container-create] c
 
 ```azurecli-interactive
 az container create --resource-group $MY_RESOURCE_GROUP_NAME \
-  --file container-instances-vnet.yaml
+  --file container-instances-vnet-temp.yaml
+```
+
+```bash
+rm container-instances-vnet-temp.yaml
 ```
 
 Once the deployment completes, run the [az container show][az-container-show] command to display its status. Sample output:
