@@ -293,7 +293,11 @@ index.html           100% |*******************************|  1663   0:00:00 ETA
 The log output should show that `wget` was able to connect and download the index file from the first container using its private IP address on the local subnet. Network traffic between the two container groups remained within the virtual network. -->
 
 ```bash
-MY_SUBNET_ID=`az container show --resource-group myACIResourceGroup123 --name appcontainer --query subnetIds[0].id --output tsv`
+MY_SUBNET_ID="`az container show --resource-group myACIResourceGroup123 --name appcontainer --query subnetIds[0].id --output tsv`"
+```
+
+```bash
+echo $RANDOM_ID
 ```
 
 ```bash
