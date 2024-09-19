@@ -36,7 +36,7 @@ export RANDOM_ID="$(openssl rand -hex 3)"
 export MY_RESOURCE_GROUP_NAME="myACIResourceGroup$RANDOM_ID"
 export MY_VNET_NAME="aci-vnet"
 export MY_SUBNET_NAME="aci-subnet"
-export MY_SUBNET_ID=MY_"/subscriptions/$(az account show --query id --output tsv)/resourceGroups/$MY_RESOURCE_GROUP_NAME/providers/Microsoft.Network/virtualNetworks/$MY_VNET_NAME/subnets/$MY_SUBNET_NAME"
+export MY_SUBNET_ID="/subscriptions/$(az account show --query id --output tsv)/resourceGroups/$MY_RESOURCE_GROUP_NAME/providers/Microsoft.Network/virtualNetworks/$MY_VNET_NAME/subnets/$MY_SUBNET_NAME"
 export MY_APP_CONTAINER_NAME="appcontainer"
 export MY_COMM_CHECKER_NAME="commchecker"
 export MY_YAML_APP_CONTAINER_NAME="appcontaineryaml"
@@ -302,8 +302,17 @@ echo $MY_SUBNET_ID
 ```
 
 ```bash
-cat container-instances-vnet.yaml
+cat container-instances-vnet.yaml > container-instances-vnet-temp.yaml
 ```
+
+```bash
+cat container-instances-vnet-temp.yaml
+```
+
+<!-- ```bash
+rm container-instances-vnet-temp.yaml
+``` -->
+
 
 ### Example - YAML
 
