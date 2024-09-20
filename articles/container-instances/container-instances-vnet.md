@@ -349,7 +349,7 @@ Now, set `CONTAINER_GROUP_IP` to the IP you retrieved with the `az container sho
 The following Bash command is for the automated deployment pathway.
 
 ```bash
-printf "Due to rate limiting in effect for pulling public Docker images like the one used here, you may receive an error in the form:\n\n(RegistryErrorResponse) An error response is received from the docker registry 'index.docker.io'. Please retry later.\nCode: RegistryErrorResponse\nMessage: An error response is received from the docker registry 'index.docker.io'. Please retry later.\n\nIf this occurs, the automated deployment will exit. You can try again or go to the end of the guide to see instructions for cleaning up your resources.
+printf "Due to rate limiting in effect for pulling public Docker images like the one used here, you may receive an error in the form:\n\n(RegistryErrorResponse) An error response is received from the docker registry 'index.docker.io'. Please retry later.\nCode: RegistryErrorResponse\nMessage: An error response is received from the docker registry 'index.docker.io'. Please retry later.\n\nIf this occurs, the automated deployment will exit. You can try again or go to the end of the guide to see instructions for cleaning up your resources."
 ```
 
 ```azurecli-interactive
