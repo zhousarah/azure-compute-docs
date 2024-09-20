@@ -58,8 +58,8 @@ Results:
 
 ```json
 {
-  "id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx/resourceGroups/myACIResourceGroup123",
-  "location": "eastus",
+  "id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx/resourceGroups/myACIResourceGroup123abc",
+  "location": "abcdef",
   "managedBy": null,
   "name": "myACIResourceGroup123",
   "properties": {
@@ -204,14 +204,14 @@ Results:
   "osType": "Linux",
   "priority": null,
   "provisioningState": "Succeeded",
-  "resourceGroup": "myACIResourceGroup123",
+  "resourceGroup": "myACIResourceGroup123abc",
   "restartPolicy": "Always",
   "sku": "Standard",
   "subnetIds": [
     {
       "id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx/resourceGroups/myACIResourceGroup123/providers/Microsoft.Network/virtualNetworks/aci-vnet/subnets/aci-subnet",
       "name": null,
-      "resourceGroup": "myACIResourceGroup123"
+      "resourceGroup": "myACIResourceGroup123abc"
     }
   ],
   "tags": {},
@@ -265,15 +265,13 @@ Now, set `CONTAINER_GROUP_IP` to the IP you retrieved with the `az container sho
 >
 > You can get around this by pulling the container and saving it to a private container repository that you own, or you can periodically keep retrying the command. Also, you can continue to the third example without successfully deploying the *commchecker* container.
 
-<!--
-```azurecli-interactive
-CONTAINER_GROUP_IP=10.0.0.4
 
+```azurecli-interactive
 az container create \
   --resource-group $MY_RESOURCE_GROUP_NAME \
   --name $MY_COMM_CHECKER_NAME \
-  --image alpine:3.5 \
-  --command-line "wget $CONTAINER_GROUP_IP" \
+  --image mcr.microsoft.com/azuredocs/aci-helloworld \
+  --command-line "wget 10.0.0.4" \
   --restart-policy never \
   --vnet $MY_VNET_NAME \
   --subnet $MY_SUBNET_NAME
@@ -292,7 +290,7 @@ Connecting to 10.0.0.4 (10.0.0.4:80)
 index.html           100% |*******************************|  1663   0:00:00 ETA
 ```
 
-The log output should show that `wget` was able to connect and download the index file from the first container using its private IP address on the local subnet. Network traffic between the two container groups remained within the virtual network. -->
+The log output should show that `wget` was able to connect and download the index file from the first container using its private IP address on the local subnet. Network traffic between the two container groups remained within the virtual network.
 
 ### Example - YAML
 
@@ -358,16 +356,23 @@ The following Bash command is for the automated deployment pathway.
 rm container-instances-vnet.yaml
 ```
 
-Once the deployment completes, run the [az container show][az-container-show] command to display its status. Sample output:
+Once the deployment completes, run the [az container show][az-container-show] command to display its status:
 
 ```azurecli-interactive
 az container list --resource-group $MY_RESOURCE_GROUP_NAME --output table
 ```
 
+The output should resemble the sample below:
+
+Results:
+
+<!-- expected_similarity=0.4  -->
+
 ```output
-Name              ResourceGroup    Status    Image                                       IP:ports     Network    CPU/Memory       OsType    Location
-----------------  ---------------  --------  ------------------------------------------  -----------  ---------  ---------------  --------  ----------
-appcontaineryaml  myResourceGroup  Running   mcr.microsoft.com/azuredocs/aci-helloworld  10.0.0.5:80  Private    1.0 core/1.5 gb  Linux     eastus
+Name              ResourceGroup             Status     Image                                       IP:ports        Network    CPU/Memory       OsType    Location
+----------------  ------------------------  ---------  ------------------------------------------  --------------  ---------  ---------------  --------  ----------
+appcontainer      myACIResourceGroup123abc  Succeeded  mcr.microsoft.com/azuredocs/aci-helloworld  10.0.0.4:80,80  Private    1.0 core/1.5 gb  Linux     abcdef
+appcontaineryaml  myACIResourceGroup123abc  Succeeded  mcr.microsoft.com/azuredocs/aci-helloworld  10.0.0.5:80,80  Private    1.0 core/1.5 gb  Linux     abcdef
 ```
 
 ## Clean up resources
