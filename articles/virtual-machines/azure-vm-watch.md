@@ -1,21 +1,21 @@
 ---
 title: Azure VM Watch
 description: Learn how to use Azure VM Watch service offering
-author:      iamwilliew # GitHub alias
-ms.author:   iamwilliew # Microsoft alias
+author:      iamwilliew 
+ms.author:   wwilliams
 ms.service: azure-virtual-machines
 ms.topic: conceptual
 ms.date:     09/20/2024
 ---
 
-## Azure VM watch - Enhancing VM Health Monitoring
+# Azure VM watch - Enhancing VM Health Monitoring
 
 Azure VM watch is a standardized, lightweight, and adaptable in-VM service offering a uniform data model for collecting and transmitting health signals from virtual machines and scale sets. It is integrated into Application Health (link) to provide ease of use and manageability for customers. In addition, VM watch is offered at no additional cost for customers. Some key benefits of VM watch include: 
 
 - Improve overall customer experience on the platform
 - Improve outage detection and recovery times 
 
-# VM watch Monitoring Specifics
+## VM watch Monitoring Specifics
 
 - **Seamlessly Integrated**: VM watch is made available through the Application Health Extension (link) 
 - **Compatibility:** VM watch operates seamlessly on both Linux and Windows environments. Also, VM watch is suitable for individual VMs and VMSS VMs alike.
@@ -106,7 +106,7 @@ Azure VM watch is a standardized, lightweight, and adaptable in-VM service offer
 |:---:|:---:|:---:|
 | **Hardware Health Monitor** | EventLog | Collect hardware health info from Windows event log, currently only disk related critical events are collected, including events with id 7, 500, 504, 505, 512 and 549 |
 
-# Next Steps:
+### Next Steps:
 
 To Learn more about VM watch, proceed to Get Started Article
 
