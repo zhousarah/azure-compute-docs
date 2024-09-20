@@ -29,7 +29,7 @@ Azure VM watch is a standardized, lightweight, and adaptable in-VM service offer
 
   
 
-# Network:
+### Network:
 
 | **Signal Name** | **Type** | **Description** |
 |:---:|:---:|:---:|
@@ -49,112 +49,20 @@ Azure VM watch is a standardized, lightweight, and adaptable in-VM service offer
 
  
 
-# Disk
+### Disk
 
-:::row:::
-    :::column:::
-    **Signal Name**
-    :::column-end:::
-    :::column:::
-    **Type**
-    :::column-end:::
-    :::column:::
-    **Description**
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-    **Azure Disk I/O** 
-    :::column-end:::
-    :::column:::
-    Check
-    :::column-end:::
-    :::column:::
-    Verify file creation, write, read, delete operations on each drive mounted to the VM
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-    **FreeSpaceInBytes**
-    :::column-end:::
-    :::column:::
-    Metric
-    :::column-end:::
-    :::column:::
-    The free disk space of the target mount point
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-    **UsedSpaceInBytes**
-    :::column-end:::
-    :::column:::
-    Metric
-    :::column-end:::
-    :::column:::
-    The used disk space of the target mount point 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-    **CapacityInBytes**
-    :::column-end:::
-    :::column:::
-    Metric
-    :::column-end:::
-    :::column:::
-    The disk space capacity of the target mount point 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-    **UsedPercent**
-    :::column-end:::
-    :::column:::
-    Metric
-    :::column-end:::
-    :::column:::
-    The used disk space percentage of the target mount point 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-    **WriteOps**
-    :::column-end:::
-    :::column:::
-    Metric
-    :::column-end:::
-    :::column:::
-    The write operations per seconds of the target disk/partition
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-    **ReadOps**
-    :::column-end:::
-    :::column:::
-    Metric
-    :::column-end:::
-    :::column:::
-    The read operations per seconds of the target disk/partition 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-    
-    :::column-end:::
-    :::column:::
-    
-    :::column-end:::
-    :::column:::
-    
-    :::column-end:::
-    :::column:::
-    
-    :::column-end:::
-:::row-end:::
+| **Signal Name** | **Type** | **Description** |
+|:---:|:---:|:---:|
+| **Azure Disk I/O** | Check | Verify file creation, write, read, delete operations on each drive mounted to the VM |
+| **FreeSpaceInBytes** | Metric | The free disk space of the target mount point |
+| **UsedSpaceInBytes** | Metric | The used disk space of the target mount point |
+| **CapacityInBytes**  | Metric | The disk spce capacity of the target mount point |
+| **UsedPercent**      | Metric | The used disk space percentageof the target mount point |
+| **WriteOps**         | Metric | The write operations per seconds of the target disk/partition |
+| **ReadOps**          | Metric | The read operations per seconds of the target disk/partition | 
 
-# CPU:
+
+### CPU:
 
 | **Signal Name** | **Type** | **Description** |
 |:---:|:---:|:---:|
@@ -164,7 +72,7 @@ Azure VM watch is a standardized, lightweight, and adaptable in-VM service offer
 
  
 
-# Process:
+### Process:
 
 | **Signal Name** | **Type** | **Description** |
 |:---:|:---:|:---:|
@@ -174,7 +82,7 @@ Azure VM watch is a standardized, lightweight, and adaptable in-VM service offer
 
  
 
-# IMDS:
+### IMDS:
 
 | **Signal Name** | **Type** | **Description** |
 |:---:|:---:|:---:|
@@ -182,7 +90,7 @@ Azure VM watch is a standardized, lightweight, and adaptable in-VM service offer
 
  
 
-# Clock:
+### Clock:
 
 | **Signal Name** | **Type** | **Description** |
 |:---:|:---:|:---:|
@@ -190,13 +98,13 @@ Azure VM watch is a standardized, lightweight, and adaptable in-VM service offer
 
  
 
-# AzBlob:
+### AzBlob:
 
 | **Signal Name** | **Type** | **Description** |
 |:---:|:---:|:---:|
 | **Azure Storage blob connectivity** | Check | Verify the connectivity to the Azure Storage Blob and download the Blob with MSI or SAS token. |
 
-# Hardware:
+### Hardware:
 
 | **Signal Name** | **Type** | **Description** |
 |:---:|:---:|:---:|
