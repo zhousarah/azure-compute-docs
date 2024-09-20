@@ -1,8 +1,4 @@
 ---
-# Required metadata
-# For more information, see https://review.learn.microsoft.com/en-us/help/platform/learn-editor-add-metadata?branch=main
-# For valid values of ms.service, ms.prod, and ms.topic, see https://review.learn.microsoft.com/en-us/help/platform/metadata-taxonomies?branch=main
-
 title: Azure VM Watch
 description: Learn how to use Azure VM Watch service offering
 author:      iamwilliew # GitHub alias
