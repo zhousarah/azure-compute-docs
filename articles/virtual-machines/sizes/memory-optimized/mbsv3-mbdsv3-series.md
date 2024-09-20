@@ -9,14 +9,25 @@ ms.topic:    conceptual
 ms.date:     07/15/2024
 ---
 
-# Mbsv3 and Mbdsv3 Series (Public Preview)
+# Mbsv3 and Mbdsv3 Series 
 
 
 
 
-The Storage optimized Mbv3 VM (Mbsv3 and Mbdsv3) series are based on the  4th generation Intel® Xeon® Scalable processors and deliver higher remote disk storage performance. These new VM sizes offer up to 650,000 IOPS and 10GBps of remote disk storage throughput Premium SSD v2/Ultra Disk, up to 4TB of RAM. 
+The Storage optimized Mbv3 VM (Mbsv3 and Mbdsv3) series are based on the  4th generation Intel® Xeon® Scalable processors and deliver higher remote disk storage performance. These new VM sizes offer up to 650,000 IOPS and 10GBps of remote disk storage throughput Premium SSD v2/Ultra Disk, up to 4TB of RAM and up to 650,000 IOPS and 10GBps throughput to remote disk storage with NVMe interface by using Ultra Disk/Premium SSD v2.
 
 The increased remote storage performance of these VMs is ideal for storage throughput-intensive workloads such as relational databases and data analytics applications.  
+
+[Premium Storage](premium-storage-performance.md): Supported<br>
+[Premium Storage caching](premium-storage-performance.md): Supported<br>
+[Live Migration](maintenance-and-updates.md): Not Supported<br>
+[Memory Preserving Updates](maintenance-and-updates.md): Not Supported<br>
+[VM Generation Support](generation-2.md): Generation 2<br>
+[Write Accelerator](./how-to-enable-write-accelerator.md): Supported<br>
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported<br>
+[Ephemeral OS Disks](ephemeral-os-disks.md): Supported <br>
+[Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Not Supported <br>
+<br>
 
 ## Mbsv3 series
 
@@ -29,7 +40,6 @@ The increased remote storage performance of these VMs is ideal for storage throu
 | **Standard_M96bs_v3** | 96 | 768 | 64 | 260,000/4,000 | 260,000/4,000 | 8 | 25,000 |
 | **Standard_M128bs_v3** | 128 | 1024 | 64 | 260,000/4,000 | 400,000/4,000 | 8 | 40,000 |
 | **Standard_M176bs_v3** | 176 | 1536 | 64 | 260,000/6,000 | 650,000/6,000 | 8 | 50,000 |
-| **Standard_M176bs_3_v3** | 176 | 2796 | 64 | 260,000/8,000 | 650,000/10,000 | 8 | 40,000 |
 
 ## Mbdsv3 series
 
@@ -42,7 +52,6 @@ The increased remote storage performance of these VMs is ideal for storage throu
 | **Standard_M96bds_v3** | 96 | 768 | 400 | 64 | 40,000/400 | 260,000/4,000 | 260,000/4,000 | 8 | 25,000 |
 | **Standard_M128bds_v3** | 128 | 1,024 | 400 | 64 | 160,000/1600 | 260,000/4,000 | 400,000/4,000 | 8 | 40,000 |
 | **Standard_M176bds_v3** | 176 | 1,536 | 400 | 64 | 160,000/1600 | 260,000/6,000 | 650,000/6,000 | 8 | 50,000 |
-| **Standard_M176bds_3_v3** | 176 | 2796 | 400 | 64 | 160,000/1600 | 260,000/8,000 | 650,000/10,000 | 8 | 40,000 |
 | **Standard_M64bds_1_v3** | 64 | 1397 | 3000 | 64 | 40,000/400 | 130,000/6,000 | 160, 000/6,000 | 8 | 20,000 |
 | **Standard_M96bds_2_v3** | 96 | 1946 | 4500 | 64 | 40,000/400 | 130,000/8,000 | 260,000/8,000 | 8 | 20,000 |
 | **Standard_M128bds_3_v3** | 128 | 2794 | 6000 | 64 | 160,000/1600 | 260,000/8,000 | 400,000/10,000 | 8 | 40,000 |
