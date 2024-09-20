@@ -352,13 +352,17 @@ az container create --resource-group $MY_RESOURCE_GROUP_NAME \
   --file container-instances-vnet-temp.yaml
 ```
 
-The following command Bash is for the automated deployment pathway.
+The following Bash command is for the automated deployment pathway.
 
 ```bash
 rm container-instances-vnet.yaml
 ```
 
 Once the deployment completes, run the [az container show][az-container-show] command to display its status. Sample output:
+
+```azurecli-interactive
+az container show --resource-group $MY_RESOURCE_GROUP_NAME
+```
 
 ```output
 Name              ResourceGroup    Status    Image                                       IP:ports     Network    CPU/Memory       OsType    Location
