@@ -93,7 +93,7 @@ The following [az container create][az-container-create] command specifies setti
 
 ```azurecli-interactive
 az container create \
-  --name appcontainer \
+  --name $MY_APP_CONTAINER_NAME \
   --resource-group $MY_RESOURCE_GROUP_NAME \
   --image mcr.microsoft.com/azuredocs/aci-helloworld \
   --vnet $MY_VNET_NAME \
@@ -232,66 +232,6 @@ To deploy a container group to an existing virtual network:
    * Virtual network name and subnet name
    * Virtual network resource ID and subnet resource ID, which allows using a virtual network from a different resource group
 
-### Example
-
-The following example deploys a second container group to the same subnet created previously, and verifies communication between the two container instances.
-
-First, get the IP address of the first container group you deployed, the *appcontainer*:
-
-```azurecli-interactive
-az container show --resource-group $MY_RESOURCE_GROUP_NAME \
-  --name appcontainer \
-  --query ipAddress.ip --output tsv
-```
-
-The output displays the IP address of the container group in the private subnet. For example:
-
-Results:
-
-<!-- expected_similarity=0.5 -->
-
-```output
-10.0.0.4
-```
-
-Now, set `CONTAINER_GROUP_IP` to the IP you retrieved with the `az container show` command, and execute the following `az container create` command. This second container, *commchecker*, runs an Alpine Linux-based image and executes `wget` against the first container group's private subnet IP address.
-
-> [!NOTE]
-> Due to rate limiting in effect for pulling public Docker images like the one used here, you may receive an error in the form:
->
-> (RegistryErrorResponse) An error response is received from the docker registry 'index.docker.io'. Please retry later.
-> Code: RegistryErrorResponse
-> Message: An error response is received from the docker registry 'index.docker.io'. Please retry later.
->
-> You can get around this by pulling the container and saving it to a private container repository that you own, or you can periodically keep retrying the command. Also, you can continue to the third example without successfully deploying the *commchecker* container.
-
-
-```azurecli-interactive
-az container create \
-  --resource-group $MY_RESOURCE_GROUP_NAME \
-  --name $MY_COMM_CHECKER_NAME \
-  --image alpine:3.4 \
-  --command-line "wget 10.0.0.4" \
-  --restart-policy never \
-  --vnet $MY_VNET_NAME \
-  --subnet $MY_SUBNET_NAME
-```
-
-After this second container deployment completes, pull its logs so you can see the output of the `wget` command it executed:
-
-```azurecli-interactive
-az container logs --resource-group $MY_RESOURCE_GROUP_NAME --name $MY_COMM_CHECKER_NAME
-```
-
-If the second container communicated successfully with the first, output is similar to:
-
-```output
-Connecting to 10.0.0.4 (10.0.0.4:80)
-index.html           100% |*******************************|  1663   0:00:00 ETA
-```
-
-The log output should show that `wget` was able to connect and download the index file from the first container using its private IP address on the local subnet. Network traffic between the two container groups remained within the virtual network.
-
 ### Example - YAML
 
 You can also deploy a container group to an existing virtual network by using a YAML file, a [Resource Manager template](https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.containerinstance/aci-vnet), or another programmatic method such as with the Python SDK.
@@ -305,7 +245,7 @@ For example, when using a YAML file, you can deploy to a virtual network with a 
   * `id`: The resource ID of the subnet
   * `name`: The name of the subnet
 
-This YAML creates a container group named *appcontaineryaml* in your virtual network.
+This YAML creates a container group in your virtual network. Enter your container group name in the name fields and your subnet ID in the subnet ID field. We use *appcontaineryaml* for the name. If you need to find your subnet ID and no longer have access to previous outputs, you can use the [az container show][az-container-show] command to view it. Look for the `id` field under `subnetIds`.
 
 ```YAML
 apiVersion: '2021-07-01'
@@ -340,7 +280,7 @@ type: Microsoft.ContainerInstance/containerGroups
 The following Bash command is for the automated deployment pathway.
 
 ```bash
-echo -e "apiVersion: '2021-07-01'\nlocation: eastus\nname: appcontaineryaml\nproperties:\n  containers:\n  - name: appcontaineryaml\n    properties:\n      image: mcr.microsoft.com/azuredocs/aci-helloworld\n      ports:\n      - port: 80\n        protocol: TCP\n      resources:\n        requests:\n          cpu: 1.0\n          memoryInGB: 1.5\n  ipAddress:\n    type: Private\n    ports:\n    - protocol: tcp\n      port: '80'\n  osType: Linux\n  restartPolicy: Always\n  subnetIds:\n    - id: $MY_SUBNET_ID\n      name: default\ntags: null\ntype: Microsoft.ContainerInstance/containerGroups" > container-instances-vnet.yaml
+echo -e "apiVersion: '2021-07-01'\nlocation: eastus\nname: $MY_YAML_APP_CONTAINER_NAME\nproperties:\n  containers:\n  - name: $MY_YAML_APP_CONTAINER_NAME\n    properties:\n      image: mcr.microsoft.com/azuredocs/aci-helloworld\n      ports:\n      - port: 80\n        protocol: TCP\n      resources:\n        requests:\n          cpu: 1.0\n          memoryInGB: 1.5\n  ipAddress:\n    type: Private\n    ports:\n    - protocol: tcp\n      port: '80'\n  osType: Linux\n  restartPolicy: Always\n  subnetIds:\n    - id: $MY_SUBNET_ID\n      name: default\ntags: null\ntype: Microsoft.ContainerInstance/containerGroups" > container-instances-vnet.yaml
 ```
 
 Deploy the container group with the [az container create][az-container-create] command, specifying the YAML file name for the `--file` parameter:
@@ -374,6 +314,69 @@ Name              ResourceGroup             Status     Image                    
 appcontainer      myACIResourceGroup123abc  Succeeded  mcr.microsoft.com/azuredocs/aci-helloworld  10.0.0.4:80,80  Private    1.0 core/1.5 gb  Linux     abcdef
 appcontaineryaml  myACIResourceGroup123abc  Succeeded  mcr.microsoft.com/azuredocs/aci-helloworld  10.0.0.5:80,80  Private    1.0 core/1.5 gb  Linux     abcdef
 ```
+
+### Example
+
+The following example deploys a third container group to the same subnet created previously, and verifies communication between the first and second container instances.
+
+First, get the IP address of the first container group you deployed, the *appcontainer*:
+
+```azurecli-interactive
+az container show --resource-group $MY_RESOURCE_GROUP_NAME \
+  --name $MY_APP_CONTAINER_NAME \
+  --query ipAddress.ip --output tsv
+```
+
+The output displays the IP address of the container group in the private subnet. For example:
+
+Results:
+
+<!-- expected_similarity=0.5 -->
+
+```output
+10.0.0.4
+```
+
+Now, set `CONTAINER_GROUP_IP` to the IP you retrieved with the `az container show` command, and execute the following `az container create` command. This second container, *commchecker*, runs an Alpine Linux-based image and executes `wget` against the first container group's private subnet IP address.
+
+> [!NOTE]
+> Due to rate limiting in effect for pulling public Docker images like the one used here, you may receive an error in the form:
+>
+> (RegistryErrorResponse) An error response is received from the docker registry 'index.docker.io'. Please retry later.
+> Code: RegistryErrorResponse
+> Message: An error response is received from the docker registry 'index.docker.io'. Please retry later.
+
+The following Bash command is for the automated deployment pathway.
+
+```bash
+printf "Due to rate limiting in effect for pulling public Docker images like the one used here, you may receive an error in the form:\n\n(RegistryErrorResponse) An error response is received from the docker registry 'index.docker.io'. Please retry later.\nCode: RegistryErrorResponse\nMessage: An error response is received from the docker registry 'index.docker.io'. Please retry later.\n\nIf this occurs, the automated deployment will exit. You can try again or go to the end of the guide to see instructions for cleaning up your resources.
+```
+
+```azurecli-interactive
+az container create \
+  --resource-group $MY_RESOURCE_GROUP_NAME \
+  --name $MY_COMM_CHECKER_NAME \
+  --image alpine:3.4 \
+  --command-line "wget 10.0.0.4" \
+  --restart-policy never \
+  --vnet $MY_VNET_NAME \
+  --subnet $MY_SUBNET_NAME
+```
+
+After this second container deployment completes, pull its logs so you can see the output of the `wget` command it executed:
+
+```azurecli-interactive
+az container logs --resource-group $MY_RESOURCE_GROUP_NAME --name $MY_COMM_CHECKER_NAME
+```
+
+If the second container communicated successfully with the first, output is similar to:
+
+```output
+Connecting to 10.0.0.4 (10.0.0.4:80)
+index.html           100% |*******************************|  1663   0:00:00 ETA
+```
+
+The log output should show that `wget` was able to connect and download the index file from the first container using its private IP address on the local subnet. Network traffic between the two container groups remained within the virtual network.
 
 ## Clean up resources
 
