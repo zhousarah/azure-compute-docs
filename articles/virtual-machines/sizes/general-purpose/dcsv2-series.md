@@ -24,9 +24,9 @@ ms.reviewer: mattmcinnes
 
 ### [Basics](#tab/sizebasic)
 
-vCPUs (Qty.) and Memory for each size
+Cores (Qty.) and Memory for each size
 
-| Size Name | vCPUs (Qty.) | Memory (GB) | EPC Memory (MiB) |
+| Size Name | Cores (Qty.) | Memory (GB) | EPC Memory (MiB) |
 | --- | --- | --- | --- |
 | Standard_DC1s_v2 | 1 | 4 | 28 |
 | Standard_DC2s_v2 | 2 | 8 | 56 |
@@ -34,7 +34,7 @@ vCPUs (Qty.) and Memory for each size
 | Standard_DC8_v2 | 8 | 32 | 168 |
 
 #### VM Basics resources
-- [Check vCPU quotas](../../../virtual-machines/quotas.md)
+- [Check Core quotas](../../../virtual-machines/quotas.md)
 
 ### [Local storage](#tab/sizestoragelocal)
 
