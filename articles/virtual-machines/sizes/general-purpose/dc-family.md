@@ -13,9 +13,6 @@ ms.author: mattmcinnes
 
 **Applies to:** :heavy_check_mark: Linux VMs :heavy_check_mark: Windows VMs :heavy_check_mark: Flexible scale sets :heavy_check_mark: Uniform scale sets
 
-> [!NOTE]
-> 'DC' family VMs are for confidential computing scenarios. If your workload doesn't require confidential compute and you're looking for general purpose VMs with similar specs, consider the [the standard D-family size series](./d-family.md).
-
 [!INCLUDE [dc-family-summary](./includes/dc-family-summary.md)]
 
 ## Workloads and use cases
