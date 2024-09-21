@@ -13,9 +13,6 @@ ms.author: mattmcinnes
 
 **Applies to:** :heavy_check_mark: Linux VMs :heavy_check_mark: Windows VMs :heavy_check_mark: Flexible scale sets :heavy_check_mark: Uniform scale sets
 
-> [!NOTE]
-> 'EC' family VMs are for confidential computing scenarios. If your workload doesn't require confidential compute and you're looking for memory-optimized VMs with similar specifications, consider the [standard E-family size series](./e-family.md).
-
 [!INCLUDE [ec-family-summary](./includes/ec-family-summary.md)]
 
 ## Workloads and use cases
