@@ -37,22 +37,6 @@ ms.author: mattmcinnes
 [!INCLUDE [dcadsv5-series-specs](./includes/dcadsv5-series-specs.md)]
 
 ---
-### DCas_cc_v5 and DCads_cc_v5-series
-#### [DCas_cc_v5-series](#tab/dcasccv5)
-[!INCLUDE [dcasccv5-series-summary](./includes/dcasccv5-series-summary.md)]
-
-[View the full DCas_cc_v5-series page](./dcasccv5-series.md).
-
-[!INCLUDE [dcasccv5-series-specs](./includes/dcasccv5-series-specs.md)]
-
-#### [DCads_cc_v5-series](#tab/dcadsccv5)
-[!INCLUDE [dcadsccv5-series-summary](./includes/dcadsccv5-series-summary.md)]
-
-[View the full DCads_cc_v5-series page](./dcadsccv5-series.md).
-
-[!INCLUDE [dcadsccv5-series-specs](./includes/dcadsccv5-series-specs.md)]
-
----
 ### DCesv5 and DCedsv5-series
 #### [DCesv5-series](#tab/dcesv5)
 [!INCLUDE [dcesv5-series-summary](./includes/dcesv5-series-summary.md)]
@@ -67,6 +51,22 @@ ms.author: mattmcinnes
 [View the full DCedsv5-series page](./dcedsv5-series.md).
 
 [!INCLUDE [dcedsv5-series-specs](./includes/dcedsv5-series-specs.md)]
+
+---
+### DCas_cc_v5 and DCads_cc_v5-series
+#### [DCas_cc_v5-series](#tab/dcasccv5)
+[!INCLUDE [dcasccv5-series-summary](./includes/dcasccv5-series-summary.md)]
+
+[View the full DCas_cc_v5-series page](./dcasccv5-series.md).
+
+[!INCLUDE [dcasccv5-series-specs](./includes/dcasccv5-series-specs.md)]
+
+#### [DCads_cc_v5-series](#tab/dcadsccv5)
+[!INCLUDE [dcadsccv5-series-summary](./includes/dcadsccv5-series-summary.md)]
+
+[View the full DCads_cc_v5-series page](./dcadsccv5-series.md).
+
+[!INCLUDE [dcadsccv5-series-specs](./includes/dcadsccv5-series-specs.md)]
 
 ---
 ### DCsv3 and DCdsv3-series
