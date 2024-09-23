@@ -9,7 +9,7 @@ ms.topic: how-to
 ms.custom: devx-track-python
 ms.date: 06/01/2020
 ms.author: ericrad
-ms.reviwer: mimckitt
+ms.reviwer: mimckitt, wilsonadam
 ---
 
 # Azure Metadata Service: Scheduled Events for Windows VMs
