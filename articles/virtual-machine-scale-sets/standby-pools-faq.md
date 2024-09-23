@@ -57,6 +57,8 @@ Virtual machines in the standby pool inherit the same virtual machine profile as
 ### Can I change the size of my standby pool without needing to recreate it? 
 Yes. To change the size of your standby pool update the max ready capacity setting.  
 
+### Can a standby pool resource be moved?
+No. Standby Pools doesn't currently support that capability. If you need to move a standby pool, you can consider deleting it recreating it in another location.
 
 ### I created a standby pool and I noticed that some virtual machines are coming up in a failed state. 
 Ensure you have enough quota to complete the standby pool creation. Insufficient quota results in the platform attempting to create the virtual machines in the standby pool but unable to successfully complete the create operation. Check for multiple types of quotas such as Cores, Network Interfaces, IP Addresses, etc.

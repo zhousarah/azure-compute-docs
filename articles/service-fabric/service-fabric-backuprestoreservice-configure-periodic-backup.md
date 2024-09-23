@@ -86,7 +86,7 @@ A backup policy consists of the following configurations:
             "StorageKind": "ManagedIdentityAzureBlobStore",
             "FriendlyName": "AzureMI_storagesample",
             "BlobServiceUri": "https://<account-name>.blob.core.windows.net",
-            "ContainerName": "BackupContainer",
+            "ContainerName": "backup-container",
             "ManagedIdentityType": "VMSS",
             "ManagedIdentityClientId": "<Client-Id of User-Assigned MI>" 
         }
@@ -111,7 +111,7 @@ A backup policy consists of the following configurations:
             "StorageKind": "AzureBlobStore",
             "FriendlyName": "Azure_storagesample",
             "ConnectionString": "<Put your Azure blob store connection string here>",
-            "ContainerName": "BackupContainer"
+            "ContainerName": "backup-container"
         }
         ```
 
