@@ -9,7 +9,7 @@ ms.topic: how-to
 ms.custom: devx-track-python, linux-related-content
 ms.date: 01/25/2023
 ms.author: ericrad
-ms.reviewer: mimckitt
+ms.reviewer: mimckitt, wilsonadam
 ---
 
 # Azure Metadata Service: Scheduled Events for Linux VMs
