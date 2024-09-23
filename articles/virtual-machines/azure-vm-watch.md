@@ -8,9 +8,9 @@ ms.topic: conceptual
 ms.date:     09/20/2024
 ---
 
-# Azure VM watch - Enhancing VM Health Monitoring
+# VM watch - Enhancing VM Health Monitoring
 
-Azure VM watch is a standardized, lightweight, and adaptable in-VM service offering a uniform data model for collecting and transmitting health signals from virtual machines and scale sets. It is integrated into Application Health (link) to provide ease of use and manageability for customers. In addition, VM watch is offered at no additional cost for customers. Some key benefits of VM watch include: 
+VM watch is a standardized, lightweight, and adaptable in-VM service offering a uniform data model for collecting and transmitting health signals from virtual machines and scale sets. It is integrated into Application Health (link) to provide ease of use and manageability for customers. In addition, VM watch is offered at no additional cost for customers. Some key benefits of VM watch include: 
 
 - Improve overall customer experience on the platform
 - Improve outage detection and recovery times 
