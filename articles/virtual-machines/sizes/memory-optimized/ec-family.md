@@ -24,7 +24,7 @@ ms.author: mattmcinnes
 ### ECasv5 and ECadsv5-series
 [!INCLUDE [ecasv5-ecadsv5-series-summary](./includes/ecasv5-ecadsv5-series-summary.md)]
 
-[View the full Ecasv5 and Ecadsv5-series page](../../ecasv5-ecadsv5-series.md).
+[View the full ECasv5 and ECadsv5-series page](../../ecasv5-ecadsv5-series.md).
 
 [!INCLUDE [ecasv5-ecadsv5-series-specs](./includes/ecasv5-ecadsv5-series-specs.md)]
 
@@ -32,7 +32,7 @@ ms.author: mattmcinnes
 ### ECesv5 and ECedsv5-series
 [!INCLUDE [ecesv5-ecedsv5-series-summary](./includes/ecesv5-ecedsv5-series-summary.md)]
 
-[View the full Ecesv5 and Ecedsv5-series page](../../ecesv5-ecedsv5-series.md).
+[View the full ECesv5 and ECedsv5-series page](../../ecesv5-ecedsv5-series.md).
 
 [!INCLUDE [ecesv5-ecedsv5-series-specs](./includes/ecesv5-ecedsv5-series-specs.md)]
 
@@ -40,7 +40,7 @@ ms.author: mattmcinnes
 ### ECas_ccv5 and ECads_ccv5-series
 [!INCLUDE [ecasccv5-ecadsccv5-series-summary](./includes/ecasccv5-ecadsccv5-series-summary.md)]
 
-[View the full Ecasccv5 and Ecadsccv5-series page](../../ecasccv5-ecadsccv5-series.md).
+[View the full ECas_ccv5 and ECads_ccv5-series page](../../ecasccv5-ecadsccv5-series.md).
 
 [!INCLUDE [ecasccv5-ecadsccv5-series-specs](./includes/ecasccv5-ecadsccv5-series-specs.md)]
 
