@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 06/14/2024
 ms.reviewer: mimckitt
 ms.author: jushiman
-ms.custom: mvc, devx-track-azurecli
+ms.custom: mvc, devx-track-azurecli, innovation-engine
 ---
 
 # Tutorial: Create and use a custom image for Virtual Machine Scale Sets with the Azure CLI
@@ -32,16 +32,28 @@ An [Azure Compute Gallery](../virtual-machines/shared-image-galleries.md) simpli
 
 The Azure Compute Gallery lets you share your custom VM images with others. Choose which images you want to share, which regions you want to make them available in, and who you want to share them with.
 
+## Create a resource group
+
+Before you can create a VM and scale set, create a resource group with [az group create](/cli/azure/group). The following example creates a resource group named *myResourceGroup* in the *eastus* location:
+
+```azurecli-interactive
+export RANDOM_ID=$(openssl rand -hex 3)
+export MY_RESOURCE_GROUP_NAME="myResourceGroup$RANDOM_ID"
+
+az group create --name $MY_RESOURCE_GROUP_NAME --location $REGION
+```
+
+
 ## Create and configure a source VM
 First, create a resource group with [az group create](/cli/azure/group), then create a VM with [az vm create](/cli/azure/vm#az-vm-create). This VM is then used as the source for the image. The following example creates a VM named *myVM* in the resource group named *myResourceGroup*:
 
 ```azurecli-interactive
-az group create --name myResourceGroup --location eastus
+export MY_VM_NAME="myVM"
 
 az vm create \
-  --resource-group myResourceGroup \
-  --name myVM \
-  --image <SKU image> \
+  --resource-group $MY_RESOURCE_GROUP_NAME \
+  --name $MY_VM_NAME \
+  --image debian11 \
   --admin-username azureuser \
   --generate-ssh-keys
 ```
@@ -57,8 +69,11 @@ Allowed characters for Gallery name are uppercase or lowercase letters, digits, 
 Create an image gallery using [az sig create](/cli/azure/sig#az-sig-create). The following example creates a resource group named gallery named *myGalleryRG* in *East US*, and a gallery named *myGallery*.
 
 ```azurecli-interactive
-az group create --name myGalleryRG --location eastus
-az sig create --resource-group myGalleryRG --gallery-name myGallery
+export MY_GALLERY_RG_NAME="myGalleryRG$RANDOM_ID"
+export MY_GALLERY_NAME="myGallery$RANDOM_ID"
+
+az group create --name $MY_GALLERY_RG_NAME --location $REGION
+az sig create --resource-group $MY_GALLERY_NAME_RG --gallery-name $MY_GALLERY_NAME
 ```
 
 ## Create an image definition
@@ -75,10 +90,12 @@ Create an image definition in the gallery using [az sig image-definition create]
 In this example, the image definition is named *myImageDefinition*, and is for a [specialized](../virtual-machines/shared-image-galleries.md#generalized-and-specialized-images) Linux OS image. To create a definition for images using a Windows OS, use `--os-type Windows`.
 
 ```azurecli-interactive
+export MY_IMAGE_DEF_NAME="myImageDefinition$RANDOM_ID"
+
 az sig image-definition create \
-   --resource-group myGalleryRG \
-   --gallery-name myGallery \
-   --gallery-image-definition myImageDefinition \
+   --resource-group $MY_GALLERY_RG_NAME \
+   --gallery-name $MY_GALLERY_NAME \
+   --gallery-image-definition $MY_IMAGE_DEF_NAME \
    --publisher myPublisher \
    --offer myOffer \
    --sku mySKU \
@@ -99,13 +116,15 @@ In this example, the version of our image is *1.0.0* and we are going to create 
 Replace the value of `--managed-image` in this example with the ID of your VM from the previous step.
 
 ```azurecli-interactive
+export MY_VM_ID=$(az vm show --name $MY_VM_NAME --resource-group $MY_RESOURCE_GROUP --query "id" --output tsv)
+
 az sig image-version create \
-   --resource-group myGalleryRG \
-   --gallery-name myGallery \
-   --gallery-image-definition myImageDefinition \
+   --resource-group $MY_GALLERY_RG_NAME \
+   --gallery-name $MY_GALLERY_NAME \
+   --gallery-image-definition $MY_IMAGE_DEF_NAME \
    --gallery-image-version 1.0.0 \
    --target-regions "southcentralus=1" "eastus=1" \
-   --managed-image "/subscriptions/<Subscription ID>/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM"
+   --managed-image $MY_VM_ID
 ```
 
 > [!NOTE]
@@ -129,12 +148,18 @@ Use the image definition ID for `--image` to create the scale set instances from
 Create a scale set named *myScaleSet* the latest version of the *myImageDefinition* image we created earlier.
 
 ```azurecli
-az group create --name myResourceGroup --location eastus
+export MY_IMAGE_DEF_ID=$(az sig image-definition show --resource-group $MY_GALLERY_RG_NAME --gallery-name $MY_GALLERY_NAME --gallery-image-definition $MY_IMAGE_DEF_NAME --query "id" --output tsv)
+
+export MY_SCALE_SET_RG_NAME="myResourceGroup$RANDOM_ID"
+export MY_SCALE_SET_NAME="myScaleSet$RANDOM_ID"
+
+az group create --name $MY_SCALE_SET_RG_NAME --location eastus
+
 az vmss create \
-   --resource-group myResourceGroup \
-   --name myScaleSet \
+   --resource-group $MY_SCALE_SET_RG_NAME \
+   --name $MY_SCALE_SET_NAME \
    --orchestration-mode flexible \
-   --image "/subscriptions/<Subscription ID>/resourceGroups/myGalleryRG/providers/Microsoft.Compute/galleries/myGallery/images/myImageDefinition" \
+   --image $MY_IMAGE_DEF_ID \
    --specialized
 ```
 
@@ -148,17 +173,20 @@ We recommend that you share with other users at the gallery level. To get the ob
 
 ```azurecli-interactive
 az sig show \
-   --resource-group myGalleryRG \
-   --gallery-name myGallery \
+   --resource-group $MY_GALLERY_RG_NAME \
+   --gallery-name $MY_GALLERY_NAME \
    --query id
 ```
 
 Use the object ID as a scope, along with an email address and [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create) to give a user access to the shared image gallery. Replace `<email-address>` and `<gallery iD>` with your own information.
 
 ```azurecli-interactive
+export CALLER_OBJECT_ID=$(az ad signed-in-user show --query id -o tsv)
+export GALLERY_ID=$(az sig show --resource-group $MY_GALLERY_RG_NAME --gallery-name $MY_GALLERY_NAME --query id -o tsv)
+
 az role assignment create \
    --role "Reader" \
-   --assignee <email address> \
+   --assignee $CALLER_OBJECT_ID \
    --scope <gallery ID>
 ```
 
@@ -167,10 +195,6 @@ For more information about how to share resources using Azure RBAC, see [Add or 
 
 ## Clean up resources
 To remove your scale set and additional resources, delete the resource group and all its resources with [az group delete](/cli/azure/group). The `--no-wait` parameter returns control to the prompt without waiting for the operation to complete. The `--yes` parameter confirms that you wish to delete the resources without an additional prompt to do so.
-
-```azurecli-interactive
-az group delete --name myResourceGroup --no-wait --yes
-```
 
 ## Next steps
 In this tutorial, you learned how to create and use a custom VM image for your scale sets with the Azure CLI:
