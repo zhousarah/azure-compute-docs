@@ -1,11 +1,7 @@
 ---
-# Required metadata
-# For more information, see https://review.learn.microsoft.com/en-us/help/platform/learn-editor-add-metadata?branch=main
-# For valid values of ms.service, ms.prod, and ms.topic, see https://review.learn.microsoft.com/en-us/help/platform/metadata-taxonomies?branch=main
-
 title: Installing VM Watch
 description: Getting started guide to installing VM watchon virtual machines
-author:      iamwilliew # GitHub alias
+author: iamwilliew 
 ms.author: wwilliams
 ms.service: azure-virtual-machines
 ms.topic: get-started
@@ -201,7 +197,7 @@ Same screenshots as above but using ApplicationHealthWindows
 
 1. On Successful installation, navigate back to Azure Portal to confirm that Application Health has been installed.
 
-   ![A screenshot of a computer  Description automatically generated](media/image3.png)
+:::image type="content" source="media/vm-watch-application-extension.png" alt-text="Screenshot of the Application and extension example" :::
 
 1. To confirm that VM watch has been enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM 
 
