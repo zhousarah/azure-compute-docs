@@ -14,9 +14,11 @@ ms.date:     07/15/2024
 
 
 
-The Storage optimized Mbv3 VM (Mbsv3 and Mbdsv3) series are based on the  4th generation Intel® Xeon® Scalable processors and deliver higher remote disk storage performance. These new VM sizes offer up to 650,000 IOPS and 10GBps of remote disk storage throughput Premium SSD v2/Ultra Disk, up to 4TB of RAM and up to 650,000 IOPS and 10GBps throughput to remote disk storage with NVMe interface by using Ultra Disk and Premium SSD v2.
+The Storage optimized Mbv3 VM (Mbsv3 and Mbdsv3) series are based on the  4th generation Intel® Xeon® Scalable processors and deliver higher remote disk storage performance. These new VM sizes offer up to 650,000 IOPS and 10GBps of remote disk storage throughput Premium SSD v2 and Ultra Disk, up to 4TB of RAM and up to 650,000 IOPS and 10GBps throughput to remote disk storage with NVMe interface by using Ultra Disk and Premium SSD v2.
 
 The increased remote storage performance of these VMs is ideal for storage throughput-intensive workloads such as relational databases and data analytics applications.  
+
+## Mbsv3 series (NVMe)
 
 [Premium Storage](premium-storage-performance.md): Supported<br>
 [Premium Storage caching](premium-storage-performance.md): Supported<br>
@@ -25,11 +27,9 @@ The increased remote storage performance of these VMs is ideal for storage throu
 [VM Generation Support](generation-2.md): Generation 2<br>
 [Write Accelerator](./how-to-enable-write-accelerator.md): Supported<br>
 [Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported<br>
-[Ephemeral OS Disks](ephemeral-os-disks.md): Supported <br>
+[Ephemeral OS Disks](ephemeral-os-disks.md): Not Supported <br>
 [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Not Supported <br>
 <br>
-
-## Mbsv3 series (NVMe)
 
 | **Size** | **vCPU** | **Memory: GiB** | **Max data disks** | **Max uncached Premium** **SSD  throughput: IOPS/MBps** | **Max uncached Ultra Disk and Premium SSD V2 disk throughput: IOPS/MBps** | **Max NICs** | **Max network bandwidth (Mbps)** |
 |---|---|---|---|---|---|---|---|
@@ -42,6 +42,17 @@ The increased remote storage performance of these VMs is ideal for storage throu
 | **Standard_M176bs_v3** | 176 | 1536 | 64 | 260,000/6,000 | 650,000/6,000 | 8 | 50,000 |
 
 ## Mbdsv3 series (NVMe)
+
+[Premium Storage](premium-storage-performance.md): Supported<br>
+[Premium Storage caching](premium-storage-performance.md): Supported<br>
+[Live Migration](maintenance-and-updates.md): Not Supported<br>
+[Memory Preserving Updates](maintenance-and-updates.md): Not Supported<br>
+[VM Generation Support](generation-2.md): Generation 2<br>
+[Write Accelerator](./how-to-enable-write-accelerator.md): Supported<br>
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported<br>
+[Ephemeral OS Disks](ephemeral-os-disks.md): Supported <br>
+[Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Not Supported <br>
+<br>
 
 | **Size** | **vCPU** | **Memory: GiB** | **Temp storage (SSD) GiB** | **Max data disks** | **Max temp storage throughput: IOPS/MBps** | **Max uncached Premium** **SSD  throughput: IOPS/MBps** | **Max uncached Ultra Disk and Premium SSD V2 disk throughput: IOPS/MBps** | **Max NICs** | **Max network bandwidth (Mbps)** |
 |---|---|---|---|---|---|---|---|---|---|
@@ -84,10 +95,6 @@ The increased remote storage performance of these VMs is ideal for storage throu
 [High performance compute](/azure/virtual-machines/sizes-hpc)
 
 [Previous generations](/azure/virtual-machines/sizes-previous-gen)
-
-[Deploy a Premium SSD v2 managed disk - Azure Virtual Machines | Microsoft Learn](/azure/virtual-machines/disks-deploy-premium-v2) 
-
-[Ultra disks for VMs - Azure managed disks - Azure Virtual Machines | Microsoft Learn](/azure/virtual-machines/disks-enable-ultra-ssd)
 
 Pricing Calculator: [Pricing Calculator](https://azure.microsoft.com/pricing/calculator/)
 
