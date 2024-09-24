@@ -15,14 +15,14 @@ Automatic Extension Upgrade is available for Azure Virtual Machines and Azure Vi
 
  Automatic Extension Upgrade has the following features:
 
-- Supported for Azure VMs and virtual machine scale sets.
+- Azure VMs and virtual machine scale sets are supported.
 - Upgrades are applied in an availability-first deployment model.
-- For a virtual machine scale set, no more than 20% of the scale set virtual machines upgrades are in a single batch. The minimum batch size is one VM.
-- Works for all VM sizes, and for both Windows and Linux extensions.
-- Option to opt out of automatic upgrades at any time.
-- Automatic Extension Upgrade can be enabled on virtual machine scale sets of any size.
+- For a virtual machine scale set, no more than 20% of the scale set VM upgrades are in a single batch. The minimum batch size is one VM.
+- All VM sizes and both Windows and Linux extensions are compatible.
+- Automatic upgrades are optional at any time.
+- Virtual machine scale sets of any size are enabled.
 - Each supported extension is enrolled individually. You can choose which extensions to upgrade automatically.
-- Supported in all public cloud regions.
+- All public cloud regions are supported.
 
 ## How does Automatic Extension Upgrade work?
 
@@ -41,7 +41,7 @@ For a group of VMs undergoing an upgrade, the Azure platform orchestrates upgrad
 - An upgrade moves across Azure globally in a phased manner to prevent Azure-wide deployment failures.
 - A phase can have one or more regions, and an upgrade moves across phases only if eligible VMs in the previous phase upgrade successfully.
 - Geo-paired regions aren't upgraded concurrently and can't be in the same regional phase.
-- The success of an upgrade is measured by tracking the health of a VM post upgrade. VM health is tracked through platform health indicators for the VM. For virtual machine scale sets, the VM health is tracked through application health probes or the Application Health extension, if applied to the scale set.
+- The success of an upgrade is measured by tracking the health of a VM post upgrade. VM health is tracked through platform health indicators for the VM. For virtual machine scale sets, the VM health is tracked through application health probes or the Application Health extension, if it's applied to the scale set.
 
 #### Within a region
 
@@ -56,13 +56,13 @@ For a group of VMs undergoing an upgrade, the Azure platform orchestrates upgrad
 
 ### Upgrade process for virtual machine scale sets
 
-1. Before the upgrade process starts, the orchestrator ensures that no more than 20% of VMs in the entire scale set are unhealthy (for any reason).
+- Before the upgrade process starts, the orchestrator ensures that no more than 20% of VMs in the entire scale set are unhealthy (for any reason).
 
-1. The upgrade orchestrator identifies the batch of VM instances to upgrade. An upgrade batch can have a maximum of 20% of the total VM count, subject to a minimum batch size of one VM. Definition of Upgrade Policy and availability zones is considered while the batch is identified.  
+- The upgrade orchestrator identifies the batch of VM instances to upgrade. An upgrade batch can have a maximum of 20% of the total VM count, subject to a minimum batch size of one VM. The definition of the upgrade policy and availability zones are considered while the batch is identified.  
 
-1. After the upgrade, the VM health is always monitored before moving to the next batch. For scale sets with configured application health probes or the Application Health extension, application health is also monitored. The upgrade waits up to five minutes (or the defined health probe configuration) for the VM to become healthy before upgrading the next batch. If a VM doesn't recover its health after an upgrade, then by default, the previous extension version on the VM is reinstalled.
+- After the upgrade, the VM health is always monitored before moving to the next batch. For scale sets with configured application health probes or the Application Health extension, application health is also monitored. The upgrade waits up to five minutes (or the defined health probe configuration) for the VM to become healthy before upgrading the next batch. If a VM doesn't recover its health after an upgrade, then by default, the previous extension version on the VM is reinstalled.
 
-1. The upgrade orchestrator also tracks the percentage of VMs that become unhealthy after an upgrade. The upgrade stops if more than 20% of upgraded instances become unhealthy during the upgrade process.
+- The upgrade orchestrator also tracks the percentage of VMs that become unhealthy after an upgrade. The upgrade stops if more than 20% of upgraded instances become unhealthy during the upgrade process.
 
 This process continues until all instances in the scale set are upgraded.
 
@@ -72,16 +72,16 @@ The scale set upgrade orchestrator checks for the overall scale set health befor
 
 Automatic Extension Upgrade supports the following extensions (and more are added periodically):
 
-- [Azure Automation Hybrid Worker extension](/azure/automation/extension-based-hybrid-runbook-worker-install) - Linux and Windows
-- Dependency Agent – [Linux](./extensions/agent-dependency-linux.md) and [Windows](./extensions/agent-dependency-windows.md)
-- [Application Health Extension](../virtual-machine-scale-sets/virtual-machine-scale-sets-health-extension.md) – Linux and Windows
-- [Guest Attestation Extension](../virtual-machines/boot-integrity-monitoring-overview.md) - Linux and Windows
-- [Guest Configuration Extension](./extensions/guest-configuration.md) – Linux and Windows
-- Azure Key Vault – [Linux](./extensions/key-vault-linux.md) and [Windows](./extensions/key-vault-windows.md)
-- [Azure Monitor Agent](/azure/azure-monitor/agents/azure-monitor-agent-overview)
-- [Log Analytics Agent for Linux](/azure/azure-monitor/agents/log-analytics-agent)
+- [Azure Automation Hybrid Worker extension](/azure/automation/extension-based-hybrid-runbook-worker-install): Linux and Windows
+- Dependency Agent: [Linux](./extensions/agent-dependency-linux.md) and [Windows](./extensions/agent-dependency-windows.md)
+- [Application Health extension](../virtual-machine-scale-sets/virtual-machine-scale-sets-health-extension.md): Linux and Windows
+- [Guest Attestation extension](../virtual-machines/boot-integrity-monitoring-overview.md): Linux and Windows
+- [Guest Configuration extension](./extensions/guest-configuration.md): Linux and Windows
+- Azure Key Vault: [Linux](./extensions/key-vault-linux.md) and [Windows](./extensions/key-vault-windows.md)
+- [Azure Monitor agent](/azure/azure-monitor/agents/azure-monitor-agent-overview)
+- [Log Analytics agent for Linux](/azure/azure-monitor/agents/log-analytics-agent)
 - [Azure Diagnostics extension for Linux](/azure/azure-monitor/agents/diagnostics-extension-overview)
-- Service Fabric – [Linux](../service-fabric/service-fabric-tutorial-create-vnet-and-linux-cluster.md#service-fabric-extension)
+- Azure Service Fabric: [Linux](../service-fabric/service-fabric-tutorial-create-vnet-and-linux-cluster.md#service-fabric-extension)
 
 ---
 
@@ -90,13 +90,18 @@ Automatic Extension Upgrade supports the following extensions (and more are adde
 To enable Automatic Extension Upgrade for an extension, you must ensure that the property `enableAutomaticUpgrade` is set to `true` and added to every extension definition individually.
 
 ### Use the Azure portal
-You can use the Azure portal - Extension pane to enable automatic upgrade of extensions on existing Virtual Machines and virtual machine scale sets. 
-1. Go to [Virtual Machines](https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FVirtualMachines) or [Virtual Machines Scale Sets](https://ms.portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FvirtualMachineScaleSets) pane and select the resource by clicking on its name.
-1. Go to the **Extenisons + applications** pane under **Settings**, which shows all extensions installed on the resource. The **Automatic Upgrade Status** column tells if the Automatic upgrade of the extension is enabled, disabled, or not supported.
-1. Go to the **Extension** details pane by selecting the extension name.
-:::image type="content" source="media/auto-extension.png" alt-text="Screenshot that shows the Azure portal - Extension pane." lightbox="media/auto-extension.png":::
-1. Select **Enable automatic upgrade** to enable automatic upgrade of the extension. This button can also be used to disable automatic upgrade, if necessary.
-:::image type="content" source="media/auto-extension-upgrade.png" alt-text="Screenshot that shows the Azure portal to enable the automatic upgrade of the extension.":::
+
+In the Azure portal, use the **Extension** pane to enable automatic upgrade of extensions on existing VMs and virtual machine scale sets.
+
+1. Go to the [Virtual Machines](https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FVirtualMachines) or [Virtual Machines Scale Sets](https://ms.portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FvirtualMachineScaleSets) pane, and select the resource name.
+1. Under **Settings**, go to the **Extensions + applications** pane, which shows all extensions installed on the resource. The **Automatic upgrade status** column shows you if the automatic upgrade of the extension is enabled, disabled, or not supported.
+1. Select the extension name to open the **Extensions** details pane.
+
+   :::image type="content" source="media/auto-extension.png" alt-text="Screenshot that shows the Extensions pane in the Azure portal." lightbox="media/auto-extension.png":::
+
+1. Select **Enable automatic upgrade** to enable automatic upgrade of the extension. Use this button to disable an automatic upgrade, if necessary.
+
+   :::image type="content" source="media/auto-extension-upgrade.png" alt-text="Screenshot that shows Enable automatic upgrade in the Azure portal.":::
 
 ### For virtual machines
 
@@ -152,10 +157,9 @@ az vm extension set \
     --enable-auto-upgrade true
 ```
 
-
 #### [Template](#tab/template1)
 
-The following example describes how to set automatic extension upgrades for an extension (Dependency Agent Extension in this example) on a VM by using Azure Resource Manager.
+The following example describes how to set automatic extension upgrades for an extension (Dependency Agent extension in this example) on a VM by using Azure Resource Manager.
 
 ```json
 {
@@ -269,12 +273,13 @@ Use the following example to set Automatic Extension Upgrade on the extension wi
 }
 ```
 ----
+
 > [!NOTE]
-> These operations sets the `enableAutomaticUpgrade` property to `true` on the virtual machine scale set resource but not on the underlying VMs.
+> These operations set the `enableAutomaticUpgrade` property to `true` on the virtual machine scale set resource but not on the underlying VMs.
 
-If the virtual machine scale set defines [automatic or rolling upgrade mode in the upgradeProfile](../virtual-machine-scale-sets/virtual-machine-scale-sets-change-upgrade-policy.md), then the virtual machine scale set automatically propagates the change to each underlying VM.
+If the virtual machine scale set defines [automatic or rolling upgrade mode in the upgradeProfile](../virtual-machine-scale-sets/virtual-machine-scale-sets-change-upgrade-policy.md), the virtual machine scale set automatically propagates the change to each underlying VM.
 
-If the virtual machine scale set defines manual mode in the `upgradeProfile`, then you also need to [manually update each instance](../virtual-machine-scale-sets/virtual-machine-scale-sets-perform-manual-upgrades.md) and propagate the change to each underlying VM.
+If the virtual machine scale set defines manual mode in the `upgradeProfile`, you also need to [manually update each instance](../virtual-machine-scale-sets/virtual-machine-scale-sets-perform-manual-upgrades.md) and propagate the change to each underlying VM.
 
 --- 
 
@@ -284,9 +289,9 @@ A VM or virtual machine scale set can have multiple extensions with Automatic Ex
 
 If multiple extension upgrades are available for a VM, the upgrades might be batched together, but each extension upgrade is applied individually on a VM. A failure on one extension doesn't affect the other extensions that might be upgrading. For example, if two extensions are scheduled for an upgrade, and the first extension upgrade fails, the second extension is still upgraded.
 
-You can also apply Automatic Extension Upgrade when a VM or virtual machine scale set has multiple extensions configured with [extension sequencing](../virtual-machine-scale-sets/virtual-machine-scale-sets-extension-sequencing.md). Extension sequencing is applicable for the first-time deployment of the VM. Any future extension upgrades on an extension are applied independently.
+You can also apply Automatic Extension Upgrade when a VM or virtual machine scale set has multiple extensions configured with [extension sequencing](../virtual-machine-scale-sets/virtual-machine-scale-sets-extension-sequencing.md). Extension sequencing is for the first-time deployment of the VM. Any future extension upgrades on an extension are applied independently.
 
-## Difference between enableAutomaticUpgrade and autoUpgradeMinorVersion
+## Difference between EnableAutomaticUpgrade and AutoUpgradeMinorVersion
 
 1. `AutoUpgradeMinorVersion`:
 
@@ -300,7 +305,7 @@ You can also apply Automatic Extension Upgrade when a VM or virtual machine scal
 1. `EnableAutomaticUpgrade`:
    - This property affects existing VMs.
    - It doesn't affect the version installed during VM creation.
-   - After VM creation, if the VM isn't running the latest minor version of the extension, enabling this property triggers an automatic upgrade.
+   - After VM creation, if the VM isn't running the latest minor version of the extension, enable this property to trigger an automatic upgrade.
    - Upgrades don't cause VM reboot and are rolled out in a safe rolling manner. Failed upgrades are rolled back immediately to provide high service availability and reliability.
    - Existing VMs stay secure and up to date by automatically updating them to the latest minor version.
 
@@ -308,6 +313,6 @@ We recommend that you enable both properties to keep all VMs secure and up to da
 
 Upgrades to major extension versions are never performed automatically by either properties because major versions can include breaking changes. You must manually set `TypeHandlerVersion` to a major version and manually upgrade each existing VM to the latest major version.
 
-## Next steps
+## Next step
 > [!div class="nextstepaction"]
-> [Learn about the Application Health Extension](../virtual-machine-scale-sets/virtual-machine-scale-sets-health-extension.md)
+> [Learn about the Application Health extension](../virtual-machine-scale-sets/virtual-machine-scale-sets-health-extension.md)
