@@ -34,7 +34,7 @@ A failed extension upgrade is automatically retried. A retry is attempted every 
 
 The availability-first model for platform-orchestrated upgrades ensures that availability configurations in Azure are respected across multiple availability levels.
 
-For a group of VMs undergoing an upgrade, the Azure platform orchestrates upgrades:
+For a group of VMs undergoing an upgrade, the Azure platform orchestrates upgrades across regions, within a region, and within a set.
 
 #### Across regions
 
@@ -66,7 +66,7 @@ For a group of VMs undergoing an upgrade, the Azure platform orchestrates upgrad
 
 This process continues until all instances in the scale set are upgraded.
 
-The scale set upgrade orchestrator checks for the overall scale set health before upgrading every batch. During a batch upgrade, other concurrent planned or unplanned maintenance activities could affect the health of your scale set VMs. In such cases, if more than 20% of the scale set's instances become unhealthy, then the scale set upgrade stops at the end of the current batch.
+The scale set upgrade orchestrator checks for the overall scale set health before upgrading every batch. During a batch upgrade, other concurrent planned or unplanned maintenance activities could affect the health of your scale set VMs. In such cases, if more than 20% of the scale set's instances become unhealthy, the scale set upgrade stops at the end of the current batch.
 
 ## Supported extensions
 
@@ -298,7 +298,7 @@ You can also apply Automatic Extension Upgrade when a VM or virtual machine scal
    - This property is used during VM creation and while you upgrade the VM with a new configuration.  
    - When set to `true`, it ensures that the latest minor version of the extension is automatically installed on the VM.
    - It overrides the `TypeHandlerVersion` with the latest stable minor version available.
-   - When you upgrade the VM configuration, if a new minor version is available, it's considered a configuration change and the extension is reinstalled with the latest minor version.
+   - When you upgrade the VM configuration, if a new minor version is available, it's considered a configuration change. The extension is reinstalled with the latest minor version.
    - In this way, newly created VMs keep up to date with the latest stable minor extension version.
    - If you want to manually set the extension to a specific version, set this property to `false`.
      
