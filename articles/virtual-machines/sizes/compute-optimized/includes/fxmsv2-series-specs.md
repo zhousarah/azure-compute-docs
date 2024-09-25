@@ -12,7 +12,7 @@ ms.custom: include file
 ---
 | Part | Quantity <br><sup>Count Units | Specs <br><sup>SKU ID, Performance Units, etc.  |
 |---|---|---|
-| Processor      | 2 - 96 vCPUs       | Intel Xeon Platinum 8473C (Emerald Rapids) [x86-64]                   |
+| Processor      | 2 - 96 vCPUs       | Intel Xeon Platinum 8573C (Emerald Rapids) [x86-64]                   |
 | Memory         | 42 - 1832 GiB          |                      |
 | Local Storage  | None           |                    |
 | Remote Storage | 8 - 64 Disks    | 8,000 - 400,000 IOPS <br>273 - 10,000 MBps |
