@@ -14,7 +14,7 @@ ms.date:     09/11/2024
 
 # Mv3 Very High Memory Series
 
-The Mv3 Very High Memory (VHM) series, powered by 4<sup>th</sup> generation Intel® Xeon® Scalable processors, are the next generation of memory-optimized VM sizes delivering faster performance, lower total cost of ownership and improved resilience to failures compared to previous generation Mv2 VMs. The Mv3 VHM sizes offer up to 32TB of memory and 8000 MBps throughput to remote storage and provides up to 25% networking performance improvements over previous VHM generations.
+The Mv3 Very High Memory (VHM) series, powered by 4<sup>th</sup> generation Intel® Xeon® Scalable processors, are the next generation of memory-optimized VM sizes delivering faster performance, lower total cost of ownership and improved resilience to failures compared to previous generation Mv2 VMs. The Mv3 VHM sizes offer up to 32TB of memory and 8 GBps throughput to remote storage and provides close to 185 Gbps networking performance with this current VHM generations.
 
 ## Feature support
 
@@ -24,8 +24,8 @@ The Mv3 Very High Memory (VHM) series, powered by 4<sup>th</sup> generation Inte
 
 | **Size**<sup>1</sup> | **vCPU** | **Memory: GiB** | **Max Data Disks** | **Max temp storage throughput: IOPS/MBps** | **Max un-cached Premium** **SSD  throughput: IOPS/MBps** | **Max un-cached Ultra Disk and Premium SSD V2 disk throughput: IOPS/MBps** | **NIC's (max)** | **Max network bandwidth (Mbps)**  |
 |---|---|---|---|---|---|---|---|---|
-| **standard_m896ixds_32_v3** | 896 | 30400 | 64 | 4,096 | 110,000/8,000 | 200000/8,000 | 8 | 185,000 |
-| **standard_m1792ixds_32_v3** | 1792 | 30400 | 64 | 4,096 | 110,000/8,000 | 200,000/8,000 | 8 | 185,000 |
+| **standard_m896ixds_32_v3** | 896 | 30400 | 64 | 4096 | 110000/8000 | 200000/8000 | 8 | 185000 |
+| **standard_m1792ixds_32_v3** | 1792 | 30400 | 64 | 4096 | 110000/8000 | 200000/8000 | 8 | 185000 |
 
 <sup>1</sup>VHM VM Sizes are virtual machine sizes that are Isolated to a specific hardware type and dedicated to a single customer, these VMs are generation 3 only and support 
   a subset of generation 3 supported Images. Please see below for the list of supported images for Mv3-series
