@@ -150,7 +150,7 @@ Update-AzVmssInstance -ResourceGroupName $vmScaleSetResourceGroup `
 
   -InstanceId '*' 
 ```
-### [ARM templates - REST API](#tab/arm templates - rest api)
+### [REST API](#tab/rest-api-2)
 
 ``` 
     	"type": "Microsoft.Compute/virtualMachineScaleSets",  
