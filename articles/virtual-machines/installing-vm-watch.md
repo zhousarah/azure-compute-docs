@@ -23,168 +23,194 @@ Users can enable VM watch with ease via ARM template, PowerShell, or AZ CLI (lin
 
    ![A close-up of a logo  Description automatically generated](media/image2.png)
 
-**Azure cli:**
+## Single VM
 
-**Single VM:**
+# [Azure CLI](#tab/Azure CLL)
 
-az vm extension set --resource-group <your resource group> --vm-name < vm name> --name ApplicationHealthLinux --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true
+az vm extension set --resource-group <your resource group> --vm-name < vm name> --name ApplicationHealthLinux --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true 
 
-**VM** **Scaleset:**<br>az vmss extension set --resource-group <your resource group> --vmss-name < vmss name> --name ApplicationHealthLinux --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true
+#[Azure Powershell](#tab/Azure Powershell)
 
-- 
+Set-AzVMExtension -ResourceGroupName "<your resource group>" -Location "<your location>" -VMName "<vm name>" -Name "<your extension name>" -Publisher "Microsoft.ManagedServices" -ExtensionType "ApplicationHealthLinux" -TypeHandlerVersion "2.0" -Settings @{"vmWatchSettings" = @{"enabled" = $True}} -EnableAutomaticUpgrade $True 
 
-**Azure** **Powershell**
+#[ARM templates - REST API](#tab/ARM templates - REST API)
 
-**Single VM:**
+        "type": "Microsoft.Compute/virtualMachines/extensions", 
 
-Set-AzVMExtension -ResourceGroupName "<your resource group>" -Location "<your location>" -VMName "<vm name>" -Name "<your extension name>" -Publisher "Microsoft.ManagedServices" -ExtensionType "ApplicationHealthLinux" -TypeHandlerVersion "2.0" -Settings @{"vmWatchSettings" = @{"enabled" = $True}} -EnableAutomaticUpgrade $True
+        "apiVersion": "2019-07-01", 
 
-**VM** **ScaleSet**
+        "name": "[concat(parameters('vmName'), '/', 'HealthExtension')]", 
 
-# Define the scale set variables
+        "location": "[parameters('location')]", 
 
-$vmScaleSetName = "<your scaleset name>"
+        "dependsOn": [ 
 
-$vmScaleSetResourceGroup = "<your resource group>"
+            "[resourceId('Microsoft.Compute/virtualMachines', parameters('vmName'))]" 
 
-# Define the setting to enable vmwatch
+        ], 
 
-$publicConfig = @{"vmWatchSettings" = @{"enabled" = $true}}
+        "properties": { 
 
-$extensionName = "<your extension name>"
+            "enableAutomaticUpgrade": true, 
 
-$extensionType = "ApplicationHealthLinux"
+            "publisher": "Microsoft.ManagedServices", 
 
-$publisher = "Microsoft.ManagedServices"
+            "typeHandlerVersion": "2.0", 
 
-# Get the scale set object
+            "type": "ApplicationHealthLinux", 
 
-$vmScaleSet = Get-AzVmss `
+            "settings": { 
 
-  -ResourceGroupName $vmScaleSetResourceGroup `
+                "vmWatchSettings": { 
 
-  -VMScaleSetName $vmScaleSetName
+                    "enabled": true                   } 
 
-# Add the Application Health extension to the scale set model
+                } 
 
-Add-AzVmssExtension -VirtualMachineScaleSet $vmScaleSet `
+            } 
 
-  -Name $extensionName `
+        } 
 
-  -Publisher $publisher `
+    } 
 
-  -Setting $publicConfig `
+---
 
-  -Type $extensionType `
+## VM Scaleset
 
-  -TypeHandlerVersion "2.0" `
+# [Azure CLI](#tab/Azure CLI)
 
-  -EnableAutomaticUpgrade $True
+az vmss extension set --resource-group <your resource group> --vmss-name < vmss name> --name ApplicationHealthLinux --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true
 
-# Update the scale set
+# [Azure Powershell](#tab/Azure Powershell)
 
-Update-AzVmss -ResourceGroupName $vmScaleSetResourceGroup `
+# Define the scale set variables 
 
-  -Name $vmScaleSetName `
+$vmScaleSetName = "<your scaleset name>" 
 
-  -VirtualMachineScaleSet $vmScaleSet
+$vmScaleSetResourceGroup = "<your resource group>" 
 
-# Upgrade instances to install the extension
+ 
 
-Update-AzVmssInstance -ResourceGroupName $vmScaleSetResourceGroup `
+# Define the setting to enable vmwatch 
 
-  -VMScaleSetName $vmScaleSetName `
+$publicConfig = @{"vmWatchSettings" = @{"enabled" = $true}} 
 
-  -InstanceId '\*'
+$extensionName = "<your extension name>" 
 
-**Azure Resource Manager templates - REST API**
+$extensionType = "ApplicationHealthLinux" 
 
-**Single VM**
+$publisher = "Microsoft.ManagedServices" 
 
-```
+ 
 
-        "type": "Microsoft.Compute/virtualMachines/extensions",
-        "apiVersion": "2019-07-01",
-        "name": "[concat(parameters('vmName'), '/', 'HealthExtension')]",
-        "location": "[parameters('location')]",
-        "dependsOn": [
-            "[resourceId('Microsoft.Compute/virtualMachines', parameters('vmName'))]"
-        ],
-        "properties": {
-            "enableAutomaticUpgrade": true,
-            "publisher": "Microsoft.ManagedServices",
-            "typeHandlerVersion": "2.0",
-            "type": "ApplicationHealthLinux",
-            "settings": {
-                "vmWatchSettings": {
-                    "enabled": true                   }
-                }
-            }
-        }
-    }
-```
+# Get the scale set object 
 
-**VM** **Scaleset**
+$vmScaleSet = Get-AzVmss ` 
 
-{ 
+  -ResourceGroupName $vmScaleSetResourceGroup ` 
 
-    "type": "Microsoft.Compute/virtualMachineScaleSets", 
+  -VMScaleSetName $vmScaleSetName 
 
-    "apiVersion": "[parameters('vmss_api_version')]", 
+ 
 
-    "name": "[variables('vmss_name')]", 
+# Add the Application Health extension to the scale set model 
 
-    "location": "[resourceGroup().location]", 
+Add-AzVmssExtension -VirtualMachineScaleSet $vmScaleSet ` 
 
-    "properties": { 
+  -Name $extensionName ` 
 
-        "virtualMachineProfile": { 
+  -Publisher $publisher ` 
 
-            "extensionProfile": { 
+  -Setting $publicConfig ` 
 
-                "extensions": [ 
+  -Type $extensionType ` 
 
-                    { 
+  -TypeHandlerVersion "2.0" ` 
 
-                        "name": "[concat(variables('vmss_name'), '/', 'HealthExtension')]", 
+  -EnableAutomaticUpgrade $True 
 
-                        "properties": { 
+ 
 
-                            "publisher": "Microsoft.ManagedServices", 
+# Update the scale set 
 
-                            "type": "ApplicationHealthLinux", 
+Update-AzVmss -ResourceGroupName $vmScaleSetResourceGroup ` 
 
-                            "typeHandlerVersion": "2.0", 
+  -Name $vmScaleSetName ` 
 
-                            "autoUpgradeMinorVersion": true, 
+  -VirtualMachineScaleSet $vmScaleSet 
 
-                            "settings": { 
+ 
 
-                                "vmWatchSettings": { 
+# Upgrade instances to install the extension 
 
-                                    "enabled": true 
+Update-AzVmssInstance -ResourceGroupName $vmScaleSetResourceGroup ` 
 
-                                } 
+  -VMScaleSetName $vmScaleSetName ` 
 
-                            } 
+  -InstanceId '*' 
 
-                        } 
+# [ARM templates - REST API](#tab/arm templates - rest api)
 
-                    } 
+{  
 
-                ] 
+    	"type": "Microsoft.Compute/virtualMachineScaleSets",  
 
-            } 
+    "apiVersion": "[parameters('vmss_api_version')]",  
 
-        } 
+    "name": "[variables('vmss_name')]",  
 
-    } 
+    "location": "[resourceGroup().location]",  
 
-}
+    "properties": {  
 
-**Windows section:** 
+        "virtualMachineProfile": {  
 
-Same screenshots as above but using ApplicationHealthWindows
+            "extensionProfile": {  
+
+                "extensions": [  
+
+                    {  
+
+                        "name": "[concat(variables('vmss_name'), '/', 'HealthExtension')]",  
+
+                        "properties": {  
+
+                            "publisher": "Microsoft.ManagedServices",  
+
+                            "type": "ApplicationHealthLinux",  
+
+                            "typeHandlerVersion": "2.0",  
+
+                            "autoUpgradeMinorVersion": true,  
+
+                            "settings": {  
+
+                                "vmWatchSettings": {  
+
+                                    "enabled": true  
+
+                                }  
+
+                            }  
+
+                        }  
+
+                    }  
+
+                ]  
+
+            }  
+
+        }  
+
+    }  
+
+}   
+
+---
+
+
+## Windows
 
 | **Parameters** | **Description** |
 |---|---|
@@ -195,14 +221,17 @@ Same screenshots as above but using ApplicationHealthWindows
 
    
 
-1. On Successful installation, navigate back to Azure Portal to confirm that Application Health has been installed.
+2. On Successful installation, navigate back to Azure Portal to confirm that Application Health has been installed.
 
 :::image type="content" source="media/vm-watch-application-extension.png" alt-text="Screenshot of the Application and extension example" :::
 
-1. To confirm that VM watch has been enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM 
+3. To confirm that VM watch has been enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM 
 
-   ![A screenshot of a computer](media/image4.png)
+:::image type="content" source="media/vm-watch-json-view.png" alt-text="Screenshot of theJSOn view example" :::
 
-   
 
-Next Steps:
+## Next Steps:
+
+- [Application Health Extension](https://learn.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-health-extension?tabs=azure-cli)
+- [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
+- [Azure Portal](https://portal.azure.com/) 
