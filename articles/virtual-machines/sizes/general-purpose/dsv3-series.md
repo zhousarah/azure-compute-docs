@@ -5,7 +5,7 @@ author: mattmcinnes
 ms.service: azure-virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
-ms.date: 07/29/2024
+ms.date: 09/24/2024
 ms.author: mattmcinnes
 ms.reviewer: mattmcinnes
 ---
@@ -20,8 +20,8 @@ ms.reviewer: mattmcinnes
 
 ## Feature support
 
-Premium Storage: Not Supported<br>
-Premium Storage caching: Not Supported<br>
+Premium Storage: Supported<br>
+Premium Storage caching: Supported<br>
 Live Migration: Supported<br>
 Memory Preserving Updates: Supported<br>
 VM Generation Support: Generation 1<br>
