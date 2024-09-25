@@ -24,7 +24,7 @@ Users can enable VM watch with ease via ARM template, PowerShell, or AZ CLI (lin
 
 ## Single VM
 
-### [Azure CLI](#tab/Azure CLL)
+### [CLI](#tab/cli-1)
 ```
 az vm extension set --resource-group <resourcegroup> --vm-name < vmname> --name ApplicationHealthLinux --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true 
 ```
