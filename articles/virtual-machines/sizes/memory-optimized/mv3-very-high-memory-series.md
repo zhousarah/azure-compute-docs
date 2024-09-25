@@ -29,12 +29,13 @@ The Mv3 Very High Memory (VHM) series, powered by 4<sup>th</sup> generation Inte
 
 <sup>1</sup>VHM VM Sizes are virtual machine sizes that are Isolated to a specific hardware type and dedicated to a single customer, these VMs are generation 3 only and support 
   a subset of generation 3 supported Images. Please see below for the list of supported images for Mv3-series
-- Windows Server 2023 SP1 latest builds
+- Windows Server 2022 SP1 latest builds
 - SUSE Linux enterprise Server 15 SP4 and later
 - Red Hat Enterprise Linux 8.8 or later
 - Ubuntu 23.10 or later
 
-Please contact your Azure Account Manager to inquire about accessing these VHM VM sizes
+> [!IMPORTANT]
+> Please contact your Azure Account Manager to inquire about accessing these VHM VM sizes.
 
 ## Size table definitions
 
