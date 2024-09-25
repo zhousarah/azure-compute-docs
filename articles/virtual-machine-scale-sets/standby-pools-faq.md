@@ -5,14 +5,11 @@ author: mimckitt
 ms.author: mimckitt
 ms.service: azure-virtual-machine-scale-sets
 ms.topic: how-to
-ms.date: 06/14/2024
+ms.date: 09/25/2024
 ms.reviewer: ju-shim
 ---
 
-# Standby pools FAQ (Preview)
-
-> [!IMPORTANT]
-> Standby pools for Virtual Machine Scale Sets are currently in preview. Previews are made available to you on the condition that you agree to the [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Some aspects of this feature may change prior to general availability (GA). 
+# Standby pools FAQ 
 
 Get answers to frequently asked questions about standby pools for Virtual Machine Scale Sets in Azure.
 
