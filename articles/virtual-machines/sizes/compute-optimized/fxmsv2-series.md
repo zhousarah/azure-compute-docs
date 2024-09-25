@@ -13,7 +13,7 @@ ms.reviewer: mattmcinnes
 # FXmsv2 sizes series (Preview)
 
 >[!NOTE]
->This VM series is currently in **Preview**. See the [Preview Terms Of Use | Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability. For more information and to sign up for the preview, [please visit our announcement and follow the link to signup](https://aka.ms/FXv2-series-Preview-Signup). 
+>This VM series is currently in **Preview**. See the [Preview Terms Of Use | Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability. For more information and to sign up for the preview, please visit [our announcement](https://aka.ms/FXv2-series-PreviewBlog) and [follow the link to signup](https://aka.ms/FXv2-series-Preview-Signup).
 
 
 [!INCLUDE [fxmsv2-summary](./includes/fxmsv2-series-summary.md)]
