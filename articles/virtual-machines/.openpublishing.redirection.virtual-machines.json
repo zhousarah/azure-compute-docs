@@ -63,7 +63,7 @@
         {
             "source_path_from_root": "/articles/virtual-machines/windows/incremental-snapshots.md",
             "redirect_url": "/azure/virtual-machines/unmanaged-disks-incremental-snapshots",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path_from_root": "/articles/virtual-machines/disks-pools.md",
