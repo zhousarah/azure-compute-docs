@@ -9,7 +9,7 @@ ms.date: 9/25/2024
 ms.reviewer: ju-shim
 ms.custom: upgradepolicy. maxsurge
 ---
-# Rolling upgrades with MaxSurge on Virtual Machine Scale Sets (Preview)
+# Rolling upgrades with MaxSurge on Virtual Machine Scale Sets
 
 Rolling upgrades with MaxSurge can help improve service uptime during upgrade events. With MaxSurge enabled, new instances are created in batches using the latest scale model. When the new instances are fully created and healthy, they begin taking traffic. The scale set then deletes instances in batches matching the old scale set model. The process continues until all instances are brought up-to-date. 
 
@@ -54,8 +54,6 @@ Rolling upgrades with MaxSurge disabled performs upgrades in place. Depending on
 
 ## Configure rolling upgrades with MaxSurge
 Enabling or disabling MaxSurge can be done during or after scale set provisioning. When using a rolling upgrade policy, the scale set must also use an [Application Health Extension](virtual-machine-scale-sets-health-extension.md) or a [health probe](/azure/load-balancer/load-balancer-custom-probe-overview). It's suggested to create the scale set with a manual upgrade policy and update the policy to rolling after successfully confirming the application health is being properly reported. 
-
-
 
 
 ### [Portal](#tab/portal)
