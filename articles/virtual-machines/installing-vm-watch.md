@@ -82,7 +82,7 @@ Set-AzVMExtension -ResourceGroupName "<resourcegroup>" -Location "<location>" -V
 ```
 az vmss extension set --resource-group <resourcegroup> --vmss-name < vmssname> --name ApplicationHealthLinux --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true
 ```
-### [Azure Powershell](#tab/Azure Powershell)
+### [PowerShell](#tab/powershell-2)
 ```
 ### Define the scale set variables 
 
