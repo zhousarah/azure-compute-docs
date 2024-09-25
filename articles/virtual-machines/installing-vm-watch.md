@@ -15,26 +15,26 @@ Users can enable VM watch with ease via ARM template, PowerShell, or AZ CLI (lin
 
 1. Once on the Azure Portal, navigate to the Application + Extension Page to verify that Application Health Extension (link) does not exist
 
-   ![A screenshot of a computer  Description automatically generated](media/image1.png)
+:::image type="content" source="media/vm-watch-application-extension.png" alt-text="Screenshot of the Application and extension example" :::
 
 1. Prepare the installation code below and input the key parameters. These are given in the table below
 
    Linux Command: <The section below should be in Tabs - REST API, Azure PowerShell and Azure CLI 2.0 like in the screenshot below>
 
-   ![A close-up of a logo  Description automatically generated](media/image2.png)
 
 ## Single VM
 
 ### [Azure CLI](#tab/Azure CLL)
 
-az vm extension set --resource-group <your resource group> --vm-name < vm name> --name ApplicationHealthLinux --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true 
+az vm extension set --resource-group <resource group> --vm-name < vm name> --name ApplicationHealthLinux --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true 
 
 #[Azure Powershell](#tab/Azure Powershell)
 
-Set-AzVMExtension -ResourceGroupName "<your resource group>" -Location "<your location>" -VMName "<vm name>" -Name "<your extension name>" -Publisher "Microsoft.ManagedServices" -ExtensionType "ApplicationHealthLinux" -TypeHandlerVersion "2.0" -Settings @{"vmWatchSettings" = @{"enabled" = $True}} -EnableAutomaticUpgrade $True 
+Set-AzVMExtension -ResourceGroupName "<resource group>" -Location "<location>" -VMName "<vm name>" -Name "<extension name>" -Publisher "Microsoft.ManagedServices" -ExtensionType "ApplicationHealthLinux" -TypeHandlerVersion "2.0" -Settings @{"vmWatchSettings" = @{"enabled" = $True}} -EnableAutomaticUpgrade $True 
 
 #[ARM templates - REST API](#tab/ARM templates - REST API)
 
+```
         "type": "Microsoft.Compute/virtualMachines/extensions", 
 
         "apiVersion": "2019-07-01", 
@@ -73,29 +73,30 @@ Set-AzVMExtension -ResourceGroupName "<your resource group>" -Location "<your lo
 
     } 
 
+```
 ---
 
 ## VM Scaleset
 
 ### [Azure CLI](#tab/Azure CLI)
 
-az vmss extension set --resource-group <your resource group> --vmss-name < vmss name> --name ApplicationHealthLinux --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true
+az vmss extension set --resource-group <resource group> --vmss-name < vmss name> --name ApplicationHealthLinux --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true
 
 # [Azure Powershell](#tab/Azure Powershell)
 
-# Define the scale set variables 
+### Define the scale set variables 
 
-$vmScaleSetName = "<your scaleset name>" 
+$vmScaleSetName = "<scaleset name>" 
 
-$vmScaleSetResourceGroup = "<your resource group>" 
+$vmScaleSetResourceGroup = "<resource group>" 
 
  
 
-# Define the setting to enable vmwatch 
+### Define the setting to enable vmwatch 
 
 $publicConfig = @{"vmWatchSettings" = @{"enabled" = $true}} 
 
-$extensionName = "<your extension name>" 
+$extensionName = "<extension name>" 
 
 $extensionType = "ApplicationHealthLinux" 
 
@@ -103,7 +104,7 @@ $publisher = "Microsoft.ManagedServices"
 
  
 
-# Get the scale set object 
+### Get the scale set object 
 
 $vmScaleSet = Get-AzVmss ` 
 
@@ -113,7 +114,7 @@ $vmScaleSet = Get-AzVmss `
 
  
 
-# Add the Application Health extension to the scale set model 
+### Add the Application Health extension to the scale set model 
 
 Add-AzVmssExtension -VirtualMachineScaleSet $vmScaleSet ` 
 
@@ -131,7 +132,7 @@ Add-AzVmssExtension -VirtualMachineScaleSet $vmScaleSet `
 
  
 
-# Update the scale set 
+### Update the scale set 
 
 Update-AzVmss -ResourceGroupName $vmScaleSetResourceGroup ` 
 
@@ -141,7 +142,7 @@ Update-AzVmss -ResourceGroupName $vmScaleSetResourceGroup `
 
  
 
-# Upgrade instances to install the extension 
+### Upgrade instances to install the extension 
 
 Update-AzVmssInstance -ResourceGroupName $vmScaleSetResourceGroup ` 
 
@@ -151,8 +152,7 @@ Update-AzVmssInstance -ResourceGroupName $vmScaleSetResourceGroup `
 
 ### [ARM templates - REST API](#tab/arm templates - rest api)
 
-{  
-
+``` 
     	"type": "Microsoft.Compute/virtualMachineScaleSets",  
 
     "apiVersion": "[parameters('vmss_api_version')]",  
@@ -207,6 +207,7 @@ Update-AzVmssInstance -ResourceGroupName $vmScaleSetResourceGroup `
 
 }   
 
+```
 ---
 
 
