@@ -113,7 +113,7 @@ From this example accumulation of Minutes Not Available, here's the calculation 
 - The following deployment types are supported: 
     - Single VM
     - Virtual Machine Scale Sets with Uniform Orchestration
-    - Virtual Machine Scale Sets with Flexible Orchestration (preview)
+    - Virtual Machine Scale Sets with Flexible Orchestration
 - The following deployment types aren't supported: 
     - Spot VMs 
     - Azure Dedicated Host nodes or VMs deployed to dedicated hosts 
