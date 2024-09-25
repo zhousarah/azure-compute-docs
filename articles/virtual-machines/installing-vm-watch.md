@@ -25,13 +25,13 @@ Users can enable VM watch with ease via ARM template, PowerShell, or AZ CLI (lin
 ## Single VM
 
 ### [Azure CLI](#tab/Azure CLL)
-
+```
 az vm extension set --resource-group <resourcegroup> --vm-name < vmname> --name ApplicationHealthLinux --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true 
-
+```
 #[Azure Powershell](#tab/Azure Powershell)
-
+```
 Set-AzVMExtension -ResourceGroupName "<resourcegroup>" -Location "<location>" -VMName "<vmname>" -Name "<extensionname>" -Publisher "Microsoft.ManagedServices" -ExtensionType "ApplicationHealthLinux" -TypeHandlerVersion "2.0" -Settings @{"vmWatchSettings" = @{"enabled" = $True}} -EnableAutomaticUpgrade $True 
-
+```
 #[ARM templates - REST API](#tab/ARM templates - REST API)
 
 ```
@@ -79,11 +79,11 @@ Set-AzVMExtension -ResourceGroupName "<resourcegroup>" -Location "<location>" -V
 ## VM Scaleset
 
 ### [Azure CLI](#tab/Azure CLI)
-
+```
 az vmss extension set --resource-group <resourcegroup> --vmss-name < vmssname> --name ApplicationHealthLinux --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true
-
+```
 # [Azure Powershell](#tab/Azure Powershell)
-
+```
 ### Define the scale set variables 
 
 $vmScaleSetName = "<scalesetname>" 
@@ -149,7 +149,7 @@ Update-AzVmssInstance -ResourceGroupName $vmScaleSetResourceGroup `
   -VMScaleSetName $vmScaleSetName ` 
 
   -InstanceId '*' 
-
+```
 ### [ARM templates - REST API](#tab/arm templates - rest api)
 
 ``` 
