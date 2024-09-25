@@ -1,5 +1,5 @@
 ---
-title: Epdsv6 size series
+title: Epdsv6 size series (Preview)
 description: Information on and specifications of the Epdsv6-series sizes
 author: archatC
 ms.service: azure-virtual-machines
@@ -12,16 +12,16 @@ ms.author: archat
 ms.reviewer: mattmcinnes, tomcassidy
 ---
 
-# Epdsv6 sizes series
+# Epdsv6 sizes series (Preview)
 
 **Applies to:** :heavy_check_mark: Linux VMs :heavy_check_mark: Windows Client VMs :heavy_check_mark: Flexible scale sets :heavy_check_mark: Uniform scale sets
 
-> [!IMPORTANT]
-> Azure Virtual Machine series Epdsv6 is currently in **preview**. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
->
-> For more information and to sign up for the preview, please [visit our announcement and follow the link to signup](https://aka.ms/Cobalt100-VM-Preview-Signup).
-
 [!INCLUDE [epdsv6-summary](./includes/epdsv6-series-summary.md)]
+
+> [!IMPORTANT]
+> - This VM series is currently in **Preview**. 
+> - See the [Preview Terms Of Use | Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability. 
+> - For more information and to sign up for the preview, please [visit our announcement and follow the link to signup](https://aka.ms/Cobalt100-VM-Preview-Signup).
 
 ## Host specifications
 [!INCLUDE [epdsv6-series-specs](./includes/epdsv6-series-specs.md)]
