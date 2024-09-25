@@ -1,15 +1,14 @@
 ---
-title: "include file"
-description: "include file"
-services: storage
+title: Use incremental snapshots for backup and recovery of unmanaged disks
+description: Create a custom solution for backup and recovery of your Azure virtual machine disks using incremental snapshots.
 author: roygara
-ms.service: azure-storage
-ms.topic: "include"
+ms.service: azure-disk-storage
+ms.topic: how-to
 ms.date: 09/15/2018
 ms.author: rogarana
-ms.custom: "include file"
 ---
 
+# Back up Azure unmanaged Virtual Machine disks with incremental snapshots
 
 ## Overview
 Azure Storage provides the capability to take snapshots of blobs. Snapshots capture the blob state at that point in time. In this article, we describe a scenario in which you can maintain backups of virtual machine disks using snapshots. You can use this methodology when you choose not to use Azure Backup and Recovery Service, and wish to create a custom backup strategy for your virtual machine disks. For virtual machines running business or mission critical workloads, it's recommended to use [Azure Backup](/azure/backup/backup-azure-vms-introduction) as part of the backup strategy.  
@@ -90,7 +89,7 @@ The following steps describe how to take snapshots of *mypremiumdisk* and mainta
 6. Take a snapshot of the backup page blob *mybackupstdpageblob*, called *mybackupstdpageblob_ss2*. Delete the previous snapshot *mypremiumdisk_ss1* from premium storage account.
 7. Repeat steps 4-6 every backup window. In this way, you can maintain backups of *mypremiumdisk* in a standard storage account.
 
-![Back up disk using incremental snapshots](../windows/media/incremental-snapshots/storage-incremental-snapshots-1.png)
+![Screenshot of back up disk using incremental snapshots.](media/unmanaged-disks-incremental-snapshots/storage-incremental-snapshots-1.png)
 
 ## Steps to restore a disk from snapshots
 The following steps, describe how to restore the premium disk, *mypremiumdisk* to an earlier snapshot from the backup storage account *mybackupstdaccount*.
@@ -103,9 +102,9 @@ The following steps, describe how to restore the premium disk, *mypremiumdisk* t
 6. Point the DS series VM to the restored disk *mypremiumdiskrestored* and detach the old *mypremiumdisk* from the VM.
 7. Begin the Backup process described in previous section for the restored disk *mypremiumdiskrestored*, using the *mybackupstdpageblobrestored* as the backup page blob.
 
-![Restore disk from snapshots](../windows/media/incremental-snapshots/storage-incremental-snapshots-2.png)
+![Screenshot of restore disk from snapshots.](media/unmanaged-disks-incremental-snapshots/storage-incremental-snapshots-2.png)
 
-## Next Steps
+## Next steps
 Use the following links to learn more about creating snapshots of a blob and planning your VM backup infrastructure.
 
 * [Creating a Snapshot of a Blob](/rest/api/storageservices/Creating-a-Snapshot-of-a-Blob)
