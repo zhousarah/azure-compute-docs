@@ -5,7 +5,7 @@ author: mattmcinnes
 ms.service: azure-virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
-ms.date: 07/29/2024
+ms.date: 09/24/2024
 ms.author: mattmcinnes
 ms.reviewer: mattmcinnes
 ---
@@ -14,6 +14,8 @@ ms.reviewer: mattmcinnes
 [!INCLUDE [previous-gen-header](../includes/sizes-previous-gen-header.md)]
 
 [!INCLUDE [bv1-summary](./includes/bv1-series-summary.md)]
+
+Read more about the [B-series CPU credit model](../../b-series-cpu-credit-model/b-series-cpu-credit-model.md).
 
 ## Host specifications
 [!INCLUDE [bv1-series-specs](./includes/bv1-series-specs.md)]
@@ -51,7 +53,7 @@ vCPUs (Qty.) and Memory for each size
 
 Base CPU performance, Credits, and other CPU bursting related info
 
-| Size Name | Base CPU Performance Percentage | Initial Credits (Qty.) | Credits banked/hour (Qty.) | Max Banked Credits (Qty.) |
+| Size Name | Base CPU Performance of VM (%)<sup>1</sup> | Initial Credits (Qty.) | Credits banked/hour (Qty.) | Max Banked Credits (Qty.) |
 | --- | --- | --- | --- | --- |
 | Standard_B1ls  | 5% | 30 | 3 | 72 |
 | Standard_B1s   | 10% | 30 | 6 | 144 |
@@ -65,6 +67,7 @@ Base CPU performance, Credits, and other CPU bursting related info
 | Standard_B20ms | 17% | 600 | 202 | 4867 |
 
 #### CPU Burst resources
+- <sup>1</sup>The base CPU performance metric hasn't changed. The updated (2024) numbers were normalized using a `0 – 100%` scale. Previously, the scale was `0 – (vCPU x 100%)`.
 - B-series VMs can burst their disk performance and get up to their bursting max for up to 30 minutes at a time.
 - B1ls is supported only on Linux
 - Learn more about [CPU bursting](../../b-series-cpu-credit-model/b-series-cpu-credit-model.md)
