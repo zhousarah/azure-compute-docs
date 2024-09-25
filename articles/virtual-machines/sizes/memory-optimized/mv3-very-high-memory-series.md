@@ -20,7 +20,7 @@ The Mv3 Very High Memory (VHM) series, powered by 4<sup>th</sup> generation Inte
 
 [Premium Storage](/azure/virtual-machines/premium-storage-performance): Supported<br>[Premium Storage caching](/azure/virtual-machines/premium-storage-performance): Supported<br>[Live Migration](/azure/virtual-machines/maintenance-and-updates): Not Supported<br>[Memory Preserving Updates](/azure/virtual-machines/maintenance-and-updates): Not Supported<br>[VM Generation Support](/azure/virtual-machines/generation-2): Generation 2<br>[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported<br>[Ephemeral OS Disks](/azure/virtual-machines/ephemeral-os-disks): Supported<br>[Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Not Supported<br>[Write Accelerator](/azure/virtual-machines/how-to-enable-write-accelerator): Supported
 
-## Sizes in series
+## Sizes in series (NVMe)
 
 | **Size**<sup>1</sup> | **vCPU** | **Memory: GiB** | **Max Data Disks** | **Max temp storage throughput: IOPS/MBps** | **Max un-cached Premium** **SSD  throughput: IOPS/MBps** | **Max un-cached Ultra Disk and Premium SSD V2 disk throughput: IOPS/MBps** | **NIC's (max)** | **Max network bandwidth (Mbps)**  |
 |---|---|---|---|---|---|---|---|---|
