@@ -32,7 +32,7 @@ az vm extension set --resource-group <resourcegroup> --vm-name < vmname> --name 
 ```
 Set-AzVMExtension -ResourceGroupName "<resourcegroup>" -Location "<location>" -VMName "<vmname>" -Name "<extensionname>" -Publisher "Microsoft.ManagedServices" -ExtensionType "ApplicationHealthLinux" -TypeHandlerVersion "2.0" -Settings @{"vmWatchSettings" = @{"enabled" = $True}} -EnableAutomaticUpgrade $True 
 ```
-#[ARM templates - REST API](#tab/ARM templates - REST API)
+#[REST API](#tab/rest-api-1)
 
 ```
         "type": "Microsoft.Compute/virtualMachines/extensions", 
