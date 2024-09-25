@@ -67,7 +67,7 @@ Base CPU performance, Credits, and other CPU bursting related info
 | Standard_B20ms | 17% | 600 | 202 | 4867 |
 
 #### CPU Burst resources
-- <sup>1</sup>The base CPU performance metric has not changed. The updated 2024 numbers were normalized using a 0 – 100% scale. Previously, the scale was 0 – (vCPU x 100%).
+- <sup>1</sup>The base CPU performance metric hasn't changed. The updated (2024) numbers were normalized using a `0 – 100%` scale. Previously, the scale was `0 – (vCPU x 100%)`.
 - B-series VMs can burst their disk performance and get up to their bursting max for up to 30 minutes at a time.
 - B1ls is supported only on Linux
 - Learn more about [CPU bursting](../../b-series-cpu-credit-model/b-series-cpu-credit-model.md)

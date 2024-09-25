@@ -65,7 +65,7 @@ Base CPU performance, Credits, and other CPU bursting related info
 | Standard_B32s_v2  | 40% | 960 | 768 | 18432 |
 
 #### CPU Burst resources
-- <sup>1</sup>The base CPU performance metric has not changed. The updated 2024 numbers were normalized using a 0 – 100% scale. Previously, the scale was 0 – (vCPU x 100%).
+- <sup>1</sup>The base CPU performance metric hasn't changed. The updated (2024) numbers were normalized using a `0 – 100%` scale. Previously, the scale was `0 – (vCPU x 100%)`.
 - Bsv2-series virtual machines can burst their disk performance and get up to their bursting max for up to 30 minutes at a time.
 - Learn more about [CPU bursting](../../b-series-cpu-credit-model/b-series-cpu-credit-model.md)
 
