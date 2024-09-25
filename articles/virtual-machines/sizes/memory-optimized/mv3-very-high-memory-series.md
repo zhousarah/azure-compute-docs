@@ -24,8 +24,8 @@ The Mv3 Very High Memory (VHM) series, powered by 4<sup>th</sup> generation Inte
 
 | **Size**<sup>1</sup> | **vCPU** | **Memory: GiB** | **Max Data Disks** | **Max temp storage throughput: IOPS/MBps*** | **Max un-cached Premium** **SSD  throughput: IOPS/MBps** | **Max un-cached Ultra Disk and Premium SSD V2 disk throughput: IOPS/MBps** | **NIC's (max)** | **Max network bandwidth (Mbps)**  |
 |---|---|---|---|---|---|---|---|---|
-| **standard_m896ixds_32_v3**<sup>4</sup>   | 896 | 30400 | 64 | 4,096 | 110,000/8,000 | 200000/8,000 | 8 | 185,000 |
-| **standard_m1792ixds_32_v3**<sup>4</sup>    | 1792 | 30400 | 64 | 4,096 | 110,000/8,000 | 200,000/8,000 | 8 | 185,000 |
+| **standard_m896ixds_32_v3** | 896 | 30400 | 64 | 4,096 | 110,000/8,000 | 200000/8,000 | 8 | 185,000 |
+| **standard_m1792ixds_32_v3** | 1792 | 30400 | 64 | 4,096 | 110,000/8,000 | 200,000/8,000 | 8 | 185,000 |
 
 <sup>1</sup>VHM VM Sizes are virtual machine sizes that are Isolated to a specific hardware type and dedicated to a single customer, these VMs are generation 3 only and support 
   a subset of generation 3 supported Images. Please see below for the list of supported images for Mv3-series
