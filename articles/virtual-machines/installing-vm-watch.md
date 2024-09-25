@@ -78,7 +78,7 @@ Set-AzVMExtension -ResourceGroupName "<resourcegroup>" -Location "<location>" -V
 
 ## VM Scaleset
 
-### [Azure CLI](#tab/Azure CLI)
+### [CLI](#tab/cli-2)
 ```
 az vmss extension set --resource-group <resourcegroup> --vmss-name < vmssname> --name ApplicationHealthLinux --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true
 ```
