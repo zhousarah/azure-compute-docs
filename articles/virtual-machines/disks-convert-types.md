@@ -34,7 +34,7 @@ The preview allowing direct switching to Premium SSD v2 disks has some additiona
 
 - You can't switch an OS disk to a Premium SSD v2 disk.
 - Existing disks can only be directly switched to 512 sector size Premium SSD v2 disks.
-- You can only perform 40 conversions at the same time per subscription per region.
+- You can only perform 50 conversions at the same time per subscription per region.
 - If your existing disk is a shared disk, detach all VMs before changing to Premium SSD v2.
 - If your existing disk is using host caching, [set it to none](#disable-host-caching) before changing to Premium SSD v2.
 - If your existing disk is using bursting, [disable it](#disable-bursting) before changing to Premium SSD v2.
@@ -42,6 +42,7 @@ The preview allowing direct switching to Premium SSD v2 disks has some additiona
 - You can't directly switch from a Premium SSD v2 to another disk type. If you want to change a Premium SSD v2 to another disk type, migrate using [snapshots](#migrate-to-premium-ssd-v2-or-ultra-disk-using-snapshots).
 - You can't directly switch from Ultra Disks to Premium SSD v2 disks, migrate using [snapshots](#migrate-to-premium-ssd-v2-or-ultra-disk-using-snapshots).
 - If your disk has Azure Site Recovery configured on it, disable it before changing to Premium SSD v2.
+-  After the preview ends, delete any disks you've converted during the preview.
 - If you're using the rest API, use an API version `2020-12-01` or newer for both the Compute Resource Provider and the Disk Resource Provider.
 - Until the conversion process from your previous disk type to Premium SSD v2 is completed, the performance of the disk is degraded, and you can't change or rotate customer-managed keys for the disk if they're in use.
     - You can use the following command to check the conversion process, replace `$diskName` and `$resourceGroupName` with your values: `az disk show -n $diskName  -g  $resourceGroupName --query [completionPercent] -o tsv`
@@ -50,12 +51,9 @@ The preview allowing direct switching to Premium SSD v2 disks has some additiona
 This preview is currently only available in the following regions:
 
 - Central US
-- East US
 - East US 2
 - US West
-- West Europe
 - North Europe
-- West US 2
 - East Asia
 - Southeast Asia
 - Central India
