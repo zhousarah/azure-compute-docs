@@ -26,11 +26,11 @@ Users can enable VM watch with ease via ARM template, PowerShell, or AZ CLI (lin
 
 ### [Azure CLI](#tab/Azure CLL)
 
-az vm extension set --resource-group <resource group> --vm-name < vm name> --name ApplicationHealthLinux --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true 
+az vm extension set --resource-group <resourcegroup> --vm-name < vmname> --name ApplicationHealthLinux --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true 
 
 #[Azure Powershell](#tab/Azure Powershell)
 
-Set-AzVMExtension -ResourceGroupName "<resource group>" -Location "<location>" -VMName "<vm name>" -Name "<extension name>" -Publisher "Microsoft.ManagedServices" -ExtensionType "ApplicationHealthLinux" -TypeHandlerVersion "2.0" -Settings @{"vmWatchSettings" = @{"enabled" = $True}} -EnableAutomaticUpgrade $True 
+Set-AzVMExtension -ResourceGroupName "<resourcegroup>" -Location "<location>" -VMName "<vmname>" -Name "<extensionname>" -Publisher "Microsoft.ManagedServices" -ExtensionType "ApplicationHealthLinux" -TypeHandlerVersion "2.0" -Settings @{"vmWatchSettings" = @{"enabled" = $True}} -EnableAutomaticUpgrade $True 
 
 #[ARM templates - REST API](#tab/ARM templates - REST API)
 
@@ -80,15 +80,15 @@ Set-AzVMExtension -ResourceGroupName "<resource group>" -Location "<location>" -
 
 ### [Azure CLI](#tab/Azure CLI)
 
-az vmss extension set --resource-group <resource group> --vmss-name < vmss name> --name ApplicationHealthLinux --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true
+az vmss extension set --resource-group <resourcegroup> --vmss-name < vmssname> --name ApplicationHealthLinux --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true
 
 # [Azure Powershell](#tab/Azure Powershell)
 
 ### Define the scale set variables 
 
-$vmScaleSetName = "<scaleset name>" 
+$vmScaleSetName = "<scalesetname>" 
 
-$vmScaleSetResourceGroup = "<resource group>" 
+$vmScaleSetResourceGroup = "<resourcegroup>" 
 
  
 
@@ -96,7 +96,7 @@ $vmScaleSetResourceGroup = "<resource group>"
 
 $publicConfig = @{"vmWatchSettings" = @{"enabled" = $true}} 
 
-$extensionName = "<extension name>" 
+$extensionName = "<extensionname>" 
 
 $extensionType = "ApplicationHealthLinux" 
 
