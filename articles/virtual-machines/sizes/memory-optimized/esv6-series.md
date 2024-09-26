@@ -1,5 +1,5 @@
 ---
-title: Esv6 size series
+title: Esv6 size series (Preview)
 description: Information on and specifications of the Esv6-series sizes
 author: mattmcinnes
 ms.service: azure-virtual-machines
@@ -10,9 +10,13 @@ ms.author: mattmcinnes
 ms.reviewer: mattmcinnes
 ---
 
-# Esv6 sizes series
+# Esv6 sizes series (Preview)
 
 [!INCLUDE [esv6-summary](./includes/esv6-series-summary.md)]
+
+> [!NOTE]
+> - This VM series is currently in **Preview**. 
+> - See the [Preview Terms Of Use | Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability. 
 
 ## Host specifications
 [!INCLUDE [esv6-series-specs](./includes/esv6-series-specs.md)]
