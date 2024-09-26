@@ -56,7 +56,7 @@ If you're going to use the Azure PowerShell module, install the latest [Azure Po
 1. Select **Create**.
 1. Navigate to the disk encryption set you created, and select the error that is displayed. This will configure your disk encryption set to work.
 
-:::image type="content" source="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-disk-set-error.png" alt-text="Screenshot of the disk encryption set displayed error, the error text is: To associate a disk, image, or snapshot with this disk encryption set, you must grant permissions to the key vault." lightbox="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-disk-set-error.png":::
+    :::image type="content" source="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-disk-set-error.png" alt-text="Screenshot of the disk encryption set displayed error, the error text is: To associate a disk, image, or snapshot with this disk encryption set, you must grant permissions to the key vault." lightbox="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-disk-set-error.png":::
 
     A notification should pop up and succeed. Doing this will allow you to use the disk encryption set with your key vault.
     
