@@ -316,6 +316,10 @@
         - name: Overview
           displayName: FX-series, sizes, size, vm size
           href: ./sizes/compute-optimized/fx-family.md
+        - name: FXmsv2 series
+          href: ./sizes/compute-optimized/fxmsv2-series.md
+        - name: FXmdsv2 series
+          href: /sizes/compute-optimzed/fxmdsv2-series.md
         - name: FX series
           href: fx-series.md
     - name: Memory optimized
@@ -1658,7 +1662,7 @@
     - name: Snapshot a disk
       href: snapshot-copy-managed-disk.md
     - name: Backup unmanaged disks
-      href: ./linux/incremental-snapshots.md
+      href: unmanaged-disks-incremental-snapshots.md
     - name: Backup and disaster recovery for unmanaged disks
       href: page-blobs-backup-and-disaster-recovery.md
   - name: Ephemeral OS disks

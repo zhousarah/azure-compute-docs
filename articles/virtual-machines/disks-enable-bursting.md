@@ -3,8 +3,8 @@ title: Enable on-demand disk bursting
 description: Enable on-demand disk bursting on your managed disk.
 author: roygara
 ms.author: rogarana
-ms.date: 05/02/2023
-ms.topic: conceptual
+ms.date: 09/25/2024
+ms.topic: how-to
 ms.service: azure-disk-storage
 ms.custom: references_regions, devx-track-azurecli, devx-track-azurepowershell
 ---

@@ -5,7 +5,7 @@ author: mattmcinnes
 ms.service: azure-virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
-ms.date: 07/29/2024
+ms.date: 09/24/2024
 ms.author: mattmcinnes
 ms.reviewer: mattmcinnes
 ---
@@ -13,6 +13,8 @@ ms.reviewer: mattmcinnes
 # Bpsv2 sizes series
 
 [!INCLUDE [bpsv2-summary](./includes/bpsv2-series-summary.md)]
+
+Read more about the [B-series CPU credit model](../../b-series-cpu-credit-model/b-series-cpu-credit-model.md).
 
 ## Host specifications
 [!INCLUDE [bpsv2-series-specs](./includes/bpsv2-series-specs.md)]
@@ -46,7 +48,7 @@ vCPUs (Qty.) and Memory for each size
 
 Base CPU performance, Credits, and other CPU bursting related info
 
-| Size Name | Base CPU Performance Percentage | Initial Credits (Qty.) | Credits banked/hour (Qty.) | Max Banked Credits (Qty.) |
+| Size Name | Base CPU Performance of VM (%)<sup>1</sup> | Initial Credits (Qty.) | Credits banked/hour (Qty.) | Max Banked Credits (Qty.) |
 | --- | --- | --- | --- | --- |
 | Standard_B2pts_v2  | 20% | 60  | 24  | 576 |
 | Standard_B2pls_v2  | 30% | 60  | 36  | 864 |
@@ -59,6 +61,7 @@ Base CPU performance, Credits, and other CPU bursting related info
 | Standard_B16ps_v2  | 40% | 480 | 384 | 9216 |
 
 #### CPU Burst resources
+- <sup>1</sup>The base CPU performance metric hasn't changed. The updated (2024) numbers were normalized using a `0 – 100%` scale. Previously, the scale was `0 – (vCPU x 100%)`.
 - Learn more about [CPU bursting](../../b-series-cpu-credit-model/b-series-cpu-credit-model.md)
 
 ### [Local Storage](#tab/sizestoragelocal)
