@@ -57,11 +57,8 @@ For a group of VMs undergoing an upgrade, the Azure platform orchestrates upgrad
 ### Upgrade process for virtual machine scale sets
 
 - Before the upgrade process starts, the orchestrator ensures that no more than 20% of VMs in the entire scale set are unhealthy (for any reason).
-
-- The upgrade orchestrator identifies the batch of VM instances to upgrade. An upgrade batch can have a maximum of 20% of the total VM count, subject to a minimum batch size of one VM. The definition of the upgrade policy and availability zones are considered while the batch is identified.  
-
+- The upgrade orchestrator identifies the batch of VM instances to upgrade. An upgrade batch can have a maximum of 20% of the total VM count, subject to a minimum batch size of one VM. The orchestrator considers the definition of the upgrade policy and availability zones while the batch is identified.  
 - After the upgrade, the VM health is always monitored before moving to the next batch. For scale sets with configured application health probes or the Application Health extension, application health is also monitored. The upgrade waits up to five minutes (or the defined health probe configuration) for the VM to become healthy before upgrading the next batch. If a VM doesn't recover its health after an upgrade, then by default, the previous extension version on the VM is reinstalled.
-
 - The upgrade orchestrator also tracks the percentage of VMs that become unhealthy after an upgrade. The upgrade stops if more than 20% of upgraded instances become unhealthy during the upgrade process.
 
 This process continues until all instances in the scale set are upgraded.
@@ -293,7 +290,7 @@ You can also apply Automatic Extension Upgrade when a VM or virtual machine scal
 
 ## Difference between EnableAutomaticUpgrade and AutoUpgradeMinorVersion
 
-1. `AutoUpgradeMinorVersion`:
+-  `AutoUpgradeMinorVersion`:
 
    - This property is used during VM creation and while you upgrade the VM with a new configuration.  
    - When set to `true`, it ensures that the latest minor version of the extension is automatically installed on the VM.
@@ -302,14 +299,14 @@ You can also apply Automatic Extension Upgrade when a VM or virtual machine scal
    - In this way, newly created VMs keep up to date with the latest stable minor extension version.
    - If you want to manually set the extension to a specific version, set this property to `false`.
      
-1. `EnableAutomaticUpgrade`:
+-  `EnableAutomaticUpgrade`:
    - This property affects existing VMs.
    - It doesn't affect the version installed during VM creation.
    - After VM creation, if the VM isn't running the latest minor version of the extension, enable this property to trigger an automatic upgrade.
    - Upgrades don't cause VM reboot and are rolled out in a safe rolling manner. Failed upgrades are rolled back immediately to provide high service availability and reliability.
    - Existing VMs stay secure and up to date by automatically updating them to the latest minor version.
 
-We recommend that you enable both properties to keep all VMs secure and up to date.
+We recommend that you enable both properties to help keep all VMs secure and up to date.
 
 Upgrades to major extension versions are never performed automatically by either properties because major versions can include breaking changes. You must manually set `TypeHandlerVersion` to a major version and manually upgrade each existing VM to the latest major version.
 
