@@ -3,7 +3,7 @@
 # For more information, see https://review.learn.microsoft.com/en-us/help/platform/learn-editor-add-metadata?branch=main
 # For valid values of ms.service, ms.prod, and ms.topic, see https://review.learn.microsoft.com/en-us/help/platform/metadata-taxonomies?branch=main
 
-title: Mv3 Very High Memory Series
+title: Mdsv3 Very High Memory Series
 description: Overview of Mv3 Very High Memory Virtual Machines
 author:      phgantik # GitHub alias
 ms.author:   phgantik # Microsoft alias
@@ -12,9 +12,9 @@ ms.topic: conceptual
 ms.date:     09/11/2024
 ---
 
-# Mv3 Very High Memory Series
+# Mdsv3 Very High Memory Series
 
-The Mv3 Very High Memory (VHM) series, powered by 4<sup>th</sup> generation Intel® Xeon® Scalable processors, are the next generation of memory-optimized VM sizes delivering faster performance, lower total cost of ownership and improved resilience to failures compared to previous generation Mv2 VMs. The Mv3 VHM sizes offer 32TB of memory, up to 8 GBps of throughput for remote storage, and provide up to 185 Gbps of networking performance with the current VHM generation.
+The Mdsv3 Very High Memory (VHM) series, powered by 4<sup>th</sup> generation Intel® Xeon® Scalable processors, are the next generation of memory-optimized VM sizes delivering faster performance, lower total cost of ownership and improved resilience to failures compared to previous generation Mv2 VMs. The Mdsv3 VHM sizes offer 32TB of memory, up to 8 GBps of throughput for remote storage, and provide up to 185 Gbps of networking performance with the current VHM generation.
 
 ## Feature support
 
