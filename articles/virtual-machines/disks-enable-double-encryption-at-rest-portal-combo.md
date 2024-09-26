@@ -94,7 +94,7 @@ You have now enabled double encryption at rest on your managed disk.
     az keyvault key create --vault-name $keyVaultName -n $keyName --protection software
     ```
     
-    1. Get the key URL of the key you created with `az keyvault key show`.
+1. Get the key URL of the key you created with `az keyvault key show`.
     
     ```azurecli
     az keyvault key show --name $keyName --vault-name $keyVaultName
@@ -111,6 +111,7 @@ You have now enabled double encryption at rest on your managed disk.
     > [!NOTE]
     > It may take few minutes for Azure to create the identity of your DiskEncryptionSet in your Microsoft Entra ID. If you get an error like "Cannot find the Active Directory object" when running the following command, wait a few minutes and try again.
     
+
     ```azurecli
     desIdentity=$(az disk-encryption-set show -n $diskEncryptionSetName -g $rgName --query [identity.principalId] -o tsv)
     
