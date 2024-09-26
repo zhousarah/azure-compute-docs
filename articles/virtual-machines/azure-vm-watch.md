@@ -10,20 +10,15 @@ ms.date:     09/20/2024
 
 # VM watch - Enhancing VM Health Monitoring
 
-VM watch is a standardized, lightweight, and adaptable in-VM service offering a uniform data model for collecting and transmitting health signals from virtual machines and scale sets. It is integrated into Application Health (link) to provide ease of use and manageability for customers. In addition, VM watch is offered at no additional cost for customers. Some key benefits of VM watch include: 
-
-- Improve overall customer experience on the platform
-- Improve outage detection and recovery times 
+VM watch is a standardized, lightweight, and adaptable in-VM service offering for virtual machines and virtual machine scale sets. It runs health checks within the VM at configurable intervals and sends the results via a uniform data model to Azure. These health results are consumed by Azure's production monitoring AIOps (AI Operations) engines for regression detection and prevention. Customers are able to access the health results through Event Hub. VM watch is delivered via the [Application Health extension](https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/health-extension?tabs=rest-api) to provide ease of deployment and manageability for customers. In addition, VM watch is offered at no additional cost for customers. 
 
 ## VM watch Monitoring Specifics
 
-- **Seamlessly Integrated**: VM watch is made available through the Application Health Extension (link) 
+- **Seamlessly Integrated**: VM watch is made available through the [Application Health extension](https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/health-extension?tabs=rest-api). 
 - **Compatibility:** VM watch operates seamlessly on both Linux and Windows environments. Also, VM watch is suitable for individual VMs and VMSS VMs alike.
-- **Flexible Deployment:** Users can enable VM Watch with ease via ARM template, PowerShell, or AZ CLI
-- **Resource Governance:** VM Watch provides efficient monitoring without impacting system performance.
+- **Flexible Deployment:** Users can enable VM Watch with ease via ARM template, PowerShell, or AZ CLI.
+- **Resource Governance:** VM Watch provides efficient monitoring without impacting system performance. Resource caps are placed on the VM watch process CPU and memory to limit its resource utilization on the VM.
 - **Ready Out-of-the-Box**: VM Watch comes equipped with a suite of default tests which are easily configurable to enable scenario specific tests. Detailed information regarding the Tests (Checks, Metrics, and Event Logs) are given below.
-
-  
 
 ### Network:
 
