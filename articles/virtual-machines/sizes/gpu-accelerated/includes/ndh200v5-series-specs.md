@@ -13,8 +13,8 @@ ms.custom: include filegit
 | Part | Quantity <br><sup>Count Units | Specs <br><sup>SKU ID, Performance Units, etc.  |
 |---|---|---|
 | Processor      |  96 vCPUs     | Intel Xeon (Sapphire Rapids) [x86-64] |
-| Memory         |  1900 GiB        |    |
+| Memory         |  1850 GiB        |    |
 | Local Storage  |  1 Disk         | 28000 GiB  |
 | Remote Storage |  32Disks        |  |
 | Network        |  8 NICs        |  |
-| Accelerators   |  1128 GPUs            | Nvidia PCIe H200 GPU (141GB)    |
+| Accelerators   |  1128 GPUs            | Nvidia H200 GPU (141GB)    |
