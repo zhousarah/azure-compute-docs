@@ -58,7 +58,7 @@ If you're going to use the Azure PowerShell module, install the latest [Azure Po
 
 :::image type="content" source="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-disk-set-error.png" alt-text="Screenshot of the disk encryption set displayed error, the error text is: To associate a disk, image, or snapshot with this disk encryption set, you must grant permissions to the key vault." lightbox="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-disk-set-error.png":::
 
-    A notification should pop up and succeed. Doing this will allow you to use the disk encryption set with your key vault.
+A notification should pop up and succeed. Doing this will allow you to use the disk encryption set with your key vault.
 
 :::image type="content" source="media/virtual-machines-disks-double-encryption-at-rest-portal/disk-encryption-notification-success.png" alt-text="Screenshot of successful permission and role assignment for your key vault." lightbox="media/virtual-machines-disks-double-encryption-at-rest-portal/disk-encryption-notification-success.png":::
 
@@ -108,8 +108,8 @@ az disk-encryption-set create --resource-group $rgName --name $diskEncryptionSet
 
 1.    Grant the DiskEncryptionSet resource access to the key vault. 
 
-    > [!NOTE]
-    > It may take few minutes for Azure to create the identity of your DiskEncryptionSet in your Microsoft Entra ID. If you get an error like "Cannot find the Active Directory object" when running the following command, wait a few minutes and try again.
+> [!NOTE]
+> It may take few minutes for Azure to create the identity of your DiskEncryptionSet in your Microsoft Entra ID. If you get an error like "Cannot find the Active Directory object" when running the following command, wait a few minutes and try again.
 
 ```azurecli
 desIdentity=$(az disk-encryption-set show -n $diskEncryptionSetName -g $rgName --query [identity.principalId] -o tsv)
