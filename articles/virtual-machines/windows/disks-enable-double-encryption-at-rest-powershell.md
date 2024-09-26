@@ -7,7 +7,7 @@ ms.date: 02/06/2023
 ms.topic: how-to
 ms.author: rogarana
 ms.service: azure-disk-storage
-ms.custom: references_regions, devx-track-azurepowershell
+ms.custom: devx-track-azurepowershell
 ---
 
 # Use the Azure PowerShell module to enable double encryption at rest for managed disks
