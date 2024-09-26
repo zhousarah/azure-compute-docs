@@ -77,45 +77,45 @@ You have now enabled double encryption at rest on your managed disk.
 
     When creating the Key Vault instance, you must enable soft delete and purge protection. Soft delete ensures that the Key Vault holds a deleted key for a given retention period (90 day default). Purge protection ensures that a deleted key can't be permanently deleted until the retention period lapses. These settings protect you from losing data due to accidental deletion. These settings are mandatory when using a Key Vault for encrypting managed disks.
 
-
-```azurecli
-subscriptionId=yourSubscriptionID
-rgName=yourResourceGroupName
-location=westcentralus
-keyVaultName=yourKeyVaultName
-keyName=yourKeyName
-diskEncryptionSetName=yourDiskEncryptionSetName
-diskName=yourDiskName
-
-az account set --subscription $subscriptionId
-
-az keyvault create -n $keyVaultName -g $rgName -l $location --enable-purge-protection true --enable-soft-delete true
-
-az keyvault key create --vault-name $keyVaultName -n $keyName --protection software
-```
-
-1. Get the key URL of the key you created with `az keyvault key show`.
-
-```azurecli
-az keyvault key show --name $keyName --vault-name $keyVaultName
-```
+    
+    ```azurecli
+    subscriptionId=yourSubscriptionID
+    rgName=yourResourceGroupName
+    location=westcentralus
+    keyVaultName=yourKeyVaultName
+    keyName=yourKeyName
+    diskEncryptionSetName=yourDiskEncryptionSetName
+    diskName=yourDiskName
+    
+    az account set --subscription $subscriptionId
+    
+    az keyvault create -n $keyVaultName -g $rgName -l $location --enable-purge-protection true --enable-soft-delete true
+    
+    az keyvault key create --vault-name $keyVaultName -n $keyName --protection software
+    ```
+    
+    1. Get the key URL of the key you created with `az keyvault key show`.
+    
+    ```azurecli
+    az keyvault key show --name $keyName --vault-name $keyVaultName
+    ```
 
 1.    Create a DiskEncryptionSet with encryptionType set as EncryptionAtRestWithPlatformAndCustomerKeys. Replace `yourKeyURL` with the URL you received from `az keyvault key show`. 
 
-```azurecli
-az disk-encryption-set create --resource-group $rgName --name $diskEncryptionSetName --key-url yourKeyURL --source-vault $keyVaultName --encryption-type EncryptionAtRestWithPlatformAndCustomerKeys
-```
+    ```azurecli
+    az disk-encryption-set create --resource-group $rgName --name $diskEncryptionSetName --key-url yourKeyURL --source-vault $keyVaultName --encryption-type EncryptionAtRestWithPlatformAndCustomerKeys
+    ```
 
 1.    Grant the DiskEncryptionSet resource access to the key vault. 
 
-> [!NOTE]
-> It may take few minutes for Azure to create the identity of your DiskEncryptionSet in your Microsoft Entra ID. If you get an error like "Cannot find the Active Directory object" when running the following command, wait a few minutes and try again.
-
-```azurecli
-desIdentity=$(az disk-encryption-set show -n $diskEncryptionSetName -g $rgName --query [identity.principalId] -o tsv)
-
-az keyvault set-policy -n $keyVaultName -g $rgName --object-id $desIdentity --key-permissions wrapkey unwrapkey get
-```
+    > [!NOTE]
+    > It may take few minutes for Azure to create the identity of your DiskEncryptionSet in your Microsoft Entra ID. If you get an error like "Cannot find the Active Directory object" when running the following command, wait a few minutes and try again.
+    
+    ```azurecli
+    desIdentity=$(az disk-encryption-set show -n $diskEncryptionSetName -g $rgName --query [identity.principalId] -o tsv)
+    
+    az keyvault set-policy -n $keyVaultName -g $rgName --object-id $desIdentity --key-permissions wrapkey unwrapkey get
+    ```
 
 
 # [Azure PowerShell](#tab/azure-powershell)
@@ -125,48 +125,48 @@ az keyvault set-policy -n $keyVaultName -g $rgName --object-id $desIdentity --ke
 
     When creating the Key Vault instance, you must enable soft delete and purge protection. Soft delete ensures that the Key Vault holds a deleted key for a given retention period (90 day default). Purge protection ensures that a deleted key can't be permanently deleted until the retention period lapses. These settings protect you from losing data due to accidental deletion. These settings are mandatory when using a Key Vault for encrypting managed disks.
 
-```powershell
-$ResourceGroupName="yourResourceGroupName"
-$LocationName="westus2"
-$keyVaultName="yourKeyVaultName"
-$keyName="yourKeyName"
-$keyDestination="Software"
-$diskEncryptionSetName="yourDiskEncryptionSetName"
-
-$keyVault = New-AzKeyVault -Name $keyVaultName -ResourceGroupName $ResourceGroupName -Location $LocationName -EnableSoftDelete -EnablePurgeProtection
-
-$key = Add-AzKeyVaultKey -VaultName $keyVaultName -Name $keyName -Destination $keyDestination  
-```
+    ```powershell
+    $ResourceGroupName="yourResourceGroupName"
+    $LocationName="westus2"
+    $keyVaultName="yourKeyVaultName"
+    $keyName="yourKeyName"
+    $keyDestination="Software"
+    $diskEncryptionSetName="yourDiskEncryptionSetName"
+    
+    $keyVault = New-AzKeyVault -Name $keyVaultName -ResourceGroupName $ResourceGroupName -Location $LocationName -EnableSoftDelete -EnablePurgeProtection
+    
+    $key = Add-AzKeyVaultKey -VaultName $keyVaultName -Name $keyName -Destination $keyDestination  
+    ```
 
 1. Retrieve the URL for the key you created, you'll need it for subsequent commands. The ID output from `Get-AzKeyVaultKey` is the key URL. 
 
-```powershell
-Get-AzKeyVaultKey -VaultName $keyVaultName -KeyName $keyName
-```
+    ```powershell
+    Get-AzKeyVaultKey -VaultName $keyVaultName -KeyName $keyName
+    ```
 
 1. Get the resource ID for the Key Vault instance you created, you'll need it for subsequent commands.
 
-```powershell
-Get-AzKeyVault -VaultName $keyVaultName
-```
+    ```powershell
+    Get-AzKeyVault -VaultName $keyVaultName
+    ```
 
 1.  Create a DiskEncryptionSet with encryptionType set as EncryptionAtRestWithPlatformAndCustomerKeys. Replace `yourKeyURL` and `yourKeyVaultURL` with the URLs you retrieved earlier.
 
-```powershell
-$config = New-AzDiskEncryptionSetConfig -Location $locationName -KeyUrl "yourKeyURL" -SourceVaultId 'yourKeyVaultURL' -IdentityType 'SystemAssigned'
-
-$config | New-AzDiskEncryptionSet -ResourceGroupName $ResourceGroupName -Name $diskEncryptionSetName -EncryptionType EncryptionAtRestWithPlatformAndCustomerKeys
-```
+    ```powershell
+    $config = New-AzDiskEncryptionSetConfig -Location $locationName -KeyUrl "yourKeyURL" -SourceVaultId 'yourKeyVaultURL' -IdentityType 'SystemAssigned'
+    
+    $config | New-AzDiskEncryptionSet -ResourceGroupName $ResourceGroupName -Name $diskEncryptionSetName -EncryptionType EncryptionAtRestWithPlatformAndCustomerKeys
+    ```
 
 1. Grant the DiskEncryptionSet resource access to the key vault.
 
     > [!NOTE]
     > It may take few minutes for Azure to create the identity of your DiskEncryptionSet in your Microsoft Entra ID. If you get an error like "Cannot find the Active Directory object" when running the following command, wait a few minutes and try again.
 
-```powershell  
-$des=Get-AzDiskEncryptionSet -name $diskEncryptionSetName -ResourceGroupName $ResourceGroupName
-Set-AzKeyVaultAccessPolicy -VaultName $keyVaultName -ObjectId $des.Identity.PrincipalId -PermissionsToKeys wrapkey,unwrapkey,get
-```
+    ```powershell  
+    $des=Get-AzDiskEncryptionSet -name $diskEncryptionSetName -ResourceGroupName $ResourceGroupName
+    Set-AzKeyVaultAccessPolicy -VaultName $keyVaultName -ObjectId $des.Identity.PrincipalId -PermissionsToKeys wrapkey,unwrapkey,get
+    ```
 
 ---
 
