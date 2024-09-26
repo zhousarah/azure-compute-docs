@@ -39,8 +39,8 @@ If you're going to use the Azure PowerShell module, install the latest [Azure Po
 1. Select one of the supported regions.
 1. For **Encryption type**, select **Double encryption with platform-managed and customer-managed keys**.
 
-> [!NOTE]
-> Once you create a disk encryption set with a particular encryption type, it cannot be changed. If you want to use a different encryption type, you must create a new disk encryption set.
+    > [!NOTE]
+    > Once you create a disk encryption set with a particular encryption type, it cannot be changed. If you want to use a different encryption type, you must create a new disk encryption set.
 
 1. Fill in the remaining info.
 
@@ -48,8 +48,8 @@ If you're going to use the Azure PowerShell module, install the latest [Azure Po
 
 1. Select an Azure Key Vault and key, or create a new one if necessary.
 
-> [!NOTE]
-> If you create a Key Vault instance, you must enable soft delete and purge protection. These settings are mandatory when using a Key Vault for encrypting managed disks, and protect you from losing data due to accidental deletion.
+    > [!NOTE]
+    > If you create a Key Vault instance, you must enable soft delete and purge protection. These settings are mandatory when using a Key Vault for encrypting managed disks, and protect you from losing data due to accidental deletion.
 
     :::image type="content" source="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-select-key-vault.png" alt-text="Screenshot of the Key Vault creation blade." lightbox="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-select-key-vault.png":::
 
@@ -58,7 +58,7 @@ If you're going to use the Azure PowerShell module, install the latest [Azure Po
 
 :::image type="content" source="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-disk-set-error.png" alt-text="Screenshot of the disk encryption set displayed error, the error text is: To associate a disk, image, or snapshot with this disk encryption set, you must grant permissions to the key vault." lightbox="media/virtual-machines-disks-double-encryption-at-rest-portal/double-encryption-disk-set-error.png":::
 
-A notification should pop up and succeed. Doing this will allow you to use the disk encryption set with your key vault.
+    A notification should pop up and succeed. Doing this will allow you to use the disk encryption set with your key vault.
     
     :::image type="content" source="media/virtual-machines-disks-double-encryption-at-rest-portal/disk-encryption-notification-success.png" alt-text="Screenshot of successful permission and role assignment for your key vault." lightbox="media/virtual-machines-disks-double-encryption-at-rest-portal/disk-encryption-notification-success.png":::
 
