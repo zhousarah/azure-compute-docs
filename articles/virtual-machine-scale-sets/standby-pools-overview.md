@@ -5,14 +5,11 @@ author: mimckitt
 ms.author: mimckitt
 ms.service: azure-virtual-machine-scale-sets
 ms.topic: how-to
-ms.date: 06/14/2024
+ms.date: 09/25/2024
 ms.reviewer: ju-shim
 ---
 
-# Standby pools for Virtual Machine Scale Sets (Preview)
-
-> [!IMPORTANT]
-> Standby pools for Virtual Machine Scale Sets are currently in preview. Previews are made available to you on the condition that you agree to the [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Some aspects of this feature may change prior to general availability (GA). 
+# Standby pools for Virtual Machine Scale Sets
 
 Standby pools for Virtual Machine Scale Sets enables you to increase scaling performance by creating a pool of pre-provisioned virtual machines from which the scale set can pull from when scaling out. 
 
@@ -46,17 +43,9 @@ The number of virtual machines in a standby pool is calculated by the max ready 
 | Setting | Description | 
 |---|---|
 | maxReadyCapacity | The maximum number of virtual machines to be created in the pool.|
+| minReadyCapacity | The minimum number of virtual machines to be maintained in the pool.|
 | instanceCount | The current number of virtual machines already deployed in the scale set.|
 | Standby pool size | Standby pool size = `maxReadyCapacity`– `instanceCount`. |
-
-### Example
-A Virtual Machine Scale Set with 10 instances and a standby pool with a max ready capacity of 15 would result in 5 instances in the standby pool.
-
-- Max ready capacity (15) - Virtual Machine Scale Set instance count (10) = Standby pool size (5)
-
-If the scale set reduces the instance count to 5, the standby pool would fill to 10 instances. 
-
-- Max ready capacity (15) - Virtual Machine Scale Set instance count (5) = Standby pool size (10)
 
 ## Standby pool instances
 When a virtual machine is in a standby pool, the `isVmInStandbyPool` parameter is set to true. When the virtual machine is moved from the pool instance the scale set, the parameter is automatically updated to false. This can be useful in determining when a virtual machine is ready to recieve traffic or not. 
