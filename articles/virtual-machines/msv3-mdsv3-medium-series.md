@@ -5,8 +5,8 @@
 
 title:       Overview of Msv3 and Mdsv3 Medium Memory Series
 description: Overview of Msv3 and Mdsv3 Medium Memory virtual machines. These virtual machines provide faster performance and lower TCO.
-author:      ayshakeen # GitHub alias
-ms.author:   ayshak # Microsoft alias
+author:      zhangjay # GitHub alias
+ms.author:   zhangjay # Microsoft alias
 ms.service: azure-virtual-machines
 # ms.prod:   sizes
 ms.topic:    conceptual
