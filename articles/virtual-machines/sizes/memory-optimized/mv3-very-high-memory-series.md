@@ -27,9 +27,8 @@ The Mv3 Very High Memory (VHM) series, powered by 4<sup>th</sup> generation Inte
 | **standard_m896ixds_32_v3** | 896 | 30400 | 64 | 4096 | 110000/8000 | 200000/8000 | 8 | 185000 |
 | **standard_m1792ixds_32_v3** | 1792 | 30400 | 64 | 4096 | 110000/8000 | 200000/8000 | 8 | 185000 |
 
-<sup>1</sup>VHM VM Sizes are virtual machine sizes that are Isolated to a specific hardware type and dedicated to a single customer, these VMs support 
-  a subset of generation 2 Images. Please see below for the list of supported images for Mv3-series
-- Windows Server 2022 Datacenter: Azure Edition latest builds
+<sup>1</sup>VHM VM Sizes are virtual machine sizes that are Isolated to a specific hardware type and dedicated to a single customer. It's important to note that these VMs are compatible with only certain generation 2 Images. For a list of images that are compatible with the Mv3-series, please see below
+- Windows Server 2022 Datacenter Edition latest builds
 - SUSE Linux enterprise Server 15 SP4 and later
 - Red Hat Enterprise Linux 8.8 or later
 - Ubuntu 23.10 or later
