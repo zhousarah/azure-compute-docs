@@ -56,6 +56,16 @@
             "redirect_document_id": false
         },
         {
+            "source_path_from_root": "/articles/virtual-machines/linux/disks-enable-double-encryption-at-rest-cli.md",
+            "redirect_url": "/azure/virtual-machines/disks-enable-double-encryption-at-rest-portal",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/windows/disks-enable-double-encryption-at-rest-powershell.md",
+            "redirect_url": "/azure/virtual-machines/disks-enable-double-encryption-at-rest-portal",
+            "redirect_document_id": false
+        },
+        {
             "source_path_from_root": "/articles/virtual-machines/linux/incremental-snapshots.md",
             "redirect_url": "/azure/virtual-machines/unmanaged-disks-incremental-snapshots",
             "redirect_document_id": true
