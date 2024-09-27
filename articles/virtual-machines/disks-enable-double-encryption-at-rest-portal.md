@@ -112,13 +112,11 @@ You have now enabled double encryption at rest on your managed disk.
 > [!NOTE]
 > It may take few minutes for Azure to create the identity of your DiskEncryptionSet in your Microsoft Entra ID. If you get an error like "Cannot find the Active Directory object" when running the following command, wait a few minutes and try again.
     
-
         ```azurecli
         desIdentity=$(az disk-encryption-set show -n $diskEncryptionSetName -g $rgName --query [identity.principalId] -o tsv)
         
         az keyvault set-policy -n $keyVaultName -g $rgName --object-id $desIdentity --key-permissions wrapkey unwrapkey get
         ```
-
 
 # [Azure PowerShell](#tab/azure-powershell)
 
