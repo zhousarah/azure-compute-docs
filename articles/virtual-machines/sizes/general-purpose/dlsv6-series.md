@@ -1,5 +1,5 @@
 ---
-title: Dlsv6 size series
+title: Dlsv6 size series (Preview)
 description: Information on and specifications of the Dlsv6-series sizes
 author: mattmcinnes
 ms.service: azure-virtual-machines
@@ -10,12 +10,13 @@ ms.author: mattmcinnes
 ms.reviewer: mattmcinnes
 ---
 
-# Dlsv6 sizes series
-
->[!NOTE]
->This VM series is currently in **Preview**. See the [Preview Terms Of Use | Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability. 
+# Dlsv6 sizes series (Preview)
 
 [!INCLUDE [dlsv6-summary](./includes/dlsv6-series-summary.md)]
+
+> [!NOTE]
+> - This VM series is currently in **Preview**. 
+> - See the [Preview Terms Of Use | Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability. 
 
 ## Host specifications
 [!INCLUDE [dlsv6-series-specs](./includes/dlsv6-series-specs.md)]
