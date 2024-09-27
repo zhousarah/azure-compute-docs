@@ -11,7 +11,7 @@ ms.subservice: monitoring
 
 # Installing VM Watch
 
-Users can enable VM watch with ease via [ARM template](https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/), [PowerShell](https://learn.microsoft.com/en-us/powershell/), or [AZ CLI](https://learn.microsoft.com/en-us/cli/azure/). The following steps detail how VM watch can be installed on a single VM in a Linux environment, using AZ CLI (link) and Azure Portal (link)
+Users can enable VM watch with ease via [ARM template](https://learn.microsoft.com/azure/azure-resource-manager/templates/), [PowerShell](https://learn.microsoft.com/powershell/), or [AZ CLI](https://learn.microsoft.com/cli/azure/). The following steps detail how VM watch can be installed on a single VM in a Linux environment, using AZ CLI (link) and Azure Portal (link)
 
 1. Once on the Azure Portal, navigate to the Application + Extension Page to verify that Application Health Extension (link) does not exist
 
