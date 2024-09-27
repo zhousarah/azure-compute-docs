@@ -10,7 +10,7 @@ ms.service: azure-disk-storage
 ms.custom:  devx-track-azurecli, linux-related-content, devx-track-azurepowershell
 ---
 
-# Use the Azure portal to enable double encryption at rest for managed disks
+# Enable double encryption at rest for managed disks
 
 **Applies to:** :heavy_check_mark: Linux VMs :heavy_check_mark: Windows VMs :heavy_check_mark:
 

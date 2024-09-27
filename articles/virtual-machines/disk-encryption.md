@@ -123,7 +123,7 @@ High security sensitive customers who are concerned of the risk associated with 
 
 Double encryption at rest isn't currently supported with either Ultra Disks or Premium SSD v2 disks.
 
-To enable double encryption at rest for managed disks, see our article covering how to enable it with either the [Azure PowerShell module](disks-enable-double-encryption-at-rest-portal.md&tabs=azure-powershell), the [Azure CLI](disks-enable-double-encryption-at-rest-portal.md&tabs=azure-cli) or the [Azure portal](disks-enable-double-encryption-at-rest-portal.md).
+To enable double encryption at rest for managed disks, see [Enable double encryption at rest for managed disks](disks-enable-double-encryption-at-rest-portal.md).
 
 ## Server-side encryption versus Azure disk encryption
 
@@ -134,7 +134,7 @@ To enable double encryption at rest for managed disks, see our article covering 
 ## Next steps
 
 - Enable end-to-end encryption using encryption at host with either the [Azure PowerShell module](windows/disks-enable-host-based-encryption-powershell.md), the [Azure CLI](linux/disks-enable-host-based-encryption-cli.md), or the [Azure portal](disks-enable-host-based-encryption-portal.md).
-- Enable double encryption at rest for managed disks, see our article covering how to enable it with either the [Azure PowerShell module](disks-enable-double-encryption-at-rest-portal.md&tabs=azure-powershell), the [Azure CLI](disks-enable-double-encryption-at-rest-portal.md&tabs=azure-cli) or the [Azure portal](disks-enable-double-encryption-at-rest-portal.md).
+- To enable double encryption at rest for managed disks, see [Enable double encryption at rest for managed disks](disks-enable-double-encryption-at-rest-portal.md).
 - Enable customer-managed keys for managed disks with either the [Azure PowerShell module](windows/disks-enable-customer-managed-keys-powershell.md), the [Azure CLI](linux/disks-enable-customer-managed-keys-cli.md) or the [Azure portal](disks-enable-customer-managed-keys-portal.yml).
 - [Explore the Azure Resource Manager templates for creating encrypted disks with customer-managed keys](https://github.com/ramankumarlive/manageddiskscmkpreview)
 - [What is Azure Key Vault?](/azure/key-vault/general/overview)
