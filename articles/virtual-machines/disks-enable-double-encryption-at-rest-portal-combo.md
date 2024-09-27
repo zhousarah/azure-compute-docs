@@ -102,10 +102,9 @@ You have now enabled double encryption at rest on your managed disk.
 
 1.    Create a DiskEncryptionSet with encryptionType set as EncryptionAtRestWithPlatformAndCustomerKeys. Replace `yourKeyURL` with the URL you received from `az keyvault key show`. 
 
-
-    ```azurecli
-    az disk-encryption-set create --resource-group $rgName --name $diskEncryptionSetName --key-url yourKeyURL --source-vault $keyVaultName --encryption-type EncryptionAtRestWithPlatformAndCustomerKeys
-    ```
+        ```azurecli
+        az disk-encryption-set create --resource-group $rgName --name $diskEncryptionSetName --key-url yourKeyURL --source-vault $keyVaultName --encryption-type EncryptionAtRestWithPlatformAndCustomerKeys
+        ```
 
 1.    Grant the DiskEncryptionSet resource access to the key vault. 
 
