@@ -483,7 +483,7 @@ This section shows you how to use KVM to prepare RHEL 7 to upload to Azure.
     Set a root password with guestfish:
 
     ```bash
-    sudo  guestfish --rw -a <image-name>
+    sudo guestfish --rw -a <image-name>
     > <fs> run
     > <fs> list-filesystems
     > <fs> mount /dev/sda1 /
