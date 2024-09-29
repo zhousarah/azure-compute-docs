@@ -108,7 +108,7 @@ This section assumes that you've already obtained an ISO file from the Red Hat w
    > [!NOTE]
    > If [ENABLE_BLSCFG=false](https://access.redhat.com/solutions/6929571) is present in `/etc/default/grub` instead of `ENABLE_BLSCFG=true`, tools such as *grubedit* or *gubby*, which rely on the Boot Loader Specification (BLS) for managing boot entries and configurations, might not function correctly in RHEL 8 and 9. If `ENABLE_BLSCFG` isn't present, the default behavior is `false`.
 
-   This modification also ensures that all console messages are sent to the first serial port and enable interaction with the serial console, which can assist Azure support with debugging issues. This configuration also turns off the new  naming conventions for network interface cards (NICs).
+   This modification also ensures that all console messages are sent to the first serial port and enables interaction with the serial console, which can assist Azure support with debugging issues. This configuration also turns off the new naming conventions for network interface cards (NICs).
 
    ```config
    rhgb quiet crashkernel=auto
