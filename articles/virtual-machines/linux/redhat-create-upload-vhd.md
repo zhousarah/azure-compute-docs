@@ -491,7 +491,7 @@ This section shows you how to use KVM to prepare RHEL 7 to upload to Azure.
     > <fs> exit
     ```
 
-   Change the second field of root user from `!!` to the encrypted password.
+   Change the second field for the `root` user from `!!` to the encrypted password.
 
 1. Create a VM in KVM from the qcow2 image. Set the disk type to **qcow2**, and set the virtual network interface device model to **virtio**. Then, start the VM and sign in as root.
 
