@@ -806,7 +806,18 @@ This section shows you how to use KVM to prepare RHEL 7 to upload to Azure.
         output: {all: '| tee -a /var/log/cloud-init-output.log'}
         EOF
         ```
+1. Configure `cloud-init` telemetry to assist with troubleshooting for provisioning issues:
 
+```bash
+sudo cat >> /etc/cloud/cloud.cfg.d/10-azure-kvp.cfg << EOF
+
+# This config enables cloud-init to report provisioning telemetry to aid with troubleshooting
+reporting:
+  logging:
+    type: log
+  telemetry:
+    type: hyperv
+EOF
 1. Swap configuration:
     - Don't create swap space on the operating system disk.
 
