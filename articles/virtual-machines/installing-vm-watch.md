@@ -27,7 +27,7 @@ Users can enable VM watch with ease via [ARM template](https://learn.microsoft.c
 > | **`<your vm scale set name>`** | This is your VM scale set name in which you want to install VM watch. |
 
 ## Pre-requisites
-- ### Register Feature
+* ### Register Feature
   Execute the below code using Azure Command Line to register for adopting VM watch.
 
   #### [CLI](#tab/cli-feature)
@@ -46,8 +46,12 @@ Users can enable VM watch with ease via [ARM template](https://learn.microsoft.c
   ```
   az feature show --namespace Microsoft.Compute --name VMWatchPreview --subscription <your subscription id>
   ```
-- ### Ensure VM is installed
+* ### Ensure VM is installed
   For more details on how to create a VM and/or VM scale set see [Quickstart guide](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal)
+
+> [!Important]
+> If Application health extension is already installed on the VM, ensure the settings
+> `autoUpgradeMinorVersion` is set to `true` and `enableAutomaticUpgrade` is set to `true`
   
 ## Installing VM watch on Azure Virtual Machines
 
@@ -177,10 +181,14 @@ On Successful installation, navigate to the [Azure Portal](https://portal.azure.
 
 :::image type="content" source="media/vm-watch-application-extension.png" alt-text="Screenshot of the Application and extension example" :::
 
-3. To confirm that VM watch has been enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. 
+To confirm that VM watch has been enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the below configuration exists in the JSON
 
-:::image type="content" source="media/vm-watch-json-view.png" alt-text="Screenshot of the JSOn view example" :::
-
+```
+  "settings": {  
+      "vmWatchSettings": {  
+          "enabled": true  
+      }
+```
 ## Next Steps
 
 - [Application Health Extension](https://learn.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-health-extension?tabs=azure-cli)
