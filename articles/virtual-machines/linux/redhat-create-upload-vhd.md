@@ -523,7 +523,7 @@ This section shows you how to use KVM to prepare RHEL 7 to upload to Azure.
     ```
     sudo cat <<EOF>> /etc/udev/rules.d/68-azure-sriov-nm-unmanaged.rules
     # Accelerated Networking on Azure exposes a new SRIOV interface to the VM.
-    # This interface is transparentlybonded to the synthetic interface,
+    # This interface is transparently bonded to the synthetic interface,
     # so NetworkManager should just ignore any SRIOV interfaces.
     SUBSYSTEM=="net", DRIVERS=="hv_pci", ACTION!="remove", ENV{NM_UNMANAGED}="1"
     EOF
