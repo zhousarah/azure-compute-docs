@@ -49,7 +49,7 @@ The increased remote storage performance of these VMs is ideal for storage throu
 [Memory Preserving Updates](../../maintenance-and-updates.md): Not Supported<br>
 [VM Generation Support](../../generation-2.md): Generation 2<br>
 [Write Accelerator](../../how-to-enable-write-accelerator.md): Supported<br>
-[Accelerated Networking](/azure/create-vm-accelerated-networking-cli): Supported<br>
+[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported<br>
 [Ephemeral OS Disks](../../ephemeral-os-disks.md): Supported <br>
 [Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Not Supported <br>
 <br>
