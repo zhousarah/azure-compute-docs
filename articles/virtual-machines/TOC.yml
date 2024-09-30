@@ -463,8 +463,6 @@
           href: ./sizes/gpu-accelerated/nca100v4-series.md
       - name: ND family
         items:
-        - name: ND-H200-v5 series
-          href: ./sizes/gpu-accelerated/ndh200v5-series.md
         - name: Overview
           displayName: ND-series, sizes, size, vm size
           href: ./sizes/gpu-accelerated/nd-family.md
@@ -480,6 +478,8 @@
           href: ./sizes/gpu-accelerated/ndv2-series.md
         - name: ND-H100-v5 series
           href: ./sizes/gpu-accelerated/ndh100v5-series.md
+        - name: ND-H200-v5 series
+          href: ./sizes/gpu-accelerated/ndh200v5-series.md
         - name: ND-MI300X-v5 series
           href: ./sizes/gpu-accelerated/ndmi300xv5-series.md
       - name: NG family
