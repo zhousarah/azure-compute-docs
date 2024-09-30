@@ -99,12 +99,12 @@ On Successful installation, navigate to the [Azure Portal](https://portal.azure.
 
 Windows VM
 
-:::image type="content" source="../articles/virtual-machines/media/windows-azure-vm.png" alt-text="Screenshot of the Windows VM installation.":::
+:::image type="content" source="articles/virtual-machines/media/vm-watch/windows-azure-vm.png" alt-text="Screenshot of the Windows VM installation.":::
 
 
 Linux VM
 
-:::image type="content" source="../articles/virtual-machines/media/linux-azure-vm.png" alt-text="Screenshot of the Linux VM installation.":::
+:::image type="content" source="articles/virtual-machines/media/vm-watch/linux-azure-vm.png" alt-text="Screenshot of the Linux VM installation.":::
 
 To confirm that ***VM watch*** has been enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the below configuration exists in the JSON
 
@@ -203,11 +203,11 @@ On Successful installation, navigate to the [Azure Portal](https://portal.azure.
 
 Windows
 
-:::image type="content" source="articles/virtual-machines/media/windows-azure-vmss.png" alt-text="Screenshot of the Windows VMSS installation.":::
+:::image type="content" source="articles/virtual-machines/media/vm-watch/windows-azure-vmss.png" alt-text="Screenshot of the Windows VMSS installation.":::
 
 Linux
 
-:::image type="content" source="articles/virtual-machines/media/linux-azure-vmss.png" alt-text="Screenshot of the Linux VMSS installation.":::
+:::image type="content" source="articles/virtual-machines/media/vm-watch/linux-azure-vmss.png" alt-text="Screenshot of the Linux VMSS installation.":::
 ---
 
 To confirm that ***VM watch*** has been enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the below configuration exists in the JSON
