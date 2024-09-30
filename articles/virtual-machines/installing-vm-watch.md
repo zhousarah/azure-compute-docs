@@ -11,7 +11,7 @@ ms.subservice: monitoring
 
 # Installing VM Watch (Preview)
 
-Users can enable VM watch with ease via [ARM template](https://learn.microsoft.com/azure/azure-resource-manager/templates/), [PowerShell](https://learn.microsoft.com/powershell/), or [AZ CLI](https://learn.microsoft.com/cli/azure/) on Azure Virtual Machines (VMs) and Azure Virtual Machine Scale Sets (VMSS). VM watch can be enabled on both Linux and Windows VMs. VM watch is delivered through the [Application Health VM extension](https://learn.microsoft.com/azure/virtual-machines/extensions/health-extension?tabs=rest-api) for ease of adoption. The code in this document details the steps to install the application health VM extension and enable VM watch. Even if the application health VM extension is already installed on your VM, you may follow the below steps. These steps will delete the VM extension and replace it.
+Users can enable VM watch with ease via [ARM template](/azure/azure-resource-manager/templates/), [PowerShell](https://learn.microsoft.com/powershell/), or [AZ CLI](/cli/azure/) on Azure Virtual Machines (VMs) and Azure Virtual Machine Scale Sets (VMSS). VM watch can be enabled on both Linux and Windows VMs. VM watch is delivered through the [Application Health VM extension](/azure/virtual-machines/extensions/health-extension?tabs=rest-api) for ease of adoption. The code in this document details the steps to install the application health VM extension and enable VM watch. Even if the application health VM extension is already installed on your VM, you may follow the below steps. These steps will delete the VM extension and replace it.
 
 > [!Note]
 > The code segments below require user input. Any labels within `<>` in the code, need to be replace with values specific to your installation. Here is a list of parameters with instructions on what to replace with.
@@ -48,7 +48,7 @@ Users can enable VM watch with ease via [ARM template](https://learn.microsoft.c
   az feature show --namespace Microsoft.Compute --name VMWatchPreview --subscription <your subscription id>
   ```
 * ### Ensure VM is installed
-  For more details on how to create a VM and/or VM scale set see [Quickstart guide](https://learn.microsoft.com/azure/virtual-machines/windows/quick-create-portal)
+  For more details on how to create a VM and/or VM scale set see [Quickstart guide](/azure/virtual-machines/windows/quick-create-portal)
 
 > [!Important]
 > If Application health extension is already installed on the VM, ensure the settings
@@ -220,6 +220,6 @@ To confirm that ***VM watch*** has been enabled on this VM, navigate back to the
 ```
 ## Next Steps
 
-- [Application Health Extension](https://learn.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-health-extension?tabs=azure-cli)
-- [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
+- [Application Health Extension](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-health-extension?tabs=azure-cli)
+- [Azure CLI](/cli/azure/install-azure-cli)
 - [Azure Portal](https://portal.azure.com/) 
