@@ -50,7 +50,7 @@ Users can enable VM watch with ease via [ARM template](/azure/azure-resource-man
  ### 2. Ensure VM is installed
  
 For more information on how to create a VM and/or VM scale set see [Quickstart guide](/azure/virtual-machines/windows/quick-create-portal)
----
+
 > [!Important]
 > If Application health extension is already installed on the VM, ensure the settings `autoUpgradeMinorVersion` is set to `true` and `enableAutomaticUpgrade` is set to `true`
  
