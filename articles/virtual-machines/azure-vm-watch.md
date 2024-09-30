@@ -26,8 +26,8 @@ VM watch is a standardized, lightweight, and adaptable in-VM service offering fo
 |:---:|:---:|:---:|
 | **Outbound connectivity** | Check | Verify the network outbound connectivity from the Azure VM. |
 | **DNS Resolution** | Check | Verify if one or more dns names can be resolved. |
-| **SegmentsRetransimitted** | Metric | The number of TCP segments transmitted containing one or more previously transmitted octets. |
-| **NormalizedSegmentsRetransmitted** | Metric | SegmentsRetransimitted / (SegmentsSent + SegmentsReceived) |
+| **SegmentsRetransmitted** | Metric | The number of TCP segments transmitted containing one or more previously transmitted octets. |
+| **NormalizedSegmentsRetransmitted** | Metric | SegmentsRetransmitted / (SegmentsSent + SegmentsReceived) |
 | **ConnectionResets** | Metric | Number of times TCP connections made a direct transition to the CLOSED state from either the ESTABLISHED state or the CLOSE_WAIT state |
 | **NormalizedConnectionResets** | Metric | ConnectionResets / CurrentConnections |
 | **FailedConnectionAttempts** | Metric | Number of times TCP connections made a direct transition to the CLOSED state from either the SYN_SENT state or the SYN_RCVD state. |
@@ -77,7 +77,7 @@ VM watch is a standardized, lightweight, and adaptable in-VM service offering fo
 
 | **Signal Name** | **Type** | **Description** |
 |:---:|:---:|:---:|
-| **IMDS** | Check | Verify user can reach of IMDS endpoint from within the VM and VM information is returned from the IMDS endpoint query |
+| **IMDS** | Check | Verify user can reach IMDS endpoint from within the VM and VM information is returned from the IMDS endpoint query |
 
  
 
