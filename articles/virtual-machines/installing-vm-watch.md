@@ -37,6 +37,7 @@ Users can enable VM watch with ease via [ARM template](https://learn.microsoft.c
   az provider register --namespace Microsoft.Compute --subscription <your subscription id>
 
   ```
+  ---
   #### Validate feature registration
 
   Validate you have registered for the VM watch feature successfully by running the below command.
