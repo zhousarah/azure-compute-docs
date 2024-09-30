@@ -94,6 +94,24 @@ Set-AzVMExtension -ResourceGroupName "<your resource group>" -Location "<your vm
          }  
 ```
 ---
+### Validate Application Health VM extension is installed in the Azure VM
+On Successful installation, navigate to the [Azure Portal](https://portal.azure.com) to confirm that the ***Application Health VM extension*** has been installed.
+
+Windows VM
+Image 1
+
+Linux VM
+Image 2
+
+To confirm that ***VM watch*** has been enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the below configuration exists in the JSON
+
+```
+  "settings": {  
+      "vmWatchSettings": {  
+          "enabled": true  
+      }
+```
+---
 
 ## Installing VM watch on Azure Virtual Machine Scale Sets
 
@@ -176,13 +194,18 @@ Update-AzVmssInstance -ResourceGroupName $vmScaleSetResourceGroup `
 ```
 ---
 
-## Validation
+### Validation
 
-On Successful installation, navigate to the [Azure Portal](https://portal.azure.com) to confirm that the Application Health VM extension has been installed.
+On Successful installation, navigate to the [Azure Portal](https://portal.azure.com) to confirm that the ***Application Health VM extension*** has been installed in the Virtual Machine Scale Set.
 
-:::image type="content" source="media/vm-watch-application-extension.png" alt-text="Screenshot of the Application and extension example" :::
+Windows
+Image 3
 
-To confirm that VM watch has been enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the below configuration exists in the JSON
+Linux
+Image 4
+---
+
+To confirm that ***VM watch*** has been enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the below configuration exists in the JSON
 
 ```
   "settings": {  
