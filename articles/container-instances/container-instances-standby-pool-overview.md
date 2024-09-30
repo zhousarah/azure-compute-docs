@@ -80,7 +80,7 @@ The container group profile is what tells the standby pool how to configure the 
 
 
 ## Standby pool instances
-You can get a list of instances in your standby pool and their current state. 
+You can get a list of instances in your standby pool and their current state using the standby pool runtime view API. 
 
 ### [CLI](#tab/cli)
 
