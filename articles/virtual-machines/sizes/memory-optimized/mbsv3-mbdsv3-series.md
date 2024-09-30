@@ -21,14 +21,14 @@ The increased remote storage performance of these VMs is ideal for storage throu
 ## Mbsv3 series (NVMe)
 
 [Premium Storage](../../premium-storage-performance.md): Supported<br>
-[Premium Storage caching](premium-storage-performance.md): Supported<br>
-[Live Migration](maintenance-and-updates.md): Not Supported<br>
-[Memory Preserving Updates](maintenance-and-updates.md): Not Supported<br>
-[VM Generation Support](generation-2.md): Generation 2<br>
-[Write Accelerator](./how-to-enable-write-accelerator.md): Supported<br>
-[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported<br>
-[Ephemeral OS Disks](ephemeral-os-disks.md): Not Supported <br>
-[Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Not Supported <br>
+[Premium Storage caching](../../premium-storage-performance.md): Supported<br>
+[Live Migration](../../maintenance-and-updates.md): Not Supported<br>
+[Memory Preserving Updates](../../maintenance-and-updates.md): Not Supported<br>
+[VM Generation Support](../../generation-2.md): Generation 2<br>
+[Write Accelerator](../../how-to-enable-write-accelerator.md): Supported<br>
+[Accelerated Networking](../../azure/virtual-network/create-vm-accelerated-networking-cli): Supported<br>
+[Ephemeral OS Disks](../../ephemeral-os-disks.md): Not Supported <br>
+[Nested Virtualization](../../virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Not Supported <br>
 <br>
 
 | **Size** | **vCPU** | **Memory: GiB** | **Max data disks** | **Max uncached Premium** **SSD  throughput: IOPS/MBps** | **Max uncached Ultra Disk and Premium SSD V2 disk throughput: IOPS/MBps** | **Max NICs** | **Max network bandwidth (Mbps)** |
@@ -43,15 +43,15 @@ The increased remote storage performance of these VMs is ideal for storage throu
 
 ## Mbdsv3 series (NVMe)
 
-[Premium Storage](premium-storage-performance.md): Supported<br>
-[Premium Storage caching](premium-storage-performance.md): Supported<br>
-[Live Migration](maintenance-and-updates.md): Not Supported<br>
-[Memory Preserving Updates](maintenance-and-updates.md): Not Supported<br>
-[VM Generation Support](generation-2.md): Generation 2<br>
-[Write Accelerator](./how-to-enable-write-accelerator.md): Supported<br>
-[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported<br>
-[Ephemeral OS Disks](ephemeral-os-disks.md): Supported <br>
-[Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Not Supported <br>
+[Premium Storage](../../premium-storage-performance.md): Supported<br>
+[Premium Storage caching](../../premium-storage-performance.md): Supported<br>
+[Live Migration](../../maintenance-and-updates.md): Not Supported<br>
+[Memory Preserving Updates](../../maintenance-and-updates.md): Not Supported<br>
+[VM Generation Support](../../generation-2.md): Generation 2<br>
+[Write Accelerator](../../how-to-enable-write-accelerator.md): Supported<br>
+[Accelerated Networking](../../azure/virtual-network/create-vm-accelerated-networking-cli): Supported<br>
+[Ephemeral OS Disks](../../ephemeral-os-disks.md): Supported <br>
+[Nested Virtualization](,./../virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Not Supported <br>
 <br>
 
 | **Size** | **vCPU** | **Memory: GiB** | **Temp storage (SSD) GiB** | **Max data disks** | **Max temp storage throughput: IOPS/MBps** | **Max uncached Premium** **SSD  throughput: IOPS/MBps** | **Max uncached Ultra Disk and Premium SSD V2 disk throughput: IOPS/MBps** | **Max NICs** | **Max network bandwidth (Mbps)** |
