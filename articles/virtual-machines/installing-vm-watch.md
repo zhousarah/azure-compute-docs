@@ -11,7 +11,7 @@ ms.subservice: monitoring
 
 # Installing VM Watch (Preview)
 
-Users can enable VM watch with ease via [ARM template](/azure/azure-resource-manager/templates/), [PowerShell](/powershell/), or [AZ CLI](/cli/azure/) on Azure Virtual Machines (VMs) and Azure Virtual Machine Scale Sets (VMSS). VM watch can be enabled on both Linux and Windows VMs. VM watch is delivered through the [Application Health VM extension](/azure/virtual-machines/extensions/health-extension?tabs=rest-api) for ease of adoption. The code in this document details the steps to install the application health VM extension and enable VM watch. Even if the application health VM extension is already installed on your VM, follow the steps listed. 
+Users can enable VM watch with ease via [ARM template](/azure/azure-resource-manager/templates/), [PowerShell](/powershell/), or [AZ CLI](/cli/azure/) on Azure Virtual Machines (VMs) and Azure Virtual Machine Scale Sets (VMSS). VM watch can be enabled on both Linux and Windows VMs. VM watch is delivered through the [Application Health VM extension](/azure/virtual-machines/extensions/health-extension?tabs=rest-api) for ease of adoption. The code in this document details the steps to install the application health VM extension and enable VM watch.
 > [!Note]
 > The code segments require user input. Any labels within `<>` in the code, need to be replace with values specific to your installation. Here is a list of parameters with instructions on what to replace with.
 > 
@@ -48,11 +48,11 @@ Users can enable VM watch with ease via [ARM template](/azure/azure-resource-man
   ```
  ### 2. Ensure VM is installed
   For more information on how to create a VM and/or VM scale set see [Quickstart guide](/azure/virtual-machines/windows/quick-create-portal)
-
+---
 > [!Important]
 > If Application health extension is already installed on the VM, ensure the settings
 > `autoUpgradeMinorVersion` is set to `true` and `enableAutomaticUpgrade` is set to `true`
-  
+---  
 ## Installing VM watch on Azure Virtual Machines
 
 > [!Important]
