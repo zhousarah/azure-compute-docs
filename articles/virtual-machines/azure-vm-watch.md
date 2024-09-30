@@ -10,7 +10,7 @@ ms.date:     09/20/2024
 
 # VM watch - Enhancing VM health monitoring
 
-VM watch is a standardized, lightweight, and adaptable in-VM service offering for virtual machines and virtual machine scale sets. It runs health checks within the VM at configurable intervals and sends the results via a uniform data model to Azure. These health results are consumed by Azure's production monitoring AIOps (AI Operations) engines for regression detection and prevention. Customers are able to access the health results through Event Hub. VM watch is delivered via the [Application Health VM extension](https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/health-extension?tabs=rest-api) to provide ease of deployment and manageability for customers. In addition, VM watch is offered at no additional cost for customers. 
+VM watch is a standardized, lightweight, and adaptable in-VM service offering for virtual machines and virtual machine scale sets. It runs health checks within the VM at configurable intervals and sends the results via a uniform data model to Azure. These health results are consumed by Azure's production monitoring AIOps (AI Operations) engines for regression detection and prevention. Customers are able to access the health results through Event Hub. VM watch is delivered via the [Application Health VM extension](https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/health-extension?tabs=rest-api) to provide ease of deployment and manageability for customers. In addition, VM watch is offered at no extra cost for customers. 
 
 ## VM watch monitoring specifics
 
@@ -18,25 +18,25 @@ VM watch is a standardized, lightweight, and adaptable in-VM service offering fo
 - **Flexible Deployment:** Users can enable VM Watch with ease via ARM template, PowerShell, or AZ CLI.
 - **Compatibility:** VM watch operates seamlessly on both Linux and Windows environments. Also, VM watch is suitable for individual VMs and VMSS VMs alike.
 - **Resource Governance:** VM Watch provides efficient monitoring without impacting system performance. Resource caps are placed on the CPU and memory utilization of the VNWatch process itself to protect the VM.
-- **Ready Out-of-the-Box**: VM Watch comes equipped with a suite of default tests which are easily configurable to enable scenario specific tests. Detailed information regarding the Tests (Checks, Metrics, and Event Logs) are given below.
+- **Ready Out-of-the-Box**: VM Watch comes equipped with a suite of default tests which are easily configurable to enable scenario specific tests. Detailed information regarding the Tests (Checks, Metrics, and Event Logs) are given.
 
 ### Network:
 
 | **Signal Name** | **Type** | **Description** |
 |:---:|:---:|:---:|
 | **Outbound connectivity** | Check | Verify the network outbound connectivity from the Azure VM. |
-| **DNS Resolution** | Check | Verify if the dns name(s) can be resolved. |
+| **DNS Resolution** | Check | Verify if one or more dns names can be resolved. |
 | **SegmentsRetransimitted** | Metric | The number of TCP segments transmitted containing one or more previously transmitted octets. |
 | **NormalizedSegmentsRetransmitted** | Metric | SegmentsRetransimitted / (SegmentsSent + SegmentsReceived) |
-| **ConnectionResets** | Metric | Number of times TCP connections have made a direct transition to the CLOSED state from either the ESTABLISHED state or the CLOSE_WAIT state |
+| **ConnectionResets** | Metric | Number of times TCP connections made a direct transition to the CLOSED state from either the ESTABLISHED state or the CLOSE_WAIT state |
 | **NormalizedConnectionResets** | Metric | ConnectionResets / CurrentConnections |
-| **FailedConnectionAttempts** | Metric | Number of times TCP connections have made a direct transition to the CLOSED state from either the SYN_SENT state or the SYN_RCVD state. |
+| **FailedConnectionAttempts** | Metric | Number of times TCP connections made a direct transition to the CLOSED state from either the SYN_SENT state or the SYN_RCVD state. |
 | **NormalizedFailedConnectionAttempts** | Metric | FailedConnectionAttempts / (ActiveConnectionOpenings + PassiveConnectionOpenings) |
-| **ActiveConnectionOpenings** | Metric | Number of times TCP connections have made a direct transition to the SYN_SENT state from the CLOSED state |
-| **PassiveConnectionOpenings** | Metric | Number of times TCP connections have made a direct transition to the SYN_RCVD state from the LISTEN state |
+| **ActiveConnectionOpenings** | Metric | Number of times TCP connections made a direct transition to the SYN_SENT state from the CLOSED state |
+| **PassiveConnectionOpenings** | Metric | Number of times TCP connections made a direct transition to the SYN_RCVD state from the LISTEN state |
 | **CurrentConnections** | Metric | Number of connections established |
-| **SegmentsReceived** | Metric | Number of segments received, including those received in error |
-| **SegmentsSent** | Metric | Number of segments sent, including those on current connections but excluding those containing only retransmitted octets |
+| **SegmentsReceived** | Metric | Number of segments received, including those segments received in error |
+| **SegmentsSent** | Metric | Number of segments sent, including those segments on current connections but excluding those segments containing only retransmitted octets |
 
  
 
@@ -44,7 +44,7 @@ VM watch is a standardized, lightweight, and adaptable in-VM service offering fo
 
 | **Signal Name** | **Type** | **Description** |
 |:---:|:---:|:---:|
-| **Azure Disk I/O** | Check | Verify file creation, write, read, delete operations on each drive mounted to the VM |
+| **Azure Disk I/O** | Check | Verify file creation, write, read. Delete operations on each drive mounted to the VM |
 | **FreeSpaceInBytes** | Metric | The free disk space of the target mount point |
 | **UsedSpaceInBytes** | Metric | The used disk space of the target mount point |
 | **CapacityInBytes**  | Metric | The disk spce capacity of the target mount point |
