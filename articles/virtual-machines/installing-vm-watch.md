@@ -11,10 +11,10 @@ ms.subservice: monitoring
 
 # Installing VM Watch (Preview)
 
-Users can enable VM watch with ease via [ARM template](/azure/azure-resource-manager/templates/), [PowerShell](https://learn.microsoft.com/powershell/), or [AZ CLI](/cli/azure/) on Azure Virtual Machines (VMs) and Azure Virtual Machine Scale Sets (VMSS). VM watch can be enabled on both Linux and Windows VMs. VM watch is delivered through the [Application Health VM extension](/azure/virtual-machines/extensions/health-extension?tabs=rest-api) for ease of adoption. The code in this document details the steps to install the application health VM extension and enable VM watch. Even if the application health VM extension is already installed on your VM, you may follow the below steps. These steps will delete the VM extension and replace it.
+Users can enable VM watch with ease via [ARM template](/azure/azure-resource-manager/templates/), [PowerShell](azure/powershell/), or [AZ CLI](/cli/azure/) on Azure Virtual Machines (VMs) and Azure Virtual Machine Scale Sets (VMSS). VM watch can be enabled on both Linux and Windows VMs. VM watch is delivered through the [Application Health VM extension](/azure/virtual-machines/extensions/health-extension?tabs=rest-api) for ease of adoption. The code in this document details the steps to install the application health VM extension and enable VM watch. Even if the application health VM extension is already installed on your VM, follow the steps listed. These steps delete the VM extension and replace it.
 
 > [!Note]
-> The code segments below require user input. Any labels within `<>` in the code, need to be replace with values specific to your installation. Here is a list of parameters with instructions on what to replace with.
+> The code segments require user input. Any labels within `<>` in the code, need to be replace with values specific to your installation. Here is a list of parameters with instructions on what to replace with.
 > 
 > | **Parameters** | **Description** |
 > |---|---|
@@ -27,8 +27,8 @@ Users can enable VM watch with ease via [ARM template](/azure/azure-resource-man
 > | **`<your vm scale set name>`** | This is your VM scale set name in which you want to install VM watch. |
 
 ## Pre-requisites
-* ### Register Feature
-  Execute the below code using Azure Command Line to register for adopting VM watch.
+ ### 1. Register Feature
+  Execute the code using Azure Command Line to register for adopting VM watch.
 
   #### [CLI](#tab/cli-feature)
 
@@ -40,15 +40,15 @@ Users can enable VM watch with ease via [ARM template](/azure/azure-resource-man
   ---
   #### Validate feature registration
 
-  Validate you have registered for the VM watch feature successfully by running the below command.
+  Validate you have registered for the VM watch feature successfully by running the command.
 
   #### [CLI](#tab/cli-validatefeaturereg)
 
   ```
   az feature show --namespace Microsoft.Compute --name VMWatchPreview --subscription <your subscription id>
   ```
-* ### Ensure VM is installed
-  For more details on how to create a VM and/or VM scale set see [Quickstart guide](/azure/virtual-machines/windows/quick-create-portal)
+ ### 2. Ensure VM is installed
+  For more information on how to create a VM and/or VM scale set see [Quickstart guide](/azure/virtual-machines/windows/quick-create-portal)
 
 > [!Important]
 > If Application health extension is already installed on the VM, ensure the settings
@@ -57,7 +57,7 @@ Users can enable VM watch with ease via [ARM template](/azure/azure-resource-man
 ## Installing VM watch on Azure Virtual Machines
 
 > [!Important]
-> The below code segment is identical for both Windows and Linux except for the value of the parameter `<application health extension type`> passed in to the Extension Type.
+> The code segment is identical for both Windows and Linux except for the value of the parameter `<application health extension type`> passed in to the Extension Type.
 >
 > Please replace
 > `<application health extension type>` with `"ApplicationHealthLinux"` for Linux and `"ApplicationHealthWindows"` for Windows installations respectively. 
@@ -97,16 +97,16 @@ Set-AzVMExtension -ResourceGroupName "<your resource group>" -Location "<your vm
 ### Validate Application Health VM extension is installed in the Azure VM
 On Successful installation, navigate to the [Azure Portal](https://portal.azure.com) to confirm that the ***Application Health VM extension*** has been installed.
 
-Windows VM
+**Windows**
 
 :::image type="content" source="./media/vm-watch/windows-azure-vm.png" alt-text="Screenshot of the Windows VM installation.":::
 
 
-Linux VM
+**Linux**
 
 :::image type="content" source="./media/vm-watch/linux-azure-vm.png" alt-text="Screenshot of the Linux VM installation.":::
 
-To confirm that ***VM watch*** has been enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the below configuration exists in the JSON
+To confirm that ***VM watch*** has been enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the configuration exists in the JSON
 
 ```
   "settings": {  
@@ -119,7 +119,7 @@ To confirm that ***VM watch*** has been enabled on this VM, navigate back to the
 ## Installing VM watch on Azure Virtual Machine Scale Sets
 
 > [!Important]
-> The below code segment is identical for both Windows and Linux except for the value of the parameter `<application health extension type`> passed in to the Extension Type.
+> The code segment is identical for both Windows and Linux except for the value of the parameter `<application health extension type`> passed in to the Extension Type.
 >
 > Please replace
 > `<application health extension type>` with `"ApplicationHealthLinux"` for Linux and `"ApplicationHealthWindows"` for Windows installations respectively.  
@@ -197,20 +197,20 @@ Update-AzVmssInstance -ResourceGroupName $vmScaleSetResourceGroup `
 ```
 ---
 
-### Validation
+### Validate Application Health VM extension is installed in the Azure VM Scale Set
 
 On Successful installation, navigate to the [Azure Portal](https://portal.azure.com) to confirm that the ***Application Health VM extension*** has been installed in the Virtual Machine Scale Set.
 
-Windows
+**Windows**
 
 :::image type="content" source="./media/vm-watch/windows-azure-vmss.png" alt-text="Screenshot of the Windows VMSS installation.":::
 
-Linux
+**Linux**
 
 :::image type="content" source="./media/vm-watch/linux-azure-vmss.png" alt-text="Screenshot of the Linux VMSS installation.":::
 ---
 
-To confirm that ***VM watch*** has been enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the below configuration exists in the JSON
+To confirm that ***VM watch*** has been enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the configuration exists in the JSON
 
 ```
   "settings": {  
