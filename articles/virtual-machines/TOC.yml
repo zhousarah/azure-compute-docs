@@ -416,7 +416,7 @@
         href: ./sizes/overview.md#storage-optimized
       - name: L family
         items:
-      - name: Overview
+       - name: Overview
           displayName: L-series, sizes, size, vm size
           href: ./sizes/storage-optimized/l-family.md
         - name: Lsv3 series
