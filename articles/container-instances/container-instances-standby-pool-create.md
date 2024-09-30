@@ -32,28 +32,26 @@ Register-AzProviderFeature -FeatureName StandbyContainerGroupPoolPreview -Provid
 ```
 
 ### Role-based Access Control Permissions
-To allow standby pools to create virtual machines, you need to assign the appropriate RBAC permissions.
+To allow standby pools to create container groups, you need to assign the appropriate permissions to the standby pool resource provider. 
  
-1) In the Azure Portal, navigate to your subscriptions.
-2) Select the subscription you want to adjust RBAC permissions.
+1) In the Azure portal, navigate to your subscriptions.
+2) Select the subscription you want to adjust permissions.
 3) Select Access Control (IAM).
-4) Select Add -> Add Custom Role.
+4) Select Add and Add Custom Role.
 5) Name your role ContainersContributor.
 6) Move to the Permissions Tab.
 7) Select Add Permissions.
-8) Search for Microsoft.Container and select Microsoft Container Instance.
+8) Search for `Microsoft.Container` and select Microsoft Container Instance.
 9) Select the permissions box to select all the permissions available.
 10) Select Add.
 11) Select Review + create.
 12) Select Create.
-13) Select Add -> Add role assignment
+13) Select Add and Add role assignment
 14) Under the roles tab, search for the custom role you created earlier called ContainersContributor and select it
 15) Move to the Members tab
 16) Select + Select Members
 17) Search for Standby Pool Resource Provider.
 18) Select the Standby Pool Resource Provider and select Review + Assign.
-
-If you do not have Contributor/ Owner/ Administrator roles to the subscription you are using ACI Pools for, you will also need to setup StandbyPools RBAC roles (Standby Pool create, reads, etc.) and assign to yourself.
 
 For more information on assigning roles, see [assign Azure roles using the Azure portal](/azure/role-based-access-control/quickstart-assign-role-user-portal).
 
