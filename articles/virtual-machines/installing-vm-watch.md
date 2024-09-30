@@ -11,43 +11,80 @@ ms.subservice: monitoring
 
 # Installing VM Watch
 
-Users can enable VM watch with ease via [ARM template](https://learn.microsoft.com/azure/azure-resource-manager/templates/), [PowerShell](https://learn.microsoft.com/powershell/), or [AZ CLI](https://learn.microsoft.com/cli/azure/). The following steps detail how VM watch can be installed on a single VM in a Linux environment, using AZ CLI (link) and Azure Portal (link)
+Users can enable VM watch with ease via [ARM template](https://learn.microsoft.com/azure/azure-resource-manager/templates/), [PowerShell](https://learn.microsoft.com/powershell/), or [AZ CLI](https://learn.microsoft.com/cli/azure/) on Azure Virtual Machines (VMs) and Azure Virtual Machine Scale Sets (VMSS). VM watch can be enabled on both Linux and Windows VMs. VM watch is delivered through the [Application Health VM extension](https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/health-extension?tabs=rest-api) for ease of adoption. The code in this document details the steps to install the application health VM extension and enable VM watch. Even if the application health VM extension is already installed on your VM, you may follow the below steps. These steps will delete the VM extension and replace it.
 
-1. Once on the Azure Portal, navigate to the Application + Extension Page to verify that Application Health Extension (link) does not exist
+> [!Note]
+> The code segments below require user input. Any labels within `<>` in the code, need to be replace with values specific to your installation. Here is a list of parameters with instructions on what to replace with.
+> 
+> | **Parameters** | **Description** |
+> |---|---|
+> | **`<your subscription id>`** | This is your Azure subscription id in which you want to install VM watch. |
+> | **`<your vm name>`** | This is the name of your virtual machine to which the extension is being installed.  |
+> | **`<your resource group name>`** | This is the name of the resource group in your Azure subscription that your vm will be assigned to. |
+> | **`<your location>`** | This is the Azure region in which your VM is installed. |
+> | **`<your extension name`** | This name will be assigned to the Application Health VM extension being installed. |
+> | **`<application health extension type>`** | Specifies whether Windows or Linux Application Health Extension is to be installed.|
+> | **`<your vm scale set name>`** | This is your VM scale set name in which you want to install VM watch. |
 
-:::image type="content" source="media/vm-watch-application-extension.png" alt-text="Screenshot of the Application and extension example" :::
+## Pre-requisites
+* ### Register Feature
+  Execute the below code using Azure Command Line to register for adopting VM watch.
 
-1. Prepare the installation code below and input the key parameters. These are given in the table below
+  #### [CLI](#tab/cli-feature)
 
-   Linux Command: <The section below should be in Tabs - REST API, Azure PowerShell and Azure CLI 2.0 like in the screenshot below>
+  ```
+  az feature register --name VMWatchPreview --namespace Microsoft.Compute --subscription <your subscription id>
+  az provider register --namespace Microsoft.Compute --subscription <your subscription id>
 
+  ```
+  #### Validate feature registration
 
-## Single VM
+  Validate you have registered for the VM watch feature successfully by running the below command.
 
-### [CLI](#tab/cli-1)
+  #### [CLI](#tab/cli-validatefeaturereg)
+
+  ```
+  az feature show --namespace Microsoft.Compute --name VMWatchPreview --subscription <your subscription id>
+  ```
+* ### Ensure VM is installed
+  For more details on how to create a VM and/or VM scale set see [Quickstart guide](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-portal)
+
+> [!Important]
+> If Application health extension is already installed on the VM, ensure the settings
+> `autoUpgradeMinorVersion` is set to `true` and `enableAutomaticUpgrade` is set to `true`
+  
+## Installing VM watch on Azure Virtual Machines
+
+> [!Important]
+> The below code segment is identical for both Windows and Linux except for the value of the parameter `<application health extension type`> passed in to the Extension Type.
+>
+> Please replace
+> `<application health extension type>` with `"ApplicationHealthLinux"` for Linux and `"ApplicationHealthWindows"` for Windows installations respectively. 
+
+#### [CLI](#tab/cli-1)
 ```
-az vm extension set --resource-group <resourcegroup> --vm-name < vmname> --name ApplicationHealthLinux --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true 
+az vm extension set --resource-group <your resource group> --vm-name <your vm name> --name <application health extension type> --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true 
 ```
-### [PowerShell](#tab/powershell-1)
+#### [PowerShell](#tab/powershell-1)
 ```
-Set-AzVMExtension -ResourceGroupName "<resourcegroup>" -Location "<location>" -VMName "<vmname>" -Name "<extensionname>" -Publisher "Microsoft.ManagedServices" -ExtensionType "ApplicationHealthLinux" -TypeHandlerVersion "2.0" -Settings @{"vmWatchSettings" = @{"enabled" = $True}} -EnableAutomaticUpgrade $True 
+Set-AzVMExtension -ResourceGroupName "<your resource group>" -Location "<your vm region>" -VMName "<your vm name>" -Name "<your extension name>" -Publisher "Microsoft.ManagedServices" -ExtensionType "<application health extension type>" -TypeHandlerVersion "2.0" -Settings @{"vmWatchSettings" = @{"enabled" = $True}} -EnableAutomaticUpgrade $True 
 ```
-### [REST API](#tab/rest-api-1)
+#### [ARM template](#tab/ARM-template-1)
 
 ```
         "type": "Microsoft.Compute/virtualMachines/extensions", 
         "apiVersion": "2019-07-01", 
-        "name": "[concat(parameters('vmName'), '/', 'HealthExtension')]", 
-        "location": "[parameters('location')]", 
+        "name": "[concat('<your vm name>', '/', '<your extension name')]", 
+        "location": "[parameters('<your vm region>')]", 
         "dependsOn": [ 
-            "[resourceId('Microsoft.Compute/virtualMachines', parameters('vmName'))]" 
+            "[resourceId('Microsoft.Compute/virtualMachines', parameters('<your vm name>'))]" 
         ], 
 
         "properties": { 
             "enableAutomaticUpgrade": true, 
             "publisher": "Microsoft.ManagedServices", 
             "typeHandlerVersion": "2.0", 
-            "type": "ApplicationHealthLinux", 
+            "type": "<application health extension type>", 
             "settings": { 
                 "vmWatchSettings": { 
                     "enabled": true
@@ -57,22 +94,28 @@ Set-AzVMExtension -ResourceGroupName "<resourcegroup>" -Location "<location>" -V
 ```
 ---
 
-## VM Scaleset
+### Installing VM watch on Azure Virtual Machine Scale Sets
 
-### [CLI](#tab/cli-2)
+> [!Important]
+> The below code segment is identical for both Windows and Linux except for the value of the parameter `<application health extension type`> passed in to the Extension Type.
+>
+> Please replace
+> `<application health extension type>` with `"ApplicationHealthLinux"` for Linux and `"ApplicationHealthWindows"` for Windows installations respectively.  
+
+#### [CLI](#tab/cli-2)
 ```
-az vmss extension set --resource-group <resourcegroup> --vmss-name < vmssname> --name ApplicationHealthLinux --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true
+az vmss extension set --resource-group '<your resource group name>' --vmss-name '<your vm scale set name>' --name <application health extension type> --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true
 ```
-### [PowerShell](#tab/powershell-2)
+#### [PowerShell](#tab/powershell-2)
 ```
 ### Define the scale set variables 
-$vmScaleSetName = "<scalesetname>" 
-$vmScaleSetResourceGroup = "<resourcegroup>" 
+$vmScaleSetName = "<your vm scale set name>" 
+$vmScaleSetResourceGroup = "<your resource group name>" 
 
 ### Define the setting to enable vmwatch 
 $publicConfig = @{"vmWatchSettings" = @{"enabled" = $true}} 
-$extensionName = "<extensionname>" 
-$extensionType = "ApplicationHealthLinux" 
+$extensionName = "<your extension name>" 
+$extensionType = "<application health extension type>" 
 $publisher = "Microsoft.ManagedServices" 
 
 ### Get the scale set object 
@@ -99,22 +142,22 @@ Update-AzVmssInstance -ResourceGroupName $vmScaleSetResourceGroup `
   -VMScaleSetName $vmScaleSetName ` 
   -InstanceId '*' 
 ```
-### [REST API](#tab/rest-api-2)
+#### [ARM template](#tab/ARM-template-2)
 
 ```
    "type": "Microsoft.Compute/virtualMachineScaleSets",
    "apiVersion": "[parameters('vmss_api_version')]",
-   "name": "[variables('vmss_name')]",
+   "name": "[variables('<your vm scale set name>')]",
    "location": "[resourceGroup().location]",  
    "properties": {  
         "virtualMachineProfile": {
             "extensionProfile": {
                "extensions": [
                     {
-                        "name": "[concat(variables('vmss_name'), '/', 'HealthExtension')]",  
+                        "name": "[concat(variables('<your vm scale set name>'), '/', '<your extension name>')]",  
                         "properties": {  
                             "publisher": "Microsoft.ManagedServices",  
-                            "type": "ApplicationHealthLinux",  
+                            "type": "<application health extension type>",  
                             "typeHandlerVersion": "2.0",  
                             "autoUpgradeMinorVersion": true,  
                             "settings": {  
@@ -127,29 +170,26 @@ Update-AzVmssInstance -ResourceGroupName $vmScaleSetResourceGroup `
                 ]  
             }  
         }  
-    }  
-}   
+    }     
 
 ```
 ---
 
-## Windows
+## Validation
 
-| **Parameters** | **Description** |
-|---|---|
-| **VM / VMSS Name** | This is the unique identifier assigned to your virtual machine |
-| **Resource Group Name** | This is the unique identifier assigned to your resource group within an Azure subscription |
-
-1. Run the prepared code using Azure CLI (link)
-2. On Successful installation, navigate back to Azure Portal to confirm that Application Health has been installed.
+On Successful installation, navigate to the [Azure Portal](https://portal.azure.com) to confirm that the Application Health VM extension has been installed.
 
 :::image type="content" source="media/vm-watch-application-extension.png" alt-text="Screenshot of the Application and extension example" :::
 
-3. To confirm that VM watch has been enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM 
+To confirm that VM watch has been enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the below configuration exists in the JSON
 
-:::image type="content" source="media/vm-watch-json-view.png" alt-text="Screenshot of theJSOn view example" :::
-
-## Next Steps:
+```
+  "settings": {  
+      "vmWatchSettings": {  
+          "enabled": true  
+      }
+```
+## Next Steps
 
 - [Application Health Extension](https://learn.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-health-extension?tabs=azure-cli)
 - [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
