@@ -101,7 +101,7 @@ Accelerator (GPUs, FPGAs, etc.) info for each size
 
 | Size Name | Accelerators (Qty.) | Accelerator-Memory (GB) |
 | --- | --- | --- |
-| Standard_ND9i6sr_H200_v5 | 8 | 1128 |
+| Standard_ND96isr_H200_v5 | 8 | 1128 |
 
 ---
 
