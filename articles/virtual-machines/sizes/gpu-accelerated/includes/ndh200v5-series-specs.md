@@ -17,4 +17,4 @@ ms.custom: include filegit
 | Local Storage  |  1 Disk         | 28000 GiB  |
 | Remote Storage |  16Disks        |  |
 | Network        |  8 NICs        |  |
-| Accelerators   |  1128 GPUs            | Nvidia H200 GPU (141GB)    |
+| Accelerators   |  8 GPUs            | Nvidia H200 GPU (141GB)    |
