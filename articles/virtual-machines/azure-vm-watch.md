@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date:     09/20/2024
 ---
 
-# VM watch - Enhancing VM health monitoring
+# VM watch - Enhancing VM health monitoring (Preview)
 
 VM watch is a standardized, lightweight, and adaptable in-VM service offering for virtual machines and virtual machine scale sets. It runs health checks within the VM at configurable intervals and sends the results via a uniform data model to Azure. These health results are consumed by Azure's production monitoring AIOps (AI Operations) engines for regression detection and prevention. VM watch is delivered via the [Application Health VM extension](/azure/virtual-machines/extensions/health-extension?tabs=rest-api) to provide ease of deployment and manageability for customers. In addition, VM watch is offered at no extra cost for customers. 
 
