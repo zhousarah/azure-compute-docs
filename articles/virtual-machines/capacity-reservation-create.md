@@ -227,7 +227,8 @@ An [Azure Resource Manager template (ARM template)](/azure/azure-resource-mana
 
 ARM templates let you deploy groups of related resources. In a single template, you can create a capacity reservation group and capacity reservations. You can deploy templates through the Azure portal, the Azure CLI, or Azure PowerShell, or from continuous integration/continuous delivery (CI/CD) pipelines.
 
-To create a zonal Capacity Reservation Group, see below ARM Template. Replace the resource names with your own. The following example creates capacity reservations in all three zones.
+To create a zonal Capacity Reservation Group, see below ARM Template. Replace the resource names with your own. The following example creates a capacity reservation group called myZonalCapacityReservationGroup with capacity reservations of SKU D2s_v3 in all three zones.
+
 Alternatively, you can remove the *zone* information to create a regional Capacity Reservation Group.
 
 
