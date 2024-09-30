@@ -11,8 +11,7 @@ ms.subservice: monitoring
 
 # Installing VM Watch (Preview)
 
-Users can enable VM watch with ease via [ARM template](/azure/azure-resource-manager/templates/), [PowerShell](azure/powershell/), or [AZ CLI](/cli/azure/) on Azure Virtual Machines (VMs) and Azure Virtual Machine Scale Sets (VMSS). VM watch can be enabled on both Linux and Windows VMs. VM watch is delivered through the [Application Health VM extension](/azure/virtual-machines/extensions/health-extension?tabs=rest-api) for ease of adoption. The code in this document details the steps to install the application health VM extension and enable VM watch. Even if the application health VM extension is already installed on your VM, follow the steps listed. These steps delete the VM extension and replace it.
-
+Users can enable VM watch with ease via [ARM template](/azure/azure-resource-manager/templates/), [PowerShell](azure/powershell/), or [AZ CLI](/cli/azure/) on Azure Virtual Machines (VMs) and Azure Virtual Machine Scale Sets (VMSS). VM watch can be enabled on both Linux and Windows VMs. VM watch is delivered through the [Application Health VM extension](/azure/virtual-machines/extensions/health-extension?tabs=rest-api) for ease of adoption. The code in this document details the steps to install the application health VM extension and enable VM watch. Even if the application health VM extension is already installed on your VM, follow the steps listed. 
 > [!Note]
 > The code segments require user input. Any labels within `<>` in the code, need to be replace with values specific to your installation. Here is a list of parameters with instructions on what to replace with.
 > 
