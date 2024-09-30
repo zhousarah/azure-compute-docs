@@ -14,15 +14,15 @@ ms.reviewer: tomcassidy
 > [!IMPORTANT]
 > Standby pools for Azure Container Instances are currently in preview. Previews are made available to you on the condition that you agree to the [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Some aspects of this feature may change prior to general availability (GA). 
 
-Standby Pools for Azure Container Instances enables customers to create a pool of pre-provisioned container groups that can be used to scale out in response to incoming traffic. The container groups in the pool are fully provisioned, initialized, and ready to receive work at any given notice.
+Standby Pools for Azure Container Instances enable customers to create a pool of pre-provisioned container groups that can be used to scale out in response to incoming traffic. The container groups in the pool are fully provisioned, initialized, and ready to receive work at any given notice.
 
 ## Scaling
 
-When you require a new container group, rather than creating one from scratch, you can instead pull a container group from the standby pool that is already provisioned and running. This saves significant time as the container groups in the standby pool have already completed all provisioning steps. 
+When you require a new container group you can immediately pull one from the standby pool that is provisioned and running. 
 
 When a container group is consumed from the pool, the standby pool will automatically begin to refill ensuring that your standby pool maintains the desired capacity configured. 
 
-Standby pools only give out container groups from the pool that are fully provisioned and ready to receive work. For example, the instances in your pool are still being initialized, they are not in the expected provisioning state and will not be given out when a container is request. If no instances in the pool are available, Azure Container Instances will default back to net new container group creation. 
+Standby pools only give out container groups from the pool that are fully provisioned and ready to receive work. For example, the instances in your pool are still being initialized, they aren't in the expected provisioning state and won't be given out when a container is requested. If no instances in the pool are available, Azure Container Instances will default back to net new container group creation. 
 
 ## Standby pool size
 The number of container groups in a standby pool is determined by setting the `maxReadyCapacity` parameter. 
@@ -151,4 +151,4 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/m
 
 ## Next steps
 
-Learn how to [create a standby pool](standby-pools-create.md).
+Learn more about [Azure Container Instances](container-instances-overview.md)
