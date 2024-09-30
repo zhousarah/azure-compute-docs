@@ -46,6 +46,7 @@ Users can enable VM watch with ease via [ARM template](/azure/azure-resource-man
   ```
   az feature show --namespace Microsoft.Compute --name VMWatchPreview --subscription <your subscription id>
   ```
+---
  ### 2. Ensure VM is installed
   For more information on how to create a VM and/or VM scale set see [Quickstart guide](/azure/virtual-machines/windows/quick-create-portal)
 ---
