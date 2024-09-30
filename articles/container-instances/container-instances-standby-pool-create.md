@@ -10,7 +10,7 @@ ms.reviewer: tomvcassidy
 ---
 
 
-# Create a standby pool (Preview)
+# Create a standby pool for Azure Container Instances (Preview)
 This article steps through creating a standby pool for Azure Container Instances. 
 
 > [!IMPORTANT]
