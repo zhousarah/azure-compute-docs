@@ -56,7 +56,7 @@ To allow standby pools to create container groups, you need to assign the approp
 For more information on assigning roles, see [assign Azure roles using the Azure portal](/azure/role-based-access-control/quickstart-assign-role-user-portal).
 
 ## Limitations
-Standby Pools for Azure Container instances is not available in the Azure portal. 
+Standby Pools for Azure Container Instances is not available in the Azure portal. 
 
 ## Create a standby pool
 
