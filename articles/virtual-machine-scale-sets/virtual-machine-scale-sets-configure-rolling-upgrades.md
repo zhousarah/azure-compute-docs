@@ -22,9 +22,6 @@ Rolling upgrade policy is best suited for production workloads.
 
 - When using a rolling upgrade policy on Virtual Machine Scale Sets with Uniform Orchestration, the scale set must also have a [health probe](/azure/load-balancer/load-balancer-custom-probe-overview) or use the [Application Health Extension](virtual-machine-scale-sets-health-extension.md) to monitor application health. 
 
-- When using rolling upgrades with MaxSurge, new VMs are created using the latest scale set model to replace VMs using the old scale set model. These newly created VMs have new instance Ids and IP addresses. For more information on MaxSurge upgrades, see [Rolling upgrades with MaxSurge on Virtual Machine Scale Sets](virtual-machine-scale-sets-maxsurge.md).
-
-
 ## Concepts
 
 > [!NOTE]
