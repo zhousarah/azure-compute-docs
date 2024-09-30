@@ -95,7 +95,7 @@ Set-AzVMExtension -ResourceGroupName "<your resource group>" -Location "<your vm
 ```
 ---
 
-### Installing VM watch on Azure Virtual Machine Scale Sets
+## Installing VM watch on Azure Virtual Machine Scale Sets
 
 > [!Important]
 > The below code segment is identical for both Windows and Linux except for the value of the parameter `<application health extension type`> passed in to the Extension Type.
