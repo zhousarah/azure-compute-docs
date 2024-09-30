@@ -1512,16 +1512,7 @@
           href: linux/disks-enable-host-based-encryption-cli.md
           displayName: Encryption at host, encryption, ADE
       - name: Enable double encryption at rest
-        items:
-        - name: Portal
-          href: disks-enable-double-encryption-at-rest-portal.md
-          displayName: double encryption at rest, encryption, ADE
-        - name: PowerShell
-          href: windows/disks-enable-double-encryption-at-rest-powershell.md
-          displayName: double encryption at rest, encryption, ADE
-        - name: CLI
-          href: linux/disks-enable-double-encryption-at-rest-cli.md
-          displayName: double encryption at rest, encryption, ADE
+        href: disks-enable-double-encryption-at-rest-portal.md
     - name: Azure Disk Encryption
       items:
       - name: Linux
