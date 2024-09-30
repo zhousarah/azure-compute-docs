@@ -20,7 +20,7 @@ The increased remote storage performance of these VMs is ideal for storage throu
 
 ## Mbsv3 series (NVMe)
 
-[Premium Storage](./azure/virtual-machines/premium-storage-performance.md): Supported<br>
+[Premium Storage](../../premium-storage-performance.md): Supported<br>
 [Premium Storage caching](premium-storage-performance.md): Supported<br>
 [Live Migration](maintenance-and-updates.md): Not Supported<br>
 [Memory Preserving Updates](maintenance-and-updates.md): Not Supported<br>
