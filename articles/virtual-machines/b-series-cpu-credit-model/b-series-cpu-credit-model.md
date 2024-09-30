@@ -11,16 +11,16 @@ ms.date:     09/12/2023
 
 # B Series CPU Credit Model
 
-While traditional Azure virtual machines provide fixed CPU performance, B-series virtual machines are the only VM type that use credits for CPU performance provisioning. B-series VMs utilize a CPU credit model to track how much CPU is consumed - the virtual machine accumulates CPU credits when a workload is operating below the base CPU performance threshold and, uses credits when running above the base CPU performance threshold until all of its credits are consumed. Upon consuming all the CPU credits, a B-series virtual machine is throttled back to its base CPU performance until it accumulates the credits to CPU burst again.
+While traditional Azure virtual machines provide fixed CPU performance, B-series virtual machines are the only VM type that use credits for CPU performance provisioning. B-series VMs utilize a CPU credit model to track how much CPU is consumed - the virtual machine accumulates CPU credits when a workload is operating below the base CPU performance threshold and uses credits when running above the base CPU performance threshold until all of its credits are consumed. Upon consuming all the CPU credits, a B-series virtual machine is throttled back to its base CPU performance until it accumulates the credits to CPU burst again.
 
 ## Credit concepts and definitions 
-- Base CPU performance = The minimum CPU performance threshold a VM will have available always. This level sets the bar for net credit accumulation when the CPU utilization is below the base CPU performance level and, net credit consumption when the CPU utilization is above the base CPU performance. 
+- Base CPU performance = The minimum CPU performance threshold a VM will have available always. This level sets the bar for net credit accumulation when the CPU utilization is below the base CPU performance level and net credit consumption when the CPU utilization is above the base CPU performance. 
 
 - Initial Credits = The number of credits allocated to a B-series virtual machine when a VM is deployed. 
 
-- Credits banked/hour = The number of credits a B-seires virtual machine accumulates per hour if the VM is idle (no CPU performance consumption). 
+- Credits banked/hour = The number of credits a B-series virtual machine accumulates per hour if the VM is idle (no CPU performance consumption). 
 
-- Max Banked Credits = The maximum number/upper limit of credits a B-seires virtual machine can accumulate. Upon reaching this upper limit, a B-series VM can no longer accumulate more credits.    
+- Max Banked Credits = The maximum number/upper limit of credits a B-series virtual machine can accumulate. Upon reaching this upper limit, a B-series VM can no longer accumulate more credits.    
 
 - CPU Credits Consumed = The number of CPU credits spent during the measurement time-period.
 
