@@ -336,7 +336,6 @@ Alternatively, you can remove the *zone* information to create a regional VM and
                 "capacityReservation": {
                     "capacityReservationGroup": {
                         "id": "subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/capacityReservationGroups/{CapacityReservationGroupName}"
-
                     }
                 },
                 "osProfile": {
