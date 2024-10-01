@@ -11,10 +11,11 @@ ms.reviewer: tomvcassidy
 
 
 # Request a container from a standby pool for Azure Container Instances (Preview)
-This article steps through requesting a container group from a standby pool for Azure Container Instances. After requesting a container, the standby pool will automatically begin to refill to maintain the `maxReadyCapacity` parameter. 
 
 > [!IMPORTANT]
-> Standby pools for Azure Container Instances is currently in preview. Previews are made available to you on the condition that you agree to the [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Some aspects of this feature may change prior to general availability (GA). 
+> Standby pools for Azure Container Instances is currently in preview. Previews are made available to you on the condition that you agree to the [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Some aspects of this feature may change prior to general availability (GA).
+
+This article steps through requesting a container group from a standby pool for Azure Container Instances. After requesting a container, the standby pool will automatically begin to refill to maintain the `maxReadyCapacity` parameter.  
 
 ## Prerequisites
 
