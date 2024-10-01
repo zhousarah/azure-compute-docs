@@ -11,11 +11,11 @@ ms.custom: upgradepolicy, N-Phase
 ---
 # N-Phase rolling upgrades on Virtual Machine Scale Sets (Preview)
 
-N-Phase rolling upgrades enables you to select which virtual machines are placed into each batch when performing a rolling upgrade. Additionally, N-Phase upgrades enable you to skip upgrades on specific virtual machines during the rolling upgrade process. 
-
 > [!NOTE]
 >**N-Phase rolling upgrades Virtual Machine Scale Sets is currently in preview.** Previews are made available to you on the condition that you agree to the [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Some aspects of these features may change prior to general availability (GA).
 
+
+N-Phase rolling upgrades enables you to select which virtual machines are placed into each batch when performing a rolling upgrade. Additionally, N-Phase upgrades enable you to skip upgrades on specific virtual machines during the rolling upgrade process. 
 
 ## Requirements
 
