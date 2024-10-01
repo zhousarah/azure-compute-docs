@@ -159,12 +159,11 @@
     - name: Rolling upgrades with MaxSurge
       href: virtual-machine-scale-sets-maxsurge.md
     - name: N-Phase rolling upgrades
-      href: virtual-machine-scale-sets-n-phase-rolling-upgrades.md
+      href: virtual-machine-scale-sets-n-phase-upgrades.md
     - name: Performing manual upgrades
       href: virtual-machine-scale-sets-perform-manual-upgrades.md
     - name: Reimage a virtual machine
       href: virtual-machine-scale-sets-reimage-virtual-machine.md
-
   - name: Common management tasks
     items:
     - name: Use the Azure CLI
