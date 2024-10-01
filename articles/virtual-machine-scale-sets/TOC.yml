@@ -152,6 +152,20 @@
     maintainContext: true
   - name: Proximity placement groups
     href: proximity-placement-groups.md
+  - name: Common management tasks
+    items:
+    - name: Use the Azure CLI
+      href: virtual-machine-scale-sets-manage-cli.md
+    - name: Use Azure PowerShell
+      href: virtual-machine-scale-sets-manage-powershell.md
+    - name: Using DSC and scale sets
+      href: virtual-machine-scale-sets-dsc.md
+    - name: Scale set templates
+      href: virtual-machine-scale-sets-mvss-start.md
+    - name: Deploy your application
+      href: virtual-machine-scale-sets-deploy-app.md
+    - name: Custom image templates
+      href: virtual-machine-scale-sets-mvss-custom-image.md
   - name: Upgrade Policies
     items:
     - name: Overview
@@ -182,20 +196,6 @@
       href: virtual-machine-scale-sets-extension-sequencing.md
     - name: Application Health extension
       href: virtual-machine-scale-sets-health-extension.md
-  - name: Common management tasks
-    items:
-    - name: Use the Azure CLI
-      href: virtual-machine-scale-sets-manage-cli.md
-    - name: Use Azure PowerShell
-      href: virtual-machine-scale-sets-manage-powershell.md
-    - name: Using DSC and scale sets
-      href: virtual-machine-scale-sets-dsc.md
-    - name: Scale set templates
-      href: virtual-machine-scale-sets-mvss-start.md
-    - name: Deploy your application
-      href: virtual-machine-scale-sets-deploy-app.md
-    - name: Custom image templates
-      href: virtual-machine-scale-sets-mvss-custom-image.md
   - name: Azure Compute Gallery
     items: 
     - name: Overview
