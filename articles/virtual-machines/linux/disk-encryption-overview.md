@@ -64,8 +64,8 @@ Linux server distributions that are not endorsed by Azure do not support Azure D
 
 | Publisher | Offer | SKU | URN | Volume type supported for encryption |
 | --- | --- |--- | --- | --- |
-| Canonical | Ubuntu | 24.04-LTS | Canonical:0001-com-ubuntu-server-jammy:24_04-lts:latest | OS and data disk |
-| Canonical | Ubuntu | 24.04-LTS Gen2 | Canonical:0001-com-ubuntu-server-jammy:24_04-lts-gen2:latest | OS and data disk |
+| Canonical | Ubuntu | 24.04-LTS | Canonical:ubuntu-24_04-lts-daily:server-gen1:latest | OS and data disk |
+| Canonical | Ubuntu | 24.04-LTS Gen 2| Canonical:ubuntu-24_04-lts:server:latest | OS and data disk |
 | Canonical | Ubuntu | 22.04-LTS | Canonical:0001-com-ubuntu-server-jammy:22_04-lts:latest | OS and data disk |
 | Canonical | Ubuntu | 22.04-LTS Gen2 | Canonical:0001-com-ubuntu-server-jammy:22_04-lts-gen2:latest | OS and data disk |
 | Canonical | Ubuntu | 20.04-LTS | Canonical:0001-com-ubuntu-server-focal:20_04-lts:latest | OS and data disk |
@@ -93,7 +93,7 @@ Linux server distributions that are not endorsed by Azure do not support Azure D
 | Oracle | Oracle Linux 8.5 | 8.5 | Oracle:Oracle-Linux:ol85-lvm:latest | OS and data disk (see note below) |
 | Oracle | Oracle Linux 8.5 Gen 2 | 8.5 | Oracle:Oracle-Linux:ol85-lvm-gen2:latest | OS and data disk (see note below) |
 | RedHat | RHEL 9.4 | 9.4 | RedHat:RHEL:9_4:latest | OS and data disk (see note below) |
-| RedHat | RHEL 9.4 Gen 2 | 9.4 | RedHat:RHEL:94-gen2:latest | OS and data disk (see note below) |
+| RedHat | RHEL 9.4 Gen 2 | 9.4 | RedHat:RHEL:94_gen2:latest | OS and data disk (see note below) |
 | RedHat | RHEL 9.3 | 9.3 | RedHat:RHEL:9_3:latest | OS and data disk (see note below) |
 | RedHat | RHEL 9.3 Gen 2 | 9.3 | RedHat:RHEL:93-gen2:latest | OS and data disk (see note below) |
 | RedHat | RHEL 9.2 | 9.2 | RedHat:RHEL:9_2:latest | OS and data disk (see note below) |
