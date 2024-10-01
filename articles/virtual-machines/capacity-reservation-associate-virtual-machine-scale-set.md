@@ -122,7 +122,6 @@ ARM templates let you deploy groups of related resources. In a single template, 
 To associate a Virtual Machine Scale Set with a Capacity Reservation Group, see the following ARM template. Replace the resource names with your own. The following example creates a VM scale set of SKU D2s_v3 and associates to a capacity reservation group.
 
 
-
  ```json
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
