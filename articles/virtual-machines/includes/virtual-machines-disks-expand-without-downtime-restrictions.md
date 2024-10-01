@@ -5,7 +5,7 @@
  author: roygara
  ms.service: azure-virtual-machines
  ms.topic: include
- ms.date: 09/06/2024
+ ms.date: 09/30/2024
  ms.author: rogarana
  ms.custom: include file, references_regions
 ---    
@@ -26,8 +26,6 @@
 > See the [Supplemental Terms of Use for Microsoft Azure Previews](
 https://azure.microsoft.com/support/legal/preview-supplemental-terms/)
 for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
-
-Currently, you can sign up for a public preview for expanding Ultra Disks and Premium SSD v2 disks without downtimes [here.](https://aka.ms/DDLiveResizeCustomerSurvey)
 
 The preview has the following additional limitations:
 - You can't expand a disk while a [background copy](../scripts/create-managed-disk-from-snapshot.md#performance-impact---background-copy-process) of data is also occurring on that disk, like when a disk is being hydrated from snapshots.

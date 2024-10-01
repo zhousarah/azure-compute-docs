@@ -32,6 +32,7 @@ As a public preview, you can switch existing disks to Premium SSD v2 disks the s
 
 The preview allowing direct switching to Premium SSD v2 disks has some additional limitations and regional restrictions:
 
+- This preview is available in all regions except West US 2, EastUS, and West Europe.
 - You can't switch an OS disk to a Premium SSD v2 disk.
 - Existing disks can only be directly switched to 512 sector size Premium SSD v2 disks.
 - You can only perform 50 conversions at the same time per subscription per region.
@@ -47,17 +48,6 @@ The preview allowing direct switching to Premium SSD v2 disks has some additiona
 - Until the conversion process from your previous disk type to Premium SSD v2 is completed, the performance of the disk is degraded, and you can't change or rotate customer-managed keys for the disk if they're in use.
     - You can use the following command to check the conversion process, replace `$diskName` and `$resourceGroupName` with your values: `az disk show -n $diskName  -g  $resourceGroupName --query [completionPercent] -o tsv`
 
-
-This preview is currently only available in the following regions:
-
-- Central US
-- East US 2
-- US West
-- North Europe
-- East Asia
-- Southeast Asia
-- Central India
-- France Central
 
 > [!NOTE]
 > If you're using Azure Backup and you convert a disk to Premium SSD v2, a full snapshot is taken of the new disk. This is a billable event and you'll be charged for that snapshot.
