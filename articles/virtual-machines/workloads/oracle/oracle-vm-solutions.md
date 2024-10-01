@@ -1,6 +1,6 @@
 ---
-title: Oracle solutions on Azure virtual machines | Microsoft Docs
-description: Learn about supported configurations and limitations of Oracle virtual machine images on Microsoft Azure.
+title: Oracle virtual machine images and their deployment on Microsoft Azure
+description: Learn about Oracle virtual machine images and their deployment to Microsoft Azure.
 author: jjaygbay1
 ms.service: oracle-on-azure
 ms.custom:
@@ -9,7 +9,7 @@ ms.topic: article
 ms.date: 04/11/2023
 ms.author: jacobjaygbay
 ---
-# Oracle VM images and their deployment on Microsoft Azure
+# Oracle virtual machine images and their deployment on Microsoft Azure
 
 **Applies to:** :heavy_check_mark: Linux VMs
 

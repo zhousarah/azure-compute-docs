@@ -99,14 +99,13 @@ From this example accumulation of Minutes Not Available, here's the calculation 
     - NV-series, v3 and newer
     - NVadsA10_v5 series
     - NGads V620_v1 series
-- Support for the following VM series for capacity reservation is in public preview:
     - M-series, v2
     - M-series, v3
+- Support for the following VM series for capacity reservation is in public preview:
     - Lsv2
-
-   For the preceding M series, at VM deployment, you can set an FD count of one by using Virtual Machine Scale Sets. A deployment with more than one FD fails to deploy against a capacity reservation.
 - Support for other VM series isn't currently available:
     - M series, v1
+    - M series, HM and VHM
     - ND-series 
     - Hb-series 
     - Hc-series 
