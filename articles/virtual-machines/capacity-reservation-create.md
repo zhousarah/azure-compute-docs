@@ -359,7 +359,6 @@ Alternatively, you can remove the *zone* information to create a regional Capaci
                 "name": "[parameters('SKU')]",
                 "capacity":"[parameters('quantityReserved')]"
             }
-           
         }
     ]
 }
