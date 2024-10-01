@@ -158,12 +158,24 @@
       href: virtual-machine-scale-sets-configure-rolling-upgrades.md 
     - name: Rolling upgrades with MaxSurge
       href: virtual-machine-scale-sets-maxsurge.md
-    - name: N-Phase rolling upgrades
+    - name: N-Phase rolling upgrades (preview)
       href: virtual-machine-scale-sets-n-phase-upgrades.md
     - name: Performing manual upgrades
       href: virtual-machine-scale-sets-perform-manual-upgrades.md
     - name: Reimage a virtual machine
       href: virtual-machine-scale-sets-reimage-virtual-machine.md
+  - name: Extensions
+    items:
+    - name: Extensions Overview
+      href: ../virtual-machines/extensions/overview.md
+      maintainContext: true
+    - name: Automatic extension upgrade 
+      href: ../virtual-machines/automatic-extension-upgrade.md
+      maintainContext: true
+    - name: Extension sequencing on scale sets
+      href: virtual-machine-scale-sets-extension-sequencing.md
+    - name: Application Health extension
+      href: virtual-machine-scale-sets-health-extension.md
   - name: Common management tasks
     items:
     - name: Use the Azure CLI
@@ -211,18 +223,6 @@
       maintainContext: true
   - name: Proximity placement groups
     href: proximity-placement-groups.md
-  - name: Extensions
-    items:
-    - name: Extensions Overview
-      href: ../virtual-machines/extensions/overview.md
-      maintainContext: true
-    - name: Automatic extension upgrade 
-      href: ../virtual-machines/automatic-extension-upgrade.md
-      maintainContext: true
-    - name: Extension sequencing on scale sets
-      href: virtual-machine-scale-sets-extension-sequencing.md
-    - name: Application Health extension
-      href: virtual-machine-scale-sets-health-extension.md
 - name: Monitoring
   items:
   - name: Monitor virtual machines
