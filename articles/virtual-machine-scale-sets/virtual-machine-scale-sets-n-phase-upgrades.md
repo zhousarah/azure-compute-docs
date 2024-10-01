@@ -1,0 +1,60 @@
+---
+title: N-Phase rolling upgrades on Virtual Machine Scale Sets (Preview)
+description: Learn about how to configure N-Phase rolling upgrades on Virtual Machine Scale Sets.
+author: mimckitt
+ms.author: mimckitt
+ms.topic: how-to
+ms.service: azure-virtual-machine-scale-sets
+ms.date: 9/25/2024
+ms.reviewer: ju-shim
+ms.custom: upgradepolicy, N-Phase
+---
+# N-Phase rolling upgrades on Virtual Machine Scale Sets (Preview)
+
+> [!NOTE]
+>**N-Phase rolling upgrades Virtual Machine Scale Sets is currently in preview.** Previews are made available to you on the condition that you agree to the [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Some aspects of these features may change prior to general availability (GA).
+
+
+N-Phase rolling upgrades enables you to select which virtual machines are placed into each batch when performing a rolling upgrade. Additionally, N-Phase upgrades enable you to skip upgrades on specific virtual machines during the rolling upgrade process. 
+
+## Requirements
+
+When using N-Phase rolling upgrades on Virtual Machine Scale Sets, the scale set must also use the [Application Health Extension](virtual-machine-scale-sets-health-extension.md) to monitor application health and report phase ordering information. 
+
+## Concepts
+
+A phase is a high-level grouping construct for virtual machines. Each phase is determined by setting metadata emitted from the [Application Health Extension](virtual-machine-scale-sets-health-extension.md). N-Phase rolling upgrades take the information retrieved from the application health extension and use it to create upgrade batches within each phase. N-Phase rolling upgrades also uses update domains (UD), fault domains (FD) and zone information to ensure that each batch doesn't cross a boundary. This helps to further ensure resiliency when performing upgrades. 
+
+The phased upgrades are performed in numerical sequence order. Until all the batches in the first phase are upgraded, the virtual machines in the following phases remain untouched. 
+
+:::image type="content" source="./media/upgrade-policy/n-phase-regional-scale-set.png" alt-text="Diagram that shows a high level diagram of what happens when using n-phase upgrades on a regional scale set.":::
+
+
+:::image type="content" source="./media/upgrade-policy/n-phase-zonal-scale-set.png" alt-text="Diagram that shows a high level diagram of what happens when using n-phase upgrades on a zonal scale set.":::
+
+
+Each virtual machine responds to the application health extension probes with response body contents containing metadata key-value pairs. This metadata is set by the customer and tells the platform how each virtual machine should interact with Rolling Upgrades. If no phase ordering metadata is received, the batches are determined by the scale set. 
+
+To specify phase number the virtual machine should be associated with, use `phaseOrderingNumber` parameter.  
+
+```HTTP
+{
+     “applicationHealthState”: “Healthy”,
+      “customMetrics”: "{ \"rollingUpgrade\": { \"SkipUpgrade\": false, \"PhaseOrderingNumber\": 0 } }"
+}
+```
+
+For skipping an upgrade on a virtual machine, use `SkipUpgrade` parameter. This tells the rolling upgrade to skip over this virtual machine when performing the upgrades.  
+
+```HTTP
+{
+     “applicationHealthState”: “Healthy”,
+      “customMetrics”: "{ \"rollingUpgrade\": { \"SkipUpgrade\": true, \"PhaseOrderingNumber\": 1 } }"
+}
+```
+
+Once you have successfully configured the application health extension and custom metrics on each virtual machine, when a rolling upgrade is initiated, the virtual machines are placed into their designated phases and each phase inherits the rolling upgrade policy associated with the scale set. For more information on the rolling upgrade policy, see [configuring the rolling upgrade policy](virtual-machine-scale-sets-configure-rolling-upgrades.md) for Virtual Machine Scale Sets. 
+
+
+## Next steps
+Learn how to [perform manual upgrades](virtual-machine-scale-sets-perform-manual-upgrades.md) on Virtual Machine Scale Sets. 

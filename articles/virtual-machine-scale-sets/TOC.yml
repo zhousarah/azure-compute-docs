@@ -143,26 +143,15 @@
   items: 
   - name: Modify a scale set
     href: virtual-machine-scale-sets-upgrade-scale-set.md
+  - name: Understand instance IDs
+    href: virtual-machine-scale-sets-instance-ids.md
+  - name: Manage fault domains
+    href: virtual-machine-scale-sets-manage-fault-domains.md
   - name: Relocate to another region
     href: /azure/operational-excellence/relocation-virtual-machine-scale-sets
     maintainContext: true
-  - name: Upgrade Policies
-    items:
-    - name: Overview
-      href: virtual-machine-scale-sets-upgrade-policy.md
-    - name: Setting the upgrade policy
-      href: virtual-machine-scale-sets-set-upgrade-policy.md
-    - name: Changing the upgrade policy
-      href: virtual-machine-scale-sets-change-upgrade-policy.md
-    - name: Configure rolling upgrade policy
-      href: virtual-machine-scale-sets-configure-rolling-upgrades.md 
-    - name: Rolling upgrades with MaxSurge
-      href: virtual-machine-scale-sets-maxsurge.md
-    - name: Performing manual upgrades
-      href: virtual-machine-scale-sets-perform-manual-upgrades.md
-    - name: Reimage a virtual machine
-      href: virtual-machine-scale-sets-reimage-virtual-machine.md
-
+  - name: Proximity placement groups
+    href: proximity-placement-groups.md
   - name: Common management tasks
     items:
     - name: Use the Azure CLI
@@ -177,10 +166,36 @@
       href: virtual-machine-scale-sets-deploy-app.md
     - name: Custom image templates
       href: virtual-machine-scale-sets-mvss-custom-image.md
-  - name: Manage fault domains in scale sets
-    href: virtual-machine-scale-sets-manage-fault-domains.md
-  - name: Understand instance IDs
-    href: virtual-machine-scale-sets-instance-ids.md
+  - name: Upgrade Policies
+    items:
+    - name: Overview
+      href: virtual-machine-scale-sets-upgrade-policy.md
+    - name: Setting the upgrade policy
+      href: virtual-machine-scale-sets-set-upgrade-policy.md
+    - name: Changing the upgrade policy
+      href: virtual-machine-scale-sets-change-upgrade-policy.md
+    - name: Configure rolling upgrade policy
+      href: virtual-machine-scale-sets-configure-rolling-upgrades.md 
+    - name: Rolling upgrades with MaxSurge
+      href: virtual-machine-scale-sets-maxsurge.md
+    - name: N-Phase rolling upgrades (preview)
+      href: virtual-machine-scale-sets-n-phase-upgrades.md
+    - name: Performing manual upgrades
+      href: virtual-machine-scale-sets-perform-manual-upgrades.md
+    - name: Reimage a virtual machine
+      href: virtual-machine-scale-sets-reimage-virtual-machine.md
+  - name: Extensions
+    items:
+    - name: Extensions Overview
+      href: ../virtual-machines/extensions/overview.md
+      maintainContext: true
+    - name: Automatic extension upgrade 
+      href: ../virtual-machines/automatic-extension-upgrade.md
+      maintainContext: true
+    - name: Extension sequencing on scale sets
+      href: virtual-machine-scale-sets-extension-sequencing.md
+    - name: Application Health extension
+      href: virtual-machine-scale-sets-health-extension.md
   - name: Azure Compute Gallery
     items: 
     - name: Overview
@@ -208,20 +223,6 @@
     - name: Managed Run Commands for Windows
       href: ../virtual-machines/windows/run-command-managed.md
       maintainContext: true
-  - name: Proximity placement groups
-    href: proximity-placement-groups.md
-  - name: Extensions
-    items:
-    - name: Extensions Overview
-      href: ../virtual-machines/extensions/overview.md
-      maintainContext: true
-    - name: Automatic extension upgrade 
-      href: ../virtual-machines/automatic-extension-upgrade.md
-      maintainContext: true
-    - name: Extension sequencing on scale sets
-      href: virtual-machine-scale-sets-extension-sequencing.md
-    - name: Application Health extension
-      href: virtual-machine-scale-sets-health-extension.md
 - name: Monitoring
   items:
   - name: Monitor virtual machines
