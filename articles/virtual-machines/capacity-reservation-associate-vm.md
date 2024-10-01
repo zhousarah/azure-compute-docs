@@ -116,7 +116,6 @@ To associate a VM with a Capacity Reservation Group, see the following ARM templ
 
 Alternatively, you can remove the *zone* information to create a regional VM and associate to a Capacity Reservation Group.
 
-
  ```json
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
