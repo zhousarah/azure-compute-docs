@@ -123,7 +123,7 @@ To confirm that ***VM watch*** was enabled on this VM, navigate back to the Over
 > The code segment is identical for both Windows and Linux except for the value of the parameter `<application health extension type`> passed in to the Extension Type.
 >
 > Please replace
-> `<application health extension type>` with `"ApplicationHealthLinux"` for Linux and `"ApplicationHealthWindows"` for Windows installations respectively.  
+> `<application health extension type>` with `"ApplicationHealthLinux"` for Linux and `"ApplicationHealthWindows"` for Windows installations.  
 
 #### [CLI](#tab/cli-2)
 ```
@@ -182,7 +182,8 @@ Update-AzVmssInstance -ResourceGroupName $vmScaleSetResourceGroup `
                             "publisher": "Microsoft.ManagedServices",  
                             "type": "<application health extension type>",  
                             "typeHandlerVersion": "2.0",  
-                            "autoUpgradeMinorVersion": true,  
+                            "autoUpgradeMinorVersion": true,
+                            "enableAutomaticUpgrade": true,
                             "settings": {  
                                 "vmWatchSettings": {  
                                     "enabled": true  
