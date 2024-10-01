@@ -1,5 +1,5 @@
 ---
-title: NVads-V710 v-5 size series
+title: NVads V710 v5 size series
 description: Information on and specifications of the NVads-V710 v-5-series sizes
 author: iamwilliew
 ms.service: azure-virtual-machines
@@ -10,7 +10,7 @@ ms.author: wwilliams
 ms.reviewer: mattmcinnes
 ---
 
-# NVads-V710 v-5 sizes series
+# NVads V710 v5-series (Preview)
 
 [!INCLUDE [nvadsv710-v5-summary](./includes/nvadsv710-v5-summary.md)]
 
