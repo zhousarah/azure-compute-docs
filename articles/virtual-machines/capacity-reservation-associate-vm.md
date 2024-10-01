@@ -114,7 +114,7 @@ ARM templates let you deploy groups of related resources. In a single template, 
 
 To associate a VM with a Capacity Reservation Group, see the following ARM template. Replace the resource names with your own. The following example creates a VM of SKU D2s_v3 and associates it to a capacity reservation group.
 
-Alternatively, you can remove the *zone* information to create a regional VM and associate to a Capacity Reservation Group.
+Alternatively, you can remove the *zone* information to create a regional VM and associate it to a Capacity Reservation Group.
 
  ```json
 {
