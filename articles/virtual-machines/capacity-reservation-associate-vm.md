@@ -215,7 +215,6 @@ Alternatively, you can remove the *zone* information to create a regional VM and
             }
         }
     },
-
     "variables": {
         "storageAccountName": "[concat('bootdiags', uniquestring(resourceGroup().id))]",
         "nicName": "myVMNic",
