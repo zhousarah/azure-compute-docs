@@ -19,7 +19,7 @@ This article steps through requesting a container group from a standby pool for 
 
 ## Prerequisites
 
-Before utilizing standby pools, complete the feature registration and configure role based access controls mentioned in [Create a standby pool](container-instances-standby-pool-create.md). 
+Before utilizing standby pools, complete the feature registration and configure role based access controls mentioned in the [create a standby pool](container-instances-standby-pool-create.md) article. 
 
 
 ## Limitations

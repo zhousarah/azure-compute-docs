@@ -89,7 +89,7 @@ New-AzContainerGroupProfile `
     -Name myContainerGroupProfile `
     -Location "West Central US"  `
     -OsType Linux `
-    -Image $"mcr.microsoft.com/azuredocs/aci-helloworld:latest" `
+    -Image "mcr.microsoft.com/azuredocs/aci-helloworld:latest" `
     -Cpu 1 `
     -MemoryInGB 1.5 `
     -Ports 8000 `
@@ -238,8 +238,7 @@ resource containerGroup 'Microsoft.ContainerInstance/containerGroups@2023-05-15-
 Create a container group profile using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update)
 
 ```HTTP
-PUT
-PUT https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile?api-version=2023-05-15-preview   
+https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile?api-version=2023-05-15-preview   
 
 Request Body
 {
@@ -387,7 +386,6 @@ resource standbyPool 'Microsoft.standbypool/standbyContainerGroupsPools@2024-03-
 Create a standby pool and associate it with a container group profile using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update)
 
 ```HTTP
-PUT
 https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool?api-version=2023-12-01-preview 
  
 Request Body
