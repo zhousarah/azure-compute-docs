@@ -168,6 +168,8 @@
       href: container-instances-standby-pool-overview.md
     - name: Create a standby pool
       href: container-instances-standby-pool-create.md
+    - name: Request a container from a standby pool
+      href: container-instances-standby-pool-request-container.md
   - name: Monitor and log
     items:
     - name: Monitor Container Instances
