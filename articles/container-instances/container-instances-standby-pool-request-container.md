@@ -174,16 +174,16 @@ Request a container group from a standby pool using [az deployment group create]
 Request a container group from a standby pool using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
 
 ```bicep
-param subscriptionId string
-param resourceGroup string
-param location string
-param containerGroupName string
-param standbyPoolName string
-param containerGroupProfileName string
-param myContainerProfile string
-param newKey string
-param newValue string
-param revisionNumber int
+param subscriptionId string = {subscriptionId}
+param resourceGroup string = "myResourceGroup"
+param location string = "West Central US"
+param containerGroupName string = "myContainerGroup"
+param standbyPoolName string = "myStandbyPool" 
+param containerGroupProfileName string = "myContainerGroupProfile"
+param myContainerProfile string = "myContainerGroupProfile"
+param newKey string = {newKey}
+param newValue string = {newValue}
+param revisionNumber int = 1
 
 resource containerGroup 'Microsoft.ContainerInstance/containerGroups@2023-05-01' = {
   name: containerGroupName
@@ -225,10 +225,10 @@ Request Body
    "location": "{location}",
    "properties": {
        "standByPoolProfile":{
-               "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/{standbyPoolName}"
+               "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool"
            },
            "containerGroupProfile": {
-               "id": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.ContainerInstance/containerGroupProfiles/{containerGroupProfileName}",
+               "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile",
                "revision": {revisionNumber}
            },
            "containers": [
