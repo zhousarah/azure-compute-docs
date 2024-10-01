@@ -25,10 +25,10 @@ When using N-Phase rolling upgrades on Virtual Machine Scale Sets, the scale set
 
 A phase is a high-level grouping construct for VMs which is determined by customers setting metadata emitted to the app health extension. It is a way to communicate from runtime to control plane on which phase a VM will belong. Rolling Upgrade will decide on batches of VMs based on Update Domains (UD), Fault Domains (FD) and/or Zones to ensure that each batch does not cross a phase boundary. Batching will be performed within each of the phases. The phased upgrades are performed in numerical sequence order . Meaning that until all the batches in the first phase are upgraded, none of the VMs in second phase will be touched.
 
-:::image type="content" source="./media/upgrade-policy/n-phase-regional-scale-set-upgrade.png" alt-text="Diagram that shows a high level diagram of what happens when using n-phase upgrades on a zonal scale set.":::
+:::image type="content" source="./media/upgrade-policy/n-phase-regional-scale-set.png" alt-text="Diagram that shows a high level diagram of what happens when using n-phase upgrades on a regional scale set.":::
 
 
-:::image type="content" source="./media/upgrade-policy/n-phase-zonal-scale-set-upgrade.png" alt-text="Diagram that shows a high level diagram of what happens when using n-phase upgrades on a zonal scale set.":::
+:::image type="content" source="./media/upgrade-policy/n-phase-zonal-scale-set.png" alt-text="Diagram that shows a high level diagram of what happens when using n-phase upgrades on a zonal scale set.":::
 
 
 To determine the phase number for the VM, the customer needs to leverage The Application Health Extension. Each VM will respond to probes with response body contents containing metadata key-value pairs. This metadata will tell the platform how each VM should interact with Rolling Upgrades. 
