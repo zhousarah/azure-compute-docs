@@ -37,7 +37,7 @@ Each virtual machine responds to the application health extension probes with re
 
 To specify phase number the virtual machine should be associated with, use `phaseOrderingNumber` parameter.  
 
-```
+```HTTP
 {
      “applicationHealthState”: “Healthy”,
       “customMetrics”: "{ \"rollingUpgrade\": { \"SkipUpgrade\": false, \"PhaseOrderingNumber\": 0 } }"
@@ -46,7 +46,7 @@ To specify phase number the virtual machine should be associated with, use `phas
 
 For skipping an upgrade on a virtual machine, use `SkipUpgrade` parameter. This tells the rolling upgrade to skip over this virtual machine when performing the upgrades.  
 
-```
+```HTTP
 {
      “applicationHealthState”: “Healthy”,
       “customMetrics”: "{ \"rollingUpgrade\": { \"SkipUpgrade\": true, \"PhaseOrderingNumber\": 1 } }"
