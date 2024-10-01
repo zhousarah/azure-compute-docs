@@ -25,7 +25,7 @@ When using N-Phase rolling upgrades on Virtual Machine Scale Sets, the scale set
 
 A phase is a high-level grouping construct for virtual machines. Each phase is determined by setting metadata emitted from the [Application Health Extension](virtual-machine-scale-sets-health-extension.md). N-Phase rolling upgrades take the information retrieved from the application health extension and use it to create upgrade batches within each phase. N-Phase rolling upgrades also uses update domains (UD), fault domains (FD) and zone information to ensure that each batch doesn't cross a boundary. This helps to further ensure resiliency when performing upgrades. 
 
-The phased upgrades are performed in numerical sequence order.Until all the batches in the first phase are upgraded, the virtual machines in the following phases remain untouched. 
+The phased upgrades are performed in numerical sequence order. Until all the batches in the first phase are upgraded, the virtual machines in the following phases remain untouched. 
 
 :::image type="content" source="./media/upgrade-policy/n-phase-regional-scale-set.png" alt-text="Diagram that shows a high level diagram of what happens when using n-phase upgrades on a regional scale set.":::
 
