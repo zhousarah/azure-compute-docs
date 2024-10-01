@@ -23,9 +23,9 @@ When using N-Phase rolling upgrades on Virtual Machine Scale Sets, the scale set
 
 ## Concepts
 
-A phase is a high-level grouping construct for virtual machines. Each phase is determined by setting metadata emitted from the [Application Health Extension](virtual-machine-scale-sets-health-extension.md). N-Phase rolling upgrades will take the information retrieved from the application health extension and use it to create upgrade batches within each phase. N-Phase rolling upgrades will also take into considerations the Update Domains (UD), Fault Domains (FD) and/or Zones to ensure that each batch does not cross a boundary. This helps to further ensure resiliency when performing upgrades. 
+A phase is a high-level grouping construct for virtual machines. Each phase is determined by setting metadata emitted from the [Application Health Extension](virtual-machine-scale-sets-health-extension.md). N-Phase rolling upgrades will take the information retrieved from the application health extension and use it to create upgrade batches within each phase. N-Phase rolling upgrades will also take into consideration the Update Domains (UD), Fault Domains (FD) and/or Zones to ensure that each batch does not cross a boundary. This helps to further ensure resiliency when performing upgrades. 
 
-The phased upgrades are performed in numerical sequence order. Meaning that until all the batches in the first phase are upgraded, none of the VMs in second phase will be touched.
+The phased upgrades are performed in numerical sequence order. Meaning that until all the batches in the first phase are upgraded, none of the virtual machines in second phase will be touched.
 
 :::image type="content" source="./media/upgrade-policy/n-phase-regional-scale-set.png" alt-text="Diagram that shows a high level diagram of what happens when using n-phase upgrades on a regional scale set.":::
 
@@ -33,9 +33,9 @@ The phased upgrades are performed in numerical sequence order. Meaning that unti
 :::image type="content" source="./media/upgrade-policy/n-phase-zonal-scale-set.png" alt-text="Diagram that shows a high level diagram of what happens when using n-phase upgrades on a zonal scale set.":::
 
 
-To determine the phase number for the VM, the customer needs to leverage The Application Health Extension. Each VM will respond to probes with response body contents containing metadata key-value pairs. This metadata will tell the platform how each VM should interact with Rolling Upgrades. 
+Each virtual machine will respond to the application health extension probes with response body contents containing metadata key-value pairs. This metadata is set by the customer and will tell the platform how each virtual machine should interact with Rolling Upgrades. If no phase ordering metadata is received, the batches will be determined by the scale set. 
 
-To specify phase number, use “phaseOrderingNumber” which is a platform understood key. 
+To specify phase number the virtual machine should be associated with, use “phaseOrderingNumber” parameter.  
 
 ```
 {
@@ -44,7 +44,7 @@ To specify phase number, use “phaseOrderingNumber” which is a platform under
 }
 ```
 
-For skipping an upgrade on a VM, customer can emit "rollingUpgrade.SkipUpgrade” : true and RollingUpgrader will not upgrade the VM. 
+For skipping an upgrade on a virtual machine, use "SkipUpgrade" parameter. This will tell the rolling upgrade to skip over this virtual machine when performing the upgrades.  
 
 ```
 {
