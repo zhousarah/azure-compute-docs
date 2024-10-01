@@ -211,13 +211,14 @@ On Successful installation, navigate to the [Azure Portal](https://portal.azure.
 :::image type="content" source="./media/vm-watch/linux-azure-vmss.png" alt-text="Screenshot of the Linux VMSS installation.":::
 ---
 
-To confirm that ***VM watch*** was enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the configuration exists in the JSON
+To confirm that ***VM watch*** was enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the configuration exists in the JSON.
 
 ```
   "settings": {  
       "vmWatchSettings": {  
           "enabled": true  
       }
+  }
 ```
 ## Next Steps
 
