@@ -143,9 +143,13 @@
   items: 
   - name: Modify a scale set
     href: virtual-machine-scale-sets-upgrade-scale-set.md
+  - name: Understand instance IDs
+    href: virtual-machine-scale-sets-instance-ids.md
   - name: Relocate to another region
     href: /azure/operational-excellence/relocation-virtual-machine-scale-sets
     maintainContext: true
+  - name: Proximity placement groups
+    href: proximity-placement-groups.md
   - name: Upgrade Policies
     items:
     - name: Overview
@@ -192,8 +196,6 @@
       href: virtual-machine-scale-sets-mvss-custom-image.md
   - name: Manage fault domains in scale sets
     href: virtual-machine-scale-sets-manage-fault-domains.md
-  - name: Understand instance IDs
-    href: virtual-machine-scale-sets-instance-ids.md
   - name: Azure Compute Gallery
     items: 
     - name: Overview
@@ -221,8 +223,6 @@
     - name: Managed Run Commands for Windows
       href: ../virtual-machines/windows/run-command-managed.md
       maintainContext: true
-  - name: Proximity placement groups
-    href: proximity-placement-groups.md
 - name: Monitoring
   items:
   - name: Monitor virtual machines
