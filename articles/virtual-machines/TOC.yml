@@ -406,7 +406,7 @@
         - name: Msv3 and Mdsv3 High Memory series
           href: ./sizes/memory-optimized/msv3-mdsv3-high-memory-series.md
         - name: Mdsv3 Very High Memory Series
-          href: ./sizes/memory-optimized/mv3-very-high-memory-series.md
+          href: ./sizes/memory-optimized/mdsv3-very-high-memory-series.md
       - name: Constrained vCPUs
         href: constrained-vcpu.md
     - name: Storage optimized
