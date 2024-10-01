@@ -171,7 +171,6 @@ Alternatively, you can remove the *zone* information to create a regional VM and
                 "description": "SKU for the Public IP used to access the Virtual Machine."
             }
         },
-
         "OSVersion": {
             "type": "string",
             "defaultValue": "2019-Datacenter",
