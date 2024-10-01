@@ -145,6 +145,8 @@
     href: virtual-machine-scale-sets-upgrade-scale-set.md
   - name: Understand instance IDs
     href: virtual-machine-scale-sets-instance-ids.md
+  - name: Manage fault domains
+    href: virtual-machine-scale-sets-manage-fault-domains.md
   - name: Relocate to another region
     href: /azure/operational-excellence/relocation-virtual-machine-scale-sets
     maintainContext: true
@@ -194,8 +196,6 @@
       href: virtual-machine-scale-sets-deploy-app.md
     - name: Custom image templates
       href: virtual-machine-scale-sets-mvss-custom-image.md
-  - name: Manage fault domains in scale sets
-    href: virtual-machine-scale-sets-manage-fault-domains.md
   - name: Azure Compute Gallery
     items: 
     - name: Overview
