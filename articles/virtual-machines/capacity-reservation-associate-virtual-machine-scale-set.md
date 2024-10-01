@@ -119,7 +119,7 @@ An [Azure Resource Manager template (ARM template)](/azure/azure-resource-mana
 
 ARM templates let you deploy groups of related resources. In a single template, you can create capacity reservation group and capacity reservations. You can deploy templates through the Azure portal, the Azure CLI, or Azure PowerShell, or from continuous integration/continuous delivery (CI/CD) pipelines.
 
-To associate a virtual machine scale set with Capacity Reservation Group, see below ARM Template. Replace the resource names with your own. The following example creates a virtual machine scale set of SKU D2s_v3 and associates to a capacity reservation group.
+To associate a Virtual Machine Scale Set with a Capacity Reservation Group, see the following ARM template. Replace the resource names with your own. The following example creates a VM scale set of SKU D2s_v3 and associates to a capacity reservation group.
 
 
 
