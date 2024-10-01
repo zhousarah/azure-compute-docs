@@ -49,10 +49,10 @@ Users can enable VM watch with ease via [ARM template](/azure/azure-resource-man
 ---
  ### 2. Ensure VM is installed
  
-For more information on how to create a VM and/or VM scale set see [Quickstart guide](/azure/virtual-machines/windows/quick-create-portal)
+For more information on how to create a VM and/or VM scale set see [Quickstart guide - Windows](/azure/virtual-machines/windows/quick-create-portal) for Windows and [Quickstart guide - Linux]() for Linux.
 
 > [!Important]
-> If Application health extension is already installed on the VM, ensure the settings `autoUpgradeMinorVersion` is set to `true` and `enableAutomaticUpgrade` is set to `true`
+> If Application health extension is already installed on the VM, ensure the settings `autoUpgradeMinorVersion` is set to `true` and `enableAutomaticUpgrade` is set to `true`.
  
 ## Installing VM watch on Azure Virtual Machines
 
@@ -60,11 +60,11 @@ For more information on how to create a VM and/or VM scale set see [Quickstart g
 > The code segment is identical for both Windows and Linux except for the value of the parameter `<application health extension type`> passed in to the Extension Type.
 >
 > Please replace
-> `<application health extension type>` with `"ApplicationHealthLinux"` for Linux and `"ApplicationHealthWindows"` for Windows installations respectively. 
+> `<application health extension type>` with `"ApplicationHealthLinux"` for Linux and `"ApplicationHealthWindows"` for Windows installations. 
 
 #### [CLI](#tab/cli-1)
 ```
-az vm extension set --resource-group <your resource group> --vm-name <your vm name> --name <application health extension type> --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true 
+az vm extension set --resource-group <your resource group> --vm-name <your vm name> --name <application health extension type> --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable-auto-upgrade true 
 ```
 #### [PowerShell](#tab/powershell-1)
 ```
@@ -76,7 +76,7 @@ Set-AzVMExtension -ResourceGroupName "<your resource group>" -Location "<your vm
         "type": "Microsoft.Compute/virtualMachines/extensions", 
         "apiVersion": "2019-07-01", 
         "name": "[concat('<your vm name>', '/', '<your extension name')]", 
-        "location": "[parameters('<your vm region>')]", 
+        "location": "<your vm region>", 
         "dependsOn": [ 
             "[resourceId('Microsoft.Compute/virtualMachines', parameters('<your vm name>'))]" 
         ], 
@@ -106,13 +106,14 @@ On Successful installation, navigate to the [Azure Portal](https://portal.azure.
 
 :::image type="content" source="./media/vm-watch/linux-azure-vm.png" alt-text="Screenshot of the Linux VM installation.":::
 
-To confirm that ***VM watch*** was enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the configuration exists in the JSON
+To confirm that ***VM watch*** was enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the configuration exists in the JSON.
 
 ```
   "settings": {  
       "vmWatchSettings": {  
           "enabled": true  
       }
+  }
 ```
 ---
 
@@ -126,7 +127,7 @@ To confirm that ***VM watch*** was enabled on this VM, navigate back to the Over
 
 #### [CLI](#tab/cli-2)
 ```
-az vmss extension set --resource-group '<your resource group name>' --vmss-name '<your vm scale set name>' --name <application health extension type> --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable auto upgrade true
+az vmss extension set --resource-group '<your resource group name>' --vmss-name '<your vm scale set name>' --name <application health extension type> --publisher Microsoft.ManagedServices --version 2.0 --settings '{"vmWatchSettings": {"enabled": true}}' --enable-auto-upgrade true
 ```
 #### [PowerShell](#tab/powershell-2)
 ```
@@ -168,9 +169,9 @@ Update-AzVmssInstance -ResourceGroupName $vmScaleSetResourceGroup `
 
 ```
    "type": "Microsoft.Compute/virtualMachineScaleSets",
-   "apiVersion": "[parameters('vmss_api_version')]",
-   "name": "[variables('<your vm scale set name>')]",
-   "location": "[resourceGroup().location]",  
+   "apiVersion": "2024-07-01",
+   "name": "<your vm scale set name>",
+   "location": "<your vm region>",  
    "properties": {  
         "virtualMachineProfile": {
             "extensionProfile": {
