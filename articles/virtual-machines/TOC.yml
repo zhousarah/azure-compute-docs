@@ -479,7 +479,7 @@
         - name: ND-H100-v5 series
           href: ./sizes/gpu-accelerated/ndh100v5-series.md
         - name: ND-H200-v5 series
-          href: ./sizes/gpu-accelerated/ndh200v5-series.md
+          href: ./sizes/gpu-accelerated/nd-h200-v5-series.md
         - name: ND-MI300X-v5 series
           href: ./sizes/gpu-accelerated/ndmi300xv5-series.md
       - name: NG family
