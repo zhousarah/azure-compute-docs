@@ -18,8 +18,8 @@ N-Phase rolling upgrades enables you to select which virtual machines are placed
 
 ## Requirements
 
-- When using N-Phase rolling upgrades on Virtual Machine Scale Sets, the scale set must also use the [Application Health Extension with Rich Health States](virtual-machine-scale-sets-health-extension.md) to monitor application health and report phase ordering information. N-Phase upgrades is not supported when using the application health extension with binary states. 
-- N-Phase upgrades requires the application health extension to emit a HTTP or HTTPs response. TCP responses are not supported. 
+- When using N-Phase rolling upgrades on Virtual Machine Scale Sets, the scale set must also use the [Application Health Extension with Rich Health States](virtual-machine-scale-sets-health-extension.md) to monitor application health and report phase ordering information. N-Phase upgrades aren't supported when using the application health extension with binary states. 
+- N-Phase upgrades require the application health extension to emit an HTTP or HTTPs response. TCP responses aren't supported. 
 
 
 ## Concepts
@@ -60,7 +60,7 @@ Once you have successfully configured the application health extension and custo
 
 ### Install the application health extension
 
-The extension requires at a minimum either an "http" or "https" request with an associated port or request path respectively. TCP probes are also supported, but cannot set the `ApplicationHealthState` through the probe response body and do not have access to the *Unknown* state.
+The extension requires at a minimum either an "http" or "https" request with an associated port or request path respectively. TCP probes are also supported, but can't set the `ApplicationHealthState` through the probe response body and don't have access to the *Unknown* state.
 
 | Name | Value / Example | Data Type |
 | ---- | --------------- | --------- |
@@ -68,7 +68,7 @@ The extension requires at a minimum either an "http" or "https" request with an 
 | port | Optional when protocol is `http` or `https`, mandatory when protocol is `tcp` | int |
 | requestPath | Mandatory when protocol is `http` or `https`, not allowed when protocol is `tcp` | string |
 | intervalInSeconds | Optional, default is 5 seconds. This setting is the interval between each health probe. For example, if intervalInSeconds == 5, a probe is sent to the local application endpoint once every 5 seconds. | int |
-| numberOfProbes | Optional, default is 1. This setting is the number of consecutive probes required for the health status to change. For example, if numberOfProbles == 3, you will need 3 consecutive "Healthy" signals to change the health status from "Unhealthy"/"Unknown" into "Healthy" state. The same requirement applies to change health status into "Unhealthy" or "Unknown" state.  | int |
+| numberOfProbes | Optional, default is 1. This setting is the number of consecutive probes required for the health status to change. For example, if numberOfProbles == 3, you need 3 consecutive "Healthy" signals to change the health status from "Unhealthy"/"Unknown" into "Healthy" state. The same requirement applies to change health status into "Unhealthy" or "Unknown" state.  | int |
 | gracePeriod | Optional, default = `intervalInSeconds` * `numberOfProbes`; maximum grace period is 7200 seconds | int |
 
 #### [Azure CLI](#tab/azure-cli)
@@ -98,7 +98,7 @@ The extension.json file content.
   "gracePeriod": <healthExtensionGracePeriod>
 }
 ```
-**Upgrade the VMs to install the extension.**
+**Upgrade the virtual machines.**
 
 ```azurecli-interactive
 az vmss update-instances \
@@ -183,7 +183,7 @@ PUT on `/subscriptions/subscription_id/resourceGroups/myResourceGroup/providers/
 ```
 Use `PATCH` to edit an already deployed extension.
 
-**Upgrade the VMs to install the extension.**
+**Upgrade the virtual machines in the scale set.**
 
 ```
 POST on `/subscriptions/<subscriptionId>/resourceGroups/<myResourceGroup>/providers/Microsoft.Compute/virtualMachineScaleSets/< myScaleSet >/manualupgrade?api-version=2022-08-01`
@@ -201,15 +201,15 @@ POST on `/subscriptions/<subscriptionId>/resourceGroups/<myResourceGroup>/provid
 Configuring the application health extension response can be accomplished in many different ways. It can be integrated into existing applications, dynamically updated and be used along side various functions to provide an output based on a specific situation. 
 
 #### Example 1
-This sample app will configure a health state based on the assigned Availability Zone of the VM. For best results, please create a VMSS with 2 or more availability zones. This application requires PowerShell and is recommended for Windows VMs.
+This sample app configures a health state based on the assigned availability zone of the virtual machine. For best results, create a virtual machine scale set with two or more availability zones. This application requires PowerShell and is recommended for Windows virtual machines.
 
-The VM health states will be set based on the following:
+The virtual machine health states are set based on the following:
 
 Zone 1 ==> "Healthy"
 Zone 2 ==> "Unhealthy"
 Zone 3 ==> "Unknown"
 
-You can use Custom Script Extension to run [start.ps1](https://github.com/Azure-Samples/application-health-samples/blob/main/Rich%20Health%20States/powershell-demo/start.ps1) on your VM, it will then download application.ps1 and start emitting HTTP health probe responses to "http://localhost:8000/".
+You can use Custom Script Extension to run [start.ps1](https://github.com/Azure-Samples/application-health-samples/blob/main/Rich%20Health%20States/powershell-demo/start.ps1) on your virtual machine, it then downloads application.ps1 and start emitting HTTP health probe responses to "http://localhost:8000/".
 
 ```powershell
 New-NetFirewallRule -DisplayName 'HTTP(S) Inbound' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('8000')
@@ -231,7 +231,7 @@ function GenerateResponseJson()
     # During grace period, Health Signal ==> Initializing
     # After grace period if application still communicates "Invalid", Health Signal ==> "Unknown" ~ "Unhealthy"
 
-    # In this demo: If VM is in zone 1 ==> "Healthy" status, zone 2 ==> "Unhealthy" status, other zones ==> "Unknown" status
+    # In this demo: If a virtual machine is in zone 1 ==> "Healthy" status, zone 2 ==> "Unhealthy" status, other zones ==> "Unknown" status
     $appHealthState = if (1 -eq $zone) { "Healthy" } elseif (2 -eq $zone) { "Unhealthy" } else { "Invalid" } 
 
     $hashTable = @{
@@ -265,7 +265,7 @@ $Hso.Stop()
 
 
 #### Example 2
-This sample will create a listener which can respond to the health extension calls and will skip an upgrade for instance 1.
+This sample creates a listener which can respond to the health extension calls and skips an upgrade for instance 1.
 
 
 ```powershell
