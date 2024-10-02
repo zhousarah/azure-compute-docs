@@ -37,7 +37,6 @@ vCPUs (Qty.) and Memory for each size
 |---|---|---|
 | **Standard_NM16ads_MA35D** | 16 | 32 |
 
----
 
 ## VM Basics resources 
 
@@ -96,7 +95,7 @@ Accelerator (GPUs, FPGAs, etc.) info for each size
 |---|---|---|
 | **Standard_NM16ads_MA35D** | 1 | 8 |
 
-  
+ ---
 
 ## Other size information 
 
