@@ -59,10 +59,9 @@ Network interface info for each size
 | **Standard_NM16ads_MA35D** | 1 | 4000 |
 
 ### Networking resources
+- [Virtual networks and virtual machines in Azure](/azure/virtual-network/network-overview) 
 
-[Virtual networks and virtual machines in Azure](/azure/virtual-network/network-overview) 
-
-[Virtual machine network bandwidth](/azure/virtual-network/virtual-machine-network-throughput) 
+- [Virtual machine network bandwidth](/azure/virtual-network/virtual-machine-network-throughput) 
 
 ### [Accelerators](#tab/Accelerators) 
 
