@@ -33,7 +33,7 @@ vCPUs (Qty.) and Memory for each size
 ### VM Basics resources 
 - [Check vCPU quotas](/azure/virtual-machines/quotas) 
 
-### [Local Storage](#tab/Local Storage) 
+### [Local Storage](#tab/LocalStorage) 
 
 Local (temp) storage info for each size 
 
