@@ -15,6 +15,17 @@ The NMads MA35D-Series virtual machines are Azure's first SKU to offer specializ
 
 Compared with existing general-purpose CPU or GPU based solutions, the NMads MA35D-Series VM SKU provides much higher throughout and lower latency while maintaining a significantly lower TCO for customers. The VM series presents a huge opportunity to save on infrastructure costs and improve performance and efficiency on video transcoding. Additionally, the VM provides access to modern codecs such as AV1 to further improve efficiency for video processing. It is the ideal choice for running your video transcoding workloads on the cloud. 
 
+## Host specifications
+
+| Part | Quantity <br><sup>Count Units | Specs <br><sup>SKU ID, Performance Units, etc.  |
+|---|---|---|
+| Processor      |  192 vCPUs     | AMD EPYC (Genoa) [x86-64] |
+| Memory         |  768 GiB        |    |
+| Local Storage  |  3 Disk         | 2TB E1.S NVMe per disk |
+| Remote Storage |  8-16 Disks        |  |
+| Network        |  5 NICs        |  |
+| Accelerators   |  10 MA35D cards/20 VPUs           | AMD Xilinx Alveo MA35D   |
+
 ## Feature support 
 
 [Premium Storage](/azure/virtual-machines/premium-storage-performance): Supported <br>[Premium Storage caching](/azure/virtual-machines/premium-storage-performance): Supported <br>[Live Migration](/azure/virtual-machines/maintenance-and-updates): Not Supported <br>[Memory Preserving Updates](/azure/virtual-machines/maintenance-and-updates): Not Supported <br>[VM Generation 2 Support](/azure/virtual-machines/generation-2): Supported <br>[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported <br>[Ephemeral OS Disk](/azure/virtual-machines/ephemeral-os-disks): Supported <br>[Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Not Supported 
