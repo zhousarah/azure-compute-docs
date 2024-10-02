@@ -227,6 +227,143 @@ An [Azure Resource Manager template (ARM template)](/azure/azure-resource-mana
 
 ARM templates let you deploy groups of related resources. In a single template, you can create a capacity reservation group and capacity reservations. You can deploy templates through the Azure portal, the Azure CLI, or Azure PowerShell, or from continuous integration/continuous delivery (CI/CD) pipelines.
 
+To create a zonal Capacity Reservation Group, see the following ARM template. Replace the resource names with your own. The following example creates a capacity reservation group called `myZonalCapacityReservationGroup` with capacity reservations of SKU D2s_v3 in all three zones.
+
+Alternatively, you can remove the *zone* information to create a regional Capacity Reservation Group.
+
+
+ ```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "type":"string",
+            "defaultValue": "[resourceGroup().location]",
+            "metadata": {
+                "description": "Azure region for the resource"
+            }
+        },
+          "Zones": {
+            "type":"array",
+            "defaultValue": ["1","2","3"],
+            "metadata": {
+                "description": "Zone(s) to use for Capacity Reservation Group"
+            }
+        },
+        "CRGName": {
+            "type":"string",
+            "defaultValue": "myZonalCapacityReservationGroup",
+            "metadata": {
+                "description": "Name of Capacity Reservation Group"
+            }
+        },
+        "CR1Name": {
+            "type":"string",
+            "defaultValue": "myCapacityReservation1",
+            "metadata": {
+                "description": "Name of Capacity Reservation 1"
+            }
+        },
+        "CR1Zone": {
+            "type":"array",
+            "defaultValue": ["1"],
+            "metadata": {
+                "description": "Zone of Capacity Reservation 1"
+            }
+        },
+        "CR2Name": {
+            "type":"string",
+            "defaultValue": "myCapacityReservation2",
+            "metadata": {
+                "description": "Name of Capacity Reservation 2"
+            }
+        },
+         "CR2Zone": {
+            "type":"array",
+            "defaultValue": ["2"],
+            "metadata": {
+                "description": "Zone of Capacity Reservation 2"
+            }
+        },
+        "CR3Name": {
+            "type":"string",
+            "defaultValue": "myCapacityReservation3",
+            "metadata": {
+                "description": "Name of Capacity Reservation 3"
+            }
+        },
+         "CR3Zone": {
+           "type":"array",
+            "defaultValue": ["3"],
+            "metadata": {
+                "description": "Zone of Capacity Reservation 3"
+            }
+        },
+        "SKU": {
+            "type": "string",
+            "defaultValue": "Standard_D2s_v3",
+            "metadata": {
+                "description": "VM size to be reserved. Customers are allowed to create reservations for different VM sizes for every capacity reservation within a capacity reservation group"
+            }
+        },
+         "quantityReserved": {
+            "type": "string",
+            "defaultValue": "2",
+            "metadata": {
+                "description": "Quantity of VMs to be reserved across all three Capacity Reservation. Customers are allowed to reserve different quantities across all 3 reservations"
+            }
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Compute/capacityReservationGroups",
+            "name": "[parameters('CRGName')]",
+            "apiVersion": "2020-06-01",
+            "location": "[parameters('location')]",
+            "zones": "[parameters('Zones')]"    
+        },
+        {
+            "type": "Microsoft.Compute/capacityReservationGroups/capacityReservations",
+            "name": "[concat(parameters('CRGName'),'/',parameters('CR1Name'))]",
+            "apiVersion": "2020-06-01",
+            "location": "[parameters('location')]",
+            "zones": "[parameters('CR1Zone')]",  
+            "dependsOn": ["[concat('Microsoft.Compute/capacityReservationGroups','/',parameters('CRGName'))]"],
+            "sku":{
+                "name": "[parameters('SKU')]",
+                "capacity":"[parameters('quantityReserved')]"
+            }  
+        },
+        {
+            "type": "Microsoft.Compute/capacityReservationGroups/capacityReservations",
+            "name": "[concat(parameters('CRGName'),'/',parameters('CR2Name'))]",
+            "apiVersion": "2020-06-01",
+            "location": "[parameters('location')]",
+            "zones": "[parameters('CR2Zone')]",
+            "dependsOn": ["[concat('Microsoft.Compute/capacityReservationGroups','/',parameters('CRGName'))]"],
+            "sku":{
+                "name": "[parameters('SKU')]",
+                "capacity":"[parameters('quantityReserved')]"
+            }
+        },
+        {
+            "type": "Microsoft.Compute/capacityReservationGroups/capacityReservations",
+            "name": "[concat(parameters('CRGName'),'/',parameters('CR3Name'))]",
+            "apiVersion": "2020-06-01",
+            "location": "[parameters('location')]",
+            "zones": "[parameters('CR3Zone')]", 
+            "dependsOn": ["[concat('Microsoft.Compute/capacityReservationGroups','/',parameters('CRGName'))]"],
+            "sku":{
+                "name": "[parameters('SKU')]",
+                "capacity":"[parameters('quantityReserved')]"
+            }
+        }
+    ]
+}
+```
+
 --- 
 <!-- The three dashes above show that your section of tabbed content is complete. Do not remove them :) -->
 
