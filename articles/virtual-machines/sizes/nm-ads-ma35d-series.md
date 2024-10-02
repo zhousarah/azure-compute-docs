@@ -29,7 +29,7 @@ Compared with existing general-purpose CPU or GPU based solutions, the NMads MA3
 
 [Accelerators](/azure/virtual-machines/sizes/gpu-accelerated/ngadsv620-series) 
 
-[#tab/Basics] 
+### [Basics](#tab/Basics) 
 
 vCPUs (Qty.) and Memory for each size 
 
@@ -45,7 +45,7 @@ vCPUs (Qty.) and Memory for each size
 
  
 
-[#tab/Local Storage] 
+### [Local Storage](#tab/Local Storage) 
 
 Local (temp) storage info for each size 
 
@@ -63,7 +63,7 @@ Local (temp) storage info for each size
 
 [Share an Azure managed disk](/azure/virtual-machines/disks-shared)   
 
-[#tab/Network]
+### [Network](#tab/Network)
 
 Network interface info for each size 
 
@@ -87,7 +87,7 @@ To achieve the expected network performance on Linux or Windows, you may need to
 
  
 
-[#tab/Accelerators] 
+### [Accelerators](#tab/Accelerators) 
 
 Accelerator (GPUs, FPGAs, etc.) info for each size 
 
