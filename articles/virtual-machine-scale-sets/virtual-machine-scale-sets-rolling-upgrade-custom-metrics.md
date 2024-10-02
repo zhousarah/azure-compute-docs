@@ -1,6 +1,6 @@
 ---
-title: N-Phase rolling upgrades on Virtual Machine Scale Sets (Preview)
-description: Learn about how to configure N-Phase rolling upgrades on Virtual Machine Scale Sets.
+title: Rolling upgrades with custom metrics rolling upgrades on Virtual Machine Scale Sets (Preview)
+description: Learn about how to configure Rolling upgrades with custom metrics on Virtual Machine Scale Sets.
 author: mimckitt
 ms.author: mimckitt
 ms.topic: how-to
@@ -9,20 +9,23 @@ ms.date: 9/25/2024
 ms.reviewer: ju-shim
 ms.custom: upgradepolicy, N-Phase
 ---
-# N-Phase rolling upgrades on Virtual Machine Scale Sets (Preview)
+# Rolling upgrades with custom metrics on Virtual Machine Scale Sets (Preview)
 
 > [!NOTE]
->**N-Phase rolling upgrades Virtual Machine Scale Sets is currently in preview.** Previews are made available to you on the condition that you agree to the [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Some aspects of these features may change prior to general availability (GA).
+>**Rolling upgrades with custom metrics on Virtual Machine Scale Sets is currently in preview.** Previews are made available to you on the condition that you agree to the [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Some aspects of these features may change prior to general availability (GA).
 
-N-Phase rolling upgrades enables you to select which virtual machines are placed into each batch when performing a rolling upgrade. Additionally, N-Phase upgrades enable you to skip upgrades on specific virtual machines during the rolling upgrade process. 
+Rolling upgrades with custom metrics enables you to utilize the application health extension to emit custom metrics to your Virtual Machine Scale Set. These custom metrics can be used to tell the scale set the order in which virtual machines should be updated when a rolling upgrade is triggered. The custom metrics can also inform your scale set when an upgrade should be skipped on a specific instance. This allows you to have more control over the ordering and the update process itself. 
+
+Rolling upgrades with custom metrics can be used combined with other rolling upgrade functionality such as Automatic OS upgrades, Automatic Extension upgrades and MaxSurge rolling upgrades. 
 
 ## Requirements
 
-When using N-Phase rolling upgrades on Virtual Machine Scale Sets, the scale set must also use the [Application Health Extension with Rich Health States](virtual-machine-scale-sets-health-extension.md) to monitor application health and report phase ordering information. N-Phase upgrades aren't supported when using the application health extension with binary states. 
+When using Rolling upgrades with custom metrics on Virtual Machine Scale Sets, the scale set must also use the [Application Health Extension with Rich Health States](virtual-machine-scale-sets-health-extension.md) to monitor application health and report phase ordering or skip upgrade information. Rolling upgrades with custom metrics upgrades aren't supported when using the application health extension with binary states. 
 
 ## Concepts
 
-A phase is a high-level grouping construct for virtual machines. Each phase is determined by setting metadata emitted from the [Application Health Extension](virtual-machine-scale-sets-health-extension.md). N-Phase rolling upgrades take the information retrieved from the application health extension and use it to create upgrade batches within each phase. N-Phase rolling upgrades also uses update domains (UD), fault domains (FD), and zone information to ensure that each batch doesn't cross a boundary. This helps to further ensure resiliency when performing upgrades. 
+### Phase Ordering
+A phase is a high-level grouping construct for virtual machines. Each phase is determined by setting metadata emitted from the [Application Health Extension](virtual-machine-scale-sets-health-extension.md). Rolling upgrades with custom metrics take the information retrieved from the application health extension and use it to create upgrade batches within each phase. Rolling upgrades with custom metrics  upgrades also uses update domains (UD), fault domains (FD), and zone information to ensure that each batch doesn't cross a boundary. This helps to further ensure resiliency when performing upgrades. 
 
 The phased upgrades are performed in numerical sequence order. Until all the batches in the first phase are upgraded, the virtual machines in the following phases remain untouched. 
 
@@ -39,21 +42,33 @@ To specify phase number the virtual machine should be associated with, use `phas
 ```HTTP
 {
      “applicationHealthState”: “Healthy”,
-      “customMetrics”: "{ \"rollingUpgrade\": { \"SkipUpgrade\": false, \"PhaseOrderingNumber\": 0 } }"
+      “customMetrics”: "{ \"rollingUpgrade\": { \"PhaseOrderingNumber\": 0 } }"
 }
 ```
+
+Once you have successfully configured the application health extension and custom metrics on each virtual machine, when a rolling upgrade is initiated, the virtual machines are placed into their designated phases and each phase inherits the rolling upgrade policy associated with the scale set. For more information on the rolling upgrade policy, see [configuring the rolling upgrade policy](virtual-machine-scale-sets-configure-rolling-upgrades.md) for Virtual Machine Scale Sets. 
+
+### Skip Upgrade
+
+Skip upgrade functionality enables a individual instance to be omitted from the upgrade during a rolling upgrade. This is similar to utilizing instance protection but can more seamlessly integrate into the rolling upgrade workflow as well as into instance level applications. When the rolling upgrade is triggered, the Virtual Machine Scale Set will check the response of the application health extensions custom metrics and if skip upgrade is set to true, the instance will not be touched during the rolling upgrade. 
 
 For skipping an upgrade on a virtual machine, use `SkipUpgrade` parameter. This tells the rolling upgrade to skip over this virtual machine when performing the upgrades.  
 
 ```HTTP
 {
      “applicationHealthState”: “Healthy”,
-      “customMetrics”: "{ \"rollingUpgrade\": { \"SkipUpgrade\": true, \"PhaseOrderingNumber\": 1 } }"
+      “customMetrics”: "{ \"rollingUpgrade\": { \"SkipUpgrade\": true} }"
 }
 ```
 
-Once you have successfully configured the application health extension and custom metrics on each virtual machine, when a rolling upgrade is initiated, the virtual machines are placed into their designated phases and each phase inherits the rolling upgrade policy associated with the scale set. For more information on the rolling upgrade policy, see [configuring the rolling upgrade policy](virtual-machine-scale-sets-configure-rolling-upgrades.md) for Virtual Machine Scale Sets. 
+Skip upgrade and phase order can also be used together: 
 
+```HTTP
+{
+     “applicationHealthState”: “Healthy”,
+      “customMetrics”: "{ \"rollingUpgrade\": { \"SkipUpgrade\": false, \"PhaseOrderingNumber\": 0 } }"
+}
+```
 ## Configure the application health extension
 
 The application health extension requires an HTTP or HTTPS request with an associated port or request path. TCP probes are also supported, but can't set the `ApplicationHealthState` through the probe response body and don't have access to the *Unknown* state.

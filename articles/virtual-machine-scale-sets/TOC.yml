@@ -178,8 +178,8 @@
       href: virtual-machine-scale-sets-configure-rolling-upgrades.md 
     - name: Rolling upgrades with MaxSurge
       href: virtual-machine-scale-sets-maxsurge.md
-    - name: N-Phase rolling upgrades (preview)
-      href: virtual-machine-scale-sets-n-phase-upgrades.md
+    - name: Rolling upgrades with custom metrics (preview)
+      href: virtual-machine-scale-sets-rolling-upgrade-custom-metrics.md
     - name: Performing manual upgrades
       href: virtual-machine-scale-sets-perform-manual-upgrades.md
     - name: Reimage a virtual machine
