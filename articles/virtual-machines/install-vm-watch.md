@@ -95,12 +95,12 @@ On Successful installation, navigate to the [Azure Portal](https://portal.azure.
 
 **Windows**
 
-:::image type="content" source="/media/vm-watch/windows-vm-watch-vm.png" alt-text="Screenshot of the Windows VM installation.":::
+:::image type="content" source="./media/windows-vm-watch-vm.png" alt-text="Screenshot of the Windows VM installation.":::
 
 
 **Linux**
 
-:::image type="content" source="/media/vm-watch/linux-vm-watch-vm.png" alt-text="Screenshot of the Linux VM installation.":::
+:::image type="content" source="./media/linux-vm-watch-vm.png" alt-text="Screenshot of the Linux VM installation.":::
 
 To confirm that ***VM watch*** was enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the configuration exists in the JSON.
 
@@ -200,11 +200,11 @@ On Successful installation, navigate to the [Azure portal](https://portal.azure.
 
 **Windows**
 
-:::image type="content" source="/media/vm-watch/windows-vm-watch-vmss.png" alt-text="Screenshot of the Windows Virtual Machine Scale Set installation.":::
+:::image type="content" source="./media/windows-vm-watch-vmss.png" alt-text="Screenshot of the Windows Virtual Machine Scale Set installation.":::
 
 **Linux**
 
-:::image type="content" source="/media/vm-watch/linux-vm-watch-vmss.png" alt-text="Screenshot of the Linux Virtual Machine Scale Set installation.":::
+:::image type="content" source="./media/linux-vm-watch-vmss.png" alt-text="Screenshot of the Linux Virtual Machine Scale Set installation.":::
 ---
 
 To confirm that ***VM watch*** was enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the configuration exists in the JSON.
