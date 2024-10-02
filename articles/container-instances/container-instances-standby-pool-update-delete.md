@@ -45,7 +45,7 @@ az standby-container-group-pool update \
 Update an existing standby pool using [Update-AzStandbyContainerGroupPool](/powershell/module/az.standbypool/new-AzStandbyContainerGroupPool).
 
 ```azurepowershell-interactive
-New-AzStandbyContainerGroupPool `
+Update-AzStandbyContainerGroupPool `
    -ResourceGroup myResourceGroup `
    -Location WestCentralUS `
    -Name myStandbyPool `
@@ -167,8 +167,8 @@ Delete an existing standby pool using [az standby-container-group-pool delete](/
 
 ```azurecli-interactive
 az standby-container-group-pool delete \
-   --resource-group myResourceGroup 
-   --name myStandbyPool \
+   --resource-group myResourceGroup \
+   --name myStandbyPool 
 ```
 ### [PowerShell](#tab/powershell-1)
 Delete an existing standby pool using [Update-AzStandbyContainerGroupPool](/powershell/module/az.standbypool/new-AzStandbyContainerGroupPool).
@@ -176,7 +176,7 @@ Delete an existing standby pool using [Update-AzStandbyContainerGroupPool](/powe
 ```azurepowershell-interactive
 Remove-AzStandbyContainerGroupPool `
    -ResourceGroup myResourceGroup `
-   -Name myStandbyPool `
+   -Name myStandbyPool 
 ```
 
 
