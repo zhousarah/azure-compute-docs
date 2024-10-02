@@ -14,12 +14,13 @@ ms.custom: upgradepolicy, N-Phase
 > [!NOTE]
 >**N-Phase rolling upgrades Virtual Machine Scale Sets is currently in preview.** Previews are made available to you on the condition that you agree to the [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Some aspects of these features may change prior to general availability (GA).
 
-
 N-Phase rolling upgrades enables you to select which virtual machines are placed into each batch when performing a rolling upgrade. Additionally, N-Phase upgrades enable you to skip upgrades on specific virtual machines during the rolling upgrade process. 
 
 ## Requirements
 
-When using N-Phase rolling upgrades on Virtual Machine Scale Sets, the scale set must also use the [Application Health Extension](virtual-machine-scale-sets-health-extension.md) to monitor application health and report phase ordering information. 
+- When using N-Phase rolling upgrades on Virtual Machine Scale Sets, the scale set must also use the [Application Health Extension with Rich Health States](virtual-machine-scale-sets-health-extension.md) to monitor application health and report phase ordering information. N-Phase upgrades is not supported when using the application health extension with binary states. 
+- N-Phase upgrades requires the application health extension to emit a HTTP or HTTPs response. TCP responses are not supported. 
+
 
 ## Concepts
 
@@ -54,6 +55,176 @@ For skipping an upgrade on a virtual machine, use `SkipUpgrade` parameter. This 
 ```
 
 Once you have successfully configured the application health extension and custom metrics on each virtual machine, when a rolling upgrade is initiated, the virtual machines are placed into their designated phases and each phase inherits the rolling upgrade policy associated with the scale set. For more information on the rolling upgrade policy, see [configuring the rolling upgrade policy](virtual-machine-scale-sets-configure-rolling-upgrades.md) for Virtual Machine Scale Sets. 
+
+## Configure the application health extension '
+
+### Install the application health extension
+
+The following JSON shows the schema for the Rich Health States extension. The extension requires at a minimum either an "http" or "https" request with an associated port or request path respectively. TCP probes are also supported, but cannot set the `ApplicationHealthState` through the probe response body and do not have access to the *Unknown* state.
+
+```json
+{
+  "extensionProfile" : {
+     "extensions" : [
+      {
+        "name": "HealthExtension",
+        "properties": {
+          "publisher": "Microsoft.ManagedServices",
+          "type": "<ApplicationHealthLinux or ApplicationHealthWindows>",
+          "autoUpgradeMinorVersion": true,
+          "typeHandlerVersion": "2.0",
+          "settings": {
+            "protocol": "<protocol>",
+            "port": <port>,
+            "requestPath": "</requestPath>",
+            "intervalInSeconds": 5,
+            "numberOfProbes": 1,
+            "gracePeriod": 600
+          }
+        }
+      }
+    ]
+  }
+} 
+```
+
+### Property values
+
+| Name | Value / Example | Data Type |
+| ---- | --------------- | --------- |
+| apiVersion | `2018-10-01` or above | date |
+| publisher | `Microsoft.ManagedServices` | string |
+| type | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | string |
+| typeHandlerVersion | `2.0` | string |
+
+### Settings
+
+| Name | Value / Example | Data Type |
+| ---- | --------------- | --------- |
+| protocol | `http` or `https` or `tcp` | string |
+| port | Optional when protocol is `http` or `https`, mandatory when protocol is `tcp` | int |
+| requestPath | Mandatory when protocol is `http` or `https`, not allowed when protocol is `tcp` | string |
+| intervalInSeconds | Optional, default is 5 seconds. This setting is the interval between each health probe. For example, if intervalInSeconds == 5, a probe is sent to the local application endpoint once every 5 seconds. | int |
+| numberOfProbes | Optional, default is 1. This setting is the number of consecutive probes required for the health status to change. For example, if numberOfProbles == 3, you will need 3 consecutive "Healthy" signals to change the health status from "Unhealthy"/"Unknown" into "Healthy" state. The same requirement applies to change health status into "Unhealthy" or "Unknown" state.  | int |
+| gracePeriod | Optional, default = `intervalInSeconds` * `numberOfProbes`; maximum grace period is 7200 seconds | int |
+
+### Configure the application health extension response
+Configuring the application health extension response can be accomplished in many different ways. It can be integrated into existing applications, dynamically updated and be used along side various functions to provide an output based on a specific situation. 
+
+#### Example 1
+This sample app will configure a health state based on the assigned Availability Zone of the VM. For best results, please create a VMSS with 2 or more availability zones. This application requires PowerShell and is recommended for Windows VMs.
+
+The VM health states will be set based on the following:
+
+Zone 1 ==> "Healthy"
+Zone 2 ==> "Unhealthy"
+Zone 3 ==> "Unknown"
+
+You can use Custom Script Extension to run [start.ps1](https://github.com/Azure-Samples/application-health-samples/blob/main/Rich%20Health%20States/powershell-demo/start.ps1) on your VM, it will then download application.ps1 and start emitting HTTP health probe responses to "http://localhost:8000/".
+
+```powershell
+New-NetFirewallRule -DisplayName 'HTTP(S) Inbound' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('8000')
+$Hso = New-Object Net.HttpListener
+$Hso.Prefixes.Add('http://localhost:8000/')
+$Hso.Start()
+
+function GetZoneFromImds()
+{
+    $imdsObject = Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -Uri "http://169.254.169.254/metadata/instance?api-version=2021-02-01"
+    $zone = $imdsObject.compute.zone
+    return [int]($zone)
+}
+
+function GenerateResponseJson()
+{
+    $zone = GetZoneFromImds
+
+    # During grace period, Health Signal ==> Initializing
+    # After grace period if application still communicates "Invalid", Health Signal ==> "Unknown" ~ "Unhealthy"
+
+    # In this demo: If VM is in zone 1 ==> "Healthy" status, zone 2 ==> "Unhealthy" status, other zones ==> "Unknown" status
+    $appHealthState = if (1 -eq $zone) { "Healthy" } elseif (2 -eq $zone) { "Unhealthy" } else { "Invalid" } 
+
+    $hashTable = @{
+        'ApplicationHealthState' = $appHealthState
+        'CustomMetrics' = @{
+                            'RollingUpgrade' = @{
+                                'SkipUpgrade' = false
+                                'PhaseOrderingNumber' = 1
+                            }
+                        }
+    } 
+    return ($hashTable | ConvertTo-Json)
+}
+
+
+While($Hso.IsListening)
+{
+    $context = $Hso.GetContext()
+    $response = $context.Response
+    $response.StatusCode = 200
+    $response.ContentType = 'application/json'
+    $responseJson = GenerateResponseJson
+    $responseBytes = [System.Text.Encoding]::UTF8.GetBytes($responseJson)
+    $response.OutputStream.Write($responseBytes, 0, $responseBytes.Length)
+    $response.Close()
+}
+
+$Hso.Stop()
+```
+
+
+#### Example 2
+This sample will create a listener which can respond to the health extension calls and will skip an upgrade for instance 1.
+
+
+```powershell
+ New-NetFirewallRule -DisplayName 'HTTP(S) Inbound' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('8000')
+                $Hso = New-Object Net.HttpListener
+                $Hso.Prefixes.Add('http://localhost:8000/')
+                $Hso.Start()
+                function GetVmInstanceIdFromImds()
+                {
+                    $imdsObject = Invoke-RestMethod -Headers @{""Metadata""=""true""} -Method GET -Uri ""http://169.254.169.254/metadata/instance?api-version=2021-02-01""
+                    $vmName = $imdsObject.compute.name
+                    return [int]($vmName.Split('_')[1])
+                }
+                function GenerateResponseJson()
+                {
+                    $numberOfPhases = 3
+                    $vmInstanceId = GetVmInstanceIdFromImds
+                    $skipUpgrade = 1 -eq $vmInstanceId
+                    $appHealthState = ""Healthy""
+                    $phaseOrderingNumber = $numberOfPhases - ($vmInstanceId % $numberOfPhases)
+                    $hashTable = @{
+                        'ApplicationHealthState' = $appHealthState
+                        'CustomMetrics' = @{
+                            'RollingUpgrade' = @{
+                                'SkipUpgrade' = $skipUpgrade
+                                'PhaseOrderingNumber' = $phaseOrderingNumber
+                            }
+                        }
+                    } 
+                    $hashTable.CustomMetrics = ($hashTable.CustomMetrics | ConvertTo-Json)
+                    return ($hashTable | ConvertTo-Json)
+                }
+                While($Hso.IsListening)
+                {
+                    $context = $Hso.GetContext()
+                    $response = $context.Response
+                    $response.StatusCode = 200
+                    $response.ContentType = 'application/json'
+                    $responseJson = GenerateResponseJson
+                    $responseBytes = [System.Text.Encoding]::UTF8.GetBytes($responseJson)
+                    $response.OutputStream.Write($responseBytes, 0, $responseBytes.Length)
+                    $response.Close()
+                }
+                $Hso.Stop()
+```
+
+
+
+For more response configuration examples, see [Application Health Samples](https://github.com/Azure-Samples/application-health-samples)
 
 
 ## Next steps
