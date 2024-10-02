@@ -180,6 +180,6 @@ DELETE https://management.azure.com/subscriptions/{subscriptionId}/resourceGroup
  
 ```
 
-## Next steps
+# Next steps
 
 Learn more about [standby pools for Azure Container Instances](container-instances-standby-pool-overview.md)
