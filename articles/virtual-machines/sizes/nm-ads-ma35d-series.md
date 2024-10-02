@@ -38,7 +38,6 @@ vCPUs (Qty.) and Memory for each size
 |---|---|---|
 | **Standard_NM16ads_MA35D** | 16 | 32 |
 
-
 ## VM Basics resources 
 
 [Check vCPU quotas](/azure/virtual-machines/quotas) 
@@ -83,8 +82,6 @@ Upper limits aren't guaranteed. Limits offer guidance for selecting the right VM
 
 To achieve the expected network performance on Linux or Windows, you may need to select a specific version or optimize your VM. For more information, see [Bandwidth/Throughput testing (NTTTCP)](/azure/virtual-network/virtual-network-bandwidth-testing). 
 
- 
-
 ### [Accelerators](#tab/Accelerators) 
 
 Accelerator (GPUs, FPGAs, etc.) info for each size 
@@ -94,7 +91,7 @@ Accelerator (GPUs, FPGAs, etc.) info for each size
 |---|---|---|
 | **Standard_NM16ads_MA35D** | 1 | 8 |
 
- ---
+---
 
 ## Other size information 
 
