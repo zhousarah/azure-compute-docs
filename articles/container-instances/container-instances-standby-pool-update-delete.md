@@ -127,10 +127,10 @@ resource standbyPool 'Microsoft.standbypool/standbyContainerGroupsPools@2024-03-
 ```
 
 ### [REST](#tab/rest)
-Update an existing standby pool using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update)
+Update an existing standby pool using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update).
 
 ```HTTP
-https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool?api-version=2023-12-01-preview 
+PUT https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool?api-version=2024-03-01 
  
 Request Body
 {
@@ -181,7 +181,7 @@ Remove-AzStandbyContainerGroupPool `
 
 
 ### [REST](#tab/rest)
-Delete an existing standby pool using [Delete](/rest/api/standbypool/standby-virtual-machine-pools/delete)
+Delete an existing standby pool using [Delete](/rest/api/standbypool/standby-virtual-machine-pools/delete).
 
 ```HTTP
 DELETE https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StandbyPool/standbyContainerGroupPools/{standbyContainerGroupPoolName}?api-version=2024-03-01
