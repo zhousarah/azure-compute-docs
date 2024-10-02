@@ -284,7 +284,7 @@ python3 server.py
 
 ```
 
-##### [PowerShell](#tab\powershell)
+##### [PowerShell](#tab/powershell)
 
 ```powershell
  New-NetFirewallRule -DisplayName 'HTTP(S) Inbound' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('8000')
@@ -374,7 +374,7 @@ python3 server.py
 
 ```
 
-##### [PowerShell](#tab\powershell)
+##### [PowerShell](#tab/powershell)
 
 ```powershell
  New-NetFirewallRule -DisplayName 'HTTP(S) Inbound' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('8000')
@@ -464,7 +464,8 @@ python3 server.py
 
 ```
 
-##### [PowerShell](#tab\powershell)
+##### [PowerShell](#tab/powershell)
+##### [PowerShell](#tab/powershell)
 
 ```powershell
  New-NetFirewallRule -DisplayName 'HTTP(S) Inbound' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('8000')
