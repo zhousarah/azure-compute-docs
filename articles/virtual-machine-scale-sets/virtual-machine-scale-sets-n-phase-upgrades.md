@@ -62,31 +62,133 @@ Once you have successfully configured the application health extension and custo
 
 The following JSON shows the schema for the Rich Health States extension. The extension requires at a minimum either an "http" or "https" request with an associated port or request path respectively. TCP probes are also supported, but cannot set the `ApplicationHealthState` through the probe response body and do not have access to the *Unknown* state.
 
+
+
+#### [Azure CLI 2.0](#tab/azure-cli)
+
+Use [az vmss extension set](/cli/azure/vmss/extension#az-vmss-extension-set) to add the Application Health extension to the scale set model definition.
+
+The following example adds the **Application Health - Rich States** extension to the scale set model of a Linux-based scale set.
+
+You can also use this example to upgrade an existing extension from Binary to Rich Health States.
+
+```azurecli-interactive
+az vmss extension set \
+  --name ApplicationHealthLinux \
+  --publisher Microsoft.ManagedServices \
+  --version 2.0 \
+  --resource-group <myVMScaleSetResourceGroup> \
+  --vmss-name <myVMScaleSet> \
+  --settings ./extension.json
+```
+The extension.json file content.
+
 ```json
 {
-  "extensionProfile" : {
-     "extensions" : [
-      {
-        "name": "HealthExtension",
-        "properties": {
-          "publisher": "Microsoft.ManagedServices",
-          "type": "<ApplicationHealthLinux or ApplicationHealthWindows>",
-          "autoUpgradeMinorVersion": true,
-          "typeHandlerVersion": "2.0",
-          "settings": {
-            "protocol": "<protocol>",
-            "port": <port>,
-            "requestPath": "</requestPath>",
-            "intervalInSeconds": 5,
-            "numberOfProbes": 1,
-            "gracePeriod": 600
-          }
-        }
-      }
-    ]
-  }
-} 
+  "protocol": "<protocol>",
+  "port": <port>,
+  "requestPath": "</requestPath>",
+  "gracePeriod": <healthExtensionGracePeriod>
+}
 ```
+**Upgrade the VMs to install the extension.**
+
+```azurecli-interactive
+az vmss update-instances \
+  --resource-group <myVMScaleSetResourceGroup> \
+  --name <myVMScaleSet> \
+  --instance-ids "*"
+```
+
+#### [Azure PowerShell](#tab/azure-powershell)
+
+Use the [Add-AzVmssExtension](/powershell/module/az.compute/add-azvmssextension) cmdlet to add the Application Health extension to the scale set model definition.
+
+The following example adds the **Application Health - Rich States** extension to the `extensionProfile` in the scale set model of a Windows-based scale set. The example uses the new Az PowerShell module.
+
+```azurepowershell-interactive
+# Define the scale set variables
+$vmScaleSetName = "myVMScaleSet"
+$vmScaleSetResourceGroup = "myVMScaleSetResourceGroup"
+
+# Define the Application Health extension properties
+$publicConfig = @{"protocol" = "http"; "port" = 80; "requestPath" = "/healthEndpoint"; "gracePeriod" = 600};
+$extensionName = "myHealthExtension"
+$extensionType = "ApplicationHealthWindows"
+$publisher = "Microsoft.ManagedServices"
+
+# Get the scale set object
+$vmScaleSet = Get-AzVmss `
+  -ResourceGroupName $vmScaleSetResourceGroup `
+  -VMScaleSetName $vmScaleSetName
+
+# Add the Application Health extension to the scale set model
+Add-AzVmssExtension -VirtualMachineScaleSet $vmScaleSet `
+  -Name $extensionName `
+  -Publisher $publisher `
+  -Setting $publicConfig `
+  -Type $extensionType `
+  -TypeHandlerVersion "2.0" `
+  -AutoUpgradeMinorVersion $True
+
+# Update the scale set
+Update-AzVmss -ResourceGroupName $vmScaleSetResourceGroup `
+  -Name $vmScaleSetName `
+  -VirtualMachineScaleSet $vmScaleSet
+  
+# Upgrade instances to install the extension
+Update-AzVmssInstance -ResourceGroupName $vmScaleSetResourceGroup `
+  -VMScaleSetName $vmScaleSetName `
+  -InstanceId '*'
+
+```
+
+
+##### [REST API](#tab/rest-api)
+
+The following example adds the **Application Health - Rich States** extension (with name `myHealthExtension`) to the `extensionProfile` in the scale set model of a Windows-based scale set.
+
+You can also use this example to upgrade an existing extension from Binary to Rich Health States by making a PATCH call instead of a PUT.
+
+```
+PUT on `/subscriptions/subscription_id/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet/extensions/myHealthExtension?api-version=2018-10-01`
+```
+
+```json
+{
+  "name": "myHealthExtension",
+  "location": "<location>",
+  "properties": {
+    "publisher": "Microsoft.ManagedServices",
+    "type": "ApplicationHealthWindows",
+    "autoUpgradeMinorVersion": true,
+    "typeHandlerVersion": "2.0",
+    "settings": {
+      "protocol": "<protocol>",
+      "port": <port>,
+      "requestPath": "</requestPath>",
+      "intervalInSeconds": <intervalInSeconds>,
+      "numberOfProbes": <numberOfProbes>,
+      "gracePeriod": <gracePeriod>
+    }
+  }
+}
+```
+Use `PATCH` to edit an already deployed extension.
+
+**Upgrade the VMs to install the extension.**
+
+```
+POST on `/subscriptions/<subscriptionId>/resourceGroups/<myResourceGroup>/providers/Microsoft.Compute/virtualMachineScaleSets/< myScaleSet >/manualupgrade?api-version=2022-08-01`
+```
+
+```json
+{
+  "instanceIds": ["*"]
+}
+```
+
+---
 
 ### Property values
 
