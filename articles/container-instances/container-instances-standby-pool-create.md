@@ -242,11 +242,11 @@ https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myRes
 
 Request Body
 {
-    "location":"West Central US",
+    "location": "West Central US",
     "properties":{
         "containers": [
         {
-            "name":"myContainerGroupProfile",
+            "name":"mycontainerprofile",
             "properties": {
                 "command":[],
                 "environmentVariables":[],
