@@ -200,7 +200,7 @@ On Successful installation, navigate to the [Azure portal](https://portal.azure.
 
 **Windows**
 
-:::image type="content" source="./sies/media/windows-vm-watch-vmss.png" alt-text="Screenshot of the Windows Virtual Machine Scale Set installation.":::
+:::image type="content" source="./sizes/media/windows-vm-watch-vmss.png" alt-text="Screenshot of the Windows Virtual Machine Scale Set installation.":::
 
 **Linux**
 
