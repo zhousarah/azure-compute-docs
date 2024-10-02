@@ -70,12 +70,12 @@ Network interface info for each size
 
 Accelerator (GPUs, FPGAs, etc.) info for each size 
 
-
 | **Size Name** | **Accelerators (Qty.)** | **Accelerator-Memory (GB)** |
 |---|---|---|
 | **Standard_NM16ads_MA35D** | 1 | 8 |
 
 ---
+
 ### Table definitions
 
 Expected network bandwidth is the maximum aggregated bandwidth allocated per VM type across all NICs, for all destinations. For more information, see [Virtual machine network bandwidth](/azure/virtual-network/virtual-machine-network-throughput) 
