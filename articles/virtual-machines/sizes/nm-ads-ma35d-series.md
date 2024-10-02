@@ -37,7 +37,7 @@ vCPUs (Qty.) and Memory for each size
 |---|---|---|
 | **Standard_NM16ads_MA35D** | 16 | 32 |
 
- 
+---
 
 ## VM Basics resources 
 
