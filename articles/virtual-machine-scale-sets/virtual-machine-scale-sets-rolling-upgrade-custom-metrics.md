@@ -110,7 +110,7 @@ The application health extension requires an HTTP or HTTPS request with an assoc
 
 ### Install the application health extension
 
-#### [Azure CLI](#tab/azure-cli)
+#### [CLI](#tab/azure-cli)
 
 Use [az vmss extension set](/cli/azure/vmss/extension#az-vmss-extension-set) to add the Application Health extension to the scale set model definition.
 
@@ -146,7 +146,7 @@ az vmss update-instances \
   --instance-ids "*"
 ```
 
-#### [Azure PowerShell](#tab/azure-powershell)
+#### [PowerShell](#tab/azure-powershell)
 
 Use the [Add-AzVmssExtension](/powershell/module/az.compute/add-azvmssextension) cmdlet to add the Application Health extension to the scale set model definition.
 
@@ -187,7 +187,7 @@ Update-AzVmssInstance -ResourceGroupName $vmScaleSetResourceGroup `
 
 ```
 
-##### [REST API](#tab/rest-api)
+##### [REST](#tab/rest-api)
 
 Apply the application health extension using [create or update](/rest/api/compute/virtual-machine-scale-set-vm-extensions/create-or-update).
 
@@ -234,6 +234,56 @@ Configuring the application health extension response can be accomplished in man
 #### Example 1: Phase order
 This sample application can be installed on an virtual machine in a scale set to emit the phase belongs to.
 
+#### [Bash](#tab/bash)
+
+```bash
+#!/bin/bash
+
+# Open firewall port (replace with your firewall rules as needed)
+sudo iptables -A INPUT -p tcp --dport 8000 -j ACCEPT
+
+# Create Python HTTP server for responding with JSON
+cat <<EOF > server.py
+import json
+from http.server import BaseHTTPRequestHandler, HTTPServer
+
+# Function to generate the JSON response
+def generate_response_json():
+    return json.dumps({
+        "ApplicationHealthState": "Healthy",
+        "CustomMetrics": {
+            "RollingUpgrade": {
+                "PhaseOrderingNumber": 0
+            }
+        }
+    })
+
+class RequestHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        # Respond with HTTP 200 and JSON content
+        self.send_response(200)
+        self.send_header('Content-type', 'application/json')
+        self.end_headers()
+        response = generate_response_json()
+        self.wfile.write(response.encode('utf-8'))
+
+# Set up the HTTP server
+def run(server_class=HTTPServer, handler_class=RequestHandler):
+    server_address = ('localhost', 8000)
+    httpd = server_class(server_address, handler_class)
+    print('Starting server on port 8000...')
+    httpd.serve_forever()
+
+if __name__ == "__main__":
+    run()
+EOF
+
+# Run the server
+python3 server.py
+
+```
+
+#### [PowerShell](#tab\powershell-1)
 ```powershell
  New-NetFirewallRule -DisplayName 'HTTP(S) Inbound' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('8000')
                 $Hso = New-Object Net.HttpListener
@@ -267,12 +317,61 @@ This sample application can be installed on an virtual machine in a scale set to
                 }
                 $Hso.Stop()
 ```
-
+---
 
 #### Example 2: Skip upgrade
 This sample application can be installed on an virtual machine in a scale set to emit that the instance should be omitted from the upcoming rolling upgrade. 
 
+#### [Bash](#tab/bash)
 
+```bash
+#!/bin/bash
+
+# Open firewall port (replace with your firewall rules as needed)
+sudo iptables -A INPUT -p tcp --dport 8000 -j ACCEPT
+
+# Create Python HTTP server for responding with JSON
+cat <<EOF > server.py
+import json
+from http.server import BaseHTTPRequestHandler, HTTPServer
+
+# Function to generate the JSON response
+def generate_response_json():
+    return json.dumps({
+        "ApplicationHealthState": "Healthy",
+        "CustomMetrics": {
+            "RollingUpgrade": {
+                "SkipUpgrade": "true"
+            }
+        }
+    })
+
+class RequestHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        # Respond with HTTP 200 and JSON content
+        self.send_response(200)
+        self.send_header('Content-type', 'application/json')
+        self.end_headers()
+        response = generate_response_json()
+        self.wfile.write(response.encode('utf-8'))
+
+# Set up the HTTP server
+def run(server_class=HTTPServer, handler_class=RequestHandler):
+    server_address = ('localhost', 8000)
+    httpd = server_class(server_address, handler_class)
+    print('Starting server on port 8000...')
+    httpd.serve_forever()
+
+if __name__ == "__main__":
+    run()
+EOF
+
+# Run the server
+python3 server.py
+
+```
+
+#### [PowerShell](#tab\powershell-1)
 ```powershell
  New-NetFirewallRule -DisplayName 'HTTP(S) Inbound' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('8000')
                 $Hso = New-Object Net.HttpListener
@@ -305,10 +404,63 @@ This sample application can be installed on an virtual machine in a scale set to
                 }
                 $Hso.Stop()
 ```
+---
+
 
 #### Example 3: Combined phase order and skip upgrade
 This sample application includes phase order and skip upgrade parameters into the custom metrics response. 
 
+#### [Bash](#tab/bash)
+
+```bash
+#!/bin/bash
+
+# Open firewall port (replace with your firewall rules as needed)
+sudo iptables -A INPUT -p tcp --dport 8000 -j ACCEPT
+
+# Create Python HTTP server for responding with JSON
+cat <<EOF > server.py
+import json
+from http.server import BaseHTTPRequestHandler, HTTPServer
+
+# Function to generate the JSON response
+def generate_response_json():
+    return json.dumps({
+        "ApplicationHealthState": "Healthy",
+        "CustomMetrics": {
+            "RollingUpgrade": {
+                "PhaseOrderingNumber": 1,
+                "SkipUpgrade": "false"
+            }
+        }
+    })
+
+class RequestHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        # Respond with HTTP 200 and JSON content
+        self.send_response(200)
+        self.send_header('Content-type', 'application/json')
+        self.end_headers()
+        response = generate_response_json()
+        self.wfile.write(response.encode('utf-8'))
+
+# Set up the HTTP server
+def run(server_class=HTTPServer, handler_class=RequestHandler):
+    server_address = ('localhost', 8000)
+    httpd = server_class(server_address, handler_class)
+    print('Starting server on port 8000...')
+    httpd.serve_forever()
+
+if __name__ == "__main__":
+    run()
+EOF
+
+# Run the server
+python3 server.py
+
+```
+
+#### [PowerShell](#tab\powershell-1)
 ```powershell
  New-NetFirewallRule -DisplayName 'HTTP(S) Inbound' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('8000')
                 $Hso = New-Object Net.HttpListener
@@ -342,6 +494,7 @@ This sample application includes phase order and skip upgrade parameters into th
                 }
                 $Hso.Stop()
 ```
+---
 
 For more response configuration examples, see [Application Health Samples](https://github.com/Azure-Samples/application-health-samples)
 
