@@ -1,12 +1,8 @@
 ---
-# Required metadata
-# For more information, see https://review.learn.microsoft.com/en-us/help/platform/learn-editor-add-metadata?branch=main
-# For valid values of ms.service, ms.prod, and ms.topic, see https://review.learn.microsoft.com/en-us/help/platform/metadata-taxonomies?branch=main
-
 title: NMads MA35d
 description: Overview of NMads MA35d virtual machine
-author:      iamwilliew # GitHub alias
-ms.author:   iamwilliew # Microsoft alias
+author:      iamwilliew
+ms.author:   wwilliams
 ms.service: azure-virtual-machines
 ms.topic: conceptual
 ms.date:     10/02/2024
@@ -33,11 +29,9 @@ Compared with existing general-purpose CPU or GPU based solutions, the NMads MA3
 
 [Accelerators](/azure/virtual-machines/sizes/gpu-accelerated/ngadsv620-series) 
 
-[Basics tab] 
+[#tab/Basics] 
 
 vCPUs (Qty.) and Memory for each size 
-
-Expand table 
 
 | **Size Name** | **vCPUs (Qty.)** | **Memory (GB)** |
 |---|---|---|
@@ -51,19 +45,17 @@ Expand table
 
  
 
-[Local Storage tab] 
+[#tab/Local Storage] 
 
 Local (temp) storage info for each size 
-
-Expand table 
 
 | **Size Name** | **OS Disk Size (GB)** | **Temp Disk Size (GB)** |
 |---|---|---|
 | **Standard_NM16ads_MA35D** | 128 | 76 |
 
-\*Full Windows guest OS image is not supported on ephemeral OS disk.
+*Full Windows guest OS image is not supported on ephemeral OS disk.
 
-**Storage resources** 
+### Storage resources
 
 [Introduction to Azure managed disks](/azure/virtual-machines/managed-disks-overview) 
 
@@ -71,23 +63,21 @@ Expand table
 
 [Share an Azure managed disk](/azure/virtual-machines/disks-shared)   
 
-[Network tab]
+[#tab/Network]
 
 Network interface info for each size 
-
-Expand table 
 
 | **Size Name** | **Max NICs (Qty.)** | **Max Bandwidth (Mbps)** |
 |---|---|---|
 | **Standard_NM16ads_MA35D** | 1 | 4000 |
 
-**Networking resources** 
+### Networking resources
 
 [Virtual networks and virtual machines in Azure](/azure/virtual-network/network-overview) 
 
 [Virtual machine network bandwidth](/azure/virtual-network/virtual-machine-network-throughput) 
 
-**Table definitions** 
+## Table definitions
 
 Expected network bandwidth is the maximum aggregated bandwidth allocated per VM type across all NICs, for all destinations. For more information, see [Virtual machine network bandwidth](/azure/virtual-network/virtual-machine-network-throughput) 
 
@@ -97,13 +87,10 @@ To achieve the expected network performance on Linux or Windows, you may need to
 
  
 
-[Accelerators tab] 
+[#tab/Accelerators] 
 
 Accelerator (GPUs, FPGAs, etc.) info for each size 
 
-Expand table 
-
- 
 
 | **Size Name** | **Accelerators (Qty.)** | **Accelerator-Memory (GB)** |
 |---|---|---|
@@ -129,7 +116,7 @@ You can [use the pricing calculator](https://azure.microsoft.com/pricing/calcula
 
 For more information on disk types, see [What disk types are available in Azure?](/azure/virtual-machines/disks-types)
 
-**Next steps** 
+## Next steps 
 
 Learn more about how [Azure compute units (ACU)](/azure/virtual-machines/acu) can help you compare compute performance across Azure SKUs. 
 
