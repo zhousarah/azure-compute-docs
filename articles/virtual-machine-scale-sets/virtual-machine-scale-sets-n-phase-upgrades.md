@@ -58,6 +58,32 @@ Once you have successfully configured the application health extension and custo
 
 The application health extension requires an HTTP or HTTPS request with an associated port or request path. TCP probes are also supported, but can't set the `ApplicationHealthState` through the probe response body and don't have access to the *Unknown* state.
 
+```json
+{
+  "extensionProfile" : {
+     "extensions" : [
+      {
+        "name": "HealthExtension",
+        "properties": {
+          "publisher": "Microsoft.ManagedServices",
+          "type": "<ApplicationHealthLinux or ApplicationHealthWindows>",
+          "autoUpgradeMinorVersion": true,
+          "typeHandlerVersion": "1.0",
+          "settings": {
+            "protocol": "<protocol>",
+            "port": <port>,
+            "requestPath": "</requestPath>",
+            "intervalInSeconds": 5,
+            "numberOfProbes": 1
+          }
+        }
+      }
+    ]
+  }
+}
+```
+
+
 | Name | Value / Example | Data Type |
 | ---- | --------------- | --------- |
 | protocol | `http` or `https` or `tcp` | string |
