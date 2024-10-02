@@ -154,14 +154,6 @@ Request Body
 
 ## Delete a standby pool
 
-### [Portal](#tab/portal-1)
-
-1) Navigate to the resource group your standby pool is in. 
-2) Select the standby pool resource. 
-3) Select **Delete**.
-:::image type="content" source="media/container-instances-standby-pools/delete-aci-pool-portal.png" alt-text="Screenshot showing how to delete a standby pool using the Azure portal.":::
-
-
 ### [CLI](#tab/cli-1)
 Delete an existing standby pool using [az standby-container-group-pool delete](/cli/azure/standby-container-group-pool).
 
