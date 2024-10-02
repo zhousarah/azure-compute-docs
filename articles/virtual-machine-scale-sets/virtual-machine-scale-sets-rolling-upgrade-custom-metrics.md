@@ -16,12 +16,12 @@ ms.custom: upgradepolicy, N-Phase
 
 Rolling upgrades with custom metrics enables you to utilize the application health extension to emit custom metrics to your Virtual Machine Scale Set. These custom metrics can be used to tell the scale set the order in which virtual machines should be updated when a rolling upgrade is triggered. The custom metrics can also inform your scale set when an upgrade should be skipped on a specific instance. This allows you to have more control over the ordering and the update process itself. 
 
-Rolling upgrades with custom metrics can be used combined with other rolling upgrade functionality such as Automatic OS upgrades, Automatic Extension upgrades and MaxSurge rolling upgrades. 
+Rolling upgrades with custom metrics can be used in combination with other rolling upgrade functionality such as Automatic OS upgrades, Automatic Extension upgrades and MaxSurge rolling upgrades. 
 
 ## Requirements
 
 - When using Rolling upgrades with custom metrics on Virtual Machine Scale Sets, the scale set must also use the [Application Health Extension with Rich Health States](virtual-machine-scale-sets-health-extension.md) to monitor application health, and report phase ordering or skip upgrade information. Rolling upgrades with custom metrics upgrades aren't supported when using the application health extension with binary states.
-- The application health extension must be setup to use HTTP or HTTPS in order to receive the custom metrics used to managed the phase order and skip upgrade functionality. TCP is not supported for rolling upgrades with custom metrics. 
+- The application health extension must be setup to use HTTP or HTTPS in order to receive the custom metrics information. TCP isn't supported for rolling upgrades with custom metrics. 
 
 ## Concepts
 
@@ -51,7 +51,7 @@ After successfully configuring the application health extension and custom metri
 
 ### Skip Upgrade
 
-Skip upgrade functionality enables a individual instance to be omitted from the upgrade during a rolling upgrade. This is similar to utilizing instance protection but can more seamlessly integrate into the rolling upgrade workflow and into instance level applications. When the rolling upgrade is triggered, the Virtual Machine Scale Set checks the response of the application health extensions custom metrics and if skip upgrade is set to true, the instance not be included in the rolling upgrade. 
+Skip upgrade functionality enables an individual instance to be omitted from the upgrade during a rolling upgrade. This is similar to utilizing instance protection but can more seamlessly integrate into the rolling upgrade workflow and into instance level applications. When the rolling upgrade is triggered, the Virtual Machine Scale Set checks the response of the application health extensions custom metrics and if skip upgrade is set to true, the instance is not included in the rolling upgrade. 
 
 For skipping an upgrade on a virtual machine, use `SkipUpgrade` parameter. This tells the rolling upgrade to skip over this virtual machine when performing the upgrades.  
 
@@ -72,7 +72,7 @@ Skip upgrade and phase order can also be used together:
 ```
 ## Configure the application health extension
 
-The application health extension requires an HTTP or HTTPS request with an associated port or request path. TCP probes are supported when using the application health extension, but can't set the `ApplicationHealthState` through the probe response body and cannot be used with rolling upgrades with custom metrics. 
+The application health extension requires an HTTP or HTTPS request with an associated port or request path. TCP probes are supported when using the application health extension, but can't set the `ApplicationHealthState` through the probe response body and can't be used with rolling upgrades with custom metrics. 
 
 ```json
 {
@@ -138,7 +138,7 @@ az vmss extension set \
   --settings ./extension.json
 ```
 
-Upgrade the virtual machines in the scale set.This step is only required if your scale set is using a manual upgrade policy. For more information on upgrade policies, see [upgrade policies for Virtual Machine Scale Sets](virtual-machine-scale-sets-upgrade-policy.md)
+Upgrade the virtual machines in the scale set. This step is only required if your scale set is using a manual upgrade policy. For more information on upgrade policies, see [upgrade policies for Virtual Machine Scale Sets](virtual-machine-scale-sets-upgrade-policy.md)
 
 ```azurecli-interactive
 az vmss update-instances \
@@ -233,7 +233,7 @@ Request body
 Configuring the application health extension response can be accomplished in many different ways. It can be integrated into existing applications, dynamically updated and be used along side various functions to provide an output based on a specific situation. 
 
 #### Example 1: Phase order
-This sample application can be installed on an virtual machine in a scale set to emit the phase belongs to.
+This sample application can be installed on a virtual machine in a scale set to emit the phase belongs to.
 
 ##### [Bash](#tab/bash)
 
@@ -322,7 +322,7 @@ python3 server.py
 ---
 
 #### Example 2: Skip upgrade
-This sample application can be installed on an virtual machine in a scale set to emit that the instance should be omitted from the upcoming rolling upgrade. 
+This sample application can be installed on a virtual machine in a scale set to emit that the instance should be omitted from the upcoming rolling upgrade. 
 
 ##### [Bash](#tab/bash)
 
