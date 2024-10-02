@@ -234,7 +234,7 @@ Configuring the application health extension response can be accomplished in man
 #### Example 1: Phase order
 This sample application can be installed on an virtual machine in a scale set to emit the phase belongs to.
 
-#### [Bash](#tab/bash)
+##### [Bash](#tab/bash)
 
 ```bash
 #!/bin/bash
@@ -283,7 +283,7 @@ python3 server.py
 
 ```
 
-#### [PowerShell](#tab\powershell-1)
+##### [PowerShell](#tab\powershell)
 ```powershell
  New-NetFirewallRule -DisplayName 'HTTP(S) Inbound' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('8000')
                 $Hso = New-Object Net.HttpListener
@@ -317,12 +317,13 @@ python3 server.py
                 }
                 $Hso.Stop()
 ```
+
 ---
 
 #### Example 2: Skip upgrade
 This sample application can be installed on an virtual machine in a scale set to emit that the instance should be omitted from the upcoming rolling upgrade. 
 
-#### [Bash](#tab/bash)
+##### [Bash](#tab/bash)
 
 ```bash
 #!/bin/bash
@@ -371,7 +372,7 @@ python3 server.py
 
 ```
 
-#### [PowerShell](#tab\powershell-1)
+#### [PowerShell](#tab\powershell)
 ```powershell
  New-NetFirewallRule -DisplayName 'HTTP(S) Inbound' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('8000')
                 $Hso = New-Object Net.HttpListener
@@ -410,7 +411,7 @@ python3 server.py
 #### Example 3: Combined phase order and skip upgrade
 This sample application includes phase order and skip upgrade parameters into the custom metrics response. 
 
-#### [Bash](#tab/bash)
+##### [Bash](#tab/bash)
 
 ```bash
 #!/bin/bash
@@ -460,7 +461,7 @@ python3 server.py
 
 ```
 
-#### [PowerShell](#tab\powershell-1)
+##### [PowerShell](#tab\powershell)
 ```powershell
  New-NetFirewallRule -DisplayName 'HTTP(S) Inbound' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('8000')
                 $Hso = New-Object Net.HttpListener
@@ -494,6 +495,7 @@ python3 server.py
                 }
                 $Hso.Stop()
 ```
+
 ---
 
 For more response configuration examples, see [Application Health Samples](https://github.com/Azure-Samples/application-health-samples)
