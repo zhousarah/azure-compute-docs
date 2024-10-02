@@ -165,18 +165,16 @@ Update-AzVmss -ResourceGroupName $vmScaleSetResourceGroup `
   -Name $vmScaleSetName `
   -VirtualMachineScaleSet $vmScaleSet
   
-# Upgrade instances to install the extension. This step is only required if your scale set is using a manual upgrade policy. For more information on upgrade policies, see [upgrade policies for Virtual Machine Scale Sets](virtual-machine-scale-sets-upgrade-policy.md)
+# Upgrade instances to install the extension.
 Update-AzVmssInstance -ResourceGroupName $vmScaleSetResourceGroup `
   -VMScaleSetName $vmScaleSetName `
   -InstanceId '*'
 
 ```
 
-
 ##### [REST API](#tab/rest-api)
 
 Apply the application health extension using [create or update](/rest/api/compute/virtual-machine-scale-set-vm-extensions/create-or-update).
-
 
 ```rest
 PUT on `/subscriptions/subscription_id/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet/extensions/myHealthExtension?api-version=2018-10-01`
@@ -221,9 +219,9 @@ Configuring the application health extension response can be accomplished in man
 #### Example 1
 This sample app configures a health state based on the assigned availability zone of the virtual machine. Apply this application to each virtual machine in your scale set that is spread across three availability zones. This sample application requires PowerShell and is recommended for Windows virtual machines.
 
-Zone 1 = "Healthy"
-Zone 2 = "Unhealthy"
-Zone 3 = "Unknown"
+- Zone 1 = "Healthy"
+- Zone 2 = "Unhealthy"
+- Zone 3 = "Unknown"
 
 You can use Custom Script Extension to run [start.ps1](https://github.com/Azure-Samples/application-health-samples/blob/main/Rich%20Health%20States/powershell-demo/start.ps1) on your virtual machine, it then downloads application.ps1 and start emitting HTTP health probe responses to "http://localhost:8000/".
 
@@ -244,10 +242,6 @@ function GenerateResponseJson()
 {
     $zone = GetZoneFromImds
 
-    # During grace period, Health Signal ==> Initializing
-    # After grace period if application still communicates "Invalid", Health Signal ==> "Unknown" ~ "Unhealthy"
-
-    # In this demo: If a virtual machine is in zone 1 ==> "Healthy" status, zone 2 ==> "Unhealthy" status, other zones ==> "Unknown" status
     $appHealthState = if (1 -eq $zone) { "Healthy" } elseif (2 -eq $zone) { "Unhealthy" } else { "Invalid" } 
 
     $hashTable = @{
