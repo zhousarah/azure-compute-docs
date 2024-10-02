@@ -56,7 +56,7 @@ For skipping an upgrade on a virtual machine, use `SkipUpgrade` parameter. This 
 
 Once you have successfully configured the application health extension and custom metrics on each virtual machine, when a rolling upgrade is initiated, the virtual machines are placed into their designated phases and each phase inherits the rolling upgrade policy associated with the scale set. For more information on the rolling upgrade policy, see [configuring the rolling upgrade policy](virtual-machine-scale-sets-configure-rolling-upgrades.md) for Virtual Machine Scale Sets. 
 
-## Configure the application health extension '
+## Configure the application health extension
 
 ### Install the application health extension
 
