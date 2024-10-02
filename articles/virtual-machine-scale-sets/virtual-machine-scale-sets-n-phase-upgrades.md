@@ -154,6 +154,7 @@ function GenerateResponseJson()
                             }
                         }
     } 
+    $hashTable.CustomMetrics = ($hashTable.CustomMetrics | ConvertTo-Json)
     return ($hashTable | ConvertTo-Json)
 }
 
