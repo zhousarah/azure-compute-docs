@@ -21,14 +21,6 @@ Compared with existing general-purpose CPU or GPU based solutions, the NMads MA3
 
 ## Sizes in series 
 
-[Basics](/azure/virtual-machines/sizes/gpu-accelerated/ngadsv620-series) 
-
-[Local Storage](/azure/virtual-machines/sizes/gpu-accelerated/ngadsv620-series) 
-
-[Network](/azure/virtual-machines/sizes/gpu-accelerated/ngadsv620-series) 
-
-[Accelerators](/azure/virtual-machines/sizes/gpu-accelerated/ngadsv620-series) 
-
 ---
 ### [Basics](#tab/Basics) 
 
@@ -74,14 +66,6 @@ Network interface info for each size
 
 [Virtual machine network bandwidth](/azure/virtual-network/virtual-machine-network-throughput) 
 
-## Table definitions
-
-Expected network bandwidth is the maximum aggregated bandwidth allocated per VM type across all NICs, for all destinations. For more information, see [Virtual machine network bandwidth](/azure/virtual-network/virtual-machine-network-throughput) 
-
-Upper limits aren't guaranteed. Limits offer guidance for selecting the right VM type for the intended application. Actual network performance will depend on several factors including network congestion, application loads, and network settings. For information on optimizing network throughput, see [Optimize network throughput for Azure virtual machines](/azure/virtual-network/virtual-network-optimize-network-bandwidth). 
-
-To achieve the expected network performance on Linux or Windows, you may need to select a specific version or optimize your VM. For more information, see [Bandwidth/Throughput testing (NTTTCP)](/azure/virtual-network/virtual-network-bandwidth-testing). 
-
 ### [Accelerators](#tab/Accelerators) 
 
 Accelerator (GPUs, FPGAs, etc.) info for each size 
@@ -92,6 +76,13 @@ Accelerator (GPUs, FPGAs, etc.) info for each size
 | **Standard_NM16ads_MA35D** | 1 | 8 |
 
 ---
+### Table definitions
+
+Expected network bandwidth is the maximum aggregated bandwidth allocated per VM type across all NICs, for all destinations. For more information, see [Virtual machine network bandwidth](/azure/virtual-network/virtual-machine-network-throughput) 
+
+Upper limits aren't guaranteed. Limits offer guidance for selecting the right VM type for the intended application. Actual network performance will depend on several factors including network congestion, application loads, and network settings. For information on optimizing network throughput, see [Optimize network throughput for Azure virtual machines](/azure/virtual-network/virtual-network-optimize-network-bandwidth). 
+
+To achieve the expected network performance on Linux or Windows, you may need to select a specific version or optimize your VM. For more information, see [Bandwidth/Throughput testing (NTTTCP)](/azure/virtual-network/virtual-network-bandwidth-testing). 
 
 ## Other size information 
 
