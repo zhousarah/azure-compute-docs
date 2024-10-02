@@ -177,9 +177,11 @@ Delete an existing standby pool using [Delete](/rest/api/standbypool/standby-vir
 
 ```HTTP
 DELETE https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StandbyPool/standbyContainerGroupPools/{standbyContainerGroupPoolName}?api-version=2024-03-01
- 
 ```
 
-# Next steps
+---
+
+
+## Next steps
 
 Learn more about [standby pools for Azure Container Instances](container-instances-standby-pool-overview.md)
