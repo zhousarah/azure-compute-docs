@@ -1,6 +1,6 @@
 ---
-title: Rolling upgrades with custom metrics rolling upgrades on Virtual Machine Scale Sets (Preview)
-description: Learn about how to configure Rolling upgrades with custom metrics on Virtual Machine Scale Sets.
+title: Custom metrics for rolling upgrades on Virtual Machine Scale Sets (Preview)
+description: Learn about how to configure custom metrics for rolling upgrades on Virtual Machine Scale Sets.
 author: mimckitt
 ms.author: mimckitt
 ms.topic: how-to
@@ -9,24 +9,24 @@ ms.date: 9/25/2024
 ms.reviewer: ju-shim
 ms.custom: upgradepolicy, N-Phase
 ---
-# Rolling upgrades with custom metrics on Virtual Machine Scale Sets (Preview)
+# Configure custom metrics for rolling upgrades on Virtual Machine Scale Sets (Preview)
 
 > [!NOTE]
->**Rolling upgrades with custom metrics on Virtual Machine Scale Sets is currently in preview.** Previews are made available to you on the condition that you agree to the [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Some aspects of these features may change prior to general availability (GA).
+>**Custom metrics for rolling upgrades on Virtual Machine Scale Sets is currently in preview.** Previews are made available to you on the condition that you agree to the [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Some aspects of these features may change prior to general availability (GA).
 
-Rolling upgrades with custom metrics enables you to utilize the application health extension to emit custom metrics to your Virtual Machine Scale Set. These custom metrics can be used to tell the scale set the order in which virtual machines should be updated when a rolling upgrade is triggered. The custom metrics can also inform your scale set when an upgrade should be skipped on a specific instance. This allows you to have more control over the ordering and the update process itself. 
+Custom metrics for rolling upgrades enables you to utilize the application health extension to emit custom metrics to your Virtual Machine Scale Set. These custom metrics can be used to tell the scale set the order in which virtual machines should be updated when a rolling upgrade is triggered. The custom metrics can also inform your scale set when an upgrade should be skipped on a specific instance. This allows you to have more control over the ordering and the update process itself. 
 
-Rolling upgrades with custom metrics can be used in combination with other rolling upgrade functionality such as Automatic OS upgrades, Automatic Extension upgrades and MaxSurge rolling upgrades. 
+Custom metrics can be used in combination with other rolling upgrade functionality such as Automatic OS upgrades, Automatic Extension upgrades and MaxSurge rolling upgrades. 
 
 ## Requirements
 
-- When using Rolling upgrades with custom metrics on Virtual Machine Scale Sets, the scale set must also use the [Application Health Extension with Rich Health States](virtual-machine-scale-sets-health-extension.md) to monitor application health, and report phase ordering or skip upgrade information. Rolling upgrades with custom metrics upgrades aren't supported when using the application health extension with binary states.
-- The application health extension must be setup to use HTTP or HTTPS in order to receive the custom metrics information. TCP isn't supported for rolling upgrades with custom metrics. 
+- When using custom metrics for rolling upgrades on Virtual Machine Scale Sets, the scale set must also use the [Application Health Extension with Rich Health States](virtual-machine-scale-sets-health-extension.md) to monitor application health, and report phase ordering or skip upgrade information. Custom metrics upgrades aren't supported when using the application health extension with binary states.
+- The application health extension must be setup to use HTTP or HTTPS in order to receive the custom metrics information. TCP isn't supported for integration with custom metrics for rolling upgrades.  
 
 ## Concepts
 
 ### Phase Ordering
-A phase is a high-level grouping construct for virtual machines. Each phase is determined by setting metadata emitted from the [Application Health Extension](virtual-machine-scale-sets-health-extension.md). Rolling upgrades with custom metrics take the information retrieved from the application health extension and use it to create upgrade batches within each phase. Rolling upgrades with custom metrics  upgrades also uses update domains (UD), fault domains (FD), and zone information to ensure that each batch doesn't cross a boundary.
+A phase is a high-level grouping construct for virtual machines. Each phase is determined by setting metadata emitted from the [Application Health Extension](virtual-machine-scale-sets-health-extension.md). Custom metrics for rolling upgrades take the information retrieved from the application health extension and use it to create upgrade batches within each phase. Custom metrics for rolling upgrades also uses update domains (UD), fault domains (FD), and zone information to ensure that each batch doesn't cross a boundary.
 
 The phased upgrades are performed in numerical sequence order. Until all the batches in the first phase are upgraded, the virtual machines in the following phases remain untouched. 
 

@@ -176,10 +176,10 @@
       href: virtual-machine-scale-sets-change-upgrade-policy.md
     - name: Configure rolling upgrade policy
       href: virtual-machine-scale-sets-configure-rolling-upgrades.md 
+    - name: Configure custom metrics (preview)
+      href: virtual-machine-scale-sets-rolling-upgrade-custom-metrics.md
     - name: Rolling upgrades with MaxSurge
       href: virtual-machine-scale-sets-maxsurge.md
-    - name: Rolling upgrades with custom metrics (preview)
-      href: virtual-machine-scale-sets-rolling-upgrade-custom-metrics.md
     - name: Performing manual upgrades
       href: virtual-machine-scale-sets-perform-manual-upgrades.md
     - name: Reimage a virtual machine
