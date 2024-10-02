@@ -242,7 +242,7 @@ https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myRes
 
 Request Body
 {
-    "location":"North Europe",
+    "location": "West Central US",
     "properties":{
         "containers": [
         {
