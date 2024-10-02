@@ -75,10 +75,6 @@ The extension requires at a minimum either an "http" or "https" request with an 
 
 Use [az vmss extension set](/cli/azure/vmss/extension#az-vmss-extension-set) to add the Application Health extension to the scale set model definition.
 
-The following example adds the **Application Health - Rich States** extension to the scale set model of a Linux-based scale set.
-
-You can also use this example to upgrade an existing extension from Binary to Rich Health States.
-
 ```azurecli-interactive
 az vmss extension set \
   --name ApplicationHealthLinux \
@@ -110,8 +106,6 @@ az vmss update-instances \
 #### [Azure PowerShell](#tab/azure-powershell)
 
 Use the [Add-AzVmssExtension](/powershell/module/az.compute/add-azvmssextension) cmdlet to add the Application Health extension to the scale set model definition.
-
-The following example adds the **Application Health - Rich States** extension to the `extensionProfile` in the scale set model of a Windows-based scale set. The example uses the new Az PowerShell module.
 
 ```azurepowershell-interactive
 # Define the scale set variables
@@ -152,10 +146,6 @@ Update-AzVmssInstance -ResourceGroupName $vmScaleSetResourceGroup `
 
 
 ##### [REST API](#tab/rest-api)
-
-The following example adds the **Application Health - Rich States** extension (with name `myHealthExtension`) to the `extensionProfile` in the scale set model of a Windows-based scale set.
-
-You can also use this example to upgrade an existing extension from Binary to Rich Health States by making a PATCH call instead of a PUT.
 
 ```
 PUT on `/subscriptions/subscription_id/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet/extensions/myHealthExtension?api-version=2018-10-01`
