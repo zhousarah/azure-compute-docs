@@ -231,91 +231,22 @@ Request body
 ### Configure the application health extension response
 Configuring the application health extension response can be accomplished in many different ways. It can be integrated into existing applications, dynamically updated and be used along side various functions to provide an output based on a specific situation. 
 
-#### Example 1
-This sample app configures a health state based on the assigned availability zone of the virtual machine. Apply this application to each virtual machine in your scale set that is spread across three availability zones. This sample application requires PowerShell and is recommended for Windows virtual machines.
-
-- Zone 1 = "Healthy"
-- Zone 2 = "Unhealthy"
-- Zone 3 = "Unknown"
-
-You can use Custom Script Extension to run [start.ps1](https://github.com/Azure-Samples/application-health-samples/blob/main/Rich%20Health%20States/powershell-demo/start.ps1) on your virtual machine, it then downloads application.ps1 and start emitting HTTP health probe responses to "http://localhost:8000/".
-
-```powershell
-New-NetFirewallRule -DisplayName 'HTTP(S) Inbound' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('8000')
-$Hso = New-Object Net.HttpListener
-$Hso.Prefixes.Add('http://localhost:8000/')
-$Hso.Start()
-
-function GetZoneFromImds()
-{
-    $imdsObject = Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -Uri "http://169.254.169.254/metadata/instance?api-version=2021-02-01"
-    $zone = $imdsObject.compute.zone
-    return [int]($zone)
-}
-
-function GenerateResponseJson()
-{
-    $zone = GetZoneFromImds
-
-    $appHealthState = if (1 -eq $zone) { "Healthy" } elseif (2 -eq $zone) { "Unhealthy" } else { "Invalid" } 
-
-    $hashTable = @{
-        'ApplicationHealthState' = $appHealthState
-        'CustomMetrics' = @{
-                            'RollingUpgrade' = @{
-                                'SkipUpgrade' = false
-                                'PhaseOrderingNumber' = 1
-                            }
-                        }
-    } 
-    $hashTable.CustomMetrics = ($hashTable.CustomMetrics | ConvertTo-Json)
-    return ($hashTable | ConvertTo-Json)
-}
-
-
-While($Hso.IsListening)
-{
-    $context = $Hso.GetContext()
-    $response = $context.Response
-    $response.StatusCode = 200
-    $response.ContentType = 'application/json'
-    $responseJson = GenerateResponseJson
-    $responseBytes = [System.Text.Encoding]::UTF8.GetBytes($responseJson)
-    $response.OutputStream.Write($responseBytes, 0, $responseBytes.Length)
-    $response.Close()
-}
-
-$Hso.Stop()
-```
-
-
-#### Example 2
-This sample creates a listener which can respond to the health extension calls and skips an upgrade for instance 1.
-
+#### Example 1: Phase order
+This sample application can be installed on an virtual machine in a scale set to emit the phase belongs to.
 
 ```powershell
  New-NetFirewallRule -DisplayName 'HTTP(S) Inbound' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('8000')
                 $Hso = New-Object Net.HttpListener
                 $Hso.Prefixes.Add('http://localhost:8000/')
                 $Hso.Start()
-                function GetVmInstanceIdFromImds()
-                {
-                    $imdsObject = Invoke-RestMethod -Headers @{""Metadata""=""true""} -Method GET -Uri ""http://169.254.169.254/metadata/instance?api-version=2021-02-01""
-                    $vmName = $imdsObject.compute.name
-                    return [int]($vmName.Split('_')[1])
-                }
                 function GenerateResponseJson()
                 {
-                    $numberOfPhases = 3
-                    $vmInstanceId = GetVmInstanceIdFromImds
-                    $skipUpgrade = 1 -eq $vmInstanceId
-                    $appHealthState = ""Healthy""
-                    $phaseOrderingNumber = $numberOfPhases - ($vmInstanceId % $numberOfPhases)
+                    $appHealthState = "Healthy"
+                    $phaseOrderingNumber = 0
                     $hashTable = @{
                         'ApplicationHealthState' = $appHealthState
                         'CustomMetrics' = @{
                             'RollingUpgrade' = @{
-                                'SkipUpgrade' = $skipUpgrade
                                 'PhaseOrderingNumber' = $phaseOrderingNumber
                             }
                         }
@@ -338,6 +269,79 @@ This sample creates a listener which can respond to the health extension calls a
 ```
 
 
+#### Example 2: Skip upgrade
+This sample application can be installed on an virtual machine in a scale set to emit that the instance should be omitted from the upcoming rolling upgrade. 
+
+
+```powershell
+ New-NetFirewallRule -DisplayName 'HTTP(S) Inbound' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('8000')
+                $Hso = New-Object Net.HttpListener
+                $Hso.Prefixes.Add('http://localhost:8000/')
+                $Hso.Start()
+                function GenerateResponseJson()
+                {
+                    $appHealthState = "Healthy"
+                    $hashTable = @{
+                        'ApplicationHealthState' = $appHealthState
+                        'CustomMetrics' = @{
+                            'RollingUpgrade' = @{
+                                'SkipUpgrade' = "true"
+                            }
+                        }
+                    } 
+                    $hashTable.CustomMetrics = ($hashTable.CustomMetrics | ConvertTo-Json)
+                    return ($hashTable | ConvertTo-Json)
+                }
+                While($Hso.IsListening)
+                {
+                    $context = $Hso.GetContext()
+                    $response = $context.Response
+                    $response.StatusCode = 200
+                    $response.ContentType = 'application/json'
+                    $responseJson = GenerateResponseJson
+                    $responseBytes = [System.Text.Encoding]::UTF8.GetBytes($responseJson)
+                    $response.OutputStream.Write($responseBytes, 0, $responseBytes.Length)
+                    $response.Close()
+                }
+                $Hso.Stop()
+```
+
+#### Example 3: Combined phase order and skip upgrade
+This sample application includes phase order and skip upgrade parameters into the custom metrics response. 
+
+```powershell
+ New-NetFirewallRule -DisplayName 'HTTP(S) Inbound' -Direction Inbound -Action Allow -Protocol TCP -LocalPort @('8000')
+                $Hso = New-Object Net.HttpListener
+                $Hso.Prefixes.Add('http://localhost:8000/')
+                $Hso.Start()
+                function GenerateResponseJson()
+                {
+                    $appHealthState = "Healthy"
+                    $hashTable = @{
+                        'ApplicationHealthState' = $appHealthState
+                        'CustomMetrics' = @{
+                            'RollingUpgrade' = @{
+                                'PhaseOrderingNumber' = 1
+                                'SkipUpgrade' = "false"
+                            }
+                        }
+                    } 
+                    $hashTable.CustomMetrics = ($hashTable.CustomMetrics | ConvertTo-Json)
+                    return ($hashTable | ConvertTo-Json)
+                }
+                While($Hso.IsListening)
+                {
+                    $context = $Hso.GetContext()
+                    $response = $context.Response
+                    $response.StatusCode = 200
+                    $response.ContentType = 'application/json'
+                    $responseJson = GenerateResponseJson
+                    $responseBytes = [System.Text.Encoding]::UTF8.GetBytes($responseJson)
+                    $response.OutputStream.Write($responseBytes, 0, $responseBytes.Length)
+                    $response.Close()
+                }
+                $Hso.Stop()
+```
 
 For more response configuration examples, see [Application Health Samples](https://github.com/Azure-Samples/application-health-samples)
 
