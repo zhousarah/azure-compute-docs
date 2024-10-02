@@ -16,11 +16,11 @@ VM watch is a standardized, lightweight, and adaptable in-VM service offering fo
 
 - **Ease of adoption**: VM watch is made available through the [Application Health VM extension](/azure/virtual-machines/extensions/health-extension?tabs=rest-api). 
 - **Flexible Deployment:** Users can enable VM watch with ease via ARM template, PowerShell, or AZ CLI.
-- **Compatibility:** VM watch operates seamlessly on both Linux and Windows environments. Also, VM watch is suitable for individual VMs and VMSS VMs alike.
+- **Compatibility:** VM watch operates seamlessly on both Linux and Windows environments. Also, VM watch is suitable for individual VMs and Virtual Machine Scale Set VMs alike.
 - **Resource Governance:** VM watch provides efficient monitoring without impacting system performance. Resource caps are placed on the CPU and memory utilization of the VM watch process itself to protect the VM.
 - **Ready Out-of-the-Box**: VM watch comes equipped with a suite of default tests, which are easily configurable to enable scenario specific tests. Detailed information regarding the tests (Checks, Metrics, and Event Logs) are given.
 
-### Network:
+### Network
 
 | **Signal Name** | **Type** | **Description** |
 |:---:|:---:|:---:|
@@ -47,8 +47,8 @@ VM watch is a standardized, lightweight, and adaptable in-VM service offering fo
 | **Azure Disk I/O** | Check | Verify file creation, write, read. Delete operations on each drive mounted to the VM |
 | **FreeSpaceInBytes** | Metric | The free disk space of the target mount point |
 | **UsedSpaceInBytes** | Metric | The used disk space of the target mount point |
-| **CapacityInBytes**  | Metric | The disk spce capacity of the target mount point |
-| **UsedPercent**      | Metric | The used disk space percentageof the target mount point |
+| **CapacityInBytes**  | Metric | The disk space capacity of the target mount point |
+| **UsedPercent**      | Metric | The used disk space percentage of the target mount point |
 | **WriteOps**         | Metric | The write operations per seconds of the target disk/partition |
 | **ReadOps**          | Metric | The read operations per seconds of the target disk/partition | 
 
@@ -63,7 +63,7 @@ VM watch is a standardized, lightweight, and adaptable in-VM service offering fo
 
  
 
-### Process:
+### Process
 
 | **Signal Name** | **Type** | **Description** |
 |:---:|:---:|:---:|
@@ -73,7 +73,7 @@ VM watch is a standardized, lightweight, and adaptable in-VM service offering fo
 
  
 
-### IMDS:
+### IMDS
 
 | **Signal Name** | **Type** | **Description** |
 |:---:|:---:|:---:|
@@ -81,7 +81,7 @@ VM watch is a standardized, lightweight, and adaptable in-VM service offering fo
 
  
 
-### Clock:
+### Clock
 
 | **Signal Name** | **Type** | **Description** |
 |:---:|:---:|:---:|
@@ -89,17 +89,17 @@ VM watch is a standardized, lightweight, and adaptable in-VM service offering fo
 
  
 
-### AzBlob:
+### AzBlob
 
 | **Signal Name** | **Type** | **Description** |
 |:---:|:---:|:---:|
 | **Azure Storage blob connectivity** | Check | Verify the connectivity to the Azure Storage Blob and download the Blob with MSI or SAS token. |
 
-### Hardware:
+### Hardware
 
 | **Signal Name** | **Type** | **Description** |
 |:---:|:---:|:---:|
-| **Hardware Health Monitor** | EventLog | Collect hardware health info from Windows event log, currently only disk related critical events are collected, including events with id 7, 500, 504, 505, 512 and 549 |
+| **Hardware Health Monitor** | EventLog | Collect hardware health info from Windows event log, currently only disk related critical events are collected, including events with ID 7, 500, 504, 505, 512 and 549 |
 
 ### Next steps
 
