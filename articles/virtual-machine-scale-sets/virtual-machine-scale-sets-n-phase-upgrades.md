@@ -18,13 +18,11 @@ N-Phase rolling upgrades enables you to select which virtual machines are placed
 
 ## Requirements
 
-- When using N-Phase rolling upgrades on Virtual Machine Scale Sets, the scale set must also use the [Application Health Extension with Rich Health States](virtual-machine-scale-sets-health-extension.md) to monitor application health and report phase ordering information. N-Phase upgrades aren't supported when using the application health extension with binary states. 
-- N-Phase upgrades require the application health extension to emit an HTTP or HTTPs response. TCP responses aren't supported. 
-
+When using N-Phase rolling upgrades on Virtual Machine Scale Sets, the scale set must also use the [Application Health Extension with Rich Health States](virtual-machine-scale-sets-health-extension.md) to monitor application health and report phase ordering information. N-Phase upgrades aren't supported when using the application health extension with binary states. 
 
 ## Concepts
 
-A phase is a high-level grouping construct for virtual machines. Each phase is determined by setting metadata emitted from the [Application Health Extension](virtual-machine-scale-sets-health-extension.md). N-Phase rolling upgrades take the information retrieved from the application health extension and use it to create upgrade batches within each phase. N-Phase rolling upgrades also uses update domains (UD), fault domains (FD) and zone information to ensure that each batch doesn't cross a boundary. This helps to further ensure resiliency when performing upgrades. 
+A phase is a high-level grouping construct for virtual machines. Each phase is determined by setting metadata emitted from the [Application Health Extension](virtual-machine-scale-sets-health-extension.md). N-Phase rolling upgrades take the information retrieved from the application health extension and use it to create upgrade batches within each phase. N-Phase rolling upgrades also uses update domains (UD), fault domains (FD), and zone information to ensure that each batch doesn't cross a boundary. This helps to further ensure resiliency when performing upgrades. 
 
 The phased upgrades are performed in numerical sequence order. Until all the batches in the first phase are upgraded, the virtual machines in the following phases remain untouched. 
 
@@ -34,7 +32,7 @@ The phased upgrades are performed in numerical sequence order. Until all the bat
 :::image type="content" source="./media/upgrade-policy/n-phase-zonal-scale-set.png" alt-text="Diagram that shows a high level diagram of what happens when using n-phase upgrades on a zonal scale set.":::
 
 
-Each virtual machine responds to the application health extension probes with response body contents containing metadata key-value pairs. This metadata is set by the customer and tells the platform how each virtual machine should interact with Rolling Upgrades. If no phase ordering metadata is received, the batches are determined by the scale set. 
+Each virtual machine responds to the application health extension probes with response body contents containing metadata key-value pairs. This metadata is set by the customer and tells the platform how each virtual machine should interact with rolling upgrades. If no phase ordering metadata is received, the batches are determined by the scale set. 
 
 To specify phase number the virtual machine should be associated with, use `phaseOrderingNumber` parameter.  
 
@@ -58,9 +56,7 @@ Once you have successfully configured the application health extension and custo
 
 ## Configure the application health extension
 
-### Install the application health extension
-
-The extension requires at a minimum either an "http" or "https" request with an associated port or request path respectively. TCP probes are also supported, but can't set the `ApplicationHealthState` through the probe response body and don't have access to the *Unknown* state.
+The application health extension requires an HTTP or HTTPS request with an associated port or request path. TCP probes are also supported, but can't set the `ApplicationHealthState` through the probe response body and don't have access to the *Unknown* state.
 
 | Name | Value / Example | Data Type |
 | ---- | --------------- | --------- |
@@ -71,9 +67,24 @@ The extension requires at a minimum either an "http" or "https" request with an 
 | numberOfProbes | Optional, default is 1. This setting is the number of consecutive probes required for the health status to change. For example, if numberOfProbles == 3, you need 3 consecutive "Healthy" signals to change the health status from "Unhealthy"/"Unknown" into "Healthy" state. The same requirement applies to change health status into "Unhealthy" or "Unknown" state.  | int |
 | gracePeriod | Optional, default = `intervalInSeconds` * `numberOfProbes`; maximum grace period is 7200 seconds | int |
 
+### Install the application health extension
+
 #### [Azure CLI](#tab/azure-cli)
 
 Use [az vmss extension set](/cli/azure/vmss/extension#az-vmss-extension-set) to add the Application Health extension to the scale set model definition.
+
+Create a json file called `extensions.json` with the desired settings.
+
+```json
+{
+  "protocol": "<protocol>",
+  "port": <port>,
+  "requestPath": "</requestPath>",
+  "gracePeriod": <healthExtensionGracePeriod>
+}
+```
+
+Apply the application health extension. 
 
 ```azurecli-interactive
 az vmss extension set \
@@ -84,17 +95,8 @@ az vmss extension set \
   --vmss-name <myVMScaleSet> \
   --settings ./extension.json
 ```
-The extension.json file content.
 
-```json
-{
-  "protocol": "<protocol>",
-  "port": <port>,
-  "requestPath": "</requestPath>",
-  "gracePeriod": <healthExtensionGracePeriod>
-}
-```
-**Upgrade the virtual machines.**
+Upgrade the virtual machines in the scale set.This step is only required if your scale set is using a manual upgrade policy. For more information on upgrade policies, see [upgrade policies for Virtual Machine Scale Sets](virtual-machine-scale-sets-upgrade-policy.md)
 
 ```azurecli-interactive
 az vmss update-instances \
@@ -109,8 +111,8 @@ Use the [Add-AzVmssExtension](/powershell/module/az.compute/add-azvmssextension)
 
 ```azurepowershell-interactive
 # Define the scale set variables
-$vmScaleSetName = "myVMScaleSet"
-$vmScaleSetResourceGroup = "myVMScaleSetResourceGroup"
+$vmScaleSetName = "myScaleSet"
+$vmScaleSetResourceGroup = "myResourceGroup"
 
 # Define the Application Health extension properties
 $publicConfig = @{"protocol" = "http"; "port" = 80; "requestPath" = "/healthEndpoint"; "gracePeriod" = 600};
@@ -137,7 +139,7 @@ Update-AzVmss -ResourceGroupName $vmScaleSetResourceGroup `
   -Name $vmScaleSetName `
   -VirtualMachineScaleSet $vmScaleSet
   
-# Upgrade instances to install the extension
+# Upgrade instances to install the extension. This step is only required if your scale set is using a manual upgrade policy. For more information on upgrade policies, see [upgrade policies for Virtual Machine Scale Sets](virtual-machine-scale-sets-upgrade-policy.md)
 Update-AzVmssInstance -ResourceGroupName $vmScaleSetResourceGroup `
   -VMScaleSetName $vmScaleSetName `
   -InstanceId '*'
@@ -147,11 +149,13 @@ Update-AzVmssInstance -ResourceGroupName $vmScaleSetResourceGroup `
 
 ##### [REST API](#tab/rest-api)
 
-```
-PUT on `/subscriptions/subscription_id/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet/extensions/myHealthExtension?api-version=2018-10-01`
-```
+Apply the application health extension using [create or update](/rest/api/compute/virtual-machine-scale-set-vm-extensions/create-or-update).
 
-```json
+
+```rest
+PUT on `/subscriptions/subscription_id/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet/extensions/myHealthExtension?api-version=2018-10-01`
+
+Request body
 {
   "name": "myHealthExtension",
   "location": "<location>",
@@ -171,15 +175,13 @@ PUT on `/subscriptions/subscription_id/resourceGroups/myResourceGroup/providers/
   }
 }
 ```
-Use `PATCH` to edit an already deployed extension.
 
-**Upgrade the virtual machines in the scale set.**
+Upgrade the virtual machines in the scale set. This step is only required if your scale set is using a manual upgrade policy. For more information on upgrade policies, see [upgrade policies for Virtual Machine Scale Sets](virtual-machine-scale-sets-upgrade-policy.md)
 
-```
+```rest
 POST on `/subscriptions/<subscriptionId>/resourceGroups/<myResourceGroup>/providers/Microsoft.Compute/virtualMachineScaleSets/< myScaleSet >/manualupgrade?api-version=2022-08-01`
-```
 
-```json
+Request body
 {
   "instanceIds": ["*"]
 }
@@ -191,13 +193,11 @@ POST on `/subscriptions/<subscriptionId>/resourceGroups/<myResourceGroup>/provid
 Configuring the application health extension response can be accomplished in many different ways. It can be integrated into existing applications, dynamically updated and be used along side various functions to provide an output based on a specific situation. 
 
 #### Example 1
-This sample app configures a health state based on the assigned availability zone of the virtual machine. For best results, create a virtual machine scale set with two or more availability zones. This application requires PowerShell and is recommended for Windows virtual machines.
+This sample app configures a health state based on the assigned availability zone of the virtual machine. Apply this application to each virtual machine in your scale set that is spread across three availability zones. This sample application requires PowerShell and is recommended for Windows virtual machines.
 
-The virtual machine health states are set based on the following:
-
-Zone 1 ==> "Healthy"
-Zone 2 ==> "Unhealthy"
-Zone 3 ==> "Unknown"
+Zone 1 = "Healthy"
+Zone 2 = "Unhealthy"
+Zone 3 = "Unknown"
 
 You can use Custom Script Extension to run [start.ps1](https://github.com/Azure-Samples/application-health-samples/blob/main/Rich%20Health%20States/powershell-demo/start.ps1) on your virtual machine, it then downloads application.ps1 and start emitting HTTP health probe responses to "http://localhost:8000/".
 
