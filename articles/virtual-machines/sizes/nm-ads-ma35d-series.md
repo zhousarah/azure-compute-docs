@@ -31,8 +31,7 @@ vCPUs (Qty.) and Memory for each size
 | **Standard_NM16ads_MA35D** | 16 | 32 |
 
 ### VM Basics resources 
-
-[Check vCPU quotas](/azure/virtual-machines/quotas) 
+- [Check vCPU quotas](/azure/virtual-machines/quotas) 
 
 ### [Local Storage](#tab/Local Storage) 
 
@@ -45,12 +44,11 @@ Local (temp) storage info for each size
 *Full Windows guest OS image is not supported on ephemeral OS disk.
 
 ### Storage resources
+- [Introduction to Azure managed disks](/azure/virtual-machines/managed-disks-overview) 
 
-[Introduction to Azure managed disks](/azure/virtual-machines/managed-disks-overview) 
+- [Azure managed disk types](/azure/virtual-machines/disks-types) 
 
-[Azure managed disk types](/azure/virtual-machines/disks-types) 
-
-[Share an Azure managed disk](/azure/virtual-machines/disks-shared)   
+- [Share an Azure managed disk](/azure/virtual-machines/disks-shared)   
 
 ### [Network](#tab/Network)
 
