@@ -11,11 +11,13 @@ ms.custom: upgradepolicy
 ---
 # Upgrade policies for Virtual Machine Scale Sets
 
-The upgrade policy of a Virtual Machine Scale Set determines how virtual machines can be brought up-to-date with the latest scale set model. 
+The upgrade policy you choose can impact the overall service uptime of your Virtual Machine Scale Set. The available upgrade policy modes are: **automatic**, **manual**, and **rolling**. 
+
+
 
 ## Upgrade policy modes
 
-Each Virtual Machine Scale Set has an **upgrade policy mode** which determines how instances are brought up to date with the latest scale set model. Scale set model changes include updates that need to be applied to each individual instance. Some examples include: 
+Each Virtual Machine Scale Set has an **upgrade policy mode** which determines how instances are brought up to date with the latest scale set model. Changes to the scale set model include updates that need to be applied to each individual instance. Some examples include: 
 - Image reference upgrades
 - SKU changes
 - Add/ remove a data disk
@@ -23,9 +25,8 @@ Each Virtual Machine Scale Set has an **upgrade policy mode** which determines h
 - Adding availability zones
 - Changing fault domain information
 
-Depending on the upgrade policy mode, these type of changes can be automatically applied all at once, rolled out to instances in batches or require manually upgrading each instance. These upgrade modes make up the available upgrade policy modes: **automatic**, **manual**, and **rolling**. The upgrade policy you choose can impact the overall service uptime of your Virtual Machine Scale Set. 
 
-Additionally, there can be situations where you might want specific instances in your scale set to be treated differently from the rest. For example, certain instances in the scale set could be needed to perform different tasks than the other members of the scale set. In these situations, [Instance Protection](virtual-machine-scale-sets-instance-protection.md) or [custom metrics for rolling upgrade policy](virtual-machine-scale-sets-rolling-upgrade-custom-metrics.md) help to provide the controls needed to protect these instances from being upgraded along side the other instances. 
+Additionally, there can be situations where you might want specific instances in your scale set to be treated differently from the rest. For example, certain instances in the scale set could be needed to perform different tasks than the other members of the scale set. In these situations, [Instance Protection](virtual-machine-scale-sets-instance-protection.md) or [custom metrics for rolling upgrade policy (preview)](virtual-machine-scale-sets-rolling-upgrade-custom-metrics.md) provide the controls needed to protect these instances from being upgraded along side the other instances. 
 
 ### Automatic upgrade policy
 

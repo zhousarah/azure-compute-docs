@@ -11,16 +11,16 @@ ms.custom: upgradepolicy, maxsurge
 ---
 # Configure rolling upgrades on Virtual Machine Scale Sets
 
-Rolling upgrade policy is the safest way to apply updates to instances in a Virtual Machine Scale Set. Performing updates in batches ensures that your scale set maintains a set number of instances available to take traffic, meaning you don't need to take down your entire workload to make a change. 
+Using a rolling upgrade policy is the safest way to apply updates to instances in a Virtual Machine Scale Set. Performing updates in batches ensures that your scale set maintains a set number of instances available to take traffic, meaning you don't need to take down your entire workload to make a change. 
 
 Rolling upgrade policy is best suited for production workloads.
 
 
 ## Requirements
 
-- When using a rolling upgrade policy on Virtual Machine Scale Sets with Flexible Orchestration, the scale set must also use the [Application Health Extension](virtual-machine-scale-sets-health-extension.md) to monitor application health.
+- When using a rolling upgrade policy on Virtual Machine Scale Sets with Flexible Orchestration, the scale set must also use the [application health extension](virtual-machine-scale-sets-health-extension.md) to monitor application health.
 
-- When using a rolling upgrade policy on Virtual Machine Scale Sets with Uniform Orchestration, the scale set must also have a [health probe](/azure/load-balancer/load-balancer-custom-probe-overview) or use the [Application Health Extension](virtual-machine-scale-sets-health-extension.md) to monitor application health. 
+- When using a rolling upgrade policy on Virtual Machine Scale Sets with Uniform Orchestration, the scale set must also have a [health probe](/azure/load-balancer/load-balancer-custom-probe-overview) or use the [application health extension](virtual-machine-scale-sets-health-extension.md) to monitor application health. 
 
 ## Concepts
 
@@ -42,16 +42,13 @@ The **upgrade policy mode** and the **rolling upgrade policy** are nested, but s
     }
 ```
 
-For scale set model updates, the upgrade policy mode will determine how the instances in the scale set are brought up to date. If using automatic, all instances will be upgraded at the same time. If using manual, any changes made to the scale set model will not be applied to the individual instances until a user performs the upgrade. If using rolling, updates are rolled out in batches based on the rolling upgrade policy settings. 
+For scale set model updates, the upgrade policy mode will determine how the instances in the scale set are brought up to date. 
+- With automatic upgrade policy mode, all instances will be upgraded at the same time. 
+- With manual upgrade policy mode, any changes made to the scale set model will not be applied to the individual instances until a user performs the upgrade. 
+- With rolling upgrade policy mode, updates are rolled out in batches based on the rolling upgrade policy settings. 
 
->[IMPORTANT]
+> [IMPORTANT]
 > If you are using **[automatic OS image upgrades](virtual-machine-scale-sets-automatic-upgrade.md)** or **[automatic extension upgrades](../virtual-machines/automatic-extension-upgrade.md)**, these feature don't use the upgrade policy mode. Instead these features use the rolling upgrade policy configuration settings to perform rolling upgrades upgrades.
-
-
-
-
-
-
 
 ### Rolling upgrade policy configuration settings
 
