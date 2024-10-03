@@ -437,6 +437,8 @@
           href: ./windows/storage-performance.md
     - name: GPU - accelerated compute
       items:
+      - name: NMads MA35D series
+        href: ./sizes/nm-ads-ma35d-series.md
       - name: Overview
         displayName: GPU, sizes, size, vm size
         href: ./sizes/overview.md#gpu-accelerated
