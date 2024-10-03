@@ -1,6 +1,6 @@
 ---
-title: Change the upgrade policy on Virtual Machine Scale Sets
-description: Learn how to change the upgrade policy on Virtual Machine Scale Sets
+title: Change the upgrade policy mode on Virtual Machine Scale Sets
+description: Learn how to change the upgrade policy mode on Virtual Machine Scale Sets
 author: mimckitt
 ms.author: mimckitt
 ms.topic: how-to
@@ -9,22 +9,22 @@ ms.date: 9/25/2024
 ms.reviewer: ju-shim
 ms.custom: upgradepolicy
 ---
-# Change the upgrade policy on Virtual Machine Scale Sets
+# Change the upgrade policy mode on Virtual Machine Scale Sets
 
-The upgrade policy for a Virtual Machine Scale Set can be changed at any point in time. Depending on your scenario, you may want to use a particular upgrade policy when setting up and developing your workload and once you're ready to move to production, change it to another upgrade policy mode. 
+The upgrade policy mode for a Virtual Machine Scale Set can be changed at any point in time. Depending on your scenario, you may want to use a particular upgrade policy mode when setting up and developing your workload and once you're ready to move to production, change it to another upgrade policy mode. 
 
 ### [Portal](#tab/portal)
 
-Select the Virtual Machine Scale Set you want to change the upgrade policy for. In the menu under **Settings**, select **Upgrade Policy** and from the drop-down menu, select the upgrade policy you want to enable. 
+Select the Virtual Machine Scale Set you want to change the upgrade policy mode for. In the menu under **Settings**, select **Upgrade Policy** and from the drop-down menu, select the upgrade policy mode you want to enable. 
 
-If using a rolling upgrade policy, see [configure rolling upgrade policy](virtual-machine-scale-sets-configure-rolling-upgrades.md) for more configuration options and suggestions.
+If using a rolling upgrade policy mode, see [configure rolling upgrade policy](virtual-machine-scale-sets-configure-rolling-upgrades.md) for more configuration options and suggestions.
 
-:::image type="content" source="../virtual-machine-scale-sets/media/upgrade-policy/change-upgrade-policy.png" alt-text="Screenshot showing changing the upgrade policy and enabling MaxSurge in the Azure portal.":::
+:::image type="content" source="../virtual-machine-scale-sets/media/upgrade-policy/change-upgrade-policy.png" alt-text="Screenshot showing changing the upgrade policy mode and enabling MaxSurge in the Azure portal.":::
 
 ### [CLI](#tab/cli)
 Update an existing Virtual Machine Scale Set using [az vmss update](/cli/azure/vmss#az-vmss-update) and the `--set` parameter. 
 
-If using a rolling upgrade policy, see [configure rolling upgrade policy](virtual-machine-scale-sets-configure-rolling-upgrades.md) for more configuration options and suggestions.
+If using a rolling upgrade policy mode, see [configure rolling upgrade policy](virtual-machine-scale-sets-configure-rolling-upgrades.md) for more configuration options and suggestions.
 
 ```azurecli-interactive
 az vmss update \
@@ -36,7 +36,7 @@ az vmss update \
 ### [PowerShell](#tab/powershell)
 Update an existing Virtual Machine Scale Set using [Update-AzVmss](/powershell/module/az.compute/update-azvmss) and the `-UpgradePolicyMode` to set the upgrade policy mode. 
 
-If using a rolling upgrade policy, see [configure rolling upgrade policy](virtual-machine-scale-sets-configure-rolling-upgrades.md) for more configuration options and suggestions.
+If using a rolling upgrade policy mode, see [configure rolling upgrade policy](virtual-machine-scale-sets-configure-rolling-upgrades.md) for more configuration options and suggestions.
 
 ```azurepowershell-interactive
 $vmss = Get-AzVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet"
@@ -50,9 +50,9 @@ Update-Azvmss `
 
 ### [ARM Template](#tab/template)
 
-Update the properties section of your ARM template with the upgrade policy to set the upgrade policy mode. 
+Update the properties section of your ARM template with the upgrade policy mode. 
 
-If using a rolling upgrade policy, see [configure rolling upgrade policy](virtual-machine-scale-sets-configure-rolling-upgrades.md) for more configuration options and suggestions.
+If using a rolling upgrade policy mode, see [configure rolling upgrade policy](virtual-machine-scale-sets-configure-rolling-upgrades.md) for more configuration options and suggestions.
 
 
 ```ARM

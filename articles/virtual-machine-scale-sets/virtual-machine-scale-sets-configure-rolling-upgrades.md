@@ -43,12 +43,17 @@ The **upgrade policy mode** and the **rolling upgrade policy** are nested, but s
 ```
 
 For scale set model updates, the upgrade policy mode will determine how the instances in the scale set are brought up to date. 
-- With automatic upgrade policy mode, all instances will be upgraded at the same time. 
-- With manual upgrade policy mode, any changes made to the scale set model will not be applied to the individual instances until a user performs the upgrade. 
-- With rolling upgrade policy mode, updates are rolled out in batches based on the rolling upgrade policy settings. 
 
-> [IMPORTANT]
+> [!IMPORTANT]
 > If you are using **[automatic OS image upgrades](virtual-machine-scale-sets-automatic-upgrade.md)** or **[automatic extension upgrades](../virtual-machines/automatic-extension-upgrade.md)**, these feature don't use the upgrade policy mode. Instead these features use the rolling upgrade policy configuration settings to perform rolling upgrades upgrades.
+
+| Upgrade Mode | Description |
+|---|---|
+| **Automatic** | All instances will be upgraded at the same time. |
+| **Manual** | Any changes made to the scale set model will not be applied to the individual instances until a user performs the upgrade. |
+| **Rolling** | Updates are rolled out in batches based on the rolling upgrade policy settings. |
+
+
 
 ### Rolling upgrade policy configuration settings
 
