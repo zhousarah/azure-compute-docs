@@ -31,8 +31,8 @@ For more information about enabling the NVMe interface on virtual machines creat
 - RHEL 7.9
 - RHEL 8.6 and newer
 - RHEL 9.0 and newer
-- SLES 15.4 and newer
-- SLES-for-SAP 15.3 and newer
+- SLES 15 SP4 and newer
+- SLES-for-SAP 15 SP3 and newer
 - Ubuntu 18.04
 - Ubuntu 20.04
 - Ubuntu 22.04
