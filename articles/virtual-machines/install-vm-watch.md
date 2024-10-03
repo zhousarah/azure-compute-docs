@@ -95,12 +95,12 @@ On Successful installation, navigate to the [Azure Portal](https://portal.azure.
 
 **Windows**
 
-:::image type="content" source="./sizes/media/windows-vm-watch-vm.png" alt-text="Screenshot of the Windows VM installation."::: lightbox=".sizes/media/windows-vm-watch-vm.png":::
+:::image type="content" source="./sizes/media/windows-vm-watch-vm.png" alt-text="Screenshot of the Windows VM installation." lightbox=".sizes/media/windows-vm-watch-vm.png":::
 
 
 **Linux**
 
-:::image type="content" source="./sizes/media/linux-vm-watch-vm.png" alt-text="Screenshot of the Linux VM installation."::: ::: lightbox="./sizes/media/linux-vm-watch-vm.png":::
+:::image type="content" source="./sizes/media/linux-vm-watch-vm.png" alt-text="Screenshot of the Linux VM installation." lightbox="./sizes/media/linux-vm-watch-vm.png":::
 
 To confirm that ***VM watch*** was enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the configuration exists in the JSON.
 
@@ -200,10 +200,10 @@ On Successful installation, navigate to the [Azure portal](https://portal.azure.
 
 **Windows**
 
-:::image type="content" source="./sizes/media/windows-vm-watch-vmss.png" alt-text="Screenshot of the Windows Virtual Machine Scale Set installation."::: ::: lightbox="./sizes/media/windows-vm-watch-vmss.png":::
+:::image type="content" source="./sizes/media/windows-vm-watch-vmss.png" alt-text="Screenshot of the Windows Virtual Machine Scale Set installation." lightbox="./sizes/media/windows-vm-watch-vmss.png":::
 **Linux**
 
-:::image type="content" source="./sizes/media/linux-vm-watch-vmss.png" alt-text="Screenshot of the Linux Virtual Machine Scale Set installation."::: ::: lightbox="./sizes/media/linux-vm-watch-vmss.png":::
+:::image type="content" source="./sizes/media/linux-vm-watch-vmss.png" alt-text="Screenshot of the Linux Virtual Machine Scale Set installation." lightbox="./sizes/media/linux-vm-watch-vmss.png":::
 ---
 
 To confirm that ***VM watch*** was enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the configuration exists in the JSON.
