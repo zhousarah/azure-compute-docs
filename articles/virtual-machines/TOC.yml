@@ -559,7 +559,7 @@
           - name: Performance
             href: hb-series-performance.md
           - name: HB series retirement
-            href: hb-series-retirement.md
+            href: ./sizes/migration-guides/hb-series-retirement.md
         - name: HBv2 series
           items:
           - name: Overview
@@ -1006,7 +1006,7 @@
       href: dedicated-host-retirement.md
     - name: Dedicated Host SKU Migration
       displayName: dedicated, dedicated host, retirement, migration
-      href: dedicated-host-migration-guide.md
+      href: ./sizes/migration-guides/dedicated-host-migration-guide.md
   - name: Azure Spot Virtual Machines
     items:
     - name: Overview
@@ -1209,6 +1209,8 @@
         href: ./extensions/features-windows.md
       - name: Windows VM Agent
         href: ./extensions/agent-windows.md
+      - name: Azure Diagnostics Extension
+        href: ./windows/extensions-diagnostics.md
     - name: Azure Backup for SQL Server
       items:
       - name: Azure Backup for SQL Server
