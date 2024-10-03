@@ -14,29 +14,28 @@ ms.custom: upgradepolicy, N-Phase
 > [!NOTE]
 >**Custom metrics for rolling upgrades on Virtual Machine Scale Sets is currently in preview.** Previews are made available to you on the condition that you agree to the [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Some aspects of these features may change prior to general availability (GA).
 
-Custom metrics for rolling upgrades enables you to utilize the application health extension to emit custom metrics to your Virtual Machine Scale Set. These custom metrics can be used to tell the scale set the order in which virtual machines should be updated when a rolling upgrade is triggered. The custom metrics can also inform your scale set when an upgrade should be skipped on a specific instance. This allows you to have more control over the ordering and the update process itself. 
+Custom metrics for rolling upgrades enables you to utilize the [application health extension](virtual-machine-scale-sets-health-extension.md) to emit custom metrics to your Virtual Machine Scale Set. These custom metrics can be used to tell the scale set the order in which virtual machines should be updated when a rolling upgrade is triggered. The custom metrics can also inform your scale set when an upgrade should be skipped on a specific instance. This allows you to have more control over the ordering and the update process itself. 
 
-Custom metrics can be used in combination with other rolling upgrade functionality such as Automatic OS upgrades, Automatic Extension upgrades and MaxSurge rolling upgrades. 
+Custom metrics can be used in combination with other rolling upgrade functionality such as [automatic OS upgrades](virtual-machine-scale-sets-automatic-upgrade.md), [automatic extension upgrades](../virtual-machines/automatic-extension-upgrade.md) and [MaxSurge rolling upgrades](virtual-machine-scale-sets-maxsurge.md). 
 
 ## Requirements
 
-- When using custom metrics for rolling upgrades on Virtual Machine Scale Sets, the scale set must also use the [Application Health Extension with Rich Health States](virtual-machine-scale-sets-health-extension.md) to monitor application health, and report phase ordering or skip upgrade information. Custom metrics upgrades aren't supported when using the application health extension with binary states.
+- When using custom metrics for rolling upgrades on Virtual Machine Scale Sets, the scale set must also use the [application health extension with rich health states](virtual-machine-scale-sets-health-extension.md) to report phase ordering or skip upgrade information. Custom metrics upgrades aren't supported when using the application health extension with binary states.
 - The application health extension must be set up to use HTTP or HTTPS in order to receive the custom metrics information. TCP isn't supported for integration with custom metrics for rolling upgrades.  
 
 ## Concepts
 
 ### Phase ordering
-A phase is a high-level grouping construct for virtual machines. Each phase is determined by setting metadata emitted from the [Application Health Extension](virtual-machine-scale-sets-health-extension.md). Custom metrics for rolling upgrades take the information retrieved from the application health extension and use it to create upgrade batches within each phase. Custom metrics for rolling upgrades also uses update domains (UD), fault domains (FD), and zone information to ensure that each batch doesn't cross a boundary.
+A phase is a grouping construct for virtual machines. Each phase is determined by setting metadata emitted from the [application health extension](virtual-machine-scale-sets-health-extension.md) via the `customMetrics` property. The Virtual Machine Scale Set takes the information retrieved from the custom metrics and uses it to place virtual machines into their assigned phases. Within each phase, the Virtual Machine Scale set will also assign upgrade batches. Each batch is configured using the [rolling upgrade policy](virtual-machine-scale-sets-configure-rolling-upgrades.md) which takes into consideration the update domains (UD), fault domains (FD), and zone information of each virtual machine. 
 
-The phased upgrades are performed in numerical sequence order. Until all the batches in the first phase are upgraded, the virtual machines in the following phases remain untouched. 
+When a rolling upgrade is initiated, the virtual machines are placed into their designated phases. The phased upgrades are performed in numerical sequence order. Virtual Machines in all batches within a phase will be completed before moving onto the next phase. If no phase ordering is received for a virtual machine, the scale set will place it into the last phase  
 
+**Regional scale set**
 :::image type="content" source="./media/upgrade-policy/n-phase-regional-scale-set.png" alt-text="Diagram that shows a high level diagram of what happens when using n-phase upgrades on a regional scale set.":::
 
-
+**Zonal scale set**
 :::image type="content" source="./media/upgrade-policy/n-phase-zonal-scale-set.png" alt-text="Diagram that shows a high level diagram of what happens when using n-phase upgrades on a zonal scale set.":::
 
-
-Each virtual machine responds to the application health extension probes with response body contents containing metadata key-value pairs. This metadata is configured to tell the platform how each virtual machine should interact with rolling upgrades. If no phase ordering metadata is received, the rolling upgrade policy continue to use the default settings.  
 
 To specify phase number the virtual machine should be associated with, use `phaseOrderingNumber` parameter.  
 
@@ -47,11 +46,13 @@ To specify phase number the virtual machine should be associated with, use `phas
 }
 ```
 
-After successfully configuring the application health extension and custom metrics on each virtual machine, when a rolling upgrade is initiated, the virtual machines are placed into their designated phases and each phase inherits the rolling upgrade policy associated with the scale set. For more information on the rolling upgrade policy, see [configuring the rolling upgrade policy](virtual-machine-scale-sets-configure-rolling-upgrades.md) for Virtual Machine Scale Sets. 
+
 
 ### Skip upgrade
 
-Skip upgrade functionality enables an individual instance to be omitted from the upgrade during a rolling upgrade. This is similar to utilizing instance protection but can more seamlessly integrate into the rolling upgrade workflow and into instance level applications. When the rolling upgrade is triggered, the Virtual Machine Scale Set checks the response of the application health extensions custom metrics and if skip upgrade is set to true, the instance is not included in the rolling upgrade. 
+Skip upgrade functionality enables an individual instance to be omitted from an upgrade during the rolling upgrade process. This is similar to utilizing instance protection but can more seamlessly integrate into the rolling upgrade workflow and into instance level applications. Similar to phase ordering, the skip upgrade information is passed to the Virtual Machine Scale Set via the application health extension and custom metrics settings. When the rolling upgrade is triggered, the Virtual Machine Scale Set checks the response of the application health extensions custom metrics and if skip upgrade is set to true, the instance is not included in the rolling upgrade. 
+
+:::image type="content" source="./media/upgrade-policy/skip-upgrade-zonal.png" alt-text="Diagram that shows a high level diagram of what happens when using skip upgrade on a zonal scale set.":::
 
 For skipping an upgrade on a virtual machine, use `SkipUpgrade` parameter. This tells the rolling upgrade to skip over this virtual machine when performing the upgrades.  
 
@@ -72,7 +73,7 @@ Skip upgrade and phase order can also be used together:
 ```
 ## Configure the application health extension
 
-The application health extension requires an HTTP or HTTPS request with an associated port or request path. TCP probes are supported when using the application health extension, but can't set the `ApplicationHealthState` through the probe response body and can't be used with rolling upgrades with custom metrics. 
+The [application health extension](virtual-machine-scale-sets-health-extension.md) requires an HTTP or HTTPS request with an associated port or request path. TCP probes are supported when using the application health extension, but can't set the `ApplicationHealthState` through the probe response body and can't be used with rolling upgrades with custom metrics. 
 
 ```json
 {
@@ -113,7 +114,7 @@ The application health extension requires an HTTP or HTTPS request with an assoc
 
 #### [CLI](#tab/azure-cli)
 
-Use [az vmss extension set](/cli/azure/vmss/extension#az-vmss-extension-set) to add the Application Health extension to the scale set model definition.
+Use [az vmss extension set](/cli/azure/vmss/extension#az-vmss-extension-set) to add the application health extension to the scale set model definition.
 
 Create a json file called `extensions.json` with the desired settings.
 
@@ -149,14 +150,14 @@ az vmss update-instances \
 
 #### [PowerShell](#tab/azure-powershell)
 
-Use the [Add-AzVmssExtension](/powershell/module/az.compute/add-azvmssextension) cmdlet to add the Application Health extension to the scale set model definition.
+Use the [Add-AzVmssExtension](/powershell/module/az.compute/add-azvmssextension) cmdlet to add the application health extension to the scale set model definition.
 
 ```azurepowershell-interactive
 # Define the scale set variables
 $vmScaleSetName = "myScaleSet"
 $vmScaleSetResourceGroup = "myResourceGroup"
 
-# Define the Application Health extension properties
+# Define the application health extension properties
 $publicConfig = @{"protocol" = "http"; "port" = 80; "requestPath" = "/healthEndpoint"; "gracePeriod" = 600};
 $extensionName = "myHealthExtension"
 $extensionType = "ApplicationHealthWindows"
@@ -167,7 +168,7 @@ $vmScaleSet = Get-AzVmss `
   -ResourceGroupName $vmScaleSetResourceGroup `
   -VMScaleSetName $vmScaleSetName
 
-# Add the Application Health extension to the scale set model
+# Add the application health extension to the scale set model
 Add-AzVmssExtension -VirtualMachineScaleSet $vmScaleSet `
   -Name $extensionName `
   -Publisher $publisher `
@@ -230,7 +231,7 @@ Request body
 ---
 
 ### Configure the application health extension response
-Configuring the application health extension response can be accomplished in many different ways. It can be integrated into existing applications, dynamically updated and be used along side various functions to provide an output based on a specific situation. 
+Configuring the custom metrics response can be accomplished in many different ways. It can be integrated into existing applications, dynamically updated and be used along side various functions to provide an output based on a specific situation. 
 
 #### Example 1: Phase order
 This sample application can be installed on a virtual machine in a scale set to emit the phase belongs to.
@@ -502,7 +503,7 @@ python3 server.py
 
 ---
 
-For more response configuration examples, see [Application Health Samples](https://github.com/Azure-Samples/application-health-samples)
+For more response configuration examples, see [application health samples](https://github.com/Azure-Samples/application-health-samples)
 
 
 ## Next steps
