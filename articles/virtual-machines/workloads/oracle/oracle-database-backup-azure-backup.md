@@ -678,7 +678,7 @@ After the VM is restored, you should reassign the original IP address to the new
 
 # [Portal](#tab/azure-portal)
 
-1. In the Azure portal, go to your virtual machine named **vmoracle19c**. It's assigned a new public IP and NIC similar to **vmoracle19c-nic-XXXXXXXXXXXX**, but it doesn't have a DNS address. When the original VM was deleted, its public IP and NIC were retained. The next steps reattach them to the new VM.
+1. In the Azure portal, go to your virtual machine named **vmoracle19c**. It gets assigned a new public IP and NIC similar to **vmoracle19c-nic-XXXXXXXXXXXX**, but it doesn't have a DNS address. When the original VM was deleted, its public IP and NIC were retained. The next steps reattach them to the new VM.
 
     ![Screenshot that shows a list of public IP addresses.](./media/oracle-backup-recovery/create-ip-01.png)
 
