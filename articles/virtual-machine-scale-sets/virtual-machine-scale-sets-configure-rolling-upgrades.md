@@ -24,12 +24,40 @@ Rolling upgrade policy is best suited for production workloads.
 
 ## Concepts
 
-> [!NOTE]
-> [Automatic OS image upgrades](virtual-machine-scale-sets-automatic-upgrade.md) and [automatic extension upgrades](../virtual-machines/automatic-extension-upgrade.md) automatically inherit the rolling upgrade policy and use it to perform upgrades. 
+### Upgrade policy mode vs rolling upgrade policy
+The **upgrade policy mode** and the **rolling upgrade policy** are nested, but separate settings of the **upgrade policy**. This means that while your scale set may use a automatic or manual upgrade policy mode, there is still a rolling upgrade policy that is associated. This rolling upgrade policy comes with default settings but can also be configured to meet your business needs. 
+
+```json
+"properties": {
+        "upgradePolicy": {
+            "mode": "<Automatic, Manual, Rolling>",
+            "rollingUpgradePolicy": {
+            "maxBatchInstancePercent": 20,
+            "maxUnhealthyInstancePercent": 20,
+            "maxUnhealthyUpgradedInstancePercent": 20,
+            "pauseTimeBetweenBatches": "PT2S",
+            "MaxSurge": "false"
+            }
+        }
+    }
+```
+
+For scale set model updates, the upgrade policy mode will determine how the instances in the scale set are brought up to date. If using automatic, all instances will be upgraded at the same time. If using manual, any changes made to the scale set model will not be applied to the individual instances until a user performs the upgrade. If using rolling, updates are rolled out in batches based on the rolling upgrade policy settings. 
+
+>[IMPORTANT]
+> If you are using **[automatic OS image upgrades](virtual-machine-scale-sets-automatic-upgrade.md)** or **[automatic extension upgrades](../virtual-machines/automatic-extension-upgrade.md)**, these feature don't use the upgrade policy mode. Instead these features use the rolling upgrade policy configuration settings to perform rolling upgrades upgrades.
+
+
+
+
+
+
+
+### Rolling upgrade policy configuration settings
+
 
 |Setting | Description |
 |---|---|
-|**Upgrade Policy Mode** | The upgrade policy modes available on Virtual Machine Scale Sets are **Automatic**, **Manual**, and **Rolling**. | 
 |**Rolling upgrade batch size %** | Specifies how many of the total instances of your scale set you want to be upgraded at one time. <br><br>Example: A batch size of 20% when you have 10 instances in your scale set results in upgrade batches with two instances each. |
 |**Pause time between batches (sec)** | Specifies how long you want your scale set to wait between upgrading batches.<br><br> Example: A pause time of 10 seconds means that once a batch is successfully completed, the scale set will wait 10 seconds before moving onto the next batch. |
 |**Max unhealthy instance %** | Specifies the total number of instances allowed to be marked as unhealthy before and during the rolling upgrade. <br><br>Example: A max unhealthy instance % of 20 means if you have a scale set of 10 instances and more than two instances in the entire scale set report back as unhealthy, the rolling upgrade stops. |
@@ -93,7 +121,7 @@ Update-Azvmss -ResourceGroupName "myResourceGroup" `
 Update the properties section of your ARM template and set the upgrade policy to rolling and various rolling upgrade options.  
 
 
-``` ARM Template
+```json
 "properties": {
     "singlePlacementGroup": false,
         "upgradePolicy": {
