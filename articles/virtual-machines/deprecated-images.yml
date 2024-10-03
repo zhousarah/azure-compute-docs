@@ -50,7 +50,7 @@ sections:
       - question: How can I identify the Virtual machines and Virtual Machine scale sets in my subscription that are running on images that are scheduled for deprecation?
         answer: |
 
-        **Using Azure Resource graph:**
+         **Using Azure Resource graph:**
         
           You can search for the Virtual machine or Virtual Machine scale sets that are pinned to an image by running the following queries in [Azure Resource graph](/azure/governance/resource-graph/overview): 
           
