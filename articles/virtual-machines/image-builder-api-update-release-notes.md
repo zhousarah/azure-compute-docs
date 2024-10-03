@@ -19,11 +19,11 @@ This article contains all major API changes and feature updates for the Azure VM
 ## Updates
 
 ### September 2024
-Automatic triggers will be deactivated if the image template build has failed a few times in a row, in order to avoid unnecessary failed builds.
+Automatic image creation via triggers will be deactivated if the image template build has failed multiple times consecutively, in order to avoid unnecessary build failures.
 
 You can still manually build the image template. Once a manual build succeeds, the automatic triggers will be reactivated.
 
-Please note that this behaviour is the same regardless of which API version you use for the image template resource.
+Please note that this behavior is the same regardless of which API version you use for the image template resource.
 
 ### May 2024
 #### Breaking Change: Case Sensitivity
