@@ -9,7 +9,7 @@ ms.date:     09/23/2024
 ms.subservice: monitoring
 ---
 
-# Install VM Watch (Preview)
+# Install VM watch (Preview)
 
 Users can enable VM watch with ease via [ARM template](/azure/azure-resource-manager/templates/), [PowerShell](/powershell/), or [AZ CLI](/cli/azure/) on Azure Virtual Machines and Azure Virtual Machine Scale Sets. VM watch can be enabled on both Linux and Windows virtual machines. VM watch is delivered through the [Application Health VM extension](/azure/virtual-machines/extensions/health-extension?tabs=rest-api) for ease of adoption. The code in this document details the steps to install the application health virtual machine extension and enable VM watch.
 > [!Note]
@@ -95,12 +95,12 @@ On Successful installation, navigate to the [Azure Portal](https://portal.azure.
 
 **Windows**
 
-:::image type="content" source="./sizes/media/windows-vm-watch-vm.png" alt-text="Screenshot of the Windows VM installation.":::
+:::image type="content" source="./sizes/media/windows-vm-watch-vm.png" alt-text="Screenshot of the Windows VM installation."::: lightbox=".sizes/media/windows-vm-watch-vm.png":::
 
 
 **Linux**
 
-:::image type="content" source="./sizes/media/linux-vm-watch-vm.png" alt-text="Screenshot of the Linux VM installation.":::
+:::image type="content" source="./sizes/media/linux-vm-watch-vm.png" alt-text="Screenshot of the Linux VM installation."::: ::: lightbox="./sizes/media/linux-vm-watch-vm.png":::
 
 To confirm that ***VM watch*** was enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the configuration exists in the JSON.
 
@@ -200,11 +200,10 @@ On Successful installation, navigate to the [Azure portal](https://portal.azure.
 
 **Windows**
 
-:::image type="content" source="./sizes/media/windows-vm-watch-vmss.png" alt-text="Screenshot of the Windows Virtual Machine Scale Set installation.":::
-
+:::image type="content" source="./sizes/media/windows-vm-watch-vmss.png" alt-text="Screenshot of the Windows Virtual Machine Scale Set installation."::: ::: lightbox="./sizes/media/windows-vm-watch-vmss.png":::
 **Linux**
 
-:::image type="content" source="./sizes/media/linux-vm-watch-vmss.png" alt-text="Screenshot of the Linux Virtual Machine Scale Set installation.":::
+:::image type="content" source="./sizes/media/linux-vm-watch-vmss.png" alt-text="Screenshot of the Linux Virtual Machine Scale Set installation."::: ::: lightbox="./sizes/media/linux-vm-watch-vmss.png":::
 ---
 
 To confirm that ***VM watch*** was enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the configuration exists in the JSON.
