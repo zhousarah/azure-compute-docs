@@ -25,7 +25,7 @@ Rolling upgrade policy is best suited for production workloads.
 ## Concepts
 
 ### Upgrade policy mode vs rolling upgrade policy
-The **upgrade policy mode** and the **rolling upgrade policy** are nested, but separate settings of the **upgrade policy**. This means that while your scale set may use a automatic or manual upgrade policy mode, there is still a rolling upgrade policy that is associated. This rolling upgrade policy comes with default settings but can also be configured to meet your business needs. 
+The **upgrade policy mode** and the **rolling upgrade policy** are nested, but separate settings of the **upgrade policy**. This means that while your scale set may use an automatic or manual upgrade policy mode, there is still a rolling upgrade policy that is associated. This rolling upgrade policy comes with default settings but can also be configured to meet your business needs. 
 
 ```json
 "properties": {
