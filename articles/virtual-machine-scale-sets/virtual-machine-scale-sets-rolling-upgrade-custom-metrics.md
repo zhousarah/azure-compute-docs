@@ -20,7 +20,7 @@ Custom metrics can be used in combination with other rolling upgrade functionali
 
 ## Requirements
 
-- When using custom metrics for rolling upgrades on Virtual Machine Scale Sets, the scale set must also use the [Application Health Extension with Rich Health States](virtual-machine-scale-sets-health-extension.md) to report phase ordering or skip upgrade information. Custom metrics upgrades aren't supported when using the application health extension with binary states.
+- When using custom metrics for rolling upgrades on Virtual Machine Scale Sets, the scale set must also use the [application health extension with rich health states](virtual-machine-scale-sets-health-extension.md) to report phase ordering or skip upgrade information. Custom metrics upgrades aren't supported when using the application health extension with binary states.
 - The application health extension must be set up to use HTTP or HTTPS in order to receive the custom metrics information. TCP isn't supported for integration with custom metrics for rolling upgrades.  
 
 ## Concepts
@@ -73,7 +73,7 @@ Skip upgrade and phase order can also be used together:
 ```
 ## Configure the application health extension
 
-The application health extension requires an HTTP or HTTPS request with an associated port or request path. TCP probes are supported when using the application health extension, but can't set the `ApplicationHealthState` through the probe response body and can't be used with rolling upgrades with custom metrics. 
+The [application health extension](virtual-machine-scale-sets-health-extension.md) requires an HTTP or HTTPS request with an associated port or request path. TCP probes are supported when using the application health extension, but can't set the `ApplicationHealthState` through the probe response body and can't be used with rolling upgrades with custom metrics. 
 
 ```json
 {
@@ -114,7 +114,7 @@ The application health extension requires an HTTP or HTTPS request with an assoc
 
 #### [CLI](#tab/azure-cli)
 
-Use [az vmss extension set](/cli/azure/vmss/extension#az-vmss-extension-set) to add the Application Health extension to the scale set model definition.
+Use [az vmss extension set](/cli/azure/vmss/extension#az-vmss-extension-set) to add the application health extension to the scale set model definition.
 
 Create a json file called `extensions.json` with the desired settings.
 
@@ -150,14 +150,14 @@ az vmss update-instances \
 
 #### [PowerShell](#tab/azure-powershell)
 
-Use the [Add-AzVmssExtension](/powershell/module/az.compute/add-azvmssextension) cmdlet to add the Application Health extension to the scale set model definition.
+Use the [Add-AzVmssExtension](/powershell/module/az.compute/add-azvmssextension) cmdlet to add the application health extension to the scale set model definition.
 
 ```azurepowershell-interactive
 # Define the scale set variables
 $vmScaleSetName = "myScaleSet"
 $vmScaleSetResourceGroup = "myResourceGroup"
 
-# Define the Application Health extension properties
+# Define the application health extension properties
 $publicConfig = @{"protocol" = "http"; "port" = 80; "requestPath" = "/healthEndpoint"; "gracePeriod" = 600};
 $extensionName = "myHealthExtension"
 $extensionType = "ApplicationHealthWindows"
@@ -168,7 +168,7 @@ $vmScaleSet = Get-AzVmss `
   -ResourceGroupName $vmScaleSetResourceGroup `
   -VMScaleSetName $vmScaleSetName
 
-# Add the Application Health extension to the scale set model
+# Add the application health extension to the scale set model
 Add-AzVmssExtension -VirtualMachineScaleSet $vmScaleSet `
   -Name $extensionName `
   -Publisher $publisher `
@@ -231,7 +231,7 @@ Request body
 ---
 
 ### Configure the application health extension response
-Configuring the application health extension response can be accomplished in many different ways. It can be integrated into existing applications, dynamically updated and be used along side various functions to provide an output based on a specific situation. 
+Configuring the custom metrics response can be accomplished in many different ways. It can be integrated into existing applications, dynamically updated and be used along side various functions to provide an output based on a specific situation. 
 
 #### Example 1: Phase order
 This sample application can be installed on a virtual machine in a scale set to emit the phase belongs to.
@@ -503,7 +503,7 @@ python3 server.py
 
 ---
 
-For more response configuration examples, see [Application Health Samples](https://github.com/Azure-Samples/application-health-samples)
+For more response configuration examples, see [application health samples](https://github.com/Azure-Samples/application-health-samples)
 
 
 ## Next steps
