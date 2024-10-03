@@ -69,7 +69,7 @@ For scale set model updates, the upgrade policy mode will determine how the inst
 
 ## Setting or updating the rolling upgrade policy
 
-Rolling upgrade policy can be configured during scale set creation. Because rolling upgrade policy requires successfully monitoring application health and there are specific settings that determine how upgrades are completed, it's suggested to first create your scale set using manual upgrade policy. Once you have confirmed the application health is being successfully reported, update your upgrade policy from manual to rolling.
+Rolling upgrade policy can be configured during scale set creation. Because rolling upgrade policy requires successfully monitoring application health and there are specific settings that determine how upgrades are completed, it's suggested to first create your scale set using manual upgrade mode. Once you have confirmed the application health is being successfully reported, update your upgrade policy from manual to rolling.
 
 ### [Portal](#tab/portal1)
 
