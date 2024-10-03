@@ -53,7 +53,7 @@ VM watch is a standardized, lightweight, and adaptable in-VM service offering fo
 | **ReadOps**          | Metric | The read operations per seconds of the target disk/partition | 
 
 
-### CPU:
+### CPU
 
 | **Signal Name** | **Type** | **Description** |
 |:---:|:---:|:---:|
