@@ -1759,6 +1759,7 @@ You can use the `autoRun` property to control whether the image template build p
 "properties": {
     "autoRun": {
         "state": "Enabled"
+    }
  }
 ```
 
