@@ -9,7 +9,7 @@ ms.date: 9/25/2024
 ms.reviewer: ju-shim
 ms.custom: upgradepolicy
 ---
-# Upgrade policy mode for Virtual Machine Scale Sets
+# Upgrade policy modes for Virtual Machine Scale Sets
 
 The upgrade policy mode you choose can impact the overall service uptime of your Virtual Machine Scale Set. The available upgrade policy modes are: **automatic**, **manual**, and **rolling**. 
 
