@@ -13,18 +13,6 @@ ms.author: lnagpal
 
 This article outlines common problems and errors that might arise during the deployment or use of Maintenance Configurations for scheduled patching on virtual machines (VMs), along with strategies to address them.
 
-### A VM shuts down and is unresponsive when you use a dynamic scope in guest maintenance
-
-#### Problem
-
-A maintenance configuration doesn't install a scheduled patch on the VMs and gives a `ShutdownOrUnresponsive` error.
-
-#### Resolution
-
-It takes 12 hours to complete the cleanup process for the maintenance configuration assignment. Be sure to keep a buffer of 12 hours before you create a VM with the same name.
-
-If you create a VM with the same name before the cleanup, Maintenance Configurations can't trigger the schedule.
-
 ### A VM shuts down and is unresponsive when you use a static scope in guest maintenance
 
 #### Problem
@@ -96,6 +84,8 @@ After creating a Maintenance Configuration with a repeat value of either week or
 
 The Maintenance Configuration first run occurs on the first recurrence value following the specified start date, not necessarily on the start date itself. For example, if the maintenance configuration starts on January 17th (Wednesday) and is set to recur every Monday, the first run of the schedule will be on the first Monday after January 17th, which is January 22nd.
 
+You can view first 4 instances of the scheduled run when creating a new maintenance configuration from Azure Portal.
+
 ### Creation of a dynamic scope fails
 
 #### Problem
@@ -134,18 +124,6 @@ A maintenance configuration doesn't block the update of a dedicated host, and th
 #### Resolution
 
 If you re-create a dedicated host with the same name, Maintenance Configurations retains the old dedicated host ID, which prevents it from blocking updates. You can resolve this problem by removing the maintenance configuration and reassigning it. If the problem persists, contact the support team for assistance.
-
-### Patch installation fails for an invalid classification type
-
-#### Problem
-
-Patch installation fails because of an invalid classification type in a maintenance configuration.
-
-A previous bug prevented the system's patch operation from performing validation, and the maintenance configuration contained an invalid classification type.
-
-#### Resolution
-
-The bug is fixed. Update the maintenance configuration and set the correct classification type.
 
 ### A schedule isn't triggered
 
