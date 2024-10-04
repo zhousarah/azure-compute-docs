@@ -19,9 +19,11 @@ Using the standby pool runtime view apis you can get the current status of your 
 ### CLI (#tab/cli)
 
 ```azurecli
-az standby-vm-pool status --resource-group myResourceGroup --name myScaleS2890-StandbyPool
+az standby-vm-pool status \
+    --resource-group myResourceGroup \
+    --name myStandbyPool
 {
-  "id": "/subscriptions/401ef76a-dea9-45da-b19a-db3efced675b/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyVirtualMachinePools/myScaleS2890-StandbyPool/runtimeViews/latest",
+  "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyVirtualMachinePools/myStandbyPool/runtimeViews/latest",
   "instanceCountSummary": [
     {
       "instanceCountsByState": [
@@ -124,45 +126,101 @@ az standby-vm-pool status --resource-group myResourceGroup --name myScaleS2890-S
 
 ```azurepowershell
 Get-AzStandbyVMPoolStatus `
--SubscriptionId f8da6e30-a9d8-48ab-b05c-3f7fe482e13b `
--ResourceGroupName test-standbypool `
--Name testPool
+-ResourceGroupName myResourceGroup `
+-Name myStandbyPool
 
 output
-Id                           : /subscriptions/f8da6e30-a9d8-48ab-b05c-3f7fe482e13b/resourceGroups/test-standbypool/providers/Microsoft.Standb
-                               yPool/standbyVirtualMachinePools/testPool/runtimeViews/latest
+Id: /subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyVirtualMachinePools/mmyStandbyPool/runtimeViews/latest
 InstanceCountSummary         : {{
-                                 "instanceCountsByState": [
-                                   {
-                                     "state": "Creating",
-                                     "count": 0
-                                   },
-                                   {
-                                     "state": "Starting",
-                                     "count": 0
-                                   },
-                                   {
-                                     "state": "Running",
-                                     "count": 1
-                                   },
-                                   {
-                                     "state": "Deallocating",
-                                     "count": 0
-                                   },
-                                   {
-                                     "state": "Deallocated",
-                                     "count": 0
-                                   },
-                                   {
-                                     "state": "Deleting",
-                                     "count": 0
-                                   }
-                                 ]
-                               }}
+        "instanceCountsByState": [
+        {
+            "state": "Creating",
+            "count": 0
+        },
+        {
+            "state": "Starting",
+            "count": 0
+        },
+        {
+            "state": "Running",
+            "count": 0
+        },
+        {
+            "state": "Deallocating",
+            "count": 0
+        },
+        {
+            "state": "Deallocated",
+            "count": 2
+        },
+        {
+            "state": "Deleting",
+            "count": 0
+        }
+        ],
+        "zone": 2
+        },
+        {
+        "instanceCountsByState": [
+        {
+            "state": "Creating",
+            "count": 0
+        },
+        {
+            "state": "Starting",
+            "count": 0
+        },
+        {
+            "state": "Running",
+            "count": 0
+        },
+        {
+            "state": "Deallocating",
+            "count": 0
+        },
+        {
+            "state": "Deallocated",
+            "count": 3
+        },
+        {
+            "state": "Deleting",
+            "count": 0
+        }
+        ],
+        "zone": 3
+        },
+        {
+        "instanceCountsByState": [
+        {
+            "state": "Creating",
+            "count": 0
+        },
+        {
+            "state": "Starting",
+            "count": 0
+        },
+        {
+            "state": "Running",
+            "count": 0
+        },
+        {
+            "state": "Deallocating",
+            "count": 0
+        },
+        {
+            "state": "Deallocated",
+            "count": 3
+        },
+        {
+            "state": "Deleting",
+            "count": 0
+        }
+        }}
 Name                         : latest
 ProvisioningState            : Succeeded
-ResourceGroupName            : test-standbypool
+ResourceGroupName            : myResourceGroup
 Type                         : Microsoft.StandbyPool/standbyVirtualMachinePools/runtimeViews
+
 ```
 
 
@@ -171,7 +229,6 @@ Type                         : Microsoft.StandbyPool/standbyVirtualMachinePools/
 ```rest
 GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StandbyPool/standbyVirtualMachinePools/{standbyVirtualMachinePoolName}/runtimeViews/{runtimeView}?api-version=2024-03-01
 
-Sample output
 {
   "properties": {
     "instanceCountSummary": [
@@ -265,8 +322,8 @@ Sample output
     ],
     "provisioningState": "Succeeded"
   },
-  "id": "/subscriptions/00000000-0000-0000-0000-000000000009/resourceGroups/rgstandbypool/providers/Microsoft.StandbyPool/standbyVirtualMachinePools/pool/runtimeViews/latest",
-  "name": "pool",
+  "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyVirtualMachinePools/pool/runtimeViews/latest",
+  "name": "myStandbyPool",
   "type": "Microsoft.StandbyPool/standbyVirtualMachinePools/runtimeViews",
   "systemData": {
     "createdBy": "pooluser@microsoft.com",
@@ -279,9 +336,6 @@ Sample output
 }
 
 ```
-
-
-
 
 ## Instance details
 
