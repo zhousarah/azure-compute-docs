@@ -128,7 +128,7 @@ az standby-vm-pool status --resource-group myResourceGroup --name myStandbyPool
 Get-AzStandbyVMPoolStatus -ResourceGroupName myResourceGroup -Name myStandbyPool
 ```
 
-**Sample output***
+**Sample output**
 ```azurepowershell
 Id: /subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyVirtualMachinePools/mmyStandbyPool/runtimeViews/latest
 InstanceCountSummary         : {{
