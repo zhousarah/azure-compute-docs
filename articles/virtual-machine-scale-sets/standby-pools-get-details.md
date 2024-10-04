@@ -352,12 +352,12 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 
 ## Standby pool instances
-When a virtual machine is in a standby pool, the `isVmInStandbyPool` parameter is set to true. When the virtual machine is moved from the pool instance the scale set, the parameter is automatically updated to false. This can be useful in determining when a virtual machine is ready to recieve traffic or not. 
+When a virtual machine is in a standby pool, the `isVmInStandbyPool` parameter is set to true. When the virtual machine is moved from the pool instance the scale set, the parameter is automatically updated to false. This can be useful in determining when a virtual machine is ready to receive traffic or not. This information is also available to query via [Azure Instance Metadata Service](../virtual-machines/instance-metadata-service.md)
 
 ### [CLI](#tab/cli)
 
 ```azurecli
-az vm get-instance-view --resource-group myResourceGroup --name myInstance
+az vm get-instance-view --resource-group myResourceGroup --name myVM
 
     "extensions": null,
     "hyperVGeneration": "V2",
@@ -381,10 +381,40 @@ az vm get-instance-view --resource-group myResourceGroup --name myInstance
     ],
 ```
 
+### [PowerShell](#tab/powershell)
+
+```azurepowershell
+get-azVM -resourceGroupName myResourceGroup -name myVM -status
+
+
+ResourceGroupName : myResourceGroup
+Name              : myVM
+HyperVGeneration  : V2
+IsVMInStandbyPool : True
+BootDiagnostics   : 
+Disks[0]          : 
+  Name            : myVM_1a995f8c_OsDisk_1_c250259c33b942eb910504cf6512332d
+  Statuses[0]     : 
+    Code          : ProvisioningState/succeeded
+    Level         : Info
+    DisplayStatus : Provisioning succeeded
+    Time          : 10/4/2024 7:45:11 PM
+Statuses[0]       : 
+  Code            : ProvisioningState/succeeded
+  Level           : Info
+  DisplayStatus   : Provisioning succeeded
+  Time            : 10/4/2024 7:45:11 PM
+Statuses[1]       : 
+  Code            : PowerState/deallocated
+  Level           : Info
+  DisplayStatus   : VM deallocated
+```
+
+
 ### [REST](#tab/rest)
 
 ```HTTP
-PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myInstance/instanceView?api-version=2024-03-01
+PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM/instanceView?api-version=2024-03-01
 
 {
   "bootDiagnostics": {},
@@ -407,3 +437,6 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/m
 ```
 
 ---
+
+## Next steps
+Review the most [frequently asked questions](standby-pools-faq.md) about standby pools for Virtual Machine Scale Sets.
