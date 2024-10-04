@@ -53,64 +53,6 @@ The virtual machines in the standby pool can be kept in a running or stopped (de
 :::image type="content" source="media/standby-pools/running-vm-pool.png" alt-text="A screenshot showing the workflow when using running virtual machine pools.":::
 
 
-## Standby pool instances
-When a virtual machine is in a standby pool, the `isVmInStandbyPool` parameter is set to true. When the virtual machine is moved from the pool instance the scale set, the parameter is automatically updated to false. This can be useful in determining when a virtual machine is ready to recieve traffic or not. 
-
-### [CLI](#tab/cli)
-
-```azurecli
-az vm get-instance-view --resource-group myResourceGroup --name myInstance
-
-    "extensions": null,
-    "hyperVGeneration": "V2",
-    "isVmInStandbyPool": true,
-    "maintenanceRedeployStatus": null,
-    "statuses": [
-      {
-        "code": "ProvisioningState/succeeded",
-        "displayStatus": "Provisioning succeeded",
-        "level": "Info",
-        "message": null,
-        "time": "2024-08-02T17:22:46.295536+00:00"
-      },
-      {
-        "code": "PowerState/deallocated",
-        "displayStatus": "VM deallocated",
-        "level": "Info",
-        "message": null,
-        "time": null
-      }
-    ],
-```
-
-### [REST](#tab/rest)
-
-```HTTP
-PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myInstance/instanceView?api-version=2024-03-01
-
-{
-  "bootDiagnostics": {},
-  "isVMInStandbyPool": true,
-  "hyperVGeneration": "V2",
-  "statuses": [
-    {
-      "code": "ProvisioningState/succeeded",
-      "level": "Info",
-      "displayStatus": "Provisioning succeeded",
-      "time": "2024-08-02T17:22:46.2955369+00:00"
-    },
-    {
-      "code": "PowerState/deallocated",
-      "level": "Info",
-      "displayStatus": "VM deallocated"
-    }
-  ]
-}
-```
-
----
-
-
 ## Availability zones
 When using standby pools with a Virtual Machine Scale Set spanning [availability zones](virtual-machine-scale-sets-use-availability-zones.md), the instances in the pool are spread across the same zones the Virtual Machine Scale Set is using. 
 
