@@ -64,7 +64,7 @@ When using an ARM template, add the `upgradePolicy` parameter to the properties 
 
 If using a rolling upgrade policy mode, see [configure rolling upgrade policy](virtual-machine-scale-sets-configure-rolling-upgrades.md) for configuration settings and suggestions.
 
-```ARM
+```json
 "properties": {
         "upgradePolicy": {
             "mode": "manual",

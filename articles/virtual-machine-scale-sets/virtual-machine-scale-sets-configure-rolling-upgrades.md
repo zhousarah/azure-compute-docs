@@ -45,15 +45,7 @@ The **upgrade policy mode** and the **rolling upgrade policy** are nested, but s
 For scale set model updates, the upgrade policy mode will determine how the instances in the scale set are brought up to date. 
 
 > [!IMPORTANT]
-> If you are using **[automatic OS image upgrades](virtual-machine-scale-sets-automatic-upgrade.md)** or **[automatic extension upgrades](../virtual-machines/automatic-extension-upgrade.md)**, these feature don't use the upgrade policy mode. Instead these features use the rolling upgrade policy configuration settings to perform rolling upgrades upgrades.
-
-| Upgrade Mode | Description |
-|---|---|
-| **Automatic** | All instances will be upgraded at the same time. |
-| **Manual** | Any changes made to the scale set model will not be applied to the individual instances until a user performs the upgrade. |
-| **Rolling** | Updates are rolled out in batches based on the rolling upgrade policy settings. |
-
-
+> If you are using **[automatic OS image upgrades](virtual-machine-scale-sets-automatic-upgrade.md)** or **[automatic extension upgrades](../virtual-machines/automatic-extension-upgrade.md)**, these feature don't use the upgrade policy mode. Instead these features use the rolling upgrade policy configuration settings to perform rolling upgrades.
 
 ### Rolling upgrade policy configuration settings
 
@@ -61,12 +53,12 @@ For scale set model updates, the upgrade policy mode will determine how the inst
 |Setting | Description |
 |---|---|
 |**Rolling upgrade batch size %** | Specifies how many of the total instances of your scale set you want to be upgraded at one time. <br><br>Example: A batch size of 20% when you have 10 instances in your scale set results in upgrade batches with two instances each. |
-|**Pause time between batches (sec)** | Specifies how long you want your scale set to wait between upgrading batches.<br><br> Example: A pause time of 10 seconds means that once a batch is successfully completed, the scale set will wait 10 seconds before moving onto the next batch. |
+|**Pause time between batches (sec)** | Specifies how long you want your scale set to wait between finishing an upgrade batch and starting a new one.<br><br> Example: A pause time of 10 seconds means that once a batch is successfully completed, the scale set will wait 10 seconds before moving onto the next batch. |
 |**Max unhealthy instance %** | Specifies the total number of instances allowed to be marked as unhealthy before and during the rolling upgrade. <br><br>Example: A max unhealthy instance % of 20 means if you have a scale set of 10 instances and more than two instances in the entire scale set report back as unhealthy, the rolling upgrade stops. |
-| **Max unhealthy upgrade %**| Specifies the total number of instances allowed to be marked as unhealthy after being upgraded. <br><br>Example: A max unhealthy upgrade % of 20 means if you have a scale set of 10 instances and more than two instances in the entire scale set report back as unhealthy after being upgraded, the rolling upgrade is canceled. <br><br>Max unhealthy upgrade % is an important setting because it allows the scale set to catch unstable or poor updates before they roll out to the entire scale set. |
-|**Prioritize unhealthy instances** | Tells the scale set to upgrade instances marked as unhealthy before upgrading instances marked as healthy. <br><br>Example: If some instances in your scale are failed or unhealthy when a rolling upgrade begins, the scale set updates those instances first. |
-| **Enable cross-zone upgrade** | Allows the scale set to ignore Availability Zone boundaries when determining batches. |
-| **MaxSurge** | With MaxSurge enabled, new instances are created  in batches using the latest scale model. Once the batch of new instances is successfully created and marked as healthy, they begin taking traffic. The scale set then deletes instances in batches matching the old scale set model. This continues until all instances are brought up-to-date. rolling upgrades with MaxSurge can help improve service uptime during upgrade events. <br><br>For more information see [MaxSurge rolling upgrades](virtual-machine-scale-sets-maxsurge.md). |
+| **Max unhealthy upgrade %**| Specifies the total number of instances allowed to be marked as unhealthy after being upgraded. <br><br>Example: A max unhealthy upgrade % of 20 means if you have a scale set of 10 instances and more than two instances in the entire scale set report back as unhealthy after being upgraded, the rolling upgrade is canceled. |
+|**Prioritize unhealthy instances** | Tells the scale set to upgrade instances reporting as unhealthy before upgrading instances reporting as healthy. <br><br>Example: If some instances in your scale are failed or unhealthy when a rolling upgrade begins, the scale set updates those instances first. |
+| **Enable cross-zone upgrade** | Allows the scale set to ignore Availability Zone boundaries when determining batches. This essentially lets the rolling upgrade treat your scale set as a regional deployment instead of a zonal deployment. |
+| **MaxSurge** | New instances are created in batches using the latest scale model. Once the batch of new instances is successfully created and marked as healthy, the scale set then deletes instances in batches matching the old scale set model. This continues until all instances are brought up-to-date. rolling upgrades with MaxSurge can help improve service uptime during upgrade events. <br><br>For more information see [MaxSurge rolling upgrades](virtual-machine-scale-sets-maxsurge.md). |
 
 
 ## Setting or updating the rolling upgrade policy
