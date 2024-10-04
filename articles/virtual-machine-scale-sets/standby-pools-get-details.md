@@ -10,7 +10,7 @@ ms.reviewer: ju-shim
 ---
 
 # Get standby pool and instance details
-A standby pool is a dynamic resource that will stay in sync with your scale set as your workload scales up and down. This article discusses how to retrieve various information regarding your standby pool and the instances within it. 
+A standby pool is a dynamic resource that stays in sync with your scale set as your workload scales up and down. This article discusses how to retrieve various information about your standby pool and the instances within it. 
 
 ## Standby pool details
 Use the standby pool runtime view APIs to get the current status of your standby pool including how many instances are available, the provisioning state, and what zones are being utilized. 
