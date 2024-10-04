@@ -16,7 +16,7 @@ A standby pool is a dynamic resource that will stay in sync with your scale set 
 Use the standby pool runtime view APIs to get the current status of your standby pool including how many instances are available, the provisioning state, and what zones are being utilized. 
 
 
-### CLI(#tab/cli)
+### [CLI](#tab/cli)
 
 ```azurecli
 az standby-vm-pool status --resource-group myResourceGroup --name myStandbyPool
@@ -122,7 +122,7 @@ az standby-vm-pool status --resource-group myResourceGroup --name myStandbyPool
 ```
 
 
-### PowerShell(#tab/powershell)
+### [PowerShell](#tab/powershell)
 
 ```azurepowershell
 Get-AzStandbyVMPoolStatus -ResourceGroupName myResourceGroup -Name myStandbyPool
@@ -224,7 +224,7 @@ Type                         : Microsoft.StandbyPool/standbyVirtualMachinePools/
 ```
 
 
-### REST(#tab/rest)
+### [REST](#tab/rest)
 
 ```rest
 GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StandbyPool/standbyVirtualMachinePools/{standbyVirtualMachinePoolName}/runtimeViews/{runtimeView}?api-version=2024-03-01
