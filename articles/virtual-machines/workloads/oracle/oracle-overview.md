@@ -8,7 +8,7 @@ ms.service: oracle-on-azure
 ms.collection: linux
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
-ms.date: 04/10/2023
+ms.date: 10/04/2024
 ms.author: jacobjaygbay
 ---
 
