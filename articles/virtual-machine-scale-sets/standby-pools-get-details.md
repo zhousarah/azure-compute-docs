@@ -16,7 +16,7 @@ ms.reviewer: ju-shim
 Using the standby pool runtime view apis you can get the current status of your standby pool including how many instances are available, what state those instances are in and what zones are currently being used. 
 
 
-### CLI (#tab/cli)
+### CLI(#tab/cli)
 
 ```azurecli
 az standby-vm-pool status --resource-group myResourceGroup --name myStandbyPool
@@ -124,7 +124,7 @@ az standby-vm-pool status --resource-group myResourceGroup --name myStandbyPool
 ```
 
 
-### PowerShell (#tab/powershell)
+### PowerShell(#tab/powershell)
 
 ```azurepowershell
 Get-AzStandbyVMPoolStatus -ResourceGroupName myResourceGroup -Name myStandbyPool
@@ -226,7 +226,7 @@ Type                         : Microsoft.StandbyPool/standbyVirtualMachinePools/
 ```
 
 
-### REST (#tab/rest)
+### REST(#tab/rest)
 
 ```rest
 GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StandbyPool/standbyVirtualMachinePools/{standbyVirtualMachinePoolName}/runtimeViews/{runtimeView}?api-version=2024-03-01
