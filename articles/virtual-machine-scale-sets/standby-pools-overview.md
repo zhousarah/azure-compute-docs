@@ -11,9 +11,9 @@ ms.reviewer: ju-shim
 
 # Standby pools for Virtual Machine Scale Sets
 
-Standby pools for Virtual Machine Scale Sets enables you to increase scaling performance by creating a pool of pre-provisioned virtual machines from which the scale set can pull from when scaling out. 
+Standby pools for Virtual Machine Scale Sets enables you to increase scaling performance by creating a pool of pre-provisioned virtual machines. The virtual machines in the standby pool complete all post provisioning processes such as installing applications, downloading data packages, etc. Once the virtual machines have been fully provisioned, they can be maintained in a running or a stopped (deallocated) state. When your scale set requires additional instances, the instances in the standby pool are automatically moved into the scale set. This saves significant time as the virtual machines have already been fully configured. 
 
-Standby pools reduce the time to scale out by performing various initialization steps such as installing applications/ software or loading large amounts of data. These initialization steps are performed on the virtual machines in the standby pool before to being moved into the scale set.
+If maintaining a standby pool of running virtual machines, the machines are immediately ready to receive traffic after being moved into the scale set. If maintaining a standby pool of stopped (deallocated) virtual machines, the virtual machines are automatically started after moving into the scale set. Since they have already completed all the provisioning steps, the only delay in being ready to take traffic is the time it takes to start the machine. 
 
 
 ## Scaling
@@ -45,14 +45,14 @@ The number of virtual machines in a standby pool is calculated by the max ready 
 | maxReadyCapacity | The maximum number of virtual machines to be created in the pool.|
 | minReadyCapacity | The minimum number of virtual machines to be maintained in the pool.|
 | instanceCount | The current number of virtual machines already deployed in the scale set.|
-| Standby pool size | Standby pool size = `maxReadyCapacity`– `instanceCount`. |
+| Standby pool size | Standby pool size = `maxReadyCapacity`– `instanceCount`. If max ready capacity is less than the instance count and you have a min ready capacity configured, the pool size would be equal to the min ready capacity.  |
 
 ## Standby pool instances
 When a virtual machine is in a standby pool, the `isVmInStandbyPool` parameter is set to true. When the virtual machine is moved from the pool instance the scale set, the parameter is automatically updated to false. This can be useful in determining when a virtual machine is ready to recieve traffic or not. 
 
 ### [CLI](#tab/cli)
 
-```cli
+```azurecli
 az vm get-instance-view --resource-group myResourceGroup --name myInstance
 
     "extensions": null,
