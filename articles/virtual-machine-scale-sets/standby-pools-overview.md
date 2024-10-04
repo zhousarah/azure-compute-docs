@@ -18,16 +18,31 @@ If maintaining a standby pool of running virtual machines, the machines are imme
 
 ## Scaling
 
-When your scale set requires more instances, rather than creating new instances from scratch, the scale set instead uses virtual machines from the standby pool. This saves significant time as the virtual machines in the standby pool have already completed all post-provisioning steps. 
+Moving virtual machines between the standby pool into the scale set happens automatically whenever a scale out event is triggered. There is no additional configuration required. As long as there is an available instance in the standby pool that has completed all provisioning steps, the scale set by default will use that instance when scaling up. 
 
 When scaling back down, the instances are deleted from your scale set based on the [scale-in policy](virtual-machine-scale-sets-scale-in-policy.md) and the standby pool refills to meet the max ready capacity configured. If at any point in time your scale set needs to scale beyond the number of instances you have in your standby pool, the scale set defaults to standard scale-out methods and creates new instances.
 
-Standby pools only give out virtual machines from the pool that match the desired power state configured. For example, if your desired power state is set as deallocated, the standby pool will only give the scale set instances matching that current power state. If virtual machines are in a creating, failed or any other state than the expected state, the scale set defaults to new virtual machine creation instead.
+Standby pools only give out virtual machines from the pool that match the desired power state configured. For example, if your desired power state is set as stopped (deallocated), the standby pool will only give the scale set instances matching that current power state. If virtual machines are in a creating, failed or any other state than the expected state, the scale set defaults to new virtual machine creation instead.
 
+## Standby pool size
+There are three settings that determine how many instances will be in your standby pool at any given point in time. These include the scale set instance count, the minimum ready capacity and the maximum ready capacity. 
+
+The scale set instance count is how many instances are currently deployed in your scale set. This is a scale set level property that can be changed at any point in time by either scaling up or scaling down. Regardless of how you are managing the scaling rules for your scale set, the standby pool will keep track of how many instances are deployed and adjust accordingly. 
+
+The minimum ready capacity is a user defined parameter. By default, the minimum ready capacity for any new standby pool is zero. By setting the minimum ready capacity, it informs the standby pool that it should maintain that many instances at minimum. For example, if you have a minimum ready capacity of 5, anytime a virtual machine is moved from the pool into the scale set which reduces the minimum ready capacity to less than 5, the standby pool will automatically create an additional instance and begin preparing it for scale out. 
+
+The maximum ready capacity is a user defined parameter. This setting tells the standby pool how many instances at most should be maintained in the pool. Maximum ready capacity is directly tied to the scale set instance count. If you have a maximum ready capacity of 20 and you currently have 10 instances in your scale set, the pool size would equal 10. If your scale set scales down to 5, the pool size would increase to 15. This will continue to dynamically adjust as the scale set increases and decreases instance count. 
+
+| Setting | Description | 
+|---|---|
+| maxReadyCapacity | The maximum number of virtual machines to be created in the pool.|
+| minReadyCapacity | The minimum number of virtual machines to be maintained in the pool.|
+| instanceCount | The current number of virtual machines already deployed in the scale set.|
+| Standby pool size | Standby pool size = `maxReadyCapacity`– `instanceCount` |
 
 ## Virtual machine states
 
-The virtual machines in the standby pool can be kept in a running or deallocated state. 
+The virtual machines in the standby pool can be kept in a running or stopped (deallocated) state. 
 
 **Deallocated:** Deallocated virtual machines are shut down and keep any associated disks, network interfaces, and any static IPs. [Ephemeral OS disks](../virtual-machines/ephemeral-os-disks.md) don't support the deallocated state. 
 
@@ -37,15 +52,6 @@ The virtual machines in the standby pool can be kept in a running or deallocated
 
 :::image type="content" source="media/standby-pools/running-vm-pool.png" alt-text="A screenshot showing the workflow when using running virtual machine pools.":::
 
-## Standby pool size
-The number of virtual machines in a standby pool is calculated by the max ready capacity of the pool minus the virtual machines currently deployed in the scale set. 
-
-| Setting | Description | 
-|---|---|
-| maxReadyCapacity | The maximum number of virtual machines to be created in the pool.|
-| minReadyCapacity | The minimum number of virtual machines to be maintained in the pool.|
-| instanceCount | The current number of virtual machines already deployed in the scale set.|
-| Standby pool size | Standby pool size = `maxReadyCapacity`– `instanceCount`. If max ready capacity is less than the instance count and you have a min ready capacity configured, the pool size would be equal to the min ready capacity.  |
 
 ## Standby pool instances
 When a virtual machine is in a standby pool, the `isVmInStandbyPool` parameter is set to true. When the virtual machine is moved from the pool instance the scale set, the parameter is automatically updated to false. This can be useful in determining when a virtual machine is ready to recieve traffic or not. 
