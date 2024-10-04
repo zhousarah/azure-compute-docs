@@ -26,40 +26,12 @@ az standby-vm-pool status --resource-group myResourceGroup --name myStandbyPool
 ```azurecli
 {
   "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyVirtualMachinePools/myStandbyPool/runtimeViews/latest",
-  "instanceCountSummary": [
     {
-      "instanceCountsByState": [
-        {
-          "count": 0,
-          "state": "Creating"
-        },
-        {
-          "count": 0,
-          "state": "Starting"
-        },
-        {
-          "count": 0,
-          "state": "Running"
-        },
-        {
-          "count": 0,
-          "state": "Deallocating"
-        },
-        {
-          "count": 3,
-          "state": "Deallocated"
-        },
-        {
-          "count": 0,
-          "state": "Deleting"
-        }
-      ],
       "zone": 1
     },
-    {
       "instanceCountsByState": [
         {
-          "count": 0,
+          "count": 5,
           "state": "Creating"
         },
         {
@@ -67,7 +39,7 @@ az standby-vm-pool status --resource-group myResourceGroup --name myStandbyPool
           "state": "Starting"
         },
         {
-          "count": 0,
+          "count": 5,
           "state": "Running"
         },
         {
@@ -75,7 +47,7 @@ az standby-vm-pool status --resource-group myResourceGroup --name myStandbyPool
           "state": "Deallocating"
         },
         {
-          "count": 2,
+          "count": 10,
           "state": "Deallocated"
         },
         {
@@ -92,7 +64,7 @@ az standby-vm-pool status --resource-group myResourceGroup --name myStandbyPool
           "state": "Creating"
         },
         {
-          "count": 0,
+          "count": 10,
           "state": "Starting"
         },
         {
@@ -100,11 +72,11 @@ az standby-vm-pool status --resource-group myResourceGroup --name myStandbyPool
           "state": "Running"
         },
         {
-          "count": 0,
+          "count": 5,
           "state": "Deallocating"
         },
         {
-          "count": 3,
+          "count": 5,
           "state": "Deallocated"
         },
         {
@@ -113,8 +85,34 @@ az standby-vm-pool status --resource-group myResourceGroup --name myStandbyPool
         }
       ],
       "zone": 3
-    }
-  ],
+    },
+    {
+      "instanceCountsByState": [
+        {
+          "count": 0,
+          "state": "Creating"
+        },
+        {
+          "count": 0,
+          "state": "Starting"
+        },
+        {
+          "count": 5,
+          "state": "Running"
+        },
+        {
+          "count": 10,
+          "state": "Deallocating"
+        },
+        {
+          "count": 3,
+          "state": "Deallocated"
+        },
+        {
+          "count": 5,
+          "state": "Deleting"
+        }
+      ],
   "name": "latest",
   "provisioningState": "Succeeded",
   "resourceGroup": "myResourceGroup",
@@ -141,7 +139,7 @@ InstanceCountSummary         : {{
         },
         {
             "state": "Starting",
-            "count": 0
+            "count": 5
         },
         {
             "state": "Running",
@@ -149,11 +147,11 @@ InstanceCountSummary         : {{
         },
         {
             "state": "Deallocating",
-            "count": 0
+            "count": 10
         },
         {
             "state": "Deallocated",
-            "count": 2
+            "count": 5
         },
         {
             "state": "Deleting",
@@ -166,7 +164,7 @@ InstanceCountSummary         : {{
         "instanceCountsByState": [
         {
             "state": "Creating",
-            "count": 0
+            "count": 5
         },
         {
             "state": "Starting",
@@ -174,15 +172,15 @@ InstanceCountSummary         : {{
         },
         {
             "state": "Running",
-            "count": 0
+            "count": 5
         },
         {
             "state": "Deallocating",
-            "count": 0
+            "count": 10
         },
         {
             "state": "Deallocated",
-            "count": 3
+            "count": 0
         },
         {
             "state": "Deleting",
@@ -203,15 +201,15 @@ InstanceCountSummary         : {{
         },
         {
             "state": "Running",
-            "count": 0
+            "count": 5
         },
         {
             "state": "Deallocating",
-            "count": 0
+            "count": 10
         },
         {
             "state": "Deallocated",
-            "count": 3
+            "count": 5
         },
         {
             "state": "Deleting",
@@ -243,11 +241,11 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
         "instanceCountsByState": [
           {
             "state": "creating",
-            "count": 100
+            "count": 5
           },
           {
             "state": "running",
-            "count": 20
+            "count": 0
           },
           {
             "state": "deallocating",
@@ -255,7 +253,7 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
           },
           {
             "state": "deallocated",
-            "count": 100
+            "count": 5
           },
           {
             "state": "starting",
@@ -272,11 +270,11 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
         "instanceCountsByState": [
           {
             "state": "creating",
-            "count": 100
+            "count": 0
           },
           {
             "state": "running",
-            "count": 20
+            "count": 5
           },
           {
             "state": "deallocating",
@@ -284,7 +282,7 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
           },
           {
             "state": "deallocated",
-            "count": 100
+            "count": 10
           },
           {
             "state": "starting",
@@ -301,19 +299,19 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
         "instanceCountsByState": [
           {
             "state": "creating",
-            "count": 100
+            "count": 0
           },
           {
             "state": "running",
-            "count": 20
+            "count": 0
           },
           {
             "state": "deallocating",
-            "count": 10
+            "count": 15
           },
           {
             "state": "deallocated",
-            "count": 100
+            "count": 15
           },
           {
             "state": "starting",
