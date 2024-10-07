@@ -913,7 +913,7 @@ This section shows you how to use KVM to prepare RHEL 7 to upload to Azure.
 1. Convert the qcow2 image to the VHD format.
 
     > [!NOTE]
-    > here's a known bug in qemu-img versions >=2.2.1 that results in an improperly formatted VHD. The issue has been fixed in QEMU 2.6. We recommend that you use either qemu-img 2.2.0 or lower, or update to 2.6 or higher. For more information, see [this website](https://bugs.launchpad.net/qemu/+bug/1490611).
+    > There's a known bug in qemu-img versions >=2.2.1 that results in an improperly formatted VHD. The issue has been fixed in QEMU 2.6. We recommend that you use either qemu-img 2.2.0 or lower, or update to 2.6 or higher. For more information, see [this website](https://bugs.launchpad.net/qemu/+bug/1490611).
     >
 
     First convert the image to raw format:
@@ -1065,7 +1065,7 @@ This section shows you how to use KVM to prepare RHEL 7 to upload to Azure.
 1. Shut down the VM and convert the VMDK file to the VHD format.
 
     > [!NOTE]
-    > here's a known bug in qemu-img versions >=2.2.1 that results in an improperly formatted VHD. The issue has been fixed in QEMU 2.6. We recommend that you use either qemu-img 2.2.0 or lower, or update to 2.6 or higher. For more information, see [this website](https://bugs.launchpad.net/qemu/+bug/1490611).
+    > There's a known bug in qemu-img versions >=2.2.1 that results in an improperly formatted VHD. The issue has been fixed in QEMU 2.6. We recommend that you use either qemu-img 2.2.0 or lower, or update to 2.6 or higher. For more information, see [this website](https://bugs.launchpad.net/qemu/+bug/1490611).
     >
 
     First convert the image to raw format:
