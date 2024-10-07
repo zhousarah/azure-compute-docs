@@ -130,6 +130,8 @@ From this example accumulation of Minutes Not Available, here's the calculation 
 - Clouds supported for capacity reservation:
    - Azure Cloud
    - Azure for Government
+   - Azure in China (Preview)
+     - Support is not available for China North and China East
 
 ## Pricing and billing 
 
