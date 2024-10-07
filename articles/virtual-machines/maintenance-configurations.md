@@ -103,7 +103,7 @@ For an Azure Functions sample, see [Scheduling maintenance updates with maintena
 
 We recommend the following limits for indicators:
 
-| Indicator    | Public Cloud Limit          | Mooncake/Fairfax/Air Gapped Cloud Limit |
+| Indicator    | Public Cloud Limit          | Mooncake/Fairfax Limit |
 |----------|----------------------------|--------------------------|
 | Number of schedules per subscription per region     | 250  | 250 |
 | Total number of resource associations to a schedule | 3,000 | 3,000 |
