@@ -20,10 +20,7 @@ Use the standby pool runtime view APIs to get the current status of your standby
 
 ```azurecli
 az standby-container-group-pool status --resource-group myResourceGroup --name myStandbyPool
-```
 
-**Sample output**
-```azurecli
 {
   "id": "/subscriptions/401ef76a-dea9-45da-b19a-db3efced675b/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool/runtimeViews/latest",
   "instanceCountSummary": [
@@ -57,10 +54,7 @@ az standby-container-group-pool status --resource-group myResourceGroup --name m
 
 ```azurepowershell
 Get-AzStandbyContainerGroupPoolStatus -ResourceGroupName myResourceGroup -Name myStandbyPool
-```
 
-**Sample output**
-```azurepowershell
 Id: /subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool/runtimeViews/latest
 InstanceCountSummary         : {{
         "instanceCountsByState": [
@@ -89,13 +83,9 @@ Type                         : Microsoft.StandbyPool/standbyContainerGroupPools/
 
 ### [REST](#tab/rest)
 
-```rest
+```HTTP
 GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool/runtimeViews/latest?api-version=2024-03-01
 
-```
-
-**Sample output**
-```rest
 {
   "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool/runtimeViews/latest",
   "name": "latest",
