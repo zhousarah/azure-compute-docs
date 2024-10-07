@@ -99,7 +99,7 @@ Create a standby pool and associate it with an existing scale set. Create a temp
             "location": "[parameters('location')]",
             "properties": {
                "elasticityProfile": {
-                   "maxReadyCapacity": "[parameters('maxReadyCapacity')]" 
+                   "maxReadyCapacity": "[parameters('maxReadyCapacity')]",
                    "minReadyCapacity": "[parameters('minReadyCapacity')]" 
                },
                "virtualMachineState": "[parameters('virtualMachineState')]",

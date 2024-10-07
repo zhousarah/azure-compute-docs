@@ -20,10 +20,7 @@ Use the standby pool runtime view APIs to get the current status of your standby
 
 ```azurecli
 az standby-vm-pool status --resource-group myResourceGroup --name myStandbyPool
-```
 
-**Sample output**
-```azurecli
 {
   "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyVirtualMachinePools/myStandbyPool/runtimeViews/latest",
     {
@@ -126,10 +123,7 @@ az standby-vm-pool status --resource-group myResourceGroup --name myStandbyPool
 
 ```azurepowershell
 Get-AzStandbyVMPoolStatus -ResourceGroupName myResourceGroup -Name myStandbyPool
-```
 
-**Sample output**
-```azurepowershell
 Id: /subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyVirtualMachinePools/mmyStandbyPool/runtimeViews/latest
 InstanceCountSummary         : {{
         "instanceCountsByState": [
@@ -226,13 +220,9 @@ Type                         : Microsoft.StandbyPool/standbyVirtualMachinePools/
 
 ### [REST](#tab/rest)
 
-```rest
+```HTTP
 GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StandbyPool/standbyVirtualMachinePools/{standbyVirtualMachinePoolName}/runtimeViews/{runtimeView}?api-version=2024-03-01
 
-```
-
-**Sample output**
-```rest
 {
   "properties": {
     "instanceCountSummary": [
@@ -346,7 +336,7 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 ## Instance details
 
-When a virtual machine is in a standby pool, the `isVmInStandbyPool` parameter is set to true. When the virtual machine is moved from the pool instance the scale set, the parameter is automatically updated to false. This can be useful in determining when a virtual machine is ready to receive traffic or not. This information is also available to query via [Azure Instance Metadata Service](../virtual-machines/instance-metadata-service.md)
+When a virtual machine is in a standby pool, the `isVmInStandbyPool` parameter is set to true. When the virtual machine is moved from the pool instance the scale set, the parameter is automatically updated to false. This can be useful in determining when a virtual machine is ready to receive traffic or not.
 
 ### [CLI](#tab/cli)
 
