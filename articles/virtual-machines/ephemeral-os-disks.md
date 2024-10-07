@@ -1,12 +1,12 @@
 ---
 title: Ephemeral OS disks
 description: Learn more about ephemeral OS disks for Azure VMs.
-author: Aarthi-Vijayaraghavan
+author: Aarthi-Vijayaraghavan, Vivek Singla
 ms.service: azure-virtual-machines
 ms.custom:
 ms.topic: how-to
 ms.date: 07/23/2020
-ms.author: aarthiv
+ms.author: aarthiv, viveksingla
 ms.subservice: disks
 ---
 
@@ -48,20 +48,29 @@ Key differences between persistent and ephemeral OS disks:
 
 ## Placement options for Ephemeral OS disks
 
-Ephemeral OS disk can be stored either on VM's OS cache disk or VM's temp/resource disk.
+Ephemeral OS Disk utilizes local storage within the VM. Since different VMs have different types of local storage (cache disk, resource disk, and NVMe disk), the placement option defines where the Ephemeral OS Disk will be stored. This however does not impact the performance or cost of Ephemeral OS disk. It's performance is dependent upon the VM's local storage. Depending upon the VM type, we offer three different types of placement:
+ 1. **Nvme Disk Placement (In Public Preview)**  - Nvme disk placement type is available on the latest generation VMs like Dadsv6, Ddsv6 etc. 
+ 2. **Temp Disk Placement**  - Temp disk placement type is available on VMs with Temp disk like Dadsv5, Ddsv5 etc.
+ 3. **Cache Disk Placement**  - Cache disk placement type is available on older VMs that had cache disk like Dsv2, Dsv3 etc.
+
 [DiffDiskPlacement](/rest/api/compute/virtualmachines/list#diffdiskplacement) is the new property that can be used to specify where you want to place the Ephemeral OS disk. With this feature, when a Windows VM is provisioned, we configure the pagefile to be located on the OS Disk.
 
 ## Size requirements
 
-You can choose to deploy Ephemeral OS Disk on VM cache or VM temp disk.
-The image OS disk’s size should be less than or equal to the temp/cache size of the VM size chosen.
+You can choose to deploy Ephemeral OS Disk on Nvme disk, temp disk or cache on the VM.
+The image OS disk’s size should be less than or equal to the Nvme/temp/cache size of the VM size chosen.
 
 For example, if you want to opt for **OS cache placement**: Standard Windows Server images from the marketplace are about 127 GiB, which means that you need a VM size that has a cache equal to or larger than 127 GiB. The Standard_DS3_v2 has a cache size of 127 GiB, which is large enough. In this case, the Standard_DS3_v2 is the smallest size in the DSv2 series that you can use with this image.
 
 For example, if you want to opt for **Temp disk placement**: Standard Ubuntu server image from marketplace is about 30 GiB. To enable Ephemeral OS disk on temp, the temp disk size must be equal to or larger than 30 GiB. Standard_B4ms has a temp size of 32 GiB, which can fit the 30 GiB OS disk. Upon creation of the VM, the temp disk space would be 2 GiB.
 
+For example, if you want to opt for **Nvme disk placement (In Public Preview)**: Standard Ubuntu server image from marketplace is about 30 GiB. To enable Ephemeral OS disk on Nvme, the Nvme disk size must be equal to or larger than 30 GiB. Standard_D2ads_v6 has a temp size of 110 GiB, which can easily fit the 30 GiB OS disk. However, Ephemeral OS disk will occupy the entire Nvme disk and there will be no Nvme disk space given back. One way to handle this is by setting the OS disk Size property as 110 GiB. 
+
+
 > [!IMPORTANT]
 > If opting for temp disk placement the Final Temp disk size = (Initial temp disk size - OS image size).
+> 
+> If opting for Nvme disk placement (In Public Preview), Final Nvme Disk size = (Total no. of Nvme disks - Nvme Disks used for OS) * Size of each Nvme disk. where Nvme Disks used for OS is the minimum number of disks required for OS disk depending on the size of OS disk and the size of each Nvme disk.
 
 In the case of **Temp disk placement**, as Ephemeral OS disk is placed on temp disk it will share the IOPS with temp disk as per the VM size chosen by you.
 
