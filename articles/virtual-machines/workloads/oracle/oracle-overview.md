@@ -108,8 +108,11 @@ You can deploy custom applications in Azure that connect with OCI and other Azur
 According to Oracle Support, JD Edwards EnterpriseOne versions 9.2 and above are supported on any public cloud offering that meets their specific Minimum Technical Requirements (MTR). You need to create custom images that meet their MTR specifications for operating system and software application compatibility. For more information, see [Doc ID 2178595.1](https://support.oracle.com/knowledge/JD%20Edwards%20EnterpriseOne/2178595_1.html).
 ## Licensing
 Deployment of Oracle solutions in Azure is based on a bring-your-own-license model. This model assumes that you have licenses to use Oracle software and that you have a current support agreement in place with Oracle. 
+
 Microsoft Azure is an authorized cloud environment for running Oracle Database. The Oracle Core Factor table isn't applicable when licensing Oracle databases in the cloud. For more information, see [Oracle Processor Core Factor Table](https://www.oracle.com/us/corporate/contracts/processor-core-factor-table-070634.pdf). Instead, when using VMs with Hyper-Threading Technology enabled for Enterprise Edition databases, count two vCPUs as equivalent to one Oracle Processor license if hyperthreading is enabled, as stated in the policy document. The policy details can be found at [Licensing Oracle Software in the Cloud Computing Environment](https://www.oracle.com/us/corporate/pricing/cloud-licensing-070579.pdf).  
+
 Oracle databases generally require higher memory and I/O. For this reason, we recommend [Memory Optimized VMs](/azure/virtual-machines/sizes-memory) for these workloads. To optimize your workloads further, we recommend [Constrained Core vCPUs](/azure/virtual-machines/constrained-vcpu) for Oracle Database workloads that require high memory, storage, and I/O bandwidth, but not a high core count.
+
 When you migrate Oracle software and workloads from on-premises to Microsoft Azure, Oracle provides license mobility as stated in [Oracle and Microsoft Strategic Partnership FAQ](https://www.oracle.com/cloud/azure/interconnect/faq/). 
 ## Next steps
 You now have an overview of current Oracle databases and solutions based on VM images in Microsoft Azure. Your next step is to deploy your first Oracle database on Azure.
