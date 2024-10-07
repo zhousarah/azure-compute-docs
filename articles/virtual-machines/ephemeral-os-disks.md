@@ -14,16 +14,16 @@ ms.subservice: disks
 
 **Applies to:** :heavy_check_mark: Linux VMs :heavy_check_mark: Windows VMs :heavy_check_mark: Flexible scale sets :heavy_check_mark: Uniform scale sets
 
-Ephemeral OS disks are created on the local virtual machine (VM) storage and not saved to the remote Azure Storage. Ephemeral OS disks work well for stateless workloads, where applications are tolerant of individual VM failures but are more affected by VM deployment time or reimaging of individual VM instances. With Ephemeral OS disk, you get lower read/write latency to the OS disk and faster VM reimage.
+Ephemeral OS disks are created on the local virtual machine (VM) storage and not saved to the remote Azure Storage. Ephemeral OS disks disks are ideal for stateless workloads, where applications can tolerate individual VM failures but are sensitive to VM deployment times or the reimaging of individual VM instances. With Ephemeral OS disk, you get lower read/write latency to the OS disk and faster VM reimage.
 
 The key features of ephemeral disks are:
 
 - Designed for stateless applications.
 - Supported on all images - Marketplace, custom images, and [Azure Compute Gallery](./shared-image-galleries.md) (formerly known as Shared Image Gallery).
-- Provides the ability to fast reset or reimage virtual machines (VMs) and scale set instances to their original boot state.
+- Provides fast reimage to reset virtual machines (VMs) and scale set instances to their original boot state.
 - Offers lower latency, similar to a temporary disk.
 - Ensures no storage cost for operating system disks, as ephemeral OS disks are free.
-- Available in all Azure regions.
+- Supported in all Azure regions.
 
 Key differences between persistent and ephemeral OS disks:
 
@@ -62,9 +62,9 @@ The image OS disk’s size should be less than or equal to the NVMe/temp/cache s
 
 For example, if you want to opt for **OS cache placement**: Standard Windows Server images from the marketplace are about 127 GiB, which means that you need a VM size that has a cache equal to or larger than 127 GiB. The Standard_DS3_v2 has a cache size of 127 GiB, which is large enough. In this case, the Standard_DS3_v2 is the smallest size in the DSv2 series that you can use with this image.
 
-For example, if you want to opt for **Temp disk placement**: Standard Ubuntu server image from marketplace is about 30 GiB. To enable Ephemeral OS disk on temp, the temp disk size must be equal to or larger than 30 GiB. Standard_B4ms has a temp size of 32-GiB, which can fit the 30-GiB OS disk. Upon creation of the VM, the temp disk space would be 2 GiB.
+For example, if you want to opt for **Temp disk placement**: Standard Ubuntu server image from marketplace is about 30 GiB. To enable Ephemeral OS disk on temp, the temp disk size must be equal to or larger than 30 GiB. Standard_B4ms has a temp size of 32 GiB, which can fit the 30-GiB OS disk. Upon creation of the VM, the temp disk space would be 2 GiB.
 
-For example, if you want to opt for **NVMe disk placement (In Public Preview)**: Standard Ubuntu server image from marketplace is about 30 GiB. To enable Ephemeral OS disk on NVMe, the NVMe disk size must be equal to or larger than 30 GiB. Standard_D2ads_v6 has a temp size of 110 GiB, which can easily fit the 30-GiB OS disk. However, Ephemeral OS disk occupies the entire NVMe disk and there is no NVMe disk space given back. One way to maximize the use of NVMe disk is by maximizing the OS disk Size property to 110 GiB. 
+For example, if you want to opt for **NVMe disk placement (In Public Preview)**: Standard Ubuntu server image from marketplace is about 30 GiB. To enable Ephemeral OS disk on NVMe, the NVMe disk size must be equal to or larger than 30 GiB. Standard_D2ads_v6 has a temp size of 110 GiB, which can easily fit the 30-GiB OS disk. However, Ephemeral OS disk occupies the entire NVMe disk and there's no NVMe disk space given back. One way to maximize the use of NVMe disk is by maximizing the OS disk Size property to 110 GiB. 
 
 
 > [!IMPORTANT]
@@ -89,12 +89,12 @@ Ephemeral disks also require that the VM size supports **Premium storage**. The 
 - Azure Disk Encryption
 - Azure Backup
 - Azure Site Recovery
-- OS Disk Swap
+- OS Disk Swaps
 
 ## Trusted Launch for Ephemeral OS disks
 
 Ephemeral OS disks can be created with Trusted launch. All regions are supported for Trusted Launch; not all virtual machines sizes are supported. Check [Virtual machines sizes supported](trusted-launch.md#virtual-machines-sizes) for supported sizes.
-VM guest state (VMGS) is specific to trusted launch VMs. It's a Azure-managed blob and contains the unified extensible firmware interface (UEFI) secure boot signature databases and other security information. When using trusted launch by default, **1 GiB** from the **OS cache** or **temp storage** based on the chosen placement option is reserved for VMGS. The lifecycle of the VMGS blob is tied to that of the OS Disk.
+VM guest state (VMGS) is specific to trusted launch VMs. It's an Azure-managed blob and contains the unified extensible firmware interface (UEFI) secure boot signature databases and other security information. VMs using trusted launch by default reserve **1 GiB** from the **OS cache** or **temp storage** based on the chosen placement option for VMGS. The lifecycle of the VMGS blob is tied to that of the OS Disk.
 
 For example, If you try to create a Trusted launch Ephemeral OS disk VM using OS image of size 56 GiB with VM size [Standard_DS4_v2](dv2-dsv2-series.md) using temp disk placement you would get an error as
 **"OS disk of Ephemeral VM with size greater than 55 GB is not allowed for VM size Standard_DS4_v2 when the DiffDiskPlacement is ResourceDisk."**
@@ -109,9 +109,9 @@ For more information on [how to deploy a trusted launch VM](trusted-launch-porta
 
 ## Confidential VMs using Ephemeral OS disks
 
-AMD-based Confidential VMs cater to high security and confidentiality requirements of customers. These VMs provide a strong, hardware-enforced boundary to help meet your security needs. There are limitations to use Confidential VMs. Check the [region](/azure/confidential-computing/confidential-vm-overview#regions), [size](/azure/confidential-computing/confidential-vm-overview#size-support) and [OS supported](/azure/confidential-computing/confidential-vm-overview#os-support) limitations for confidential VMs.
+AMD-based Confidential VMs cater to high security and confidentiality requirements of customers. These VMs provide a strong, hardware-enforced boundary to help meet your security needs. There are limitations to use Confidential VMs. Check the [region](/azure/confidential-computing/confidential-vm-overview#regions), [size](/azure/confidential-computing/confidential-vm-overview#size-support), and [OS supported](/azure/confidential-computing/confidential-vm-overview#os-support) limitations for confidential VMs.
 Virtual machine guest state (VMGS) blob contains the security information of the confidential VM.
-Confidential VMs using Ephemeral OS disks by default **1 GiB** from the **OS cache** or **temp storage** based on the chosen placement option is reserved for VMGS.The lifecycle of the VMGS blob is tied to that of the OS Disk.
+Confidential VMs using Ephemeral OS disks by default **1 GiB** from the **OS cache** or **temp storage** based on the chosen placement option is reserved for VMGS. The lifecycle of the VMGS blob is tied to that of the OS Disk.
 > [!IMPORTANT]
 >
 > When choosing a confidential VM with full OS disk encryption before VM deployment that uses a customer-managed key (CMK). [Updating a CMK key version](/azure/storage/common/customer-managed-keys-overview#update-the-key-version) or [key rotation](/azure/key-vault/keys/how-to-configure-key-rotation) is not supported with Ephemeral OS disk. Confidential VMs using Ephemeral OS disks need to be deleted before updating or rotating the keys and can be re-created subsequently.
