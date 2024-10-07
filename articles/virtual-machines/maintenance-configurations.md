@@ -103,14 +103,14 @@ For an Azure Functions sample, see [Scheduling maintenance updates with maintena
 
 We recommend the following limits for indicators:
 
-| Indicator    | Limit          |
-|----------|----------------------------|
-| Number of schedules per subscription per region     | 250  |
-| Total number of resource associations to a schedule | 3,000 |
-| Resource associations on each dynamic scope    | 1,000 |
-| Number of dynamic scopes per resource group or subscription per region     | 250  |
-| Number of dynamic scopes per schedule   | 200  |
-| Total number of subscriptions attached to all dynamic scopes per schedule   | 200  |
+| Indicator    | Public Cloud Limit          | Mooncake/Fairfax Limit |
+|----------|----------------------------|--------------------------|
+| Number of schedules per subscription per region     | 250  | 250 |
+| Total number of resource associations to a schedule | 3,000 | 3,000 |
+| Resource associations on each dynamic scope    | 1,000 | 1,000 |
+| Number of dynamic scopes per resource group or subscription per region     | 250  | 250  |
+| Number of dynamic scopes per schedule   | 200  | 30  |
+| Total number of subscriptions attached to all dynamic scopes per schedule   | 200  | 30  |
 
 We recommend the following limits for each dynamic scope in the guest scope only:
 
