@@ -18,19 +18,19 @@ Ephemeral OS disks are created on the local virtual machine (VM) storage and not
 
 The key features of ephemeral disks are:
 
-- Ideal for stateless applications.
-- Supported by  Marketplace, custom images, and by [Azure Compute Gallery](./shared-image-galleries.md) (formerly known as Shared Image Gallery).
-- Ability to fast reset or reimage VMs and scale set instances to the original boot state.
-- Lower latency, similar to a temporary disk.
-- Ephemeral OS disks are free, you incur no storage cost for OS disks.
+- Designed for stateless applications.
+- Supported on all images - Marketplace, custom images, and [Azure Compute Gallery](./shared-image-galleries.md) (formerly known as Shared Image Gallery).
+- Provides the ability to fast reset or reimage virtual machines (VMs) and scale set instances to their original boot state.
+- Offers lower latency, similar to a temporary disk.
+- Ensures no storage cost for operating system disks, as ephemeral OS disks are free.
 - Available in all Azure regions.
 
 Key differences between persistent and ephemeral OS disks:
 
 |   | Persistent OS Disk | Ephemeral OS Disk |
 |---|---|---|
-| **Size limit for OS disk** | 4* TiB | Cache size or temp size for the VM size or 2040 GiB, whichever is smaller. For the **cache or temp size in GiB**, see [DS](sizes-general.md), [ES](sizes-memory.md), [M](sizes-memory.md), [FS](sizes-compute.md), and [GS](sizes-previous-gen.md#gs-series) |
-| **VM sizes supported** | All | VM sizes that support Premium storage such as DSv1, DSv2, DSv3, Esv3, Fs, FsV2, GS, M, Mdsv2, Bs, Dav4, Eav4 |
+| **Size limit for OS disk** | 4* TiB | Cache size or temp size for the VM size or 2,040 GiB, whichever is smaller. For the **cache or temp size in GiB**, see [DSv3](sizes-general.md), [Esv3](sizes-memory.md), [M](sizes-memory.md), [FS](sizes-compute.md), and [GS](sizes-previous-gen.md#gs-series) |
+| **VM sizes supported** | All | VM sizes with local storage such as DSv3, Esv3, Fs, FsV2, GS, M, Mdsv2, Bs, Dav4, Eav4 |
 | **Disk type support**| Managed and unmanaged OS disk| Managed OS disk only|
 | **Region support**| All regions| All regions|
 | **Data persistence**| OS disk data written to OS disk are stored in Azure Storage| Data written to OS disk is stored on local VM storage and isn't persisted to Azure Storage. |
@@ -41,15 +41,15 @@ Key differences between persistent and ephemeral OS disks:
 | **Redeploy** | OS disk data is preserved | Data on the OS disk is deleted, OS is reprovisioned |
 | **Stop/ Start of VM** | OS disk data is preserved | Not Supported |
 | **Page file placement**| For Windows, page file is stored on the resource disk| For Windows, page file is stored on the OS disk (for both OS cache placement and Temp disk placement).|
-| **Maintenance of VM/VMSS using [healing](understand-vm-reboots.md#unexpected-downtime)** | OS disk data is preserved | OS disk data is not preserved  |
+| **Maintenance of VM/VMSS using [healing](understand-vm-reboots.md#unexpected-downtime)** | OS disk data is preserved | OS disk data isn't preserved  |
 | **Maintenance of VM/VMSS using [Live Migration](maintenance-and-updates.md#live-migration)** | OS disk data is preserved | OS disk data is preserved  |
 
-\* 4 TiB is the maximum supported OS disk size for managed (persistent) disks. However, many OS disks are partitioned with master boot record (MBR) by default and because of this are limited to 2 TiB. For details, see [OS disk](managed-disks-overview.md#os-disk).
+\* 4 TiB is the maximum supported OS disk size for managed (persistent) disks. However, many OS disks are partitioned with master boot record (MBR) by default and are limited to 2 TiB. For details, see [OS disk](managed-disks-overview.md#os-disk).
 
 ## Placement options for Ephemeral OS disks
 
-Ephemeral OS Disk utilizes local storage within the VM. Since different VMs have different types of local storage (cache disk, resource disk, and NVMe disk), the placement option defines where the Ephemeral OS Disk will be stored. This however does not impact the performance or cost of Ephemeral OS disk. It's performance is dependent upon the VM's local storage. Depending upon the VM type, we offer three different types of placement:
- 1. **Nvme Disk Placement (In Public Preview)**  - Nvme disk placement type is available on the latest generation VMs like Dadsv6, Ddsv6 etc. 
+Ephemeral OS Disk utilizes local storage within the VM. Since different VMs have different types of local storage (cache disk, resource disk, and NVMe disk), the placement option defines where the Ephemeral OS Disk is stored. Placement option however doesn't impact the performance or cost of Ephemeral OS disk. Its performance is dependent upon the VM's local storage. Depending upon the VM type, we offer three different types of placement:
+ 1. **NVMe Disk Placement (In Public Preview)**  - NVMe disk placement type is available on the latest generation VMs like Dadsv6, Ddsv6 etc. 
  2. **Temp Disk Placement**  - Temp disk placement type is available on VMs with Temp disk like Dadsv5, Ddsv5 etc.
  3. **Cache Disk Placement**  - Cache disk placement type is available on older VMs that had cache disk like Dsv2, Dsv3 etc.
 
@@ -57,24 +57,24 @@ Ephemeral OS Disk utilizes local storage within the VM. Since different VMs have
 
 ## Size requirements
 
-You can choose to deploy Ephemeral OS Disk on Nvme disk, temp disk or cache on the VM.
-The image OS disk’s size should be less than or equal to the Nvme/temp/cache size of the VM size chosen.
+You can choose to deploy Ephemeral OS Disk on NVMe disk, temp disk, or cache on the VM.
+The image OS disk’s size should be less than or equal to the NVMe/temp/cache size of the VM size chosen.
 
 For example, if you want to opt for **OS cache placement**: Standard Windows Server images from the marketplace are about 127 GiB, which means that you need a VM size that has a cache equal to or larger than 127 GiB. The Standard_DS3_v2 has a cache size of 127 GiB, which is large enough. In this case, the Standard_DS3_v2 is the smallest size in the DSv2 series that you can use with this image.
 
-For example, if you want to opt for **Temp disk placement**: Standard Ubuntu server image from marketplace is about 30 GiB. To enable Ephemeral OS disk on temp, the temp disk size must be equal to or larger than 30 GiB. Standard_B4ms has a temp size of 32 GiB, which can fit the 30 GiB OS disk. Upon creation of the VM, the temp disk space would be 2 GiB.
+For example, if you want to opt for **Temp disk placement**: Standard Ubuntu server image from marketplace is about 30 GiB. To enable Ephemeral OS disk on temp, the temp disk size must be equal to or larger than 30 GiB. Standard_B4ms has a temp size of 32-GiB, which can fit the 30-GiB OS disk. Upon creation of the VM, the temp disk space would be 2 GiB.
 
-For example, if you want to opt for **Nvme disk placement (In Public Preview)**: Standard Ubuntu server image from marketplace is about 30 GiB. To enable Ephemeral OS disk on Nvme, the Nvme disk size must be equal to or larger than 30 GiB. Standard_D2ads_v6 has a temp size of 110 GiB, which can easily fit the 30 GiB OS disk. However, Ephemeral OS disk will occupy the entire Nvme disk and there will be no Nvme disk space given back. One way to handle this is by setting the OS disk Size property as 110 GiB. 
+For example, if you want to opt for **NVMe disk placement (In Public Preview)**: Standard Ubuntu server image from marketplace is about 30 GiB. To enable Ephemeral OS disk on NVMe, the NVMe disk size must be equal to or larger than 30 GiB. Standard_D2ads_v6 has a temp size of 110 GiB, which can easily fit the 30-GiB OS disk. However, Ephemeral OS disk occupies the entire NVMe disk and there is no NVMe disk space given back. One way to maximize the use of NVMe disk is by maximizing the OS disk Size property to 110 GiB. 
 
 
 > [!IMPORTANT]
 > If opting for temp disk placement the Final Temp disk size = (Initial temp disk size - OS image size).
 > 
-> If opting for Nvme disk placement (In Public Preview), Final Nvme Disk size = (Total no. of Nvme disks - Nvme Disks used for OS) * Size of each Nvme disk. where Nvme Disks used for OS is the minimum number of disks required for OS disk depending on the size of OS disk and the size of each Nvme disk.
+> If opting for NVMe disk placement (In Public Preview), Final NVMe Disk size = (Total no. of NVMe disks - NVMe Disks used for OS) * Size of each NVMe disk. where NVMe Disks used for OS is the minimum number of disks required for OS disk depending on the size of OS disk and the size of each NVMe disk.
 
-In the case of **Temp disk placement**, as Ephemeral OS disk is placed on temp disk it will share the IOPS with temp disk as per the VM size chosen by you.
+If Ephemeral OS disk is using **Temp Disk Placement**, it shares the IOPS(input/output operations per second) with temp disk as per the VM size chosen by you.
 
-Basic Linux and Windows Server images in the Marketplace that are denoted by `[smallsize]` tend to be around 30 GiB and can use most of the available VM sizes.
+Basic Linux and Windows Server images in the Marketplace that are denoted with `[smallsize]` tend to be around 30 GiB and can use most of the available VM sizes.
 Ephemeral disks also require that the VM size supports **Premium storage**. The sizes usually (but not always) have an `s` in the name, like DSv2 and EsV3. For more information, see [Azure VM sizes](sizes.md) for details around which sizes support Premium storage.
 
 > [!NOTE]
@@ -84,7 +84,7 @@ Ephemeral disks also require that the VM size supports **Premium storage**. The 
 
 ## Unsupported features
 
-- Capturing VM images
+- VM Image Capture
 - Disk snapshots
 - Azure Disk Encryption
 - Azure Backup
@@ -94,12 +94,12 @@ Ephemeral disks also require that the VM size supports **Premium storage**. The 
 ## Trusted Launch for Ephemeral OS disks
 
 Ephemeral OS disks can be created with Trusted launch. All regions are supported for Trusted Launch; not all virtual machines sizes are supported. Check [Virtual machines sizes supported](trusted-launch.md#virtual-machines-sizes) for supported sizes.
-VM guest state (VMGS) is specific to trusted launch VMs. It is a blob that is managed by Azure and contains the unified extensible firmware interface (UEFI) secure boot signature databases and other security information. When using trusted launch by default **1 GiB** from the **OS cache** or **temp storage** based on the chosen placement option is reserved for VMGS.The lifecycle of the VMGS blob is tied to that of the OS Disk.
+VM guest state (VMGS) is specific to trusted launch VMs. It's a Azure-managed blob and contains the unified extensible firmware interface (UEFI) secure boot signature databases and other security information. When using trusted launch by default, **1 GiB** from the **OS cache** or **temp storage** based on the chosen placement option is reserved for VMGS. The lifecycle of the VMGS blob is tied to that of the OS Disk.
 
 For example, If you try to create a Trusted launch Ephemeral OS disk VM using OS image of size 56 GiB with VM size [Standard_DS4_v2](dv2-dsv2-series.md) using temp disk placement you would get an error as
 **"OS disk of Ephemeral VM with size greater than 55 GB is not allowed for VM size Standard_DS4_v2 when the DiffDiskPlacement is ResourceDisk."**
-This is because the temp storage for [Standard_DS4_v2](dv2-dsv2-series.md) is 56 GiB, and 1 GiB is reserved for VMGS when using trusted launch.
-For the same example above, if you create a standard Ephemeral OS disk VM you would not get any errors and it would be a successful operation.
+This error occurs because the temp storage for [Standard_DS4_v2](dv2-dsv2-series.md) is 56 GiB, and 1 GiB is reserved for VMGS when using trusted launch.
+For the same example, if you create a standard Ephemeral OS disk VM you wouldn't get any errors and it would be a successful operation.
 
 > [!IMPORTANT]
 >
@@ -120,7 +120,7 @@ For more information on [confidential VM](/azure/confidential-computing/confiden
 
 ## Customer Managed key
 
-You can choose to use customer managed keys or platform managed keys when you enable end-to-end encryption for VMs using Ephemeral OS disk. Currently this option is available only via [PowerShell](./windows/disks-enable-customer-managed-keys-powershell.md), [CLI](./linux/disks-enable-customer-managed-keys-cli.md) and SDK in all regions.
+You can choose to use customer managed keys or platform managed keys when you enable end-to-end encryption for VMs using Ephemeral OS disk. Currently this option is available only via [PowerShell](./windows/disks-enable-customer-managed-keys-powershell.md), [CLI](./linux/disks-enable-customer-managed-keys-cli.md), and SDK in all regions.
 
 > [!IMPORTANT]
 >
