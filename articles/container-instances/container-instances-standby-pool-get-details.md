@@ -127,4 +127,4 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/m
 ---
 
 ## Next steps
-Review the most [frequently asked questions](standby-pools-faq.md) about standby pools for Virtual Machine Scale Sets.
+Learn more about [standby pools for Azure Container Instances](container-instances-standby-pool-overview.md)
