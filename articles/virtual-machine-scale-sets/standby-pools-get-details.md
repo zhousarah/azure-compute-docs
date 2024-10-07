@@ -20,10 +20,7 @@ Use the standby pool runtime view APIs to get the current status of your standby
 
 ```azurecli
 az standby-vm-pool status --resource-group myResourceGroup --name myStandbyPool
-```
 
-**Sample output**
-```azurecli
 {
   "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyVirtualMachinePools/myStandbyPool/runtimeViews/latest",
     {
@@ -126,10 +123,7 @@ az standby-vm-pool status --resource-group myResourceGroup --name myStandbyPool
 
 ```azurepowershell
 Get-AzStandbyVMPoolStatus -ResourceGroupName myResourceGroup -Name myStandbyPool
-```
 
-**Sample output**
-```azurepowershell
 Id: /subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyVirtualMachinePools/mmyStandbyPool/runtimeViews/latest
 InstanceCountSummary         : {{
         "instanceCountsByState": [
@@ -226,13 +220,9 @@ Type                         : Microsoft.StandbyPool/standbyVirtualMachinePools/
 
 ### [REST](#tab/rest)
 
-```rest
+```HTTP
 GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.StandbyPool/standbyVirtualMachinePools/{standbyVirtualMachinePoolName}/runtimeViews/{runtimeView}?api-version=2024-03-01
 
-```
-
-**Sample output**
-```rest
 {
   "properties": {
     "instanceCountSummary": [

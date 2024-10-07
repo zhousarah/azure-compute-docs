@@ -91,7 +91,7 @@ Update an existing standby pool deployment. Deploy the updated template using [a
             "location": "[parameters('location')]",
             "properties": {
                "elasticityProfile": {
-                   "maxReadyCapacity": "[parameters('maxReadyCapacity')]" 
+                   "maxReadyCapacity": "[parameters('maxReadyCapacity')]",
                    "minReadyCapacity": "[parameters('minReadyCapacity')]" 
                },
                "virtualMachineState": "[parameters('virtualMachineState')]",
