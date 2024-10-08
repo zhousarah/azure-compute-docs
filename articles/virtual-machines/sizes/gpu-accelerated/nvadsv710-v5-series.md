@@ -10,7 +10,7 @@ ms.author: wwilliams
 ms.reviewer: mattmcinnes
 ---
 
-# NVads V710 v5-series (Preview)
+# NVads V710 v5-series (Preview -  [Public Preview Sign Up Form](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR-2EKbNvC7xEohJW7nFBrIFUNzVVNzlMQ002TzdYRzZUR0EwOTFGQjZJUy4u))
 
 [!INCLUDE [nvadsv710-v5-summary](./includes/nvadsv710-v5-summary.md)]
 
@@ -111,8 +111,13 @@ Network interface information for each size.
 
 Accelerator (GPUs, FPGAs, etc.) information for each size.
 
-> [!NOTE]
-> No accelerators are present in this series.
+| Size Name | Accelerators (Qty.) | Accelerator-Memory (GB) |
+| --- | --- | --- |
+| Standard_NV4ads_V710_v5 | 1/6 | 4 |
+| Standard_NV8ads_V710_v5 | 1/3 | 8 |
+| Standard_NV12ads_V710_v5 | 1/2 | 12 |
+| Standard_NV24ads_V710_v5 | 1 | 24 |
+| Standard_NV28adms_V710_v5 | 1 | 24 |
 
 ---
 

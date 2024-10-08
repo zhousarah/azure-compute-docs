@@ -162,16 +162,13 @@ If you create a public IP address or a load balancer, specify the `"sku": {"name
 
 You can modify a scale to expand the set of zones over which to spread VM instances. Expanding allows you to take advantage of higher zonal availability SLA (99.99%) versus regional availability SLA (99.95%). Or expand your scale set to take advantage of new availability zones that were not available when the scale set was created.
 
-> [!IMPORTANT]
-> This feature is intended for stateless workloads on Virtual Machine Scale Sets. Scale sets with stateful workloads or used with **Service Fabric RP or Azure Kubernetes Services are not supported for zonal expansion**.
-
 This feature can be used with API version 2023-03-01 or greater.
 
 ### Expand scale set to use availability zones
 You can update the scale set to scale out instances to one or more additional availability zones, up to the number of availability zones supported by the region. For regions that support zones, the minimum number of zones is 3.
 
 > [!IMPORTANT]
-> When you expand the scale set to additional zones, the original instances are not migrated or changed. When you scale out, new instances will be created and spread evenly across the selected availability zones. When you scale in the scale set, any regional instances will be priorized for removal first. After that, instances will be removed based on the [scale in policy](virtual-machine-scale-sets-scale-in-policy.md).
+> When you expand the scale set to additional zones, the original instances are not migrated or changed. When you scale out, new instances will be created and spread evenly across the selected availability zones. Data from the original instances are not migrated to the new zones. When you scale in the scale set, any regional instances will be priorized for removal first. After that, instances will be removed based on the [scale in policy](virtual-machine-scale-sets-scale-in-policy.md).
 
 Expanding to a zonal scale set is done in 3 steps:
 
@@ -250,7 +247,7 @@ When you are satisfied that the new instances are ready, scale in your scale set
 
 ### Known issues and limitations
 
-* The feature is targeted to stateless workloads on Virtual Machine Scale Sets.
+* The original instances are not migrated to the newly added zones. Your workload must handle any required data migration or replication.
 
 * Scale sets running Service Fabric RP or Azure Kubernetes Service are not supported.
 
