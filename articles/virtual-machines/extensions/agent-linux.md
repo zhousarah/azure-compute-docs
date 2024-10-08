@@ -81,7 +81,7 @@ Testing has confirmed that the following systems work with the Azure Linux VM Ag
 | Ubuntu (LTS releases)| 18.04+, 20.04+, 22.04+, 24.04+ | 20.04+, 22.04+, 24.04+ |
 
 > [!IMPORTANT]</br>
-FIPS 140-3 Enforced is not supported on RHEL/Ubuntu with extensions using 'protectedSettings'.  ETA for support is early 2025.
+FIPS 140-3 Enforced is not supported on RHEL/Ubuntu with extensions using 'protectedSettings'.  ETA for support is mid 2025.
 
 Other supported systems:
 
