@@ -111,8 +111,13 @@ Network interface information for each size.
 
 Accelerator (GPUs, FPGAs, etc.) information for each size.
 
-> [!NOTE]
-> No accelerators are present in this series.
+| Size Name | Accelerators (Qty.) | Accelerator-Memory (GB) |
+| --- | --- | --- |
+| Standard_NV4ads_V710_v5 | 1/6 | 4 |
+| Standard_NV8ads_V710_v5 | 1/3 | 8 |
+| Standard_NV12ads_V710_v5 | 1/2 | 12 |
+| Standard_NV24ads_V710_v5 | 1 | 24 |
+| Standard_NV28adms_V710_v5 | 1 | 24 |
 
 ---
 
