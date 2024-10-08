@@ -95,12 +95,12 @@ On successful installation, navigate to the [Azure portal](https://portal.azure.
 
 **Windows**
 
-:::image type="content" source="/media/vm-watch/windows-vm-watch-virtual-machine.png" alt-text="Screenshot of the Windows VM installation." lightbox="/media/windows-vm-watch-virtual-machine.png":::
+:::image type="content" source="./articles/virtual-machines/media/vm-watch/windows-vm-watch-virtual-machine.png" alt-text="Screenshot of the Windows VM installation." lightbox="./articles/virtual-machines/media/vm-watch/windows-vm-watch-virtual-machine.png":::
 
 
 **Linux**
 
-:::image type="content" source="./media/vm-watch/linux-vm-watch-virtual-machine.png" alt-text="Screenshot of the Linux VM installation."lightbox="./media/linux-vm-watch-virtual-machine.png":::
+:::image type="content" source="./articles/virtual-machines/media/vm-watch/linux-vm-watch-virtual-machine.png" alt-text="Screenshot of the Linux VM installation."lightbox="./articles/virtual-machines/media/vm-watch/linux-vm-watch-virtual-machine.png":::
 
 To confirm that ***VM watch*** was enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the configuration exists in the JSON.
 
