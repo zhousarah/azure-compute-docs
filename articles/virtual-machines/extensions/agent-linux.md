@@ -80,7 +80,10 @@ Testing has confirmed that the following systems work with the Azure Linux VM Ag
 | SLES | 12.x+, 15.x+ | 15.x SP4+ |
 | Ubuntu (LTS releases)| 18.04+, 20.04+, 22.04+, 24.04+ | 20.04+, 22.04+, 24.04+ |
 
-> [!IMPORTANT]
+> [!IMPORTANT]</br>
+FIPS 140-3 Enforced is not supported on RHEL/Ubuntu with extensions using 'protectedSettings'.  ETA for support is early 2025.
+
+> [!IMPORTANT]</br>
 > RHEL/Oracle Linux 6.10 is the only RHEL/OL 6 version with Extended Lifecycle Support available. [The extended maintenance ends on June 30, 2024](https://access.redhat.com/support/policy/updates/errata).
 
 
