@@ -2189,8 +2189,10 @@
     href: resource-graph-availability.md
   - name: VM watch
     items: 
+    - name: Overview
+      href: azure-vm-watch.md
     - name: Install VM watch
-      href: flash-overview.md
+      href: install-vm-watch.md
   - name: Monitor availability
     items:
     - name: Overview
