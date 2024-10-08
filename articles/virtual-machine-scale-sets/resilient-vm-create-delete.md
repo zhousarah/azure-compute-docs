@@ -145,34 +145,6 @@ Create a standby pool and associate it with an existing scale set. Create a temp
 
 ```
 
-
-### [Bicep](#tab/bicep)
-Create a standby pool and associate it with an existing scale set. Deploy the template using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
-
-```bicep
-param location string = resourceGroup().location
-param standbyPoolName string = 'myStandbyPool'
-param maxReadyCapacity int = 20
-@allowed([
-  'Running'
-  'Deallocated'
-])
-param vmState string = 'Deallocated'
-param virtualMachineScaleSetId string = '/subscriptions/{subscriptionID}/resourceGroups/StandbyPools/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet}'
-
-resource standbyPool 'Microsoft.standbypool/standbyvirtualmachinepools@2023-12-01-preview' = {
-  name: standbyPoolName
-  location: location
-  properties: {
-     elasticityProfile: {
-      maxReadyCapacity: maxReadyCapacity
-    }
-    virtualMachineState: vmState
-    attachedVirtualMachineScaleSetId: virtualMachineScaleSetId
-  }
-}
-```
-
 ### [REST](#tab/rest)
 Create a standby pool and associate it with an existing scale set using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update)
 
