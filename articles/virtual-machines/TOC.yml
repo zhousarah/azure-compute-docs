@@ -2187,6 +2187,10 @@
     href: /azure/azure-monitor/essentials/prometheus-remote-write-virtual-machines?toc=/azure/virtual-machines/toc.json
   - name: Availability with Resource Graph
     href: resource-graph-availability.md
+  - name: VM watch
+    items: 
+    - name: Install VM watch
+      href: flash-overview.md
   - name: Monitor availability
     items:
     - name: Overview
