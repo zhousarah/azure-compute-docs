@@ -200,10 +200,10 @@ On Successful installation, navigate to the [Azure portal](https://portal.azure.
 
 **Windows**
 
-:::image type="content" source="./media/vm-watch/windows-vm-watch-vm-scale-sets.png" alt-text="Screenshot of the Windows Virtual Machine Scale Set installation."lightbox="./media/windows-vm-watch-vm-scale-sets.png":::
+:::image type="content" source="./media/vm-watch/windows-vm-watch-vm-scale-sets.png" alt-text="Screenshot of the Windows Virtual Machine Scale Set installation."lightbox="./media/vm-watch/windows-vm-watch-vm-scale-sets.png":::
 **Linux**
 
-:::image type="content" source="./media/vm-watch/linux-vm-watch-vm-scale-sets.png" alt-text="Screenshot of the Linux Virtual Machine Scale Set installation."lightbox="./media/linux-vm-watch-vm-scale-sets.png":::
+:::image type="content" source="./media/vm-watch/linux-vm-watch-vm-scale-sets.png" alt-text="Screenshot of the Linux Virtual Machine Scale Set installation."lightbox="./media/vm-watch/linux-vm-watch-vm-scale-sets.png":::
 ---
 
 To confirm that ***VM watch*** was enabled on this VM, navigate back to the Overview Page and click on the JSON view for the VM. Ensure the configuration exists in the JSON.
