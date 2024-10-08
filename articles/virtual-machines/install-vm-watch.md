@@ -95,7 +95,7 @@ On successful installation, navigate to the [Azure portal](https://portal.azure.
 
 **Windows**
 
-:::image type="content" source="articles/virtual-machines/media/vm-watch/windows-vm-watch-virtual-machine.png" alt-text="Screenshot of the Windows VM installation." lightbox="articles/virtual-machines/media/vm-watch/windows-vm-watch-virtual-machine.png":::
+:::image type="content" source="/articles/virtual-machines/media/vm-watch/windows-vm-watch-virtual-machine.png" alt-text="Screenshot of the Windows VM installation." lightbox="/articles/virtual-machines/media/vm-watch/windows-vm-watch-virtual-machine.png":::
 
 
 **Linux**
