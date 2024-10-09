@@ -12,7 +12,7 @@ ms.author: tomcassidy
 
 Learn what's new for Service Fabric managed clusters and classic.
 
-This article's coverage begins in January 2023. For all Service Fabric runtime release announcements, including versions older than January 2023, see [Service Fabric releases](release-notes.md)
+This article's coverage begins in January 2023. For all Service Fabric runtime release announcements, including versions older than January 2023, see [Service Fabric releases](release-notes.md).
 
 This article provides information about:
 * The latest releases
