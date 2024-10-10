@@ -5,7 +5,7 @@ author: mimckitt
 ms.author: mimckitt
 ms.service: azure-virtual-machines
 ms.topic: conceptual
-ms.date: 09/26/2022
+ms.date: 10/10/2024
 ms.custom: engagement-fy23
 ---
 
@@ -48,7 +48,7 @@ Under certain circumstances, two VMs in the same availability set might share a 
 
 Under these circumstances, the OS disk of the second VM might be created on the same fault domain as the first VM, so the two VMs will be on same fault domain. To avoid this issue, we recommend that you don't stop/deallocate VMs between deployments.
 
-:::image type="content" source="./media/virtual-machines-common-manage-availability/md-fd-updated.png" alt-text="Diagram showing how the fault domains for disks and VMs are aligned.":::
+:::image type="content" source="media/disks-high-availability/disks-availability-set.png" alt-text="Diagram of fault domain alignment with regional virtual machine scale sets and availability sets." lightbox="media/disks-high-availability/disks-availability-set.png":::
 
 ## Next steps
 For best practices information, see [Azure availability best practices](/azure/architecture/checklist/resiliency-per-service).
