@@ -103,7 +103,7 @@ VM watch is a standardized, lightweight, and adaptable in-VM service offering fo
 
 ### Next steps
 
-More information on how to install VM watch: 
+More information on how to install VM watch: [Install VM watch](install-vm-watch.md)
 
 
 
