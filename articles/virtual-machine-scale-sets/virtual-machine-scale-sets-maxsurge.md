@@ -32,6 +32,7 @@ Rolling upgrades with MaxSurge can help improve service uptime during upgrade ev
 - When using rolling upgrades with MaxSurge, new virtual machines are created using the latest scale set model to replace virtual machines using the old scale set model. These newly created virtual machines counts towards your overall core quota. Additionally, these new virtual machines have new IP addresses and are placed into an existing subnet. You also need to have enough IP address quota and subnet space available to deploy these newly created virtual machines. 
 - During the MaxSurge rolling upgrade processes, Azure performs a quota check before each new batch. If that quota check fails, the upgrade will default to a non-MaxSurge upgrade and be upgraded in place.
 - When using rolling upgrades with MaxSurge on Virtual Machine Scale Sets with Uniform Orchestration, the new virtual machine that is created with the updated model to replace the virtual machine with the older model may be placed into a different update domain than the previous virtual machine. 
+- If attaching a virtual machine to a Virtual Machine Scale Set, the attached virtual machine should also have an application health extension. If an attached virtual machine does not have a health extension configured and reporting application health, the rolling upgrade may be impacted. 
 
 ## MaxSurge vs in place upgrades
 
