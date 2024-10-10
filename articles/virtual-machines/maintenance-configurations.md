@@ -4,7 +4,7 @@ description: Learn how to control when maintenance is applied to your Azure VMs 
 author: ju-shim
 ms.service: azure-virtual-machines
 ms.subservice: maintenance
-ms.topic: conceptual
+ms.topic: overview
 ms.date: 10/06/2021
 ms.author: jushiman
 ---
