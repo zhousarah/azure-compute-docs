@@ -49,10 +49,7 @@ Users can split the VM availability by the 'Context' property.
 > [!NOTE]
 > The context for Service Healing and Live Migration is currently unknown by default.
 
-The legend at the bottom indicates the color associated with the possible Context: Unknown, Platform Initiated, and User Initiated.
-   :::image type="content" source="media/flash/split-by-context-property.png" alt-text="Screenshot of the VM availability Metric split by Context on Azure portal." lightbox="media/flash/split-by-context-property.png" :::
-
-Users can also create an alert rule based on dimension values. Under the Condition tab, choose VM Availability Metric as the Signal name. In the Split by dimensions section, enter Context as the dimension name and select the corresponding dimension values.
+Users can create an alert rule based on dimension values. Under the Condition tab, choose VM Availability Metric as the Signal name. In the Split by dimensions section, enter Context as the dimension name and select the corresponding dimension values.
    :::image type="content" source="media/flash/metric-alert-rule.png" alt-text="Screenshot of alert rule creation for VM availability Metric split by dimensions on Azure portal." lightbox="media/flash/metric-alert-rule.png" :::
 
 ### Useful links
