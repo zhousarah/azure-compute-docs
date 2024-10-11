@@ -5,7 +5,7 @@ author: ju-shim
 ms.collection: linux
 ms.service: azure-virtual-machines
 ms.custom: devx-track-azurecli, linux-related-content
-ms.topic: article
+ms.topic: how-to
 ms.date: 04/13/2023
 ms.author: jushiman
 ---
