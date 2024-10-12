@@ -5,7 +5,7 @@ author: mattmcinnes
 ms.collection: linux
 ms.service: azure-virtual-machines
 ms.custom: linux-related-content
-ms.topic: article
+ms.topic: how-to
 ms.date: 06/27/2024
 ms.author: mattmcinnes
 ms.reviewer: jamesser
