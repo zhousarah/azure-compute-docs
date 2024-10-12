@@ -5,7 +5,7 @@ author: cro27
 ms.service: oracle-on-azure
 ms.custom: linux-related-content
 ms.collection: linux
-ms.topic: article
+ms.topic: concept-article
 ms.date: 10/03/2024
 ms.author: cholse
 ms.reviewer: jjaygbay1 

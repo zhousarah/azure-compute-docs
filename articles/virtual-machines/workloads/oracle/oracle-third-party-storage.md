@@ -4,7 +4,7 @@ description: This article describes how Partner storage offerings are available 
 author: jjaygbay1
 ms.author: jacobjaygbay
 ms.service: oracle-on-azure
-ms.collection: oracle
+ms.collection: concept-oracle
 ms.topic: article
 ms.date: 10/07/2024
 ---

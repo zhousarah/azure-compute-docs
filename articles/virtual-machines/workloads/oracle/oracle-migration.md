@@ -4,7 +4,7 @@ description: Learn how to migrate Oracle workloads to Azure VMs.
 author: suzuber
 ms.author: v-suzuber
 ms.service: oracle-on-azure
-ms.topic: article
+ms.topic: concept-article
 ms.date: 10/03/2024
 ---
 

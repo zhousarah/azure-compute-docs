@@ -5,7 +5,7 @@ author: jjaygbay1
 ms.author: jacobjaygbay
 ms.service: oracle-on-azure
 ms.collection: oracle
-ms.topic: article
+ms.topic: concept-article
 ms.date: 10/02/2024
 ---
 

@@ -5,7 +5,7 @@ author: jjaygbay1
 ms.service:ms.service: oracle-on-azure
 ms.custom: devx-track-azurecli, linux-related-content
 ms.collection: linux
-ms.topic: article
+ms.topic: how-to
 ms.date: 10/01/2024
 ms.author: jacobjaygbay
 ---
