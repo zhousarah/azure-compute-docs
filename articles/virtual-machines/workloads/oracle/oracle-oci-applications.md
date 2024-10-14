@@ -4,7 +4,7 @@ description: Architectures for Oracle applications with Azure Virtual Machines w
 author: jjaygbay1
 ms.service: oracle-on-azure
 ms.collection: linux
-ms.topic: article
+ms.topic: concept-article
 ms.date: 10/03/2024
 ms.author: jacobjaygbay
  

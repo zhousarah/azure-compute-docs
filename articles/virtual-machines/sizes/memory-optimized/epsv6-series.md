@@ -7,7 +7,7 @@ ms.subservice: sizes
 ms.custom:
   - build-2024
 ms.topic: conceptual
-ms.date: 07/22/2024
+ms.date: 08/27/2024
 ms.author: archat
 ms.reviewer: mattmcinnes, tomvcassidy
 ---
