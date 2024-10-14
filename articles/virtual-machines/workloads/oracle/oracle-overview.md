@@ -6,7 +6,7 @@ tags: azure-resource-management
 ms.custom: linux-related-content
 ms.service: oracle-on-azure
 ms.collection: linux
-ms.topic: article
+ms.topic: concept-article
 ms.tgt_pltfrm: vm-linux
 ms.date: 10/04/2024
 ms.author: jacobjaygbay

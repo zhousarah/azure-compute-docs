@@ -6,7 +6,7 @@ ms.service: azure-virtual-machines
 ms.subservice: redhat
 ms.custom: devx-track-azurecli, linux-related-content, devx-track-azurepowershell
 ms.collection: linux
-ms.topic: article
+ms.topic: concept-article
 ms.date: 06/10/2020
 ms.author: jushiman
 ---
