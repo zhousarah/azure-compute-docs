@@ -4,7 +4,7 @@ description: Design and implement an Oracle database in your Azure environment.
 author: jjaygbay1
 ms.service: oracle-on-azure
 ms.collection: linux
-ms.topic: article
+ms.topic: concept-article
 ms.date: 10/03/2024
 ms.author: jacobjaygbay
 ms.reviewer: tigorman
