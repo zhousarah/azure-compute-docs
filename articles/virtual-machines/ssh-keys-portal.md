@@ -4,7 +4,7 @@ description: Learn how to generate and store SSH keys in the Azure portal for co
 author: mattmcinnes
 ms.service: azure-virtual-machines
 ms.custom: linux-related-content
-ms.topic: article
+ms.topic: how-to
 ms.date: 04/27/2023
 ms.author: mattmcinnes
 ---
