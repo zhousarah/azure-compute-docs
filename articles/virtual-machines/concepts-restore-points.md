@@ -104,7 +104,7 @@ For Azure VM Linux VMs, restore points support the list of Linux [distributions 
 - Movement of virtual machines between resource groups or subscriptions is supported when VM has restore points. New restore point creation will fail on the previous VM as the VM no longer exists after the movement. You need to clean up the restore point collection and restore points of the old VM if no longer needed.
 
  > [!Note]
- > Public preview of cross-region creation and copying of VM restore points is available, with the following limitations: 
+ > Public preview of cross-region copy of VM restore points is available, with the following limitations: 
  > - Private links aren't supported when copying restore points across regions or creating restore points in a region other than the source VM. 
  > - Customer-managed key encrypted restore points, when copied to a target region or created directly in the target region are created as platform-managed key encrypted restore points.
  > - No portal support for cross region copy and cross region creation of restore points
