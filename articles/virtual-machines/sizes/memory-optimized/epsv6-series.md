@@ -1,5 +1,5 @@
 ---
-title: Epsv6 size series (Preview)
+title: Epsv6 size series 
 description: Information on and specifications of the Epsv6-series sizes
 author: archatC
 ms.service: azure-virtual-machines
@@ -12,16 +12,11 @@ ms.author: archat
 ms.reviewer: mattmcinnes, tomvcassidy
 ---
 
-# Epsv6 sizes series (Preview)
+# Epsv6 sizes series
 
 **Applies to:** :heavy_check_mark: Linux VMs :heavy_check_mark: Windows Client VMs :heavy_check_mark: Flexible scale sets :heavy_check_mark: Uniform scale sets
 
 [!INCLUDE [epsv6-summary](./includes/epsv6-series-summary.md)]
-
-> [!IMPORTANT]
-> - This VM series is currently in **Preview**. 
-> - See the [Preview Terms Of Use | Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability. 
-> - For more information and to sign up for the preview, please [visit our announcement and follow the link to signup](https://aka.ms/Cobalt100-VM-Preview-Signup).
 
 ## Host specifications
 [!INCLUDE [epsv6-series-specs](./includes/epsv6-series-specs.md)]
