@@ -47,11 +47,11 @@ The following table summarizes the support matrix for VM restore points.
 **VMs with standard SSDs** | Yes
 **VMs with premium SSDs** | Yes
 **VMs with ZRS disks** | Yes
-**VMs with server-side encryption using service-managed keys** | Yes.The encryption of source disk will not be enabled on the restore point.
-**VMs with server-side encryption using customer-managed keys** | Yes.The encryption of source disk will not be enabled on the restore point.
-**VMs with double encryption at rest** | Yes.The encryption of source disk will not be enabled on the restore point.
-**VMs with Host based encryption enabled with PMK/CMK/Double encryption** | Yes.The encryption of source disk will not be enabled on the restore point.
-**VMs with ADE (Azure Disk Encryption)** | Yes.The encryption of source disk will not be enabled on the restore point.
+**VMs with server-side encryption using service-managed keys** | Yes. The encryption of source disk will not be enabled on the restore point.
+**VMs with server-side encryption using customer-managed keys** | Yes. The encryption of source disk will not be enabled on the restore point.
+**VMs with double encryption at rest** | Yes. The encryption of source disk will not be enabled on the restore point.
+**VMs with Host based encryption enabled with PMK/CMK/Double encryption** | Yes. The encryption of source disk will not be enabled on the restore point.
+**VMs with ADE (Azure Disk Encryption)** | Yes. The encryption of source disk will not be enabled on the restore point.
 **VMs using Accelerated Networking** | Yes
 **Azure [Boost](/azure/azure-boost/overview) compatible Virtual machine sizes** | Yes
 **Minimum Frequency at which App consistent restore point can be taken** | 3 hours
