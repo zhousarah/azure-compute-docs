@@ -79,7 +79,7 @@ This section assumes that you've already obtained an ISO file from the Red Hat w
     ```bash
     sudo cat <<EOF>> /etc/udev/rules.d/68-azure-sriov-nm-unmanaged.rules
     # Accelerated Networking on Azure exposes a new SRIOV interface to the VM.
-    # This interface is transparentlybonded to the synthetic interface,
+    # This interface is transparently bonded to the synthetic interface,
     # so NetworkManager should just ignore any SRIOV interfaces.
     SUBSYSTEM=="net", DRIVERS=="hv_pci", ACTION!="remove", ENV{NM_UNMANAGED}="1"
     EOF
@@ -265,7 +265,7 @@ This section assumes that you've already obtained an ISO file from the Red Hat w
 
     ```bash
     sudo rm -f /var/log/waagent.log
-    sudo cloud-init clean
+    sudo cloud-init clean --logs --seed
     sudo waagent -force -deprovision+user
     sudo rm -f ~/.bash_history
     sudo export HISTSIZE=0
@@ -301,7 +301,7 @@ This section assumes that you've already obtained an ISO file from the Red Hat w
     ```bash
     sudo cat <<EOF>> /etc/udev/rules.d/68-azure-sriov-nm-unmanaged.rules
     # Accelerated Networking on Azure exposes a new SRIOV interface to the VM.
-    # This interface is transparentlybonded to the synthetic interface,
+    # This interface is transparently bonded to the synthetic interface,
     # so NetworkManager should just ignore any SRIOV interfaces.
     SUBSYSTEM=="net", DRIVERS=="hv_pci", ACTION!="remove", ENV{NM_UNMANAGED}="1"
     EOF
@@ -478,7 +478,7 @@ This section assumes that you've already obtained an ISO file from the Red Hat w
 1. Run the following commands to deprovision the VM and prepare it for provisioning on Azure:
 
     ```bash
-    sudo cloud-init clean
+    sudo cloud-init  clean --logs --seed
     sudo waagent -force -deprovision+user
     sudo rm -f ~/.bash_history
     sudo sudo rm -f /var/log/waagent.log
@@ -712,7 +712,7 @@ This section shows you how to use KVM to prepare RHEL 7 to upload to Azure.
     ```bash
     sudo cat <<EOF>> /etc/udev/rules.d/68-azure-sriov-nm-unmanaged.rules
     # Accelerated Networking on Azure exposes a new SRIOV interface to the VM.
-    # This interface is transparentlybonded to the synthetic interface,
+    # This interface is transparently bonded to the synthetic interface,
     # so NetworkManager should just ignore any SRIOV interfaces.
     SUBSYSTEM=="net", DRIVERS=="hv_pci", ACTION!="remove", ENV{NM_UNMANAGED}="1"
     EOF
@@ -888,7 +888,7 @@ This section shows you how to use KVM to prepare RHEL 7 to upload to Azure.
 1. Run the following commands to deprovision the VM and prepare it for provisioning on Azure:
 
     ```bash
-    sudo cloud-init clean
+    sudo cloud-init  clean --logs --seed
     sudo waagent -force -deprovision+user
     sudo rm -f ~/.bash_history
     sudo sudo rm -f /var/log/waagent.log
@@ -975,7 +975,7 @@ This section shows you how to use KVM to prepare RHEL 7 to upload to Azure.
     ```bash
     sudo cat <<EOF>> /etc/udev/rules.d/68-azure-sriov-nm-unmanaged.rules
     # Accelerated Networking on Azure exposes a new SRIOV interface to the VM.
-    # This interface is transparentlybonded to the synthetic interface,
+    # This interface is transparently bonded to the synthetic interface,
     # so NetworkManager should just ignore any SRIOV interfaces.
     SUBSYSTEM=="net", DRIVERS=="hv_pci", ACTION!="remove", ENV{NM_UNMANAGED}="1"
     EOF
@@ -1118,7 +1118,7 @@ This section shows you how to use KVM to prepare RHEL 7 to upload to Azure.
     ```bash
     sudo cat <<EOF>> /etc/udev/rules.d/68-azure-sriov-nm-unmanaged.rules
     # Accelerated Networking on Azure exposes a new SRIOV interface to the VM.
-    # This interface is transparentlybonded to the synthetic interface,
+    # This interface is transparently bonded to the synthetic interface,
     # so NetworkManager should just ignore any SRIOV interfaces.
     SUBSYSTEM=="net", DRIVERS=="hv_pci", ACTION!="remove", ENV{NM_UNMANAGED}="1"
     EOF
@@ -1294,7 +1294,7 @@ This section shows you how to use KVM to prepare RHEL 7 to upload to Azure.
 1. Run the following commands to deprovision the VM and prepare it for provisioning on Azure:
 
     ```bash
-    sudo cloud-init clean
+    sudo cloud-init  clean --logs --seed
     sudo waagent -force -deprovision+user
     sudo rm -f ~/.bash_history
     sudo sudo rm -f /var/log/waagent.log
@@ -1493,7 +1493,7 @@ This section shows you how to prepare RHEL 7  from an ISO by using a kickstart f
     
     sudo cat <<EOF>> /etc/udev/rules.d/68-azure-sriov-nm-unmanaged.rules
     # Accelerated Networking on Azure exposes a new SRIOV interface to the VM.
-    # This interface is transparentlybonded to the synthetic interface,
+    # This interface is transparently bonded to the synthetic interface,
     # so NetworkManager should just ignore any SRIOV interfaces.
     SUBSYSTEM=="net", DRIVERS=="hv_pci", ACTION!="remove", ENV{NM_UNMANAGED}="1"
     EOF
@@ -1719,7 +1719,7 @@ This section shows you how to prepare RHEL (8 OR 9)  from an ISO by using a kick
     
     sudo cat <<EOF>> /etc/udev/rules.d/68-azure-sriov-nm-unmanaged.rules
     # Accelerated Networking on Azure exposes a new SRIOV interface to the VM.
-    # This interface is transparentlybonded to the synthetic interface,
+    # This interface is transparently bonded to the synthetic interface,
     # so NetworkManager should just ignore any SRIOV interfaces.
     SUBSYSTEM=="net", DRIVERS=="hv_pci", ACTION!="remove", ENV{NM_UNMANAGED}="1"
     EOF
