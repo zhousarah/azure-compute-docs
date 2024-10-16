@@ -98,6 +98,11 @@ From this example accumulation of Minutes Not Available, here's the calculation 
     - M-series, v3
 - Support for the following VM series for capacity reservation is in public preview:
     - Lsv2
+    - DCsv2 series
+    - DCasv5 series
+    - DCesv5 and DCedsv5 series
+    - ECasv5 and ECadsv5 series
+    - ECesv5 and ECedsv5 series
 - Support for other VM series isn't currently available:
     - M series, v1
     - M series, HM and VHM
