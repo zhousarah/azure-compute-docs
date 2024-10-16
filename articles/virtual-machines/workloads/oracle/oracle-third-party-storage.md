@@ -4,12 +4,12 @@ description: This article describes how Partner storage offerings are available 
 author: jjaygbay1
 ms.author: jacobjaygbay
 ms.service: oracle-on-azure
-ms.collection: concept-oracle
-ms.topic: article
+ms.collection: oracle
+ms.topic: concept-article
 ms.date: 10/07/2024
 ---
 
-# Partner storage offerings for Oracle on Azure VMs
+# Partner storage offerings for Oracle on Azure VMs
 
 This article describes Partner storage offerings for high performance - input/output operations (IOPS) and throughput - Oracle workloads on Azure virtual machines (VMs). While Microsoft storage offerings for migrating Oracle workloads to Azure VMs are effective, there are use cases that require performance beyond the capacity of the Microsoft storage offering for Oracle on Azure VMs. These trusted non-Microsoft storage solutions are ideal for high performance use cases. 
 
