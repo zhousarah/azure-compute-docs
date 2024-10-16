@@ -67,11 +67,6 @@ From this example accumulation of Minutes Not Available, here's the calculation 
     - Dasv4 and newer
     - Ddv4 ad v5 series
     - Ddsv4 series, v4 and newer
-    - Dplsv5 and Dpldsv5 series
-    - Dpsv and Dpds series, v5 and newer
-    - Dpds series, v5 and newer
-    - Dplsv6 series
-    - Dplds series, v5 and newer
     - Dlsv5 and newer series
     - Dldsv5 and newer series
     - E series, all versions; AMD and Intel
@@ -79,7 +74,6 @@ From this example accumulation of Minutes Not Available, here's the calculation 
     - Easv5 and Eadsv5 series
     - Ebdsv5 and Ebsv5 series
     - Ed and Eds series, v4 and newer
-    - Eps and Epds series, v5 and newer
     - F series, all versions
     - Fasv6 and Falsv6 series
     - Fx series
@@ -103,6 +97,12 @@ From this example accumulation of Minutes Not Available, here's the calculation 
     - DCesv5 and DCedsv5 series
     - ECasv5 and ECadsv5 series
     - ECesv5 and ECedsv5 series
+    - Dplsv5 and Dpldsv5 series
+    - Dpsv and Dpds series, v5 and newer
+    - Dpds series, v5 and newer
+    - Dplsv6 series
+    - Dplds series, v5 and newer
+    - Eps and Epds series, v5 and newer
 - Support for other VM series isn't currently available:
     - M series, v1
     - M series, HM and VHM
