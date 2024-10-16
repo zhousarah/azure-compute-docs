@@ -6,7 +6,7 @@ ms.service: azure-virtual-machines
 ms.subservice: vm-linux-setup-configuration
 ms.custom: linux-related-content, linux-related-content
 ms.collection: linux
-ms.topic: article
+ms.topic: concept-article
 ms.date: 06/25/2024
 ms.author: carols
 ---

@@ -5,7 +5,7 @@ author: mattmcinnes
 ms.service: azure-virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
-ms.date: 07/29/2024
+ms.date: 09/24/2024
 ms.author: mattmcinnes
 ms.reviewer: mattmcinnes
 ---
@@ -13,6 +13,8 @@ ms.reviewer: mattmcinnes
 # Bsv2 sizes series
 
 [!INCLUDE [bsv2-summary](./includes/bsv2-series-summary.md)]
+
+Read more about the [B-series CPU credit model](../../b-series-cpu-credit-model/b-series-cpu-credit-model.md).
 
 ## Host specifications
 [!INCLUDE [bsv2-series-specs](./includes/bsv2-series-specs.md)]
@@ -48,7 +50,7 @@ vCPUs (Qty.) and Memory for each size
 
 Base CPU performance, Credits, and other CPU bursting related info
 
-| Size Name | Base CPU Performance Percentage | Initial Credits (Qty.) | Credits banked/hour (Qty.) | Max Banked Credits (Qty.) |
+| Size Name | Base CPU Performance of VM (%)<sup>1</sup> | Initial Credits (Qty.) | Credits banked/hour (Qty.) | Max Banked Credits (Qty.) |
 | --- | --- | --- | --- | --- |
 | Standard_B2ts_v2  | 20% | 60  | 24  | 576 |
 | Standard_B2ls_v2  | 30% | 60  | 36  | 864 |
@@ -63,6 +65,7 @@ Base CPU performance, Credits, and other CPU bursting related info
 | Standard_B32s_v2  | 40% | 960 | 768 | 18432 |
 
 #### CPU Burst resources
+- <sup>1</sup>The base CPU performance metric hasn't changed. The updated (2024) numbers were normalized using a `0 – 100%` scale. Previously, the scale was `0 – (vCPU x 100%)`.
 - Bsv2-series virtual machines can burst their disk performance and get up to their bursting max for up to 30 minutes at a time.
 - Learn more about [CPU bursting](../../b-series-cpu-credit-model/b-series-cpu-credit-model.md)
 

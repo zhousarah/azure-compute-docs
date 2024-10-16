@@ -24,9 +24,9 @@ ms.reviewer: mattmcinnes
 
 ### [Basics](#tab/sizebasic)
 
-vCPUs (Qty.) and Memory for each size
+Cores (Qty.) and Memory for each size
 
-| Size Name | vCPUs (Qty.) | Memory (GB) | EPC Memory (GiB) |
+| Size Name | Cores (Qty.) | Memory (GB) | EPC Memory (GiB) |
 | --- | --- | --- | --- |
 | Standard_DC1ds_v3 | 1 | 8 | 4 |
 | Standard_DC2ds_v3 | 2 | 16 | 8 |

@@ -34,8 +34,8 @@ The following table outlines the regions Ultra Disks are available in, and their
 |--------------------|---------|
 | **Single VMs** | Australia Central<br/>Brazil South<br/>Brazil Southeast<br/>Canada East<br/>Central India<br/>East Asia<br/>Germany West Central<br/>Korea Central<br/>Korea South<br/>UK West <br/>North Central US, South Central US, West US<br/>US Gov Arizona, US Gov Texas, US Gov Virginia |
 | **One availability zone** | UAE North |
-| **Two availability zones** |  France Central <br/> Qatar Central <br/> South Africa North <br/> Switzerland North |
-| **Three availability zones** | Australia East<br/>Canada Central<br/>China North 3 <br/>North Europe, West Europe<br/>Italy North<br/>Japan East<br/>Poland Central <br/>Southeast Asia<br/>Sweden Central<br/>UK South<br/>Central US, East US, East US 2, West US 2, West US 3 |
+| **Two availability zones** |  France Central <br/> Qatar Central <br/> South Africa North |
+| **Three availability zones** | Australia East<br/>Canada Central<br/>China North 3 <br/>North Europe, West Europe<br/>Italy North<br/>Japan East<br/>Poland Central <br/>Southeast Asia<br/>Sweden Central<br/>Switzerland North<br/>UK South<br/>Central US, East US, East US 2, West US 2, West US 3 |
 
 Not every VM size is available in every supported region with Ultra Disks. The following table lists VM series that are compatible with Ultra Disks.
 
