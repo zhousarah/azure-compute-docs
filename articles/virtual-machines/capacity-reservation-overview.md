@@ -69,6 +69,17 @@ From this example accumulation of Minutes Not Available, here's the calculation 
     - Ddsv4 series, v4 and newer
     - Dlsv5 and newer series
     - Dldsv5 and newer series
+    - DCsv2 series
+    - DCasv5 series
+    - DCesv5 and DCedsv5 series
+    - ECasv5 and ECadsv5 series
+    - ECesv5 and ECedsv5 series
+    - Dplsv5 and Dpldsv5 series
+    - Dpsv and Dpds series, v5 and newer
+    - Dpds series, v5 and newer
+    - Dplsv6 series
+    - Dplds series, v5 and newer
+    - Eps and Epds series, v5 and newer
     - E series, all versions; AMD and Intel
     - Eav4 and Easv4 series
     - Easv5 and Eadsv5 series
@@ -92,17 +103,6 @@ From this example accumulation of Minutes Not Available, here's the calculation 
     - M-series, v3
 - Support for the following VM series for capacity reservation is in public preview:
     - Lsv2
-    - DCsv2 series
-    - DCasv5 series
-    - DCesv5 and DCedsv5 series
-    - ECasv5 and ECadsv5 series
-    - ECesv5 and ECedsv5 series
-    - Dplsv5 and Dpldsv5 series
-    - Dpsv and Dpds series, v5 and newer
-    - Dpds series, v5 and newer
-    - Dplsv6 series
-    - Dplds series, v5 and newer
-    - Eps and Epds series, v5 and newer
 - Support for other VM series isn't currently available:
     - M series, v1
     - M series, HM and VHM
