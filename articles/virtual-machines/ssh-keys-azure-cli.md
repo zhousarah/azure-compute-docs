@@ -30,8 +30,8 @@ For more information on how to create and use SSH keys with Linux VMs, see [Use 
     az sshkey create --name "mySSHKey" --resource-group "myResourceGroup"
    ```
 
-> [!NOTE]
-> This command would default to key type of RSA, in order to generate ED25519 keys you can pass in the optional flag `--encryption-type Ed25519`
+    > [!NOTE]
+    > This command would default to key type of RSA, in order to generate ED25519 keys you can pass in the optional flag `--encryption-type Ed25519`.
 
 
 1. The resulting output lists the new key files' paths:
