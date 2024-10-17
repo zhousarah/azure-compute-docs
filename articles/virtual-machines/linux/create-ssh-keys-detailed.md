@@ -180,10 +180,15 @@ It is *strongly* recommended to add a passphrase to your private key. Without a 
 
 ## Generate keys automatically during deployment
 
-If you use the [Azure CLI](/cli/azure) to create your VM, you can optionally generate both public and private SSH key files by running the [az vm create](/cli/azure/vm) command with the `--generate-ssh-keys` option. The keys are stored in the ~/.ssh directory. Note that this command option does not overwrite keys if they already exist in that location, such as with some pre-configured Compute Gallery images.
+If you use the [Azure CLI](/cli/azure) to create your VM, you can optionally generate both public and private SSH key files by running the [az vm create](/cli/azure/vm) command with the `--generate-ssh-keys` option. This command would default to key type of RSA, in order to generate ED25519 keys you can pass in additonal flag `--ssh-key-type` command. The keys are stored in the ~/.ssh directory. Note that this command option does not overwrite keys if they already exist in that location, such as with some pre-configured Compute Gallery images.
 
-> [!NOTE]
-> [az sshkey create](/cli/azure/sshkey#az-sshkey-create) command deafults to RSA encryption and cannot be use to generate ED25519 key pairs, however you can create a ED25519 key pair using ssh-keygen as described above and then use that public key to create a VM.
+### Basic example
+
+Create a simple Ubuntu Linux VM along with Ed25519 SSH key pair.
+
+```Azure CLI
+az vm create -n MyVm -g MyResourceGroup --image Ubuntu2204 --generate-ssh-keys --ssh-key-type ed25519
+```
 
 ## Provide SSH public key when deploying a VM
 
