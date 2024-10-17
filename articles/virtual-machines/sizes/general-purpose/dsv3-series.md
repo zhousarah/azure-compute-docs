@@ -24,7 +24,7 @@ Premium Storage: Supported<br>
 Premium Storage caching: Supported<br>
 Live Migration: Supported<br>
 Memory Preserving Updates: Supported<br>
-VM Generation Support: Generation 1<br>
+VM Generation Support: Generation 1 and 2<br>
 Accelerated Networking: Supported<br>
 Ephemeral OS Disks: Not Supported<br>
 Nested Virtualization: Supported<br>
@@ -53,15 +53,15 @@ vCPUs (Qty.) and Memory for each size
 
 Local (temp) storage info for each size
 
-| Size Name | Max Temp Storage Disks (Qty.) | Temp Disk Size (GiB) | Temp Disk Random Read (RR)<sup>1</sup> IOPS | Temp Disk Random Read (RR)<sup>1</sup> Speed (MBps) | Temp Disk Random Write (RW)<sup>1</sup> IOPS | Temp Disk Random Write (RW)<sup>1</sup> Speed (MBps) |
+| Size Name | Max Temp Storage Disks (Qty.) | Temp Disk Size (GiB) | Temp Disk Random Read (RR)<sup>1</sup> IOPS | Temp Disk Random Read (RR)<sup>1</sup> Speed (MBps) | Temp Disk Random Write (RW)<sup>1</sup> IOPS |
 | --- | --- | --- | --- | --- | --- | --- |
-| Standard_D2s_v3 | 1 | 16 | 4000 | 32 |  |  |
-| Standard_D4s_v3 | 1 | 32 | 8000 | 64 |  |  |
-| Standard_D8s_v3 | 1 | 64 | 16000 | 128 |  |  |
-| Standard_D16s_v3 | 1 | 128 | 32000 | 256 |  |  |
-| Standard_D32s_v3 | 1 | 256 | 64000 | 512 |  |  |
-| Standard_D48s_v3 | 1 | 384 | 96000 | 768 |  |  |
-| Standard_D64s_v3 | 1 | 512 | 128000 | 1024 |  |  |
+| Standard_D2s_v3 | 1 | 16 | 4000 | 32 |
+| Standard_D4s_v3 | 1 | 32 | 8000 | 64 |
+| Standard_D8s_v3 | 1 | 64 | 16000 | 128 |
+| Standard_D16s_v3 | 1 | 128 | 32000 | 256 |
+| Standard_D32s_v3 | 1 | 256 | 64000 | 512 |
+| Standard_D48s_v3 | 1 | 384 | 96000 | 768 |
+| Standard_D64s_v3 | 1 | 512 | 128000 | 1024 |
 
 #### Storage resources
 - [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)
@@ -78,15 +78,15 @@ Local (temp) storage info for each size
 
 Remote (uncached) storage info for each size
 
-| Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS | Uncached Disk Speed (MBps) | Uncached Disk Burst<sup>1</sup> IOPS | Uncached Disk Burst<sup>1</sup> Speed (MBps) | Uncached Special<sup>2</sup> Disk IOPS | Uncached Special<sup>2</sup> Disk Speed (MBps) | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk IOPS | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk Speed (MBps) |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Standard_D2s_v3 | 4 | 3200 | 48 | 4000 | 200 |  |  |  |  |
-| Standard_D4s_v3 | 8 | 6400 | 96 | 8000 | 200 |  |  |  |  |
-| Standard_D8s_v3 | 16 | 12800 | 192 | 16000 | 400 |  |  |  |  |
-| Standard_D16s_v3 | 32 | 25600 | 384 | 32000 | 800 |  |  |  |  |
-| Standard_D32s_v3 | 32 | 51200 | 768 | 64000 | 1600 |  |  |  |  |
-| Standard_D48s_v3 | 32 | 76800 | 1152 | 80000 | 2000 |  |  |  |  |
-| Standard_D64s_v3 | 32 | 80000 | 1200 | 80000 | 2000 |  |  |  |  |
+| Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS | Uncached Disk Speed (MBps) | Uncached Disk Burst<sup>1</sup> IOPS | Uncached Disk Burst<sup>1</sup> Speed (MBps) |
+| --- | --- | --- | --- | --- | --- |
+| Standard_D2s_v3 | 4 | 3200 | 48 | 4000 | 200 |
+| Standard_D4s_v3 | 8 | 6400 | 96 | 8000 | 200 |
+| Standard_D8s_v3 | 16 | 12800 | 192 | 16000 | 400 |
+| Standard_D16s_v3 | 32 | 25600 | 384 | 32000 | 800 |
+| Standard_D32s_v3 | 32 | 51200 | 768 | 64000 | 1600 |
+| Standard_D48s_v3 | 32 | 76800 | 1152 | 80000 | 2000 |
+| Standard_D64s_v3 | 32 | 80000 | 1200 | 80000 | 2000 |
 
 #### Storage resources
 - [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)

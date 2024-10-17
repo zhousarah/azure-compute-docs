@@ -52,15 +52,15 @@ vCPUs (Qty.) and Memory for each size
 
 Local (temp) storage info for each size
 
-| Size Name | Max Temp Storage Disks (Qty.) | Temp Disk Size (GiB) | Temp Disk Random Read (RR)<sup>1</sup> IOPS | Temp Disk Random Read (RR)<sup>1</sup> Speed (MBps) | Temp Disk Random Write (RW)<sup>1</sup> IOPS | Temp Disk Random Write (RW)<sup>1</sup> Speed (MBps) |
-| --- | --- | --- | --- | --- | --- | --- |
-| Standard_A1_v2 | 1 | 10 | 1000 | 20 |  | 10 |
-| Standard_A2_v2 | 1 | 20 | 2000 | 40 |  | 20 |
-| Standard_A4_v2 | 1 | 40 | 4000 | 80 |  | 40 |
-| Standard_A8_v2 | 1 | 80 | 8000 | 160 |  | 80 |
-| Standard_A2m_v2 | 1 | 20 | 2000 | 40 |  | 20 |
-| Standard_A4m_v2 | 1 | 40 | 4000 | 80 |  | 40 |
-| Standard_A8m_v2 | 1 | 80 | 8000 | 160 |  | 80 |
+| Size Name | Max Temp Storage Disks (Qty.) | Temp Disk Size (GiB) | Temp Disk Random Read (RR)<sup>1</sup> IOPS | Temp Disk Random Read (RR)<sup>1</sup> Speed (MBps) | Temp Disk Random Write (RW)<sup>1</sup> Speed (MBps) |
+| --- | --- | --- | --- | --- | --- |
+| Standard_A1_v2 | 1 | 10 | 1000 | 20 | 10 |
+| Standard_A2_v2 | 1 | 20 | 2000 | 40 | 20 |
+| Standard_A4_v2 | 1 | 40 | 4000 | 80 | 40 |
+| Standard_A8_v2 | 1 | 80 | 8000 | 160 | 80 |
+| Standard_A2m_v2 | 1 | 20 | 2000 | 40 | 20 |
+| Standard_A4m_v2 | 1 | 40 | 4000 | 80 | 40 |
+| Standard_A8m_v2 | 1 | 80 | 8000 | 160 | 80 |
 
 #### Storage resources
 - [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)
@@ -77,15 +77,15 @@ Local (temp) storage info for each size
 
 Remote (uncached) storage info for each size
 
-| Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS | Uncached Disk Speed (MBps) | Uncached Disk Burst<sup>1</sup> IOPS | Uncached Disk Burst<sup>1</sup> Speed (MBps) | Uncached Special<sup>2</sup> Disk IOPS | Uncached Special<sup>2</sup> Disk Speed (MBps) | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk IOPS | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk Speed (MBps) |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Standard_A1_v2 | 2 | 1000 |  |  |  |  |  |  |  |
-| Standard_A2_v2 | 4 | 2000 |  |  |  |  |  |  |  |
-| Standard_A4_v2 | 8 | 4000 |  |  |  |  |  |  |  |
-| Standard_A8_v2 | 16 | 8000 |  |  |  |  |  |  |  |
-| Standard_A2m_v2 | 4 | 2000 |  |  |  |  |  |  |  |
-| Standard_A4m_v2 | 8 | 4000 |  |  |  |  |  |  |  |
-| Standard_A8m_v2 | 16 | 8000 |  |  |  |  |  |  |  |
+| Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS |
+| --- | --- | --- |
+| Standard_A1_v2 | 2 | 1000 |
+| Standard_A2_v2 | 4 | 2000 |
+| Standard_A4_v2 | 8 | 4000 |
+| Standard_A8_v2 | 16 | 8000 |
+| Standard_A2m_v2 | 4 | 2000 |
+| Standard_A4m_v2 | 8 | 4000 |
+| Standard_A8m_v2 | 16 | 8000 |
 
 #### Storage resources
 - [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)

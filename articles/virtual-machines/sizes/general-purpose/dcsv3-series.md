@@ -55,16 +55,16 @@ Local (temp) storage info for each size
 
 Remote (uncached) storage info for each size
 
-| Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS | Uncached Disk Speed (MBps) | Uncached Disk Burst<sup>1</sup> IOPS | Uncached Disk Burst<sup>1</sup> Speed (MBps) | Uncached Special<sup>2</sup> Disk IOPS | Uncached Special<sup>2</sup> Disk Speed (MBps) | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk IOPS | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk Speed (MBps) |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Standard_DC1s_v3 | 4 |  |  |  |  |  |  |  |  |
-| Standard_DC2s_v3 | 8 |  |  |  |  |  |  |  |  |
-| Standard_DC4s_v3 | 16 |  |  |  |  |  |  |  |  |
-| Standard_DC8s_v3 | 32 |  |  |  |  |  |  |  |  |
-| Standard_DC16s_v3 | 32 |  |  |  |  |  |  |  |  |
-| Standard_DC24s_v3 | 32 |  |  |  |  |  |  |  |  |
-| Standard_DC32s_v3 | 32 |  |  |  |  |  |  |  |  |
-| Standard_DC48s_v3 | 32 |  |  |  |  |  |  |  |  |
+| Size Name | Max Remote Storage Disks (Qty.) |
+| --- | --- |
+| Standard_DC1s_v3 | 4 |
+| Standard_DC2s_v3 | 8 |
+| Standard_DC4s_v3 | 16 |
+| Standard_DC8s_v3 | 32 |
+| Standard_DC16s_v3 | 32 |
+| Standard_DC24s_v3 | 32 |
+| Standard_DC32s_v3 | 32 |
+| Standard_DC48s_v3 | 32 |
 
 #### Storage resources
 - [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)
@@ -84,16 +84,16 @@ Remote (uncached) storage info for each size
 
 Network interface info for each size
 
-| Size Name | Max NICs (Qty.) | Max Bandwidth (Mbps) |
-| --- | --- | --- |
-| Standard_DC1s_v3 | 2 |  |
-| Standard_DC2s_v3 | 2 |  |
-| Standard_DC4s_v3 | 4 |  |
-| Standard_DC8s_v3 | 8 |  |
-| Standard_DC16s_v3 | 8 |  |
-| Standard_DC24s_v3 | 8 |  |
-| Standard_DC32s_v3 | 8 |  |
-| Standard_DC48s_v3 | 8 |  |
+| Size Name | Max NICs (Qty.) |
+| --- | --- |
+| Standard_DC1s_v3 | 2 |
+| Standard_DC2s_v3 | 2 |
+| Standard_DC4s_v3 | 4 |
+| Standard_DC8s_v3 | 8 |
+| Standard_DC16s_v3 | 8 |
+| Standard_DC24s_v3 | 8 |
+| Standard_DC32s_v3 | 8 |
+| Standard_DC48s_v3 | 8 |
 
 #### Networking resources
 - [Virtual networks and virtual machines in Azure](/azure/virtual-network/network-overview)
