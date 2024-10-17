@@ -83,8 +83,8 @@ Local (temp) storage info for each size
 
 Remote (uncached) storage info for each size
 
-| Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS | Uncached Disk Speed (MBps) | Uncached Disk Burst<sup>1</sup> IOPS |
-| --- | --- | --- | --- | --- |
+| Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS | Uncached Disk Speed (MBps) | Uncached Disk Burst<sup>1</sup> IOPS | Uncached Disk Burst<sup>1</sup> Speed (MBps) |
+| --- | --- | --- | --- | --- | --- |
 | Standard_B2ats_v2 | 4 | 3750 | 85 | 10,000 | 960 |
 | Standard_B2als_v2 | 4 | 3750 | 85 | 10,000 | 960 |
 | Standard_B2as_v2 | 4 | 3750 | 85 | 10,000 | 960 |
