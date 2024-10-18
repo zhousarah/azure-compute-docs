@@ -51,13 +51,13 @@ vCPUs (Qty.) and Memory for each size
 
 Local (temp) storage info for each size
 
-| Size Name | Max Temp Storage Disks (Qty.) | Temp Disk Size (GiB) | Temp Disk Random Read (RR)<sup>1</sup> IOPS | Temp Disk Random Read (RR)<sup>1</sup> Speed (MBps) | Temp Disk Random Write (RW)<sup>1</sup> IOPS | Temp Disk Random Write (RW)<sup>1</sup> Speed (MBps) |
-| --- | --- | --- | --- | --- | --- | --- |
-| Standard_D1_v2 | 1 | 50 | 3000 | 46 |  | 23 |
-| Standard_D2_v2 | 1 | 100 | 6000 | 93 |  | 46 |
-| Standard_D3_v2 | 1 | 200 | 12000 | 187 |  | 93 |
-| Standard_D4_v2 | 1 | 400 | 24000 | 375 |  | 187 |
-| Standard_D5_v2 | 1 | 800 | 48000 | 750 |  | 375 |
+| Size Name | Max Temp Storage Disks (Qty.) | Temp Disk Size (GiB) | Temp Disk Random Read (RR)<sup>1</sup> IOPS | Temp Disk Random Read (RR)<sup>1</sup> Speed (MBps) | Temp Disk Random Write (RW)<sup>1</sup> Speed (MBps) |
+| --- | --- | --- | --- | --- | --- |
+| Standard_D1_v2 | 1 | 50 | 3000 | 46 | 23 |
+| Standard_D2_v2 | 1 | 100 | 6000 | 93 | 46 |
+| Standard_D3_v2 | 1 | 200 | 12000 | 187 | 93 |
+| Standard_D4_v2 | 1 | 400 | 24000 | 375 | 187 |
+| Standard_D5_v2 | 1 | 800 | 48000 | 750 | 375 |
 
 #### Storage resources
 - [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)
@@ -74,13 +74,13 @@ Local (temp) storage info for each size
 
 Remote (uncached) storage info for each size
 
-| Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS | Uncached Disk Speed (MBps) | Uncached Disk Burst<sup>1</sup> IOPS | Uncached Disk Burst<sup>1</sup> Speed (MBps) | Uncached Special<sup>2</sup> Disk IOPS | Uncached Special<sup>2</sup> Disk Speed (MBps) | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk IOPS | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk Speed (MBps) |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Standard_D1_v2 | 4 | 4x500 |  |  |  |  |  |  |  |
-| Standard_D2_v2 | 8 | 8x500 |  |  |  |  |  |  |  |
-| Standard_D3_v2 | 16 | 16x500 |  |  |  |  |  |  |  |
-| Standard_D4_v2 | 32 | 32x500 |  |  |  |  |  |  |  |
-| Standard_D5_v2 | 64 | 64x500 |  |  |  |  |  |  |  |
+| Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS |
+| --- | --- | --- |
+| Standard_D1_v2 | 4 | 4x500 |
+| Standard_D2_v2 | 8 | 8x500 |
+| Standard_D3_v2 | 16 | 16x500 |
+| Standard_D4_v2 | 32 | 32x500 |
+| Standard_D5_v2 | 64 | 64x500 |
 
 #### Storage resources
 - [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)

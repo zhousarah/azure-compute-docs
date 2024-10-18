@@ -44,16 +44,16 @@ Cores (Qty.) and Memory for each size
 
 Local (temp) storage info for each size
 
-| Size Name | Max Temp Storage Disks (Qty.) | Temp Disk Size (GiB) | Temp Disk Random Read (RR)<sup>1</sup> IOPS | Temp Disk Random Read (RR)<sup>1</sup> Speed (MBps) | Temp Disk Random Write (RW)<sup>1</sup> IOPS | Temp Disk Random Write (RW)<sup>1</sup> Speed (MBps) |
-| --- | --- | --- | --- | --- | --- | --- |
-| Standard_DC1ds_v3 | 1 | 75 |  |  |  |  |
-| Standard_DC2ds_v3 | 1 | 150 |  |  |  |  |
-| Standard_DC4ds_v3 | 1 | 300 |  |  |  |  |
-| Standard_DC8ds_v3 | 1 | 600 |  |  |  |  |
-| Standard_DC16ds_v3 | 1 | 1200 |  |  |  |  |
-| Standard_DC24ds_v3 | 1 | 1800 |  |  |  |  |
-| Standard_DC32ds_v3 | 1 | 2400 |  |  |  |  |
-| Standard_DC48ds_v3 | 1 | 2400 |  |  |  |  |
+| Size Name | Max Temp Storage Disks (Qty.) | Temp Disk Size (GiB) |
+| --- | --- | --- |
+| Standard_DC1ds_v3 | 1 | 75 |
+| Standard_DC2ds_v3 | 1 | 150 |
+| Standard_DC4ds_v3 | 1 | 300 |
+| Standard_DC8ds_v3 | 1 | 600 |
+| Standard_DC16ds_v3 | 1 | 1200 |
+| Standard_DC24ds_v3 | 1 | 1800 |
+| Standard_DC32ds_v3 | 1 | 2400 |
+| Standard_DC48ds_v3 | 1 | 2400 |
 
 #### Storage resources
 - [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)
@@ -70,16 +70,16 @@ Local (temp) storage info for each size
 
 Remote (uncached) storage info for each size
 
-| Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS | Uncached Disk Speed (MBps) | Uncached Disk Burst<sup>1</sup> IOPS | Uncached Disk Burst<sup>1</sup> Speed (MBps) | Uncached Special<sup>2</sup> Disk IOPS | Uncached Special<sup>2</sup> Disk Speed (MBps) | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk IOPS | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk Speed (MBps) |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Standard_DC1ds_v3 | 4 |  |  |  |  |  |  |  |  |
-| Standard_DC2ds_v3 | 8 |  |  |  |  |  |  |  |  |
-| Standard_DC4ds_v3 | 16 |  |  |  |  |  |  |  |  |
-| Standard_DC8ds_v3 | 32 |  |  |  |  |  |  |  |  |
-| Standard_DC16ds_v3 | 32 |  |  |  |  |  |  |  |  |
-| Standard_DC24ds_v3 | 32 |  |  |  |  |  |  |  |  |
-| Standard_DC32ds_v3 | 32 |  |  |  |  |  |  |  |  |
-| Standard_DC48ds_v3 | 32 |  |  |  |  |  |  |  |  |
+| Size Name | Max Remote Storage Disks (Qty.) |
+| --- | --- |
+| Standard_DC1ds_v3 | 4 |
+| Standard_DC2ds_v3 | 8 |
+| Standard_DC4ds_v3 | 16 |
+| Standard_DC8ds_v3 | 32 |
+| Standard_DC16ds_v3 | 32 |
+| Standard_DC24ds_v3 | 32 |
+| Standard_DC32ds_v3 | 32 |
+| Standard_DC48ds_v3 | 32 |
 
 #### Storage resources
 - [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)
@@ -99,16 +99,16 @@ Remote (uncached) storage info for each size
 
 Network interface info for each size
 
-| Size Name | Max NICs (Qty.) | Max Bandwidth (Mbps) |
-| --- | --- | --- |
-| Standard_DC1ds_v3 | 2 |  |
-| Standard_DC2ds_v3 | 2 |  |
-| Standard_DC4ds_v3 | 4 |  |
-| Standard_DC8ds_v3 | 8 |  |
-| Standard_DC16ds_v3 | 8 |  |
-| Standard_DC24ds_v3 | 8 |  |
-| Standard_DC32ds_v3 | 8 |  |
-| Standard_DC48ds_v3 | 8 |  |
+| Size Name | Max NICs (Qty.) |
+| --- | --- |
+| Standard_DC1ds_v3 | 2 |
+| Standard_DC2ds_v3 | 2 |
+| Standard_DC4ds_v3 | 4 |
+| Standard_DC8ds_v3 | 8 |
+| Standard_DC16ds_v3 | 8 |
+| Standard_DC24ds_v3 | 8 |
+| Standard_DC32ds_v3 | 8 |
+| Standard_DC48ds_v3 | 8 |
 
 #### Networking resources
 - [Virtual networks and virtual machines in Azure](/azure/virtual-network/network-overview)
