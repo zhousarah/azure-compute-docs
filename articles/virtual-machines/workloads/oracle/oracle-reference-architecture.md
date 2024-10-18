@@ -104,15 +104,15 @@ Monitor the disks:
 
 In addition to the above we highly recommend to enable the VM insights also.
 
-The Virtual Machine is chosen based on your AWR assessment. Please review [Oracle Capacity Planning](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/scenarios/oracle-iaas/oracle-capacity-planning) for further read.
+The Virtual Machine is chosen based on your AWR assessment. Please review [Oracle Capacity Planning](/azure/cloud-adoption-framework/scenarios/oracle-iaas/oracle-capacity-planning) for further read.
 We highly recommend to make use of [constrained core vCPUs](../../../virtual-machines/constrained-vcpu.md) to save on licensing costs and maximize performance. 
 
 The choice of disk type is dependent on the output of your AWR assessment. The majority of customers use Premium SSD v2. 
 
 > [!NOTE]
-> Premium SSD v2 are not supported for files referring to the operating system. For further information, please visit [Deploy Premium SSD v2](https://learn.microsoft.com/en-us/azure/virtual-machines/disks-deploy-premium-v2?tabs=azure-cli#limitations).
+> Premium SSD v2 are not supported for files referring to the operating system. For further information, please visit [Deploy Premium SSD v2](/azure/virtual-machines/disks-deploy-premium-v2?tabs=azure-cli#limitations).
 
-As Backup destination Azure Premium Files is used. This solution is the most performant. You can also use Azure Blob Storage as Backup destination. Always make sure to test which option suits you best. Please also visit [Oracle Database Backup Strategies](https://learn.microsoft.com/en-us/azure/virtual-machines/workloads/oracle/oracle-database-backup-strategies).
+As Backup destination Azure Premium Files is used. This solution is the most performant. You can also use Azure Blob Storage as Backup destination. Always make sure to test which option suits you best. Please also visit [Oracle Database Backup Strategies](/azure/virtual-machines/workloads/oracle/oracle-database-backup-strategies).
 
  In regions where availability zones aren't supported, you might use availability sets to deploy your Oracle Database in a highly available manner. Availability sets allow you to achieve a VM uptime of 99.95%. The following diagram is a reference architecture of this use:
 
