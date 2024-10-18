@@ -29,7 +29,7 @@ Key differences between persistent and ephemeral OS disks:
 
 |   | Persistent OS Disk | Ephemeral OS Disk |
 |---|---|---|
-| **Size limit for OS disk** | 4* TiB | Cache, temp or Nvme disk size for the VM size or 2,040 GiB, whichever is smaller. For the **cache, temp or Nvme size in GiB**, see [DSv3](sizes-general.md), [Esv3](sizes-memory.md), [M](sizes-memory.md), [FS](sizes-compute.md), and [GS](sizes-previous-gen.md#gs-series) |
+| **Size limit for OS disk** | 4* TiB | Cache, temp, or NVMe disk size for the VM size or 2,040 GiB, whichever is smaller. For the **cache, temp or NVMe size in GiB**, see [DSv3](sizes-general.md), [Esv3](sizes-memory.md), [M](sizes-memory.md), [FS](sizes-compute.md), and [GS](sizes-previous-gen.md#gs-series) |
 | **VM sizes supported** | All | VM sizes with local storage such as DSv3, Esv3, Fs, FsV2, GS, M, Mdsv2, Bs, Dav4, Eav4 |
 | **Disk type support**| Managed and unmanaged OS disk| Managed OS disk only|
 | **Region support**| All regions| All regions|
@@ -40,7 +40,7 @@ Key differences between persistent and ephemeral OS disks:
 | **Resizing to a new VM size**| OS disk data is preserved| Data on the OS disk is deleted, OS is reprovisioned |
 | **Redeploy** | OS disk data is preserved | Data on the OS disk is deleted, OS is reprovisioned |
 | **Stop/ Start of VM** | OS disk data is preserved | Not Supported |
-| **Page file placement**| For Windows, page file is stored on the resource disk| For Windows, page file is stored on the OS disk (for cache placement, Temp disk placement & Nvme disk placement).|
+| **Page file placement**| For Windows, page file is stored on the resource disk| For Windows, page file is stored on the OS disk (for cache placement, Temp disk placement & NVMe disk placement).|
 | **Maintenance of VM/VMSS using [healing](understand-vm-reboots.md#unexpected-downtime)** | OS disk data is preserved | OS disk data isn't preserved  |
 | **Maintenance of VM/VMSS using [Live Migration](maintenance-and-updates.md#live-migration)** | OS disk data is preserved | OS disk data is preserved  |
 
