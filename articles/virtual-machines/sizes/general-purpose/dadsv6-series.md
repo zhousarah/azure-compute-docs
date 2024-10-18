@@ -47,16 +47,16 @@ vCPUs (Qty.) and Memory for each size
 
 Local (temp) storage info for each size
 
-| Size Name | Max Temp Storage Disks (Qty.) | Temp Disk Size (GiB) | Temp Disk Random Read (RR)<sup>1</sup> IOPS | Temp Disk Random Read (RR)<sup>1</sup> Speed (MBps) | Temp Disk Random Write (RW)<sup>1</sup> IOPS | Temp Disk Random Write (RW)<sup>1</sup> Speed (MBps) |
-| --- | --- | --- | --- | --- | --- | --- |
-| Standard_D2ads_v6 | 1 | 110 | 37500 | 180 |  |  |
-| Standard_D4ads_v6 | 1 | 220 | 75000 | 360 |  |  |
-| Standard_D8ads_v6 | 1 | 440 | 150000 | 720 |  |  |
-| Standard_D16ads_v6 | 2 | 440 | 300000 | 1440 |  |  |
-| Standard_D32ads_v6 | 4 | 440 | 600000 | 2880 |  |  |
-| Standard_D48ads_v6 | 6 | 440 | 900000 | 4320 |  |  |
-| Standard_D64ads_v6 | 4 | 880 | 1200000 | 5760 |  |  |
-| Standard_D96ads_v6 | 6 | 880 | 1800000 | 8640 |  |  |
+| Size Name | Max Temp Storage Disks (Qty.) | Temp Disk Size (GiB) | Temp Disk Random Read (RR)<sup>1</sup> IOPS | Temp Disk Random Read (RR)<sup>1</sup> Speed (MBps) |
+| --- | --- | --- | --- | --- |
+| Standard_D2ads_v6 | 1 | 110 | 37500 | 180 |
+| Standard_D4ads_v6 | 1 | 220 | 75000 | 360 |
+| Standard_D8ads_v6 | 1 | 440 | 150000 | 720 |
+| Standard_D16ads_v6 | 2 | 440 | 300000 | 1440 |
+| Standard_D32ads_v6 | 4 | 440 | 600000 | 2880 |
+| Standard_D48ads_v6 | 6 | 440 | 900000 | 4320 |
+| Standard_D64ads_v6 | 4 | 880 | 1200000 | 5760 |
+| Standard_D96ads_v6 | 6 | 880 | 1800000 | 8640 |
 
 #### Storage resources
 - [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)

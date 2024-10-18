@@ -44,16 +44,16 @@ vCPUs (Qty.) and Memory for each size
 
 Local (temp) storage info for each size
 
-| Size Name | Max Temp Storage Disks (Qty.) | Temp Disk Size (GiB) | Temp Disk Random Read (RR)<sup>1</sup> IOPS | Temp Disk Random Read (RR)<sup>1</sup> Speed (MBps) | Temp Disk Random Write (RW)<sup>1</sup> IOPS | Temp Disk Random Write (RW)<sup>1</sup> Speed (MBps) |
-| --- | --- | --- | --- | --- | --- | --- |
-| Standard_D2a_v41 | 1 | 50 | 3000 | 46 |  | 23 |
-| Standard_D4a_v4 | 1 | 100 | 6000 | 93 |  | 46 |
-| Standard_D8a_v4 | 1 | 200 | 12000 | 187 |  | 93 |
-| Standard_D16a_v4 | 1 | 400 | 24000 | 375 |  | 187 |
-| Standard_D32a_v4 | 1 | 800 | 48000 | 750 |  | 375 |
-| Standard_D48a_v4 | 1 | 1200 | 96000 | 1000 |  | 500 |
-| Standard_D64a_v4 | 1 | 1600 | 96000 | 1000 |  | 500 |
-| Standard_D96a_v4 | 1 | 2400 | 96000 | 1000 |  | 500 |
+| Size Name | Max Temp Storage Disks (Qty.) | Temp Disk Size (GiB) | Temp Disk Random Read (RR)<sup>1</sup> IOPS | Temp Disk Random Read (RR)<sup>1</sup> Speed (MBps) | Temp Disk Random Write (RW)<sup>1</sup> Speed (MBps) |
+| --- | --- | --- | --- | --- | --- |
+| Standard_D2a_v41 | 1 | 50 | 3000 | 46 | 23 |
+| Standard_D4a_v4 | 1 | 100 | 6000 | 93 | 46 |
+| Standard_D8a_v4 | 1 | 200 | 12000 | 187 | 93 |
+| Standard_D16a_v4 | 1 | 400 | 24000 | 375 | 187 |
+| Standard_D32a_v4 | 1 | 800 | 48000 | 750 | 375 |
+| Standard_D48a_v4 | 1 | 1200 | 96000 | 1000 | 500 |
+| Standard_D64a_v4 | 1 | 1600 | 96000 | 1000 | 500 |
+| Standard_D96a_v4 | 1 | 2400 | 96000 | 1000 | 500 |
 
 #### Storage resources
 - [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)
@@ -70,16 +70,16 @@ Local (temp) storage info for each size
 
 Remote (uncached) storage info for each size
 
-| Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS | Uncached Disk Speed (MBps) | Uncached Disk Burst<sup>1</sup> IOPS | Uncached Disk Burst<sup>1</sup> Speed (MBps) | Uncached Special<sup>2</sup> Disk IOPS | Uncached Special<sup>2</sup> Disk Speed (MBps) | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk IOPS | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk Speed (MBps) |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Standard_D2a_v41 | 4 | 3200 | 48 | 4000 | 200 |  |  |  |  |
-| Standard_D4a_v4 | 8 | 6400 | 96 | 8000 | 200 |  |  |  |  |
-| Standard_D8a_v4 | 16 | 12800 | 192 | 16000 | 400 |  |  |  |  |
-| Standard_D16a_v4 | 32 | 25600 | 384 | 32000 | 800 |  |  |  |  |
-| Standard_D32a_v4 | 32 | 51200 | 768 | 64000 | 1600 |  |  |  |  |
-| Standard_D48a_v4 | 32 | 76800 | 1148 | 80000 | 2000 |  |  |  |  |
-| Standard_D64a_v4 | 32 | 80000 | 1200 | 80000 | 2000 |  |  |  |  |
-| Standard_D96a_v4 | 32 | 80000 | 1200 | 80000 | 2000 |  |  |  |  |
+| Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS | Uncached Disk Speed (MBps) | Uncached Disk Burst<sup>1</sup> IOPS | Uncached Disk Burst<sup>1</sup> Speed (MBps) |
+| --- | --- | --- | --- | --- | --- |
+| Standard_D2a_v41 | 4 | 3200 | 48 | 4000 | 200 |
+| Standard_D4a_v4 | 8 | 6400 | 96 | 8000 | 200 |
+| Standard_D8a_v4 | 16 | 12800 | 192 | 16000 | 400 |
+| Standard_D16a_v4 | 32 | 25600 | 384 | 32000 | 800 |
+| Standard_D32a_v4 | 32 | 51200 | 768 | 64000 | 1600 |
+| Standard_D48a_v4 | 32 | 76800 | 1148 | 80000 | 2000 |
+| Standard_D64a_v4 | 32 | 80000 | 1200 | 80000 | 2000 |
+| Standard_D96a_v4 | 32 | 80000 | 1200 | 80000 | 2000 |
 
 #### Storage resources
 - [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)

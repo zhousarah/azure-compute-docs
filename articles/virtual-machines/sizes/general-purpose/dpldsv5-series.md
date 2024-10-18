@@ -77,15 +77,15 @@ Local (temp) storage info for each size
 
 Remote (uncached) storage info for each size
 
-| Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS | Uncached Disk Speed (MBps) | Uncached Disk Burst<sup>1</sup> IOPS | Uncached Disk Burst<sup>1</sup> Speed (MBps) | Uncached Special<sup>2</sup> Disk IOPS | Uncached Special<sup>2</sup> Disk Speed (MBps) | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk IOPS | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk Speed (MBps) |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Standard_D2plds_v5 | 4 | 3750 | 85 | 10000 | 1200 |  |  |  |  |
-| Standard_D4plds_v5 | 8 | 6400 | 145 | 20000 | 1200 |  |  |  |  |
-| Standard_D8plds_v5 | 16 | 12800 | 290 | 20000 | 1200 |  |  |  |  |
-| Standard_D16plds_v5 | 32 | 25600 | 600 | 40000 | 1200 |  |  |  |  |
-| Standard_D32plds_v5 | 32 | 51200 | 865 | 80000 | 2000 |  |  |  |  |
-| Standard_D48plds_v5 | 32 | 76800 | 1315 | 80000 | 3000 |  |  |  |  |
-| Standard_D64plds_v5 | 32 | 80000 | 1735 | 80000 | 3000 |  |  |  |  |
+| Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS | Uncached Disk Speed (MBps) | Uncached Disk Burst<sup>1</sup> IOPS | Uncached Disk Burst<sup>1</sup> Speed (MBps) |
+| --- | --- | --- | --- | --- | --- |
+| Standard_D2plds_v5 | 4 | 3750 | 85 | 10000 | 1200 |
+| Standard_D4plds_v5 | 8 | 6400 | 145 | 20000 | 1200 |
+| Standard_D8plds_v5 | 16 | 12800 | 290 | 20000 | 1200 |
+| Standard_D16plds_v5 | 32 | 25600 | 600 | 40000 | 1200 |
+| Standard_D32plds_v5 | 32 | 51200 | 865 | 80000 | 2000 |
+| Standard_D48plds_v5 | 32 | 76800 | 1315 | 80000 | 3000 |
+| Standard_D64plds_v5 | 32 | 80000 | 1735 | 80000 | 3000 |
 
 #### Storage resources
 - [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)

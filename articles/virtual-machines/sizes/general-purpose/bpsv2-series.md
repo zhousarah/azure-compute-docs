@@ -79,17 +79,17 @@ Local (temp) storage info for each size
 
 Remote (uncached) storage info for each size
 
-| Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS | Uncached Disk Speed (MBps) | Uncached Disk Burst<sup>1</sup> IOPS | Uncached Disk Burst<sup>1</sup> Speed (MBps) | Uncached Special<sup>2</sup> Disk IOPS | Uncached Special<sup>2</sup> Disk Speed (MBps) | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk IOPS | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk Speed (MBps) |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Standard_B2pts_v2 | 4 | 3750 | 85 | 10,000 | 960 |  |  |  |  |
-| Standard_B2pls_v2 | 4 | 3750 | 85 | 10,000 | 960 |  |  |  |  |
-| Standard_B2ps_v2 | 4 | 3750 | 85 | 10,000 | 960 |  |  |  |  |
-| Standard_B4pls_v2 | 8 | 6,400 | 145 | 20,000 | 960 |  |  |  |  |
-| Standard_B4ps_v2 | 8 | 6,400 | 145 | 20,000 | 960 |  |  |  |  |
-| Standard_B8pls_v2 | 16 | 12,800 | 290 | 20,000 | 960 |  |  |  |  |
-| Standard_B8ps_v2 | 16 | 12,800 | 290 | 20,000 | 960 |  |  |  |  |
-| Standard_B16pls_v2 | 32 | 25,600 | 600 | 40,000 | 960 |  |  |  |  |
-| Standard_B16ps_v2 | 32 | 25,600 | 600 | 40,000 | 960 |  |  |  |  |
+| Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS | Uncached Disk Speed (MBps) | Uncached Disk Burst<sup>1</sup> IOPS | Uncached Disk Burst<sup>1</sup> Speed (MBps) |
+| --- | --- | --- | --- | --- | --- |
+| Standard_B2pts_v2 | 4 | 3750 | 85 | 10,000 | 960 |
+| Standard_B2pls_v2 | 4 | 3750 | 85 | 10,000 | 960 |
+| Standard_B2ps_v2 | 4 | 3750 | 85 | 10,000 | 960 |
+| Standard_B4pls_v2 | 8 | 6,400 | 145 | 20,000 | 960 |
+| Standard_B4ps_v2 | 8 | 6,400 | 145 | 20,000 | 960 |
+| Standard_B8pls_v2 | 16 | 12,800 | 290 | 20,000 | 960 |
+| Standard_B8ps_v2 | 16 | 12,800 | 290 | 20,000 | 960 |
+| Standard_B16pls_v2 | 32 | 25,600 | 600 | 40,000 | 960 |
+| Standard_B16ps_v2 | 32 | 25,600 | 600 | 40,000 | 960 |
 
 #### Storage resources
 - [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)
