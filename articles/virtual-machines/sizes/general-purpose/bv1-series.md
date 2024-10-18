@@ -76,18 +76,18 @@ Base CPU performance, Credits, and other CPU bursting related info
 
 Local (temp) storage info for each size
 
-| Size Name | Max Temp Storage Disks (Qty.) | Temp Disk Size (GiB) | Temp Disk Random Read (RR)<sup>1</sup> IOPS | Temp Disk Random Read (RR)<sup>1</sup> Speed (MBps) | Temp Disk Random Write (RW)<sup>1</sup> IOPS | Temp Disk Random Write (RW)<sup>1</sup> Speed (MBps) |
-| --- | --- | --- | --- | --- | --- | --- |
-| Standard_B1ls2 | 1 | 4 |  |  |  |  |
-| Standard_B1s | 1 | 4 |  |  |  |  |
-| Standard_B1ms | 1 | 4 |  |  |  |  |
-| Standard_B2s | 1 | 8 |  |  |  |  |
-| Standard_B2ms | 1 | 16 |  |  |  |  |
-| Standard_B4ms | 1 | 32 |  |  |  |  |
-| Standard_B8ms | 1 | 64 |  |  |  |  |
-| Standard_B12ms | 1 | 96 |  |  |  |  |
-| Standard_B16ms | 1 | 128 |  |  |  |  |
-| Standard_B20ms | 1 | 160 |  |  |  |  |
+| Size Name | Max Temp Storage Disks (Qty.) | Temp Disk Size (GiB) |
+| --- | --- | --- |
+| Standard_B1ls2 | 1 | 4 |
+| Standard_B1s | 1 | 4 |
+| Standard_B1ms | 1 | 4 |
+| Standard_B2s | 1 | 8 |
+| Standard_B2ms | 1 | 16 |
+| Standard_B4ms | 1 | 32 |
+| Standard_B8ms | 1 | 64 |
+| Standard_B12ms | 1 | 96 |
+| Standard_B16ms | 1 | 128 |
+| Standard_B20ms | 1 | 160 |
 
 #### Storage resources
 - [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)
@@ -104,18 +104,18 @@ Local (temp) storage info for each size
 
 Remote (uncached) storage info for each size
 
-| Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS | Uncached Disk Speed (MBps) | Uncached Disk Burst<sup>1</sup> IOPS | Uncached Disk Burst<sup>1</sup> Speed (MBps) | Uncached Special<sup>2</sup> Disk IOPS | Uncached Special<sup>2</sup> Disk Speed (MBps) | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk IOPS | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk Speed (MBps) |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Standard_B1ls2 | 2 | 160 | 10 | 4000 | 100 |  |  |  |  |
-| Standard_B1s | 2 | 320 | 10 | 4000 | 100 |  |  |  |  |
-| Standard_B1ms | 2 | 640 | 10 | 4000 | 100 |  |  |  |  |
-| Standard_B2s | 4 | 1280 | 15 | 4000 | 100 |  |  |  |  |
-| Standard_B2ms | 4 | 1920 | 22.5 | 4000 | 100 |  |  |  |  |
-| Standard_B4ms | 8 | 2880 | 35 | 8000 | 200 |  |  |  |  |
-| Standard_B8ms | 16 | 4320 | 50 | 8000 | 200 |  |  |  |  |
-| Standard_B12ms | 16 | 4320 | 50 | 16000 | 400 |  |  |  |  |
-| Standard_B16ms | 32 | 4320 | 50 | 16000 | 400 |  |  |  |  |
-| Standard_B20ms | 32 | 4320 | 50 | 16000 | 400 |  |  |  |  |
+| Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS | Uncached Disk Speed (MBps) | Uncached Disk Burst<sup>1</sup> IOPS | Uncached Disk Burst<sup>1</sup> Speed (MBps) |
+| --- | --- | --- | --- | --- | --- |
+| Standard_B1ls2 | 2 | 160 | 10 | 4000 | 100 |
+| Standard_B1s | 2 | 320 | 10 | 4000 | 100 |
+| Standard_B1ms | 2 | 640 | 10 | 4000 | 100 |
+| Standard_B2s | 4 | 1280 | 15 | 4000 | 100 |
+| Standard_B2ms | 4 | 1920 | 22.5 | 4000 | 100 |
+| Standard_B4ms | 8 | 2880 | 35 | 8000 | 200 |
+| Standard_B8ms | 16 | 4320 | 50 | 8000 | 200 |
+| Standard_B12ms | 16 | 4320 | 50 | 16000 | 400 |
+| Standard_B16ms | 32 | 4320 | 50 | 16000 | 400 |
+| Standard_B20ms | 32 | 4320 | 50 | 16000 | 400 |
 
 #### Storage resources
 - [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)
@@ -135,18 +135,18 @@ Remote (uncached) storage info for each size
 
 Network interface info for each size
 
-| Size Name | Max NICs (Qty.) | Max Bandwidth (Mbps) |
-| --- | --- | --- |
-| Standard_B1ls2 | 2 |  |
-| Standard_B1s | 2 |  |
-| Standard_B1ms | 2 |  |
-| Standard_B2s | 3 |  |
-| Standard_B2ms | 3 |  |
-| Standard_B4ms | 4 |  |
-| Standard_B8ms | 4 |  |
-| Standard_B12ms | 6 |  |
-| Standard_B16ms | 8 |  |
-| Standard_B20ms | 8 |  |
+| Size Name | Max NICs (Qty.) |
+| --- | --- |
+| Standard_B1ls2 | 2 |
+| Standard_B1s | 2 |
+| Standard_B1ms | 2 |
+| Standard_B2s | 3 |
+| Standard_B2ms | 3 |
+| Standard_B4ms | 4 |
+| Standard_B8ms | 4 |
+| Standard_B12ms | 6 |
+| Standard_B16ms | 8 |
+| Standard_B20ms | 8 |
 
 #### Networking resources
 - [Virtual networks and virtual machines in Azure](/azure/virtual-network/network-overview)

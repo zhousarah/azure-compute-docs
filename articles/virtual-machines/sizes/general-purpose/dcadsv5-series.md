@@ -44,16 +44,16 @@ vCPUs (Qty.) and Memory for each size
 
 Local (temp) storage info for each size
 
-| Size Name | Max Temp Storage Disks (Qty.) | Temp Disk Size (GiB) | Temp Disk Random Read (RR)<sup>1</sup> IOPS | Temp Disk Random Read (RR)<sup>1</sup> Speed (MBps) | Temp Disk Random Write (RW)<sup>1</sup> IOPS | Temp Disk Random Write (RW)<sup>1</sup> Speed (MBps) |
-| --- | --- | --- | --- | --- | --- | --- |
-| Standard_DC2ads_v5 | 1 | 75 | 9000 | 125 |  |  |
-| Standard_DC4ads_v5 | 1 | 150 | 19000 | 250 |  |  |
-| Standard_DC8ads_v5 | 1 | 300 | 38000 | 500 |  |  |
-| Standard_DC16ads_v5 | 1 | 600 | 75000 | 1000 |  |  |
-| Standard_DC32ads_v5 | 1 | 1200 | 150000 | 2000 |  |  |
-| Standard_DC48ads_v5 | 1 | 1800 | 225000 | 3000 |  |  |
-| Standard_DC64ads_v5 | 1 | 2400 | 300000 | 4000 |  |  |
-| Standard_DC96ads_v5 | 1 | 3600 | 450000 | 4000 |  |  |
+| Size Name | Max Temp Storage Disks (Qty.) | Temp Disk Size (GiB) | Temp Disk Random Read (RR)<sup>1</sup> IOPS | Temp Disk Random Read (RR)<sup>1</sup> Speed (MBps) |
+| --- | --- | --- | --- | --- |
+| Standard_DC2ads_v5 | 1 | 75 | 9000 | 125 |
+| Standard_DC4ads_v5 | 1 | 150 | 19000 | 250 |
+| Standard_DC8ads_v5 | 1 | 300 | 38000 | 500 |
+| Standard_DC16ads_v5 | 1 | 600 | 75000 | 1000 |
+| Standard_DC32ads_v5 | 1 | 1200 | 150000 | 2000 |
+| Standard_DC48ads_v5 | 1 | 1800 | 225000 | 3000 |
+| Standard_DC64ads_v5 | 1 | 2400 | 300000 | 4000 |
+| Standard_DC96ads_v5 | 1 | 3600 | 450000 | 4000 |
 
 #### Storage resources
 - [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)
@@ -70,16 +70,16 @@ Local (temp) storage info for each size
 
 Remote (uncached) storage info for each size
 
-| Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS | Uncached Disk Speed (MBps) | Uncached Disk Burst<sup>1</sup> IOPS | Uncached Disk Burst<sup>1</sup> Speed (MBps) | Uncached Special<sup>2</sup> Disk IOPS | Uncached Special<sup>2</sup> Disk Speed (MBps) | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk IOPS | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk Speed (MBps) |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Standard_DC2ads_v5 | 4 | 3750 | 82 |  |  |  |  |  |  |
-| Standard_DC4ads_v5 | 8 | 6400 | 144 |  |  |  |  |  |  |
-| Standard_DC8ads_v5 | 16 | 12800 | 200 |  |  |  |  |  |  |
-| Standard_DC16ads_v5 | 32 | 25600 | 384 |  |  |  |  |  |  |
-| Standard_DC32ads_v5 | 32 | 51200 | 768 |  |  |  |  |  |  |
-| Standard_DC48ads_v5 | 32 | 76800 | 1152 |  |  |  |  |  |  |
-| Standard_DC64ads_v5 | 32 | 80000 | 1200 |  |  |  |  |  |  |
-| Standard_DC96ads_v5 | 32 | 80000 | 1600 |  |  |  |  |  |  |
+| Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS | Uncached Disk Speed (MBps) |
+| --- | --- | --- | --- |
+| Standard_DC2ads_v5 | 4 | 3750 | 82 |
+| Standard_DC4ads_v5 | 8 | 6400 | 144 |
+| Standard_DC8ads_v5 | 16 | 12800 | 200 |
+| Standard_DC16ads_v5 | 32 | 25600 | 384 |
+| Standard_DC32ads_v5 | 32 | 51200 | 768 |
+| Standard_DC48ads_v5 | 32 | 76800 | 1152 |
+| Standard_DC64ads_v5 | 32 | 80000 | 1200 |
+| Standard_DC96ads_v5 | 32 | 80000 | 1600 |
 
 #### Storage resources
 - [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)
