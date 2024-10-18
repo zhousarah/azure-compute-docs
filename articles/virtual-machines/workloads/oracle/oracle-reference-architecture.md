@@ -6,7 +6,7 @@ ms.service: oracle-on-azure
 ms.collection: linux
 ms.topic: article
 ms.date: 10/18/2024
-ms.author: jessiehaessler
+ms.author: jhaessler
 ---
 # Architectures for Oracle database on Azure Virtual Machines
 
