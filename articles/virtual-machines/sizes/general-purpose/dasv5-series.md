@@ -55,16 +55,16 @@ Local (temp) storage info for each size
 
 Remote (uncached) storage info for each size
 
-| Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS | Uncached Disk Speed (MBps) | Uncached Disk Burst<sup>1</sup> IOPS | Uncached Disk Burst<sup>1</sup> Speed (MBps) | Uncached Special<sup>2</sup> Disk IOPS | Uncached Special<sup>2</sup> Disk Speed (MBps) | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk IOPS | Uncached Burst<sup>1</sup> Special<sup>2</sup> Disk Speed (MBps) |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Standard_D2as_v5 | 4 | 3750 | 82 | 10000 | 600 |  |  |  |  |
-| Standard_D4as_v5 | 8 | 6400 | 144 | 20000 | 600 |  |  |  |  |
-| Standard_D8as_v5 | 16 | 12800 | 200 | 20000 | 600 |  |  |  |  |
-| Standard_D16as_v5 | 32 | 25600 | 384 | 40000 | 800 |  |  |  |  |
-| Standard_D32as_v5 | 32 | 51200 | 768 | 80000 | 1600 |  |  |  |  |
-| Standard_D48as_v5 | 32 | 76800 | 1152 | 80000 | 2000 |  |  |  |  |
-| Standard_D64as_v5 | 32 | 80000 | 1200 | 80000 | 2000 |  |  |  |  |
-| Standard_D96as_v5 | 32 | 80000 | 1600 | 80000 | 2000 |  |  |  |  |
+| Size Name | Max Remote Storage Disks (Qty.) | Uncached Disk IOPS | Uncached Disk Speed (MBps) | Uncached Disk Burst<sup>1</sup> IOPS | Uncached Disk Burst<sup>1</sup> Speed (MBps) |
+| --- | --- | --- | --- | --- | --- |
+| Standard_D2as_v5 | 4 | 3750 | 82 | 10000 | 600 |
+| Standard_D4as_v5 | 8 | 6400 | 144 | 20000 | 600 |
+| Standard_D8as_v5 | 16 | 12800 | 200 | 20000 | 600 |
+| Standard_D16as_v5 | 32 | 25600 | 384 | 40000 | 800 |
+| Standard_D32as_v5 | 32 | 51200 | 768 | 80000 | 1600 |
+| Standard_D48as_v5 | 32 | 76800 | 1152 | 80000 | 2000 |
+| Standard_D64as_v5 | 32 | 80000 | 1200 | 80000 | 2000 |
+| Standard_D96as_v5 | 32 | 80000 | 1600 | 80000 | 2000 |
 
 #### Storage resources
 - [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)
