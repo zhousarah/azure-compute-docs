@@ -1,12 +1,12 @@
 ---
 title: Architectures for Oracle database on Azure Virtual Machines
 description: Learn about architectures for Oracle database on Azure Virtual Machines.
-author: jjaygbay1
+author: jessiehaessler
 ms.service: oracle-on-azure
 ms.collection: linux
 ms.topic: article
-ms.date: 6/13/2023
-ms.author: jacobjaygbay
+ms.date: 10/18/2024
+ms.author: jessiehaessler
 ---
 # Architectures for Oracle database on Azure Virtual Machines
 
