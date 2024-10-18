@@ -29,7 +29,7 @@ Key differences between persistent and ephemeral OS disks:
 
 |   | Persistent OS Disk | Ephemeral OS Disk |
 |---|---|---|
-| **Size limit for OS disk** | 4* TiB | Cache size or temp size for the VM size or 2,040 GiB, whichever is smaller. For the **cache or temp size in GiB**, see [DSv3](sizes-general.md), [Esv3](sizes-memory.md), [M](sizes-memory.md), [FS](sizes-compute.md), and [GS](sizes-previous-gen.md#gs-series) |
+| **Size limit for OS disk** | 4* TiB | Cache, temp or Nvme disk size for the VM size or 2,040 GiB, whichever is smaller. For the **cache, temp or Nvme size in GiB**, see [DSv3](sizes-general.md), [Esv3](sizes-memory.md), [M](sizes-memory.md), [FS](sizes-compute.md), and [GS](sizes-previous-gen.md#gs-series) |
 | **VM sizes supported** | All | VM sizes with local storage such as DSv3, Esv3, Fs, FsV2, GS, M, Mdsv2, Bs, Dav4, Eav4 |
 | **Disk type support**| Managed and unmanaged OS disk| Managed OS disk only|
 | **Region support**| All regions| All regions|
@@ -40,7 +40,7 @@ Key differences between persistent and ephemeral OS disks:
 | **Resizing to a new VM size**| OS disk data is preserved| Data on the OS disk is deleted, OS is reprovisioned |
 | **Redeploy** | OS disk data is preserved | Data on the OS disk is deleted, OS is reprovisioned |
 | **Stop/ Start of VM** | OS disk data is preserved | Not Supported |
-| **Page file placement**| For Windows, page file is stored on the resource disk| For Windows, page file is stored on the OS disk (for both OS cache placement and Temp disk placement).|
+| **Page file placement**| For Windows, page file is stored on the resource disk| For Windows, page file is stored on the OS disk (for cache placement, Temp disk placement & Nvme disk placement).|
 | **Maintenance of VM/VMSS using [healing](understand-vm-reboots.md#unexpected-downtime)** | OS disk data is preserved | OS disk data isn't preserved  |
 | **Maintenance of VM/VMSS using [Live Migration](maintenance-and-updates.md#live-migration)** | OS disk data is preserved | OS disk data is preserved  |
 
@@ -72,7 +72,7 @@ For example, if you want to opt for **NVMe disk placement (In Public Preview)**:
 > 
 > If opting for NVMe disk placement (In Public Preview), Final NVMe Disk size = (Total no. of NVMe disks - NVMe Disks used for OS) * Size of each NVMe disk. where NVMe Disks used for OS is the minimum number of disks required for OS disk depending on the size of OS disk and the size of each NVMe disk.
 
-If Ephemeral OS disk is using **Temp Disk Placement**, it shares the IOPS(input/output operations per second) with temp disk as per the VM size chosen by you.
+If Ephemeral OS disk is using **Temp Disk Placement**, it shares the IOPS(input/output operations per second) with temp disk as per the VM size chosen by you. If Ephemeral OS disk is using **NVMe Disk Placement**, it provides the IOPS(input/output operations per second) of One NVMe disk as per the VM size chosen by you.
 
 Basic Linux and Windows Server images in the Marketplace that are denoted with `[smallsize]` tend to be around 30 GiB and can use most of the available VM sizes.
 Ephemeral disks also require that the VM size supports **Premium storage**. The sizes usually (but not always) have an `s` in the name, like DSv2 and EsV3. For more information, see [Azure VM sizes](sizes.md) for details around which sizes support Premium storage.
@@ -111,7 +111,7 @@ For more information on [how to deploy a trusted launch VM](trusted-launch-porta
 
 AMD-based Confidential VMs cater to high security and confidentiality requirements of customers. These VMs provide a strong, hardware-enforced boundary to help meet your security needs. There are limitations to use Confidential VMs. Check the [region](/azure/confidential-computing/confidential-vm-overview#regions), [size](/azure/confidential-computing/confidential-vm-overview#size-support), and [OS supported](/azure/confidential-computing/confidential-vm-overview#os-support) limitations for confidential VMs.
 Virtual machine guest state (VMGS) blob contains the security information of the confidential VM.
-Confidential VMs using Ephemeral OS disks by default **1 GiB** from the **OS cache** or **temp storage** based on the chosen placement option is reserved for VMGS. The lifecycle of the VMGS blob is tied to that of the OS Disk.
+Confidential VMs using Ephemeral OS disks by default **1 GiB** from the **OS cache** or **temp storage** based on the chosen placement option is reserved for VMGS. The lifecycle of the VMGS blob is tied to that of the OS Disk. **NVMe Disk placement** is currently not supported for Confidential VMs.
 > [!IMPORTANT]
 >
 > When choosing a confidential VM with full OS disk encryption before VM deployment that uses a customer-managed key (CMK). [Updating a CMK key version](/azure/storage/common/customer-managed-keys-overview#update-the-key-version) or [key rotation](/azure/key-vault/keys/how-to-configure-key-rotation) is not supported with Ephemeral OS disk. Confidential VMs using Ephemeral OS disks need to be deleted before updating or rotating the keys and can be re-created subsequently.
