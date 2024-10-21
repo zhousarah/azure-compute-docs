@@ -179,7 +179,7 @@ az container exec --resource-group ACIResourceGroup --name pwsh-vnet-dns --exec-
 Validate that DNS is working as expected from within your container. For example, read the `/etc/resolv.conf` file to ensure proper configuration of the DNS settings provided in the YAML file.
 
 > [!NOTE]
-> Note that the Azure DNS resolver IP 168.63.129.16 is automatically added to the /etc/resolv.conf file in ACIs, even when a custom DNS configuration is applied. This can lead to resolution issues in distributions that handle DNS querying processes in parallel. See the [Limitations](#limitations) section for more information.
+> Note that the Azure DNS resolver IP 168.63.129.16 is automatically added to the /etc/resolv.conf file in ACIs, even when a custom DNS configuration is applied. This can lead to resolution issues in distributions that handle DNS querying processes in parallel. For more information, see the [Limitations section](#limitations).
 
 ```bash
 root@wk-caas-81d609b206c541589e11058a6d260b38-90b0aff460a737f346b3b0:/# cat /etc/resolv.conf
