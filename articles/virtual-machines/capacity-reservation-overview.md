@@ -66,7 +66,7 @@ From this example accumulation of Minutes Not Available, here's the calculation 
     - Dav4 series
     - Dasv4 and newer
     - Ddv4 and v5 series
-    - Ddsv4 series, v4 and newer
+    - Dds series, v4 and newer
     - Dlsv5 and newer series
     - Dldsv5 and newer series
     - DCsv2 series
