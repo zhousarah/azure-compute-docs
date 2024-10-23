@@ -45,7 +45,7 @@ az feature show --namespace "Microsoft.Compute" --name "ReliableVMDeletion"
 > For example, if you are deleting a scale set of 5 virtual machines, and each virtual machine enters a “failed” delete state, then the scale set will initiate 1 delete call on itself to delete those 5 virtual machines again. If 4 out of 5 virtual machines are deleted in the first retry, then the platform will wait a period of 10 minutes before initiating the next delete call for the remaining virtual machine.
 4.	To check the status of virtual machines throughout the delete process, refer to the section on Get create or delete status.
 
-:::image type="content" source="media/standby-pools/enable-standby-pool-after-vmss-creation.png" alt-text="A screenshot showing how to enable a standby pool on an existing Virtual Machine Scale Set in the Azure portal.":::
+:::image type="content" source="./media/resilient-vm-create-delete/resilient-delete-workflow.png" alt-text="A screenshot showing how to enable a standby pool on an existing Virtual Machine Scale Set in the Azure portal.":::
 
 ## Enabling Resilient create and delete
 
