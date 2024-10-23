@@ -25,7 +25,7 @@ Azure continues to support the SCSI interface on the versions of VM offerings th
 
 
 ## What is changing for your VM?
-Changing the host interface from SCSI to NVMe won't change the remote storage (OS disk or data disks), but change the way the operating systems sees the disks.
+Changing the host interface from SCSI to NVMe doesn't change the remote storage (OS disk or data disks), but change the way the operating systems sees the disks.
 
 || SCSI enabled VM | NVMe enabled VM |
 |-----------------|-----------------|----------------|
