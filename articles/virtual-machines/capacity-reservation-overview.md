@@ -84,7 +84,6 @@ From this example accumulation of Minutes Not Available, here's the calculation 
     - Ebdsv5 and Ebsv5 series
     - Ed and Eds series, v4 and newer
     - F series, all versions
-    - Fasv6 and Falsv6 series
     - Fx series
     - Lsv3 (Intel) and Lasv3 (AMD)
 
