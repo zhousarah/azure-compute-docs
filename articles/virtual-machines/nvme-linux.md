@@ -81,8 +81,7 @@ $ az vm show --name nvme-conversion-vm --resource-group nvme-conversion
 
 ##### 2.1.3 Check Controller Type using Azure portal
 
-![image 1](https://github.com/user-attachments/assets/195d5107-6531-4e72-a702-880faad9a75a)
-
+:::image type="content" source="./media/enable-nvme/nvme-vs-scsi-2.png" alt-text="Screenshot of Azure Portal":::
 
 #### 2.2 Run Preflight Check script
 The bash script doesn't automatically change anything on your system. It only provides recommendations for commands to run.
@@ -206,7 +205,7 @@ INFO - Not starting VM
 
 #### 3.3 Check the result
 ##### 3.3.1 Check result in Azure portal
-![image 2](https://github.com/user-attachments/assets/338feba6-7d13-407e-aba3-6d61e8bf73af)
+:::image type="content" source="./media/enable-nvme/nvme-vs-scsi-3.png" alt-text="Screenshot of Azure Portal":::
 
 ##### 3.3.2 Check result in PowerShell
 ```Powershell
@@ -223,7 +222,7 @@ You can check the devices using nvme command, if the nvme command is missing, in
 `nvme list`
 
 The output should show the OS disk and the data disks.
-![image 3](https://github.com/user-attachments/assets/6df57511-7ea2-4c64-a95c-b0fd476d82af)
+:::image type="content" source="./media/enable-nvme/nvme-vs-scsi-4.png" alt-text="Screenshot of OS disks and data disks":::
 
 
 #### 4.2 Get udev file for NVMe (Optional)
