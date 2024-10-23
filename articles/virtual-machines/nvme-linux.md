@@ -44,7 +44,7 @@ In order to migrate from SCSI to NVMe, some steps need to be followed:
 4. Check your operating system 
 
 ### 1. Check if your virtual machine series supports NVMe
-The supported virtual machines to support NVMe attached disks is described on the [Azure Boost overview site in the availability table](https://learn.microsoft.com/azure/azure-boost/overview#current-availability). 
+The supported virtual machines to support NVMe attached disks is described on the [Azure Boost overview site in the availability table](../azure-boost/overview.md#current-availability).
 
 > [!IMPORTANT]
 > If your VM type is not listed change the VM type.
@@ -81,7 +81,7 @@ $ az vm show --name nvme-conversion-vm --resource-group nvme-conversion
 
 ##### 2.1.3 Check Controller Type using Azure portal
 
-:::image type="content" source="./media/enable-nvme/nvme-vs-scsi-2.png" alt-text="Screenshot of Azure Portal":::
+:::image type="content" source="./media/enable-nvme/nvme-vs-scsi-2.png" alt-text="Screenshot of Azure Portal to check controller":::
 
 #### 2.2 Run Preflight Check script
 The bash script doesn't automatically change anything on your system. It only provides recommendations for commands to run.
