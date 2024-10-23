@@ -219,7 +219,11 @@ sections:
           
 
           If the image is deprecated,  you'll get a **VM Image is Deprecated** response. If the image is scheduled for deprecation, the response would show the date of the scheduled deprecation.
-           
+
+          > [!NOTE]
+          > You can run [Get-AzVMImageDeprecationStatus.ps1](https://github.com/Azure/azure-support-scripts/blob/master/VMImages/README.md) in Cloud Shell or locally in Azure PowerShell to show if any VMs in a subscription were created from VM images that are scheduled for deprecation. This script supports both VM and VM scale set instances.
+          >
+
           
           The response indicates that this is deprecated:
           
