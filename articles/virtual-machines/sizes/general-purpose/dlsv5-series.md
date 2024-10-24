@@ -93,7 +93,7 @@ Remote (uncached) storage info for each size
 
 Network interface info for each size
 
-| Size Name | Max NICs (Qty.) | Max Bandwidth (Mbps) |
+| Size Name | Max NICs (Qty.) | Max Network Bandwidth (Mb/s) |
 | --- | --- | --- |
 | Standard_D2ls_v5 | 2 | 12500 |
 | Standard_D4ls_v5 | 2 | 12500 |
@@ -123,4 +123,5 @@ Accelerator (GPUs, FPGAs, etc.) info for each size
 ---
 
 [!INCLUDE [sizes-footer](../includes/sizes-footer.md)]
+
 

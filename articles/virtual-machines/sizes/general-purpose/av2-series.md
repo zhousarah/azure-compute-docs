@@ -105,7 +105,7 @@ Remote (uncached) storage info for each size
 
 Network interface info for each size
 
-| Size Name | Max NICs (Qty.) | Max Bandwidth (Mbps) |
+| Size Name | Max NICs (Qty.) | Max Network Bandwidth (Mb/s) |
 | --- | --- | --- |
 | Standard_A1_v2 | 2 | 250 |
 | Standard_A2_v2 | 2 | 500 |
@@ -134,4 +134,5 @@ Accelerator (GPUs, FPGAs, etc.) info for each size
 ---
 
 [!INCLUDE [sizes-footer](../includes/sizes-footer.md)]
+
 

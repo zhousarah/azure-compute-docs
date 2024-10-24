@@ -102,7 +102,7 @@ Remote (uncached) storage info for each size
 
 Network interface info for each size
 
-| Size Name | Max NICs (Qty.) | Max Bandwidth (Mbps) |
+| Size Name | Max NICs (Qty.) | Max Network Bandwidth (Mb/s) |
 | --- | --- | --- |
 | Standard_D2ads_v6 | 2 | 12500 |
 | Standard_D4ads_v6 | 2 | 12500 |
@@ -132,4 +132,5 @@ Accelerator (GPUs, FPGAs, etc.) info for each size
 ---
 
 [!INCLUDE [sizes-footer](../includes/sizes-footer.md)]
+
 
