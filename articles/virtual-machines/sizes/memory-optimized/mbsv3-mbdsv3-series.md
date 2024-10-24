@@ -11,11 +11,11 @@ ms.date:     10/24/2024
 
 # Mbsv3 and Mbdsv3 Series 
 
-The Storage optimized Mbv3 VM (Mbsv3 and Mbdsv3) series are based on the 4th generation Intel® Xeon® Scalable processors and deliver higher remote disk storage performance. These new VM sizes offer up to 650,000 IOPS and 10GBps of remote disk storage throughput Premium SSD v2 and Ultra Disk, up to 4TB of RAM and up to 650,000 IOPS and 10GBps throughput to remote disk storage with NVMe interface by using Ultra Disk and Premium SSD v2.
+The Storage optimized Mbv3 VM (Mbsv3 and Mbdsv3) series are based on the fourth generation Intel® Xeon® Scalable processors and deliver higher remote disk storage performance. These new VM sizes offer up to 650,000 IOPS and 10GBps of remote disk storage throughput Premium SSD v2 and Ultra Disk, up to 4TB of RAM and up to 650,000 IOPS and 10GBps throughput to remote disk storage with NVMe interface by using Ultra Disk and Premium SSD v2.
 
 The increased remote storage performance of these VMs is ideal for storage throughput-intensive workloads such as relational databases and data analytics applications.  
 
-The resource allocation and high-performance capabilities of the Mbv3 VM series make them particularly well suited for SQL Server workloads with high memory needs, such as critical [online transaction processing (OLTP)](/azure/architecture/data-guide/relational-data/online-transaction-processing), [data analytics](/azure/architecture/data-guide/relational-data/online-analytical-processing), [in-memory databases](/sql/relational-databases/in-memory-oltp/overview-and-usage-scenarios), [data warehousing](/azure/architecture/example-scenario/data/data-warehouse), and the consolidation of SQL Server workloads for efficient management of multiple SQL Server instances. 
+The resource allocation and high-performance capabilities of the Mbv3 VM series make them particularly well-suited for SQL Server workloads with high memory needs, such as critical [online transaction processing (OLTP)](/azure/architecture/data-guide/relational-data/online-transaction-processing), [data analytics](/azure/architecture/data-guide/relational-data/online-analytical-processing), [in-memory databases](/sql/relational-databases/in-memory-oltp/overview-and-usage-scenarios), [data warehousing](/azure/architecture/example-scenario/data/data-warehouse), and the consolidation of SQL Server workloads for efficient management of multiple SQL Server instances. 
  
 ## Mbsv3 series (NVMe)
 
@@ -69,32 +69,20 @@ The resource allocation and high-performance capabilities of the Mbv3 VM series 
 
 ## Size table definitions
 
-• Storage capacity is shown in units of GiB or 1024^3 bytes. When you compare disks measured in GB (1000^3 bytes) to disks measured in GiB (1024^3) remember that capacity numbers given in GiB may appear smaller. For example, 1023 GiB = 1098.4 GB.
-
-• Disk throughput is measured in input/output operations per second (IOPS) and MBps where MBps = 10^6 bytes/sec.
-
-• IOPS/MBps listed here refer to uncached mode for data disks.
-
-• To learn how to get the best storage performance for your VMs, see [Virtual machine and disk performance](/azure/virtual-machines/disks-performance).
-
-• IOPS spec is defined using common small random block sizes like 4KiB or 8KiB. Maximum IOPS is defined as "up-to" and measured using 4KiB random reads workloads.
-
-• TPUT spec is defined using common large sequential block sizes like 128KiB or 1024KiB. Maximum TPUT is defined as "up-to" and measured using 128KiB sequential reads workloads.
+- Storage capacity is shown in units of GiB or 1024^3 bytes. When you compare disks measured in GB (1000^3 bytes) to disks measured in GiB (1024^3), remember that capacity numbers given in GiB may appear smaller. For example, 1023 GiB = 1098.4 GB.
+- Disk throughput is measured in input/output operations per second (IOPS) and MBps where MBps = 10^6 bytes/sec.
+- IOPS/MBps listed here refer to uncached mode for data disks.
+- To learn how to get the best storage performance for your VMs, see [Virtual machine and disk performance](/azure/virtual-machines/disks-performance).
+- IOPS spec is defined using common small random block sizes like 4KiB or 8KiB. Maximum IOPS is defined as "up-to" and measured using 4KiB random reads workloads.
+- TPUT spec is defined using common large sequential block sizes like 128KiB or 1024KiB. Maximum TPUT is defined as "up-to" and measured using 128KiB sequential reads workloads.
 
 ## Other sizes and information
 
-[General purpose](/azure/virtual-machines/sizes-general)
-
-[Memory optimized](/azure/virtual-machines/sizes-memory)
-
-[Storage optimized](/azure/virtual-machines/sizes-storage)
-
-[GPU optimized](/azure/virtual-machines/sizes-gpu)
-
-[High performance compute](/azure/virtual-machines/sizes-hpc)
-
-[Previous generations](/azure/virtual-machines/sizes-previous-gen)
-
-Pricing Calculator: [Pricing Calculator](https://azure.microsoft.com/pricing/calculator/)
-
-More information on Disks Types : [Disk Types](../../disks-types.md)
+- [General purpose](/azure/virtual-machines/sizes-general)
+- [Memory optimized](/azure/virtual-machines/sizes-memory)
+- [Storage optimized](/azure/virtual-machines/sizes-storage)
+- [GPU optimized](/azure/virtual-machines/sizes-gpu)
+- [High performance compute](/azure/virtual-machines/sizes-hpc)
+- [Previous generations](/azure/virtual-machines/sizes-previous-gen)
+- [Pricing Calculator](https://azure.microsoft.com/pricing/calculator/)
+- [Disk Types](../../disks-types.md)
