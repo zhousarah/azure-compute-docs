@@ -119,7 +119,7 @@ sections:
           $vmsslist | where {$_.virtualMachineProfile.storageProfile.imageReference.Sku -eq '2016-Datacenter'} | Select-Object -Property ResourceGroupName, Name, @{label='imageOffer'; expression={$_.virtualMachineProfile.storageProfile.imageReference.Offer}}, @{label='imagePublisher'; expression={$_.virtualMachineProfile.storageProfile.imageReference.Publisher}}, @{label='imageSKU'; expression={$_.virtualMachineProfile.storageProfile.imageReference.Sku}}, @{label='imageVersion'; expression={$_.virtualMachineProfile.storageProfile.imageReference.Version}}
           ```
 
-          - Run [Get-AzVMImageDeprecationStatus.ps1](https://github.com/Azure/azure-support-scripts/tree/master/VMImages#readme) to **list if any VMs or VMSS in a subscription were created from VM images that are scheduled for deprecation**.
+          - Run [Get-AzVMImageDeprecationStatus.ps1](https://github.com/Azure/azure-support-scripts/tree/master/VMImages#readme) to list if any VMs or VM scale sets in a subscription were created from VM images that are scheduled for deprecation.
           
           When an image is deprecated, there's no impact on existing VMs and no action is required. When an image is deprecated, only VMSS scale out operations and new VM and VMSS create operations are impacted.
           
