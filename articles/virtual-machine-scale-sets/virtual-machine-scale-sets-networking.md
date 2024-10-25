@@ -18,7 +18,7 @@ When you deploy an Azure Virtual Machine Scale Set through the portal, certain n
 You can configure all of the features covered in this article using Azure Resource Manager templates. Azure CLI and PowerShell examples are also included for selected features.
 
 >[!NOTE]
-> Moving VMSS From one VNET to another VNET is not possible.You have to recreate VMSS in the destination VNET.
+> Moving a Virtual Machine Scale Set from one VNET to another VNET is not possible. You have to recreate the scale set in the destination VNET.
 
 ## Accelerated Networking
 Azure Accelerated Networking improves network performance by enabling single root I/O virtualization (SR-IOV) to a virtual machine. To learn more about using Accelerated networking, see Accelerated networking for [Windows](/azure/virtual-network/create-vm-accelerated-networking-powershell) or [Linux](/azure/virtual-network/create-vm-accelerated-networking-cli) virtual machines. To use accelerated networking with scale sets, set enableAcceleratedNetworking to **true** in your scale set's networkInterfaceConfigurations settings. For example:
