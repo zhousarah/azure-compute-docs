@@ -194,10 +194,29 @@ az vmss create \
 It takes a few minutes to create and configure all the scale set resources and VMs.
 
 ## Share the gallery
-After creating the gallery, you can share the image across subscriptions using Azure role-based access control (Azure RBAC). While you can share an image at the gallery, image definition, or image version levels, we recommend that you share with other users at the gallery level.
-Any user with read permission to an image version, even across subscriptions, is able to deploy a VM using the image version.
 
-To learn how to share a gallery using the Azure CLI, see [Share gallery resources across subscriptions and tenants with RBAC](/azure/virtual-machines/share-gallery?tabs=cli).
+You can share images across subscriptions using Azure role-based access control (Azure RBAC), and you can share them at the gallery, image definition, or image version levels. Any user that has read permission to an image version, even across subscriptions, will be able to deploy a VM using the image version.
+
+We recommend that you share with other users at the gallery level. 
+
+The following example:
+* Gets the object ID of the gallery using [az sig show](/cli/azure/sig#az-sig-show).
+* Provides access to the gallery using [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create).
+    * Uses the object ID as the scope of the assignment.
+    * Uses the signed-in user's ID as the assignee for demonstration purposes. When you use this code in your test or production code, make sure you update the assignee to reflect who you want to be able to access this image. For more information about how to share resources using Azure RBAC, see [Add or remove Azure role assignments using Azure CLI](/azure/role-based-access-control/role-assignments-cli). , along with an email address, using [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create) to give a user access to the shared image gallery. 
+
+```azurecli-interactive
+export MY_GALLERY_ID=$(az sig show --resource-group $MY_GALLERY_RG_NAME --gallery-name $MY_GALLERY_NAME --query "id" --output tsv)
+
+export CALLER_ID=$(az ad signed-in-user show --query id -o tsv)
+
+az role assignment create \
+   --role "Reader" \
+   --assignee $CALLER_ID \
+   --scope $MY_GALLERY_ID
+```
+
+For more information about how to share resources using Azure RBAC, see [Add or remove Azure role assignments using Azure CLI](/azure/role-based-access-control/role-assignments-cli).
 
 ## Clean up resources
 To remove your scale set and additional resources, delete the resource group and all its resources with [az group delete](/cli/azure/group). The `--no-wait` parameter returns control to the prompt without waiting for the operation to complete. The `--yes` parameter confirms that you wish to delete the resources without an additional prompt to do so.
