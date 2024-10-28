@@ -28,7 +28,7 @@ If you don’t have an Azure subscription, create a [free account](https://azure
 - This article requires version 2.0.29 or later of the Azure CLI. If using Azure Cloud Shell, the latest version is already installed.
 
 ## Default Azure disks
-Most VM SKUs include a temporary local disk that is created automatically and added to the Virtual Machine Scale Set instance when scaling occurs. However, there are SKUs available that don't utilize a temporary disk. In that case, a scaling operation doesn't automatically create and add the temporary disk to a newly created instance. For more information on VM SKUs that do and do not utilize temporary disks, see [Azure VM sizes with no local temporary disk](../virtual-machines/azure-vms-no-temp-disk.md).
+Most VM SKUs include a temporary local disk that is created automatically and added to the Virtual Machine Scale Set instance when scaling occurs. However, there are SKUs available that don't utilize a temporary disk. In that case, a scaling operation doesn't automatically create and add the temporary disk to a newly created instance. For more information on VM SKUs that do and do not utilize temporary disks, see [Azure VM sizes with no local temporary disk](../virtual-machines/azure-vms-no-temp-disk.yml).
 
 **Operating system disk** - Operating system disks can be sized up to 2 TB, and hosts the VM instance's operating system. By default, the OS disk is labeled */dev/sda* on Linux and *C:* on Windows. The disk caching configuration of the OS disk is optimized for OS performance. Because of this configuration, the OS disk **should not** host applications or data. For applications and data, use data disks, which are detailed later in this article.
 
