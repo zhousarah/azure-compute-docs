@@ -59,7 +59,7 @@ az vm create \
 ## Create an image gallery
 An image gallery is the primary resource used for enabling image sharing.
 
-Gallery names can be made up of uppercase or lowercase letters, digits, dots, and periods. The gallery name can't contain dashes.   Gallery names must be unique within your subscription.
+Allowed characters for gallery names are uppercase or lowercase letters, digits, dots, and periods. The gallery name can't contain dashes.   Gallery names must be unique within your subscription.
 
 Create an image gallery using [az sig create](/cli/azure/sig#az-sig-create). 
 
@@ -84,9 +84,9 @@ Image definition names can be made up of uppercase or lowercase letters, digits,
 Make sure your image definition is the right type: 
 
 * **State** - If you have generalized the VM (using Sysprep for Windows, or waagent -deprovision for Linux), then you should create a generalized image definition using `--os-state generalized`. If you want to use the VM without removing existing user accounts, create a specialized image definition using `--os-state specialized`.
-
-    For more information about the values you can specify for an image definition, see [Image definitions](../virtual-machines/shared-image-galleries.md#image-definitions).
 * **Security type** - New Azure VMs are created with Trusted Launch configured by default. This tutorial includes subsequent code samples that reflect the Trusted Launch configuration when creating the image definition and scale set. If you're creating an image with a VM that doesn't have Trusted Launch enabled, make sure to reflect the correct security type when you create both of those resources. For more information about Trusted Launch, see [Trusted Launch for Azure virtual machines](/azure/virtual-machines/trusted-launch).
+
+For more information about the values you can specify for an image definition, see [Image definitions](../virtual-machines/shared-image-galleries.md#image-definitions).
 
 Create an image definition in the gallery using [az sig image-definition create](/cli/azure/sig/image-definition#az-sig-image-definition-create).
 
@@ -117,7 +117,7 @@ az sig image-definition create \
 ## Create the image version
 Create an image version from the VM using [az image gallery create-image-version](/cli/azure/sig/image-version#az-sig-image-version-create).
 
-The image version name can be made up of numbers and periods. Numbers must be within the range of a 32-bit integer. Format: *MajorVersion*.*MinorVersion*.*Patch*.
+Allowed characters for the image version are numbers and periods. Numbers must be within the range of a 32-bit integer. Format: *MajorVersion*.*MinorVersion*.*Patch*.
 
 In the following example: 
 
@@ -144,9 +144,6 @@ az sig image-version create \
 
 
 ## Create a scale set from the image
-
-> [!IMPORTANT]
->Starting November 2023, VM scale sets created using PowerShell and Azure CLI default to Flexible Orchestration Mode if no orchestration mode is specified. For more information about this change and what actions you should take, go to [Breaking Change for VMSS PowerShell/CLI Customers - Microsoft Community Hub](https://techcommunity.microsoft.com/t5/azure-compute-blog/breaking-change-for-vmss-powershell-cli-customers/ba-p/3818295)
 
 You create a scale set using [`az vmss create`](/cli/azure/vmss#az-vmss-create). If you're using a specialized source VM, add the `--specialized` parameter to indicate it's a specialized image.
 
