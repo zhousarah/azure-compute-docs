@@ -32,19 +32,6 @@ An [Azure Compute Gallery](../virtual-machines/shared-image-galleries.md) simpli
 
 The Azure Compute Gallery lets you share your custom VM images with others. Choose which images you want to share, which regions you want to make them available in, and who you want to share them with.
 
-<!--## Create a resource group
-
-Before you can create a VM and scale set, create a resource group with [az group create](/cli/azure/group). The following example creates a resource group named *myResourceGroup* in the *eastus* location:
-
-```azurecli-interactive
-export RANDOM_ID=$(openssl rand -hex 3)
-export MY_RESOURCE_GROUP_NAME="myResourceGroup$RANDOM_ID"
-export REGION="eastus"
-
-az group create --name $MY_RESOURCE_GROUP_NAME --location $REGION
-```-->
-
-
 ## Create and configure a source VM
 First, create a resource group with [az group create](/cli/azure/group), then create a VM with [az vm create](/cli/azure/vm#az-vm-create). This VM is then used as the source for the image. 
 
