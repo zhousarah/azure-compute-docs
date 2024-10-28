@@ -94,7 +94,7 @@ Image definitions create a logical grouping for images. They're used to manage i
 
 Image definition names can be made up of uppercase or lowercase letters, digits, dots, dashes, and periods.
 
-Make sure your image definition is the right type. 
+Make sure your image definition is the right type: 
 
 * **State**—If you have generalized the VM (using Sysprep for Windows, or waagent -deprovision for Linux) then you should create a generalized image definition using `--os-state generalized`. If you want to use the VM without removing existing user accounts, create a specialized image definition using `--os-state specialized`.
 
