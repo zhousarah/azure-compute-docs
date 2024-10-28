@@ -105,7 +105,7 @@ Create an image definition in the gallery using [az sig image-definition create]
 
 In the following example, the image definition is:
 * Named *myImageDefinition*.
-* For a [specialized](../virtual-machines/shared-image-galleries.md#generalized-and-specialized-images) Linux OS image. To create a definition for images using a Windows OS, use `--os-type Windows`.
+* Configured for a [specialized](../virtual-machines/shared-image-galleries.md#generalized-and-specialized-images) Linux OS image. To create a definition for images using a Windows OS, use `--os-type Windows`.
 * Configured for Trusted Launch.
 
 ```azurecli-interactive
