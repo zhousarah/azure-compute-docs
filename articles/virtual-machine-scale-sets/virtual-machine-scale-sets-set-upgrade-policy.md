@@ -28,6 +28,10 @@ When creating a new scale set using Azure CLI, use [az vmss create](/cli/azure/v
 If using a rolling upgrade policy mode, see [configure rolling upgrade policy](virtual-machine-scale-sets-configure-rolling-upgrades.md) for configuration settings and suggestions.
 
 ```azurecli-interactive
+az group create --name myResourceGroup --location westus
+```
+
+```azurecli-interactive
 az vmss create \
     --resource-group myResourceGroup \
     --name myScaleSet \
@@ -45,6 +49,10 @@ az vmss create \
 When creating a new scale set using Azure PowerShell, use [New-AzVmss](/powershell/module/az.compute/new-azvmss) and the `-UpgradePolicyMode` parameter to set the upgrade policy mode.
 
 If using a rolling upgrade policy mode, see [configure rolling upgrade policy](virtual-machine-scale-sets-configure-rolling-upgrades.md) for configuration settings and suggestions.
+
+```azurepowershell-interactive
+New-AzResourceGroup -Name "myResourceGroup" -Location "WestUS"
+```
 
 ```azurepowershell-interactive
 New-AzVmss `
