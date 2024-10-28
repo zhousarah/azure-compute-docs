@@ -90,7 +90,7 @@ az sig create --resource-group $MY_GALLERY_RG_NAME --gallery-name $MY_GALLERY_NA
 ```
 
 ## Create an image definition
-Image definitions create a logical grouping for images. They are used to manage information about the image versions that are created within them.
+Image definitions create a logical grouping for images. They're used to manage information about the image versions that are created within them.
 
 Image definition names can be made up of uppercase or lowercase letters, digits, dots, dashes, and periods.
 
@@ -163,7 +163,7 @@ az sig image-version create \
 
 You create a scale set using [`az vmss create`](/cli/azure/vmss#az-vmss-create). If you're using a specialized source VM, add the `--specialized` parameter to indicate it's a specialized image.
 
-When you use the image definition ID for `--image` to create the scale set instances, you'll create a scale set that uses the latest version of the image that is available. If you want a specific version of the image, make sure you include the image _version_ ID when you define the `--image`.
+When you use the image definition ID for `--image` to create the scale set instances, you create a scale set that uses the latest version of the image that is available. If you want a specific version of the image, make sure you include the image _version_ ID when you define the `--image`.
 
 **Latest image**: `/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myRG/providers/Microsoft.Compute/galleries/myGallery/images/myImage`
 
@@ -194,8 +194,8 @@ az vmss create \
 It takes a few minutes to create and configure all the scale set resources and VMs.
 
 ## Share the gallery
-After you've created the gallery, you can share the image across subscriptions using Azure role-based access control (Azure RBAC). While you can share an image at the gallery, image definition, or image version levels, we recommend that you share with other users at the gallery level.
-Any user that has read permission to an image version, even across subscriptions, will be able to deploy a VM using the image version.
+After creating the gallery, you can share the image across subscriptions using Azure role-based access control (Azure RBAC). While you can share an image at the gallery, image definition, or image version levels, we recommend that you share with other users at the gallery level.
+Any user with read permission to an image version, even across subscriptions, is able to deploy a VM using the image version.
 
 To learn how to share a gallery using the Azure CLI, see [Share gallery resources across subscriptions and tenants with RBAC](/azure/virtual-machines/share-gallery?tabs=cli).
 
