@@ -194,7 +194,7 @@ It takes a few minutes to create and configure all the scale set resources and V
 
 ## Share the gallery
 
-You can share images across subscriptions using Azure role-based access control (Azure RBAC), and you can share them at the gallery, image definition, or image version levels. Any user that has read permission to an image version, even across subscriptions, will be able to deploy a VM using the image version.
+You can share images across subscriptions using Azure role-based access control (Azure RBAC), and you can share them at the gallery, image definition, or image version levels. Any user with read permission to an image version, even across subscriptions, is able to deploy a VM using the image version.
 
 We recommend that you share with other users at the gallery level. 
 
