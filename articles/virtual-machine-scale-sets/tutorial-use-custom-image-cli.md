@@ -86,7 +86,7 @@ Make sure your image definition is the right type:
 * **State** - If you have generalized the VM (using Sysprep for Windows, or waagent -deprovision for Linux), then you should create a generalized image definition using `--os-state generalized`. If you want to use the VM without removing existing user accounts, create a specialized image definition using `--os-state specialized`.
 
     For more information about the values you can specify for an image definition, see [Image definitions](../virtual-machines/shared-image-galleries.md#image-definitions).
-* **Security type**—New Azure VMs are created with Trusted Launch configured by default. This tutorial includes subsequent code samples that reflect the Trusted Launch configuration when creating the image definition and scale set. If you're creating an image with a VM that doesn't have Trusted Launch enabled, make sure to reflect the correct security type when you create both of those resources. For more information about Trusted Launch, see [Trusted Launch for Azure virtual machines](/azure/virtual-machines/trusted-launch).
+* **Security type** - New Azure VMs are created with Trusted Launch configured by default. This tutorial includes subsequent code samples that reflect the Trusted Launch configuration when creating the image definition and scale set. If you're creating an image with a VM that doesn't have Trusted Launch enabled, make sure to reflect the correct security type when you create both of those resources. For more information about Trusted Launch, see [Trusted Launch for Azure virtual machines](/azure/virtual-machines/trusted-launch).
 
 Create an image definition in the gallery using [az sig image-definition create](/cli/azure/sig/image-definition#az-sig-image-definition-create).
 
