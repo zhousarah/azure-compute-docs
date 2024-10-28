@@ -6,7 +6,7 @@ ms.author: jushiman
 ms.topic: tutorial
 ms.service: azure-virtual-machine-scale-sets
 ms.subservice: disks
-ms.date: 06/14/2024
+ms.date: 10/28/2024
 ms.reviewer: mimckitt
 ms.custom: mimckitt, devx-track-azurecli
 
@@ -28,11 +28,11 @@ If you don’t have an Azure subscription, create a [free account](https://azure
 - This article requires version 2.0.29 or later of the Azure CLI. If using Azure Cloud Shell, the latest version is already installed.
 
 ## Default Azure disks
-When a scale set is created or scaled, two disks are automatically attached to each VM instance.
+Most VM SKUs include a temporary local disk that is created automatically and added to the Virtual Machine Scale Set instance when scaling occurs. However, there are SKUs available that do not utilize a temporary disk. In that case, a scaling operation will not automatically create and add the temporary disk to a newly created instance. For more information on VM SKUs that do and do not utilize temporary disks, see [Azure VM sizes with no local temporary disk](../virtual-machines/azure-vms-no-temp-disk.md).
 
-**Operating system disk** - Operating system disks can be sized up to 2 TB, and hosts the VM instance's operating system. The OS disk is labeled */dev/sda* by default. The disk caching configuration of the OS disk is optimized for OS performance. Because of this configuration, the OS disk **should not** host applications or data. For applications and data, use data disks, which are detailed later in this article.
+**Operating system disk** - Operating system disks can be sized up to 2 TB, and hosts the VM instance's operating system. By default, the OS disk is labeled */dev/sda* on Linux and *C:* on Windows. The disk caching configuration of the OS disk is optimized for OS performance. Because of this configuration, the OS disk **should not** host applications or data. For applications and data, use data disks, which are detailed later in this article.
 
-**Temporary disk** - Temporary disks use a solid-state drive that is located on the same Azure host as the VM instance. Temporary disks are high-performance disks and might be used for operations such as temporary data processing. However, if the VM instance is moved to a new host, any data stored on a temporary disk is removed. The size of the temporary disk is determined by the VM instance size. Temporary disks are labeled */dev/sdb* and have a mountpoint of */mnt*.
+**Temporary disk** - Temporary disks use a solid-state drive that is located on the same Azure host as the VM instance. Temporary disks are high-performance disks and might be used for operations such as temporary data processing. However, if the VM instance is moved to a new host, any data stored on a temporary disk is removed. The size of the temporary disk is determined by the VM instance size.
 
 ## Azure data disks
 Additional data disks can be added if you need to install applications and store data. Data disks should be used in any situation where durable and responsive data storage is desired. Each data disk has a maximum capacity of 4 TB. The size of the VM instance determines how many data disks can be attached. For each VM vCPU, two data disks can be attached up to an absolute maximum of 64 disks per virtual machine.
@@ -41,10 +41,10 @@ Additional data disks can be added if you need to install applications and store
 Azure provides two types of disk.
 
 ### Standard disk
-Standard Storage is backed by HDDs, and delivers cost-effective storage and performance. Standard disks are ideal for a cost effective dev and test workload.
+Standard storage can be backed by HDDs or SSDs, and delivers cost-effective storage and performance. Standard disks are ideal for cost effective development and test workloads.
 
 ### Premium disk
-Premium disks are backed by SSD-based high-performance, low-latency disk. These disks are recommended for VMs that run production workloads. Premium Storage supports DS-series, DSv2-series, GS-series, and FS-series VMs. When you select a disk size, the value is rounded up to the next type. For example, if the disk size is less than 128 GB, the disk type is P10. If the disk size is between 129 GB and 512 GB, the size is a P20. Over, 512 GB, the size is a P30.
+Premium disks are backed by SSD-based high-performance, low-latency disk. These disks are recommended for VMs that run production workloads. Premium Storage supports DS-series, DSv2-series, GS-series, and FS-series VMs. For more information, see [Azure managed disk types](../virtual-machines/disks-types.md).
 
 ## Create and attach disks
 You can create and attach disks when you create a scale set, or with an existing scale set.
