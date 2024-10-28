@@ -67,7 +67,7 @@ az vm create \
 ```
 
 > [!TIP] 
-> * The **ID** of your VM is shown in the output of the [az vm create](/cli/azure/vm#az-vm-create) command. Copy and store this in a safe location so you can use it later in this tutorial.
+> The **ID** of your VM is shown in the output of the [az vm create](/cli/azure/vm#az-vm-create) command. Copy and store this in a safe location so you can use it later in this tutorial.
 
 ## Create an image gallery
 An image gallery is the primary resource used for enabling image sharing.
