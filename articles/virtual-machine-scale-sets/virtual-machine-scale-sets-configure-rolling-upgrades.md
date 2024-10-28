@@ -5,7 +5,7 @@ author: mimckitt
 ms.author: mimckitt
 ms.topic: how-to
 ms.service: azure-virtual-machine-scale-sets
-ms.date: 9/25/2024
+ms.date: 10/28/2024
 ms.reviewer: ju-shim
 ms.custom: upgradepolicy, maxsurge
 ---
@@ -80,7 +80,7 @@ Update an existing Virtual Machine Scale Set using [az vmss update](/cli/azure/v
 az vmss update \
 	--name myScaleSet \
 	--resource-group myResourceGroup \
-  --set upgradePolicy.mode=Rolling \
+     --set upgradePolicy.mode=Rolling \
 	--max-batch-instance-percent 10 \
 	--max-unhealthy-instance-percent 20 \
 	--max-unhealthy-upgraded-instance-percent 20 \

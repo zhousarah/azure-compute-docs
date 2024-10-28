@@ -5,7 +5,7 @@ author: mimckitt
 ms.author: mimckitt
 ms.topic: how-to
 ms.service: azure-virtual-machine-scale-sets
-ms.date: 9/25/2024
+ms.date: 10/28/2024
 ms.reviewer: ju-shim
 ms.custom: upgradepolicy
 ---
@@ -24,13 +24,19 @@ Select the Virtual Machine Scale Set you want to perform instance upgrades on. I
 Update Virtual Machine Scale Set instances using [az vmss update-instances](/cli/azure/vmss#az-vmss-update-instances). The `--instance-ids` parameter refers to the ID of the instance if using Uniform Orchestration and the instance name if using Flexible Orchestration.  
 
 ```azurecli-interactive
-az vmss update-instances --resource-group myResourceGroup --name myScaleSet --instance-ids {instanceIds}
+az vmss update-instances \
+    --resource-group myResourceGroup \
+    --name myScaleSet \
+    --instance-ids {instanceIds}
 ```
 ### [PowerShell](#tab/powershell)
 Update Virtual Machine Scale Set instances using [Update-AzVmssInstance](/powershell/module/az.compute/update-azvmssinstance). The `-InstanceId` parameter refers to the ID of the instance if using Uniform Orchestration and the instance name if using Flexible Orchestration. 
     
 ```azurepowershell-interactive
-Update-AzVmssInstance -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -InstanceId instanceId
+Update-AzVmssInstance `
+    -ResourceGroupName "myResourceGroup" `
+    -VMScaleSetName "myScaleSet" `
+    -InstanceId instanceId
 ```
 
 ### [REST API](#tab/rest)
