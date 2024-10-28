@@ -55,7 +55,7 @@ The `vmSizes` property is where you specify the specific VM sizes that you're us
 Instance Mix introduces the ability to set allocation strategies for your scale set. The `allocationStrategy` property is where you specify which allocation strategy you'd like to use for your Instance Flexible scale set deployments. There are two options for allocation strategies, `lowestPrice` and `capacityOptimized`. Allocation strategies apply to both Spot and Standard VMs.
 
 #### lowestPrice (default)
-This allocation strategy is focused on workloads where cost and cost-optimization are most important. When evaluating what VM split to use, Azure looks at the lowest priced VMs of the VM sizes specified. Azure also considers capacity as part of this allocation strategy. When using `lowestPrice` allocation strategy, the scale set deploys as many of the lowest priced VMs as it can, depending on available capacity, before moving on to the next lowest priced VM size specified.
+This allocation strategy is focused on workloads where cost and cost-optimization are most important. When evaluating what VM split to use, Azure looks at the lowest priced VMs of the VM sizes specified. Azure also considers capacity as part of this allocation strategy. When using `lowestPrice` allocation strategy, the scale set deploys as many of the lowest priced VMs as it can, depending on available capacity, before moving on to the next lowest priced VM size specified. `lowestPrice` is the default allocation strategy.
 
 #### capacityOptimized
 This allocation strategy is focused on workloads where attaining capacity is the primary concern. When evaluating what VM size split to deploy in the scale set, Azure looks only at the underlying capacity available. It doesn't take price into account when determining what VMs to deploy. Using `capacityOptimized` can result in the scale set deploying the most expensive, but most readily available VMs. 
@@ -86,7 +86,7 @@ In the request body, ensure `sku.name` is set to Mix:
 ```json
   "sku": {
     "name": "Mix",
-    "capacity": {TotalNumberVms}
+    "capacity": {TotalNumberVMs}
   },
 ```
 Ensure you reference your existing subnet:
@@ -123,6 +123,65 @@ Lastly, be sure to specify the `skuProfile` with **up to five** VM sizes. This s
 7. Use the size picker to select up to five VM sizes. Once you've selected your VM sizes, click the **Select** button at the bottom of the page to return to the scale set Basics tab.
 8. In the **Allocation strategy (preview)** field, select your allocation strategy.
 9. You can specify other properties in subsequent tabs, or you can go to **Review + create** and select the **Create** button at the bottom of the page to start your Instance Flexible scale set deployment.
+
+### [Azure CLI](#tab/cli-1)
+You can use the following basic command to create a scale set using Instance Mix using the following command, which will default to using the `lowestPrice` allocation strategy:
+
+```azurecli-interactive
+az vmss create \
+  --name {myVMSS} \
+  --resource-group {myResourceGroup} \
+  --image ubuntu2204 \
+  --vm-sku Mix \
+  --skuprofile-vmsizes Standard_DS1_v2 Standard_D2s_v4
+```
+
+To specify the allocation strategy, use the `--skuprofile-allocation-strategy` parameter, like the following:
+```azurecli-interactive
+az vmss create \
+  --name {myVMSS} \
+  --resource-group {myResourceGroup} \
+  --image ubuntu2204 \
+  --vm-sku Mix \
+  --skuprofile-vmsizes Standard_DS1_v2 Standard_D2s_v4 \
+  --skuprofile-allocation-strategy CapacityOptimized
+```
+
+#### [Azure PowerShell](#tab/powershell-1)
+You can use the following basic command to create a scale set using Instance Mix using the following command, which will default to using the `lowestPrice` allocation strategy:
+
+```azurepowershell-interactive
+New-AzVmss `
+  -ResourceGroupName $resourceGroupName `
+  -Credential $credentials `
+  -VMScaleSetName $vmssName `
+  -DomainNameLabel $domainNameLabel1 `
+  -VMSize "Mix" `
+  -SkuProfileVmSize @("Standard_D4s_v3", "Standard_D4s_v4");
+```
+
+To specify the allocation strategy, use the `SkuProfileAllocationStrategy` parameter, like the following:
+```azurepowershell-interactive
+New-AzVmss `
+-ResourceGroupName $rgname `
+-Credential $cred `
+-VMScaleSetName $vmssName `
+-DomainNameLabel $domainNameLabel1 `
+-SkuProfileVmSize @("Standard_D4s_v3", "Standard_D4s_v4") `
+-SkuProfileAllocationStrategy "CapacityOptimized";
+```
+
+To create a scale set using a scale set configuration object utilizing Instance Mix, use the following command:
+```azurepowershell-interactive
+$vmss = New-AzVmssConfig -Location $loc -SkuCapacity 2 -UpgradePolicyMode 'Manual' -EncryptionAtHost -SecurityType $stnd -SkuProfileVmSize @("Standard_D4s_v3", "Standard_D4s_v4") -SkuProfileAllocationStrategy "CapacityOptimized"`
+            | Add-AzVmssNetworkInterfaceConfiguration -Name 'test' -Primary $true -IPConfiguration $ipCfg `
+            | Set-AzVmssOSProfile -ComputerNamePrefix 'test' -AdminUsername $adminUsername -AdminPassword $adminPassword `
+            | Set-AzVmssStorageProfile -OsDiskCreateOption 'FromImage' -OsDiskCaching 'None' `
+            -ImageReferenceOffer $imgRef.Offer -ImageReferenceSku $imgRef.Skus -ImageReferenceVersion 'latest' `
+            -ImageReferencePublisher $imgRef.PublisherName;
+
+$vmssResult = New-AzVmss -ResourceGroupName $rgname -Name $vmssName -VirtualMachineScaleSet $vmss
+```
 
 ---
 
