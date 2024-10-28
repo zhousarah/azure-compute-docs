@@ -176,7 +176,6 @@ In the following example, the scale set is:
 
 ```azurecli
 export MY_IMAGE_DEF_ID=$(az sig image-definition show --resource-group $MY_GALLERY_RG_NAME --gallery-name $MY_GALLERY_NAME --gallery-image-definition $MY_IMAGE_DEF_NAME --query "id" --output tsv)
-
 export MY_SCALE_SET_RG_NAME="myResourceGroup$RANDOM_ID"
 export MY_SCALE_SET_NAME="myScaleSet$RANDOM_ID"
 
@@ -207,7 +206,6 @@ The following example:
 
 ```azurecli-interactive
 export MY_GALLERY_ID=$(az sig show --resource-group $MY_GALLERY_RG_NAME --gallery-name $MY_GALLERY_NAME --query "id" --output tsv)
-
 export CALLER_ID=$(az ad signed-in-user show --query id -o tsv)
 
 az role assignment create \
