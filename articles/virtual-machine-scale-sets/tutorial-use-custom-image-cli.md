@@ -165,9 +165,9 @@ You create a scale set using [`az vmss create`](/cli/azure/vmss#az-vmss-create).
 
 When you use the image definition ID for `--image` to create the scale set instances, you create a scale set that uses the latest version of the image that is available. If you want a specific version of the image, make sure you include the image _version_ ID when you define the `--image`.
 
-**Latest image**: `/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myRG/providers/Microsoft.Compute/galleries/myGallery/images/myImage`
+**Latest image example**: `/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myRG/providers/Microsoft.Compute/galleries/myGallery/images/myImage`
 
-**Specific image**: `/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myRG/providers/Microsoft.Compute/galleries/myGallery/images/myImage/versions/1.0.0`
+**Specific image example**: `/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myRG/providers/Microsoft.Compute/galleries/myGallery/images/myImage/versions/1.0.0`
 
 In the following example, the scale set is:
 * Named *myScaleSet* 
