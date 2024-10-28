@@ -111,7 +111,7 @@ az sig image-definition create \
    --features SecurityType=TrustedLaunch
 ```
 
-> [!IMPORTANT]
+> [!TIP]
 > The **ID** of your image definition is shown in the output of the command. Copy and store this in a safe location so you can use it later in this tutorial.
 
 ## Create the image version
