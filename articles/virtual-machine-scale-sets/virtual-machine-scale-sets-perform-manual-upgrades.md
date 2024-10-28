@@ -42,7 +42,7 @@ Update-AzVmssInstance `
 ### [REST API](#tab/rest)
 Update Virtual Machine Scale Set instances using [update instances](/rest/api/compute/virtualmachinescalesets/updateinstances). The `instanceIds` parameter refers to the ID of the instance if using Uniform Orchestration and the instance name if using Flexible Orchestration. 
 
-```rest
+```http
 POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet/manualupgrade?api-version={apiVersion}
 
 {
