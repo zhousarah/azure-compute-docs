@@ -5,7 +5,7 @@ author: mimckitt
 ms.author: mimckitt
 ms.topic: how-to
 ms.service: azure-virtual-machine-scale-sets
-ms.date: 02/06/2024
+ms.date: 10/28/2024
 ms.reviewer: ju-shim
 ms.custom: upgradepolicy
 
@@ -31,14 +31,20 @@ In the menu under **Settings**, navigate to **Instances** and select the instanc
 To reimage a specific instance using Azure CLI, use the [az vmss reimage](/cli/azure/vmss#az-vmss-reimage) command. The `instance-id` parameter refers to the ID of the instance if using Uniform Orchestration and the instance name if using Flexible Orchestration. 
 
 ```azurecli-interactive
-az vmss reimage --resource-group myResourceGroup --name myScaleSet --instance-id instanceId
+az vmss reimage \
+    --resource-group myResourceGroup \
+    --name myScaleSet \
+    --instance-id instanceId
 ```
 
 ## [PowerShell](#tab/powershell)
 To reimage a specific instance using Azure PowerShell, use the [Set-AzVmssVM](/powershell/module/az.compute/set-azvmssvm) command.  The `instanceid` parameter refers to the ID of the instance if using Uniform Orchestration and the Instance name if using Flexible Orchestration. 
 
 ```azurepowershell-interactive
-Set-AzVmssVM -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -InstanceId instanceId -Reimage
+Set-AzVmssVM `
+    -ResourceGroupName "myResourceGroup" `
+    -VMScaleSetName "myScaleSet" `
+    -InstanceId instanceId -Reimage
 ```
 
 ## [REST API](#tab/rest)

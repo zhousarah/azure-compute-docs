@@ -5,7 +5,7 @@ author: mimckitt
 ms.author: mimckitt
 ms.topic: how-to
 ms.service: azure-virtual-machine-scale-sets
-ms.date: 6/14/2024
+ms.date: 10/28/2024
 ms.reviewer: ju-shim
 ms.custom: upgradepolicy, devx-track-azurecli, devx-track-azurepowershell
 ---

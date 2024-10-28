@@ -5,7 +5,7 @@ author: mimckitt
 ms.author: mimckitt
 ms.topic: how-to
 ms.service: azure-virtual-machine-scale-sets
-ms.date: 9/25/2024
+ms.date: 10/28/2024
 ms.reviewer: ju-shim
 ms.custom: upgradepolicy, N-Phase
 ---
@@ -134,8 +134,8 @@ az vmss extension set \
   --name ApplicationHealthLinux \
   --publisher Microsoft.ManagedServices \
   --version 2.0 \
-  --resource-group <myVMScaleSetResourceGroup> \
-  --vmss-name <myVMScaleSet> \
+  --resource-group myResourceGroup \
+  --vmss-name myScaleSet \
   --settings ./extension.json
 ```
 
@@ -143,8 +143,8 @@ Upgrade the virtual machines in the scale set. This step is only required if you
 
 ```azurecli-interactive
 az vmss update-instances \
-  --resource-group <myVMScaleSetResourceGroup> \
-  --name <myVMScaleSet> \
+  --resource-group myResourceGroup \
+  --name myScaleSet \
   --instance-ids "*"
 ```
 
@@ -193,8 +193,8 @@ Update-AzVmssInstance -ResourceGroupName $vmScaleSetResourceGroup `
 
 Apply the application health extension using [create or update](/rest/api/compute/virtual-machine-scale-set-vm-extensions/create-or-update).
 
-```rest
-PUT on `/subscriptions/subscription_id/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet/extensions/myHealthExtension?api-version=2018-10-01`
+```http
+PUT `/subscriptions/subscription_id/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet/extensions/myHealthExtension?api-version=2018-10-01`
 
 Request body
 {
@@ -219,8 +219,8 @@ Request body
 
 Upgrade the virtual machines in the scale set. This step is only required if your scale set is using a manual upgrade policy. For more information on upgrade policies, see [upgrade policies for Virtual Machine Scale Sets](virtual-machine-scale-sets-upgrade-policy.md)
 
-```rest
-POST on `/subscriptions/<subscriptionId>/resourceGroups/<myResourceGroup>/providers/Microsoft.Compute/virtualMachineScaleSets/< myScaleSet >/manualupgrade?api-version=2022-08-01`
+```http
+POST `/subscriptions/<subscriptionId>/resourceGroups/<myResourceGroup>/providers/Microsoft.Compute/virtualMachineScaleSets/< myScaleSet >/manualupgrade?api-version=2022-08-01`
 
 Request body
 {
