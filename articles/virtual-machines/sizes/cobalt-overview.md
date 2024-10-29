@@ -16,7 +16,6 @@ ms.author: archatC
 
 Cobalt 100-based Virtual Machines (VMs) are powered by Azure's first-generation Cobalt 100 processor, delivering outstanding performance for both general-purpose and memory-optimized workloads. These VMs utilize Microsoft's first 64-bit Arm-based Azure Cobalt 100 CPU, which has been fully designed in-house. The Cobalt 100 processor, based on the Arm Neoverse N2 design, aims to enhance performance and power efficiency for various workloads. Operating at 3.4 GHz, the Azure Cobalt 100 processor provides an entire physical core for each virtual machine vCPU. 
 
-For more information, check out the [Azure Kubernetes Service (AKS) demo on Cobalt 100 VMs](https://aka.ms/C100-VM-deploy-demo), which showcases how to leverage these VMs for cloud-native applications. 
 
 ## List of VM size families by type
 The following section lists Cobalt 100-based VM series supported by Cobalt 100 processors. To find detailed information on each size in that series, including summeries and recommended workloads, check out the links in the *Series* column. 
@@ -24,8 +23,10 @@ The following section lists Cobalt 100-based VM series supported by Cobalt 100 p
 ### Cobalt 100-based VMs
 | Family | Series | Regions |
 |----|---|---|
-| General Purpose  | [Dpsv6-series](./general-purpose/dpsv6-series.md), [Dpdsv6-series](./general-purpose/dpdsv6-series.md), [Dplsv6-series](./general-purpose/dplsv6-series.md), [Dpldsv6-series](./general-purpose/dpldsv6-series.md) | Canada Central, Central US, East US 2, East US, Germany West Central, Japan East, Mexico Central, North Europe, Southeast Asia, Sweden Central, Switzerland North, UAE North, West Europe, and West US 2. Australia East, Brazil South, France Central, India Central, South Central US, UK South, West US 3 |
-| Memory Optimized | [Epsv6-series](./memory-optimized/epsv6-series.md), [Epdsv6-series](./memory-optimized/epdsv6-series.md) | Canada Central, Central US, East US 2, East US, Germany West Central, Japan East, Mexico Central, North Europe, Southeast Asia, Sweden Central, Switzerland North, UAE North, West Europe, and West US 2. Australia East, Brazil South, France Central, India Central, South Central US, UK South, West US 3 |
+| General Purpose  | [Dpsv6-series](./general-purpose/dpsv6-series.md), [Dpdsv6-series](./general-purpose/dpdsv6-series.md), [Dplsv6-series](./general-purpose/dplsv6-series.md), [Dpldsv6-series](./general-purpose/dpldsv6-series.md) | Canada Central, Central US, East US 2, East US, Germany West Central, Japan East, Mexico Central, North Europe, Southeast Asia, Sweden Central, Switzerland North, UAE North, West Europe, and West US 2. |
+| Memory Optimized | [Epsv6-series](./memory-optimized/epsv6-series.md), [Epdsv6-series](./memory-optimized/epdsv6-series.md) | Canada Central, Central US, East US 2, East US, Germany West Central, Japan East, Mexico Central, North Europe, Southeast Asia, Sweden Central, Switzerland North, UAE North, West Europe, and West US 2.|
 
+For more information, check out the links below:
+[Azure Kubernetes Service (AKS) demo on Cobalt 100 VMs](https://aka.ms/C100-VM-deploy-demo),: showcases how to leverage these VMs for cloud-native applications such as AKS. 
 
 [!INCLUDE [sizes-footer](./includes/sizes-footer.md)]
