@@ -378,7 +378,7 @@ identity:
 
 ## Managed Identity on Windows containers
 
-Managed Identity on Windows container groups works differently than Linux container groups. For Windows containers, metadata server (169.254.169.254) is not available for getting the AAD token. Customers can follow a different pattern to get the access token in Windows containers. The pattern involves sending token request to the IDENTITY_ENDPOINT along with additional information such as principal id and secret as shown below. The IDENTITY_ENDPOINT and IDENTITY_HEADER are injected as environmental variable in your container.
+Managed Identity on Windows container groups works differently than Linux container groups. For Windows containers, metadata server (169.254.169.254) is not available for getting the Microsoft Entra ID token. Customers can follow a different pattern to get the access token in Windows containers. The pattern involves sending token request to the IDENTITY_ENDPOINT along with additional information such as principal id and secret as shown below. The IDENTITY_ENDPOINT and IDENTITY_HEADER are injected as environmental variable in your container.
 
 ```console
 curl -G -v %IDENTITY_ENDPOINT% --data-urlencode resource=https://vault.azure.net --data-urlencode principalId=<principal id> -H secret:%IDENTITY_HEADER%
