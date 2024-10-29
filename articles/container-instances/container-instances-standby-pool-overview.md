@@ -31,6 +31,58 @@ The number of container groups in a standby pool is determined by setting the `m
 |---|---|
 | maxReadyCapacity | The maximum number of container groups you want deployed in the pool.|
 
+## Config maps
+
+Azure Container Instances supports multiple ways to apply container configurations such as environment variables and secret volumes. When applying these settings, restarting the pod is required for the changes to take affect. By using config maps, the configurations can be applied without restarting the container. This enables out of band updates so containers can read the new values without restarting. 
+
+Azure Container Instances can be created with or without config maps and can be updated at any point in time post creation using config maps. Updating config maps in an existing running container group can be accomplished quickly and without causing the container to reboot. 
+
+```json
+{
+    "properties": {
+        "containers": [
+            {
+                "name": "con1",
+                "properties": {
+                    "image": "mcr.microsoft.com/azuredocs/aci-helloworld",
+                    "ports": [
+                        {
+                            "port": 80,
+                            "protocol": "TCP"
+                        }
+                    ],
+                    "resources": {
+                        "requests": {
+                            "memoryInGB": 0.5,
+                            "cpu": 0.5
+                        }
+                    },
+                    "configMap": {
+                        "keyValuePairs": {
+                            "key1": "value1",
+                            "key2": "value2"
+                        }
+                    }
+                }
+            }
+        ],
+        "osType": "Linux",
+        "ipAddress": {
+            "type": "Public",
+            "ports": [
+                {
+                    "protocol": "tcp",
+                    "port": 80
+                }
+            ]
+        }
+    },
+    "location": "westcentralus"
+}
+
+```
+
+
 ## Container Group Profile
 
 The container group profile is what tells the standby pool how to configure the containers in the pool. Each standby pool is associated with a single container group profile. If you make changes to the container group profile, you also need to update your standby pool to ensure the updates are applied to the instances in the pool.
