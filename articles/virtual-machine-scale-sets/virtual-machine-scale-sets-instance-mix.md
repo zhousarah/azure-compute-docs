@@ -128,6 +128,7 @@ Lastly, be sure to specify the `skuProfile` with **up to five** VM sizes. This s
 You can use the following basic command to create a scale set using Instance Mix using the following command, which will default to using the `lowestPrice` allocation strategy:
  
 ```azurecli-interactive
+az vmss create \
   --name {myVMSS} \
   --resource-group {myResourceGroup} \
   --image ubuntu2204 \
@@ -162,8 +163,8 @@ New-AzVmss `
 To specify the allocation strategy, use the `SkuProfileAllocationStrategy` parameter, like the following:
 ```azurepowershell-interactive
 New-AzVmss `
--ResourceGroupName $rgname `
--Credential $cred `
+-ResourceGroupName $resourceGroupName `
+-Credential $credentials `
 -VMScaleSetName $vmssName `
 -DomainNameLabel $domainNameLabel1 `
 -SkuProfileVmSize @("Standard_D4s_v3", "Standard_D4s_v4") `
@@ -179,7 +180,7 @@ $vmss = New-AzVmssConfig -Location $loc -SkuCapacity 2 -UpgradePolicyMode 'Manua
             -ImageReferenceOffer $imgRef.Offer -ImageReferenceSku $imgRef.Skus -ImageReferenceVersion 'latest' `
             -ImageReferencePublisher $imgRef.PublisherName;
  
-$vmssResult = New-AzVmss -ResourceGroupName $rgname -Name $vmssName -VirtualMachineScaleSet $vmss
+$vmssResult = New-AzVmss -ResourceGroupName $resourceGroupName -Name $vmssName -VirtualMachineScaleSet $vmss
 ```
 
 ---
