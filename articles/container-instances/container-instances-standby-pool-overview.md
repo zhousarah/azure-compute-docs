@@ -221,4 +221,4 @@ Standby pools for Azure Container Instances support integration with Managed Ide
 
 ## Next steps
 
-Learn more about [Azure Container Instances](container-instances-overview.md)
+[Create a standby pool for Azure Container Instances](container-instances-standby-pool-create.md)

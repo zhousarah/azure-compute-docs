@@ -250,4 +250,5 @@ Request Body
 
 ## Next steps
 
-Learn more about [standby pools for Azure Container Instances](container-instances-standby-pool-overview.md)
+- [Get standby pool and container details using the standby pool runtime view APIs](container-instances-standby-pool-get-details.md)
+- [Update or delete your standby pool for Azure Container Instances](container-instances-standby-pool-update-delete.md)

@@ -412,4 +412,4 @@ Request Body
 
 ## Next steps
 
-Learn more about [standby pools for Azure Container Instances](container-instances-standby-pool-overview.md)
+[Request a container from the standby pool](container-instances-standby-pool-request-container.md)
