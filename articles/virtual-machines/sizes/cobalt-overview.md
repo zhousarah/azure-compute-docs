@@ -27,7 +27,6 @@ The following section lists Cobalt 100-based VM series supported by Cobalt 100 p
 | Memory Optimized | [Epsv6-series](./memory-optimized/epsv6-series.md), [Epdsv6-series](./memory-optimized/epdsv6-series.md) | Canada Central, Central US, East US 2, East US, Germany West Central, Japan East, Mexico Central, North Europe, Southeast Asia, Sweden Central, Switzerland North, UAE North, West Europe, and West US 2.|
 
 
-For more information, check out the links below:\n
-[Azure Kubernetes Service (AKS) demo on Cobalt 100 VMs](https://aka.ms/C100-VM-deploy-demo): showcases how to leverage these VMs for cloud-native applications such as AKS. 
+For more information, check out the link [Azure Kubernetes Service (AKS) demo on Cobalt 100 VMs](https://aka.ms/C100-VM-deploy-demo), which showcases how to leverage these VMs for cloud-native applications such as AKS. 
 
 [!INCLUDE [sizes-footer](./includes/sizes-footer.md)]
