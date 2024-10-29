@@ -35,8 +35,6 @@ The number of container groups in a standby pool is determined by setting the `m
 
 The container group profile is what tells the standby pool how to configure the containers in the pool. Each standby pool is associated with a single container group profile. If you make changes to the container group profile, you also need to update your standby pool to ensure the updates are applied to the instances in the pool.
 
-> [!NOTE]
-> To utilize [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential` in the container group profile.
 
 ```http
 {
@@ -81,6 +79,90 @@ The container group profile is what tells the standby pool how to configure the 
 
 ```
 
+## Confidential containers
+Standby pools for Azure container instances support confidential containers. To utilize [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential` in the container group profile.
+
+```http
+{
+    "location":"west central us",
+    "properties":{
+        "containers": [
+        {
+            "name":"mycontainerprofile",
+            "properties": {
+                "command":[],
+                "environmentVariables":[],
+                "image":"mcr.microsoft.com/azuredocs/aci-helloworld:latest",
+                "ports":[
+                    {
+                        "port":8000
+                    }
+                ],
+                "resources": {
+                    "requests": {
+                        "cpu":1,
+                        "memoryInGB":1.5
+                                }
+                            }
+                        }
+                    }
+                ],
+                "imageRegistryCredentials":[],
+                "ipAddress":{
+                "ports":[
+                    {
+                        "protocol":"TCP",
+                        "port":8000
+                    }
+            ],
+            "type":"Public"
+            },
+            "osType":"Linux",
+            "sku":"Confidential"
+            }
+        }
+
+
+```
+## Managed Identity
+Standby pools for Azure Container Instances supports integration with Managed Identity. Applying a managed identity is performed when requesting a container from the standby pool. 
+
+```HTTP
+PUT
+https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroups/myContainerGroup?api-version=2023-05-01 
+
+Request Body
+{
+   "location": "{location}",
+   "properties": {
+       "standByPoolProfile":{
+               "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool"
+           },
+           "containerGroupProfile": {
+               "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile",
+               "revision": {revisionNumber}
+           },
+          },
+          "identity": {
+            "type": "UserAssigned",
+            "userAssignedIdentities": {
+              "/subscriptions/[subscriptionId]/resourceGroups/[resourceGroup]/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identity}": {}
+            },
+           "containers": [
+               {
+                   "name": "{mycontainerprofile}",
+                   "properties": {
+                       "configMap": {
+                           "keyValuePairs": {
+                               "{newKey}": "{newValue}"
+                           }
+                       }
+                   }
+               }
+           ]
+   }
+}
+```
 
 ## Next steps
 
