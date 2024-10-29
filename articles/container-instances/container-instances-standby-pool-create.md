@@ -5,7 +5,7 @@ author: mimckitt
 ms.author: mimckitt
 ms.service: azure-container-instances
 ms.topic: how-to
-ms.date: 09/30/2024
+ms.date: 10/29/2024
 ms.reviewer: tomvcassidy
 ---
 
@@ -56,9 +56,6 @@ To allow standby pools to create container groups, you need to assign the approp
 
 
 For more information on assigning roles, see [assign Azure roles using the Azure portal](/azure/role-based-access-control/quickstart-assign-role-user-portal).
-
-## Limitations
-Standby Pools for Azure Container Instances is not available in the Azure portal. 
 
 ## Create a container group profile
 The container group profile is what tells the standby pool how to configure the containers in the pool. Each standby pool is associated with a single container group profile. If you make changes to the container group profile, you also need to update your standby pool to ensure the updates are applied to the instances in the pool.

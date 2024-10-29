@@ -5,7 +5,7 @@ author: mimckitt
 ms.author: mimckitt
 ms.service: azure-container-instances
 ms.topic: conceptual
-ms.date: 09/26/2024
+ms.date: 10/29/2024
 ms.reviewer: tomcassidy
 ---
 
@@ -15,6 +15,9 @@ ms.reviewer: tomcassidy
 > Standby pools for Azure Container Instances are currently in preview. Previews are made available to you on the condition that you agree to the [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Some aspects of this feature may change prior to general availability (GA). 
 
 Standby Pools for Azure Container Instances enable customers to create a pool of pre-provisioned container groups that can be used to scale out in response to incoming traffic. The container groups in the pool are fully provisioned, initialized, and ready to receive work at any given notice.
+
+## Limitations
+Standby pools for Azure Container instances is not available in the Azure portal. 
 
 ## Scaling
 

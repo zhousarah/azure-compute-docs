@@ -5,7 +5,7 @@ author: mimckitt
 ms.author: mimckitt
 ms.service: azure-container-instances
 ms.topic: how-to
-ms.date: 09/30/2024
+ms.date: 10/29/2024
 ms.reviewer: tomvcassidy
 ---
 
@@ -21,9 +21,6 @@ This article steps through requesting a container group from a standby pool for 
 
 Before utilizing standby pools, complete the feature registration and configure role based access controls mentioned in the [create a standby pool](container-instances-standby-pool-create.md) article. 
 
-
-## Limitations
-Standby Pools for Azure Container Instances is not available in the Azure portal. 
 
 ## Request a container from the standby pool
 
