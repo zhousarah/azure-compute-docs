@@ -60,13 +60,16 @@ This allocation strategy is focused on workloads where cost and cost-optimizatio
 #### capacityOptimized
 This allocation strategy is focused on workloads where attaining capacity is the primary concern. When evaluating what VM size split to deploy in the scale set, Azure looks only at the underlying capacity available. It doesn't take price into account when determining what VMs to deploy. Using `capacityOptimized` can result in the scale set deploying the most expensive, but most readily available VMs. 
 
+#### Prioritized
+This allocation strategy allows you to specify a priority ranking to the VM sizes specified. Note: ranking is optional, but if provided, it must be within the range of the `vmSizes` list size. Ranks can be duplicated across sizes, meaning the sizes have the same priority. Ranks do not need to be in sequential order.
+
 ## Cost
 Following the scale set cost model, usage of Instance Mix is free. You continue to only pay for the underlying resources, like the VM, disk, and networking.
 
 ## Limitations
 - Instance Mix is currently available in the following regions: West US, West US2, East US, and East US2. 
 - Instance Mix is only available for scale sets using Flexible Orchestration Mode.
-- Instance Mix is currently only available through ARM template.
+- Instance Mix is currently only available through ARM template and the Azure portal.
 - You must have quota for the VM sizes you're requesting with Instance Mix.
 - You can specify **up to** five VM sizes with Instance Mix at this time.
 - Existing scale sets can't be updated to use Instance Mix. 
@@ -123,66 +126,6 @@ Lastly, be sure to specify the `skuProfile` with **up to five** VM sizes. This s
 7. Use the size picker to select up to five VM sizes. Once you've selected your VM sizes, click the **Select** button at the bottom of the page to return to the scale set Basics tab.
 8. In the **Allocation strategy (preview)** field, select your allocation strategy.
 9. You can specify other properties in subsequent tabs, or you can go to **Review + create** and select the **Create** button at the bottom of the page to start your Instance Flexible scale set deployment.
-
-### [Azure CLI](#tab/cli-1)
-You can use the following basic command to create a scale set using Instance Mix using the following command, which will default to using the `lowestPrice` allocation strategy:
-
-```azurecli-interactive
-az vmss create \
-  --name {myVMSS} \
-  --resource-group {myResourceGroup} \
-  --image ubuntu2204 \
-  --vm-sku Mix \
-  --skuprofile-vmsizes Standard_DS1_v2 Standard_D2s_v4
-```
-
-To specify the allocation strategy, use the `--skuprofile-allocation-strategy` parameter, like the following:
-```azurecli-interactive
-az vmss create \
-  --name {myVMSS} \
-  --resource-group {myResourceGroup} \
-  --image ubuntu2204 \
-  --vm-sku Mix \
-  --skuprofile-vmsizes Standard_DS1_v2 Standard_D2s_v4 \
-  --skuprofile-allocation-strategy CapacityOptimized
-```
-
-#### [Azure PowerShell](#tab/powershell-1)
-You can use the following basic command to create a scale set using Instance Mix using the following command, which will default to using the `lowestPrice` allocation strategy:
-
-```azurepowershell-interactive
-New-AzVmss `
-  -ResourceGroupName $resourceGroupName `
-  -Credential $credentials `
-  -VMScaleSetName $vmssName `
-  -DomainNameLabel $domainNameLabel1 `
-  -VMSize "Mix" `
-  -SkuProfileVmSize @("Standard_D4s_v3", "Standard_D4s_v4");
-```
-
-To specify the allocation strategy, use the `SkuProfileAllocationStrategy` parameter, like the following:
-```azurepowershell-interactive
-New-AzVmss `
--ResourceGroupName $rgname `
--Credential $cred `
--VMScaleSetName $vmssName `
--DomainNameLabel $domainNameLabel1 `
--SkuProfileVmSize @("Standard_D4s_v3", "Standard_D4s_v4") `
--SkuProfileAllocationStrategy "CapacityOptimized";
-```
-
-To create a scale set using a scale set configuration object utilizing Instance Mix, use the following command:
-```azurepowershell-interactive
-$vmss = New-AzVmssConfig -Location $loc -SkuCapacity 2 -UpgradePolicyMode 'Manual' -EncryptionAtHost -SecurityType $stnd -SkuProfileVmSize @("Standard_D4s_v3", "Standard_D4s_v4") -SkuProfileAllocationStrategy "CapacityOptimized"`
-            | Add-AzVmssNetworkInterfaceConfiguration -Name 'test' -Primary $true -IPConfiguration $ipCfg `
-            | Set-AzVmssOSProfile -ComputerNamePrefix 'test' -AdminUsername $adminUsername -AdminPassword $adminPassword `
-            | Set-AzVmssStorageProfile -OsDiskCreateOption 'FromImage' -OsDiskCaching 'None' `
-            -ImageReferenceOffer $imgRef.Offer -ImageReferenceSku $imgRef.Skus -ImageReferenceVersion 'latest' `
-            -ImageReferencePublisher $imgRef.PublisherName;
-
-$vmssResult = New-AzVmss -ResourceGroupName $rgname -Name $vmssName -VirtualMachineScaleSet $vmss
-```
-
 ---
 
 ## Troubleshooting
