@@ -30,9 +30,6 @@ Because conversion requires a restart of the virtual machine (VM), schedule the 
 ## Convert Premium SSD v2 disks 
 You can switch existing disks to Premium SSD v2 disks the same way you do for other disk types. Premium SSD v2 disks have some limitations, see the [Premium SSD v2 limitations](disks-deploy-premium-v2.md#limitations) section of their article to learn more.
 
-> [!IMPORTANT]
-> If you converted existing disks into Premium SSD v2 during the preview of the convert to Premium SSD v2 disk feature, delete those disks and repeat the conversion process.
-
 Switching to Premium SSD v2 disks has some additional limitations:
 
 - You can't switch an OS disk to a Premium SSD v2 disk.
