@@ -25,8 +25,7 @@ Before utilizing standby pools, complete the feature registration and configure 
 ## Limitations
 Standby Pools for Azure Container Instances is not available in the Azure portal. 
 
-## Create a container group profile
-The container group profile is what tells the standby pool how to configure the containers in the pool. Each standby pool is associated with a single container group profile. If you make changes to the container group profile, you also need to update your standby pool to ensure the updates are applied to the instances in the pool.
+## Request a container from the standby pool
 
 ### [CLI](#tab/cli)
 Request a container group from a standby pool using [az container update](/cli/azure/standby-container-group-pool).
