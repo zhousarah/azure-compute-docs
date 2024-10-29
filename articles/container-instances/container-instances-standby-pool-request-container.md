@@ -5,7 +5,7 @@ author: mimckitt
 ms.author: mimckitt
 ms.service: azure-container-instances
 ms.topic: how-to
-ms.date: 09/30/2024
+ms.date: 10/29/2024
 ms.reviewer: tomvcassidy
 ---
 
@@ -15,18 +15,14 @@ ms.reviewer: tomvcassidy
 > [!IMPORTANT]
 > Standby pools for Azure Container Instances is currently in preview. Previews are made available to you on the condition that you agree to the [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Some aspects of this feature may change prior to general availability (GA).
 
-This article steps through requesting a container group from a standby pool for Azure Container Instances. After requesting a container, the standby pool will automatically begin to refill to maintain the `maxReadyCapacity` parameter.  
+This article steps through requesting a container group from a standby pool for Azure Container Instances.   
 
 ## Prerequisites
 
 Before utilizing standby pools, complete the feature registration and configure role based access controls mentioned in the [create a standby pool](container-instances-standby-pool-create.md) article. 
 
 
-## Limitations
-Standby Pools for Azure Container Instances is not available in the Azure portal. 
-
-## Create a container group profile
-The container group profile is what tells the standby pool how to configure the containers in the pool. Each standby pool is associated with a single container group profile. If you make changes to the container group profile, you also need to update your standby pool to ensure the updates are applied to the instances in the pool.
+## Request a container from the standby pool
 
 ### [CLI](#tab/cli)
 Request a container group from a standby pool using [az container update](/cli/azure/standby-container-group-pool).
