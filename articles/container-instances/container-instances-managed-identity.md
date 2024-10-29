@@ -176,12 +176,6 @@ Output:
 {"access_token":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Imk2bEdrM0ZaenhSY1ViMkMzbkVRN3N5SEpsWSIsImtpZCI6Imk2bEdrM0ZaenhSY1ViMkMzbkVRN3N5SEpsWSJ9......xxxxxxxxxxxxxxxxx","refresh_token":"","expires_in":"28799","expires_on":"1539927532","not_before":"1539898432","resource":"https://vault.azure.net/","token_type":"Bearer"}
 ```
 
-For Windows containers, metadata server (169.254.169.254) isn't available. Run the following or equivalent commands to get an access token.
-
-```console
-curl -G -v %IDENTITY_ENDPOINT% --data-urlencode resource=https://vault.azure.net --data-urlencode principalId=<principal id> -H secret:%IDENTITY_HEADER%
-```
-
 To store the access token in a variable to use in subsequent commands to authenticate, run the following command:
 
 ```bash
@@ -295,8 +289,6 @@ The value of the secret is retrieved:
 "Hello Container Instances"
 ```
 
-For Windows containers, the 'az login' command won't work because the metadata server is unavailable. Additionally, a managed identity token can't be generated in a Windows virtual network container.
-
 ## Enable managed identity using Resource Manager template
 
 To enable a managed identity in a container group using a [Resource Manager template](container-instances-multi-container-group.md), set the `identity` property of the `Microsoft.ContainerInstance/containerGroups` object with a `ContainerGroupIdentity` object. The following snippets show the `identity` property configured for different scenarios. See the [Resource Manager template reference](/azure/templates/microsoft.containerinstance/containergroups). Specify a minimum `apiVersion` of `2018-10-01`.
@@ -383,6 +375,30 @@ identity:
   userAssignedIdentities:
    {'myResourceID1':{}}
 ```
+
+## Managed Identity on Windows containers
+
+Managed Identity on Windows container groups works differently than Linux container groups. For Windows containers, metadata server (169.254.169.254) is not available for getting the Microsoft Entra ID token. Customers can follow a different pattern to get the access token in Windows containers. The pattern involves sending token request to the IDENTITY_ENDPOINT along with additional information such as principal id and secret as shown below. The IDENTITY_ENDPOINT and IDENTITY_HEADER are injected as environmental variable in your container.
+
+```console
+curl -G -v %IDENTITY_ENDPOINT% --data-urlencode resource=https://vault.azure.net --data-urlencode principalId=<principal id> -H secret:%IDENTITY_HEADER%
+```
+A sample powershell script
+
+```powershell
+identityEndpoint = $env:IDENTITY_ENDPOINT
+$identityHeader = $env:IDENTITY_HEADER
+$resource = "https://vault.azure.net"
+$principalId = "b2ee9347-623c-4794-85af-2d5261356f67"
+ 
+Invoke-RestMethod -Uri "$identityEndpoint" `
+    -Method Get `
+    -Headers @{secret = $identityHeader} `
+    -Body @{resource = $resource; principalId = $principalId} `
+    -ContentType "application/x-www-form-urlencoded"
+```
+Az Login module and other client libraries which depend on metadata server (169.254.169.254) will not work in a Windows Container. 
+Additionally, Windows containers in vNet won't be able to connect to the endpoint; hence, a managed identity token can't be generated in a Windows virtual network container. 
 
 ## Next steps
 
