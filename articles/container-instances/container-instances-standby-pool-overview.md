@@ -34,58 +34,6 @@ The number of container groups in a standby pool is determined by setting the `m
 |---|---|
 | maxReadyCapacity | The maximum number of container groups you want deployed in the pool.|
 
-## Config maps
-
-Azure Container Instances supports multiple ways to apply container configurations such as environment variables and secret volumes. When applying these settings, restarting the pod is required for the changes to take effect. By using config maps, the configurations can be applied without restarting the container. This enables out of band updates so containers can read the new values without restarting. 
-
-Azure Container Instances can be created with or without config maps and can be updated at any point in time post creation using config maps. Updating config maps in an existing running container group can be accomplished quickly and without causing the container to reboot. 
-
-```json
-{
-    "properties": {
-        "containers": [
-            {
-                "name": "con1",
-                "properties": {
-                    "image": "mcr.microsoft.com/azuredocs/aci-helloworld",
-                    "ports": [
-                        {
-                            "port": 80,
-                            "protocol": "TCP"
-                        }
-                    ],
-                    "resources": {
-                        "requests": {
-                            "memoryInGB": 0.5,
-                            "cpu": 0.5
-                        }
-                    },
-                    "configMap": {
-                        "keyValuePairs": {
-                            "key1": "value1",
-                            "key2": "value2"
-                        }
-                    }
-                }
-            }
-        ],
-        "osType": "Linux",
-        "ipAddress": {
-            "type": "Public",
-            "ports": [
-                {
-                    "protocol": "tcp",
-                    "port": 80
-                }
-            ]
-        }
-    },
-    "location": "westcentralus"
-}
-
-```
-
-
 ## Container group profile
 
 The container group profile is what tells the standby pool how to configure the containers in the pool. Each standby pool is associated with a single container group profile. If you make changes to the container group profile, you also need to update your standby pool to ensure the updates are applied to the instances in the pool.
@@ -93,11 +41,11 @@ The container group profile is what tells the standby pool how to configure the 
 
 ```json
 {
-    "location":"west central us",
+    "location":"{location}",
     "properties":{
         "containers": [
         {
-            "name":"mycontainerprofile",
+            "name":"[containerProfileName]",
             "properties": {
                 "command":[],
                 "environmentVariables":[],
@@ -134,20 +82,74 @@ The container group profile is what tells the standby pool how to configure the 
 
 ```
 
+## Config maps
+
+A config map is a property associated with a container group profile that can be used to apply container configurations similar to environment variables and secret volumes. When applying these settings, restarting the pod is required for the changes to take effect. By using config maps, the configurations can be applied without restarting the container. This enables out of band updates so containers can read the new values without restarting. 
+
+Azure Container Instances can be created with or without config maps and can be updated at any point in time post creation using config maps. Updating config maps in an existing running container group can be accomplished quickly and without causing the container to reboot. 
+
+```json
+{
+    "properties": {
+        "containers": [
+            {
+                "name": "{containerProfileName}",
+                "properties": {
+                    "image": "mcr.microsoft.com/azuredocs/aci-helloworld",
+                    "ports": [
+                        {
+                            "port": 80,
+                            "protocol": "TCP"
+                        }
+                    ],
+                    "resources": {
+                        "requests": {
+                            "memoryInGB": 0.5,
+                            "cpu": 0.5
+                        }
+                    },
+                    "configMap": {
+                        "keyValuePairs": {
+                            "key1": "value1",
+                            "key2": "value2"
+                        }
+                    }
+                }
+            }
+        ],
+        "osType": "Linux",
+        "ipAddress": {
+            "type": "Public",
+            "ports": [
+                {
+                    "protocol": "tcp",
+                    "port": 80
+                }
+            ]
+        }
+    },
+    "location": "{location}"
+}
+
+```
+
+
+
+
 ## Confidential containers
 Standby pools for Azure container instances support confidential containers. To utilize [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential` in the container group profile.
 
-> [!Important] 
+> [!IMPORTANT] 
 > Values passed using config maps are not included in the security policy or validated by the runtime before the file mount is made available to the container. Any values that could have an impact to data or application security cannot be trusted by the application during execution and instead should be made available to the container using environment variables.
 
 
 ```json
 {
-    "location":"west central us",
+    "location":"{location}",
     "properties":{
         "containers": [
         {
-            "name":"mycontainerprofile",
+            "name":"{containerProfiileName}",
             "properties": {
                 "command":[],
                 "environmentVariables":[],
@@ -184,28 +186,28 @@ Standby pools for Azure container instances support confidential containers. To 
 
 ```
 ## Managed Identity
-Standby pools for Azure Container Instances support integration with Managed Identity. Applying a managed identity is performed when requesting a container from the standby pool. 
+Standby pools for Azure Container Instances support integration with Managed Identity. Applying a managed identity is performed when requesting a container from the standby pool and including the `identity` parameters and settings. 
 
 ```json
 {
    "location": "{location}",
    "properties": {
        "standByPoolProfile":{
-               "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool"
+               "id": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.StandbyPool/standbyContainerGroupPools/{standbyPoolName}"
            },
            "containerGroupProfile": {
-               "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile",
+               "id": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.ContainerInstance/containerGroupProfiles/{containerProfileName}",
                "revision": {revisionNumber}
            },
           },
           "identity": {
             "type": "UserAssigned",
             "userAssignedIdentities": {
-              "/subscriptions/[subscriptionId]/resourceGroups/[resourceGroup]/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identity}": {}
+              "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identity}": {}
             },
            "containers": [
                {
-                   "name": "{mycontainerprofile}",
+                   "name": "{containerProfileName}",
                    "properties": {
                        "configMap": {
                            "keyValuePairs": {

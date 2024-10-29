@@ -230,7 +230,7 @@ Request Body
            },
            "containers": [
                {
-                   "name": "{mycontainerprofile}",
+                   "name": "{myContainerGroupProfile}",
                    "properties": {
                        "configMap": {
                            "keyValuePairs": {

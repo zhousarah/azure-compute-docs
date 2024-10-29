@@ -117,7 +117,7 @@ Create a container group profile and deploy the template using [az deployment gr
       "properties": {
         "containers": [
           {
-            "name": "mycontainerprofile",
+            "name": "myContainerGroupProfile",
             "properties": {
               "image": "[parameters('containerImage')]",
               "ports": [
@@ -248,7 +248,7 @@ Request Body
     "properties":{
         "containers": [
         {
-            "name":"mycontainerprofile",
+            "name":"myContainerGroupProfile",
             "properties": {
                 "command":[],
                 "environmentVariables":[],
