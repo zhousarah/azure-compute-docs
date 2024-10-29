@@ -116,6 +116,24 @@ Lastly, be sure to specify the `skuProfile` with **up to five** VM sizes. This s
     },
 ```
 
+When using the `prioritized` allocation strategy, you can specify the priority ranking of the `vmSizes` specified:
+```json
+    "skuProfile": {
+      "vmSizes": [
+        {
+          "name": "Standard_D8s_v5", "rank": 1
+        },
+        {
+          "name": "Standard_E16s_v5", "rank": 2
+        },
+        {
+          "name": "Standard_D2s_v5", "rank": 1
+        }
+      ],
+      "allocationStrategy": "Prioritized"
+    },
+```
+
 ### [Azure portal](#tab/portal-1)
 1. Go to **Virtual machine scale sets**.
 2. Select the **Create** button to go to the **Create a virtual machine scale set** view.
