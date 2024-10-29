@@ -66,6 +66,9 @@ The container group profile is what tells the standby pool how to configure the 
 ### [CLI](#tab/cli)
 Create a container group profile using [az container-profile create](/cli/azure/standby-container-group-pool).
 
+> [!NOTE]
+> To utilize [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential` in the container group profile.
+
 ```azurecli-interactive
 az container-profile create \
   --resource-group myResourceGroup \
@@ -73,6 +76,7 @@ az container-profile create \
   --image "mcr.microsoft.com/azuredocs/aci-helloworld:latest" \
   --cpu 1 \
   --memory 1.5 \
+  --sku standard \
   --ports 8000 \
   --protocol TCP \
   --ip-address Public \
@@ -83,6 +87,9 @@ az container-profile create \
 ### [PowerShell](#tab/powershell)
 Create a container group profile using [New-AzContainerGroupProfile](/powershell/module/az.standbypool/new-AzStandbyContainerGroupPool).
 
+> [!NOTE]
+> To utilize [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential` in the container group profile.
+
 ```azurepowershell-interactive
 New-AzContainerGroupProfile `
     -ResourceGroupName myResourceGroup `
@@ -92,6 +99,7 @@ New-AzContainerGroupProfile `
     -Image "mcr.microsoft.com/azuredocs/aci-helloworld:latest" `
     -Cpu 1 `
     -MemoryInGB 1.5 `
+    -Sku Standard `
     -Ports 8000 `
     -Protocol TCP `
     -IpAddressType Public
@@ -100,6 +108,9 @@ New-AzContainerGroupProfile `
 
 ### [ARM template](#tab/template)
 Create a container group profile and deploy the template using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
+
+> [!NOTE]
+> To utilize [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential` in the container group profile.
 
 
 ```json
@@ -181,6 +192,9 @@ Create a container group profile and deploy the template using [az deployment gr
 ### [Bicep](#tab/bicep)
 Create a container group profile and deploy the template using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
 
+> [!NOTE]
+> To utilize [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential` in the container group profile.
+
 ```bicep
 param subscriptionId string
 param resourceGroupName string
@@ -236,6 +250,9 @@ resource containerGroup 'Microsoft.ContainerInstance/containerGroups@2023-05-15-
 
 ### [REST](#tab/rest)
 Create a container group profile using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update)
+
+> [!NOTE]
+> To utilize [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential` in the container group profile.
 
 ```HTTP
 https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile?api-version=2023-05-15-preview   
