@@ -67,7 +67,7 @@ The container group profile is what tells the standby pool how to configure the 
 Create a container group profile using [az container-profile create](/cli/azure/standby-container-group-pool).
 
 > [!NOTE]
-> To utilize [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential` in the container group profile.
+> To utilize [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential`.
 
 ```azurecli-interactive
 az container-profile create \
@@ -88,7 +88,7 @@ az container-profile create \
 Create a container group profile using [New-AzContainerGroupProfile](/powershell/module/az.standbypool/new-AzStandbyContainerGroupPool).
 
 > [!NOTE]
-> To utilize [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential` in the container group profile.
+> To utilize [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential`.
 
 ```azurepowershell-interactive
 New-AzContainerGroupProfile `
@@ -110,7 +110,7 @@ New-AzContainerGroupProfile `
 Create a container group profile and deploy the template using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
 
 > [!NOTE]
-> To utilize [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential` in the container group profile.
+> To utilize [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential`.
 
 
 ```json
@@ -193,7 +193,7 @@ Create a container group profile and deploy the template using [az deployment gr
 Create a container group profile and deploy the template using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
 
 > [!NOTE]
-> To utilize [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential` in the container group profile.
+> To utilize [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential`.
 
 ```bicep
 param subscriptionId string
@@ -252,7 +252,7 @@ resource containerGroup 'Microsoft.ContainerInstance/containerGroups@2023-05-15-
 Create a container group profile using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update)
 
 > [!NOTE]
-> To utilize [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential` in the container group profile.
+> To utilize [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential`.
 
 ```HTTP
 https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile?api-version=2023-05-15-preview   
