@@ -26,7 +26,7 @@ To learn more about a series and size, click the links below. There you can read
 | General Purpose  | Dpsv6-series, Dpdsv6-series, Dplsv6-series, Dpldsv6-series | Canada Central, Central US, East US 2, East US, Germany West Central, Japan East, Mexico Central, North Europe, Southeast Asia, Sweden Central, Switzerland North, UAE North, West Europe, and West US 2. Australia East, Brazil South, France Central, India Central, South Central US, UK South, West US 3, and West US coming soon |
 | Memory Optimized | Epsv6-series, Epdsv6-series | Canada Central, Central US, East US 2, East US, Germany West Central, Japan East, Mexico Central, North Europe, Southeast Asia, Sweden Central, Switzerland North, UAE North, West Europe, and West US 2. Australia East, Brazil South, France Central, India Central, South Central US, UK South, West US 3, and West US coming soon  |
 
-Additional information:
+**Additional information:** (#tab/cobalt-100-based-vms)
 AKS demo on : https://aka.ms/C100-VM-deploy-demo. The Azure Kubernetes Service (AKS) demo on Cobalt 100 VMs showcases how to leverage these new Cobalt 100-based virtual machines for cloud-native applications. 
 ---
 
