@@ -55,13 +55,13 @@ The `vmSizes` property is where you specify the specific VM sizes that you're us
 Instance Mix introduces the ability to set allocation strategies for your scale set. The `allocationStrategy` property is where you specify which allocation strategy you'd like to use for your Instance Flexible scale set deployments. There are two options for allocation strategies, `lowestPrice` and `capacityOptimized`. Allocation strategies apply to both Spot and Standard VMs.
 
 #### lowestPrice (default)
-This allocation strategy is focused on workloads where cost and cost-optimization are most important. When evaluating what VM split to use, Azure looks at the lowest priced VMs of the VM sizes specified. Azure also considers capacity as part of this allocation strategy. When using `lowestPrice` allocation strategy, the scale set deploys as many of the lowest priced VMs as it can, depending on available capacity, before moving on to the next lowest priced VM size specified. `lowestPrice` is the default allocation strategy.
+This allocation strategy is focused on workloads where cost and cost-optimization are most important. When evaluating what VM split to use, Azure looks at the lowest priced VMs of the VM sizes specified. Azure also considers capacity as part of this allocation strategy. The scale set deploys as many of the lowest priced VMs as it can, depending on available capacity, before moving on to the next lowest priced VM size specified. `lowestPrice` is the default allocation strategy.
 
 #### capacityOptimized
 This allocation strategy is focused on workloads where attaining capacity is the primary concern. When evaluating what VM size split to deploy in the scale set, Azure looks only at the underlying capacity available. It doesn't take price into account when determining what VMs to deploy. Using `capacityOptimized` can result in the scale set deploying the most expensive, but most readily available VMs. 
 
 #### Prioritized
-This allocation strategy allows you to specify a priority ranking to the VM sizes specified. Note: ranking is optional, but if provided, it must be within the range of the `vmSizes` list size. Ranks can be duplicated across sizes, meaning the sizes have the same priority. Ranks do not need to be in sequential order.
+This allocation strategy allows you to specify a priority ranking to the VM sizes specified. Note: ranking is optional, but if provided, it must be within the range of the `vmSizes` list size. Ranks can be duplicated across sizes, meaning the sizes have the same priority. Ranks don't need to be in sequential order.
 
 ## Cost
 Following the scale set cost model, usage of Instance Mix is free. You continue to only pay for the underlying resources, like the VM, disk, and networking.
