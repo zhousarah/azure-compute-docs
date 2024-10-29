@@ -134,6 +134,10 @@ The container group profile is what tells the standby pool how to configure the 
 ## Confidential containers
 Standby pools for Azure container instances support confidential containers. To utilize [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential` in the container group profile.
 
+> [!Important] 
+> Values passed using config maps are not included in the security policy or validated by the runtime before the file mount is made available to the container. Any values that could have an impact to data or application security cannot be trusted by the application during execution and instead should be made available to the container using environment variables.
+
+
 ```json
 {
     "location":"west central us",
