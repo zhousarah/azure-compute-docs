@@ -39,21 +39,21 @@ To allow standby pools to create container groups, you need to assign the approp
 1) In the Azure portal, navigate to your subscriptions.
 2) Select the subscription you want to adjust permissions.
 3) Select **Access Control (IAM)**.
-4) Select **Add** and **Add Custom Role**.
-5) Name your role **ContainersContributor**.
-6) Move to the Permissions Tab.
-7) Select **Add Permissions**.
-8) Search for `Microsoft.Container` and select **Microsoft Container Instance**.
-9) Select the permissions box to select all the permissions available.
-10) Select **Add**.
-11) Select **Review + create**.
-12) Select **Create**.
-13) Select **Add** and **Add role assignment**.
-14) Under the roles tab, search for the custom role you created called **ContainersContributor** and select it.
-15) Move to the Members tab.
-16) Select **+ Select Members**.
-17) Search for Standby Pool Resource Provider.
-18) Select the **Standby Pool Resource Provider** and select **Review + Assign**.
+4) Select **Add** and **Add role assignment**.
+5) Under the **Role** tab, search for **Standby Container Group Pool Contributor** and select it.
+6) Move to the **Members** Tab.
+7) Select **+ Select members**.
+8) Search for **Standby Pool Resource Provider** and select it.
+9) Move to the **Review + assign** tab.
+10) Apply the changes. 
+11) Under **Access Control (IAM)** again, select **Add** and **Add role assignment**.
+12) Under the **Role** tab, search for **Network Contributor** and select it. 
+13) Move to the **Members** Tab.
+14) Select **+ Select members**.
+15) Search for **Standby Pool Resource Provider** and select it.
+16) Move to the **Review + assign** tab.
+17) Select the permissions box to select all the permissions available.
+
 
 For more information on assigning roles, see [assign Azure roles using the Azure portal](/azure/role-based-access-control/quickstart-assign-role-user-portal).
 
