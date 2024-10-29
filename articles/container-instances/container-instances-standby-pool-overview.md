@@ -35,7 +35,10 @@ The number of container groups in a standby pool is determined by setting the `m
 
 The container group profile is what tells the standby pool how to configure the containers in the pool. Each standby pool is associated with a single container group profile. If you make changes to the container group profile, you also need to update your standby pool to ensure the updates are applied to the instances in the pool.
 
-```rest
+> [!NOTE]
+> To utilize [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential` in the container group profile.
+
+```http
 {
     "location":"west central us",
     "properties":{
