@@ -124,6 +124,64 @@ Lastly, be sure to specify the `skuProfile` with **up to five** VM sizes. This s
 8. In the **Allocation strategy (preview)** field, select your allocation strategy.
 9. You can specify other properties in subsequent tabs, or you can go to **Review + create** and select the **Create** button at the bottom of the page to start your Instance Flexible scale set deployment.
 
+### [Azure CLI](#tab/cli-1)
+You can use the following basic command to create a scale set using Instance Mix using the following command, which will default to using the `lowestPrice` allocation strategy:
+ 
+```azurecli-interactive
+  --name {myVMSS} \
+  --resource-group {myResourceGroup} \
+  --image ubuntu2204 \
+  --vm-sku Mix \
+  --skuprofile-vmsizes Standard_DS1_v2 Standard_D2s_v4
+```
+ 
+To specify the allocation strategy, use the `--skuprofile-allocation-strategy` parameter, like the following:
+```azurecli-interactive
+az vmss create \
+  --name {myVMSS} \
+  --resource-group {myResourceGroup} \
+  --image ubuntu2204 \
+  --vm-sku Mix \
+  --skuprofile-vmsizes Standard_DS1_v2 Standard_D2s_v4 \
+  --skuprofile-allocation-strategy CapacityOptimized
+```
+ 
+#### [Azure PowerShell](#tab/powershell-1)
+You can use the following basic command to create a scale set using Instance Mix using the following command, which will default to using the `lowestPrice` allocation strategy:
+ 
+```azurepowershell-interactive
+New-AzVmss `
+  -ResourceGroupName $resourceGroupName `
+  -Credential $credentials `
+  -VMScaleSetName $vmssName `
+  -DomainNameLabel $domainNameLabel1 `
+  -VMSize "Mix" `
+  -SkuProfileVmSize @("Standard_D4s_v3", "Standard_D4s_v4");
+```
+ 
+To specify the allocation strategy, use the `SkuProfileAllocationStrategy` parameter, like the following:
+```azurepowershell-interactive
+New-AzVmss `
+-ResourceGroupName $rgname `
+-Credential $cred `
+-VMScaleSetName $vmssName `
+-DomainNameLabel $domainNameLabel1 `
+-SkuProfileVmSize @("Standard_D4s_v3", "Standard_D4s_v4") `
+-SkuProfileAllocationStrategy "CapacityOptimized";
+```
+ 
+To create a scale set using a scale set configuration object utilizing Instance Mix, use the following command:
+```azurepowershell-interactive
+$vmss = New-AzVmssConfig -Location $loc -SkuCapacity 2 -UpgradePolicyMode 'Manual' -EncryptionAtHost -SecurityType $stnd -SkuProfileVmSize @("Standard_D4s_v3", "Standard_D4s_v4") -SkuProfileAllocationStrategy "CapacityOptimized"`
+            | Add-AzVmssNetworkInterfaceConfiguration -Name 'test' -Primary $true -IPConfiguration $ipCfg `
+            | Set-AzVmssOSProfile -ComputerNamePrefix 'test' -AdminUsername $adminUsername -AdminPassword $adminPassword `
+            | Set-AzVmssStorageProfile -OsDiskCreateOption 'FromImage' -OsDiskCaching 'None' `
+            -ImageReferenceOffer $imgRef.Offer -ImageReferenceSku $imgRef.Skus -ImageReferenceVersion 'latest' `
+            -ImageReferencePublisher $imgRef.PublisherName;
+ 
+$vmssResult = New-AzVmss -ResourceGroupName $rgname -Name $vmssName -VirtualMachineScaleSet $vmss
+```
+
 ---
 
 ## Troubleshooting
@@ -138,7 +196,6 @@ Lastly, be sure to specify the `skuProfile` with **up to five** VM sizes. This s
 | SkuNameMustBeMixIfSkuProfileIsSpecified    | Sku name is {skuNameValue}. Virtual Machine Scale Sets with Sku Profile must have the Sku name property set to "Mix" | Ensure that the `sku.name property` is set to `"Mix"`.                                                                                                                                                                                                                                                                        |
 | SkuTierMustNotBeSetIfSkuProfileIsSpecified | Sku tier is {skuTierValue}. Virtual Machine Scale Sets with Sku Profile must not have the Sku tier property set.     | `sku.tier` is an optional property for scale sets. With Instance Mix, `sku.tier` must be set to `null` or not specified.                                                                                                                                                                                                           |
 | InvalidParameter                           | The value of parameter skuProfile is invalid.                                                               | Your subscription isn't registered for the Instance Mix feature. Follow the enrollment instructions to register for the Preview.                                                                                                                                                                                      |
-| FleetRPInternalError                       | An unexpected error occurred while computing the desired sku split.                                         | Instance Mix isn't supported in this region yet. Deploy only in supported regions.                                                                                                                                                                                                                                    |
 
 ## FAQs
 ### Can I use Spot and Standard VMs with Instance Mix?
