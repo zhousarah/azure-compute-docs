@@ -398,7 +398,7 @@ Invoke-RestMethod -Uri "$identityEndpoint" `
     -ContentType "application/x-www-form-urlencoded"
 ```
 Az Login module and other client libraries which depend on metadata server (169.254.169.254) will not work in a Windows Container. 
-Additionally, Windows containers in vNet won't be able to connect to the endpoint; hence, a managed identity token can't be generated in a Windows virtual network container.   However, this feature is going to be supported soon.
+Additionally, Windows containers in vNet won't be able to connect to the endpoint; hence, a managed identity token can't be generated in a Windows virtual network container. 
 
 ## Next steps
 
