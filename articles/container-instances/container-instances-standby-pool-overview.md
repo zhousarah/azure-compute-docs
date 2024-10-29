@@ -17,15 +17,15 @@ ms.reviewer: tomcassidy
 Standby Pools for Azure Container Instances enable customers to create a pool of pre-provisioned container groups that can be used to scale out in response to incoming traffic. The container groups in the pool are fully provisioned, initialized, and ready to receive work at any given notice.
 
 ## Limitations
-Standby pools for Azure Container instances is not available in the Azure portal. 
+Standby pools for Azure Container Instances is not available in the Azure portal. 
 
 ## Scaling
 
-When you require a new container group you can immediately pull one from the standby pool that is provisioned and running. 
+When you require a new container group, you can immediately pull one from the standby pool that is provisioned and running. 
 
-When a container group is consumed from the pool, the standby pool will automatically begin to refill ensuring that your standby pool maintains the desired capacity configured. 
+When a container group is consumed from the pool, the standby pool automatically begins to refill ensuring that your standby pool maintains the desired capacity configured. 
 
-Standby pools only give out container groups from the pool that are fully provisioned and ready to receive work. For example, the instances in your pool are still being initialized, they aren't in the expected provisioning state and won't be given out when a container is requested. If no instances in the pool are available, Azure Container Instances will default back to net new container group creation. 
+Standby pools only give out container groups from the pool that are fully provisioned and ready to receive work. For example, the instances in your pool are still being initialized. In this case, the instances aren't in the expected provisioning state and are't given out when a container is requested. If no instances in the pool are available, Azure Container Instances will default back to net new container group creation. 
 
 ## Standby pool size
 The number of container groups in a standby pool is determined by setting the `maxReadyCapacity` parameter. 
@@ -36,7 +36,7 @@ The number of container groups in a standby pool is determined by setting the `m
 
 ## Config maps
 
-Azure Container Instances supports multiple ways to apply container configurations such as environment variables and secret volumes. When applying these settings, restarting the pod is required for the changes to take affect. By using config maps, the configurations can be applied without restarting the container. This enables out of band updates so containers can read the new values without restarting. 
+Azure Container Instances supports multiple ways to apply container configurations such as environment variables and secret volumes. When applying these settings, restarting the pod is required for the changes to take effect. By using config maps, the configurations can be applied without restarting the container. This enables out of band updates so containers can read the new values without restarting. 
 
 Azure Container Instances can be created with or without config maps and can be updated at any point in time post creation using config maps. Updating config maps in an existing running container group can be accomplished quickly and without causing the container to reboot. 
 
@@ -86,7 +86,7 @@ Azure Container Instances can be created with or without config maps and can be 
 ```
 
 
-## Container Group Profile
+## Container group profile
 
 The container group profile is what tells the standby pool how to configure the containers in the pool. Each standby pool is associated with a single container group profile. If you make changes to the container group profile, you also need to update your standby pool to ensure the updates are applied to the instances in the pool.
 
@@ -184,7 +184,7 @@ Standby pools for Azure container instances support confidential containers. To 
 
 ```
 ## Managed Identity
-Standby pools for Azure Container Instances supports integration with Managed Identity. Applying a managed identity is performed when requesting a container from the standby pool. 
+Standby pools for Azure Container Instances support integration with Managed Identity. Applying a managed identity is performed when requesting a container from the standby pool. 
 
 ```json
 {
