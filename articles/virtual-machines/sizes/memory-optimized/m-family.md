@@ -53,6 +53,22 @@ ms.author: mattmcinnes
 [!INCLUDE [msv3-mdsv3-series-specs](./includes/msv3-mdsv3-series-specs.md)]
 
 
+### Mbsv3 and Mbdsv3-series
+#### [Mbsv3-series](#tab/mbsv3)
+[!INCLUDE [mbsv3-series](./includes/mbsv3-series-summary.md)]
+
+[View the full Mbsv3-series page](./mbsv3-series.md)
+
+[!INCLUDE [mbsv3-series](./includes/mbsv3-series-summary.md)]
+
+#### [Mbdsv3-series](#tab/mbdsv3)
+[!INCLUDE [mbdsv3-series](./includes/mbdsv3-series-summary.md)]
+
+[View the full Mbdsv3-series page](./mbdsv3-series.md)
+
+[!INCLUDE [mbdsv3-series](./includes/mbdsv3-series-summary.md)]
+
+---
 ### Previous-generation M family series
 For older sizes, see [previous generation sizes](../previous-gen-sizes-list.md#memory-optimized-previous-gen-sizes).
 
