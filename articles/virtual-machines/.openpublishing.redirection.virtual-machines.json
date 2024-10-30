@@ -6516,7 +6516,7 @@
             "redirect_document_id": true
         },
         {
-            "source_path_from_root": "/articles/virtual-machines/memory-optimized/mbsv3-mbdsv3-series.md",
+            "source_path_from_root": "/articles/virtual-machines/sizes/memory-optimized/mbsv3-mbdsv3-series.md",
             "redirect_url": "/azure/virtual-machines/sizes/memory-optimized/mbsv3-series",
             "redirect_document_id": false
         }
