@@ -33,8 +33,10 @@ vCPUs (Qty.) and Memory for each size
 | Standard_M48bs_v3 | 48 | 384 |
 | Standard_M64bs_v3 | 64 | 512 |
 | Standard_M96bs_v3 | 96 | 768 |
-| Standard_M128bs_v3 | 128 | 1024 |
-| Standard_M176bs_v3 | 176 | 1536 |
+| Standard_M128bs_v3<sup>1</sup> | 128 | 1024 |
+| Standard_M176bs_v3<sup>1</sup> | 176 | 1536 |
+
+<sup>1</sup> [Disable SMT](/sql/sql-server/compute-capacity-limits-by-edition-of-sql-server#disable-smt-in-an-azure-virtual-machine) to run SQL Server on a VM with more than 64 vCores per NUMA node. 
 
 #### VM Basics resources
 - [Check vCPU quotas](../../../virtual-machines/quotas.md)

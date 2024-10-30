@@ -34,20 +34,23 @@ vCPUs (Qty.) and Memory for each size
 | Standard_M64bds_v3 | 64 | 512 |
 | Standard_M96bds_v3 | 96 | 768 |
 | Standard_M128bds_v3 | 128 | 1024 |
-| Standard_M176bds_v3 | 176 | 1536 |
+| Standard_M176bds_v3<sup>1</sup> | 176 | 1536 |
 | Standard_M64bds_1_v3 | 64 | 1397 |
 | Standard_M96bds_2_v3 | 96 | 1946 |
 | Standard_M128bds_3_v3 | 128 | 2794 |
-| Standard_M176bds_4_v3 | 176 | 3892 |
+| Standard_M176bds_4_v3<sup>1</sup> | 176 | 3892 |
 
 #### VM Basics resources
 - [Check vCPU quotas](../../../virtual-machines/quotas.md)
+
+#### Table definitions
+- <sup>1</sup> [Disable SMT](/sql/sql-server/compute-capacity-limits-by-edition-of-sql-server#disable-smt-in-an-azure-virtual-machine) to run SQL Server on a VM with more than 64 vCores per NUMA node.
 
 ### [Local Storage](#tab/sizestoragelocal)
 
 Local (temp) storage info for each size
 
-| Size Name | Max Temp Storage Disks (Qty.) | Temp Disk Size (GiB) | Temp Disk Random Read (RR)<sup>1</sup> IOPS | Temp Disk Random Read (RR)<sup>1</sup> Throughput (MB/s) |
+| Size Name | Max Temp Storage Disks (Qty.) | Temp Disk Size (GiB) | Temp Disk Random Read (RR)<sup>1</sup> IOPS<sup>2</sup> | Temp Disk Random Read (RR)<sup>1</sup> Throughput (MB/s) |
 | --- | --- | --- | --- | --- |
 | Standard_M16bds_v3 | 1 | 400 | 10,000 | 100 |
 | Standard_M32bds_v3 | 1 | 400 | 20,000 | 200 |
@@ -67,7 +70,8 @@ Local (temp) storage info for each size
 - [Share an Azure managed disk](../../../virtual-machines/disks-shared.md)
 
 #### Table definitions
-- <sup>1</sup>Temp disk speed often differs between RR (Random Read) and RW (Random Write) operations. RR operations are typically faster than RW operations. The RW speed is usually slower than the RR speed on series where only the RR speed value is listed.
+- <sup>1</sup> Temp disk speed often differs between RR (Random Read) and RW (Random Write) operations. RR operations are typically faster than RW operations. The RW speed is usually slower than the RR speed on series where only the RR speed value is listed.
+- <sup>2</sup> Read IOPS are optimized for sequential reads.<br> 
 - Storage capacity is shown in units of GiB or 1024^3 bytes. When you compare disks measured in GB (1000^3 bytes) to disks measured in GiB (1024^3) remember that capacity numbers given in GiB may appear smaller. For example, 1023 GiB = 1098.4 GB.
 - Disk throughput is measured in input/output operations per second (IOPS) and MBps where MBps = 10^6 bytes/sec.
 - To learn how to get the best storage performance for your VMs, see [Virtual machine and disk performance](../../../virtual-machines/disks-performance.md).
