@@ -6524,6 +6524,11 @@
             "source_path_from_root": "/articles/virtual-machines/basv2.md",
             "redirect_url": "/azure/virtual-machines/sizes/general-purpose/basv2-series",
             "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/b-series-cpu-credit-model/b-series-cpu-credit-model.md",
+            "redirect_url": "/azure/virtual-machines/sizes/b-series-cpu-credit-model",
+            "redirect_document_id": true
         }
     ]
 }
