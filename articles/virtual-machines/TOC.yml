@@ -200,7 +200,7 @@
           displayName: B-series, sizes, size, vm size
           href: ./sizes/general-purpose/b-family.md
         - name: B-series CPU Credit Model
-          href: ./b-series-cpu-credit-model/b-series-cpu-credit-model.md
+          href: ./sizes/b-series-cpu-credit-model.md
         - name: Bsv2 series
           href: ./sizes/general-purpose/bsv2-series.md
         - name: Basv2 series
