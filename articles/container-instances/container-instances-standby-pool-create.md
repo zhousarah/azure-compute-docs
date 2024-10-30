@@ -117,7 +117,7 @@ Create a container group profile and deploy the template using [az deployment gr
       "properties": {
         "containers": [
           {
-            "name": "mycontainerprofile",
+            "name": "myContainerGroupProfile",
             "properties": {
               "image": "[parameters('containerImage')]",
               "ports": [
@@ -248,7 +248,7 @@ Request Body
     "properties":{
         "containers": [
         {
-            "name":"mycontainerprofile",
+            "name":"myContainerGroupProfile",
             "properties": {
                 "command":[],
                 "environmentVariables":[],
@@ -412,4 +412,4 @@ Request Body
 
 ## Next steps
 
-Learn more about [standby pools for Azure Container Instances](container-instances-standby-pool-overview.md)
+[Request a container from the standby pool](container-instances-standby-pool-request-container.md)
