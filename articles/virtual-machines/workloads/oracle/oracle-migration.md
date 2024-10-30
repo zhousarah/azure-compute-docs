@@ -42,7 +42,7 @@ After you set up Oracle on Azure infrastructure, install Oracle database, and mi
 Azure enhances the Oracle tools with the right network connectivity, bandwidth, and commands that are powered by the following Azure capabilities for data migration.
 
 - [VPN Connectivity](/azure/vpn-gateway/)
-- [Express Route -ER](/azure/expressroute/expressroute-introduction). Reliability of the ER is the key,refer resiliency guidence for ER [Gateway](https://azure.github.io/Azure-Proactive-Resiliency-Library-v2/azure-resources/Network/expressRouteGateways/) & [circuits](https://azure.github.io/Azure-Proactive-Resiliency-Library-v2/azure-resources/Network/expressRouteCircuits/).
+- [Express Route](/azure/expressroute/expressroute-introduction). Reliability of the ExpressRoute is the key. Refer to resiliency guidance for [Gateway](https://azure.github.io/Azure-Proactive-Resiliency-Library-v2/azure-resources/Network/expressRouteGateways/) and [Circuits](https://azure.github.io/Azure-Proactive-Resiliency-Library-v2/azure-resources/Network/expressRouteCircuits/).
 - [AzCopy](/azure/storage/common/storage-ref-azcopy)
 - [Data Box](/azure/databox/data-box-overview)
 
