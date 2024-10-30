@@ -17,7 +17,9 @@ Azure Container Instances can be created with or without config maps and can be 
 
 ## How it works
 
-A config map is part of the container group profile. Create a container group profile with the config map settings you want to apply to a container instance. 
+A config map can be included in the container properties or in a container group profile. Creating a container group profile with the config map settings makes applying those settings simple and easy to automate. 
+
+### Create a container group profile with config map settings 
 
 > [!NOTE]
 > To use [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential` when creating your container group profile.
@@ -264,16 +266,10 @@ Request Body
 
 ---
 
-Once the container group profile has been created and the config map details have been added, apply it to an existing container and you will see the values mounted in the container without requiring a restart.
-
-```
-/mnt/configmap/<containername>/key1 with value as “value1”  
-
-/mnt/configmap/<containername>/key2 with value as “value2”  
-```
+### Apply config map settings using a container group profile
 
 ### [CLI](#tab/cli)
-Request a container group from a standby pool using [az container update](/cli/azure/standby-container-group-pool).
+Apply the config map settings stored in the container group profile using [az container update](/cli/azure/container).
 
 ```azurecli-interactive
 az container update \
@@ -282,13 +278,12 @@ az container update \
   --location "West Central US" \
   --container-group-profile "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile" \
   --revision 1 \
-  --container-name myContainerProfile \
-  --config-map $newKey=$newValue
+  --container-name myContainerProfile 
 
 
 ```
 ### [PowerShell](#tab/powershell)
-Request a container group from a standby pool using [Update-AzContainer](/powershell/module/az.standbypool/new-AzStandbyContainerGroupPool).
+Apply the config map settings stored in the container group profile using [Update-AzContainer](/powershell/module/az.containerinstance/update-azcontainergroup).
 
 ```azurepowershell-interactive
 Update-AzContainer `
@@ -297,13 +292,12 @@ Update-AzContainer `
     -ContainerGroupName myContainerGroup `
     -ContainerGroupProfileId "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile" `
     -ContainerGroupProfileRevision 1 `
-    -ContainerName myContainerProfile `
-    -ConfigMap @{ $newKey = $newValue }
+    -ContainerName myContainerProfile 
 
 ```
 
 ### [ARM template](#tab/template)
-Request a container group from a standby pool using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
+Apply the config map settings stored in the container group profile using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
 
 
 ```json
@@ -406,7 +400,7 @@ Request a container group from a standby pool using [az deployment group create]
 
 
 ### [Bicep](#tab/bicep)
-Request a container group from a standby pool using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
+Apply the config map settings stored in the container group profile using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
 
 ```bicep
 param subscriptionId string = {subscriptionId}
@@ -445,7 +439,7 @@ resource containerGroup 'Microsoft.ContainerInstance/containerGroups@2023-05-01'
 ```
 
 ### [REST](#tab/rest)
-Request a container group from a standby pool using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update)
+Apply the config map settings stored in the container group profile using [Create or Update](/rest/api/container-instances/container-groups/create-or-update)
 
 ```HTTP
 PUT
@@ -478,6 +472,199 @@ Request Body
 ---
 
 
+Once the update has  been applied to an existing container and you will see the values mounted in the container without requiring a restart.
+
+```
+/mnt/configmap/<containername>/key1 with value as “value1”  
+
+/mnt/configmap/<containername>/key2 with value as “value2”  
+```
+
+### Apply config map settings without container group profile
+
+Config map settings can also be applied directly to the instance using the 
+
+
+### [CLI](#tab/cli)
+Apply the config map settings using [az container update](/cli/azure/container).
+
+```azurecli-interactive
+az container update \
+  --resource-group myResourceGroup \
+  --name myContainerGroup \
+  --location "West Central US" \
+  --container-name myContainerProfile \
+  --config-map $newKey=$newValue
+
+```
+### [PowerShell](#tab/powershell)
+Apply the config map settings using [Update-AzContainer](/powershell/module/az.containerinstance/update-azcontainergroup).
+
+```azurepowershell-interactive
+Update-AzContainer `
+    -ResourceGroupName myResourceGroup `
+    -Location "West Central US" `
+    -ContainerGroupName myContainerGroup `
+    -ContainerName myContainerProfile `
+    -ConfigMap @{ $newKey = $newValue }
+```
+
+### [ARM template](#tab/template)
+Apply the config map settings using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
+
+
+```json
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "subscriptionId": {
+      "type": "string",
+      "metadata": {
+        "description": "The subscription ID."
+      }
+    },
+    "resourceGroup": {
+      "type": "string",
+      "metadata": {
+        "description": "The name of the resource group."
+      }
+    },
+    "location": {
+      "type": "string",
+      "metadata": {
+        "description": "Location for the resource."
+      },
+      "defaultValue": "West Central US"
+    },
+    "containerGroupName": {
+      "type": "string",
+      "metadata": {
+        "description": "The name of the container group."
+    }
+    },
+    "myContainerProfile": {
+      "type": "string",
+      "metadata": {
+        "description": "The name of the container profile."
+      }
+    },
+    "newKey": {
+      "type": "string",
+      "metadata": {
+        "description": "The new key for the config map."
+      }
+    },
+    "newValue": {
+      "type": "string",
+      "metadata": {
+        "description": "The new value for the config map."
+      }
+    },
+  },
+  "resources": [
+    {
+      "type": "Microsoft.ContainerInstance/containerGroups",
+      "apiVersion": "2023-05-01",
+      "name": "[parameters('containerGroupName')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "containers": [
+          {
+            "name": "[parameters('myContainerProfile')]",
+            "properties": {
+              "configMap": {
+                "keyValuePairs": {
+                  "[parameters('newKey')]": "[parameters('newValue')]"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": {
+    "containerGroupId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.ContainerInstance/containerGroups', parameters('containerGroupName'))]"
+    }
+  }
+}
+
+```
+
+
+### [Bicep](#tab/bicep)
+Apply the config map settings using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
+
+```bicep
+param subscriptionId string = {subscriptionId}
+param resourceGroup string = "myResourceGroup"
+param location string = "West Central US"
+param containerGroupName string = "myContainerGroup"
+param myContainerProfile string = "myContainerGroupProfile"
+param newKey string = {newKey}
+param newValue string = {newValue}
+
+resource containerGroup 'Microsoft.ContainerInstance/containerGroups@2023-05-01' = {
+  name: containerGroupName
+  location: location
+  properties: {
+    containers: [
+      {
+        name: myContainerProfile
+        properties: {
+          configMap: {
+            keyValuePairs: {
+              '${newKey}': '${newValue}'
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+
+```
+
+### [REST](#tab/rest)
+Apply the config map settings using [Create or Update](/rest/api/container-instances/container-groups/create-or-update)
+
+```HTTP
+PUT
+https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroups/myContainerGroup?api-version=2023-05-01 
+
+Request Body
+{
+   "location": "{location}",
+   "properties": {
+           "containers": [
+               {
+                   "name": "{myContainerGroupProfile}",
+                   "properties": {
+                       "configMap": {
+                           "keyValuePairs": {
+                               "{newKey}": "{newValue}"
+                           }
+                       }
+                   }
+               }
+           ]
+   }
+}
+```
+
+---
+
+
+Once the update has  been applied to an existing container and you will see the values mounted in the container without requiring a restart.
+
+```
+/mnt/configmap/<containername>/key1 with value as “value1”  
+
+/mnt/configmap/<containername>/key2 with value as “value2”  
+```
 
 ## Next steps
 Learn how to use config maps with [standby pools to increase scale and availability](container-instances-standby-pool-get-details.md)
