@@ -180,6 +180,8 @@
     - name: Overview
       displayName: Sizes, sizing, resize, ACU, compute
       href: ./sizes/overview.md
+    - name: Change the size of a VM
+      href: ./sizes/resize-vm.md
     - name: General purpose
       items:
       - name: Overview
@@ -198,7 +200,7 @@
           displayName: B-series, sizes, size, vm size
           href: ./sizes/general-purpose/b-family.md
         - name: B-series CPU Credit Model
-          href: ./b-series-cpu-credit-model/b-series-cpu-credit-model.md
+          href: ./sizes/b-series-cpu-credit-model.md
         - name: Bsv2 series
           href: ./sizes/general-purpose/bsv2-series.md
         - name: Basv2 series
@@ -438,7 +440,7 @@
     - name: GPU - accelerated compute
       items:
       - name: NMads MA35D series
-        href: ./sizes/nm-ads-ma35d-series.md
+        href: ./sizes/fpga-accelerated/nm-ads-ma35d-series.md
       - name: Overview
         displayName: GPU, sizes, size, vm size
         href: ./sizes/overview.md#gpu-accelerated
@@ -704,9 +706,6 @@
       href: quotas.md
     - name: Virtual machines selector tool
       href: https://aka.ms/vm-selector
-    - name: Change the VM size
-      displayName: Change, resize, update size
-      href: resize-vm.md
     - name: States and billing
       href: states-billing.md
     - name: Azure VMs with no temp disk
@@ -1041,7 +1040,7 @@
       maintainContext: true
   - name: Azure Boost
     displayName: Boost, Azure Boost, boost vm, boost virtual machine
-    href: /azure/azure-boost/overview
+    href: /azure/azure-boost/overview.md
   - name: Azure Hybrid Benefit
     items:
     - name: Linux
