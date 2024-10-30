@@ -6519,6 +6519,11 @@
             "source_path_from_root": "/articles/virtual-machines/sizes/nm-ads-ma35d-series.md",
             "redirect_url": "/azure/virtual-machines/sizes/fpga-accelerated/nm-ads-ma35d-series",
             "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/basv2.md",
+            "redirect_url": "/azure/virtual-machines/sizes/general-purpose/basv2-series",
+            "redirect_document_id": true
         }
     ]
 }
