@@ -4,7 +4,7 @@ description: Learn how to use config maps with Azure Container Instances.
 author: mimckitt
 ms.author: mimckitt
 ms.service: azure-container-instances
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 10/30/2024
 ms.reviewer: tomvcassidy
 ---
