@@ -127,7 +127,7 @@
     - name: Run a setup container (init)
       href: container-instances-init-container.md
     - name: Use config maps
-      href: container-instances-configmap.md
+      href: container-instances-config-map.md
     - name: Use a managed identity
       href: container-instances-managed-identity.md
     - name: Use GPU resources (preview)
