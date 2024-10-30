@@ -149,7 +149,7 @@ Standby pools for Azure container instances support confidential containers. To 
     "properties":{
         "containers": [
         {
-            "name":"{containerProfiileName}",
+            "name":"{containerProfileName}",
             "properties": {
                 "command":[],
                 "environmentVariables":[],
