@@ -10,9 +10,9 @@ ms.reviewer: tomvcassidy
 ---
 # Config maps for Azure Container Instances
 
-A config map is a property associated with a container group profile that can be used to apply container configurations similar to environment variables and secret volumes. When applying these settings, restarting the pod is required for the changes to take effect. By using config maps, the configurations can be applied without restarting the container. This enables out of band updates so containers can read the new values without restarting. 
+A config map is a property that can be used to apply container configurations similar to environment variables and secret volumes. However, unlike when using environment variables or secret volumes where restarting the pod to apply the settings is required, apply settings using a config map does not require any restarts for the changes to take effect. 
 
-Azure Container Instances can be created with or without config maps and can be updated at any point in time post creation using config maps. Updating config maps in an existing running container group can be accomplished quickly and without causing the container to reboot. 
+Azure Container Instances can be created with or without config maps and can be updated at any point in time post creation using config maps. Updating config maps in an existing running container group can be accomplished quickly without compromising uptime of the container. 
 
 
 ## How it works
@@ -21,11 +21,8 @@ A config map can be included in the container properties or in a container group
 
 ### Create a container group profile with config map settings 
 
-> [!NOTE]
-> To use [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential` when creating your container group profile.
-
 ### [CLI](#tab/cli)
-Create a container group profile using [az container-profile create](/cli/azure/standby-container-group-pool).
+Create a container group profile using [az container-profile create](/cli/azure/standby-container-group-pool) and specify the config map details.
 
 ```azurecli-interactive
 az container-profile create \
@@ -44,7 +41,7 @@ az container-profile create \
 
 ```
 ### [PowerShell](#tab/powershell)
-Create a container group profile using [New-AzContainerGroupProfile](/powershell/module/az.standbypool/new-AzStandbyContainerGroupPool).
+Create a container group profile using [New-AzContainerGroupProfile](/powershell/module/az.standbypool/new-AzStandbyContainerGroupPool) and specify the config map details.
 
 ```azurepowershell-interactive
 New-AzContainerGroupProfile `
@@ -64,7 +61,7 @@ New-AzContainerGroupProfile `
 ```
 
 ### [ARM template](#tab/template)
-Create a container group profile and deploy the template using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
+Create a container group profile with the desired config map settings and deploy the template using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
 
 
 ```json
@@ -149,7 +146,7 @@ Create a container group profile and deploy the template using [az deployment gr
 
 
 ### [REST](#tab/rest)
-Create a container group profile using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update)
+Create a container group profile with the desired config map settings using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update)
 
 ```HTTP
 https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile?api-version=2023-05-15-preview   
@@ -205,6 +202,8 @@ Request Body
 ---
 
 ### Apply config map settings using a container group profile
+
+Applying the config map settings stored in a container group profile requires updating the container and specifying the container group profile that should be associated with the update. 
 
 ### [CLI](#tab/cli)
 Apply the config map settings stored in the container group profile using [az container update](/cli/azure/container).
@@ -356,11 +355,6 @@ Request Body
                {
                    "name": "{myContainerGroupProfile}",
                    "properties": {
-                       "configMap": {
-                           "keyValuePairs": {
-                               "{newKey}": "{newValue}"
-                           }
-                       }
                    }
                }
            ]
@@ -371,7 +365,7 @@ Request Body
 ---
 
 
-Once the update has  been applied to an existing container and you will see the values mounted in the container without requiring a restart.
+Once the update has been applied to an existing container and you will see the values mounted in the container without requiring a restart.
 
 ```
 /mnt/configmap/<containername>/key1 with value as “value1”  
@@ -524,7 +518,7 @@ Request Body
 ---
 
 
-Once the update has  been applied to an existing container and you will see the values mounted in the container without requiring a restart.
+Once the update has been applied to an existing container and you will see the values mounted in the container without requiring a restart.
 
 ```
 /mnt/configmap/<containername>/key1 with value as “value1”  
