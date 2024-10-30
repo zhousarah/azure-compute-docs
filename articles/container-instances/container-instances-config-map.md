@@ -264,54 +264,16 @@ Request Body
 
 ---
 
-nce the customer deploys the template, they should see two files in their main container.  
+Once the container group profile has been created and the config map details have been added, apply it to an existing container and you will see the values mounted in the container without requiring a restart
 
+```
 /mnt/configmap/<containername>/key1 with value as “value1”  
 
 /mnt/configmap/<containername>/key2 with value as “value2”  
-```json
-{
-    "properties": {
-        "containers": [
-            {
-                "name": "{containerProfileName}",
-                "properties": {
-                    "image": "mcr.microsoft.com/azuredocs/aci-helloworld",
-                    "ports": [
-                        {
-                            "port": 80,
-                            "protocol": "TCP"
-                        }
-                    ],
-                    "resources": {
-                        "requests": {
-                            "memoryInGB": 0.5,
-                            "cpu": 0.5
-                        }
-                    },
-                    "configMap": {
-                        "keyValuePairs": {
-                            "key1": "value1",
-                            "key2": "value2"
-                        }
-                    }
-                }
-            }
-        ],
-        "osType": "Linux",
-        "ipAddress": {
-            "type": "Public",
-            "ports": [
-                {
-                    "protocol": "tcp",
-                    "port": 80
-                }
-            ]
-        }
-    },
-    "location": "{location}"
-}
-
 ```
+
+
+
+
 ## Next steps
 Learn how to use config maps with [standby pools to increase scale and availability](container-instances-standby-pool-get-details.md)
