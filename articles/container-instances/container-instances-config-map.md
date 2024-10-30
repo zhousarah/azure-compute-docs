@@ -148,68 +148,6 @@ Create a container group profile and deploy the template using [az deployment gr
 ```
 
 
-### [Bicep](#tab/bicep)
-Create a container group profile and deploy the template using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
-
-```bicep
-param subscriptionId string
-param resourceGroupName string
-param profileName string
-param location string = 'West Central US'
-param containerImage string = 'mcr.microsoft.com/azuredocs/aci-helloworld:latest'
-param containerPort int = 8000
-param cpuCores int = 1
-param memoryInGb float = 1.5
-
-resource containerGroup 'Microsoft.ContainerInstance/containerGroups@2023-05-15-preview' = {
-  name: profileName
-  location: location
-  properties: {
-    containers: [
-      {
-        name: 'myContainerGroupProfile'
-        properties: {
-          image: containerImage
-          ports: [
-            {
-              port: containerPort
-            }
-          ]
-          resources: {
-            requests: {
-              cpu: cpuCores
-              memoryInGb: memoryInGb
-            }
-          }
-          command: []
-          configMap: {
-                  "keyValuePairs": {
-                        "key1": "value1",
-                        "key2": "value2"
-                                   }
-                      }     
-          environmentVariables: []
-        }
-      }
-    ]
-    osType: 'Linux'
-    imageRegistryCredentials: []
-    ipAddress: {
-      type: 'Public'
-      ports: [
-        {
-          protocol: 'TCP'
-          port: containerPort
-        }
-      ]
-    }
-    sku: 'Standard'
-  }
-}
-
-
-```
-
 ### [REST](#tab/rest)
 Create a container group profile using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update)
 
@@ -399,45 +337,6 @@ Apply the config map settings stored in the container group profile using [az de
 ```
 
 
-### [Bicep](#tab/bicep)
-Apply the config map settings stored in the container group profile using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
-
-```bicep
-param subscriptionId string = {subscriptionId}
-param resourceGroup string = "myResourceGroup"
-param location string = "West Central US"
-param containerGroupName string = "myContainerGroup"
-param containerGroupProfileName string = "myContainerGroupProfile"
-param myContainerProfile string = "myContainerGroupProfile"
-param newKey string = {newKey}
-param newValue string = {newValue}
-param revisionNumber int = 1
-
-resource containerGroup 'Microsoft.ContainerInstance/containerGroups@2023-05-01' = {
-  name: containerGroupName
-  location: location
-  properties: {
-    containerGroupProfile: {
-      id: '/subscriptions/${subscriptionId}/resourceGroups/${resourceGroup}/providers/Microsoft.ContainerInstance/containerGroupProfiles/${containerGroupProfileName}'
-      revision: revisionNumber
-    }
-    containers: [
-      {
-        name: myContainerProfile
-        properties: {
-          configMap: {
-            keyValuePairs: {
-              '${newKey}': '${newValue}'
-            }
-          }
-        }
-      }
-    ]
-  }
-}
-
-```
-
 ### [REST](#tab/rest)
 Apply the config map settings stored in the container group profile using [Create or Update](/rest/api/container-instances/container-groups/create-or-update)
 
@@ -482,7 +381,7 @@ Once the update has  been applied to an existing container and you will see the 
 
 ### Apply config map settings without container group profile
 
-Config map settings can also be applied directly to the instance using the 
+Config map settings can also be applied directly to the instance by specifying the details in the update commands. 
 
 
 ### [CLI](#tab/cli)
@@ -594,39 +493,6 @@ Apply the config map settings using [az deployment group create](/cli/azure/depl
 
 ```
 
-
-### [Bicep](#tab/bicep)
-Apply the config map settings using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
-
-```bicep
-param subscriptionId string = {subscriptionId}
-param resourceGroup string = "myResourceGroup"
-param location string = "West Central US"
-param containerGroupName string = "myContainerGroup"
-param myContainerProfile string = "myContainerGroupProfile"
-param newKey string = {newKey}
-param newValue string = {newValue}
-
-resource containerGroup 'Microsoft.ContainerInstance/containerGroups@2023-05-01' = {
-  name: containerGroupName
-  location: location
-  properties: {
-    containers: [
-      {
-        name: myContainerProfile
-        properties: {
-          configMap: {
-            keyValuePairs: {
-              '${newKey}': '${newValue}'
-            }
-          }
-        }
-      }
-    ]
-  }
-}
-
-```
 
 ### [REST](#tab/rest)
 Apply the config map settings using [Create or Update](/rest/api/container-instances/container-groups/create-or-update)
