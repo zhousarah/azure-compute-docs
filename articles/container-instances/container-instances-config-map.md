@@ -264,7 +264,7 @@ Request Body
 
 ---
 
-Once the container group profile has been created and the config map details have been added, apply it to an existing container and you will see the values mounted in the container without requiring a restart
+Once the container group profile has been created and the config map details have been added, apply it to an existing container and you will see the values mounted in the container without requiring a restart.
 
 ```
 /mnt/configmap/<containername>/key1 with value as “value1”  
