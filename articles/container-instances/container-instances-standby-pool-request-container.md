@@ -24,8 +24,13 @@ Before utilizing standby pools, complete the feature registration and configure 
 
 ## Request a container from the standby pool
 
+
+
 ### [CLI](#tab/cli)
 Request a container group from a standby pool using [az container create](/cli/azure/container).
+
+> [!NOTE]
+> If apply a managed identity during the container request, include the `--assign-identity` parameter. 
 
 ```azurecli-interactive
 az container create \
@@ -42,6 +47,9 @@ az container create \
 ```
 ### [PowerShell](#tab/powershell)
 Request a container group from a standby pool using [New-AzContainerGroup](/powershell/module/az.containerinstance/new-AzContainerGroup).
+
+> [!NOTE]
+> If apply a managed identity during the container request, include the `-IdentityType` parameter. 
 
 ```azurepowershell-interactive
 New-AzContainerGroup `
