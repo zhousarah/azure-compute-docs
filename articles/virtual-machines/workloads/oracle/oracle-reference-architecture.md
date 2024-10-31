@@ -261,7 +261,7 @@ Patching your virtual machine operating system can be automated using [Azure Aut
 - Azure VMs maximum network bandwidth is (typically) higher than the maximum disk throughput on the same SKU. You can achieve higher throughput on the same VM SKU or use a smaller VM SKU by using high-performance, low-latency networked storage such as [Azure NetApp Files](/azure/azure-netapp-files/azure-netapp-files-introduction). for the database.
 - Set up [Oracle Enterprise Manager](https://docs.oracle.com/en/enterprise-manager/) for management, monitoring, and logging.
 - Consider using Oracle Automatic Storage Management for streamlined storage management for your database.
-- Use [Azure Pipelines](/azure/devops/pipelines/get-started/what-is-azure-pipelines) to manage patching and updates to your database without any downtime.
+- [Introduction to Oracle Data Guard](https://docs.oracle.com/en/database/oracle/oracle-database/23/sbydb/introduction-to-oracle-data-guard-concepts.html)
 - Tweak your application code to add cloud-native patterns that might help your application be more resilient. Consider patterns such as [retry pattern](/azure/architecture/patterns/retry), [circuit breaker pattern](/azure/architecture/patterns/circuit-breaker), and others defined in the [Cloud Design Patterns guide](/azure/architecture/patterns/).
 
 ## Next steps
@@ -269,6 +269,6 @@ Patching your virtual machine operating system can be automated using [Azure Aut
 Review the following Oracle reference articles that apply to your scenario.
 
 - [Introduction to Oracle Data Guard](https://docs.oracle.com/en/database/oracle/oracle-database/23/sbydb/introduction-to-oracle-data-guard-concepts.html)
-- [Oracle Data Guard Broker Concepts](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/dgbkr/oracle-data-guard-broker-concepts.html)
-- [Configuring Oracle GoldenGate for Active-Active High Availability](https://docs.oracle.com/goldengate/1212/gg-winux/GWUAD/wu_bidirectional.htm#GWUAD282)
+- [Oracle Data Guard Broker Concepts](https://docs.oracle.com/en/database/oracle/oracle-database/19/dgbkr/oracle-data-guard-broker-concepts.html#GUID-723E5B73-A350-4B2E-AF3C-5EA4EFC8396)
+- [Configuring Oracle GoldenGate for Active-Active High Availability](https://docs.oracle.com/en/middleware/goldengate/core/19.1/admin/configuring-oracle-goldengate-active-active-high-availability.html)
 - [Oracle Sharding Overview](https://docs.oracle.com/en/database/oracle/oracle-database/19/shard/sharding-overview.html)
