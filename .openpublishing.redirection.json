@@ -2,8 +2,7 @@
   "redirections": [
     {
       "source_path": "articles/container-instances/container-instances-dedicated-hosts.md",
-      "redirect_url": "articles/container-instances/container-instances-overview.md",
-      "redirect_document_id": true
+      "redirect_url": "articles/container-instances/container-instances-overview.md"
     }
   ]
 }
