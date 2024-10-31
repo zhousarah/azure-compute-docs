@@ -27,28 +27,8 @@ Expanding Ultra Disks and Premium SSD v2 disks have the following additional lim
 
 #### Regional availability
 
-Resizing Ultra Disks and Premium SSD v2 disks is currently available in the following regions:
+Resizing Ultra Disks and Premium SSD v2 disks is currently available in all Premium SSD v2 and Ultra supported regions except the following:
 
-- Australia Central 2
-- Australia East
-- Brazil South
-- East Asia
-- Germany North
-- JIO India West
-- Japan East
-- Korea Central
-- Korea South
-- North Central US
-- North Europe
-- Norway West
-- Poland Central
-- Qatar central
-- South Africa West
-- Southeast Asia
-- Southeast Asia
-- Sweden South
-- Switzerland west
-- UAE Central
-- UK West
-- West Central US
-- West India
+- US West 2
+- West Europe
+- East US
