@@ -180,62 +180,6 @@ Create a container group profile and deploy the template using [az deployment gr
 ```
 
 
-### [Bicep](#tab/bicep)
-Create a container group profile and deploy the template using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
-
-```bicep
-param subscriptionId string
-param resourceGroupName string
-param profileName string
-param location string = 'West Central US'
-param containerImage string = 'mcr.microsoft.com/azuredocs/aci-helloworld:latest'
-param containerPort int = 8000
-param cpuCores int = 1
-param memoryInGb float = 1.5
-
-resource containerGroup 'Microsoft.ContainerInstance/containerGroups@2023-05-15-preview' = {
-  name: profileName
-  location: location
-  properties: {
-    containers: [
-      {
-        name: 'myContainerGroupProfile'
-        properties: {
-          image: containerImage
-          ports: [
-            {
-              port: containerPort
-            }
-          ]
-          resources: {
-            requests: {
-              cpu: cpuCores
-              memoryInGb: memoryInGb
-            }
-          }
-          command: []
-          environmentVariables: []
-        }
-      }
-    ]
-    osType: 'Linux'
-    imageRegistryCredentials: []
-    ipAddress: {
-      type: 'Public'
-      ports: [
-        {
-          protocol: 'TCP'
-          port: containerPort
-        }
-      ]
-    }
-    sku: 'Standard'
-  }
-}
-
-
-```
-
 ### [REST](#tab/rest)
 Create a container group profile using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update)
 
@@ -361,28 +305,6 @@ Create a standby pool and associate it with a container group profile. Create a 
 
 ```
 
-
-### [Bicep](#tab/bicep)
-Create a standby pool and associate it with a container group profile. Deploy the template using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
-
-```bicep
-param location string = resourceGroup().location
-param standbyPoolName string = 'myStandbyPool'
-param maxReadyCapacity int = 20
-param containerGroupProfile string = '/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile'
-
-resource standbyPool 'Microsoft.standbypool/standbyContainerGroupsPools@2024-03-01' = {
-  name: standbyPoolName
-  location: location
-  properties: {
-     elasticityProfile: {
-      maxReadyCapacity: maxReadyCapacity
-      refillPolicy: always
-    }
-    containerGroupProfile: containerGroupProfile
-  }
-}
-```
 
 ### [REST](#tab/rest)
 Create a standby pool and associate it with a container group profile using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update)
