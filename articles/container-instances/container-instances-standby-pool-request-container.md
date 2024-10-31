@@ -25,10 +25,10 @@ Before utilizing standby pools, complete the feature registration and configure 
 ## Request a container from the standby pool
 
 ### [CLI](#tab/cli)
-Request a container group from a standby pool using [az container update](/cli/azure/standby-container-group-pool).
+Request a container group from a standby pool using [az container create](/cli/azure/container).
 
 ```azurecli-interactive
-az container update \
+az container create \
   --resource-group myResourceGroup \
   --name myContainerGroup \
   --location "West Central US" \
@@ -41,10 +41,10 @@ az container update \
 
 ```
 ### [PowerShell](#tab/powershell)
-Request a container group from a standby pool using [Update-AzContainer](/powershell/module/az.standbypool/new-AzStandbyContainerGroupPool).
+Request a container group from a standby pool using [New-AzContainerGroup](/powershell/module/az.containerinstance/new-AzContainerGroup).
 
 ```azurepowershell-interactive
-Update-AzContainer `
+New-AzContainerGroup `
     -ResourceGroupName myResourceGroup `
     -Location "West Central US" `
     -ContainerGroupName myContainerGroup `
@@ -167,51 +167,8 @@ Request a container group from a standby pool using [az deployment group create]
 ```
 
 
-### [Bicep](#tab/bicep)
-Request a container group from a standby pool using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
-
-```bicep
-param subscriptionId string = {subscriptionId}
-param resourceGroup string = "myResourceGroup"
-param location string = "West Central US"
-param containerGroupName string = "myContainerGroup"
-param standbyPoolName string = "myStandbyPool" 
-param containerGroupProfileName string = "myContainerGroupProfile"
-param myContainerProfile string = "myContainerGroupProfile"
-param newKey string = {newKey}
-param newValue string = {newValue}
-param revisionNumber int = 1
-
-resource containerGroup 'Microsoft.ContainerInstance/containerGroups@2023-05-01' = {
-  name: containerGroupName
-  location: location
-  properties: {
-    standByPoolProfile: {
-      id: '/subscriptions/${subscriptionId}/resourceGroups/${resourceGroup}/providers/Microsoft.StandbyPool/standbyContainerGroupPools/${standbyPoolName}'
-    }
-    containerGroupProfile: {
-      id: '/subscriptions/${subscriptionId}/resourceGroups/${resourceGroup}/providers/Microsoft.ContainerInstance/containerGroupProfiles/${containerGroupProfileName}'
-      revision: revisionNumber
-    }
-    containers: [
-      {
-        name: myContainerProfile
-        properties: {
-          configMap: {
-            keyValuePairs: {
-              '${newKey}': '${newValue}'
-            }
-          }
-        }
-      }
-    ]
-  }
-}
-
-```
-
 ### [REST](#tab/rest)
-Request a container group from a standby pool using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update)
+Request a container group from a standby pool using [Create or Update](/rest/api/container-instances/contaner-groups/create-or-update)
 
 ```HTTP
 PUT

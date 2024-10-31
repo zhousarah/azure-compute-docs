@@ -101,28 +101,6 @@ Update an existing a standby pool. Update your template and deploy it using [az 
 ```
 
 
-### [Bicep](#tab/bicep)
-Update an existing standby pool. Update the template using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
-
-```bicep
-param location string = resourceGroup().location
-param standbyPoolName string = 'myStandbyPool'
-param maxReadyCapacity int = 20
-param containerGroupProfile string = '/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile'
-
-resource standbyPool 'Microsoft.standbypool/standbyContainerGroupsPools@2024-03-01' = {
-  name: standbyPoolName
-  location: location
-  properties: {
-     elasticityProfile: {
-      maxReadyCapacity: maxReadyCapacity
-      refillPolicy: always
-    }
-    containerGroupProfile: containerGroupProfile
-  }
-}
-```
-
 ### [REST](#tab/rest)
 Update an existing standby pool using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update).
 
