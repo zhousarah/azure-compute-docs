@@ -53,7 +53,7 @@ When you run Oracle Databases on multiple [availability zones](/azure/availabili
 
 When hosting your mission-critical applications in the cloud, it's important to design for high availability and disaster recovery.
 
-For Oracle Database Enterprise Edition, Oracle Data Guard is a useful feature for disaster recovery. You can set up a standby database instance in another Availability Zone or in a [paired Azure region](/azure/availability-zones/cross-region-replication-azure). The type of deployment is decisive of your RPO/ RTO and geo-redundancy requirements. Within a region it is recommended to leverage Data Gueard, while for a replication across regions it is recommended by Oracle to leverage Active Data Guard in async mode.
+For Oracle Database Enterprise Edition, Oracle Data Guard is a useful feature for disaster recovery. You can set up a standby database instance in another Availability Zone or in a [paired Azure region](/azure/availability-zones/cross-region-replication-azure). The type of deployment is decisive of your RPO/ RTO and geo-redundancy requirements. Within a region it is recommended to leverage Data Guard, while for a replication across regions it is recommended by Oracle to leverage Active Data Guard in async mode.
 In addition to that you can deploy Data Guard and Active Data Guard for automatic or manual failover and switchover for disaster recovery. This feature is also called [Fast-Start-Failover (FSFO)](https://docs.oracle.com/en/database/oracle/oracle-database/23/dgbkr/oracle-data-guard-broker-installation-requirements.html).
 
 For long distance data replication, it is recommended to leverage Far Sync. Far Sync is an Oracle Active Data Guard Feature. 
