@@ -46,7 +46,7 @@ For Windows 11 up to and including 23H2, Windows 10 up to and including  22H2, S
 The following links to previous versions are provided to support dependencies on older driver versions.
 
 For Windows Server 2016 1607, 1709:
-- [GRID 16.5 (538.46)](https://download.microsoft.com/download/a/3/1/a3186ac9-1f9f-4351-a8e7-b5b34ea4e4ea/538.46_grid_win10_win11_server2019_server2022_dch_64bit_international_azure_swl.exe) (.exe)  is the last supported driver from NVIDIA. The newer 15.x and above don't support Windows Server 2016. 
+- [GRID 14.1 (512.78)](https://download.microsoft.com/download/7/3/6/7361d1b9-08c8-4571-87aa-18cf671e71a0/512.78_grid_win10_win11_server2016_server2019_server2022_64bit_azure_swl.exe) (.exe) is the last supported driver from NVIDIA. The newer 15.x and above don't support Windows Server 2016. 
 
 For Windows Server 2012 R2: 
 - [GRID 13.1 (472.39)](https://download.microsoft.com/download/7/3/5/735a46dd-7d61-4852-8e34-28bce7f68727/472.39_grid_win8_win7_64bit_Azure-SWL.exe) (.exe)
