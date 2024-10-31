@@ -268,7 +268,7 @@ Patching your virtual machine operating system can be automated using [Azure Aut
 
 Review the following Oracle reference articles that apply to your scenario.
 
-- [Introduction to Oracle Data Guard](https://docs.oracle.com/en/database/oracle/oracle-database/18/sbydb/introduction-to-oracle-data-guard-concepts.html#GUID-5E73667D-4A56-445E-911F-1E99092DD8D7)
+- [Introduction to Oracle Data Guard](https://docs.oracle.com/en/database/oracle/oracle-database/23/sbydb/introduction-to-oracle-data-guard-concepts.html)
 - [Oracle Data Guard Broker Concepts](https://docs.oracle.com/en/database/oracle/oracle-database/12.2/dgbkr/oracle-data-guard-broker-concepts.html)
 - [Configuring Oracle GoldenGate for Active-Active High Availability](https://docs.oracle.com/goldengate/1212/gg-winux/GWUAD/wu_bidirectional.htm#GWUAD282)
 - [Oracle Sharding Overview](https://docs.oracle.com/en/database/oracle/oracle-database/19/shard/sharding-overview.html)
