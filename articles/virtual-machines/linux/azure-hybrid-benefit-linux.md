@@ -8,7 +8,7 @@ ms.service: azure-virtual-machines
 ms.subservice: billing
 ms.collection: linux
 ms.topic: conceptual
-ms.date: 06/27/2024
+ms.date: 10/28/2024
 ms.author: clausw
 ms.reviewer: mattmcinnes
 ms.custom: kr2b-contr-experiment, linux-related-content, devx-track-azurecli
@@ -37,6 +37,9 @@ You can use Azure Hybrid Benefit to switch back to pay-as-you-go billing at any 
 ## Which Linux virtual machines qualify for Azure Hybrid Benefit?
 
 Azure dedicated host instances and SQL hybrid benefits aren't eligible for Azure Hybrid Benefit if you already use Azure Hybrid Benefit with Linux virtual machines.
+
+> [!NOTE]
+> For Red Hat VMs, the Azure account needs to be part of the Red Hat Cloud Access. Register with Red Hat Cloud Access before you try to enable Azure Hybrid Benefit on your VMs.
 
 ## Enabling Azure Hybrid Benefit
 
