@@ -11,7 +11,7 @@ ms.date: 10/30/2024
 
 # Set up IP tags on a Service Fabric managed cluster (SFMC)
 
-An IP tag represents a group of IP address prefixes from a given Azure service. Microsoft manages the address prefixes encompassed by the IP tag and automatically updates the service tag as addresses change, minimizing the complexity of frequent updates to network security rules. You can use IP tags to define network access controls on [network security groups](/azure/virtual-network/network-security-groups-overview.md#security-rules), [Azure Firewall](/azure/firewall/service-tags.md), and user-defined routes. By adding IP tags, an SFMC cluster has an added layer of security. 
+An IP tag represents a group of IP address prefixes from a given Azure service. Microsoft manages the address prefixes encompassed by the IP tag and automatically updates the service tag as addresses change, minimizing the complexity of frequent updates to network security rules. You can use IP tags to define network access controls on [network security groups](/azure/virtual-network/network-security-groups-overview#security-rules), [Azure Firewall](/azure/firewall/service-tags), and user-defined routes. By adding IP tags, an SFMC cluster has an added layer of security. 
  
 > [!NOTE]
 > The `IPTag` property only applies to the public IPv4 and IPv6 addresses of the default cluster load balancer.
@@ -22,7 +22,7 @@ You shouldn't implement IP tags on existing clusters.
 
 ## Prerequisites
 
-Ensure that you [provisioned IPTags beforehand](/powershell/module/az.network/new-azpublicipaddress?view=azps-12.4.0#example-3-create-a-new-public-ip-address-with-iptag).
+Ensure that you [provisioned IPTags beforehand](/powershell/module/az.network/new-azpublicipaddress#example-3-create-a-new-public-ip-address-with-iptag).
 
 ## Modify your ARM template
 
