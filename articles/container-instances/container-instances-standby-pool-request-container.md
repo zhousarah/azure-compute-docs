@@ -176,7 +176,7 @@ Request a container group from a standby pool using [az deployment group create]
 
 
 ### [REST](#tab/rest)
-Request a container group from a standby pool using [Create or Update](/rest/api/container-instances/contaner-groups/create-or-update)
+Request a container group from a standby pool using [Create or Update](/rest/api/container-instances/container-groups/create-or-update)
 
 ```HTTP
 PUT
