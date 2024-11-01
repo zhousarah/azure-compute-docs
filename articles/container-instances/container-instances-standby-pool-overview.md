@@ -260,39 +260,6 @@ Request Body
 }
 ```
 
-### Request a container from a specific availability zone
-
-```HTTP
-PUT https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroups/myContainerGroup?api-version=2023-05-01 
-
-Request Body
-{
-   "location": "{location}",
-   "Zones": ["1],
-   "properties": {
-       "standByPoolProfile":{
-               "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool"
-           },
-           "containerGroupProfile": {
-               "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile",
-               "revision": {revisionNumber}
-           },
-           "containers": [
-               {
-                   "name": "{myContainerGroupProfile}",
-                   "properties": {
-                       "configMap": {
-                           "keyValuePairs": {
-                               "{newKey}": "{newValue}"
-                           }
-                       }
-                   }
-               }
-           ]
-   }
-}
-```
-
 ## Next steps
 
 [Create a standby pool for Azure Container Instances](container-instances-standby-pool-create.md)
