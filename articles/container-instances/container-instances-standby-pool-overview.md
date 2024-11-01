@@ -268,6 +268,7 @@ PUT https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/m
 Request Body
 {
    "location": "{location}",
+   "Zones": ["1],
    "properties": {
        "standByPoolProfile":{
                "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool"
