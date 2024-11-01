@@ -22,7 +22,7 @@ A config map can be included in the container properties or in a container group
 ### Create a container group profile with config map settings 
 
 ### [CLI](#tab/cli)
-Create a container group profile using [az container-profile create](/cli/azure/standby-container-group-pool) and specify the config map details.
+Create a container group profile using [az container-group-profile create](/cli/azure/standby-container-group-pool) and specify the config map details.
 
 ```azurecli-interactive
 az container-group-profile create \
