@@ -21,6 +21,43 @@ Standby Pools for Azure Container Instances enable customers to create a pool of
 ## Limitations
 Standby pools for Azure Container Instances is not available in the Azure portal. 
 
+## Prerequisites
+
+### Feature Registration 
+Register the standby pool resource provider and the standby pool preview feature with your subscription using Azure Cloud Shell. Registration can take up to 30 minutes to successfully show as registered. You can rerun the below commands to determine when the feature is successfully registered. 
+
+```azurepowershell-interactive
+Register-AzResourceProvider -ProviderNameSpace Microsoft.ContainerInstance
+
+Register-AzResourceProvider -ProviderNamespace Microsoft.StandbyPool
+
+Register-AzProviderFeature -FeatureName StandbyContainerGroupPoolPreview -ProviderNamespace Microsoft.StandbyPool
+```
+
+### Role-based Access Control Permissions
+To allow standby pools to create container groups, you need to assign the appropriate permissions to the standby pool resource provider. 
+ 
+1) In the Azure portal, navigate to your subscriptions.
+2) Select the subscription you want to adjust permissions.
+3) Select **Access Control (IAM)**.
+4) Select **Add** and **Add role assignment**.
+5) Under the **Role** tab, search for **Standby Container Group Pool Contributor** and select it.
+6) Move to the **Members** Tab.
+7) Select **+ Select members**.
+8) Search for **Standby Pool Resource Provider** and select it.
+9) Move to the **Review + assign** tab.
+10) Apply the changes. 
+11) Under **Access Control (IAM)** again, select **Add** and **Add role assignment**.
+12) Under the **Role** tab, search for **Network Contributor** and select it. 
+13) Move to the **Members** Tab.
+14) Select **+ Select members**.
+15) Search for **Standby Pool Resource Provider** and select it.
+16) Move to the **Review + assign** tab.
+17) Select the permissions box to select all the permissions available.
+
+
+For more information on assigning roles, see [assign Azure roles using the Azure portal](/azure/role-based-access-control/quickstart-assign-role-user-portal).
+
 ## Scaling
 
 When you require a new container group, you can immediately pull one from the standby pool that is provisioned and running. 
@@ -223,7 +260,42 @@ Standby pools for Azure Container Instances support integration with Managed Ide
    }
 }
 ```
+## Availability zones
+Standby pools for Azure Container instances supports creating and requesting containers across availability zones. Creating a zonal standby pool is currently only available using REST APIs in version 2024-08-01. 
 
+### Create a zonal standby pool
+
+```HTTP
+PUT https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool?api-version=2024-08-01
+ 
+Request Body
+{
+    "properties": {
+        "elasticityProfile": {
+            "maxReadyCapacity": 20,
+            "refillPolicy": "always"
+        },
+        "containerGroupProperties": {
+            "containerGroupProfile": {
+                "id": "/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile",
+                "revision": 1
+          },
+          "subnetIds": [
+            {
+              "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/myVNET/subnets/mySubnet"
+            }
+          ]
+        },
+        "zones": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+
+    "location": "West Central US"
+}
+```
 
 ## Next steps
 
