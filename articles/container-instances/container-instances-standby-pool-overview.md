@@ -223,7 +223,75 @@ Standby pools for Azure Container Instances support integration with Managed Ide
    }
 }
 ```
+## Availability zones
+Standby pools for Azure Container instances supports creating and requesting containers across availability zones. This functionality is currently only available using REST APIs in version 2024-08-01. 
 
+### Create a zonal standby pool
+
+```HTTP
+https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool?api-version=2024-08-01
+ 
+Request Body
+{
+    "properties": {
+        "elasticityProfile": {
+            "maxReadyCapacity": 20,
+            "refillPolicy": "always"
+        },
+        "containerGroupProperties": {
+            "containerGroupProfile": {
+                "id": "/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile",
+                "revision": 1
+          },
+          "subnetIds": [
+            {
+              "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/myVNET/subnets/mySubnet"
+            }
+          ]
+        },
+        "zones": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+
+    "location": "West Central US"
+}
+```
+
+### Request a container from a specific availability zone
+
+```HTTP
+PUT
+https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroups/myContainerGroup?api-version=2023-05-01 
+
+Request Body
+{
+   "location": "{location}",
+   "properties": {
+       "standByPoolProfile":{
+               "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool"
+           },
+           "containerGroupProfile": {
+               "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile",
+               "revision": {revisionNumber}
+           },
+           "containers": [
+               {
+                   "name": "{myContainerGroupProfile}",
+                   "properties": {
+                       "configMap": {
+                           "keyValuePairs": {
+                               "{newKey}": "{newValue}"
+                           }
+                       }
+                   }
+               }
+           ]
+   }
+}
+```
 
 ## Next steps
 
