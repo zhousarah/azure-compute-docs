@@ -5,7 +5,7 @@ author: mimckitt
 ms.author: mimckitt
 ms.service: azure-container-instances
 ms.topic: how-to
-ms.date: 10/29/2024
+ms.date: 11/1/2024
 ms.reviewer: tomvcassidy
 ---
 
@@ -19,18 +19,17 @@ This article steps through requesting a container group from a standby pool for 
 
 ## Prerequisites
 
-Before utilizing standby pools, complete the feature registration and configure role based access controls mentioned in the [create a standby pool](container-instances-standby-pool-create.md) article. 
+Before utilizing standby pools, complete the feature registration and configure role based access controls listed in the [Standby Pools for Azure Container Instances](container-instances-standby-pool-overview.md#prerequisites) overview page. 
 
 
 ## Request a container from the standby pool
 
+> [!NOTE]
+> Managed identity and config map details are optional paramters when requesting a container from the standby pool. 
 
 
 ### [CLI](#tab/cli)
 Request a container group from a standby pool using [az container create](/cli/azure/container).
-
-> [!NOTE]
-> If apply a managed identity during the container request, include the `--assign-identity` parameter. 
 
 ```azurecli-interactive
 az container create \
@@ -41,15 +40,13 @@ az container create \
   --container-group-profile "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile" \
   --revision 1 \
   --container-name myContainerProfile \
-  --config-map $newKey=$newValue
+  --config-map $newKey=$newValue \   
+  --assigned-identity $managedIdentity
 
 
 ```
 ### [PowerShell](#tab/powershell)
 Request a container group from a standby pool using [New-AzContainerGroup](/powershell/module/az.containerinstance/new-AzContainerGroup).
-
-> [!NOTE]
-> If apply a managed identity during the container request, include the `-IdentityType` parameter. 
 
 ```azurepowershell-interactive
 New-AzContainerGroup `
@@ -60,7 +57,9 @@ New-AzContainerGroup `
     -ContainerGroupProfileId "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile" `
     -ContainerGroupProfileRevision 1 `
     -ContainerName myContainerProfile `
-    -ConfigMap @{ $newKey = $newValue }
+    -ConfigMap @{ $newKey = $newValue } `
+    -Identity Type "SystemAssigned, UserAssigned"
+    -IdentityUserAssignedIdentity @{"/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}" = @{}}
 
 ```
 
@@ -193,6 +192,11 @@ Request Body
                "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile",
                "revision": {revisionNumber}
            },
+          "identity": {
+            "type": "UserAssigned",
+            "userAssignedIdentities": {
+              "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identity}": {}
+            },
            "containers": [
                {
                    "name": "{myContainerGroupProfile}",

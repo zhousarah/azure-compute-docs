@@ -5,7 +5,7 @@ author: mimckitt
 ms.author: mimckitt
 ms.service: azure-container-instances
 ms.topic: how-to
-ms.date: 10/29/2024
+ms.date: 11/1/2024
 ms.reviewer: tomvcassidy
 ---
 
@@ -20,7 +20,7 @@ This article steps through updating or deleting a standby pool for Azure Contain
 
 ## Prerequisites
 
-Before utilizing standby pools, complete the feature registration and configure role based access controls mentioned in the [create a standby pool](container-instances-standby-pool-create.md) article. 
+Before utilizing standby pools, complete the feature registration and configure role based access controls listed in the [Standby Pools for Azure Container Instances](container-instances-standby-pool-overview.md#prerequisites) overview page. 
 
 
 ## Update a standby pool
