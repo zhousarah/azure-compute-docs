@@ -5,7 +5,7 @@ author: mimckitt
 ms.author: mimckitt
 ms.service: azure-container-instances
 ms.topic: how-to
-ms.date: 10/30/2024
+ms.date: 11/1/2024
 ms.reviewer: tomvcassidy
 ---
 # Config maps for Azure Container Instances
@@ -22,10 +22,10 @@ A config map can be included in the container properties or in a container group
 ### Create a container group profile with config map settings 
 
 ### [CLI](#tab/cli)
-Create a container group profile using [az container-profile create](/cli/azure/standby-container-group-pool) and specify the config map details.
+Create a container group profile using [az container-group-profile create](/cli/azure/standby-container-group-pool) and specify the config map details.
 
 ```azurecli-interactive
-az container-profile create \
+az container-group-profile create \
   --resource-group myResourceGroup \
   --name myContainerGroupProfile \
   --image "mcr.microsoft.com/azuredocs/aci-helloworld:latest" \
@@ -206,10 +206,10 @@ Request Body
 Applying the config map settings stored in a container group profile requires updating the container and specifying the container group profile that should be associated with the update. 
 
 ### [CLI](#tab/cli)
-Apply the config map settings stored in the container group profile using [az container update](/cli/azure/container).
+Apply the config map settings stored in the container group profile using [az container create](/cli/azure/container).
 
 ```azurecli-interactive
-az container update \
+az container create \
   --resource-group myResourceGroup \
   --name myContainerGroup \
   --location "West Central US" \
@@ -220,10 +220,10 @@ az container update \
 
 ```
 ### [PowerShell](#tab/powershell)
-Apply the config map settings stored in the container group profile using [Update-AzContainer](/powershell/module/az.containerinstance/update-azcontainergroup).
+Apply the config map settings stored in the container group profile using [New-AzContainerGroup](/powershell/module/az.containerinstance/update-azcontainergroup).
 
 ```azurepowershell-interactive
-Update-AzContainer `
+New-AzContainerGroup `
     -ResourceGroupName myResourceGroup `
     -Location "West Central US" `
     -ContainerGroupName myContainerGroup `
@@ -365,24 +365,16 @@ Request Body
 ---
 
 
-Once the update has been applied to an existing container and you will see the values mounted in the container without requiring a restart.
-
-```
-/mnt/configmap/<containername>/key1 with value as “value1”  
-
-/mnt/configmap/<containername>/key2 with value as “value2”  
-```
-
 ### Apply config map settings without container group profile
 
 Config map settings can also be applied directly to the instance by specifying the details in the update commands. 
 
 
 ### [CLI](#tab/cli)
-Apply the config map settings using [az container update](/cli/azure/container).
+Apply the config map settings using [az container create](/cli/azure/container).
 
 ```azurecli-interactive
-az container update \
+az container create \
   --resource-group myResourceGroup \
   --name myContainerGroup \
   --location "West Central US" \
@@ -391,10 +383,10 @@ az container update \
 
 ```
 ### [PowerShell](#tab/powershell)
-Apply the config map settings using [Update-AzContainer](/powershell/module/az.containerinstance/update-azcontainergroup).
+Apply the config map settings using [New-AzContainerGrouop](/powershell/module/az.containerinstance/new-azcontainergroup).
 
 ```azurepowershell-interactive
-Update-AzContainer `
+New-AzContainerGroup `
     -ResourceGroupName myResourceGroup `
     -Location "West Central US" `
     -ContainerGroupName myContainerGroup `
