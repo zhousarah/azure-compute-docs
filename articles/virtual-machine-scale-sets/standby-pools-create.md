@@ -76,11 +76,11 @@ Create a standby pool and associate it with an existing scale set. Create a temp
         },
         "maxReadyCapacity" : {
            "type": "int",
-           "defaultValue": 10
+           "defaultValue": 20
         },
         "minReadyCapacity" : {
            "type": "int",
-           "defaultValue": 50
+           "defaultValue": 5
         },
         "virtualMachineState" : {
            "type": "string",
