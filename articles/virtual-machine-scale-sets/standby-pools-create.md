@@ -13,6 +13,21 @@ ms.reviewer: ju-shim
 # Create a standby pool
 This article steps through creating a standby pool for Virtual Machine Scale Sets with Flexible Orchestration.
 
+## Prerequisites
+
+To allow standby pools to create and manage virtual machines in your subscription, assign the appropriate permissions to the standby pool resource provider. 
+
+1) In the Azure portal, navigate to your subscriptions.
+2) Select the subscription you want to adjust permissions.
+3) Select **Access Control (IAM)**.
+4) Select **Add** and **Add role assignment**.
+5) Under the **Role** tab, search for **Standby Virtual Machine Admin** and select it.
+6) Move to the **Members** Tab.
+7) Select **+ Select members**.
+8) Search for **Standby Pool Resource Provider** and select it.
+9) Move to the **Review + assign** tab.
+10) Apply the changes. 
+
 ## Create a standby pool
 
 ### [Portal](#tab/portal)
