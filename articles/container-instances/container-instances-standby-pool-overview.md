@@ -297,4 +297,4 @@ Request Body
 
 ## Next steps
 
-[Create a standby pool for Azure Container Instances](container-instances-standby-pool-create.md)
+[Create a standby pool for Azure Container Instances](container-instances-standby-pool-create.md).

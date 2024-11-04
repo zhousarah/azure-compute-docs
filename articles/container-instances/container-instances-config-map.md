@@ -36,7 +36,7 @@ az container-group-profile create \
   --protocol TCP \
   --ip-address Public \
   --os-type Linux \
-  --location "West Central US"
+  --location "West Central US" \
   --config-map $newKey=$newValue
 
 ```
@@ -55,7 +55,7 @@ New-AzContainerGroupProfile `
     -Sku Standard `
     -Ports 8000 `
     -Protocol TCP `
-    -IpAddressType Public
+    -IpAddressType Public `
     -ConfigMap @{ $newKey = $newValue }
 
 ```
@@ -71,7 +71,7 @@ Create a container group profile with the desired config map settings and deploy
   "resources": [
     {
       "type": "Microsoft.ContainerInstance/containerGroups",
-      "apiVersion": "2023-05-15-preview",
+      "apiVersion": "2023-05-15",
       "name": "[parameters('profileName')]",
       "location": "[parameters('location')]",
       "properties": {
@@ -146,10 +146,10 @@ Create a container group profile with the desired config map settings and deploy
 
 
 ### [REST](#tab/rest)
-Create a container group profile with the desired config map settings using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update)
+Create a container group profile with the desired config map settings using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update).
 
 ```HTTP
-https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile?api-version=2023-05-15-preview   
+https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile?api-version=2023-05-15
 
 Request Body
 {
@@ -220,7 +220,7 @@ az container create \
 
 ```
 ### [PowerShell](#tab/powershell)
-Apply the config map settings stored in the container group profile using [New-AzContainerGroup](/powershell/module/az.containerinstance/update-azcontainergroup).
+Apply the config map settings stored in the container group profile using [New-AzContainerGroup](/powershell/module/az.containerinstance/new-azcontainergroup).
 
 ```azurepowershell-interactive
 New-AzContainerGroup `
@@ -337,7 +337,7 @@ Apply the config map settings stored in the container group profile using [az de
 
 
 ### [REST](#tab/rest)
-Apply the config map settings stored in the container group profile using [Create or Update](/rest/api/container-instances/container-groups/create-or-update)
+Apply the config map settings stored in the container group profile using [Create or Update](/rest/api/container-instances/container-groups/create-or-update).
 
 ```HTTP
 PUT
@@ -481,7 +481,7 @@ Apply the config map settings using [az deployment group create](/cli/azure/depl
 
 
 ### [REST](#tab/rest)
-Apply the config map settings using [Create or Update](/rest/api/container-instances/container-groups/create-or-update)
+Apply the config map settings using [Create or Update](/rest/api/container-instances/container-groups/create-or-update).
 
 ```HTTP
 PUT

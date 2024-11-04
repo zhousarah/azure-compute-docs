@@ -76,7 +76,7 @@ Create a container group profile and save the template file. Deploy the template
   "resources": [
     {
       "type": "Microsoft.ContainerInstance/containerGroups",
-      "apiVersion": "2023-05-15-preview",
+      "apiVersion": "2023-05-15",
       "name": "[parameters('profileName')]",
       "location": "[parameters('location')]",
       "properties": {
@@ -146,10 +146,10 @@ Create a container group profile and save the template file. Deploy the template
 
 
 ### [REST](#tab/rest)
-Create a container group profile using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update)
+Create a container group profile using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update).
 
 ```HTTP
-https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile?api-version=2023-05-15-preview   
+https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile?api-version=2023-05-15   
 
 Request Body
 {
@@ -272,7 +272,7 @@ Create a standby pool and associate it with a container group profile. Create a 
 
 
 ### [REST](#tab/rest)
-Create a standby pool and associate it with a container group profile using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update)
+Create a standby pool and associate it with a container group profile using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update).
 
 ```HTTP
 https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool?api-version=2023-03-01 
@@ -299,4 +299,4 @@ Request Body
 
 ## Next steps
 
-[Request a container from the standby pool](container-instances-standby-pool-request-container.md)
+[Request a container from the standby pool](container-instances-standby-pool-request-container.md).

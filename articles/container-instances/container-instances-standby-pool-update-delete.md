@@ -159,4 +159,4 @@ DELETE https://management.azure.com/subscriptions/{subscriptionId}/resourceGroup
 
 ## Next steps
 
-[Get standby pool and container details using the standby pool runtime view APIs](container-instances-standby-pool-get-details.md)
+[Get standby pool and container details using the standby pool runtime view APIs](container-instances-standby-pool-get-details.md).
