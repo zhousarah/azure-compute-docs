@@ -117,4 +117,4 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/m
 ---
 
 ## Next steps
-Learn more about [standby pools for Azure Container Instances](container-instances-standby-pool-overview.md)
+Learn more about [standby pools for Azure Container Instances](container-instances-standby-pool-overview.md).

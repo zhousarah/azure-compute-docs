@@ -58,7 +58,7 @@ New-AzContainerGroup `
     -ContainerGroupProfileRevision 1 `
     -ContainerName myContainerProfile `
     -ConfigMap @{ $newKey = $newValue } `
-    -Identity Type "SystemAssigned, UserAssigned"
+    -Identity Type "SystemAssigned, UserAssigned" `
     -IdentityUserAssignedIdentity @{"/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}" = @{}}
 
 ```
@@ -175,7 +175,7 @@ Request a container group from a standby pool using [az deployment group create]
 
 
 ### [REST](#tab/rest)
-Request a container group from a standby pool using [Create or Update](/rest/api/container-instances/container-groups/create-or-update)
+Request a container group from a standby pool using [Create or Update](/rest/api/container-instances/container-groups/create-or-update).
 
 ```HTTP
 PUT
@@ -219,5 +219,5 @@ Request Body
 
 ## Next steps
 
-- [Get standby pool and container details using the standby pool runtime view APIs](container-instances-standby-pool-get-details.md)
-- [Update or delete your standby pool for Azure Container Instances](container-instances-standby-pool-update-delete.md)
+- [Get standby pool and container details using the standby pool runtime view APIs](container-instances-standby-pool-get-details.md).
+- [Update or delete your standby pool for Azure Container Instances](container-instances-standby-pool-update-delete.md).
