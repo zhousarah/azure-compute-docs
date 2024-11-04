@@ -17,7 +17,7 @@ This article steps through creating a standby pool for Virtual Machine Scale Set
 
 ### [Portal](#tab/portal)
 
-1) Navigate to your Virtual Machine Scale Set
+1) Navigate to your Virtual Machine Scale Set.
 2) Under **Availability + scale** select **Standby pool**. 
 3) Select **Manage pool**.
 4) Provide a name for your pool, provisioning state and maximum and minimum ready capacity.
@@ -142,7 +142,7 @@ resource standbyPool 'Microsoft.standbypool/standbyvirtualmachinepools@2024-03-0
 ```
 
 ### [REST](#tab/rest)
-Create a standby pool and associate it with an existing scale set using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update)
+Create a standby pool and associate it with an existing scale set using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update).
 
 ```HTTP
 PUT https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyVirtualMachinePools/myStandbyPool?api-version=2024-03-01
