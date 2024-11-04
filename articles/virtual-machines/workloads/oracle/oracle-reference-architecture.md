@@ -106,6 +106,9 @@ The following diagram shows a Oracle Data Guard installation without Far Sync wi
 
 The Oracle databases are placed in multiple availability zones for high availability. Each zone is made up of one or more data centers equipped with independent power, cooling, and networking. To ensure resiliency, a minimum of three separate zones are set up in all enabled regions. The physical separation of availability zones within a region protects the data from data center failures. Additionally, two FSFO observers are set up across two availability zones to initiate the fail- or switchover to the secondary database in case of failure.
 
+> [!NOTE]
+> When you plan for a symmetrical Data Guard deployment, please note that you will need one more observer in availability zone three.
+
 Additionally, we highly recommend to deploy the Oracle Enterprise Manager to keep having an overview of the database layer.
 Azure Monitor is recommended to be deployed with the following metrics:
 Monitor the disks:
