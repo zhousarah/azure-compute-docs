@@ -22,24 +22,11 @@ Using a standby pool with deallocated instances doesn't guarantee capacity. When
 ### How long can my standby pool name be? 
 A standby pool can be anywhere between 3 and 24 characters. For more information, see [Resource naming restrictions for Azure resources](/azure/azure-resource-manager/management/resource-name-rules)
 
-### Can I use standby pools for Virtual Machine Scale Sets if I'm already using Azure autoscale? 
-Attaching a standby pool to a Virtual Machine Scale Set with Azure autoscale enabled isn't supported.  
-
 ### How many virtual machines can my standby pool for Virtual Machine Scale Sets have? 
 The maximum number of virtual machines between a scale set and a standby pool is 1,000. 
 
 ### Can my standby pool span multiple Virtual Machine Scale Sets? 
 A standby pool resource can't span multiple scale sets. Each scale set has its own standby pool attached to it. A standby pool inherits the unique properties of the scale set such as networking, virtual machine profile, extensions, and more. 
-
-### How is the configuration of my virtual machines in the standby pool for Virtual Machine Scale Sets determined? 
-Virtual machines in the standby pool inherit the same virtual machine profile as the virtual machines in the scale set. Some examples are:  
-- Virtual machine size
-- Storage Profile
-- Image Reference
-- OS Profile
-- Network Profile
-- Extensions Profile
-- Zones
 
 
 ### Can a standby pool resource be moved?

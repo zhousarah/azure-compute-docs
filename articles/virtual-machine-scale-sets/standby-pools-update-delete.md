@@ -31,22 +31,22 @@ Update an existing standby pool using [az standby-vm-pool update](/cli/azure/sta
 
 ```azurecli-interactive
 az standby-vm-pool update \
-   --resource-group myResourceGroup 
+   --resource-group myResourceGroup \
    --name myStandbyPool \
    --max-ready-capacity 20 \
    --min-ready-capacity 5 \
-   --vm-state "Deallocated" \
+   --vm-state "Deallocated" 
 ```
 ### [PowerShell](#tab/powershell-2)
 Update an existing standby pool using [Update-AzStandbyVMPool](/powershell/module/az.standbypool/update-azstandbyvmpool).
 
 ```azurepowershell-interactive
 Update-AzStandbyVMPool `
-   -ResourceGroup myResourceGroup 
+   -ResourceGroup myResourceGroup `
    -Name myStandbyPool `
    -MaxReadyCapacity 20 `
    -MinReadyCapacity 5 `
-   -VMState "Deallocated" `
+   -VMState "Deallocated" 
 ```
 
 ### [ARM template](#tab/template)
