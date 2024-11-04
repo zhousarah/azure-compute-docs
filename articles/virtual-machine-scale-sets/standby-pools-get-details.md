@@ -209,7 +209,9 @@ InstanceCountSummary         : {{
             "state": "Deleting",
             "count": 0
         }
-        }}
+        ]
+     }
+  }
 Name                         : latest
 ProvisioningState            : Succeeded
 ResourceGroupName            : myResourceGroup
@@ -368,7 +370,7 @@ az vm get-instance-view --resource-group myResourceGroup --name myVM
 ### [PowerShell](#tab/powershell)
 
 ```azurepowershell
-get-azVM -resourceGroupName myResourceGroup -name myVM -status
+Get-AzVM -ResourceGroupName myResourceGroup -Name myVM -Status
 
 
 ResourceGroupName : myResourceGroup
