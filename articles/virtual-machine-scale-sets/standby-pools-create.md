@@ -119,7 +119,7 @@ Create a standby pool and associate it with an existing scale set. Deploy the te
 param location string = resourceGroup().location
 param standbyPoolName string = 'myStandbyPool'
 param maxReadyCapacity int = 20
-param minReadyCapacity int = 20
+param minReadyCapacity int = 5
 @allowed([
   'Running'
   'Deallocated'
@@ -127,7 +127,7 @@ param minReadyCapacity int = 20
 param vmState string = 'Deallocated'
 param virtualMachineScaleSetId string = '/subscriptions/{subscriptionID}/resourceGroups/StandbyPools/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet}'
 
-resource standbyPool 'Microsoft.standbypool/standbyvirtualmachinepools@2023-12-01-preview' = {
+resource standbyPool 'Microsoft.standbypool/standbyvirtualmachinepools@2024-03-01' = {
   name: standbyPoolName
   location: location
   properties: {

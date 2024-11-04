@@ -45,7 +45,7 @@ Update-AzStandbyVMPool `
    -ResourceGroup myResourceGroup 
    -Name myStandbyPool `
    -MaxReadyCapacity 20 `
-   -MinReadyCapacity 20 `
+   -MinReadyCapacity 5 `
    -VMState "Deallocated" `
 ```
 
@@ -190,7 +190,7 @@ Remove-AzStandbyVMPool `
 Delete an existing standby pool using [Delete](/rest/api/standbypool/standby-virtual-machine-pools/delete).
 
 ```HTTP
-DELETE https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyVirtualMachinePools/myStandbyPool?api-version=2023-12-01-preview
+DELETE https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyVirtualMachinePools/myStandbyPool?api-version=2024-03-01
 ```
 
 ---
