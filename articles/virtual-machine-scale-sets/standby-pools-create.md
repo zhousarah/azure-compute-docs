@@ -35,7 +35,7 @@ Create a standby pool and associate it with an existing scale set using [az stan
 
 ```azurecli-interactive
 az standby-vm-pool create \
-   --resource-group myResourceGroup 
+   --resource-group myResourceGroup \
    --location eastus \
    --name myStandbyPool \
    --max-ready-capacity 20 \
