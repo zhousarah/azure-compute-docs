@@ -1432,8 +1432,8 @@
     - name: Attach VMs to a scale set
       href: /azure/virtual-machine-scale-sets/virtual-machine-scale-sets-attach-detach-vm
       maintainContext: true
-  - name: Standby pools
-    href: /azure/virtual-machine-scale-sets/standby-pools-overview.md
+    - name: Standby pools
+      href: /azure/virtual-machine-scale-sets/standby-pools-overview.md
   - name: Proximity Placement Groups
     items:
     - name: Overview
