@@ -46,7 +46,7 @@ There are 3 bicep files that needs to be created. We recommend to keep all the 3
 
 ```powershell
 
-az deployment group create --name kachavan002 --template-file .\ds.bicep --resource-group  sethurams-test2 --parameters '{}' --debug --subscription eee2cef4-bc47-4278-b4f8-cfc65f25dfd8
+az deployment group create --name samplebicep --template-file .\ds.bicep --resource-group  testrg --parameters '{}' --debug --subscription abc4def8-er57-2345-f4t8-dff65f67afr3
 
 ```
 
@@ -63,7 +63,7 @@ module mrpmc1 './maintenanceconfig.bicep' = {
 
   params: {
 
-   configName: 'sethurams-test-MaintConfig-Bicep4'
+   configName: 'test-MaintConfig-Bicep'
 
   }
 
@@ -77,7 +77,7 @@ module ca1 './config_assignment.bicep' = {
 
   params : {
 
-  configId: '${resourceGroup().id}/providers/microsoft.maintenance/maintenanceConfigurations/sethurams-test-MaintConfig-Bicep4'
+  configId: '${resourceGroup().id}/providers/microsoft.maintenance/maintenanceConfigurations/test-MaintConfig-Bicep'
 
   }
 
@@ -103,7 +103,7 @@ targetScope = 'resourceGroup'
 
 resource MaintConfig4 'Microsoft.Maintenance/maintenanceConfigurations@2023-04-01' = {
 
-  name: configName //'sethurams-test-MaintConfig-Bicep4'
+  name: configName //'test-MaintConfig-Bicep'
 
   location: location
 
@@ -257,9 +257,9 @@ resource symbolicname 'Microsoft.Maintenance/configurationAssignments@2023-04-01
 
 ```bicep
 {
-  "id": "/subscriptions/eee2cef4-bc47-4278-b4f8-cfc65f25dfd8/resourceGroups/sethurams-test2/providers/Microsoft.Resources/deployments/kachavan002",
+  "id": "/subscriptions/eee2cef4-bc47-4278-b4f8-cfc65f25dfd8/resourceGroups/testrg/providers/Microsoft.Resources/deployments/samplebicep",
   "location": null,
-  "name": "kachavan002",
+  "name": "samplebicep",
   "properties": {
     "correlationId": "b125fc6f-f771-46d7-9b88-b31e0da959f5",
     "debugSetting": null,
@@ -267,8 +267,8 @@ resource symbolicname 'Microsoft.Maintenance/configurationAssignments@2023-04-01
       {
         "dependsOn": [
           {
-            "id": "/subscriptions/eee2cef4-bc47-4278-b4f8-cfc65f25dfd8/resourceGroups/sethurams-test2/providers/Microsoft.Resources/deployments/mrpmc",
-            "resourceGroup": "sethurams-test2",
+            "id": "/subscriptions/eee2cef4-bc47-4278-b4f8-cfc65f25dfd8/resourceGroups/testrg/providers/Microsoft.Resources/deployments/mrpmc",
+            "resourceGroup": "testrg",
             "resourceName": "mrpmc",
             "resourceType": "Microsoft.Resources/deployments"
           }
@@ -287,8 +287,8 @@ resource symbolicname 'Microsoft.Maintenance/configurationAssignments@2023-04-01
         "id": "/subscriptions/eee2cef4-bc47-4278-b4f8-cfc65f25dfd8/providers/Microsoft.Maintenance/configurationAssignments/myconfig"
       },
       {
-        "id": "/subscriptions/eee2cef4-bc47-4278-b4f8-cfc65f25dfd8/resourceGroups/sethurams-test2/providers/Microsoft.Maintenance/maintenanceConfigurations/sethurams-test-MaintConfig-Bicep4",
-        "resourceGroup": "sethurams-test2"
+        "id": "/subscriptions/eee2cef4-bc47-4278-b4f8-cfc65f25dfd8/resourceGroups/testrg/providers/Microsoft.Maintenance/maintenanceConfigurations/test-MaintConfig-Bicep",
+        "resourceGroup": "testrg"
       }
     ],
     "outputs": null,
@@ -326,7 +326,7 @@ resource symbolicname 'Microsoft.Maintenance/configurationAssignments@2023-04-01
     "timestamp": "2024-02-23T12:22:14.801966+00:00",
     "validatedResources": null
   },
-  "resourceGroup": "sethurams-test2",
+  "resourceGroup": "testrg",
   "tags": null,
   "type": "Microsoft.Resources/deployments"
 }
