@@ -33,6 +33,11 @@ To allow standby pools to create and manage virtual machines in your subscriptio
 You can update the state of the instances and the max ready capacity of your standby pool at any time. The standby pool name can only be set during standby pool creation. 
 
 ### [Portal](#tab/portal-2)
+
+> [!NOTE]
+> To create and manage standby pools in the Azure portal, register the following feature flag:
+> `Register-AzProviderFeature -FeatureName StandbyVMPoolPreview -ProviderNamespace Microsoft.StandbyPool`
+
 1) Navigate to Virtual Machine Scale set the standby pool is associated with. 
 2) Under **Availability + scale** select **Standby pool**. 
 3) Select **Manage pool**. 
@@ -174,6 +179,10 @@ PUT https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/m
 ## Delete a standby pool
 
 ### [Portal](#tab/portal-3)
+
+> [!NOTE]
+> To create and manage standby pools in the Azure portal, register the following feature flag:
+> `Register-AzProviderFeature -FeatureName StandbyVMPoolPreview -ProviderNamespace Microsoft.StandbyPool`
 
 1) Navigate to Virtual Machine Scale set the standby pool is associated with. 
 2) Under **Availability + scale** select **Standby pool**. 

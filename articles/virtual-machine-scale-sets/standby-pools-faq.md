@@ -40,8 +40,6 @@ Ensure that the virtual machines in your standby pool are in the desired state p
 
 ### I tried to create a standby pool but I got an error regarding not having the correct permissions. 
 
-## Prerequisites
-
 To allow standby pools to create and manage virtual machines in your subscription, assign the appropriate permissions to the standby pool resource provider. 
 
 1) In the Azure portal, navigate to your subscriptions.
@@ -55,6 +53,10 @@ To allow standby pools to create and manage virtual machines in your subscriptio
 9) Move to the **Review + assign** tab.
 10) Apply the changes. 
 
+### I do not see the option to create and manage standby pools in the Azure portal. 
+
+To create and manage standby pools in the Azure portal, register the following feature flag:
+`Register-AzProviderFeature -FeatureName StandbyVMPoolPreview -ProviderNamespace Microsoft.StandbyPool`
 
 ## Next steps
 

@@ -30,6 +30,9 @@ To allow standby pools to create and manage virtual machines in your subscriptio
 9) Move to the **Review + assign** tab.
 10) Apply the changes. 
 
+> [!NOTE]
+> To create and manage standby pools in the Azure portal, register the following feature flag:
+> `Register-AzProviderFeature -FeatureName StandbyVMPoolPreview -ProviderNamespace Microsoft.StandbyPool`
 
 For more information on assigning roles, see [assign Azure roles using the Azure portal](/azure/role-based-access-control/quickstart-assign-role-user-portal).
 
