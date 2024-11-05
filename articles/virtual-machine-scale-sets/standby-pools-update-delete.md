@@ -21,7 +21,7 @@ To allow standby pools to create and manage virtual machines in your subscriptio
 2) Select the subscription you want to adjust permissions.
 3) Select **Access Control (IAM)**.
 4) Select **Add** and **Add role assignment**.
-5) Under the **Role** tab, search for **Standby Virtual Machine Admin** and select it.
+5) Under the **Role** tab, search for **Standby Virtual Machine Pool Admin** and select it.
 6) Move to the **Members** Tab.
 7) Select **+ Select members**.
 8) Search for **Standby Pool Resource Provider** and select it.
