@@ -13,7 +13,7 @@ ms.custom: engagement-fy23
 
 **Applies to:** :heavy_check_mark: Linux VMs :heavy_check_mark: Windows VMs
 
-This article provides you with an overview of the availability features of Azure virtual machines (VMs).
+This article provides an overview of the availability features of Azure virtual machines (VMs).
 
 > [!NOTE]
 > We recommend that customers choose [virtual machine scale sets with flexible orchestration mode](../virtual-machine-scale-sets/overview.md) for high availability with the widest range of features. Virtual machine scale sets:
@@ -29,7 +29,7 @@ Availability sets are logical groupings of VMs that reduce the chance of correla
 
 When you use availability sets, create two or more VMs within an availability set. Using two or more VMs in an availability set helps keep applications highly available and meets the 99.95% Azure service-level agreement (SLA). There's no extra cost for using availability sets. You only pay for each VM instance that you create.
 
-Availability sets offer improved VM-to-VM latencies compared to availability zones, because VMs in an availability set are allocated in closer proximity. Availability sets have fault isolation for many possible failures, to minimize single points of failure and offer high availability. Availability sets are still susceptible to certain shared infrastructure failures, like datacenter network failures, which can affect multiple fault domains.
+Availability sets offer improved VM-to-VM latencies compared to availability zones, because VMs in an availability set are allocated in closer proximity. Availability sets have fault isolation for many possible failures, to minimize single points of failure and to offer high availability. Availability sets are still susceptible to certain shared infrastructure failures, like datacenter network failures, which can affect multiple fault domains.
 
 For more reliability than availability sets offer, use [availability zones](availability.md#availability-zones). Availability zones have the highest reliability. Each VM is deployed in multiple datacenters to help protect you from loss of power, networking, or cooling in an individual datacenter. If your highest priority is the best reliability for your workload, replicate your VMs across multiple availability zones.
 
@@ -57,7 +57,7 @@ Placing your virtual machines into an availability set doesn't protect your appl
 
 VMs are also aligned with disk fault domains. This alignment ensures that all the managed disks attached to a VM are within the same fault domains.
 
-Only VMs with managed disks can be created in a managed availability set. The number of managed disk fault domains varies by region: either two or three managed disk fault domains per region.
+Only VMs with managed disks can be created in a managed availability set. The number of managed-disk fault domains varies by region: either two or three managed-disk fault domains per region.
 
 The following command retrieves a list of fault domains per region:
 
@@ -72,7 +72,7 @@ Under certain circumstances, two VMs in the same availability set might share a 
 The cause of a shared fault domain might be that you completed following sequence when you deployed the VMs:
 
 1. Deploy the first VM.
-2. Stop/deallocate the first VM.
+2. Stop or deallocate the first VM.
 3. Deploy the second VM.
 
 Under these circumstances, the OS disk of the second VM might be created on the same fault domain as the first VM, so the two VMs will be on same fault domain. To avoid this problem, we recommend that you don't stop or deallocate VMs between deployments.
@@ -81,4 +81,4 @@ Under these circumstances, the OS disk of the second VM might be created on the 
 
 ## Related content
 
-- For best practices about Azure availability, see [Resiliency checklist for specific Azure services](/azure/architecture/checklist/resiliency-per-service).
+- For best practices related to Azure availability, see [Resiliency checklist for specific Azure services](/azure/architecture/checklist/resiliency-per-service).
