@@ -19,20 +19,20 @@ You can use the Maintenance Configurations feature to control when to apply plat
 > [!IMPORTANT]
 > Specific *scopes* support certain machine types and schedules. Be sure to select the right scope for your VM.
 
-## Pre-requisites
+## Prerequisites
 
-Before proceeding, please visit [Bicep Modules](/azure/azure-resource-manager/bicep/modules) to learn more about how bicep deployment can be organized into modules
+Before proceeding, visit [Bicep Modules](/azure/azure-resource-manager/bicep/modules) to learn more about how bicep deployment can be organized into modules
 
-1. Scope of resource deployment should be understood before proceeding with the Bicep template. For more details, see [Scope Functions for Bicep](/azure/azure-resource-manager/bicep/bicep-functions-scope).
-2. It is essential to know how and where resources are deployed.
-3. Bicep modules must be used to perform deployments. DEploying resources at different scopes require the use of modules.
+1. Scope of resource deployment should be understood before proceeding with the Bicep template. For more infromation, see [Scope Functions for Bicep](/azure/azure-resource-manager/bicep/bicep-functions-scope).
+2. It's essential to know how and where resources are deployed.
+3. Bicep modules must be used to perform deployments. Deploying resources at different scopes require the use of modules.
 
 > [!TIP]
 > Always provide the right set of dependencies since module execute on different scopes. For example - the scope for configuration assignment in maintenance configuration when using dynamic scope should be `Subscription` and when using static assignment (no dynamic scopes configured) should be `ResourceId`
 
 ## Bicep Resource Definition
 
-Please refer to the below guides for the resource format and resource definition of the Bicep template before proceeding ahead with the working example.
+ Refer to the below guides for the resource format and resource definition of the Bicep template before proceeding ahead with the working example.
 
 + [Maintenance Configurations](/azure/templates/microsoft.maintenance/maintenanceconfigurations)
 + [Configuration Assignments](/azure/templates/microsoft.maintenance/configurationassignments)
@@ -40,7 +40,7 @@ Please refer to the below guides for the resource format and resource definition
 
 ## Example
 
-There are 3 bicep files that needs to be created. We recommend to keep all the 3 files in the same folder. You can also keep them in different folders, just make sure to update the path of the file names in `example.bicep` file mentioned below.
+There are three bicep files that need to be created. We recommend keeping all the three files in the same folder. You can also keep them in different folders but make sure to update the path of the file names in `example.bicep` file mentioned.
 
 ### Template Execution
 
