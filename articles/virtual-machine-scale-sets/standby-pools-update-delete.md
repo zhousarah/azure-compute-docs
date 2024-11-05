@@ -13,11 +13,31 @@ ms.reviewer: ju-shim
 # Update or delete a standby pool
 This article covers updating, managing and deleting a standby pool resource.  
 
+## Prerequisites
+
+To allow standby pools to create and manage virtual machines in your subscription, assign the appropriate permissions to the standby pool resource provider. 
+
+1) In the Azure portal, navigate to your subscriptions.
+2) Select the subscription you want to adjust permissions.
+3) Select **Access Control (IAM)**.
+4) Select **Add** and **Add role assignment**.
+5) Under the **Role** tab, search for **Standby Virtual Machine Pool Admin** and select it.
+6) Move to the **Members** Tab.
+7) Select **+ Select members**.
+8) Search for **Standby Pool Resource Provider** and select it.
+9) Move to the **Review + assign** tab.
+10) Apply the changes. 
+
 ## Update a standby pool
 
 You can update the state of the instances and the max ready capacity of your standby pool at any time. The standby pool name can only be set during standby pool creation. 
 
 ### [Portal](#tab/portal-2)
+
+> [!NOTE]
+> To create and manage standby pools in the Azure portal, register the following feature flag:
+> `Register-AzProviderFeature -FeatureName StandbyVMPoolPreview -ProviderNamespace Microsoft.StandbyPool`
+
 1) Navigate to Virtual Machine Scale set the standby pool is associated with. 
 2) Under **Availability + scale** select **Standby pool**. 
 3) Select **Manage pool**. 
@@ -159,6 +179,10 @@ PUT https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/m
 ## Delete a standby pool
 
 ### [Portal](#tab/portal-3)
+
+> [!NOTE]
+> To create and manage standby pools in the Azure portal, register the following feature flag:
+> `Register-AzProviderFeature -FeatureName StandbyVMPoolPreview -ProviderNamespace Microsoft.StandbyPool`
 
 1) Navigate to Virtual Machine Scale set the standby pool is associated with. 
 2) Under **Availability + scale** select **Standby pool**. 
