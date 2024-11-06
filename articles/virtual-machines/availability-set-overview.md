@@ -69,7 +69,7 @@ az vm list-skus --resource-type availabilitySets --query '[?name==`Aligned`].{Lo
 
 Under certain circumstances, two VMs in the same availability set might share a fault domain. You can confirm a shared fault domain by going to your availability set and checking the **Fault Domain** column.
 
-The cause of a shared fault domain might be that you completed following sequence when you deployed the VMs:
+If your VMs have a shared fault domain, it could be because you took these actions when deploying your VMs:
 
 1. Deploy the first VM.
 2. Stop or deallocate the first VM.
