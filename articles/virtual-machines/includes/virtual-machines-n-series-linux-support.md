@@ -6,7 +6,7 @@ author: jushiman
  ms.service: virtual-machines
  ms.topic: include
  ms.date: 12/08/2023
-ms.author: jushiman
+ms.author: vikancha
 ms.custom: include file, linux-related-content
 ---
 
