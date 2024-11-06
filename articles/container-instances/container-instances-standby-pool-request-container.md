@@ -33,15 +33,13 @@ Request a container group from a standby pool using [az container create](/cli/a
 
 ```azurecli-interactive
 az container create \
-  --resource-group myResourceGroup \
-  --name myContainerGroup \
-  --location "West Central US" \
-  --standby-pool "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool" \
-  --container-group-profile "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile" \
-  --revision 1 \
-  --container-name myContainerProfile \
-  --config-map $newKey=$newValue \   
-  --assigned-identity $managedIdentity
+    --resource=group myResourceGroup \
+    --name myContainer \ 
+    --location WestCentralUS \
+\   --config-map key1=value1 key2=value2 \
+    --container-group-profile-id "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile" \
+    --container-group-profile-revision 1 \
+    --standby-pool-profile-id "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool" 
 
 
 ```
@@ -49,8 +47,19 @@ az container create \
 Request a container group from a standby pool using [New-AzContainerGroup](/powershell/module/az.containerinstance/new-AzContainerGroup).
 
 ```azurepowershell-interactive
-$container = New-AzContainerInstancenoDefaultObject -Name test-container -ConfigMapKeyValuePair @{"key1"="value1"}
-        $containerGroup = New-AzContainerGroup -ResourceGroupName test-rg -Name test-cg -Container $container -Location eastus -ContainerGroupProfileId $containerGroupProfileId -ContainerGroupProfileRevision $containerGroupProfileRevision -StandbyPoolProfileId $standbyPoolProfileId
+$container = New-AzContainerInstancenoDefaultObject `
+        -Name myContainer `
+        -ConfigMapKeyValuePair @{"key1"="value1"}
+
+
+New-AzContainerGroup `
+    -ResourceGroupName myResourceGroup `
+    -Name myContainerGroup`
+    -Container $container `
+    -Location "WestCentralUS" `
+    -ContainerGroupProfileId "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile" `
+    -ContainerGroupProfileRevision 1 `
+    -StandbyPoolProfileId "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool" 
 
 ```
 
@@ -200,7 +209,8 @@ Request Body
                    }
                }
            ]
-   }
+       }
+    }    
 }
 ```
 

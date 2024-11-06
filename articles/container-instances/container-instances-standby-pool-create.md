@@ -29,7 +29,7 @@ The container group profile tells the standby pool how to configure the containe
 > To use [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential` when creating your container group profile.
 
 ### [CLI](#tab/cli)
-Create a container group profile using [az container--group-profile create](/cli/azure/container).
+Create a container group profile using [az container container-group-profile create](/cli/azure/container).
 
 ```azurecli-interactive
 az container container-group-profile create \
@@ -46,27 +46,27 @@ az container container-group-profile create \
 
 ```
 ### [PowerShell](#tab/powershell)
-Create a container group profile using [New-AzContainerGroupProfile](/powershell/module/az.containerinstance).
+Create a container group profile using [New-AzContainerInstanceContainerGroupProfile](/powershell/module/az.containerinstance).
 
 ```azurepowershell-interactive
 $port1 = New-AzContainerInstancePortObject -Port 8000 -Protocol TCP
 $port2 = New-AzContainerInstancePortObject -Port 8001 -Protocol TCP
 
 $container = New-AzContainerInstanceObject `
-                    -Name myContainer `
-                    -Image nginx `
-                    -RequestCpu 1 `
-                    -RequestMemoryInGb 1.5 `
-                    -Port @($port1, $port2)
+       -Name myContainer `
+       -Image nginx `
+       -RequestCpu 1 `
+       -RequestMemoryInGb 1.5 `
+       -Port @($port1, $port2)
 
-$containerGroupProfile = New-AzContainerInstanceContainerGroupProfile `
-                    -ResourceGroupName myResourceGroup `
-                    -Name myContainerGroupProfile `
-                    -Location WestCentralUS `
-                    -Container $container `
-                    -OsType Linux `
-                    -RestartPolicy "Never" `
-                    -IpAddressType Public
+New-AzContainerInstanceContainerGroupProfile `
+        -ResourceGroupName myResourceGroup `
+        -Name myContainerGroupProfile `
+        -Location WestCentralUS `
+        -Container $container `
+        -OsType Linux `
+        -RestartPolicy "Never" `
+        -IpAddressType Public
 
 ```
 
@@ -219,7 +219,7 @@ Create a standby pool and associate it with a container group profile using [New
 ```azurepowershell-interactive
 New-AzStandbyContainerGroupPool `
    -ResourceGroup myResourceGroup `
-   -Location WestCentralUS `
+   -Location "WestCentralUS" `
    -Name myStandbyPool `
    -MaxReadyCapacity 20 `
    -RefillPolicy always `

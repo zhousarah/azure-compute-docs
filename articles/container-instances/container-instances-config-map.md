@@ -215,12 +215,11 @@ az container create
         --name myContainer \ 
         --location WestCentralUS \
         --config-map key1=value1 key2=value2 \
-        --container-group-profile-id {container_group_profile_id} \
-        --container-group-profile-revision {container_group_profile_revision} \
-
-
+        --container-group-profile-id "/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile" \
+        --container-group-profile-revision 1 \
 
 ```
+
 ### [PowerShell](#tab/powershell)
 Apply the config map settings stored in the container group profile using [New-AzContainerGroup](/powershell/module/az.containerinstance/new-azcontainergroup).
 
@@ -234,7 +233,7 @@ $containerGroup = New-AzContainerGroup `
                     -Name myContainerGroup`
                     -Container $container `
                     -Location WestCentralUS `
-                    -ContainerGroupProfileId $containerGroupProfileId `
+                    -ContainerGroupProfileId "/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile" `
                     -ContainerGroupProfileRevision $containerGroupProfileRevision 
                     
 ```
