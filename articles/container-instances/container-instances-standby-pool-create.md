@@ -5,7 +5,7 @@ author: mimckitt
 ms.author: mimckitt
 ms.service: azure-container-instances
 ms.topic: how-to
-ms.date: 11/1/2024
+ms.date: 11/6/2024
 ms.reviewer: tomvcassidy
 ---
 
@@ -52,21 +52,16 @@ Create a container group profile using [New-AzContainerInstanceContainerGroupPro
 $port1 = New-AzContainerInstancePortObject -Port 8000 -Protocol TCP
 $port2 = New-AzContainerInstancePortObject -Port 8001 -Protocol TCP
 
-$container = New-AzContainerInstanceObject `
-       -Name myContainer `
-       -Image nginx `
-       -RequestCpu 1 `
-       -RequestMemoryInGb 1.5 `
-       -Port @($port1, $port2)
+$container = New-AzContainerInstanceObject -Name myContainer -Image nginx -RequestCpu 1 -RequestMemoryInGb 1.5 -Port @($port1, $port2)
 
 New-AzContainerInstanceContainerGroupProfile `
-        -ResourceGroupName myResourceGroup `
-        -Name myContainerGroupProfile `
-        -Location WestCentralUS `
-        -Container $container `
-        -OsType Linux `
-        -RestartPolicy "Never" `
-        -IpAddressType Public
+    -ResourceGroupName myResourceGroup `
+    -Name myContainerGroupProfile `
+    -Location WestCentralUS `
+    -Container $container `
+    -OsType Linux `
+    -RestartPolicy "Never" `
+    -IpAddressType Public
 
 ```
 
@@ -81,7 +76,7 @@ Create a container group profile and save the template file. Deploy the template
   "resources": [
     {
       "type": "Microsoft.ContainerInstance/containerGroups",
-      "apiVersion": "2023-05-15",
+      "apiVersion": "2024-05-01-preview",
       "name": "[parameters('profileName')]",
       "location": "[parameters('location')]",
       "properties": {
@@ -154,7 +149,7 @@ Create a container group profile and save the template file. Deploy the template
 Create a container group profile using [Create or Update](/rest/api/container-instances/container-groups/create-or-update).
 
 ```HTTP
-https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile?api-version=2023-05-15   
+https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile?api-version=2024-05-01-preview  
 
 Request Body
 {
@@ -280,7 +275,7 @@ Create a standby pool and associate it with a container group profile. Create a 
 Create a standby pool and associate it with a container group profile using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update).
 
 ```HTTP
-https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool?api-version=2023-03-01 
+https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool?api-version=2024-03-01 
  
 Request Body
 {
