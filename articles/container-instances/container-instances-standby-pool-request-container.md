@@ -29,7 +29,7 @@ Request a container group from a standby pool using [az container create](/cli/a
 
 ```azurecli-interactive
 az container create \
-    --resource=group myResourceGroup \
+    --resource-group myResourceGroup \
     --name myContainer \ 
     --location WestCentralUS \
     --config-map key1=value1 key2=value2 \
@@ -43,9 +43,7 @@ az container create \
 Request a container group from a standby pool using [New-AzContainerGroup](/powershell/module/az.containerinstance/new-AzContainerGroup).
 
 ```azurepowershell-interactive
-$container = New-AzContainerInstancenoDefaultObject `
-        -Name myContainer `
-        -ConfigMapKeyValuePair @{"key1"="value1"}
+$container = New-AzContainerInstancenoDefaultObject -Name myContainer -ConfigMapKeyValuePair @{"key1"="value1"}
 
 
 New-AzContainerGroup `

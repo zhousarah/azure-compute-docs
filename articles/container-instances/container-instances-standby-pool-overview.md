@@ -28,9 +28,7 @@ Register the standby pool resource provider and the standby pool preview feature
 
 ```azurepowershell-interactive
 Register-AzResourceProvider -ProviderNameSpace Microsoft.ContainerInstance
-
 Register-AzResourceProvider -ProviderNamespace Microsoft.StandbyPool
-
 Register-AzProviderFeature -FeatureName StandbyContainerGroupPoolPreview -ProviderNamespace Microsoft.StandbyPool
 ```
 
