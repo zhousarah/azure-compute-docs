@@ -16,7 +16,7 @@ ms.custom: engagement-fy23
 This article provides an overview of the availability features of Azure virtual machines (VMs).
 
 > [!NOTE]
-> We recommend that customers choose [virtual machine scale sets with flexible orchestration mode](../virtual-machine-scale-sets/overview.md) for high availability with the widest range of features. Virtual machine scale sets:
+> We recommend that customers choose [Virtual Machine Scale Sets with flexible orchestration mode](../virtual-machine-scale-sets/overview.md) for high availability with the widest range of features. Virtual Machine Scale Sets:
 >
 > - Allow VM instances to be centrally managed, configured, and updated.
 > - Automatically increase or decrease the number of VM instances in response to demand or a defined schedule.
