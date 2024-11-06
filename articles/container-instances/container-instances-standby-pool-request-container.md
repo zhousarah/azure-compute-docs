@@ -32,7 +32,7 @@ az container create \
     --resource=group myResourceGroup \
     --name myContainer \ 
     --location WestCentralUS \
-\   --config-map key1=value1 key2=value2 \
+    --config-map key1=value1 key2=value2 \
     --container-group-profile-id "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile" \
     --container-group-profile-revision 1 \
     --standby-pool-profile-id "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool" 
