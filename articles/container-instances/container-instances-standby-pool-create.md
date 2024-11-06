@@ -29,7 +29,7 @@ The container group profile tells the standby pool how to configure the containe
 > To use [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential` when creating your container group profile.
 
 ### [CLI](#tab/cli)
-Create a container group profile using [az container--group-profile create](/cli/azure/container\az-container-container-group-create).
+Create a container group profile using [az container--group-profile create](/cli/azure/container).
 
 ```azurecli-interactive
 az container container-group-profile create \
@@ -46,7 +46,7 @@ az container container-group-profile create \
 
 ```
 ### [PowerShell](#tab/powershell)
-Create a container group profile using [New-AzContainerGroupProfile](/powershell/module/az.containerinstance/new-AzContainerInstanceContainerGroupProfile).
+Create a container group profile using [New-AzContainerGroupProfile](/powershell/module/az.containerinstance).
 
 ```azurepowershell-interactive
 $port1 = New-AzContainerInstancePortObject -Port 8000 -Protocol TCP
@@ -151,7 +151,7 @@ Create a container group profile and save the template file. Deploy the template
 
 
 ### [REST](#tab/rest)
-Create a container group profile using [Create or Update](/rest/api/container-instances/create-or-update).
+Create a container group profile using [Create or Update](/rest/api/container-instances/container-groups/create-or-update).
 
 ```HTTP
 https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile?api-version=2023-05-15   

@@ -29,7 +29,7 @@ Before utilizing standby pools, complete the feature registration and configure 
 
 
 ### [CLI](#tab/cli)
-Request a container group from a standby pool using [az container create](/cli/azure/container).
+Request a container group from a standby pool using [az container create](/cli/azure/container/az-container-create).
 
 ```azurecli-interactive
 az container create \

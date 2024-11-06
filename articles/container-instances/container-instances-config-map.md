@@ -22,7 +22,7 @@ A config map can be included in the container properties or in a container group
 ### Create a container group profile with config map settings 
 
 ### [CLI](#tab/cli)
-Create a container group profile using [az container--group-profile create](/cli/azure/container\az-container-container-group-create) and specify the config map details.
+Create a container group profile using [az container--group-profile create](/cli/azure/container) and specify the config map details.
 
 ```azurecli-interactive
 az container container-group-profile create \
@@ -38,7 +38,7 @@ az container container-group-profile create \
     --restart-policy Never
 ```
 ### [PowerShell](#tab/powershell)
-Create a container group profile using [New-AzContainerGroupProfile](/powershell/module/az.containerinstance/new-AzContainerInstanceContainerGroupProfile) and specify the config map details.
+Create a container group profile using [New-AzContainerGroupProfile](/powershell/module/az.containerinstance) and specify the config map details.
 
 ```azurepowershell-interactive
 $port1 = New-AzContainerInstancePortObject -Port 8000 -Protocol TCP
@@ -147,7 +147,7 @@ Create a container group profile with the desired config map settings and deploy
 
 
 ### [REST](#tab/rest)
-Create a container group profile with the desired config map settings using [Create or Update](/rest/api/container-instances/create-or-update).
+Create a container group profile with the desired config map settings using [Create or Update](/rest/api/container-instances/container-groups/create-or-update).
 
 ```HTTP
 https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile?api-version=2023-05-15
