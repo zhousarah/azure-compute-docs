@@ -22,42 +22,43 @@ A config map can be included in the container properties or in a container group
 ### Create a container group profile with config map settings 
 
 ### [CLI](#tab/cli)
-Create a container group profile using [az container-group-profile create](/cli/azure/standby-container-group-pool) and specify the config map details.
+Create a container group profile using [az container--group-profile create](/cli/azure/container) and specify the config map details.
 
 ```azurecli-interactive
-az container-group-profile create \
-  --resource-group myResourceGroup \
-  --name myContainerGroupProfile \
-  --image "mcr.microsoft.com/azuredocs/aci-helloworld:latest" \
-  --cpu 1 \
-  --memory 1.5 \
-  --sku standard \
-  --ports 8000 \
-  --protocol TCP \
-  --ip-address Public \
-  --os-type Linux \
-  --location "West Central US" \
-  --config-map $newKey=$newValue
-
+az container container-group-profile create \
+    --resource-group myResourceGroup \
+    --name myContainerGroupProfile \
+    --location WestCentralUS \
+    --image nginx \
+    --os-type Linux \ 
+    --ip-address Public \ 
+    --ports 8000 \ 
+    --cpu 1 \
+    --memory 1.5 \
+    --restart-policy never
 ```
 ### [PowerShell](#tab/powershell)
-Create a container group profile using [New-AzContainerGroupProfile](/powershell/module/az.standbypool/new-AzStandbyContainerGroupPool) and specify the config map details.
+Create a container group profile using [New-AzContainerGroupProfile](/powershell/module/az.containerinstance) and specify the config map details.
 
 ```azurepowershell-interactive
-New-AzContainerInstanceContainerGroupProfile `
-    -ResourceGroupName myResourceGroup `
-    -Name myContainerGroupProfile `
-    -Location "West Central US"  `
-    -OsType Linux `
-    -Image "mcr.microsoft.com/azuredocs/aci-helloworld:latest" `
-    -Cpu 1 `
-    -MemoryInGB 1.5 `
-    -Sku Standard `
-    -Ports 8000 `
-    -Protocol TCP `
-    -IpAddressType Public `
-    -ConfigMap @{ $newKey = $newValue }
+$port1 = New-AzContainerInstancePortObject -Port 8000 -Protocol TCP
+$port2 = New-AzContainerInstancePortObject -Port 8001 -Protocol TCP
 
+$container = New-AzContainerInstanceObject `
+                    -Name myContainer `
+                    -Image nginx `
+                    -RequestCpu 1 `
+                    -RequestMemoryInGb 1.5 `
+                    -Port @($port1, $port2)
+
+$containerGroupProfile = New-AzContainerInstanceContainerGroupProfile `
+                    -ResourceGroupName myResourceGroup `
+                    -Name myContainerGroupProfile `
+                    -Location WestCentralUS `
+                    -Container $container `
+                    -OsType Linux `
+                    -RestartPolicy "Never" `
+                    -IpAddressType Public
 ```
 
 ### [ARM template](#tab/template)
@@ -146,7 +147,7 @@ Create a container group profile with the desired config map settings and deploy
 
 
 ### [REST](#tab/rest)
-Create a container group profile with the desired config map settings using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update).
+Create a container group profile with the desired config map settings using [Create or Update](/rest/api/container-instances/container-groups/create-or-update).
 
 ```HTTP
 https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile?api-version=2023-05-15
@@ -209,28 +210,32 @@ Applying the config map settings stored in a container group profile requires up
 Apply the config map settings stored in the container group profile using [az container create](/cli/azure/container).
 
 ```azurecli-interactive
-az container create \
-  --resource-group myResourceGroup \
-  --name myContainerGroup \
-  --location "West Central US" \
-  --container-group-profile "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile" \
-  --revision 1 \
-  --container-name myContainerProfile 
-
+az container create 
+        --resource-group myResourceGroup \ 
+        --name myContainer \ 
+        --location WestCentralUS \
+        --config-map key1=value1 key2=value2 \
+        --container-group-profile-id "/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile" \
+        --container-group-profile-revision 1 \
 
 ```
+
 ### [PowerShell](#tab/powershell)
 Apply the config map settings stored in the container group profile using [New-AzContainerGroup](/powershell/module/az.containerinstance/new-azcontainergroup).
 
 ```azurepowershell-interactive
-New-AzContainerGroup `
-    -ResourceGroupName myResourceGroup `
-    -Location "West Central US" `
-    -ContainerGroupName myContainerGroup `
-    -ContainerGroupProfileId "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile" `
-    -ContainerGroupProfileRevision 1 `
-    -ContainerName myContainerProfile 
+$container = New-AzContainerInstancenoDefaultObject `
+                    -Name myContainer `
+                    -ConfigMapKeyValuePair @{"key1"="value1"}
 
+$containerGroup = New-AzContainerGroup `
+                    -ResourceGroupName myResourceGroup `
+                    -Name myContainerGroup`
+                    -Container $container `
+                    -Location WestCentralUS `
+                    -ContainerGroupProfileId "/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile" `
+                    -ContainerGroupProfileRevision $containerGroupProfileRevision 
+                    
 ```
 
 ### [ARM template](#tab/template)
@@ -374,24 +379,28 @@ Config map settings can also be applied directly to the instance by specifying t
 Apply the config map settings using [az container create](/cli/azure/container).
 
 ```azurecli-interactive
-az container create \
-  --resource-group myResourceGroup \
-  --name myContainerGroup \
-  --location "West Central US" \
-  --container-name myContainerProfile \
-  --config-map $newKey=$newValue
+az container create 
+        --resource-group myResourceGroup \ 
+        --name myContainer \
+        --location WestCentralUS \ 
+        --config-map key1=value1 key2=value2 
+        
 
 ```
 ### [PowerShell](#tab/powershell)
 Apply the config map settings using [New-AzContainerGrouop](/powershell/module/az.containerinstance/new-azcontainergroup).
 
 ```azurepowershell-interactive
-New-AzContainerGroup `
-    -ResourceGroupName myResourceGroup `
-    -Location "West Central US" `
-    -ContainerGroupName myContainerGroup `
-    -ContainerName myContainerProfile `
-    -ConfigMap @{ $newKey = $newValue }
+$container = New-AzContainerInstancenoDefaultObject `
+                    -Name myContainer `
+                    -ConfigMapKeyValuePair @{"key1"="value1"}
+
+$containerGroup = New-AzContainerGroup `
+                    -ResourceGroupName myResourceGroup `
+                    -Name myContainerGroup ` 
+                    -Container $container `
+                    -Location WestCentralUS 
+
 ```
 
 ### [ARM template](#tab/template)
