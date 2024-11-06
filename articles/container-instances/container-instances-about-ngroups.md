@@ -1,30 +1,3 @@
-``
-### **In this article**
-- [Overview](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=**overview**)
-- [Concepts](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=**concepts**)
-
-1. [Container Group Profile](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=container-group-profile-(cg-profile))
-2. [NGroupsAPI](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=ngroups-api)
-3. [Updating a NGroup](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=updating-a-ngroup)
-4. [NGroups' billing model](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=ngroups%27-billing-model)
-
-- [Try NGroups](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=**try-ngroups%3A**)
-
-1. [Prerequisites for working on NGroups](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=prerequisites-for-working-on-ngroups%3A)
-2. [ARM template samples](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=arm-template-samples%3A)
-
-- [How-to-Guide](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=**how-to-guide%3A**)
-
-- [Swagger spec](https://github.com/saprakas/azure-rest-api-specs/blob/main/specification/containerinstance/resource-manager/Microsoft.ContainerInstance/preview/2024-09-01-preview/containerInstance.json)
-
-1. [How to create a regional (zonal/non-zonal) NGroups?](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=how-to-create-a-regional-(zonal/non-zonal)-ngroups%3F)
-2. [Create NGroup CGs with a prefix:](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=**create-ngroup-cgs-with-a-prefix%3A**)
-3. [Create NGroup with both SystemAssigned and UserAssigned managed identity:](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=**create-ngroup-with-both-systemassigned-and-userassigned-managed-identity%3A**)
-4. [If I delete some CGs from the NGroup, can the NGroup rebuild itself with new CGs to maintain its desired count?](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=**if-i-delete-some-cgs-from-the-ngroup%2C-can-the-ngroup-rebuild-itself-with-new-cgs-to-maintain-its-desired-count%3F**)
-5. [How do I get the CG name, NGroup Id and other metadata propagated down into the container](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=**how-do-i-get-the-cg-name%2C-ngroup-id-and-other-metadata-propagated-down-into-the-container%3F**)
-
-
-
 ## **Overview** 
 
 When deploying containerized applications to the cloud, customers face a decision of managing their own infrastructure and orchestrator or choosing to deploy to a prescriptive serverless platform. Running large-scale applications on the cloud with containerized workloads is difficult due to a customer requiring expertise in infrastructure management and container grouping and management platforms. 
