@@ -49,17 +49,8 @@ az container create \
 Request a container group from a standby pool using [New-AzContainerGroup](/powershell/module/az.containerinstance/new-AzContainerGroup).
 
 ```azurepowershell-interactive
-New-AzContainerGroup `
-    -ResourceGroupName myResourceGroup `
-    -Location "West Central US" `
-    -ContainerGroupName myContainerGroup `
-    -StandbyPoolId "/subscriptions/{subscriptionId]/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool" `
-    -ContainerGroupProfileId "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile" `
-    -ContainerGroupProfileRevision 1 `
-    -ContainerName myContainerProfile `
-    -ConfigMap @{ $newKey = $newValue } `
-    -Identity Type "SystemAssigned, UserAssigned" `
-    -IdentityUserAssignedIdentity @{"/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}" = @{}}
+$container = New-AzContainerInstancenoDefaultObject -Name test-container -ConfigMapKeyValuePair @{"key1"="value1"}
+        $containerGroup = New-AzContainerGroup -ResourceGroupName test-rg -Name test-cg -Container $container -Location eastus -ContainerGroupProfileId $containerGroupProfileId -ContainerGroupProfileRevision $containerGroupProfileRevision -StandbyPoolProfileId $standbyPoolProfileId
 
 ```
 

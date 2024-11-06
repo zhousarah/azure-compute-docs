@@ -29,39 +29,44 @@ The container group profile tells the standby pool how to configure the containe
 > To use [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential` when creating your container group profile.
 
 ### [CLI](#tab/cli)
-Create a container group profile using [az container-profile create](/cli/azure/standby-container-group-pool).
+Create a container group profile using [az container--group-profile create](/cli/azure/container\az-container-container-group-create).
 
 ```azurecli-interactive
-az container-group-profile create \
-  --resource-group myResourceGroup \
-  --name myContainerGroupProfile \
-  --image "mcr.microsoft.com/azuredocs/aci-helloworld:latest" \
-  --cpu 1 \
-  --memory 1.5 \
-  --sku standard \
-  --ports 8000 \
-  --protocol TCP \
-  --ip-address Public \
-  --os-type Linux \
-  --location "West Central US"
+az container container-group-profile create \
+    --resource-group myResourceGroup \
+    --name myContainerGroupProfile \
+    --location WestCentralUS \
+    --image nginx \
+    --os-type Linux \ 
+    --ip-address Public \ 
+    --ports 8000 \ 
+    --cpu 1 \
+    --memory 1.5 \
+    --restart-policy Never
 
 ```
 ### [PowerShell](#tab/powershell)
-Create a container group profile using [New-AzContainerGroupProfile](/powershell/module/az.standbypool/new-AzStandbyContainerGroupPool).
+Create a container group profile using [New-AzContainerGroupProfile](/powershell/module/az.containerinstance/new-AzContainerInstanceContainerGroupProfile).
 
 ```azurepowershell-interactive
-New-AzContainerGroupProfile `
-    -ResourceGroupName myResourceGroup `
-    -Name myContainerGroupProfile `
-    -Location "West Central US"  `
-    -OsType Linux `
-    -Image "mcr.microsoft.com/azuredocs/aci-helloworld:latest" `
-    -Cpu 1 `
-    -MemoryInGB 1.5 `
-    -Sku Standard `
-    -Ports 8000 `
-    -Protocol TCP `
-    -IpAddressType Public
+$port1 = New-AzContainerInstancePortObject -Port 8000 -Protocol TCP
+$port2 = New-AzContainerInstancePortObject -Port 8001 -Protocol TCP
+
+$container = New-AzContainerInstanceObject `
+                    -Name myContainer `
+                    -Image nginx `
+                    -RequestCpu 1 `
+                    -RequestMemoryInGb 1.5 `
+                    -Port @($port1, $port2)
+
+$containerGroupProfile = New-AzContainerInstanceContainerGroupProfile `
+                    -ResourceGroupName myResourceGroup `
+                    -Name myContainerGroupProfile `
+                    -Location WestCentralUS `
+                    -Container $container `
+                    -OsType Linux `
+                    -RestartPolicy "Never" `
+                    -IpAddressType Public
 
 ```
 
@@ -146,7 +151,7 @@ Create a container group profile and save the template file. Deploy the template
 
 
 ### [REST](#tab/rest)
-Create a container group profile using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update).
+Create a container group profile using [Create or Update](/rest/api/container-instances/create-or-update).
 
 ```HTTP
 https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile?api-version=2023-05-15   
