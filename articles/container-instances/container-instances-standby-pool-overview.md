@@ -5,7 +5,7 @@ author: mimckitt
 ms.author: mimckitt
 ms.service: azure-container-instances
 ms.topic: conceptual
-ms.date: 11/1/2024
+ms.date: 11/6/2024
 ms.reviewer: tomvcassidy
 ---
 
