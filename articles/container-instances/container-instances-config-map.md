@@ -35,7 +35,7 @@ az container container-group-profile create \
     --ports 8000 \ 
     --cpu 1 \
     --memory 1.5 \
-    --restart-policy Never
+    --restart-policy never
 ```
 ### [PowerShell](#tab/powershell)
 Create a container group profile using [New-AzContainerGroupProfile](/powershell/module/az.containerinstance) and specify the config map details.
