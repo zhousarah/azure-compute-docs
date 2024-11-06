@@ -1,61 +1,31 @@
-``
-### **In this article**
-- [Overview](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=**overview**)
-- [Concepts](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=**concepts**)
+---
+title: Introduction to NGroups
+description: Introduction to NGroups and its features describing how customers can manage N instances of containers with NGroup.
+ms.author: shivg
+author: shivg
+ms.service: azure-container-instances
+ms.custom: devx-track-azurecli
+services: container-instances
+ms.topic: how-to
+ms.date: 11/05/2024
+---
 
-1. [Container Group Profile](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=container-group-profile-(cg-profile))
-2. [NGroupsAPI](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=ngroups-api)
-3. [Updating a NGroup](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=updating-a-ngroup)
-4. [NGroups' billing model](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=ngroups%27-billing-model)
+# About NGroups
 
-- [Try NGroups](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=**try-ngroups%3A**)
+Containers have become the standard for packaging, deploying, and managing cloud applications, and effectively managing these containers is just as crucial as running the apps themselves. Azure Container Instances (ACI) is a flexible and scalable serverless computing service that allows you to run containerized applications without managing infrastructure. NGroups is a powerful feature within ACI designed to make managing multiple Azure container groups easier, faster, and hassle-free. These new APIs, an extension of the Azure Container Instance (ACI) API set provides a way to manage multiple related container groups (CGs) together. 
 
-1. [Prerequisites for working on NGroups](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=prerequisites-for-working-on-ngroups%3A)
-2. [ARM template samples](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=arm-template-samples%3A)
-
-- [How-to-Guide](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=**how-to-guide%3A**)
-
-- [Swagger spec](https://github.com/saprakas/azure-rest-api-specs/blob/main/specification/containerinstance/resource-manager/Microsoft.ContainerInstance/preview/2024-09-01-preview/containerInstance.json)
-
-1. [How to create a regional (zonal/non-zonal) NGroups?](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=how-to-create-a-regional-(zonal/non-zonal)-ngroups%3F)
-2. [Create NGroup CGs with a prefix:](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=**create-ngroup-cgs-with-a-prefix%3A**)
-3. [Create NGroup with both SystemAssigned and UserAssigned managed identity:](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=**create-ngroup-with-both-systemassigned-and-userassigned-managed-identity%3A**)
-4. [If I delete some CGs from the NGroup, can the NGroup rebuild itself with new CGs to maintain its desired count?](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=**if-i-delete-some-cgs-from-the-ngroup%2C-can-the-ngroup-rebuild-itself-with-new-cgs-to-maintain-its-desired-count%3F**)
-5. [How do I get the CG name, NGroup Id and other metadata propagated down into the container](https://msazure.visualstudio.com/AzureWiki/_wiki/wikis/AzureWiki.wiki?wikiVersion=GBwikiMaster&pagePath=/Azure%20Container%20Instances/NGroups%20%252D%20Customer%20Onboarding&pageId=709513&_a=edit&anchor=**how-do-i-get-the-cg-name%2C-ngroup-id-and-other-metadata-propagated-down-into-the-container%3F**)
-
-
-
-## **Overview** 
-
-When deploying containerized applications to the cloud, customers face a decision of managing their own infrastructure and orchestrator or choosing to deploy to a prescriptive serverless platform. Running large-scale applications on the cloud with containerized workloads is difficult due to a customer requiring expertise in infrastructure management and container grouping and management platforms. 
-
-NGroups is an easy to use and manage at scale container offering that reduces customer’s infrastructure management responsibilities while still providing the flexibility to configure scaling rules, networking, and security policies. NGroups provides customers with an environment that is configured to run containerized applications at scale with promises such as Maintaining N instances, Rolling Upgrades, High Availability with Availability Zones (AZs), auto-scaling (coming soon), Confidentiality, Load Balancing setup, AZ Rebalancing (Zone Any) etc. Customers need not deploy VMs or orchestrate complex infrastructure to get their application up and running. 
-
-To provide customers with the flexibility to configure NGroups to meet their organizational needs, NGroups integrates well with many Azure resources such as virtual networks, load balancers, Azure Managed Identity, storage accounts etc. This empowers customers to focus on their application and business logic, while Azure takes care of the rest of infrastructure management. 
-
-For 1P customers using ACI, NGroups is the Azure Core Containers standards platform that offers capabilities to keep containers secure, highly available, and compliant with Azure standards. Onboarding to NGroups helps eliminate recurring bookkeeping of compliance checklists for these customers, with the platform natively applying all defined standards on NGroups resources. 
-
-Examples of great workloads to run on top of NGroups include batch applications, CI/CD pipelines, ETL pipelines, and custom orchestrators that use Azure Container Instances (ACI) Container Groups as a unit of compute. 
-
- 
-
-ACI provides a single instance of a Hyper-V isolated version container group on demand. ACI does not provide concepts such as scaling, load balancing, rolling upgrades, spreading instances across availability zones out of the box. This is the best option for customers that simply want to deploy a container quickly, and do not need built-in support for these more advanced concepts. 
-
- 
-
-NGroups API are extension to ACI, which allows customers to quickly deploy a group of CGs and provides support for more complex scenarios. Customers can choose to use ACI if they have a single task, they want to run quickly without needing to consider scale. As their application needs grow, they can easily move their instance to a NGroups. ACI and NGroups will coexist analogous to the needs of customers using VMs with VMSS. 
+NGroups APIs allow customers to manage a huge scale of container groups with advanced features such as maintaining multiple instances, rolling upgrades, high availability through Availability Zones (AZs), confidentiality, load balancing, zone rebalancing (Zone Any), and auto-scaling. The NGroups feature builds upon ACI ensuring container groups are secure, highly available, and supports the feature set of ACI.  
 
 ## **Concepts** 
 
 ### Container Group Profile (CG Profile) 
 
-When customers create ACI CG resources at scale, they usually end up copy-pasting the relevant properties of the CG (like the container images, the restart policy etc.) in each of their CGs. This copy-paste results in duplication and management overhead during the lifetime of these CGs.  
+Managing multiple container groups is a crucial part of running large cloud applications. As of today, in order to run multiple CGs i.e. container groups, customers need to provide relevant properties such as container images, the restart policy and other properties each time. This may result in duplicated effort and management overhead.  
 
-To alleviate this, we have a CG Profile. This serves as a “template” for building out similar looking CGs.  
+To alleviate this concern, NGroups has introduced - Container Group Profile. The container group profile aka CGProfile serves as a “template” for creating container groups with same set of properties.  
 
-The CG profile is another ARM resource. It is of type containerGroupProfiles. It contains the properties common to all CGs.  
 
-Below are some properties that can be specified in a CG profile: 
+Here are some of the common properties that can be specified in a container group profile: 
 
 - osType. E.g., Linux, Windows 
 
@@ -152,9 +122,25 @@ And below is a sample CG profile:
 
 }
 ```
-A NGroups will simply reference this CG profile ARM resource and use that to create N instances of similar looking CGs.  
 
-Below is an example of how a NGroups references a CG profile:
+### NGroups
+
+NGroups resource provides a way to create and manage ‘n’ container groups with a rich set of operations. A NGroups resource will simply reference a container group profile resource and use that to create N instances of similar looking CGs. Within NGroups resource, customer can also specify other properties including but not limited to - number of CGs, update preferences (manual or rolling update), load balancers, subnets and other relevant properties which they want to associate with CGs under a NGroups resource. 
+
+> [!NOTE]
+> A CG profile needs to be created **before** creating a NGroups resource.Since the CG profile is an ARM resource, it has its own ARM APIs. A CG profile needs to be created **before** creating a NGroups resource.
+
+**Benefits of referencing container group profile**
+
+
+1. Container group profile is a separate resource from NGroups. Customers can create multiple NGroups that can refer to the same container group profile. This will also guarantee consistency across all the NGroups that refer to a single container group profile and avoids duplication. 
+
+2. A single ACI CG could also be created from a CG profile. This allows us to rapidly move from prototype to production mode. 
+
+    E.g., a customer creates a single CG using the CG profile. They work on this CG to get their container images working. Then they simply create a NGroups using the same CG profile to massively scale out. 
+
+Here is a sample of a NGroup with managed identity and zones that refers to a container group profile and will create 3 container groups:
+
  
 ```
 { 
@@ -189,16 +175,6 @@ Below is an example of how a NGroups references a CG profile:
 
 }
 ```
- The benefit of this approach is: 
-
-1. Multiple NGroups related to your application can refer to the same CG profile.  This avoids duplication of a similar “profile” across NGroups.
-E.g., in VMSS, each VMSS must define its “VM profile” inline in the VMSS schema. Admins/operators can update the VM profile of one VMSS, but forget to update the other VMSS, thus introducing subtle bugs. In NGroups, since all the NGroups can share the same CG profile, it guarantees consistency across NGroups for your application.  
-
- 
-
-2. In future, a single ACI CG could also be created from a CG profile. This allows us to rapidly move from prototype to production mode. E.g., a customer creates a single CG using the CG profile. They work on this CG to get their container images working. Then they simply create a NGroups using the same CG profile to massively scale out.
-
-Since the CG profile is an ARM resource, it has its own ARM APIs. A CG profile needs to be created **before** creating a NGroups resource.
 
 ### NGroups API
 This references a CG profile and adds additional orchestration related properties and capabilities. E.g.,  
@@ -230,26 +206,18 @@ In **Rolling** mode, when we update the reference to cgprofile2 and issue an UPD
 
 We can configure the batch size and other related rolling update mode settings with the NGroups API.
 
-### NGroups' Billing model  
-
-There is no cost associated with just NGroups or its capabilities. 
-
-Customers only need to pay for the underlying resources NGroups creates or manages. E.g., ACI and other optional paid services (Like App Gateway, Public IP, etc.). Please refer to the Azure public documentation for the [cost of ACI](https://azure.microsoft.com/en-us/pricing/details/container-instances/) and each of these paid services.
 
 ## **Try NGroups:**
 
 ### Prerequisites for working on NGroups:
 
-NGroups is currently under private preview and is only available on Canary regions. Currently supported API version is **2024-09-01-preview**.
+ Currently supported API version is **2024-09-01-preview**.
 
 1. Send request to NGroups Dev team to register your subscriptions under given AFECs: (corecontainersorg@microsoft.com or raise it under Partner channel) 
 -    Microsoft.ContainerInstace/NGroupsPreview 
 - Microsoft.ContainerInstance/NGroupsPreviewCanary 
 2. Once the afec flags are applied to the subscription, run the following command to register the resourceProvider on your environment:
 `az provider register -n Microsoft.ContainerInstance` 
-
-3. **HIGHLY_IMP:** 
-Since NGroups is currently under private preview in Canary, hence **the customer’s dev environment needs to target Canary regions**. Customers can follow below guideline to change environment target: [Targeting ARM Region using PowerShell | ARM Wiki (eng.ms)](https://eng.ms/docs/products/arm/troubleshooting/dri_tips/targeting_arm_region_pshell).
 
 
 |**IMP**: Please use the api-version - 2024-09-01-preview for canary preview|
