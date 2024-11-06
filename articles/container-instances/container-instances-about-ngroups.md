@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: Introduction to NGroups
 description: Introduction to NGroups and its features describing how customers can manage N instances of containers with NGroup.
@@ -15,6 +16,27 @@ ms.date: 11/05/2024
 Containers have become the standard for packaging, deploying, and managing cloud applications, and effectively managing these containers is just as crucial as running the apps themselves. Azure Container Instances (ACI) is a flexible and scalable serverless computing service that allows you to run containerized applications without managing infrastructure. NGroups is a powerful feature within ACI designed to make managing multiple Azure container groups easier, faster, and hassle-free. These new APIs, an extension of the Azure Container Instance (ACI) API set provides a way to manage multiple related container groups (CGs) together. 
 
 NGroups APIs allow customers to manage a huge scale of container groups with advanced features such as maintaining multiple instances, rolling upgrades, high availability through Availability Zones (AZs), confidentiality, load balancing, zone rebalancing (Zone Any), and auto-scaling. The NGroups feature builds upon ACI ensuring container groups are secure, highly available, and supports the feature set of ACI.  
+=======
+## **Overview** 
+
+When deploying containerized applications to the cloud, customers face a decision of managing their own infrastructure and orchestrator or choosing to deploy to a prescriptive serverless platform. Running large-scale applications on the cloud with containerized workloads is difficult due to a customer requiring expertise in infrastructure management and container grouping and management platforms. 
+
+NGroups is an easy to use and manage at scale container offering that reduces customer’s infrastructure management responsibilities while still providing the flexibility to configure scaling rules, networking, and security policies. NGroups provides customers with an environment that is configured to run containerized applications at scale with promises such as Maintaining N instances, Rolling Upgrades, High Availability with Availability Zones (AZs), auto-scaling (coming soon), Confidentiality, Load Balancing setup, AZ Rebalancing (Zone Any) etc. Customers need not deploy VMs or orchestrate complex infrastructure to get their application up and running. 
+
+To provide customers with the flexibility to configure NGroups to meet their organizational needs, NGroups integrates well with many Azure resources such as virtual networks, load balancers, Azure Managed Identity, storage accounts etc. This empowers customers to focus on their application and business logic, while Azure takes care of the rest of infrastructure management. 
+
+For 1P customers using ACI, NGroups is the Azure Core Containers standards platform that offers capabilities to keep containers secure, highly available, and compliant with Azure standards. Onboarding to NGroups helps eliminate recurring bookkeeping of compliance checklists for these customers, with the platform natively applying all defined standards on NGroups resources. 
+
+Examples of great workloads to run on top of NGroups include batch applications, CI/CD pipelines, ETL pipelines, and custom orchestrators that use Azure Container Instances (ACI) Container Groups as a unit of compute. 
+
+ 
+
+ACI provides a single instance of a Hyper-V isolated version container group on demand. ACI does not provide concepts such as scaling, load balancing, rolling upgrades, spreading instances across availability zones out of the box. This is the best option for customers that simply want to deploy a container quickly, and do not need built-in support for these more advanced concepts. 
+
+ 
+
+NGroups API are extension to ACI, which allows customers to quickly deploy a group of CGs and provides support for more complex scenarios. Customers can choose to use ACI if they have a single task, they want to run quickly without needing to consider scale. As their application needs grow, they can easily move their instance to a NGroups. ACI and NGroups will coexist analogous to the needs of customers using VMs with VMSS. 
+>>>>>>> be37c7d2ae611c6ca81ec684500b5ac38635df00
 
 ## **Concepts** 
 
