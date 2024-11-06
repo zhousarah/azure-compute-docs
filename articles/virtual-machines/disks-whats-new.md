@@ -54,7 +54,7 @@ Azure Disk Storage regularly receives updates for new features and enhancements.
 
 #### Expanded regional availability for Premium SSD v2
 
-Premium SSD v2 disks were made available in Germany West Central, Israel Central, Italy North, Spain Central, Mexico Central regions. For more information, see the [Azure Update](https://azure.microsoft.com/en-us/updates/v2/generally-available-azure-premium-ssd-v2-disk-storage-is-now-available-in-more-regions).
+Premium SSD v2 disks were made available in Germany West Central, Israel Central, Italy North, Spain Central, Mexico Central regions. For more information, see the [Azure Update](https://azure.microsoft.com/updates/v2/generally-available-azure-premium-ssd-v2-disk-storage-is-now-available-in-more-regions).
 
 ### Quarter 2 (April, May, June)
 
