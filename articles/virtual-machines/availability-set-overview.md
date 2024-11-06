@@ -75,7 +75,7 @@ If your VMs have a shared fault domain, it could be because you took these actio
 2. Stop or deallocate the first VM.
 3. Deploy the second VM.
 
-Under these circumstances, the OS disk of the second VM might be created on the same fault domain as the first VM, so the two VMs will be on same fault domain. To avoid this problem, we recommend that you don't stop or deallocate VMs between deployments.
+Under these circumstances, the OS disk of the second VM might be created on the same fault domain as the first VM, so the two VMs will be on same fault domain. To avoid this problem, don't stop or deallocate VMs between deployments.
 
 :::image type="content" source="media/disks-high-availability/disks-availability-set.png" alt-text="Diagram of fault domain alignment with regional virtual machine scale sets and availability sets." lightbox="media/disks-high-availability/disks-availability-set.png":::
 
