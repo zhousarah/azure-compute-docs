@@ -41,7 +41,7 @@ Both shared ultra disks and shared premium SSD v2 disks don't have an extra char
 
 The four performance throttles a shared ultra disk and shared premium SSD v2 disk have are diskIOPSReadWrite, diskMB/sReadWrite, diskIOPSReadOnly, and diskMB/sReadOnly. Each performance throttle can be configured to change the performance of your disk. The performance for shared ultra disk premium SSD v2 disk are calculated in the following ways: total provisioned IOPS (diskIOPSReadWrite + diskIOPSReadOnly) and for total provisioned throughput MB/s (diskMB/sReadWrite + diskMB/sReadOnly).
 
-Once you've determined your total provisioned IOPS and total provisioned throughput, you can use them in the [pricing calculator](https://azure.microsoft.com/pricing/calculator/?service=managed-disks) to determine the cost of an ultra shared disk and a premium SSD v2 disk.
+Once you've determined your total provisioned IOPS and total provisioned throughput, you can use them in the [pricing calculator](https://azure.microsoft.com/pricing/calculator/?service=managed-disks) to determine the cost of an ultra shared disk and a premium SSD v2 shared disk.
 
 ## Disk sizes
 
