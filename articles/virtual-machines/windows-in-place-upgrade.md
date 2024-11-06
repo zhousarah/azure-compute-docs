@@ -182,7 +182,7 @@ To initiate the in-place upgrade the VM must be in the `Running` state. Once the
    .\setup.exe /auto upgrade /dynamicupdate disable /eula accept
    ```
 
-6. Select the correct "Upgrade to" image based on the current version and configuration of the VM using the [Windows Server upgrade matrix](/windows-server/get-started/upgrade-overview).
+1. Select the correct "Upgrade to" image based on the current version and configuration of the VM using the [Windows Server upgrade matrix](/windows-server/get-started/upgrade-overview).
 
 During the upgrade process the VM will automatically disconnect from the RDP session. After the VM is disconnected from the RDP session the progress of the upgrade can be monitored through the [screenshot functionality available in the Azure portal](/troubleshoot/azure/virtual-machines/boot-diagnostics#enable-boot-diagnostics-on-existing-virtual-machine).
 
