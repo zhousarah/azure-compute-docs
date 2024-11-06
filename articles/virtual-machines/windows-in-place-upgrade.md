@@ -176,7 +176,7 @@ To initiate the in-place upgrade the VM must be in the `Running` state. Once the
    ```
 
    You can use /eula accept switch in the Windows Server upgrade command to automatically accept the Microsoft Software License Terms (End User License Agreement or EULA) during the upgrade process.
-   Using the /eula accept switch can help avoid issues where the upgrade process stalls because the EULA was not accepted manually. This switch ensures that the        upgrade process can proceed smoothly without requiring user interaction to accept the license terms.
+   Using the /eula accept switch can help avoid issues where the upgrade process stalls because the EULA was not accepted manually. This switch ensures that the upgrade process can proceed smoothly without requiring user interaction to accept the license terms.
  
    ```powershell
    .\setup.exe /auto upgrade /dynamicupdate disable /eula accept
