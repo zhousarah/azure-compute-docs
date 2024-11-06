@@ -140,6 +140,9 @@ The following diagram is an architecture that uses Oracle Active Data Guard FSFO
 
 :::image type="content" source="./media/oracle-reference-architecture/Architecture_Far_sync.svg" alt-text="Diagram that shows Oracle Database using Far Sync in an Active Data Guard configuration across regions." lightbox="./media/oracle-reference-architecture/Architecture_Far_sync.svg":::
 
+> [!NOTE]
+> When you plan for a symmetrical Far Sync deployment, please note that you will need one more Far Sync instance in the second region.
+
 ### Oracle GoldenGate
 
 GoldenGate enables the exchange and manipulation of data at the transaction level among multiple, heterogeneous platforms across the enterprise. It moves committed transactions with transaction integrity and minimal overhead on your existing infrastructure. Its modular architecture gives you the flexibility to extract and replicate selected data records, transactional changes, and changes to data definition language (DDL) across various topologies.
