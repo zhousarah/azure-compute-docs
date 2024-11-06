@@ -137,7 +137,7 @@ Request a container group from a standby pool using [az deployment group create]
   "resources": [
     {
       "type": "Microsoft.ContainerInstance/containerGroups",
-      "apiVersion": "2023-05-01",
+      "apiVersion": "2024-05-01-preview",
       "name": "[parameters('containerGroupName')]",
       "location": "[parameters('location')]",
       "properties": {
@@ -179,7 +179,7 @@ Request a container group from a standby pool using [Create or Update](/rest/api
 
 ```HTTP
 PUT
-https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroups/myContainerGroup?api-version=2023-05-01 
+https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroups/myContainerGroup?api-version=2024-05-01-preview 
 
 Request Body
 {

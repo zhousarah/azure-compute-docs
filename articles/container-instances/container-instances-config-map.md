@@ -44,7 +44,7 @@ az container-group-profile create \
 Create a container group profile using [New-AzContainerGroupProfile](/powershell/module/az.standbypool/new-AzStandbyContainerGroupPool) and specify the config map details.
 
 ```azurepowershell-interactive
-New-AzContainerGroupProfile `
+New-AzContainerInstanceContainerGroupProfile `
     -ResourceGroupName myResourceGroup `
     -Name myContainerGroupProfile `
     -Location "West Central US"  `
@@ -302,7 +302,7 @@ Apply the config map settings stored in the container group profile using [az de
   "resources": [
     {
       "type": "Microsoft.ContainerInstance/containerGroups",
-      "apiVersion": "2023-05-01",
+      "apiVersion": "2024-05-01-preview",
       "name": "[parameters('containerGroupName')]",
       "location": "[parameters('location')]",
       "properties": {
@@ -341,7 +341,7 @@ Apply the config map settings stored in the container group profile using [Creat
 
 ```HTTP
 PUT
-https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroups/myContainerGroup?api-version=2023-05-01 
+https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroups/myContainerGroup?api-version=2024-05-01-preview 
 
 Request Body
 {
@@ -450,7 +450,7 @@ Apply the config map settings using [az deployment group create](/cli/azure/depl
   "resources": [
     {
       "type": "Microsoft.ContainerInstance/containerGroups",
-      "apiVersion": "2023-05-01",
+      "apiVersion": "2024-05-01-preview",
       "name": "[parameters('containerGroupName')]",
       "location": "[parameters('location')]",
       "properties": {
@@ -485,7 +485,7 @@ Apply the config map settings using [Create or Update](/rest/api/container-insta
 
 ```HTTP
 PUT
-https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroups/myContainerGroup?api-version=2023-05-01 
+https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroups/myContainerGroup?api-version=2024-05-01-preview 
 
 Request Body
 {
