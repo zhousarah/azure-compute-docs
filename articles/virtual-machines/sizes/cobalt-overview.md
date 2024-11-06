@@ -29,3 +29,4 @@ The following section lists the VM series supported by Cobalt 100 processors. To
  
 To learn how to deploy these VMs for cloud-native applications on AKS, check out [Azure Kubernetes Service (AKS) demo on Cobalt 100 VMs](https://aka.ms/C100-VM-deploy-demo)
 
+[!INCLUDE [sizes-footer](./includes/sizes-footer.md)] 
