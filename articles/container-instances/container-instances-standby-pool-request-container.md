@@ -25,7 +25,7 @@ Before utilizing standby pools, complete the feature registration and configure 
 ## Request a container from the standby pool
 
 ### [CLI](#tab/cli)
-Request a container group from a standby pool using [az container create](/cli/azure/container) and specifying the standby pool and container group profile. 
+Request a container group from a standby pool using [az container create](/cli/azure/container) and specifying the standby pool and container group profile. For more information on using config maps during container requests, see [use config maps](container-instances-config-map.md). 
 
 ```azurecli-interactive
 az container create \
@@ -40,7 +40,7 @@ az container create \
 
 ```
 ### [PowerShell](#tab/powershell)
-Request a container group from a standby pool using [New-AzContainerGroup](/powershell/module/az.containerinstance/new-AzContainerGroup) and specifying the standby pool and container group profile. 
+Request a container group from a standby pool using [New-AzContainerGroup](/powershell/module/az.containerinstance/new-AzContainerGroup) and specifying the standby pool and container group profile. For more information on using config maps during container requests, see [use config maps](container-instances-config-map.md). 
 
 ```azurepowershell-interactive
 $container = New-AzContainerInstancenoDefaultObject -Name myContainer -ConfigMapKeyValuePair @{"key1"="value1"}
@@ -57,7 +57,7 @@ New-AzContainerGroup `
 ```
 
 ### [ARM template](#tab/template)
-Request a container group from a standby pool using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) and specifying the standby pool and container group profile. 
+Request a container group from a standby pool using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment) and specifying the standby pool and container group profile. For more information on using config maps during container requests, see [use config maps](container-instances-config-map.md). 
 
 
 ```json
@@ -168,7 +168,7 @@ Request a container group from a standby pool using [az deployment group create]
 
 
 ### [REST](#tab/rest)
-Request a container group from a standby pool using [Create or Update](/rest/api/container-instances/container-groups/create-or-update) and specifying the standby pool and container group profile. 
+Request a container group from a standby pool using [Create or Update](/rest/api/container-instances/container-groups/create-or-update) and specifying the standby pool and container group profile. For more information on using config maps during container requests, see [use config maps](container-instances-config-map.md). 
 
 ```HTTP
 PUT
