@@ -18,14 +18,14 @@ The FPGA Attestation service performs a series of validations on a design checkp
 > - [Sign up for the public preview.](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR-2EKbNvC7xEohJW7nFBrIFUNzVVNzlMQ002TzdYRzZUR0EwOTFGQjZJUy4u)
 
 ## News
-The current attestation service is using Vitis 2021.1 from Xilinx, on Sept 26th 2022, we’ll be moving to Vitis 2022.1, the change should be transparent to most users. Once your designs are “attested” using Vitis 2022.1, you should be moving to XRT2022.1. Xilinx published new marketplace images based on XRT 2022.1.
-Please note that current designs already attested on Vitis 2020.2 or 2021.1, will work on the current deployment marketplace images as well as new images based on XRT2022.1
+The current attestation service is using Vitis 2021.1 from Xilinx, on Sept 26th 2022, we’ll be moving to Vitis 2022.1. The change should be transparent to most users. Once your designs are “attested” using Vitis 2022.1, you should be moving to XRT2022.1. Xilinx published new marketplace images based on XRT 2022.1.
+Please note that current designs already attested on Vitis 2020.2 or 2021.1, works on the current deployment marketplace images and new images based on XRT2022.1
 
 As part of the move to 2021.1, Xilinx introduced a new DRC that might affect some designs previously working on Vitis 2020.2 regarding BUFCE_LEAF failing attestation, for more details here: [Xilinx AR 75980 UltraScale/UltraScale+ BRAM: CLOCK_DOMAIN = Common Mode skew checks](https://support.xilinx.com/s/article/75980?language=en_US).
 
 ## Prerequisites  
 
-You will need an Azure subscription and an Azure Storage account. The subscription gives you access to Azure and the storage account is used to hold your netlist and output files of the attestation service.  
+You need an Azure subscription and an Azure Storage account. The subscription gives you access to Azure and the storage account is used to hold your netlist and output files of the attestation service.  
 
 We provide PowerShell and Bash scripts to submit attestation requests.   The scripts use  Azure CLI, which can run on Windows and Linux. PowerShell can run on Windows, Linux, and macOS.  
 
@@ -33,11 +33,11 @@ We provide PowerShell and Bash scripts to submit attestation requests.   The scr
 
 [PowerShell for Windows, Linux, and macOS download (only for PowerShell scripts)](/powershell/scripting/install/installing-powershell)
 
-You will need to have your tenant and subscription ID authorized to submit to the attestation service. Visit [https://aka.ms/AzureFPGAAttestationPreview](https://aka.ms/AzureFPGAAttestationPreview) to request access. 
+You need to have your tenant and subscription ID authorized to submit to the attestation service. Visit [https://aka.ms/AzureFPGAAttestationPreview](https://aka.ms/AzureFPGAAttestationPreview) to request access. 
 
 ## Building your design for attestation  
 
-The preferred Xilinx toolset for building designs is Vitis 2022.1. Netlist files that were created with an earlier version of the toolset and are still compatible with 2022.1 can be used. Make sure you have loaded the correct shell to build against. The currently supported version is `xilinx_u250_gen3x16_xdma_2_1_202010_1`. The support files can be downloaded from the Xilinx Alveo lounge.
+The preferred Xilinx toolset for building designs is Vitis 2022.1. Netlist files that were created with an earlier version of the toolset and are still compatible with 2022.1 can be used. Ensure you've loaded the correct shell to build against. The currently supported version is `xilinx_u250_gen3x16_xdma_2_1_202010_1`. The support files can be downloaded from the Xilinx Alveo lounge.
 
 You must include the following argument to Vitis (v++ cmd line) to build an `xclbin` file that contains a netlist instead of a bitstream.
 
@@ -45,7 +45,7 @@ You must include the following argument to Vitis (v++ cmd line) to build an `xcl
 
 ## Logging into Azure  
 
-Prior to performing any operations with Azure, you must log into Azure and set the subscription that is authorized to call the service. Use the `az login` and `az account set –s <Sub ID or Name>` commands for this purpose. Further information about this process is documented here:  [Sign in with Azure CLI](/cli/azure/authenticate-azure-cli). Use either the **sign in interactively** or **sign in with credentials** option on the command line.  
+Before performing any operations with Azure, you must log into Azure and set the subscription that is authorized to call the service. Use the `az login` and `az account set –s <Sub ID or Name>` commands for this purpose. Further information about this process is documented here:  [Sign in with Azure CLI](/cli/azure/authenticate-azure-cli). Use either the **sign in interactively** or **sign in with credentials** option on the command line.  
 
 ## Creating a storage account and blob container  
 
@@ -63,13 +63,13 @@ There are several ways to copy the file; an example using the az storage upload 
 
 ## Running the attestation scripts  
 
-To run the scripts, you will need to provide the name of your storage account, the name of the blob container where the netlist file is stored and the name of the netlist file. You will also need to create a Service shared access signature (SAS) that grants read/write access to your container (not the netlist). This SAS is used by the attestation service to make a local copy of your netlist file and to write back the resulting output files of the validation process to your container.  
+To run the scripts, you will need to provide the name of your storage account, the name of the blob container where the netlist file is stored and the name of the netlist file. Also, you need to create a Service shared access signature (SAS) that grants read/write access to your container (not the netlist). This SAS is used by the attestation service to make a local copy of your netlist file and to write back the resulting output files of the validation process to your container.  
 
 An overview of shared access signatures is available here with specific information about the Service SAS available here. The Service SAS page includes an important caution about protecting the generated SAS.  Read the caution to understand the need to keep the SAS protected from malicious or unintended use.  
 
 You can generate a SAS for your container using the az storage container generate-sas cmdlet. Specify an expiry time in UTC format that is at least a few hours past the time of submission; around 6 hours should be more than adequate.  
 
-If you wish to use virtual directories, you must include the directory hierarchy as part of the container argument. For example, if you have a container named “netlists” and have a virtual directory named “image1” that contains the netlist blob, you would specify “netlists/image1” as the container name. Append any additional directory names to specify a deeper hierarchy. 
+If you wish to use virtual directories, you must include the directory hierarchy as part of the container argument. For example, if you have a container named “netlists” and have a virtual directory named “image1” that contains the netlist blob, you would specify “netlists/image1” as the container name. Add any extra directory names to specify a more detailed hierarchy. 
 
 ### PowerShell   
 
