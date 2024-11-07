@@ -1,5 +1,5 @@
 ---
-title: Request a container from a Standby Pool for Azure Container Instances(Preview)
+title: Request a container from a Standby pool for Azure Container Instances
 description: Learn how to scale out from a standby pool with Azure Container Instances.
 author: mimckitt
 ms.author: mimckitt
@@ -19,7 +19,7 @@ This article steps through requesting a container group from a standby pool for 
 
 ## Prerequisites
 
-Before utilizing standby pools, complete the feature registration and configure role based access controls listed in the [Standby Pools for Azure Container Instances](container-instances-standby-pool-overview.md#prerequisites) overview page. 
+Before utilizing standby pools, complete the feature registration and configure role based access controls listed in the [Standby pools for Azure Container Instances](container-instances-standby-pool-overview.md#prerequisites) overview page. 
 
 
 ## Request a container from the standby pool
