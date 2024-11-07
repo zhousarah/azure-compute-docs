@@ -35,11 +35,11 @@ az container container-group-profile create \
     --ports 8000 \ 
     --cpu 1 \
     --memory 1.5 \
-    --restart-policy never
+    --restart-policy never \
     --config-map key1=value1 key2=value2
 ```
 ### [PowerShell](#tab/powershell)
-Create a container group profile with config map settings using [New-AzContainerGroupProfile](/powershell/module/az.containerinstance).
+Create a container group profile with config map settings using [New-AzContainerInstanceContainerGroupProfile](/powershell/module/az.containerinstance).
 
 ```azurepowershell-interactive
 $port1 = New-AzContainerInstancePortObject -Port 8000 -Protocol TCP
@@ -146,7 +146,7 @@ Create a container group profile with and config map settings deploy the templat
 Create a container group profile with config map settings using [Create or Update](/rest/api/container-instances/container-groups/create-or-update).
 
 ```HTTP
-https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile?api-version=2024-05-01-preview
+PUT https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile?api-version=2024-05-01-preview
 
 Request Body
 {

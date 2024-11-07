@@ -60,7 +60,7 @@ For more information on assigning roles, see [assign Azure roles using the Azure
 
 When you require a new container group, you can immediately pull one from the standby pool that is provisioned and running. 
 
-Standby pools only give out container groups from the pool that are fully provisioned and ready to receive work. For example, the instances in your pool are still being initialized. In this case, the instances aren't in the expected provisioning state and are't given out when a container is requested. If no instances in the pool are available, Azure Container Instances will default back to net new container group creation. 
+Standby pools only give out container groups from the pool that are fully provisioned and ready to receive work. For example, when the instances in your pool are still being initialized, they aren't in the running state and are't given out when a container is requested. If no instances in the pool are available, Azure Container Instances will default back to net new container group creation. 
 
 ## Standby pool size
 The number of container groups in a standby pool is determined by setting the `maxReadyCapacity` parameter. When a container group is consumed from the pool, the standby pool automatically begins to refill ensuring that your standby pool maintains the set maximum ready capacity.
@@ -123,9 +123,9 @@ A container group profile tells the standby pool how to configure the containers
 
 ## Config maps
 
-A [config map](container-instances-config-map.md) is a property associated with a container group profile that can be used to apply container configurations similar to environment variables and secret volumes. However, when using environment variables or secret volumes, restarting the pod is required for the changes to take effect. By using config maps, the configurations can be applied without restarting the container. This enables out of band updates so containers can read the new values without restarting. 
+A [config map](container-instances-config-map.md) is a property that can be associated with a container group profile and be used to apply container configurations similar to environment variables and secret volumes. However, when using environment variables or secret volumes, restarting the pod is required for the changes to take effect. By using config maps, the configurations can be applied without restarting the container. This enables out of band updates so containers can read the new values without restarting. 
 
-Azure Container Instances can be created with or without config maps and can be updated at any point in time post creation using config maps. Updating config maps in an existing running container group can be accomplished quickly and without causing the container to reboot. 
+Azure Container Instances can be created with or without config maps and can be updated at any point in time post creation using config maps. Updating config maps in an existing running container group can be accomplished quickly and without causing the container to reboot. For more information, see [use config maps](container-instances-config-map.md).
 
 ```json
 {
@@ -171,9 +171,6 @@ Azure Container Instances can be created with or without config maps and can be 
 }
 
 ```
-
-For more information, see [use config maps](container-instances-config-map.md)
-
 
 ## Confidential containers
 Standby pools for Azure container instances support confidential containers. To utilize [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential` in the container group profile.
@@ -225,7 +222,7 @@ Standby pools for Azure container instances support confidential containers. To 
 
 ```
 ## Managed Identity
-Standby pools for Azure Container Instances support integration with Managed Identity. Applying a managed identity is performed when requesting a container from the standby pool and including the `identity` parameters and settings. 
+Standby pools for Azure Container Instances support integration with Managed Identity. Applying a managed identity is performed when requesting a container from the standby pool and including the `identity` parameters and settings. Managed Identity is not a property supported directly in the container group profile. 
 
 ```json
 {
@@ -260,7 +257,7 @@ Standby pools for Azure Container Instances support integration with Managed Ide
 }
 ```
 ## Availability zones
-Standby pools for Azure Container instances supports creating and requesting containers across availability zones. Creating a zonal standby pool is currently only available using the standby pool REST APIs in version 2024-08-01. 
+Standby pools for Azure Container instances supports creating and requesting containers across availability zones. Creating a zonal standby pool is currently only available using the standby pool [REST APIs](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update) using version 2024-08-01. 
 
 ### Create a zonal standby pool
 
