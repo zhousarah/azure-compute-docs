@@ -174,6 +174,8 @@
       href: container-instances-standby-pool-update-delete.md
     - name: Get pool and container details
       href: container-instances-standby-pool-get-details.md
+    - name: Frequently asked questions
+      href: container-instances-standby-pool-faq.md
   - name: Monitor and log
     items:
     - name: Monitor Container Instances
