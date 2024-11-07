@@ -1,5 +1,5 @@
 ---
-title: Standby pools for Azure Container Instances
+title: Standby pools for Azure Container Instances (Preview)
 description: Learn how to utilize standby pools to reduce scale-out latency with Azure Container Instances.
 author: mimckitt
 ms.author: mimckitt

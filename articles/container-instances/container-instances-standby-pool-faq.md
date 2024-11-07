@@ -1,5 +1,5 @@
 ---
-title: Frequently asked questions about standby pools for Azure Container Instances
+title: Frequently asked questions about standby pools for Azure Container Instances (Preview)
 description: Get answers to frequently asked questions for standby pools for Azure Container Instances.
 author: mimckitt
 ms.author: mimckitt

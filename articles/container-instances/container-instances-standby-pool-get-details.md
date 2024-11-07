@@ -1,5 +1,5 @@
 ---
-title: Get standby pool and instance details
+title: Get standby pool and instance details (Preview)
 description: Learn how to get details about your standby pool for Azure Container Instances.
 author: mimckitt
 ms.author: mimckitt
