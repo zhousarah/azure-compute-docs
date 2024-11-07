@@ -14,7 +14,7 @@ ms.reviewer: tomvcassidy
 > [!IMPORTANT]
 > Standby pools for Azure Container Instances are currently in preview. Previews are made available to you on the condition that you agree to the [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Some aspects of this feature may change prior to general availability (GA). 
 
-Standby Pools for Azure Container Instances enable you to create a pool of pre-provisioned container groups that can be used in response to incoming traffic. The container groups in the pool are fully provisioned, initialized, and ready to receive work.
+Standby pools for Azure Container Instances enable you to create a pool of pre-provisioned container groups that can be used in response to incoming traffic. The container groups in the pool are fully provisioned, initialized, and ready to receive work.
 
 :::image type="content" source="media/container-instances-standby-pools/standby-pool-aci-workflow-diagram.png" alt-text="Diagram of the workflow of creating a container using the traditional path vs the standby pool path.":::
 
@@ -71,7 +71,7 @@ The only available refill policy for standby pools on Azure Container instances 
 | Setting | Description | 
 |---|---|
 | maxReadyCapacity | The maximum number of container groups you want deployed in the pool.|
-| refillPolicy | Tells the standby pool to immediatly replenish container groups to maintain the maxReadyCapacity. | 
+| refillPolicy | Tells the standby pool to immediately replenish container groups to maintain the maxReadyCapacity. | 
 
 ## Container group profile
 
@@ -257,7 +257,7 @@ Standby pools for Azure Container Instances support integration with Managed Ide
 }
 ```
 ## Availability zones
-Standby pools for Azure Container instances supports creating and requesting containers across availability zones. Creating a zonal standby pool is currently only available using the standby pool [REST APIs](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update) using version 2024-08-01. 
+Standby pools for Azure Container Instances supports creating and requesting containers across availability zones. Creating a zonal standby pool is currently only available using the standby pool [REST APIs](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update) using version 2024-08-01. 
 
 ### Create a zonal standby pool
 

@@ -9,7 +9,7 @@ ms.date: 11/1/2024
 ms.reviewer: tomvcassidy
 ---
 
-# Get standby pool and instance details
+# Get standby pool and instance details (Preview)
 This article discusses how to retrieve information about your standby pool and the container groups within it. 
 
 ## Standby pool details
