@@ -31,7 +31,7 @@ No. Standby Pools doesn't currently support that capability. If you need to move
 ### I created a standby pool and I noticed that some containers are coming up in a failed state. 
 Ensure you have enough quota to complete the standby pool creation. Insufficient quota results in the platform attempting to create the containers in the standby pool but unable to successfully complete the create operation. Check for multiple types of quotas such as Cores, Network Interfaces, IP Addresses, etc.
 
-### I requsted a container from my pool but it created a new container instead. 
+### I requested a container from my pool but it created a new container instead. 
 Ensure that the container groups in your standby pool are in the running state prior to issuing a request. For example, if using a standby If containers are in any other states such as creating or deleting, the container request will default to creating a new container group from scratch. 
 
 
