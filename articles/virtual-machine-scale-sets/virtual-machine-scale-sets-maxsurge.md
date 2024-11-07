@@ -5,7 +5,7 @@ author: mimckitt
 ms.author: mimckitt
 ms.topic: overview
 ms.service: azure-virtual-machine-scale-sets
-ms.date: 10/28/2024
+ms.date: 11/7/2024
 ms.reviewer: ju-shim
 ms.custom: upgradepolicy. maxsurge
 ---
