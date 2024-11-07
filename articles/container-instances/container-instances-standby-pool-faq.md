@@ -1,5 +1,5 @@
 ---
-title: Frequently asked questions about standby pools for Azure Conatiner Instances
+title: Frequently asked questions about standby pools for Azure Container Instances
 description: Get answers to frequently asked questions for standby pools for Azure Container Instances.
 author: mimckitt
 ms.author: mimckitt
@@ -23,19 +23,19 @@ A standby pool can be anywhere between 3 and 24 characters. For more information
 The maximum number of container groups in a standby pool is 2,000.  
 
 ### Can I change the size of my standby pool without needing to recreate it? 
-Yes. To change the size of your standby pool update the max ready capacity setting.  
+Yes. To change the size of your standby pool, update the max ready capacity setting.  
 
 ### Can a standby pool resource be moved?
-No. Standby pools doesn't currently support that capability. If you need to move a standby pool, you can consider deleting it recreating it in another location.
+No. Standby pools don't currently support move capabilities. If you need to move a standby pool, you can consider deleting it recreating it in another location.
 
 ### I created a standby pool and I noticed that some containers are coming up in a failed state. 
-Ensure you have enough quota to complete the standby pool creation. Insufficient quota results in the platform attempting to create the containers in the standby pool but unable to successfully complete the create operation. Check for multiple types of quotas such as Cores, Network Interfaces, IP Addresses, etc.
+Ensure you have enough quota to complete the standby pool creation. Insufficient quota results in the platform attempting to create the containers in the standby pool fail after encountering a quota error. Check for multiple types of quotas such as Cores, Network Interfaces, IP Addresses, etc.
 
 ### I requested a container from my pool but it created a new container instead. 
-Ensure that the container groups in your standby pool are in the running state prior to issuing a request. For example, if using a standby If containers are in any other states such as creating or deleting, the container request will default to creating a new container group from scratch. 
+Ensure that the container groups in your standby pool are in the running state before issuing a request. For example, if using a standby If containers are in any other states such as creating or deleting, the container request defaults to creating a new container group from scratch. 
 
 ### Can I create a standby pool with containers spread across availability zones? 
-Yes. However, standby pools for Azure Container Instances only currently supports creating and requesting containers across availability zones using [REST APIs](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update) using version 2024-08-01. To do this, simply update the create pool REST command to point to the 2024-08-01 version instead of 2024-03-01. 
+Yes. However, standby pools for Azure Container Instances only currently support creating and requesting containers across availability zones using [REST APIs](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update) using version 2024-08-01.  
 
 
 ## Next steps
