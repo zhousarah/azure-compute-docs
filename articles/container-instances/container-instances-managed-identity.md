@@ -140,12 +140,12 @@ The `identity` section in the output looks similar to the following, showing the
 [...]
 "identity": {
     "principalId": "null",
-    "tenantId": "xxxxxxxx-f292-4e60-9122-xxxxxxxxxxxx",
+    "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
     "type": "UserAssigned",
     "userAssignedIdentities": {
-      "/subscriptions/xxxxxxxx-0903-4b79-a55a-xxxxxxxxxxxx/resourcegroups/danlep1018/providers/Microsoft.ManagedIdentity/userAssignedIdentities/myACIId": {
-        "clientId": "xxxxxxxx-5523-45fc-9f49-xxxxxxxxxxxx",
-        "principalId": "xxxxxxxx-f25b-4895-b828-xxxxxxxxxxxx"
+      "/subscriptions/aaaa0a0a-bb1b-cc2c-dd3d-eeeeee4e4e4e/resourcegroups/danlep1018/providers/Microsoft.ManagedIdentity/userAssignedIdentities/myACIId": {
+        "clientId": "00001111-aaaa-2222-bbbb-3333cccc4444",
+        "principalId": "aaaaaaaa-bbbb-cccc-1111-222222222222"
       }
     }
   },
@@ -166,7 +166,7 @@ az container exec \
 Run the following commands in the bash shell in the container. To get an access token to use Microsoft Entra ID to authenticate to key vault, run the following command:
 
 ```bash
-client_id="xxxxxxxx-5523-45fc-9f49-xxxxxxxxxxxx"
+client_id="00001111-aaaa-2222-bbbb-3333cccc4444"
 curl "http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fvault.azure.net&client_id=$client_id" -H Metadata:true -s
 ```
 
@@ -229,8 +229,8 @@ The `identity` section in the output looks similar to the following, showing tha
 ```output
 [...]
 "identity": {
-    "principalId": "xxxxxxxx-528d-7083-b74c-xxxxxxxxxxxx",
-    "tenantId": "xxxxxxxx-f292-4e60-9122-xxxxxxxxxxxx",
+    "principalId": "bbbbbbbb-cccc-dddd-2222-333333333333",
+    "tenantId": "aaaabbbb-0000-cccc-1111-dddd2222eeee",
     "type": "SystemAssigned",
     "userAssignedIdentities": null
 },
