@@ -1,13 +1,13 @@
 ---
 title: Azure Cobalt processor-based Virtual Machines
 description: An overview of Azure Cobalt processor-based Virtual Machines. 
-author: archat
+author: archatC
 ms.service: azure-virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 11/06/2024
-ms.author: archatC
+ms.date: 11/07/2024
+ms.author: archat
 ---
 
 # Azure Cobalt processor-based Virtual Machines
@@ -26,7 +26,4 @@ The following section lists the VM series supported by Cobalt 100 processors. To
 | General Purpose  | [Dpsv6-series](./general-purpose/dpsv6-series.md), [Dpdsv6-series](./general-purpose/dpdsv6-series.md), [Dplsv6-series](./general-purpose/dplsv6-series.md), [Dpldsv6-series](./general-purpose/dpldsv6-series.md) | Canada Central, Central US, East US 2, East US, Germany West Central, Japan East, Mexico Central, North Europe, Southeast Asia, Sweden Central, Switzerland North, UAE North, West Europe, and West US 2. |
 | Memory Optimized | [Epsv6-series](./memory-optimized/epsv6-series.md), [Epdsv6-series](./memory-optimized/epdsv6-series.md) | Canada Central, Central US, East US 2, East US, Germany West Central, Japan East, Mexico Central, North Europe, Southeast Asia, Sweden Central, Switzerland North, UAE North, West Europe, and West US 2.|
 
- 
 To learn how to deploy these VMs for cloud-native applications on AKS, check out [Azure Kubernetes Service (AKS) demo on Cobalt 100 VMs](https://aka.ms/C100-VM-deploy-demo)
-
-[!INCLUDE [sizes-footer](./includes/sizes-footer.md)] 

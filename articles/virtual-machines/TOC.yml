@@ -180,6 +180,8 @@
     - name: Overview
       displayName: Sizes, sizing, resize, ACU, compute
       href: ./sizes/overview.md
+    - name: Cobalt VMs
+      href: ./sizes/cobalt-overview.md
     - name: General purpose
       items:
       - name: Overview
