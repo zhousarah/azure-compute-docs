@@ -71,7 +71,7 @@ The only available refill policy for standby pools on Azure Container instances 
 | Setting | Description | 
 |---|---|
 | maxReadyCapacity | The maximum number of container groups you want deployed in the pool.|
-| refillPolicy | Tells the standby pool to immediatly replenish container groups to maintain the maxReadyCapacity. | 
+| refillPolicy | Tells the standby pool to immediately replenish container groups to maintain the maxReadyCapacity. | 
 
 ## Container group profile
 
