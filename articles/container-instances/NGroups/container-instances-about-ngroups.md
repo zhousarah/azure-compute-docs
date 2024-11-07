@@ -175,9 +175,18 @@ Here is a sample of a NGroup with managed identity and zones that refers to a co
 
 }
 ```
+### NGroups Feature Hightlights
+
+- Offers both Rolling and Manual update
+- Manage cross zonal container groups
+- Assign managed identities to container groups
+- Add load balancer and application gateway to manage traffic across container groups
+- Manage container groups with different container group profiles
+- Attach and detach container groups
+- Autoscale (coming soon)
 
 ### NGroups API
-This references a CG profile and adds additional orchestration related properties and capabilities. E.g.,  
+NGroups references a CG profile and adds additional related properties and capabilities. E.g.,  
 
 - The desired count of CGs to scale out by 
 
@@ -232,9 +241,14 @@ Create CG Profile: [ContainerGroupProfile-Sample.json](https://microsoft.sharepo
 Create Zonal NGroups with CGProfile: [NGroups-Zonal-Sample.json](https://microsoft.sharepoint-df.com/:u:/t/CoreContainersOrg/EbLBbNYGg1FEt0KQjr4Hw-0B8OVm5LRCAMuwFBOELOJEHw?e=noHok4)
 
 NGroups are not visible on the portal as of today, but you can check CGs being created on the portal under the resourceGroup. Customer can also check NGroups resourceId under CG JSON view in orchestrationProfile property: 
-![portalngroups.png](/.attachments/portalngroups-1fd4008a-b203-45e3-8e91-8f1a0ef86f21.png)
+
+:::image type="content" source="../media/container-instances-NGroups/Items.png" alt-text="":::
 
 ## **How-to-guide:**
+### How to do Rolling Update?
+
+We can use the Rolling Update feature to automatically update all CGs to a newer version without downtime of the CS2. 
+Please see rolling update documentation: [NGroups Roliing update](container-instances-rolling-update.md)
 
 ### **How to create a regional (zonal/non-zonal) NGroups?**
 First create a CG profile. A sample CG profile is shown below. Currently supported API version is 2024-09-01-preview
@@ -312,7 +326,8 @@ First create a CG profile. A sample CG profile is shown below. Currently support
 
     }
 ```
- Next, you can create a Zonal/Non-Zonal NGroup by either adding zones outside the properties or can leave the zones array empty.
+ 
+Next, you can create a Zonal/Non-Zonal NGroup by either adding zones outside the properties or can leave the zones array empty.
 
 ```
 { 
@@ -419,19 +434,17 @@ To get these environment variables on the container, specify these tags _at the 
 
 ```
 “tags: { 
-
     “metadata.container.environmentVariable.containerGroupName”: true, 
-
     “metadata.container.environmentVariable.orchestratorId”: true, 
-
     : 
-
     : // other NGroup tags you may have 
-
     : 
-
 }
 ```
 NGroup understands these tags as ‘special’ and propagates the required environment variables down to each container as shown below.
-![tagngroup.png](/.attachments/tagngroup-31a8d9f9-796b-4b4e-9f03-0f2346a502aa.png)
+
+:::image type="content" source="../media/container-instances-NGroups/CGNameEnvVariable.png" alt-text="":::
+
+
+
  
