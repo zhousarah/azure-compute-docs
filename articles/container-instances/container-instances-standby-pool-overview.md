@@ -257,7 +257,7 @@ Standby pools for Azure Container Instances support integration with Managed Ide
 }
 ```
 ## Availability zones
-Standby pools for Azure Container instances supports creating and requesting containers across availability zones. Creating a zonal standby pool is currently only available using the standby pool [REST APIs](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update) using version 2024-08-01. 
+Standby pools for Azure Container Instances supports creating and requesting containers across availability zones. Creating a zonal standby pool is currently only available using the standby pool [REST APIs](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update) using version 2024-08-01. 
 
 ### Create a zonal standby pool
 
