@@ -19,7 +19,6 @@ Get answers to frequently asked questions about standby pools for Azure Containe
 ### How long can my standby pool name be? 
 A standby pool can be anywhere between 3 and 24 characters. For more information, see [Resource naming restrictions for Azure resources](/azure/azure-resource-manager/management/resource-name-rules)
 
-
 ### How many container groups can my standby pool for Azure Container Instances have?  
 The maximum number of container groups in a standby pool is 2,000.  
 
