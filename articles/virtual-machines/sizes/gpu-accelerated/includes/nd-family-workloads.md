@@ -12,4 +12,4 @@ ms.custom: include file
 ---
 **AI and Deep Learning:** ND-family VMs are ideal for training and deploying complex deep learning models. Equipped with powerful NVIDIA GPUs, they provide the computational power necessary for handling extensive neural network training with large datasets, significantly reducing training times.
 
-**High-Performance Computing (HPC):** ND-family VMs are suitable for HPC applications that require GPU acceleration. Fields such as scientific research, engineering simulations (e.g., computational fluid dynamics), and genomic processing can benefit from the high-throughput computing capabilities of ND-series VMs.
+**High-Performance Computing (HPC):** ND-family VMs are suitable for HPC applications that require GPU acceleration. Fields such as scientific research, engineering simulations (for example, computational fluid dynamics), and genomic processing can benefit from the high-throughput computing capabilities of ND-series VMs.
