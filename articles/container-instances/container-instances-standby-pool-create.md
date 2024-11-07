@@ -29,7 +29,7 @@ The container group profile tells the standby pool how to configure the containe
 > To use [confidential containers](container-instances-confidential-overview.md) update the `sku` type to `Confidential` when creating your container group profile.
 
 ### [CLI](#tab/cli)
-Create a container group profile using [az container container-group-profile create](/cli/azure/container).
+Create a container group profile using [az container container-group-profile create](/cli/azure/container). You can optionally include config map details in the container group profile. For more information on config maps, see [use config maps](container-instances-config-map.md).
 
 ```azurecli-interactive
 az container container-group-profile create \
@@ -46,7 +46,8 @@ az container container-group-profile create \
 
 ```
 ### [PowerShell](#tab/powershell)
-Create a container group profile using [New-AzContainerInstanceContainerGroupProfile](/powershell/module/az.containerinstance).
+Create a container group profile using [New-AzContainerInstanceContainerGroupProfile](/powershell/module/az.containerinstance). You can optionally include config map details in the container group profile. For more information on config maps, see [use config maps](container-instances-config-map.md).
+
 
 ```azurepowershell-interactive
 $port1 = New-AzContainerInstancePortObject -Port 8000 -Protocol TCP
@@ -66,7 +67,8 @@ New-AzContainerInstanceContainerGroupProfile `
 ```
 
 ### [ARM template](#tab/template)
-Create a container group profile and save the template file. Deploy the template using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
+Create a container group profile and save the template file. Deploy the template using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment). You can optionally include config map details in the container group profile. For more information on config maps, see [use config maps](container-instances-config-map.md).
+
 
 
 ```json
@@ -146,7 +148,8 @@ Create a container group profile and save the template file. Deploy the template
 
 
 ### [REST](#tab/rest)
-Create a container group profile using [Create or Update](/rest/api/container-instances/container-groups/create-or-update).
+Create a container group profile using [Create or Update](/rest/api/container-instances/container-groups/create-or-update). You can optionally include config map details in the container group profile. For more information on config maps, see [use config maps](container-instances-config-map.md).
+
 
 ```HTTP
 https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile?api-version=2024-05-01-preview  
