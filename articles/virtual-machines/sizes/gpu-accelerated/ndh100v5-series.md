@@ -20,6 +20,14 @@ ms.reviewer: mattmcinnes
 ## Feature support
 [Premium Storage](../../premium-storage-performance.md): Supported <br>[Premium Storage caching](../../premium-storage-performance.md): Supported <br>[Live Migration](../../maintenance-and-updates.md): Not Supported <br>[Memory Preserving Updates](../../maintenance-and-updates.md): Not Supported <br>[Generation 2 VMs](../../generation-2.md): Supported <br>[Generation 1 VMs](../../generation-2.md): Not Supported <br>[Accelerated Networking](/azure/virtual-network/create-vm-accelerated-networking-cli): Supported <br>[Ephemeral OS Disk](../../ephemeral-os-disks.md): Supported <br>[Nested Virtualization](/virtualization/hyper-v-on-windows/user-guide/nested-virtualization): Not Supported <br>[Infiniband](../../setup-infiniband.md): Supported <br>
 
+> [!IMPORTANT]
+> To get started with ND H100 v5 VMs, refer to HPC Workload Configuration and Optimization for steps including driver and network configuration.
+> Due to increased GPU memory I/O footprint, ND H100 v5 requires the use of Generation 2 VMs and marketplace images.
+>
+> Azure supports Ubuntu 20.04/22.04, RHEL 7.9/8.7/9.3, AlmaLinux 8.8/9.2, and SLES 15 for ND H100 v5 VMs. On Azure marketplace, there are offerings
+> of optimized and pre-configured Linux VM images for HPC/AI workloads with a variety of HPC tools and libraries installed, and thus they are
+> highly recommended. Currently, Ubuntu-HPC 20.4/22.04 and AlmaLinux-HPC 8.6/8.7 VM images are supported.
+
 ## Sizes in series
 
 ### [Basics](#tab/sizebasic)
