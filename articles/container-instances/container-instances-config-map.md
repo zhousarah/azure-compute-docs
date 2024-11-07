@@ -36,6 +36,7 @@ az container container-group-profile create \
     --cpu 1 \
     --memory 1.5 \
     --restart-policy never
+    --config-map key1=value1 key2=value2
 ```
 ### [PowerShell](#tab/powershell)
 Create a container group profile with config map settings using [New-AzContainerGroupProfile](/powershell/module/az.containerinstance).
@@ -44,7 +45,7 @@ Create a container group profile with config map settings using [New-AzContainer
 $port1 = New-AzContainerInstancePortObject -Port 8000 -Protocol TCP
 $port2 = New-AzContainerInstancePortObject -Port 8001 -Protocol TCP
 
-$container = New-AzContainerInstanceObject -Name myContainer -Image nginx -RequestCpu 1 -RequestMemoryInGb 1.5 -Port @($port1, $port2)
+$container = New-AzContainerInstanceObject -Name myContainer -Image nginx -RequestCpu 1 -RequestMemoryInGb 1.5 -Port @($port1, $port2) -ConfigMapKeyValuePair @{"key1"="value1"}
 
 New-AzContainerInstanceContainerGroupProfile `
     -ResourceGroupName myResourceGroup `
@@ -57,7 +58,7 @@ New-AzContainerInstanceContainerGroupProfile `
 ```
 
 ### [ARM template](#tab/template)
-Create a container group profile with and config map settings  deploy the template using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
+Create a container group profile with and config map settings deploy the template using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
 
 
 ```json
@@ -73,7 +74,7 @@ Create a container group profile with and config map settings  deploy the templa
       "properties": {
         "containers": [
           {
-            "name": "myContainerGroupProfile",
+            "name": "myContainer",
             "properties": {
               "image": "[parameters('containerImage')]",
               "ports": [
@@ -218,7 +219,7 @@ az container create
 Apply the config map settings stored in the container group profile using [New-AzContainerGroup](/powershell/module/az.containerinstance/new-azcontainergroup).
 
 ```azurepowershell-interactive
-$container = New-AzContainerInstancenoDefaultObject -Name myContainer -ConfigMapKeyValuePair @{"key1"="value1"}
+$container = New-AzContainerInstancenoDefaultObject -Name myContainer
 
 New-AzContainerGroup `
     -ResourceGroupName myResourceGroup `
@@ -269,12 +270,6 @@ Apply the config map settings stored in the container group profile using [az de
       "type": "string",
       "metadata": {
         "description": "The name of the container group profile."
-      }
-    },
-    "myContainerProfile": {
-      "type": "string",
-      "metadata": {
-        "description": "The name of the container profile."
       }
     },
     "newKey": {

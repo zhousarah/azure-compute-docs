@@ -65,10 +65,13 @@ Standby pools only give out container groups from the pool that are fully provis
 ## Standby pool size
 The number of container groups in a standby pool is determined by setting the `maxReadyCapacity` parameter. When a container group is consumed from the pool, the standby pool automatically begins to refill ensuring that your standby pool maintains the set maximum ready capacity.
 
+The only available refill policy for standby pools on Azure Container instances is `Always`. 
+
 
 | Setting | Description | 
 |---|---|
 | maxReadyCapacity | The maximum number of container groups you want deployed in the pool.|
+| refillPolicy | Tells the standby pool to immediatly replenish container groups to maintain the maxReadyCapacity. | 
 
 ## Container group profile
 

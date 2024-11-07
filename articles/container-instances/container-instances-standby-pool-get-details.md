@@ -27,7 +27,7 @@ az standby-container-group-pool status --resource-group myResourceGroup --name m
     {
       "instanceCountsByState": [
         {
-          "count": 0,
+          "count": 5,
           "state": "Creating"
         },
         {
@@ -60,11 +60,11 @@ InstanceCountSummary         : {{
         "instanceCountsByState": [
         {
             "state": "Creating",
-            "count": 0
+            "count": 20
         },
         {
             "state": "Running",
-            "count": 0
+            "count": 5
         },
         {
             "state": "Deleting",
@@ -96,7 +96,7 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/m
         "instanceCountsByState": [
           {
             "state": "Creating",
-            "count": 0
+            "count": 5
           },
           {
             "state": "Running",
