@@ -125,7 +125,9 @@ A container group profile tells the standby pool how to configure the containers
 
 A [config map](container-instances-config-map.md) is a property that can be associated with a container group profile and be used to apply container configurations similar to environment variables and secret volumes. However, when using environment variables or secret volumes, restarting the pod is required for the changes to take effect. By using config maps, the configurations can be applied without restarting the container. This enables out of band updates so containers can read the new values without restarting. 
 
-Azure Container Instances can be created with or without config maps and can be updated at any point in time post creation using config maps. Updating config maps in an existing running container group can be accomplished quickly and without causing the container to reboot. For more information, see [use config maps](container-instances-config-map.md).
+Azure Container Instances can be created with or without config maps and can be updated at any point in time post creation using config maps. Updating config maps in an existing running container group can be accomplished quickly and without causing the container to reboot. 
+
+For more information, see [use config maps](container-instances-config-map.md).
 
 ```json
 {
