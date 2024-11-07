@@ -58,13 +58,12 @@ Create a standby pool and associate it with an existing scale set using [az stan
 
 ```azurecli-interactive
 az standby-vm-pool create \
-   --resource-group myResourceGroup \
-   --location eastus \
-   --name myStandbyPool \
-   --max-ready-capacity 20 \
-   --min-ready-capacity 5 \
-   --vm-state "Deallocated" \
-   --vmss-id "/subscriptions/{subscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet"
+	--resource-group myResourceGroup \
+	--location eastus --name myStandbyPool \
+	--max-ready-capacity 20 \
+	--min-ready-capacity 5 \
+	--vm-state "Deallocated" \
+	--vmss-id "/subscriptions/{subscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet"
 ```
 ### [PowerShell](#tab/powershell)
 Create a standby pool and associate it with an existing scale set using [New-AzStandbyVMPool](/powershell/module/az.standbypool/new-azstandbyvmpool).
