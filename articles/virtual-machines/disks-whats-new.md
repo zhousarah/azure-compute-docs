@@ -17,6 +17,8 @@ Azure Disk Storage regularly receives updates for new features and enhancements.
 
 - [What's new in 2024](#whats-new-in-2024)
 
+  - [Quarter 4 (October, November, December)](#quarter-4-october-november-december)
+    - [Expanded regional availability for Premium SSD v2](#expanded-regional-availability-for-premium-ssd-v2)
   - [Quarter 2 (April, May, June)](#quarter-2-april-may-june)
     - [Generally available: New Property for Disks-LastOwnershipUpdateTime](#generally-available-new-property-for-disks-lastownershipupdatetime)
   - [Quarter 1 (January, February, March)](#quarter-1-january-february-march)
@@ -47,6 +49,12 @@ Azure Disk Storage regularly receives updates for new features and enhancements.
         - [GA: Entra ID support for managed disks](#ga-entra-id-support-for-managed-disks)
 
 ## What's new in 2024
+
+### Quarter 4 (October, November, December)
+
+#### Expanded regional availability for Premium SSD v2
+
+Premium SSD v2 disks were made available in Germany West Central, Israel Central, Italy North, Spain Central, Mexico Central regions. For more information, see the [Azure Update](https://azure.microsoft.com/updates/v2/generally-available-azure-premium-ssd-v2-disk-storage-is-now-available-in-more-regions).
 
 ### Quarter 2 (April, May, June)
 

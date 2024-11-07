@@ -1,8 +1,8 @@
 ---
 title: FAQ for Trusted Launch
 description: Get answers to the most frequently asked questions about Azure Trusted Launch virtual machines and virtual machine scale sets.
-author: howie425
-ms.author: howieasmerom
+author: prasadmsft
+ms.author: reprasa
 ms.reviewer: mattmcinnes
 ms.service: azure-virtual-machines
 ms.subservice: trusted-launch
@@ -441,6 +441,10 @@ If you verified that the no-boot was caused by a Secure Boot failure:
 1. The image you're using might have been built outside of a marketplace source or the boot components have been modified and contain unsigned or untrusted boot components. To verify whether your image has unsigned or untrusted boot components, see the following section, "Verify Secure Boot failures."
 1. If the preceding two scenarios don't apply, the VM is potentially infected with malware (bootkit/rootkit). Consider deleting the VM and re-creating a new VM from the same source image while you evaluate all the software being installed.
 
+### Why does my Trusted Launch VM show 50MB less memory?
+ 
+With Trusted Launch, an execution environment commonly known as "the paravisor" is created and runs inside the VM.  Typically, about 50MB of memory is used by the paravisor and would show as "reserved" within the guest Operating System. 
+
 ## Verify Secure Boot failures
 
 This section helps you verify Secure Boot failures.
@@ -541,3 +545,19 @@ Package certificates, composed of .p7b (Full Certificate Authority) and .cer (In
 [!INCLUDE [json](../virtual-machines/includes/trusted-launch-tpm-certs/root-certificate-authority.md)]
 
 [!INCLUDE [cert](../virtual-machines/includes/trusted-launch-tpm-certs/intermediate-ca.md)]
+
+### What Microsoft owned trusted certificates are built into Azure VMs ? 
+For Windows VMs, Windows CA certificate is built in UEFI firmware. For Linux VMs, Microsoft UEFI CA certificate is built in UEFI firmware.
+For Azure Linux VMs only, an additional ‘Azure Services Linux Kmod PCA’ certificate is also added in in UEFI firmware for all Linux distributions. Linux Kmod PCA is used to sign Microsoft owned kernel modules.
+
+Linux Kmod PCA certificate is added to make customer experience smoother when using Microsoft solutions like Azure Site Recovery (ASR) which installs a kernel module. The ASR kernel module will load without any customer action to supply a key as ASR kernel module is signed using the trusted ‘Azure Services Linux Kmod PCA’ certificate.
+
+#### Download instructions
+Package certificates, composed of .p7b and .cer  reveal the signing and certificate authority. Copy the relevant content and use certificate tooling to inspect and assess details of certificates.
+
+
+[!INCLUDE[json](../virtual-machines/includes/trusted-launch-tpm-certs/microsoft-windows-ca.md)]
+
+[!INCLUDE[json](../virtual-machines/includes/trusted-launch-tpm-certs/microsoft-uefi-ca.md)]
+
+[!INCLUDE[p7b](../virtual-machines/includes/trusted-launch-tpm-certs/linux-kmod-pca-certificate.md)]

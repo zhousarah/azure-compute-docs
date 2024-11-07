@@ -287,7 +287,7 @@ Some properties may be changed, with exceptions depending on the current value. 
 - subnet
 - imageReferenceSku
 - imageReferenceOffer
-- Availability Zones (Preview)
+- zones
 
 #### Example 1
 To update your scale set to use a different OS version, you need to set all the updated properties in a single call. In this example, we are changing from Unbuntu Server 20.04 to 22.04. 
@@ -325,7 +325,7 @@ Some properties may only be changed to certain values if the VMs in the scale se
 - **SKU Name**- If the new VM SKU is not supported on the hardware the scale set is currently on, you need to deallocate the VMs in the scale set before you modify the SKU name. For more information, see [how to resize an Azure VM](../virtual-machines/resize-vm.md). 
 
 ## VM-specific updates
-Certain modifications may be applied to specific VMs instead of the global scale set properties. Currently, the only VM-specific update that is supported is to attach/detach data disks to/from VMs in the scale set. This feature is in preview. For more information, see the [preview documentation](https://github.com/Azure/vm-scale-sets/tree/master/z_deprecated/preview/disk).
+Certain modifications may be applied to specific VMs instead of the global scale set properties. Currently, the only VM-specific update that is supported is to attach/detach data disks to/from VMs in the scale set. This feature is in preview.
 
 
 ## Scenarios

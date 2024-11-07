@@ -7,7 +7,7 @@ author: tomvcassidy
 ms.service: azure-container-instances
 ms.custom: devx-track-azurecli
 services: container-instances
-ms.date: 06/17/2022
+ms.date: 08/29/2024
 ---
 
 # How to use managed identities with Azure Container Instances
@@ -35,7 +35,7 @@ Azure Container Instances supports both types of managed Azure identities: user-
 
 ### Use a managed identity
 
-To use a managed identity, the identity must be granted access to one or more Azure service resources (such as a web app, a key vault, or a storage account) in the subscription. Using a managed identity in a running container is similar to using an identity in an Azure VM. See the VM guidance for using a [token](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token), [Azure PowerShell or Azure CLI](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-sign-in), or the [Azure SDKs](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-sdk).
+To use a managed identity, the identity must be granted access to one or more Azure service resources (such as a web app, a key vault, or a storage account) in the subscription. Using a managed identity in a running container is similar to using an identity in an Azure Virtual Machine (VM). See the VM guidance for using a [token](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token), [Azure PowerShell or Azure CLI](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-sign-in), or the [Azure SDKs](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-sdk).
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](~/reusable-content/azure-cli/azure-cli-prepare-your-environment.md)]
 
@@ -126,7 +126,7 @@ az container create \
   --command-line "tail -f /dev/null"
 ```
 
-Within a few seconds, you should get a response from the Azure CLI indicating that the deployment has completed. Check its status with the [az container show](/cli/azure/container#az-container-show) command.
+Within a few seconds, you should get a response from the Azure CLI indicating that the deployment completed. Check its status with the [az container show](/cli/azure/container#az-container-show) command.
 
 ```azurecli-interactive
 az container show \
@@ -176,12 +176,6 @@ Output:
 {"access_token":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Imk2bEdrM0ZaenhSY1ViMkMzbkVRN3N5SEpsWSIsImtpZCI6Imk2bEdrM0ZaenhSY1ViMkMzbkVRN3N5SEpsWSJ9......xxxxxxxxxxxxxxxxx","refresh_token":"","expires_in":"28799","expires_on":"1539927532","not_before":"1539898432","resource":"https://vault.azure.net/","token_type":"Bearer"}
 ```
 
-For Windows containers, metadata server (169.254.169.254) is not available. Run the following or equivalent commands to get an access token.
-
-```console
-curl -G -v %IDENTITY_ENDPOINT% --data-urlencode resource=https://vault.azure.net --data-urlencode principalId=<principal id> -H secret:%IDENTITY_HEADER%
-```
-
 To store the access token in a variable to use in subsequent commands to authenticate, run the following command:
 
 ```bash
@@ -222,7 +216,7 @@ az container create \
   --command-line "tail -f /dev/null"
 ```
 
-Within a few seconds, you should get a response from the Azure CLI indicating that the deployment has completed. Check its status with the [az container show](/cli/azure/container#az-container-show) command.
+Within a few seconds, you should get a response from the Azure CLI indicating that the deployment completed. Check its status with the [az container show](/cli/azure/container#az-container-show) command.
 
 ```azurecli-interactive
 az container show \
@@ -294,8 +288,6 @@ The value of the secret is retrieved:
 ```output
 "Hello Container Instances"
 ```
-
-For Windows containers, the 'az login' command will not work because the metadata server is unavailable. Additionally, a managed identity token cannot be generated in a Windows VNet container.
 
 ## Enable managed identity using Resource Manager template
 
@@ -383,6 +375,30 @@ identity:
   userAssignedIdentities:
    {'myResourceID1':{}}
 ```
+
+## Managed Identity on Windows containers
+
+Managed Identity on Windows container groups works differently than Linux container groups. For Windows containers, metadata server (169.254.169.254) is not available for getting the Microsoft Entra ID token. Customers can follow a different pattern to get the access token in Windows containers. The pattern involves sending token request to the IDENTITY_ENDPOINT along with additional information such as principal id and secret as shown below. The IDENTITY_ENDPOINT and IDENTITY_HEADER are injected as environmental variable in your container.
+
+```console
+curl -G -v %IDENTITY_ENDPOINT% --data-urlencode resource=https://vault.azure.net --data-urlencode principalId=<principal id> -H secret:%IDENTITY_HEADER%
+```
+A sample powershell script
+
+```powershell
+identityEndpoint = $env:IDENTITY_ENDPOINT
+$identityHeader = $env:IDENTITY_HEADER
+$resource = "https://vault.azure.net"
+$principalId = "b2ee9347-623c-4794-85af-2d5261356f67"
+ 
+Invoke-RestMethod -Uri "$identityEndpoint" `
+    -Method Get `
+    -Headers @{secret = $identityHeader} `
+    -Body @{resource = $resource; principalId = $principalId} `
+    -ContentType "application/x-www-form-urlencoded"
+```
+Az Login module and other client libraries which depend on metadata server (169.254.169.254) will not work in a Windows Container. 
+Additionally, Windows containers in vNet won't be able to connect to the endpoint; hence, a managed identity token can't be generated in a Windows virtual network container. 
 
 ## Next steps
 

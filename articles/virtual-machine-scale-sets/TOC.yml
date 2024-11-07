@@ -143,6 +143,9 @@
   items: 
   - name: Modify a scale set
     href: virtual-machine-scale-sets-upgrade-scale-set.md
+  - name: Relocate to another region
+    href: /azure/operational-excellence/relocation-virtual-machine-scale-sets
+    maintainContext: true
   - name: Upgrade Policies
     items:
     - name: Overview
@@ -159,6 +162,7 @@
       href: virtual-machine-scale-sets-perform-manual-upgrades.md
     - name: Reimage a virtual machine
       href: virtual-machine-scale-sets-reimage-virtual-machine.md
+
   - name: Common management tasks
     items:
     - name: Use the Azure CLI

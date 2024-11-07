@@ -1,7 +1,7 @@
 ---
 title: Use Application Health extension with Azure Virtual Machines
 description: Learn how to use the Application Health extension to monitor the health of your applications deployed on Azure virtual machines.
-ms.topic: article
+ms.topic: how-to
 ms.service: azure-virtual-machines
 ms.subservice: extensions
 ms.author: hilarywang
@@ -21,7 +21,7 @@ Application health monitoring is also available on virtual machine scale sets an
 This article assumes that you're familiar with [Azure virtual machine extensions](overview.md).
 
 > [!CAUTION]
-> Application Health Extension expects to receive a consistent probe response at the configured port `tcp` or request path `http/https` in order to label a VM as *Healthy*. If no application is running on the VM, or you're unable to configure a probe response, your VM is going to show up as *Unhealthy* (Binary Health States) or *Unknown* (Rich Health States).
+> Application Health Extension expects to receive a consistent probe response at the configured port `tcp` or request path `http/https` in order to label a VM as *Healthy*. If no application is running on the VM, or you're unable to configure a probe response, your VM is going to show up as *Unhealthy* (Binary Health States) or *Unknown* (Rich Health States).  See [application health samples](https://github.com/Azure-Samples/application-health-samples) for examples of health probe responses being emitted to a local endpoint. 
 
 ## When to use the Application Health extension
 Application Health Extension reports on application health from inside the Virtual Machine. The extension probes on a local application endpoint and updates the health status based on TCP/HTTP(S) responses received from the application. This health status is used by Azure to monitor and detect patching failures during [Automatic VM Guest Patching](../automatic-vm-guest-patching.md).
@@ -419,6 +419,10 @@ The following example adds the Application Health extension to an existing virtu
 
 ---
 ## Troubleshoot
+
+### Need help configuring a probe response
+See [application health samples](https://github.com/Azure-Samples/application-health-samples) for examples of health probe responses being emitted to a local endpoint. 
+
 ### View VMHealth
 
 # [REST API](#tab/rest-api)

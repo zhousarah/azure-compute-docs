@@ -6,7 +6,7 @@ author: tomvcassidy
 ms.service: azure-container-instances
 services: container-instances
 ms.topic: conceptual
-ms.date: 1/19/2023
+ms.date: 08/29/2024
 ms.custom: references_regions
 
 ---
@@ -68,7 +68,7 @@ The following limits are default limits that can’t be increased through a quot
 
 By default, the following resources are available general purpose (standard core SKU) containers in general deployments and [Azure virtual network](container-instances-vnet.md) deployments) for Linux & Windows containers. These maximums are hard limits and can't be increased.
 
-| Max CPU | Max Memory (GB) | VNET Max CPU | VNET Max Memory (GB) | Storage (GB) | 
+| Max CPU | Max Memory (GB) | Virtual network Max CPU | Virtual network Max Memory (GB) | Storage (GB) | 
 | :---: | :---: | :----: | :-----: | :-------: |
 | 4 | 16 | 4 | 16 | 50 | 
 
@@ -102,25 +102,25 @@ The following maximum resources are available to a container group deployed usin
 > [!NOTE]
 > Spot Containers are only available in the following regions at this time: East US 2, West Europe, and West US.
 
-| Max CPU | Max Memory (GB) | VNET Max CPU | VNET Max Memory (GB) | Storage (GB) | 
+| Max CPU | Max Memory (GB) | Virtual network Max CPU | Virtual network Max Memory (GB) | Storage (GB) | 
 | :---: | :---: | :----: | :-----: | :-------: |
 | 4 | 16 | N/A | N/A | 50 | 
 
-## Confidential Container Resources (Preview)
+## Confidential Container Resources
 
-The following maximum resources are available to a container group deployed using [Confidential Containers](container-instances-confidential-overview.md) (preview). These maximums are hard limits and can't be increased.
+The following maximum resources are available to a container group deployed using [Confidential Containers](container-instances-confidential-overview.md). These maximums are hard limits and can't be increased.
 
 > [!NOTE]
-> Confidential Containers are only available in the following regions at this time: East US, North Europe, West Europe, and West US.
+> Confidential Containers are currently available in the following regions: Central India, East Asia, East US, Germany West Central, Italy North, Japan East, North Europe, Southeast Asia, Switzerland North, UAE North, West Europe, and West US.
 
-| Max CPU | Max Memory (GB) | VNET Max CPU | VNET Max Memory (GB) | Storage (GB) | 
+| Max CPU | Max Memory (GB) | Virtual network Max CPU | Virtual network Max Memory (GB) | Storage (GB) | 
 | :---: | :---: | :----: | :-----: | :-------: |
 | 4 | 16 | 4 | 16 | 50 | 
 
 ## GPU Container Resources (Preview) 
 
 > [!IMPORTANT]
-> K80 and P100 GPU SKUs are retiring by August 31st, 2023. This is due to the retirement of the underlying VMs used: [NC Series](../virtual-machines/nc-series-retirement.md) and [NCv2 Series](../virtual-machines/ncv2-series-retirement.md) Although V100 SKUs will be available, it is receommended to use Azure Kubernetes Service instead. GPU resources are not fully supported and should not be used for production workloads. Use the following resources to migrate to AKS today: [How to Migrate to AKS](/azure/aks/aks-migration).
+> K80 and P100 GPU SKUs were retired on August 31st, 2023. This is due to the retirement of the underlying VMs used: [NC Series](../virtual-machines/nc-series-retirement.md) and [NCv2 Series](../virtual-machines/ncv2-series-retirement.md) Although V100 SKUs will be available, it is recommended to use Azure Kubernetes Service instead. GPU resources are not fully supported and should not be used for production workloads. Use the following resources to migrate to AKS today: [How to Migrate to AKS](/azure/aks/aks-migration).
 
 > [!NOTE]
 > Not all limit increase requests are guaranteed to be approved.
