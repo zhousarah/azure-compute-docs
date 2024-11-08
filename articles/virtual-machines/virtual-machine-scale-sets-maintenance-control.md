@@ -30,7 +30,7 @@ The entire workflow comes down to these steps:
 - VMs must be in a scale set.
 - User must have **Resource Contributor** access.
 - Maintenance duration must be 5 hours or longer in the maintenance configuration.
-- Maintenance recurrence must be set to 'Day' in the maintenance configuration
+- Maintenance recurrence must be set to 'Day' or 'Week' in the maintenance configuration.
 
 
 ## Management options
