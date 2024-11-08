@@ -24,6 +24,8 @@ A proximity placement group is a logical grouping used to make sure that Azure c
 >
 > If you want to use availability zones together with placement groups, you need to make sure that the VMs in the placement group are also all in the same availability zone.
 >
+> [Accelerated networking](https://learn.microsoft.com/en-us/azure/virtual-network/accelerated-networking-overview) will only work if the virtual machines are deployed to an [availability set](https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview) or a [virtual machine scale set](https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview) that is linked to a proximity placement group. Having only a proximity placement group will disable the hardware acceleration feature which affects network performance.
+>
 
 ## Create the proximity placement group
 
