@@ -34,7 +34,7 @@ We can configure the batch size and other related rolling update mode settings w
 
 Because in-place RU updates existing CGs, there are certain limitations to the CG properties that ACI enforces.  
 
-Please see ACI’s [limitations](https://learn.microsoft.com/azure/container-instances/container-instances-update#limitations) w.r.t updating CGs. Also, please see here for [properties](https://learn.microsoft.com/azure/container-instances/container-instances-update#properties-that-require-container-delete) on CGs that require a delete (versus an update).
+Please see ACI’s [limitations](../container-instances-update.md) w.r.t updating CGs. Also, please see here for [properties](../container-instances-update.md) on CGs that require a delete (versus an update).
 
 ### Replace rolling update
 With replace RU, when we update the reference to *cgprofile2* and issue an UPDATE NGroups command, "*new CGs*" are created with *cgprofile2*. Existing CGs with *cgprofile1* are deleted. This creation and deletion happen in small batches (and not all at once). This ensures that there is a minimal impact on our workload since only a small percentage of CGs are impacted during the update.  

@@ -242,7 +242,7 @@ Create Zonal NGroups with CGProfile: [NGroups-Zonal-Sample.json](https://microso
 
 NGroups are not visible on the portal as of today, but you can check CGs being created on the portal under the resourceGroup. Customer can also check NGroups resourceId under CG JSON view in orchestrationProfile property: 
 
-:::image type="content" source="../media/container-instances-NGroups/Items.png" alt-text="":::
+:::image type="content" source="../media/container-instances-NGroups/Items.png" alt-text="NGroups CG ARM JSON":::
 
 ## **How-to-guide:**
 ### How to do Rolling Update?
@@ -443,7 +443,7 @@ To get these environment variables on the container, specify these tags _at the 
 ```
 NGroup understands these tags as ‘special’ and propagates the required environment variables down to each container as shown below.
 
-:::image type="content" source="../media/container-instances-NGroups/CGNameEnvVariable.png" alt-text="":::
+:::image type="content" source="../media/container-instances-NGroups/CGNameEnvVariable.png" alt-text="CG environment variable portal screenshot":::
 
 
 
