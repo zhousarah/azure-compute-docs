@@ -23,14 +23,14 @@ You can use the Maintenance Configurations feature to control when to apply plat
 
 Before proceeding, visit [Bicep Modules](/azure/azure-resource-manager/bicep/modules) to learn more about how bicep deployment can be organized into modules
 
-1. Scope of resource deployment should be understood before proceeding with the Bicep template. For more infromation, see [Scope Functions for Bicep](/azure/azure-resource-manager/bicep/bicep-functions-scope).
-2. It's essential to know how and where resources are deployed.
-3. Bicep modules must be used to perform deployments. Deploying resources at different scopes require the use of modules.
++ Scope of resource deployment should be understood before proceeding with the Bicep template. For more information, see [Scope Functions for Bicep](/azure/azure-resource-manager/bicep/bicep-functions-scope).
++ It's essential to know how and where resources are deployed.
++ Bicep modules must be used to perform deployments. Deploying resources at different scopes require the use of modules.
 
 > [!TIP]
 > Always provide the right set of dependencies since module execute on different scopes. For example - the scope for configuration assignment in maintenance configuration when using dynamic scope should be `Subscription` and when using static assignment (no dynamic scopes configured) should be `ResourceId`
 
-## Bicep Resource Definition
+## Bicep resource definition
 
  Refer to the below guides for the resource format and resource definition of the Bicep template before proceeding ahead with the working example.
 
@@ -42,7 +42,7 @@ Before proceeding, visit [Bicep Modules](/azure/azure-resource-manager/bicep/mod
 
 There are three bicep files that need to be created. We recommend keeping all the three files in the same folder. You can also keep them in different folders but make sure to update the path of the file names in `example.bicep` file mentioned.
 
-### Template Execution
+### Template execution
 
 ```powershell
 
@@ -253,7 +253,7 @@ resource symbolicname 'Microsoft.Maintenance/configurationAssignments@2023-04-01
 }
 ```
 
-##### Sample Output
+##### Sample output
 
 ```bicep
 {
