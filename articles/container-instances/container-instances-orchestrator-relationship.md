@@ -53,7 +53,7 @@ Rather than scaling out the number of virtual machines in your cluster, then dep
 
 To rapidly scale application workloads in an [Azure Kubernetes Service (AKS)](/azure/aks/intro-kubernetes) cluster, you can use *virtual nodes* created dynamically in Azure Container Instances. Virtual nodes register as nodes having unlimited capacity with your AKS cluster control plane. When you deploy pods in a virtual node in your AKS cluster, they run as container groups in ACI.
 
-Virtual nodes currently support Linux container instances. Get started with virtual nodes using the [Azure CLI](/azure/aks/virtual-nodes-cli) or [Azure portal](/azure/aks/virtual-nodes-portal).
+Virtual nodes currently support Linux container instances. See [Virtual nodes on Azure Container Instances](./container-instances-virtual-nodes.md) to learn more.
 
 ## Next steps
 
