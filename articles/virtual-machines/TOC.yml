@@ -2137,11 +2137,14 @@
       - name: PowerShell
         displayName: Maintenance configurations
         href: maintenance-configurations-powershell.md
+      - name: Bicep
+        displayName: Maintenance configurations
+        href: maintenance-configurations-bicep.md
       - name: Portal
         displayName: Maintenance configurations
         href: maintenance-configurations-portal.md
       - name: Troubleshoot
-        displayName: Troubleshoot
+        displayName: Maintenance configurations
         href: troubleshoot-maintenance-configurations.md
       - name: Maintenance control for OS image upgrade
         items:
