@@ -135,11 +135,11 @@ These repairs are performed inline, so you will not see the VM listed as “Fail
 ### Resilient Delete
 While the delete attempt is in progress, the state of the resource will be listed as “Deleting”. If a delete attempt fails on a particular VM, then the VM will fall back to the “Failed” State. However, the “Failed” State only indicates that a retry of the deletion failed – and Resilient Delete might still be operating on the VM. Therefore, while Resilient VM Delete is going on, the customer will see the VM alternate states between “Deleting” and “Failed”. 
 
-### [Portal](#tab/portal)
+### [Portal](#tab/portal, 2)
 Navigate to your Virtual Machine Scale Set. You will see a banner that indicates when Resilient Delete is operating:
 :::image type="content" source="media/standby-pools/enable-standby-pool-after-vmss-creation.png" alt-text="A screenshot showing how to enable a standby pool on an existing Virtual Machine Scale Set in the Azure portal.":::
 
-### [REST API](#tab/rest)
+### [REST API](#tab/rest, 2)
 To know the status of your virtual machine during delete, retrieve the return value of the ResilientVMDeletionStatus property. There are 2 different API endpoints available to get the ResilientVMDeletionStatus:
 
 This endpoint supports only Virtual Machine Scale Sets Uniform.
@@ -170,7 +170,3 @@ No. Resilient create operates during a scale-out of a scale set or when you crea
 
 ### Does Resilient create speed up the provisioning of my virtual machine?
 No, Resilient create improves the odds of provisioning the virtual machine but does not improve the speed of the provisioning itself. 
-
-## Next steps
-
-Learn how to [update and delete a standby pool](standby-pools-update-delete.md).
