@@ -22,7 +22,7 @@ NGroups APIs allow customers to manage a huge scale of container groups with adv
 
 Managing multiple container groups is a crucial part of running large cloud applications. As of today, in order to run multiple CGs i.e. container groups, customers need to provide relevant properties such as container images, the restart policy and other properties each time. This may result in duplicated effort and management overhead.  
 
-To alleviate this concern, NGroups has introduced - Container Group Profile. The container group profile aka CGProfile serves as a “template” for creating container groups with same set of properties.  
+To alleviate this concern, NGroups has introduced - Container Group Profile. The container group profile i.e. CGProfile serves as a “template” for creating container groups with same set of properties.  
 
 
 Here are some of the common properties that can be specified in a container group profile: 
@@ -125,21 +125,21 @@ And below is a sample CG profile:
 
 ### NGroups
 
-NGroups resource provides a way to create and manage ‘n’ container groups with a rich set of operations. A NGroups resource will simply reference a container group profile resource and use that to create N instances of similar looking CGs. Within NGroups resource, customer can also specify other properties including but not limited to - number of CGs, update preferences (manual or rolling update), load balancers, subnets and other relevant properties which they want to associate with CGs under a NGroups resource. 
+NGroups resource provides a way to create and manage ‘n’ container groups with a rich set of operations. An NGroups resource will simply reference a container group profile resource and use that to create N instances of similar looking CGs. Within NGroups resource, customer can also specify other properties including but not limited to - number of CGs, update preferences (manual or rolling update), load balancers, subnets and other relevant properties which they want to associate with CGs under an NGroups resource. 
 
 > [!NOTE]
-> A CG profile needs to be created **before** creating a NGroups resource.Since the CG profile is an ARM resource, it has its own ARM APIs. A CG profile needs to be created **before** creating a NGroups resource.
+> A CG profile needs to be created **before** creating an NGroups resource.Since the CG profile is an ARM resource, it has its own ARM APIs. A CG profile needs to be created **before** creating an NGroups resource.
 
-**Benefits of referencing container group profile**
+##### Benefits of referencing container group profile:
 
 
-1. Container group profile is a separate resource from NGroups. Customers can create multiple NGroups that can refer to the same container group profile. This will also guarantee consistency across all the NGroups that refer to a single container group profile and avoids duplication. 
+- Container group profile is a separate resource from NGroups. Customers can create multiple NGroups that can refer to the same container group profile. This will also guarantee consistency across all the NGroups that refer to a single container group profile and avoids duplication. 
 
-2. A single ACI CG could also be created from a CG profile. This allows us to rapidly move from prototype to production mode. 
+- A single ACI CG could also be created from a CG profile. This allows us to rapidly move from prototype to production mode. 
 
-    E.g., a customer creates a single CG using the CG profile. They work on this CG to get their container images working. Then they simply create a NGroups using the same CG profile to massively scale out. 
+    E.g., a customer creates a single CG using the CG profile. They work on this CG to get their container images working. Then they simply create an NGroups using the same CG profile to massively scale out. 
 
-Here is a sample of a NGroup with managed identity and zones that refers to a container group profile and will create 3 container groups:
+Here is a sample of an NGroup with managed identity and zones that refers to a container group profile and will create 3 container groups:
 
  
 ```
@@ -183,7 +183,6 @@ Here is a sample of a NGroup with managed identity and zones that refers to a co
 - Add load balancer and application gateway to manage traffic across container groups
 - Manage container groups with different container group profiles
 - Attach and detach container groups
-- Autoscale (coming soon)
 
 ### NGroups API
 NGroups references a CG profile and adds additional related properties and capabilities. E.g.,  
@@ -196,8 +195,8 @@ NGroups references a CG profile and adds additional related properties and capab
 
 This in turn invokes the ACI ARM APIs to create (and subsequently manage) each CG. Since it uses the same ARM APIs, there is no difference between the CGs created by NGroups and the CGs created directly by the customer. They have the exact same API experience.
 
-### Updating a NGroup
-As requirements change, we would need to keep updating our NGroups and its CGs. There are two update modes with which we can update a NGroups – **Manual** (default option) and **Rolling**. 
+### Updating an NGroup
+As requirements change, we would need to keep updating our NGroups and its CGs. There are two update modes with which we can update an NGroups – **Manual** (default option) and **Rolling**. 
 
 Consider a simple example of updating a CG profile reference from _cgprofile1_ to _cgprofile2_:
 
@@ -236,94 +235,58 @@ If these prerequisites are not met: requests will fail, and the NGroups resource
 
 ### ARM template samples:
 
-Create CG Profile: [ContainerGroupProfile-Sample.json](https://microsoft.sharepoint-df.com/:u:/t/CoreContainersOrg/ESNVt_BUgyhImgal7jUb6AwB6oTKDmjMVxFFs3xZ0JvPjg?e=LIeFnO)
-
-Create Zonal NGroups with CGProfile: [NGroups-Zonal-Sample.json](https://microsoft.sharepoint-df.com/:u:/t/CoreContainersOrg/EbLBbNYGg1FEt0KQjr4Hw-0B8OVm5LRCAMuwFBOELOJEHw?e=noHok4)
+Create CG Profile: [ContainerGroupProfile-Sample.json](#container-group-profile-sample)
+Create Zonal NGroups with CGProfile: [NGroups-Zonal-Sample.json](#ngroups-with-zones-sample)
 
 NGroups are not visible on the portal as of today, but you can check CGs being created on the portal under the resourceGroup. Customer can also check NGroups resourceId under CG JSON view in orchestrationProfile property: 
 
-:::image type="content" source="../media/container-instances-NGroups/Items.png" alt-text="NGroups CG ARM JSON":::
+:::image type="content" source="../media/container-instances-ngroups/cg-arm-json-structure.png" alt-text="A screenshot of an NGroups CG JSON on Azure portal.":::
 
 ## **How-to-guide:**
-### How to do Rolling Update?
+#### How to do Rolling Update?
 
-We can use the Rolling Update feature to automatically update all CGs to a newer version without downtime of the CS2. 
-Please see rolling update documentation: [NGroups Roliing update](container-instances-rolling-update.md)
+We can use the Rolling Update feature to automatically update all CGs to a newer version without downtime of the NGroups. 
+Please see rolling update documentation: [NGroups Rolling update](container-instances-rolling-update.md).
 
-### **How to create a regional (zonal/non-zonal) NGroups?**
+#### How to create a regional (zonal/non-zonal) NGroups?
 First create a CG profile. A sample CG profile is shown below. Currently supported API version is 2024-09-01-preview
 
 ```
 { 
-
     "properties": { 
-
         "sku": "Standard", 
-
         "containers": [ 
-
             { 
-
                 "name": "container1", 
-
                 "properties": { 
-
                     "image": "nginx", 
-
                     "ports": [ 
-
                     { 
-
                         "protocol": "TCP", 
-
                         "port": 80 
-
                     }], 
-
                     "resources": { 
-
                         "requests": { 
-
                             "memoryInGB": 2.0, 
-
                             "cpu": 1.0 
-
                         } 
-
                     } 
-
                 } 
-
             } 
-
         ], 
-
         "restartPolicy": "Always", 
-
         "shutdownGracePeriod": "PT1H", 
-
         "ipAddress": { 
-
             "ports": [ 
-
             { 
-
                 "protocol": "TCP", 
-
                 "port": 80 
-
             }], 
-
             "type": "Public", 
-
             "autoGeneratedDomainNameLabelScope": "Unsecure" 
-
         }, 
-
         "timeToLive": "PT1H", 
-
         "osType": "Linux" 
-
     }
 ```
  
@@ -331,92 +294,64 @@ Next, you can create a Zonal/Non-Zonal NGroup by either adding zones outside the
 
 ```
 { 
-
     "properties": { 
-
         "elasticProfile": { 
-
             "desiredCount": 5 
-
         }, 
-
         "containerGroupProfiles": [ 
-
             { 
-
                 "resource": { 
-
                     "id": "[resourceId('Microsoft.ContainerInstance/containerGroupProfiles', parameters('cgProfileName'))]" 
-
                 } 
-
             } 
-
         ] 
-
     }, 
-
     "zones": [ "1", "2", "3" ] 
-
 }
 ```
  When the NGroups is scaled out by setting its desiredCount property, the CGs are distributed evenly across all the specified zones. If one zone goes down, the application will still be available since the remaining CGs of the NGroups are running in other zones.  
 
-**Technical capabilities and constraints:** 
+##### Technical capabilities and constraints 
 
-1. Once a NGroup is created with a set of zones (e.g., { “1”, “2” }), the zones cannot be removed. However, a new zone can be added to the list. E.g., { “1”, “2”, “3” } 
+- Once an NGroup is created with a set of zones (e.g., { “1”, “2” }), the zones cannot be removed. However, a new zone can be added to the list. E.g., { “1”, “2”, “3” } 
 
-2. If a specified zone is down, then the overall NGroups operation to create the CGs fails. Retry the request once the zone is back up. Another option is to simply delete the failed CGs. 
+- If a specified zone is down, then the overall NGroups operation to create the CGs fails. Retry the request once the zone is back up. Another option is to simply delete the failed CGs. 
 
-3. During scale down, NGroups randomly deletes instances which might not always maintain AZ spread. However, subsequent scale-out operations always try to rebalance the AZ spread.  
+- During scale down, NGroups randomly deletes instances which might not always maintain AZ spread. However, subsequent scale-out operations always try to rebalance the AZ spread.  
 
-4. AZ spread isn’t supported with Spot Container. If you have such a requirement, please reach out to the ACI team. NGroups can enable this scenario if ACI allows it. There is currently no technical limitation to support this, just COGs/business reasons in ACI. 
+- AZ spread isn’t supported with Spot Container. If you have such a requirement, please reach out to the ACI team. NGroups can enable this scenario if ACI allows it. There is currently no technical limitation to support this, just COGs/business reasons in ACI. 
 
-5. Please also see: impact of availability due to infrastructure/platform updates
+- Please also see: [impact of availability due to infrastructure/platform updates](#what-is-the-impact-of-availability-due-to-infrastructureplatform-updates).
 
-### **Create NGroup CGs with a prefix:**
+#### Create NGroup CGs with a prefix
 
 Customers can create NGroup CGs with a prefix instead of just GUID names:
 
 ```
 "properties": { 
-
     "elasticProfile": { 
-
         "desiredCount": 2,             
-
         "containerGroupNamingPolicy": { 
-
             "guidNamingPolicy": { 
-
                 "prefix": "cg-" 
-
             } 
-
         } 
-
     },
 ```
  This is useful when you have multiple NGroups in a single RG and want to differentiate CGs belonging to each NGroup (e.g., in the Azure portal view). You can also change this for each scale out operation to identify CGs that were scaled out together in one operation.
 
-### **Create NGroup with both SystemAssigned and UserAssigned managed identity:**
+#### Create NGroup with both SystemAssigned and UserAssigned managed identity
 
 ```
 “location”: “{{location}}” 
-
 "identity": { 
-
     "type": "SystemAssigned, UserAssigned", 
-
     "userAssignedIdentities": { 
-
         "/subscriptions/{{subId}}/resourceGroups/{{rgName}}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{{userAssignedIdentity1}}": {},  
-
-"/subscriptions/{{subId}}/resourceGroups/{{rgName}}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{{userAssignedIdentity2}}": {} 
-
+        "/subscriptions/{{subId}}/resourceGroups/{{rgName}}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{{userAssignedIdentity2}}": {} 
     }
 ```
-### **If I delete some CGs from the NGroup, can the NGroup rebuild itself with new CGs to maintain its desired count?**
+#### If I delete some CGs from the NGroup, can the NGroup rebuild itself with new CGs to maintain its desired count?
 
 Yes, you can set the properties.elasticProfile.maintainDesiredCount bool property to true.  
 
@@ -426,9 +361,9 @@ This is useful when you want to use the NGroup as a ‘pool’ which automatical
 
 This is a nullable bool property. If you omit it for subsequent NGroup PUT/update calls, it will not be reset to false. To reset, you must explicitly set it to false. When this is null/false, and when a CG is deleted/detached from the NGroup, the NGroup’s desiredCount property reduces accordingly. 
  
-### **How do I get the CG name, NGroup Id and other metadata propagated down into the container?**
+#### How do I get the CG name, NGroup ID and other metadata propagated down into the container?
 
-Currently, we expose only the CG name and orchestrator Id (the ARM resource Id). In future, additional properties could be considered. These 2 properties show up as container environment variables. 
+Currently, we expose only the CG name and orchestrator ID (the ARM resource ID). In the future, additional properties could be considered. These 2 properties show up as container environment variables. 
 
 To get these environment variables on the container, specify these tags _at the NGroup level_ 
 
@@ -443,8 +378,167 @@ To get these environment variables on the container, specify these tags _at the 
 ```
 NGroup understands these tags as ‘special’ and propagates the required environment variables down to each container as shown below.
 
-:::image type="content" source="../media/container-instances-NGroups/CGNameEnvVariable.png" alt-text="CG environment variable portal screenshot":::
+:::image type="content" source="../media/container-instances-ngroups/cg-name-env-variable.png" alt-text="A screenshot of a container resource on Azure portal displaying environment variables containing 'ContainerGroupName' and 'OrchestratorId' properties.":::
+
+#### What is the impact of availability due to infrastructure/platform updates?
+For workloads that offer higher availability (e.g., NGroups spread across multiple AZs), there is still a possibility (very low) of CGs in more than 1 AZ going down at the same time. This can happen when the underlying Azure infrastructure (host machines, VMSS etc.) goes through an update (called as an infrastructure update or platform update).  
+
+This update is usually done AZ by AZ with not much automated coordination across AZs. Coordination is currently manually tracked and best-effort. 
+
+So, if by chance, a platform update happens simultaneously across 2 or more AZs, then CGs across these AZs can be down simultaneously thus causing unavailability for your NGroups.
 
 
+ ## Samples
 
- 
+#### Container Group Profile Sample
+
+```dotnetcli
+{
+    "properties": {
+        "sku": "Standard",
+        "containers": [
+            {
+                "name": "web",
+                "properties": {
+                    "image": "mcr.microsoft.com/azuredocs/aci-helloworld",
+                    "ports": [
+                        {
+                            "protocol": "TCP",
+                            "port": 80
+                        }
+                    ],
+                    "targetState": "Running",
+                    "resources": {
+                        "requests": {
+                            "memoryInGB": 1,
+                            "cpu": 1
+                        }
+                    }
+                }
+            }
+        ],
+        "restartPolicy": "Always",
+        "shutdownGracePeriod": "PT2H",
+        "ipAddress": {
+            "ports": [
+                {
+                    "protocol": "TCP",
+                    "port": 80
+                }
+            ],
+            "type": "Public"
+        },
+        "osType": "Linux",
+        "revision": 1
+    },
+    "id": "/subscriptions/9f3f189c-d9fc-4500-9d0a-733a050bf60e/resourceGroups/NGroups_TestRG1/providers/Microsoft.ContainerInstance/containerGroupProfiles/NGroups_Profile1",
+    "name": "NGroups_Profile1",
+    "type": "Microsoft.ContainerInstance/containerGroupProfiles",
+    "location": "eastus2euap"
+}
+```
+
+### NGroups with Zones Sample
+
+```dotnetcli
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "apiVersion": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "NGroupsName": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "containerGroupProfileName": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "resourceTags": {
+      "type": "object"
+    },
+    "desiredCount": {
+      "type": "int"
+    }
+  },
+  "variables": {
+    "description": "This ARM template can be parameterized for a basic CRUD scenario for NGroups. It is self contained with cgProfile and NGroups resource",
+    "cgProfileName": "[parameters('containerGroupProfileName')]",
+    "NGroupsName": "[parameters('NGroupsName')]",
+    "resourcePrefix": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/')]"
+  },
+  "resources": [
+    {
+      "apiVersion": "[parameters('apiVersion')]",
+      "type": "Microsoft.ContainerInstance/containerGroupProfiles",
+      "name": "[variables('cgProfileName')]",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "sku": "Standard",
+        "containers": [
+          {
+            "name": "web",
+            "properties": {
+              "image": "mcr.microsoft.com/azuredocs/aci-helloworld",
+              "ports": [
+                {
+                  "protocol": "TCP",
+                  "port": 80
+                }
+              ],
+              "resources": {
+                "requests": {
+                  "memoryInGB": 1.0,
+                  "cpu": 1.0
+                }
+              }
+            }
+          }
+        ],
+        "restartPolicy": "Always",
+        "ipAddress": {
+          "ports": [
+            {
+              "protocol": "TCP",
+              "port": 80
+            }
+          ],
+          "type": "Public"
+        },
+        "osType": "Linux"
+      }
+    },
+    {
+      "apiVersion": "[parameters('apiVersion')]",
+      "type": "Microsoft.ContainerInstance/NGroups",
+      "name": "[variables('NGroupsName')]",
+      "tags": "[parameters('resourceTags')]",
+      "location": "[resourceGroup().location]",
+      "dependsOn": [
+        "[concat('Microsoft.ContainerInstance/containerGroupProfiles/', variables('cgProfileName'))]"
+      ],
+      "identity": {
+        "type": "systemAssigned"
+      },
+      "properties": {
+        "elasticProfile": {
+          "desiredCount": "[parameters('desiredCount')]",
+          "maintainDesiredCount": true
+        },
+        "containerGroupProfiles": [
+          {
+            "resource": {
+              "id": "[concat(variables('resourcePrefix'), 'Microsoft.ContainerInstance/containerGroupProfiles/', variables('cgProfileName'))]"
+            }
+          }
+        ]
+      },
+      "zones": [ "1", "2", "3" ]
+    }
+  ]
+}
+```
+

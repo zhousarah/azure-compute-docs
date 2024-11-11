@@ -16,7 +16,7 @@ ms.date: 11/07/2024
 
 As requirements change, we would need to keep updating our NGroups and its CGs. 
 
-There are two update modes with which we can update a NGroups – **Manual** (default option) and **Rolling**.  
+There are two update modes with which we can update an NGroups – **Manual** (default option) and **Rolling**.  
 
 Within **Rolling Update (RU)** too, there are 2 options – ‘*in-place*’ update and ‘*replace*’ update. Replace RU is the default option. 
 
@@ -27,8 +27,8 @@ This document describes RU in detail. Manual update is covered in the NGroups do
 Consider a simple example of updating a CG profile reference from *cgprofile1* to *cgprofile2*.
 
 
-### In-place rolling update
-With in-place RU, when we update the reference to *cgprofile2* and issue an UPDATE NGroups command, "*existing CGs*" are updated with *cgprofile2*. The update to existing CGs happen in small batches (and not all at once). This ensures that there is a minimal impact on our workload since only a small percentage of CGs may be unavailable during the update.  
+### In-place Rolling Update
+With in-place RU, when we update the reference to *cgprofile2* and issue an UPDATE NGroups command, "*existing CGs*" are updated with *cgprofile2*. The update to existing CGs happens in small batches (and not all at once). This ensures that there is a minimal impact on our workload since only a small percentage of CGs may be unavailable during the update.  
 
 We can configure the batch size and other related rolling update mode settings with the NGroups API.  
 
@@ -36,8 +36,8 @@ Because in-place RU updates existing CGs, there are certain limitations to the C
 
 Please see ACI’s [limitations](../container-instances-update.md) w.r.t updating CGs. Also, please see here for [properties](../container-instances-update.md) on CGs that require a delete (versus an update).
 
-### Replace rolling update
-With replace RU, when we update the reference to *cgprofile2* and issue an UPDATE NGroups command, "*new CGs*" are created with *cgprofile2*. Existing CGs with *cgprofile1* are deleted. This creation and deletion happen in small batches (and not all at once). This ensures that there is a minimal impact on our workload since only a small percentage of CGs are impacted during the update.  
+### Replace Rolling Update
+With replace RU, when we update the reference to *cgprofile2* and issue an UPDATE NGroups command, "*new CGs*" are created with *cgprofile2*. Existing CGs with *cgprofile1* are deleted. This creation and deletion happen in small batches (and not all at once). This ensures that there is a minimal impact on our workload since only a small percentage of CGs is impacted during the update.  
 
 Like in-place RU, we can configure the batch size and other related rolling update mode settings with the NGroups API.  
 
@@ -45,13 +45,13 @@ Because replace RU creates new CGs, there are fewer limitations enforced by ACI.
 
 ## Usage
 
-### Triggering a rolling update
+### Triggering a Rolling Update
 
-Rolling update is triggered when a NGroups PUT call is made and the CG profile in the PUT call is different from the CG profile currently referenced in the NGroups.  
+Rolling update is triggered when an NGroups PUT call is made and the CG profile in the PUT call is different from the CG profile currently referenced in the NGroups.  
 
 NGroups will then automatically group instances into batches and update one batch at a time. The size of the batch is determined by *maxBatchPercent*.  
 
-**Updating a batch:**
+##### Updating a Batch
 
  - With **in-place** update involves - Invoking a CG PUT call to ‘update’ each CG of the batch 
 
@@ -59,7 +59,7 @@ NGroups will then automatically group instances into batches and update one batc
 
 If “enough number of CGs” from the batch gives healthy signals after *pauseTimeBetweenBatches* period, then NGroups will automatically start the next batch for update, else it will stop the rollout. This “enough number of CGs” can be specified by *maxUnhealthyPercent* and *maxUnhealthyUpdatedPercent*. 
 
-To issue a RU, specify the following in the request and issue an UPDATE NGroups 
+To issue an RU, specify the following in the request and issue an UPDATE NGroups 
 
 ```
 { 
@@ -118,7 +118,7 @@ If image version is set to “latest” tag for container images within the CG p
 } 
 ```
 
-### Getting status of running RU
+### Getting Status of a Running Rolling Update
 
 For getting latest status of your rolling update, you can use this REST API:
 ```dotnetcli
@@ -129,9 +129,9 @@ GET
 
 This returns a [RollingUpdate structure](#api-model) containing relevant information about the RU 
 
-### Cancelling a RU 
+### Cancelling a Rolling Update 
 
-To cancel a RU, use the following API. Once cancelled, the RU cannot be resumed/restarted. A new RU needs to be triggered. NGroups prefers this model to keep the design simple. 
+To cancel an RU, use the following API. Once canceled, the RU cannot be resumed/restarted. A new RU needs to be triggered. NGroups prefers this model to keep the design simple. 
 ```azurepowershell
 POST 
 
@@ -141,8 +141,8 @@ POST
 } 
 ```
 
-### Boundry of a batch in RU
-The CGs of a specific batch in a RU will not cross a fault model boundary. Here, a fault model represents a zone/fault-domain combination. E.g., zone 1 / FD 0 is a fault model boundary. Similarly, zone 1 / FD 1 is another fault model boundary. Similarly, zone 2 / FD 0. 
+### Boundary of a Batch in a Rolling Update
+The CGs of a specific batch in an RU will not cross a fault model boundary. Here, a fault model represents a zone/fault-domain combination. E.g., zone 1 / FD 0 is a fault model boundary. Similarly, zone 1 / FD 1 is another fault model boundary. Similarly, zone 2 / FD 0. 
 
 E.g., if a customer has a multi-zonal NGroups with say, 3 zones, then a batch will be confined to CGs belonging to just 1 zone at max. A batch will never have CGs spread across multiple zones. 
 

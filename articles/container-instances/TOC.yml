@@ -74,7 +74,9 @@
   - name: NGroups
     items:
     - name: About NGroups
-      href: NGroups/container-instances-about-ngroups.md
+      href: ngroups/container-instances-about-ngroups.md
+    - name: NGroups Rolling Update
+      href: ngroups\container-instances-rolling-update.md
   - name: Security
     items:
      - name: Security baseline
