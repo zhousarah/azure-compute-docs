@@ -387,6 +387,30 @@ This update is usually done AZ by AZ with not much automated coordination across
 
 So, if by chance, a platform update happens simultaneously across 2 or more AZs, then CGs across these AZs can be down simultaneously thus causing unavailability for your NGroups.
 
+#### How to Use Confidential Containers with NGroups? 
+
+NGroups supports Confidential ACI container groups. Confidential instances are defined using the following properties within a Container Group Profile.
+
+```dotnetcli
+{ 
+    "location": "{{location}}", 
+    "properties": { 
+        "sku": "Confidential",
+        "confidentialComputeProperties": { 
+            "ccePolicy": "<base 64 encoded policy>" 
+          }, 
+        "containers": [ ... ], 
+        "restartPolicy": "Always", 
+        "shutdownGracePeriod": "PT1H", 
+        "ipAddress": { ... }, 
+        "timeToLive": "PT1H", 
+        "osType": "Linux" 
+    }     
+} 
+```
+
+Please refer to the ACI documentation of confidential containers here: [Tutorial: Prepare a deployment for a confidential container on Azure Container Instances](../container-instances-tutorial-deploy-confidential-containers-cce-arm.md)
+
 
  ## Samples
 
