@@ -18,8 +18,8 @@ Azure Disk Storage regularly receives updates for new features and enhancements.
 - [What's new in 2024](#whats-new-in-2024)
 
   - [Quarter 4 (October, November, December)](#quarter-4-october-november-december)
-    - [Generally availability: Convert existing disks to Premium SSD v2 disks](#generally-available-convert-existing-disks-to-premium-ssd-v2-disks)
-    - [Generally availability: Expand Ultra Disks and Premium SSD v2 without downtime](#generally-available-expand-ultra-disks-and-premium-ssd-v2-without-downtime)
+    - [Generally available: Convert existing disks to Premium SSD v2 disks](#generally-available-convert-existing-disks-to-premium-ssd-v2-disks)
+    - [Generally available: Expand Ultra Disks and Premium SSD v2 without downtime](#generally-available-expand-ultra-disks-and-premium-ssd-v2-without-downtime)
     - [Expanded regional availability for Premium SSD v2](#expanded-regional-availability-for-premium-ssd-v2)
   - [Quarter 2 (April, May, June)](#quarter-2-april-may-june)
     - [Generally available: New Property for Disks-LastOwnershipUpdateTime](#generally-available-new-property-for-disks-lastownershipupdatetime)
