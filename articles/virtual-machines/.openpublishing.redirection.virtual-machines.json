@@ -6516,8 +6516,13 @@
             "redirect_document_id": true
         },
         {
-            "source_path_from_root": "/articles/virtual-machines/sizes/memory-optimized/mbsv3-mbdsv3-series.md",
-            "redirect_url": "/azure/virtual-machines/sizes/memory-optimized/mbsv3-series",
+            "source_path_from_root": "/articles/virtual-machines/sizes/memory-optimized/mbsv3-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/memory-optimized/mbsv3-mbdsv3-series",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/articles/virtual-machines/sizes/memory-optimized/mbdsv3-series.md",
+            "redirect_url": "/azure/virtual-machines/sizes/memory-optimized/mbsv3-mbdsv3-series",
             "redirect_document_id": false
         },
         {

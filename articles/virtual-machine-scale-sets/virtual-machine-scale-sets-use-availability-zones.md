@@ -45,10 +45,10 @@ In the rare case of a full zonal outage, any or all instances within the scale s
 A fault domain is a fault isolation group within an availability zone or datacenter of hardware nodes that share the same power, networking, cooling, and platform maintenance schedule. VM instances that are on different fault domains are not likely to be impacted by the same planned or unplanned outage. You can specify how instances are spread across fault domains within a region or zone.
 
 - Max spreading (platformFaultDomainCount = 1)
-- Static fixed spreading (platformFaultDomainCount = 5)
-- Spreading aligned with storage disk fault domains (platformFaultDomainCount = 2 or 3, for regional deployments only)
+- Fixed spreading (platformFaultDomainCount = 5)
+- Fixed spreading aligned with storage disk fault domains (platformFaultDomainCount = 2 or 3, for regional deployments only)
 
-With max spreading, the scale set spreads your VMs across as many fault domains as possible within each zone. This spreading could be across greater or fewer than five fault domains per zone. With static fixed spreading, the scale set spreads your VMs across exactly five fault domains per zone. If the scale set can't find five distinct fault domains per zone to satisfy the allocation request, the request fails.
+With max spreading, the scale set spreads your VMs across as many fault domains as possible within each zone. This spreading could be across greater or fewer than five fault domains per zone. With static fixed spreading, the scale set spreads your VMs across the specified number of fault domains. If the scale set can't allocate to at least the specified fault domain count to satisfy the allocation request, the request fails.
 
 **We recommend deploying with max spreading for most workloads**, as this approach provides the best spreading in most cases. If you need replicas to be spread across distinct hardware isolation units, we recommend spreading across Availability Zones and utilize max spreading within each zone.
 
