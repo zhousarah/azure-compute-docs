@@ -161,6 +161,7 @@ The different return values of ResilientVMDeletionStatus indicate:
 | Failed | Your scale set has the resilientVMDeletion enabled and maxed out of retries. |
 
 ---
+
 ## FAQs
 ### What is the minimum API version to use this policy? 
 2023-07-01
