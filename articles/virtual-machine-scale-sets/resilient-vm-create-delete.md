@@ -154,12 +154,12 @@ GET https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups
 ---
 
 If you use REST API, different return values of ResilientVMDeletionStatus indicate the following:
-| ResilientVMDeletionStatus | State of delete |
-| ------------- | ------------- |
-| Enabled | Your scale set has a resiliency policy with the resilientVMDeletion policy set. |
-| Disabled | Your scale set either has resilientVMDeletion policy enabled as false, has a resiliency policy but is missing a resilientVMDeletion policy, or doesn't have a resiliency policy. |
-| In progress | Your scale set has the resilientVMDeletion enabled and the virtual machine is currently being deleted or is marked for deletion.|
-| Failed | Your scale set has the resilientVMDeletion enabled and hit the max retry count. |
+| ResilientVMDeletionStatus | State of delete                                                                                                                                                                  |
+|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Enabled                   | Your scale set has a resiliency policy with the resilientVMDeletion policy set.                                                                                                  |
+| Disabled                  | Your scale set either has resilientVMDeletion policy enabled as false, has a resiliency policy but is missing a resilientVMDeletion policy, or doesn't have a resiliency policy. |
+| In Progress               | Your scale set has the resilientVMDeletion enabled and the virtual machine is currently being deleted or is marked for deletion.                                                 |
+| Failed                    | Your scale set has the resilientVMDeletion enabled and hit the max retry count.                                                                                                  |
 
 
 
