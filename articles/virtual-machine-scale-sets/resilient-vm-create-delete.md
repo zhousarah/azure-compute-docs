@@ -151,6 +151,7 @@ This endpoint supports both Virtual Machine Scale Sets Uniform and Flex.
 ```http
 GET https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{ResourceGroupName}}/providers/Microsoft.Compute/virtualMachineScaleSets/{{ResourceName}}/VirtualMachines/{{VMName}}?$expand=resiliencyView&api-version=2024-07-01
 ```
+---
 The different return values of ResilientVMDeletionStatus indicate:
 | ResilientVMDeletionStatus | State of delete |
 | ------------- | ------------- |
