@@ -31,4 +31,3 @@ Resizing Ultra Disks and Premium SSD v2 disks is currently available in all Prem
 
 - US West 2
 - West Europe
-- East US
