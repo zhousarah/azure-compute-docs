@@ -71,6 +71,12 @@
     href: container-instances-container-groups.md
   - name: Relationship to orchestrators
     href: container-instances-orchestrator-relationship.md
+  - name: NGroups
+    items:
+    - name: About NGroups
+      href: container-instance-ngroups/container-instances-about-ngroups.md
+    - name: NGroups Rolling Update
+      href: container-instance-ngroups\container-instances-rolling-update.md
   - name: Security
     items:
      - name: Security baseline
