@@ -239,7 +239,7 @@ We can configure the batch size and other related rolling update mode settings w
 |**IMP**: Use the api-version - 2024-09-01-preview and onwards for preview|
 |--|
 
-If these prerequisites aren't met, requests fail, and the NGroups resource type is not recognized.
+If these prerequisites aren't met, requests fail, and the NGroups resource type isn't recognized.
 
 ### ARM Template Samples
 
@@ -373,7 +373,7 @@ Yes, you can set the properties.elasticProfile.maintainDesiredCount bool propert
 
 It creates a new CG for every CG that is being deleted/detached from the NGroup. It tries to maintain the desiredCount property of the NGroup to it's set value. 
 
-This is useful when you want to use the NGroup as a *pool* which automatically gets replenished when you take away CGs from the pool for your workload scenarios.  
+It is useful when you want to use the NGroup as a *pool* which automatically gets replenished when you take away CGs from the pool for your workload scenarios.  
 
 It's a nullable bool property. If you omit it for subsequent NGroup PUT/update calls, it doesn't reset to false. To reset, you must explicitly set it to false. When it's null/false, and when a CG is deleted/detached from the NGroup, the NGroup’s desiredCount property reduces accordingly.
  
