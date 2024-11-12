@@ -159,7 +159,7 @@ If you use REST API, different return values of ResilientVMDeletionStatus indica
 | Enabled | Your scale set has a resiliency policy with the resilientVMDeletion policy set. |
 | Disabled | Your scale set either has resilientVMDeletion policy enabled as false, has a resiliency policy but is missing a resilientVMDeletion policy, or doesn't have a resiliency policy. |
 | In progress | Your scale set has the resilientVMDeletion enabled and the virtual machine is currently being deleted or is marked for deletion.|
-| Failed | Your scale set has the resilientVMDeletion enabled and maxed out of retries. |
+| Failed | Your scale set has the resilientVMDeletion enabled and hit the max retry count. |
 
 
 
@@ -167,11 +167,11 @@ If you use REST API, different return values of ResilientVMDeletionStatus indica
 ### What is the minimum API version to use this policy? 
 2023-07-01
 
-### What do I do if my virtual machine is in a “Failed” state for a long time? 
-Resilient delete performs a maximum of five retries on your virtual machine. Therefore, your virtual machine might show up in a “Failed” state, even when Resilient delete is operating on that virtual machine. See status section.
+### What do I do if my virtual machine is in a 'Failed' state for a long time? 
+Resilient delete performs a maximum of five retries on your virtual machine. Therefore, your virtual machine might show up in a 'Failed' state, even when Resilient delete is operating on that virtual machine. See status section.
 
 ### Does Resilient create work when I attach a new virtual machine to my scale set? 
 No. Resilient create operates during a scale-out of a scale set or when you create a new scale set. 
 
 ### Is the provisioning of my virtual machine accelerated with Resilient create?
-No, Resilient create improves the odds of provisioning the virtual machine but does not improve the speed of the provisioning itself. 
+No, Resilient create improves the odds of provisioning the virtual machine but doesn't improve the speed of the provisioning itself. 
