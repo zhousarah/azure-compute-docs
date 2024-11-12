@@ -151,8 +151,9 @@ This endpoint supports both Virtual Machine Scale Sets Uniform and Flex.
 ```http
 GET https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/{{ResourceGroupName}}/providers/Microsoft.Compute/virtualMachineScaleSets/{{ResourceName}}/VirtualMachines/{{VMName}}?$expand=resiliencyView&api-version=2024-07-01
 ```
+---
 
-The different return values of ResilientVMDeletionStatus indicate:
+If you use REST API, different return values of ResilientVMDeletionStatus indicate the following:
 | ResilientVMDeletionStatus | State of delete |
 | ------------- | ------------- |
 | Enabled | Your scale set has a resiliency policy with the resilientVMDeletion policy set. |
@@ -160,7 +161,7 @@ The different return values of ResilientVMDeletionStatus indicate:
 | In progress | Your scale set has the resilientVMDeletion enabled and the virtual machine is currently being deleted or is marked for deletion.|
 | Failed | Your scale set has the resilientVMDeletion enabled and maxed out of retries. |
 
----
+
 
 ## FAQs
 ### What is the minimum API version to use this policy? 
