@@ -57,7 +57,7 @@ NGroups then automatically group instances into batches and update one batch at 
 
 - With **replace** update involves – Invoking a CG PUT call to create new CGs and delete existing CGs of the batch. There exists a 1:1 correspondence with the CGs being created and the CGs being deleted. The CG names are however different. 
 
-If a sufficient number of CGs in the batch provides healthy signals after the pauseTimeBetweenBatches period, NGroups automatically starts the next batch for the update. Otherwise, it stops the rollout. The *maxUnhealthyPercent* parameter specifies the total number of unhealthy CGs, while the *maxUnhealthyUpdatedPercent* parameter specifies the total number of unhealthy CGs after the update.
+If a sufficient number of CGs in the batch provide healthy signals after the pauseTimeBetweenBatches period, NGroups automatically starts the next batch for the update. Otherwise, it stops the rollout. The *maxUnhealthyPercent* parameter specifies the total number of unhealthy CGs, while the *maxUnhealthyUpdatedPercent* parameter specifies the total number of unhealthy CGs after the update.
 
 Here's an example to issue a rolling update request to NGroups: 
 
@@ -145,7 +145,7 @@ POST
 
 The CGs of a specific batch in an RU don't cross a fault model boundary. A fault model represents a zone/fault-domain (FD) combination. For example, zone 1 / FD 0 is a fault model boundary, zone 1 / FD 1 is another fault model boundary, and zone 2 / FD 0 is yet another fault model boundary.
 
-If a customer has a multi-zonal NGroups set up with three zones, a batch is confined to CGs belonging to only one zone at most. A batch never consists of CGs' spread across multiple zones.
+If a customer has a multi-zonal NGroups set up with three zones, a batch is confined to CGs belonging to only one zone at most. A batch never consists of CGs spread across multiple zones.
 
 If a customer has a multi-zonal and multi-FD NGroups setup, a batch still consists of CGs belonging to only one FD in a single zone at most.
 
