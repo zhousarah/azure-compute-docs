@@ -58,29 +58,44 @@ To enable on an _existing_ scale set:
 3) Under **Capabilities** select **Health and repair**
 4) Enable **Resilient VM create (Preview)** and **Resilient VM delete (Preview)**
 
-:::image type="content" source="media/standby-pools/enable-standby-pool-after-vmss-creation.png" alt-text="A screenshot showing how to enable Resilient create and delete on an existing Virtual Machine Scale Set in the Azure portal.":::
+:::image type="content" source="./media/resilient-vm-create-delete/enable-on-existing-scale-set.png" alt-text="A screenshot showing how to enable Resilient create and delete on an existing Virtual Machine Scale Set in the Azure portal.":::
 
 To enable on a _new_ scale set:
 1) Navigate to **Monitoring**
 2) Select checkboxes **Resilient VM create (Preview)** and **Resilient VM delete (Preview)**
 
-:::image type="content" source="media/standby-pools/enable-standby-pool-after-vmss-creation.png" alt-text="A screenshot showing how to enable Resilient create and delete on a new Virtual Machine Scale Set in the Azure portal.":::
+:::image type="content" source="./media/resilient-vm-create-delete/enable-on-new-scale-set.png" alt-text="A screenshot showing how to enable Resilient create and delete on a new Virtual Machine Scale Set in the Azure portal.":::
 
 ### [CLI](#tab/cli)
-Enable Resilient create and delete on your existing scale set using [az standby-vm-pool create](/cli/azure/standby-vm-pool).
+Enable Resilient create and delete on your _existing_ scale set using [az standby-vm-pool create](/cli/azure/standby-vm-pool).
 
 ```azurecli-interactive
 az vmss update \ 
 --name <myScaleSet> \ 
 --resource-group <myResourceGroup> \ 
---enable-resilient-deletion true 
+--enable-resilient-creation true 
 ```
 
 ```azurecli-interactive
 az vmss update 
 --name <myScaleSet> \ 
 --resource-group <myResourceGroup>\ 
---set resiliencyPolicy.resilientVMCreationPolicy=true 
+--enable-resilient-deletion true 
+```
+
+Enable Resilient create and delete on a _new_ scale set using [az standby-vm-pool create](/cli/azure/standby-vm-pool).
+```azurecli-interactive
+az vmss create \ 
+--name <myScaleSet> \ 
+--resource-group <myResourceGroup> \ 
+--enable-resilient-creation true 
+```
+
+```azurecli-interactive
+az vmss create 
+--name <myScaleSet> \ 
+--resource-group <myResourceGroup>\ 
+--enable-resilient-deletion true 
 ```
 
 ### [PowerShell](#tab/powershell)
@@ -89,7 +104,7 @@ Enable Resilient create and delete on your existing scale set using [New-AzStand
 ```azurepowershell-interactive
 #Create a VM Scale Set profile 
 $vmss = new-azvmssconfig -EnableResilientVMCreate -EnableResilientVMDelete 
-#Update the VM Scale Set with Resilient virtual machine create and Resilient virtual machine delete 
+#Update the VM Scale Set with Resilient create and Resilient delete 
 Update-azvmss -ResourceGroupName $resourceGroupName -VMScaleSetName 
 $VMScaleSetName -EnableResilientVMCreate -EnableResilientVMDelete 
 ```
