@@ -124,6 +124,8 @@
       href: container-instances-exec.md
     - name: Run a setup container (init)
       href: container-instances-init-container.md
+    - name: Use config maps (Preview)
+      href: container-instances-config-map.md
     - name: Use a managed identity
       href: container-instances-managed-identity.md
     - name: Use GPU resources (preview)
@@ -160,6 +162,20 @@
       href: container-instances-stop-start.md
     - name: Update running containers
       href: container-instances-update.md
+  - name: Manage a standby pool (preview)
+    items: 
+    - name: Overview
+      href: container-instances-standby-pool-overview.md
+    - name: Create a standby pool
+      href: container-instances-standby-pool-create.md
+    - name: Request a container from a standby pool
+      href: container-instances-standby-pool-request-container.md
+    - name: Update or delete a standby pool
+      href: container-instances-standby-pool-update-delete.md
+    - name: Get pool and container details
+      href: container-instances-standby-pool-get-details.md
+    - name: Frequently asked questions
+      href: container-instances-standby-pool-faq.md
   - name: Monitor and log
     items:
     - name: Monitor Container Instances
