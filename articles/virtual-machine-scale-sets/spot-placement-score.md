@@ -114,7 +114,7 @@ az compute-recommender spot-placement-recommender \
 
 ### [Azure PowerShell](#tab/powershell)
 
-Access the Spot Placement Score using Azure PowerShell command [Invoke-AzSpotPlacementScore](/powershell/module/az.compute/invoke-azspotplacementscore) to call the API endpoint. The placement scores will be found under the "PlacementScore" property in the response object. Replace all parameters with your specific details:
+Access the Spot Placement Score using Azure PowerShell command [Invoke-AzSpotPlacementScore](/powershell/module/az.compute/invoke-azspotplacementscore) to call the API endpoint. The placement scores can be found under the "PlacementScore" property in the response object. Replace all parameters with your specific details:
 
 ```azurepowershell-interactive
 Invoke-AzSpotPlacementScore
