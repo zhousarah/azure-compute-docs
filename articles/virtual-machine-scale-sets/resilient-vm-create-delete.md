@@ -153,8 +153,8 @@ GET https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups
 ```
 ---
 
-If you use REST API, different return values of ResilientVMDeletionStatus indicate the following:
 
+If you use REST API, different return values of ResilientVMDeletionStatus indicate the following:
 | ResilientVMDeletionStatus | State of delete                                                                                                                                                                  |
 |---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Enabled                   | Your scale set has a resiliency policy with the resilientVMDeletion policy set.                                                                                                  |
