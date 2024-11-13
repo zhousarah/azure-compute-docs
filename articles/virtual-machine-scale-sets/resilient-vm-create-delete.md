@@ -43,7 +43,8 @@ az feature show --namespace "Microsoft.Compute" --name "ReliableVMDeletion"
 1.	Resilient delete initiates forced delete retries for any errors that occur during the delete process. For example, InternalExecutionError, TransientFailure, or InternalOperationError.
 2.	Resilient delete attempts the forced delete operation five times per virtual machine with an exponential backoff. If unsuccessful, the virtual machine remains in a failed state.
 > For example, if you are deleting a scale set of five virtual machines, and each virtual machine enters a “failed” delete state, then the scale set will initiate one delete call on itself to delete those five virtual machines again. If four out of five virtual machines are deleted in the first retry, then the platform will wait a period of 10 minutes before initiating the next delete call for the remaining virtual machine.
-4.	To check the status of virtual machines throughout the delete process, refer to the section on [Get create or delete status](#get-status-of-create-and-delete).
+
+3.	To check the status of virtual machines throughout the delete process, refer to the section on [Get create or delete status](#get-status-of-create-and-delete).
 
 :::image type="content" source="./media/resilient-vm-create-delete/resilient-delete-workflow.png" alt-text="A screenshot showing how Resilient delete performs retries on your virtual machines.":::
 
@@ -99,7 +100,7 @@ Enable Resilient create and delete on your existing scale set using [az deployme
 ```json
 "properties": {  
   "overprovision": false,  
-    " resiliencyPolicy ": {
+    "resiliencyPolicy": {
         "resilientVMCreationPolicy": {  
             "enabled": true  
         },  
