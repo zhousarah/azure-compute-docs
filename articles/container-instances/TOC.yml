@@ -57,6 +57,10 @@
       href: container-instances-tutorial-deploy-spot-containers-cli.md
     - name: Deploy a Spot container group - Portal
       href: container-instances-tutorial-deploy-spot-containers-portal.md 
+  - name: Deploy virtual nodes on Azure Container Instances
+    items:
+    - name: Deploy virtual nodes on Azure Container Instances in your Azure Kubernetes Service cluster
+      href: container-instances-tutorial-virtual-nodes-helm.md
 - name: Samples
   items:
   - name: Code samples
@@ -91,6 +95,8 @@
     href: confidential-containers-attestation-concepts.md 
   - name: About Azure Container Instances Spot containers
     href: container-instances-spot-containers-overview.md
+  - name: Virtual nodes on Azure Container Instances
+    href: container-instances-virtual-nodes.md
 - name: How-to guides
   items:
   - name: Deploy
