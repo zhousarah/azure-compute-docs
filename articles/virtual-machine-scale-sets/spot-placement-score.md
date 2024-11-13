@@ -6,7 +6,7 @@ ms.author: avirishuverma
 ms.service: azure-virtual-machines
 ms.subservice: azure-spot-vm
 ms.topic: how-to
-ms.date: 09/09/2024
+ms.date: 11/13/2024
 ms.reviewer: ju-shim
 ---
 
@@ -108,14 +108,13 @@ az compute-recommender spot-placement-recommender \
     --desired-count <> \
     --desired-locations <> \
     --desired-sizes <> \
-    --ids <> \
     --location <> \
     --subscription <> \
 ```
 
 ### [Azure PowerShell](#tab/powershell)
 
-Access the Spot Placement Score using Azure PowerShell command [Invoke-AzSpotPlacementScore](/powershell/module/az.compute/invoke-azspotplacementscore) to call the API endpoint. Replace all parameters with your specific details:
+Access the Spot Placement Score using Azure PowerShell command [Invoke-AzSpotPlacementScore](/powershell/module/az.compute/invoke-azspotplacementscore) to call the API endpoint. The placement scores will be found under the "PlacementScore" property in the response object. Replace all parameters with your specific details:
 
 ```azurepowershell-interactive
 Invoke-AzSpotPlacementScore
