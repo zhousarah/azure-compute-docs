@@ -105,8 +105,7 @@ To enable Resilient create and delete on your _existing_ scale set:
 #Create a VM Scale Set profile 
 $vmss = new-azvmssconfig -EnableResilientVMCreate -EnableResilientVMDelete 
 #Update the VM Scale Set with Resilient create and Resilient delete 
-Update-azvmss -ResourceGroupName $resourceGroupName -VMScaleSetName 
-$VMScaleSetName -EnableResilientVMCreate -EnableResilientVMDelete 
+Update-azvmss -ResourceGroupName ManasiTest -VMScaleSetName ResilientDelete -EnableResilientVMCreate $true -EnableResilientVMDelete $true 
 ```
 
 ### [REST](#tab/rest)
