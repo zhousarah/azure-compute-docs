@@ -136,7 +136,7 @@ Your virtual machine status is 'Creating' while Resilient create is in progress.
 While the delete attempt is in progress, the state of the resource is listed as 'Deleting.' If a delete retry fails on a particular virtual machine, then the virtual machine falls back to the 'Failed' State. However, the 'Failed' State only indicates that a retry of a deletion failed – and Resilient delete might still perform more retries. Therefore, while Resilient delete is going on, you see the virtual machine alternate states between 'Deleting' and 'Failed.' 
 
 ### [Portal](#tab/portal)
-Navigate to your Virtual Machine Scale Set. The banner indicates when Resilient Delete is operating:
+Navigate to your Virtual Machine Scale Set. The banner indicates that Resilient delete will operate if your delete fails:
 :::image type="content" source="./media/resilient-vm-create-delete/delete-banner-portal.png" alt-text="A screenshot showing the banner during Resilient delete retries in the Azure portal.":::
 
 ### [REST API](#tab/rest)
