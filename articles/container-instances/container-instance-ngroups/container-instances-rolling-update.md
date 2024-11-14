@@ -126,7 +126,7 @@ For getting the latest status of your rolling update, you can use this REST API:
 
 `GET /subscriptions/{subscriptionId}/resourceGroups/{{rgName}}/providers/Microsoft.ContainerInstance/NGroups/{{ngroupsName}}/latestRollingUpdate`
 
-This returns a [RollingUpdate structure](#api-model) containing relevant information about the RU.
+This returns a response containing relevant information about the RU.
 
 ### Cancelling a Rolling Update
 

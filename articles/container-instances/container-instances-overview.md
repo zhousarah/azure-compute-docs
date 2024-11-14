@@ -14,7 +14,7 @@ ms.custom: mvc, linux-related-content
 
 Containers are becoming the preferred way to package, deploy, and manage cloud applications. Azure Container Instances offers the fastest and simplest way to run a container in Azure, without having to manage any virtual machines and without having to adopt a higher-level service.
 
-ACI supports [regular](container-instances-container-groups.md), [confidential](container-instances-confidential-overview.md), and [Spot](container-instances-spot-containers-overview.md) containers. ACI can be used as [single-instance](container-instances-container-groups.md) or multi-instance via [NGroups](./container-instances-ngroups/container-instances-about-ngroups.md), or you can get orchestration capabilities by deploying pods in your Azure Kubernetes Service (AKS) cluster via [virtual nodes on ACI](container-instances-virtual-nodes.md).
+ACI supports [regular](container-instances-container-groups.md), [confidential](container-instances-confidential-overview.md), and [Spot](container-instances-spot-containers-overview.md) containers. ACI can be used as [single-instance](container-instances-container-groups.md) or multi-instance via [NGroups](container-instance-ngroups/container-instances-about-ngroups.md), or you can get orchestration capabilities by deploying pods in your Azure Kubernetes Service (AKS) cluster via [virtual nodes on ACI](container-instances-virtual-nodes.md).
 
 ## Fast startup times
 
