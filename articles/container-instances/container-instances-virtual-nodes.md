@@ -50,3 +50,5 @@ For more information, see [Resource availability & quota limits for ACI](contain
 ## Next steps
 
 * To try out virtual nodes on Azure Container Instances, see [Deploy virtual nodes on Azure Container Instances in your AKS cluster](./container-instances-tutorial-virtual-nodes-helm.md)
+
+* If you want to manage multi-instance container groups, see [About NGroups](container-instance-ngroups/container-instances-about-ngroups.md).
