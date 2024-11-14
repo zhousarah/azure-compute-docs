@@ -107,11 +107,13 @@ Update-azvmss -ResourceGroupName <resourceGroupName> -VMScaleSetName <scaleSetNa
 ```
 
 ### [REST](#tab/rest)
-Enable Resilient create and delete on your scale set through REST API, use a PUT call and include the following section in your request body:
+Enable Resilient create and delete on your scale set through REST API, use a `PUT` call and include the following section in your request body:
 
-```HTTP
+```json
 PUT https://management.azure.com/subscriptions/{YourSubscriptionId}/resourceGroups/{YourResourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{yourScaleSetName}?api-version=2023-07-01
-
+```
+In the request body, add in the resiliency policies: 
+```json
 "properties": {  
   "overprovision": false,  
     "resiliencyPolicy": {
