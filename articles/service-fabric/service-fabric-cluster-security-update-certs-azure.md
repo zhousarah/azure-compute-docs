@@ -7,7 +7,7 @@ author: tomvcassidy
 ms.service: azure-service-fabric
 ms.custom: devx-track-arm-template
 services: service-fabric
-ms.date: 07/14/2022
+ms.date: 11/14/2024
 ---
 
 # Add or remove certificates for a Service Fabric cluster in Azure
@@ -19,9 +19,6 @@ Service fabric lets you specify two cluster certificates, a primary and a second
 
 > [!NOTE]
 > For a secure cluster, you will always need at least one valid (not revoked and not expired) cluster certificate (primary or secondary) deployed (if not, the cluster stops functioning). 90 days before all valid certificates reach expiration, the system generates a warning trace and a warning health event on the node. These are currently the only notifications Service Fabric sends regarding certificate expiration.
-> 
-> 
-
 
 [!INCLUDE [updated-for-az](~/reusable-content/ce-skilling/azure/includes/updated-for-az.md)]
 
@@ -41,8 +38,6 @@ These steps assume that you are familiar with how Resource Manager works and hav
 
 > [!NOTE]
 > If you are looking for a sample template and parameters that you can use to follow along or as a starting point, then download it from this [git-repo](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/Cert-Rollover-Sample). 
-> 
-> 
 
 ### Edit your Resource Manager template
 
@@ -269,8 +264,6 @@ You can specify any number of client certificates. Each addition/deletion result
 2. On the 'Add Authentication' section, choose the 'Authentication Type' - 'Read-only client' or 'Admin client'
 3. Now choose the Authorization method. This indicates to Service Fabric whether it should look up this certificate by using the subject name or the thumbprint. In general, it is not a good security practice to use the authorization method of subject name. 
 
-![Add Client certificate][Add_Client_Cert]
-
 ### Deletion of Client Certificates - Admin or Read-Only using the portal
 
 To remove a secondary certificate from being used for cluster security, Navigate to the Security section and select the 'Delete' option from the context menu on the specific certificate.
@@ -288,7 +281,6 @@ Read these articles for more information on cluster management:
 * [Setup role-based access for clients](service-fabric-cluster-security-roles.md)
 
 <!--Image references-->
-[Add_Client_Cert]: ./media/service-fabric-cluster-security-update-certs-azure/SecurityConfigurations_13.PNG
 [Json_Pub_Setting1]: ./media/service-fabric-cluster-security-update-certs-azure/SecurityConfigurations_14.PNG
 [Json_Pub_Setting2]: ./media/service-fabric-cluster-security-update-certs-azure/SecurityConfigurations_15.PNG
 [Json_Pub_Setting3]: ./media/service-fabric-cluster-security-update-certs-azure/SecurityConfigurations_16.PNG

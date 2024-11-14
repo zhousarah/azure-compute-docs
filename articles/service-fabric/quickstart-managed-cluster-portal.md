@@ -6,7 +6,7 @@ ms.topic: quickstart
 ms.service: azure-service-fabric
 services: service-fabric
 ms.author: tomcassidy
-ms.date: 03/02/2022
+ms.date: 11/14/2024
 ---
 
 # Quickstart: Deploy a Service Fabric managed cluster using the Azure portal
@@ -95,8 +95,6 @@ Before you create your Service Fabric managed cluster, you need to make sure Azu
 1. In the [Azure portal](https://portal.azure.com), navigate to your Azure Key Vault.
 
 1. Under **Settings** in the pane on the left, select **Access configuration**.
-
-   ![Screenshot of Access policies tab under Settings in the left pane, PNG.](./media/quickstart-managed-cluster-portal/key-vault-settings-access-policies.png)
 
 1. Toggle **Azure Virtual Machines for deployment** under **Enable access to:**.
 
