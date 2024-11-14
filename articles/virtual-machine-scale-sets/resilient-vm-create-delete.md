@@ -137,7 +137,7 @@ While the delete attempt is in progress, the state of the resource is listed as 
 
 ### [Portal](#tab/portal)
 Navigate to your Virtual Machine Scale Set. The banner indicates when Resilient Delete is operating:
-:::image type="content" source="media/standby-pools/enable-standby-pool-after-vmss-creation.png" alt-text="A screenshot showing the banner during Resilient delete retries in the Azure portal.":::
+:::image type="content" source="./media/resilient-vm-create-delete/delete-banner.png" alt-text="A screenshot showing the banner during Resilient delete retries in the Azure portal.":::
 
 ### [REST API](#tab/rest)
 To know the status of your virtual machine during delete, retrieve the return value of the ResilientVMDeletionStatus property. There are two different API endpoints available to get the ResilientVMDeletionStatus:
