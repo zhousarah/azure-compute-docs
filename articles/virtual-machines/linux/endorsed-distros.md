@@ -6,7 +6,7 @@ author: srijang
 ms.service: azure-virtual-machines
 ms.collection: linux
 ms.topic: conceptual
-ms.date: 08/02/2023
+ms.date: 11/14/2024
 ms.author: srijangupta
 ms.reviewer: cynthn
 ms.custom: engagement-fy23, linux-related-content
@@ -44,7 +44,7 @@ For more information about running Azure workloads on Linux, see the following v
 Azure Linux images can be grouped into three categories: 
 
 ### Marketplace Images  
-Images published and maintained by either Microsoft or partners. There are a large variety of images from multiple publishers for various use cases (security hardened, full database / application stack, etc.), and can be available free, pay-as-you-go for BYOL (bring your own license/subscription). 
+Images published and maintained by either Microsoft or partners. There are a large variety of images from multiple publishers for various use cases (security hardened, full database / application stack, etc.), and can be available free, pay-as-you-go or BYOL (bring your own license/subscription). 
 
  
 Platform Images are a type of Marketplace images for which Microsoft has partnered with several mainstream publishers (see table below about Partners) to create a set of “platform images” that undergo additional testing and receive predictable updates (see section below on Image Update Cadence). These platform images can be used for building your own custom images and solution stacks. These images are published by the endorsed Linux distribution partners such as Canonical (Ubuntu), Red Hat (RHEL), and Credativ (Debian). 
