@@ -546,3 +546,4 @@ Refer to the ACI documentation of confidential containers here: [Tutorial: Prepa
 
 - [Azure Container Instances](../container-instances-overview.md)
 - [NGroups Rolling Update](container-instances-rolling-update.md)
+- [Virtual nodes on Azure Container Instances](../container-instances-virtual-nodes.md)

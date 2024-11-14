@@ -78,7 +78,7 @@ Confidential containers on ACI enable you to run containers in a trusted executi
 ACI Spot containers allow customers to run interruptible, containerized workloads on unused Azure capacity at discounted prices of up to 70% compared to regular-priority ACI containers. ACI spot containers may be preempted when Azure encounters a shortage of surplus capacity, and they're suitable for workloads without strict availability requirements. Customers are billed for per-second memory and core usage. To utilize ACI Spot containers, you can deploy your workload with a specific property flag indicating that you want to use Spot container groups and take advantage of the discounted pricing model. 
 For more information, see [spot container groups](container-instances-spot-containers-overview.md).
 
-## NGroups (Preview)
+## NGroups
 
 NGroups is a powerful feature within ACI designed to make managing multiple Azure container groups easier, faster, and hassle-free. These new APIs, an extension of the ACI API set provides a way to manage multiple related container groups (CGs) together. For more information, see [About NGroups](container-instance-ngroups/container-instances-about-ngroups.md)
 

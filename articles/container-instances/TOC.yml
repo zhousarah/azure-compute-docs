@@ -77,7 +77,7 @@
     href: container-instances-orchestrator-relationship.md
   - name: NGroups
     items:
-    - name: About NGroups (Preview)
+    - name: About NGroups
       href: container-instance-ngroups/container-instances-about-ngroups.md
     - name: NGroups Rolling Update
       href: container-instance-ngroups\container-instances-rolling-update.md
