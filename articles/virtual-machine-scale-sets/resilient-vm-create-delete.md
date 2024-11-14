@@ -157,10 +157,10 @@ If you use REST API, different return values of ResilientVMDeletionStatus indica
 
 | ResilientVMDeletionStatus | State of delete                                                                                                                                                                      |
 |---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Enabled                   | Your scale set has a resiliency policy with the resilientVMDeletion policy set.                                                                                                      |
+| Enabled                   | The resilientVMDeletion policy is set on your scale set.                                                                                                                             |
 | Disabled                  | Your scale set either has the resilientVMDeletion policy enabled as false, has a resiliency policy but is missing a resilientVMDeletion policy, or doesn't have a resiliency policy. |
-| In Progress               | Your scale set has the resilientVMDeletion policy enabled and the virtual machine is currently being deleted or is marked for deletion.                                              |
-| Failed                    | Your scale set has the resilientVMDeletion policy enabled and hit the max retry count.                                                                                               |
+| In Progress               | The resilientVMDeletion policy is enabled and the virtual machine is currently being deleted or is marked for deletion.                                                              |
+| Failed                    | The resilientVMDeletion policy is enabled and hit the max retry count.                                                                                                               |
 
 
 
