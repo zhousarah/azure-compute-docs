@@ -30,7 +30,7 @@ For information about Azure Container Instances, see: [What is Azure Container I
 
 ## NGroups High Level Architecture
 
-:::image type="content" source="../media/container-instances-ngroups/ngroups-overview.png" alt-text="NGroups High Level Workflow":::
+:::image type="content" source="../media/container-instances-ngroups/ngroups-overview.png" alt-text="A Diagram that Shows NGroups High Level Workflow.":::
 
 With Azure Container Instances, customers need to create and maintain each individual container group manually. NGroups offers an easier solution to create, update, and manage N container group instances with a single API call.
 
@@ -189,7 +189,7 @@ The currently supported API version is **2024-09-01-preview**.
 > Use the api-version - **2024-09-01-preview** and onwards for preview.
 
 > [!TIP]
-> Follow Azure Container Instance Swagger for up to date information on NGroups APIs: [Container Instance Swagger](https://github.com/Azure/azure-rest-api-specs/blob/main/specification/containerinstance/resource-manager/Microsoft.ContainerInstance/preview/2024-09-01-preview/containerInstance.json)
+> Follow Azure Container Instance Swagger for up to date information on NGroups APIs. [Container Instance NGroups Swagger - 2024-11-01-preview](https://github.com/Azure/azure-rest-api-specs/blob/01791fcf5fc21ffa1b79b0558b3ec98e658c8caf/specification/containerinstance/resource-manager/Microsoft.ContainerInstance/preview/2024-11-01-preview/containerInstance.json#L837)
 
 If these prerequisites aren't met, requests fail, and the NGroups resource type isn't recognized.
 
@@ -198,18 +198,18 @@ If these prerequisites aren't met, requests fail, and the NGroups resource type 
 Create CG Profile: [ContainerGroupProfile-Sample.json](#container-group-profile-sample)
 Create Zonal NGroups with CGProfile: [NGroups-Zonal-Sample.json](#ngroups-with-zones-sample)
 
-Customers can see if a container group is associated to an NGroups resource by checking container group orchestratorId property under the JSON view. The orchestratorId represents the associated NGroups ARM resource Id.
+Customers can see if a container group is associated to an NGroups resource by checking container group orchestratorId property under the JSON view. The orchestratorId represents the associated NGroups ARM resource ID.
 
-:::image type="content" source="../media/container-instances-ngroups/cg-arm-json-structure.png" alt-text="A screenshot of an NGroups CG ARM JSON displaying OrchestratorId property":::
+:::image type="content" source="../media/container-instances-ngroups/cg-arm-json-structure.png" alt-text="A screenshot of an NGroups CG ARM JSON displaying OrchestratorId property.":::
 
 ## How-To Guide
 
-### How to do Rolling Update?
+### Perform a Rolling Update
 
 We can use the Rolling Update feature to automatically update all CGs to a newer version without downtime of the NGroups.
 See rolling update documentation: [NGroups Rolling update](container-instances-rolling-update.md).
 
-### How to Create a Regional (zonal/non-zonal) NGroups?
+### Create a Regional (zonal/non-zonal) NGroups
 
 First create a CG profile. Here's a sample CG profile. Currently supported API version is **2024-09-01-preview**.
 

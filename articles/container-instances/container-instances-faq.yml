@@ -187,7 +187,7 @@ sections:
         answer: |
           Current region availability for confidential containers is published [here](container-instances-region-availability.md).
       - question: |
-          Is there an additional cost for confidential container on Azure Container Instances?with your container group
+          Is there an additional cost for confidential container on Azure Container Instances?
         answer: |
           Confidential containers on Azure Container Instances do have an additional cost compared to standard SKU container groups. For more information, see [pricing page](https://azure.microsoft.com/pricing/details/container-instances/).
 

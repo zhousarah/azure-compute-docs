@@ -128,9 +128,9 @@ For getting the latest status of your rolling update, you can use this REST API:
 
 This returns a response containing relevant information about the RU.
 
-### Cancelling a Rolling Update
+### Canceling a Rolling Update
 
-To cancel a RU, use the following API. Once canceled, the RU cannot be resumed/restarted. A new RU needs to be triggered.
+To cancel a rolling update, use the following API. Once canceled, the RU cannot be resumed/restarted. A new RU needs to be triggered.
 
 `POST /subscriptions/{subscriptionId}/resourceGroups/{{rgName}}/providers/Microsoft.ContainerInstance/NGroups/{{ngroupsName}}/cancelRollingUpdate`
 
