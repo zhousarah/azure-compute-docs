@@ -77,7 +77,7 @@ To generate and retrieve your client certificate:
 
 1. Select **Create**.
 
-1. Your certificate will appear under **In progress, failed or cancelled**. You may need to refresh the list for it to appear under **Completed**. Once it's completed, select it and choose the version under **CURRENT VERSION**.
+1. Your certificate will appear under **In progress, failed or canceled**. You may need to refresh the list for it to appear under **Completed**. Once it's completed, select it and choose the version under **CURRENT VERSION**.
 
 1. Select **Download in PFX/PEM format** and select **Download**. The certificate's name will be formatted as `yourkeyvaultname-yourcertificatename-yyyymmdd.pfx`.
 
