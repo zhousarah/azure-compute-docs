@@ -67,7 +67,7 @@ To enable on a _new_ scale set:
 :::image type="content" source="./media/resilient-vm-create-delete/enable-on-new-scale-set.png" alt-text="A screenshot showing how to enable Resilient create and delete on a new Virtual Machine Scale Set in the Azure portal.":::
 
 ### [CLI](#tab/cli)
-Enable Resilient create and delete on your _existing_ scale set using [az standby-vm-pool create](/cli/azure/standby-vm-pool).
+To enable Resilient create and delete on your _existing_ scale set:
 
 ```azurecli-interactive
 az vmss update \ 
@@ -83,7 +83,7 @@ az vmss update
 --enable-resilient-deletion true 
 ```
 
-Enable Resilient create and delete on a _new_ scale set using [az standby-vm-pool create](/cli/azure/standby-vm-pool).
+To enable Resilient create and delete on a _new_ scale set:
 ```azurecli-interactive
 az vmss create \ 
 --name <myScaleSet> \ 
@@ -99,7 +99,7 @@ az vmss create
 ```
 
 ### [PowerShell](#tab/powershell)
-Enable Resilient create and delete on your existing scale set using [New-AzStandbyVMPool](/powershell/module/az.standbypool/new-azstandbyvmpool).
+To enable Resilient create and delete on your _existing_ scale set:
 
 ```azurepowershell-interactive
 #Create a VM Scale Set profile 
@@ -109,10 +109,12 @@ Update-azvmss -ResourceGroupName $resourceGroupName -VMScaleSetName
 $VMScaleSetName -EnableResilientVMCreate -EnableResilientVMDelete 
 ```
 
-### [ARM template](#tab/template)
-Enable Resilient create and delete on your existing scale set using [az deployment group create](/cli/azure/deployment/group) or [New-AzResourceGroupDeployment](/powershell/module/az.resources/new-azresourcegroupdeployment).
+### [REST](#tab/rest)
+Enable Resilient create and delete on your scale set through REST API, use a PUT call and include the following section in your request body:
 
-```json
+```HTTP
+PUT https://management.azure.com/subscriptions/{YourSubscriptionId}/resourceGroups/{YourResourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{yourScaleSetName}?api-version=2023-07-01
+
 "properties": {  
   "overprovision": false,  
     "resiliencyPolicy": {
@@ -122,25 +124,7 @@ Enable Resilient create and delete on your existing scale set using [az deployme
         "resilientVMDeletionPolicy": {  
             "enabled": true  
         }  
-    }  
-```
-
-### [REST](#tab/rest)
-Create a standby pool and associate it with an existing scale set using [Create or Update](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update)
-
-```HTTP
-PUT https://management.azure.com/subscriptions/{subscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyVirtualMachinePools/myStandbyPool?api-version=2023-12-01-preview
-{
-"type": "Microsoft.StandbyPool/standbyVirtualMachinePools",
-"name": "myStandbyPool",
-"location": "east us",
-"properties": {
-	 "elasticityProfile": {
-		 "maxReadyCapacity": 20
-	 },
-	  "virtualMachineState":"Deallocated",
-	  "attachedVirtualMachineScaleSetId": "/subscriptions/{subscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet"
-	  }
+    }
 }
 ```
 ---
