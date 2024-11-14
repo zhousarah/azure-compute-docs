@@ -107,11 +107,11 @@ Configure your cluster nodes. Node types define the VM sizes, the number of VMs,
 3. Select the **Virtual machine size**. D-series VMs have SSD drives and are highly recommended for stateful applications. Don't use any VM SKU that has partial cores or have less than 10 GB of available disk capacity. Refer to [service fabric cluster planning consideration document][service-fabric-cluster-capacity] for help with selecting the VM size.
 4.  **Single node cluster and three node clusters** are meant for test use only. They aren't supported for any running production workloads.
 5. Choose the **Initial virtual machine scale set capacity** for the node type. You can scale in or out the number of VMs in a node type later on, but on the primary node type, the minimum is five for production workloads. Other node types can have a minimum of one VM. The minimum **number** of VMs for the primary node type drives the **reliability** of your cluster.  
-6. Configure **Custom endpoints**. This field allows you to enter a comma-separated list of ports that you want to expose through the Azure Load Balancer to the public Internet for your applications. For example, if you plan to deploy a web application to your cluster, enter "80" here to allow traffic on port 80 into your cluster. For more information on endpoints, see [communicating with applications][service-fabric-connect-and-communicate-with-services]
+6. Configure **Custom endpoints**. This field allows you to enter a comma-separated list of ports that you want to expose through the Azure Load Balancer to the public Internet for your applications. For example, if you plan to deploy a web application to your cluster, enter "80" here to allow traffic on port 80 into your cluster. For more information on endpoints, see [communicating with applications][service-fabric-connect-and-communicate-with-services].
 7. **Enable reverse proxy**.  The [Service Fabric reverse proxy](service-fabric-reverseproxy.md) helps microservices running in a Service Fabric cluster discover and communicate with other services that have http endpoints.
 8. Back in the **Cluster configuration** blade, under **+Show optional settings**, configure cluster **diagnostics**. By default, diagnostics are enabled on your cluster to assist with troubleshooting issues. If you want to disable diagnostics change the **Status** toggle to **Off**. Turning off diagnostics is **not** recommended. If you already have Application Insights project created, then give its key, so that the application traces are routed to it.
 9. **Include DNS service**.  The [DNS service](service-fabric-dnsservice.md) an optional service that enables you to find other services using the DNS protocol.
-10. Select the **Fabric upgrade mode** you want set your cluster to. Select **Automatic**, if you want the system to automatically pick up the latest available version and try to upgrade your cluster to it. Set the mode to **Manual**, if you want to choose a supported version. For more information on the Fabric upgrade mode, see the [Service Fabric Cluster Upgrade document.][service-fabric-cluster-upgrade]
+10. Select the **Fabric upgrade mode** you want set your cluster to. Select **Automatic**, if you want the system to automatically pick up the latest available version and try to upgrade your cluster to it. Set the mode to **Manual**, if you want to choose a supported version. For more information on the Fabric upgrade mode, see the [Service Fabric Cluster Upgrade document.][service-fabric-cluster-upgrade].
 
 > [!NOTE]
 > We support only clusters that are running supported versions of Service Fabric. By selecting the **Manual** mode, you are taking on the responsibility to upgrade your cluster to a supported version.
@@ -120,7 +120,7 @@ Configure your cluster nodes. Node types define the VM sizes, the number of VMs,
 ### 3. Security
 ![Screenshot of security configurations on Azure portal.][BasicSecurityConfigs]
 
-To make setting up a secure test cluster easy for you, we provide the **Basic** option. If you already have a certificate and have uploaded it to your [key vault](/azure/key-vault/) (and enabled the key vault for deployment), then use the **Custom** option
+To make setting up a secure test cluster easy for you, we provide the **Basic** option. If you already have a certificate and have uploaded it to your [key vault](/azure/key-vault/) (and enabled the key vault for deployment), then use the **Custom** option.
 
 #### Basic Option
 Follow the screens to add or reuse an existing key vault and add a certificate. The addition of the certificate is a synchronous process and so you'll have to wait for the certificate to be created.
@@ -144,10 +144,10 @@ Skip this section, if you have already performed the steps in the **Basic** Opti
 
 ![Screenshot shows the Security Configure cluster security settings dialog box.][SecurityCustomOption]
 
-You need the Source key vault, Certificate URL, and Certificate thumbprint information to complete the security page. If you don't have it handy, open up another browser window and in the Azure portal do the following
+You need the Source key vault, Certificate URL, and Certificate thumbprint information to complete the security page. If you don't have it handy, open up another browser window and in the Azure portal do the following:
 
 1. Navigate to your key vault service.
-2. Select the "Properties" tab and copy the 'RESOURCE ID'  to "Source key vault" on the other browser window 
+2. Select the "Properties" tab and copy the 'RESOURCE ID'  to "Source key vault" on the other browser window. 
 
     ![Screenshot shows the Properties window for the key vault.][CertInfo0]
 
@@ -157,7 +157,7 @@ You need the Source key vault, Certificate URL, and Certificate thumbprint infor
 
     ![Screenshot shows the Certificate window for the key vault][CertInfo1]
 
-6. You should now be on the screen like below. Copy the hexadecimal SHA-1 Thumbprint to "Certificate thumbprint" on the other browser window
+6. You should now be on the screen like below. Copy the hexadecimal SHA-1 Thumbprint to "Certificate thumbprint" on the other browser window.
 7. Copy the 'Secret Identifier' to the "Certificate URL" on other browser window.
 
     ![Screenshot shows the Certificate Version dialog box with an option to copy the Certificate Identifier.][CertInfo2]
@@ -166,7 +166,7 @@ Check the **Configure advanced settings** box to enter client certificates for *
 
 ### 4. Summary
 
-Now you're ready to deploy the cluster. Before you do that, download the certificate, look inside the large blue informational box for the link. Make sure to keep the cert in a safe place. you need it to connect to your cluster. Since the certificate you downloaded doesn't have a password, it's advised that you add one.
+Now you're ready to deploy the cluster. Before you do that, download the certificate, look inside the large blue informational box for the link. Make sure to keep the cert in a safe place, you need it to connect to your cluster. Since the certificate you downloaded doesn't have a password, it's advised that you add one.
 
 To complete the cluster creation, click **Create**. You can optionally download the template.
 
