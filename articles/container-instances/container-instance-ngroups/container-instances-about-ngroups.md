@@ -30,11 +30,11 @@ For information about Azure Container Instances, see: [What is Azure Container I
 
 :::image type="content" source="../media/container-instances-ngroups/ngroups-overview.png" alt-text="NGroups High Level Workflow":::
 
-With Azure Container Instances, customer need to create and maintain each individual container group manually. NGroups offers an easier solution to create, update and manage N container group instances  with a single API call. 
+With Azure Container Instances, customer needs to create and maintain each individual container group manually. NGroups offers an easier solution to create, update, and manage N container group instances  with a single API call. 
 
 Creating an NGroups resource is a two step process.
 
-1. Create a template resource known as - [Container Group Profile](#container-group-profile-cg-profile) (CGProfile).  Under CGProfile a user can mention CG properties which will be common across all the CGs created by the NGroups.
+1. Create a template resource known as - [Container Group Profile](#container-group-profile-cg-profile) (CGProfile). In the CGProfile, a user specifies CG properties that are applied across all CGs created by NGroups.
 
 2. Create an [NGroups](#ngroups) resource. User can provide the desired count (number of required CGs) and a reference to the container group profile along with other relevant properties.
 
@@ -44,7 +44,7 @@ NGroups references to this Container Group Profile and then call ACI APIs in ord
 
 ### Container Group Profile (CG Profile) 
 
-Managing multiple container groups is a crucial part of running large cloud applications. As of today, in order to run multiple CGs (Container Groups), customers need to provide relevant properties such as container images, the restart policy and other properties each time. It  could result in duplicated effort and management overhead.
+Managing multiple container groups is a crucial part of running large cloud applications. As of today, in order to run multiple CGs (Container Groups), customers need to provide relevant properties such as container images, restart policy, and other properties each time. It  could result in duplicated effort and management overhead.
 
 To alleviate this concern, NGroups introduced - Container Group Profile. The container group profile (CGProfile) serves as a *template* for creating container groups with same set of properties.  
 
@@ -152,7 +152,7 @@ Here's a sample of an NGroups resource with managed identity and zones that refe
 ### NGroups API
 NGroups references a CG profile and adds other related properties and capabilities. Example:  
 
-- The desired count of CGs to scale-out by 
+- The desired count of CGs to scale out by 
 
 - The virtual network (VNET) to connect all the CGs during scale-out 
 
@@ -171,7 +171,7 @@ NGroups stores this new CG profile reference. But it doesn't update existing CGs
 
 - How do we update existing CGs with cgprofile2?  
 
-To update existing CGs with new CGProfile, we issue a ‘manual update’ command with an explicit list of CGs we want to update. This command only updates the CGs specified in its list. Updating the CG involves calling the ACI’s PUT CG API. The CGs not specified in this list continue to run with cgprofile1. 
+To update existing CGs with new CGProfile, we issue a *manual update* command with an explicit list of CGs we want to update. This command only updates the CGs specified in its list. Updating the CG involves calling the ACI’s PUT CG API. The CGs not specified in this list continue to run with cgprofile1. 
 
 This mode gives us flexibility to update CGs selectively and provides full control over impact on production workloads.  
 
@@ -284,7 +284,7 @@ Next, you can create a Zonal/Non-Zonal NGroups by either adding zones outside th
 
 Yes, customers have the flexibility to update container groups (CGs) directly by using the Azure Container Instances (ACI) APIs. For a deeper understanding of ACI container groups and to explore the related API options, check out this resource: [Container groups in Azure Container Instances](/azure/container-instances/container-instances-container-groups?branch=main)
 
-When creating or updating container groups, NGroups relies on the same ACI APIs. This means that customers can use these APIs to update specific container groups as needed, without any extra configurations.
+While creating or updating container groups, NGroups relies on the same ACI APIs. This means that customers can use these APIs to update specific container groups as needed, without any extra configurations.
 
 ##### Technical Capabilities and Constraints 
 
@@ -331,9 +331,9 @@ Customers can create NGroups CGs with a prefix instead of just GUID names:
 
 Yes, you can set the properties.elasticProfile.maintainDesiredCount bool property to true.  
 
-It creates a new CG for every CG that is being deleted/detached from the NGroups. It tries to maintain the desiredCount property of the NGroups to its set value. 
+It creates a new CG for every CG that is being deleted/detached from the NGroups. It tries to maintain the desiredCount property of the NGroups to it's set value. 
 
-It is useful when you want to use the NGroups as a *pool* which automatically gets replenished when you take away CGs from the pool for your workload scenarios.  
+It's useful when you want to use the NGroups as a *pool* which automatically gets replenished when you take away CGs from the pool for your workload scenarios.  
 
 It's a nullable bool property. If you omit it for subsequent NGroups PUT/update calls, it doesn't reset to false. To reset, you must explicitly set it to false. When it's null/false, and when a CG is deleted/detached from the NGroups, the NGroup’s desiredCount property reduces accordingly.
  
