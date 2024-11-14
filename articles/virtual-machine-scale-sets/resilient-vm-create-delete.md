@@ -153,14 +153,14 @@ GET https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups
 ---
 
 
-If you use REST API, different return values of ResilientVMDeletionStatus indicate the following:
+If you use REST API, different return values of ResilientVMDeletionStatus indicate the progress of Resilient delete:
 
-| ResilientVMDeletionStatus | State of delete                                                                                                                                                                  |
-|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Enabled                   | Your scale set has a resiliency policy with the resilientVMDeletion policy set.                                                                                                  |
-| Disabled                  | Your scale set either has resilientVMDeletion policy enabled as false, has a resiliency policy but is missing a resilientVMDeletion policy, or doesn't have a resiliency policy. |
-| In Progress               | Your scale set has resilientVMDeletion enabled and the virtual machine is currently being deleted or is marked for deletion and will be deleted.                                 |
-| Failed                    | Your scale set has the resilientVMDeletion enabled and hit the max retry count.                                                                                                  |
+| ResilientVMDeletionStatus | State of delete                                                                                                                                                                      |
+|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Enabled                   | Your scale set has a resiliency policy with the resilientVMDeletion policy set.                                                                                                      |
+| Disabled                  | Your scale set either has the resilientVMDeletion policy enabled as false, has a resiliency policy but is missing a resilientVMDeletion policy, or doesn't have a resiliency policy. |
+| In Progress               | Your scale set has the resilientVMDeletion policy enabled and the virtual machine is currently being deleted or is marked for deletion.                                              |
+| Failed                    | Your scale set has the resilientVMDeletion policy enabled and hit the max retry count.                                                                                               |
 
 
 
