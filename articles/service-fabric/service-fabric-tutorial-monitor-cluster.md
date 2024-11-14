@@ -6,7 +6,7 @@ ms.author: tomcassidy
 author: tomvcassidy
 ms.service: azure-service-fabric
 services: service-fabric
-ms.date: 07/14/2022
+ms.date: 11/14/2024
 ---
 
 # Tutorial: Monitor a Service Fabric cluster in Azure
@@ -188,8 +188,6 @@ ServiceFabricReliableServiceEvent
 ```
 
 You can see different events for when the service `runasync` is started and completed which typically happens on deployments and upgrades.
-
-![Service Fabric Solution Reliable Services](media/service-fabric-tutorial-monitor-cluster/oms-reliable-services-events-selection.png)
 
 You can also find events for the reliable service with ServiceName == "fabric:/Watchdog/WatchdogService":
 
