@@ -1,7 +1,7 @@
 ---
 title: Create and upload a Red Hat Enterprise Linux VHD for use in Azure
 description: Learn to create and upload an Azure virtual hard disk (VHD) that contains a Red Hat Linux operating system.
-author: srijang
+author: vamckMS
 ms.service: azure-virtual-machines
 ms.subservice: redhat
 ms.collection: linux
