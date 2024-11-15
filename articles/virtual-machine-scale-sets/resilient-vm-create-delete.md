@@ -1,11 +1,11 @@
 ---
 title: Resilient create and delete for Virtual Machine Scale Sets (Preview)
 description: Learn how to enable retries on failed Virtual Machine (VM) creates and deletes. 
-author: manasisoman
-ms.author: manasisoman-work
+author: manasisoman-work
+ms.author: manasisoman
 ms.service: azure-virtual-machine-scale-sets
 ms.topic: how-to
-ms.date: 11/14/2024
+ms.date: 11/15/2024
 ms.reviewer: ju-shim
 ---
 
@@ -15,7 +15,7 @@ ms.reviewer: ju-shim
 > [!IMPORTANT]
 > Resilient virtual machine create and delete for Virtual Machine Scale Sets is currently in preview. Previews are made available to you on the condition that you agree to the [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Some aspects of this feature may change prior to general availability (GA).
 
-Resilient create and delete for Virtual Machine Scale Sets assists in reducing Virtual Machine (VM) create and delete errors by automatically retrying failed operations. Failed VMs can accumulate and result in unusable capacity, requiring manual effort to detect and clean up. These errors are rare, but the Resilient create and delete mechanism is built for customers who are deploying or deleting large volumes of Virtual Machine Scale Sets or VMs. 
+Resilient create and delete for Virtual Machine Scale Sets helps reduce Virtual Machine (VM) create and delete errors by automatically retrying failed operations. Failed VMs can accumulate and result in unusable capacity, requiring manual effort to detect and clean up. These errors are rare, but the Resilient create and delete mechanism is built for customers who are deploying or deleting large volumes of Virtual Machine Scale Sets or VMs. 
  
 ## Prerequisites
 
@@ -51,7 +51,7 @@ Resilient create attempts the create operation five times per VM or for a maximu
 
 Resilient delete initiates forced delete retries for any errors that occur during the delete process. For example, *InternalExecutionError*, *TransientFailure*, or *InternalOperationError*.
 
-Resilient delete attempts the forced delete operation five times per VM with an exponential backoff. If unsuccessful, the VM remains in a failed state. For example, if you're deleting a scale set of five VMs and each VM enters a *failed* delete state, the scale set will initiate one delete call on itself to delete those five VMs again. If four out of five virtual machines are deleted on the first retry, then the platform will wait a period of 10 minutes before initiating the next delete call for the remaining VM.
+Resilient delete attempts the forced delete operation five times per VM with an exponential backoff. If unsuccessful, the VM remains in a failed state. For example, if you delete a scale set of five VMs and each VM enters a *failed* delete state, the scale set initiates one delete call on itself to delete those five VMs again. If four out of five virtual machines delete on the first retry, then the platform waits a period of 10 minutes before initiating the next delete call for the remaining VM.
 
 To check the status of your VMs throughout the delete process, see [Get status for Resilient create or delete](#get-status).
 
