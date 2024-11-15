@@ -200,3 +200,6 @@ No, Resilient create operates during a scale-out of a scale set or when you crea
 
 ### Is the provisioning of my virtual machine accelerated with Resilient create?
 No, Resilient create improves the odds of provisioning the virtual machine, but doesn't improve the speed of the provisioning itself. 
+
+## Next steps
+Once your virtual machine is successfully created, learn how to [configure automatic instance repairs](./virtual-machine-scale-sets-automatic-instance-repairs.md) on your Virtual Machine Scale Sets.
