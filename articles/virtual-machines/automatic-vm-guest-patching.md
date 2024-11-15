@@ -89,7 +89,7 @@ As a new rollout is triggered every month, a VM will receive at least one patch 
 | MicrosoftWindowsServer  | WindowsServer | 2022-datacenter-azure-edition-hotpatch-smalldisk |
 
 > [!IMPORTANT] 
-> Support for the following **Windows Server 2025** images is currently being rolled out. Regions where support doesn't exist yet may return a HTTP 400 client error indicating an unsupported status in the interim. You may successfully use one of the regions with support like UK South, East Asia or West Central US instead. This advisory will be removed when support is available everywhere.
+> Not all regions currently support **Windows Server 2025** images. Regions where support doesn't exist yet may return a HTTP 400 client error, indicating an unsupported status. Instead, use another region that does provide support, such as, UK South, East Asia, or West Central US.
 
 | Publisher               | OS Offer      |  Sku               |
 |-------------------------|---------------|--------------------|
