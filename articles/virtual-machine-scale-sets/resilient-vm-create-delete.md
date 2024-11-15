@@ -51,7 +51,7 @@ Resilient create attempts the create operation five times per VM or for a maximu
 
 Resilient delete initiates forced delete retries for any errors that occur during the delete process. For example, *InternalExecutionError*, *TransientFailure*, or *InternalOperationError*.
 
-Resilient delete attempts the forced delete operation five times per VM with an exponential backoff. If unsuccessful, the VM remains in a failed state. For example, if you are deleting a scale set of five VMs and each VM enters a *failed* delete state, the scale set will initiate one delete call on itself to delete those five VMs again. If four out of five virtual machines are deleted on the first retry, then the platform will wait a period of 10 minutes before initiating the next delete call for the remaining VM.
+Resilient delete attempts the forced delete operation five times per VM with an exponential backoff. If unsuccessful, the VM remains in a failed state. For example, if you're deleting a scale set of five VMs and each VM enters a *failed* delete state, the scale set will initiate one delete call on itself to delete those five VMs again. If four out of five virtual machines are deleted on the first retry, then the platform will wait a period of 10 minutes before initiating the next delete call for the remaining VM.
 
 To check the status of your VMs throughout the delete process, see [Get status for Resilient create or delete](#get-status).
 
@@ -160,7 +160,7 @@ Get the status of Resilient create and delete for your scale set.
 - **Resilient create**: Your VM status is *Creating* while Resilient create is in progress. 
 - **Resilient Delete**: While the delete attempt is in progress, the state of the resource is listed as *Deleting*. If a delete retry fails on a particular VM, then the VM falls back to the *Failed* state. However, the *Failed* state only indicates that a retry of a deletion failed – and Resilient delete might still perform more retries. Therefore, while Resilient delete is going on, you see the VM alternate states between *Deleting* and *Failed*. 
 
-### [REST API](#tab/rest-2)
+### REST API
 
 To know the status of your VM during Resilient delete, retrieve the return value of the `ResilientVMDeletionStatus` property through REST API. There are two different API endpoints available to get the `ResilientVMDeletionStatus`.
 
