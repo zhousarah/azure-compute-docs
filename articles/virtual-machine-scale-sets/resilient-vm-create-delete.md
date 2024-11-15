@@ -158,7 +158,7 @@ In the request body, add in the resiliency policies:
 Get the status of Resilient create and delete for your scale set. 
 
 - **Resilient create**: Your VM status is *Creating* while Resilient create is in progress. 
-- **Resilient Delete**: While the delete attempt is in progress, the state of the resource is listed as *Deleting*. If a delete retry fails on a particular VM, then the VM falls back to the *Failed* state. However, the *Failed* state only indicates that a retry of a deletion failed – and Resilient delete might still perform more retries. Therefore, while Resilient delete is going on, you see the VM alternate states between *Deleting* and *Failed*. 
+- **Resilient Delete**: While the delete attempt is in progress, the state of the resource is listed as *Deleting*. If a delete retry fails on a particular VM, then the VM falls back to the *Failed* state. However, the *Failed* state only indicates that a retry of a deletion failed – and Resilient delete might still perform more retries. Therefore, while Resilient delete is going on, you may see the VM alternate states between *Deleting* and *Failed*. 
 
 ### REST API
 
