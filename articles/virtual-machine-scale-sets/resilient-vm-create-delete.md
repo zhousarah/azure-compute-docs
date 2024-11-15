@@ -130,10 +130,10 @@ Update-azvmss -ResourceGroupName <resourceGroupName> -VMScaleSetName <scaleSetNa
 
 ### [REST](#tab/rest-1)
 
-Enable Resilient create and delete on a scale set through REST API. Use a `PUT` call and include the following section in the request body:
+Use a `PUT` call for a new scale set and a `PATCH` call for an existing scale set. 
 
 ```json
-PUT https://management.azure.com/subscriptions/{YourSubscriptionId}/resourceGroups/{YourResourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{yourScaleSetName}?api-version=2023-07-01
+PUT or PATCH https://management.azure.com/subscriptions/{YourSubscriptionId}/resourceGroups/{YourResourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{yourScaleSetName}?api-version=2023-07-01
 ```
 
 In the request body, add in the resiliency policies: 
@@ -160,16 +160,9 @@ Get the status of Resilient create and delete for your scale set.
 - **Resilient create**: Your VM status is *Creating* while Resilient create is in progress. 
 - **Resilient Delete**: While the delete attempt is in progress, the state of the resource is listed as *Deleting*. If a delete retry fails on a particular VM, then the VM falls back to the *Failed* state. However, the *Failed* state only indicates that a retry of a deletion failed – and Resilient delete might still perform more retries. Therefore, while Resilient delete is going on, you see the VM alternate states between *Deleting* and *Failed*. 
 
-### [Portal](#tab/portal-2)
-
-1. Navigate to your Virtual Machine Scale Set in the [Azure portal](https://portal.azure.com).
-1. The banner indicates that Resilient delete will operate if your delete fails.
-
-:::image type="content" source="./media/resilient-vm-create-delete/delete-banner-portal.png" alt-text="A screenshot showing the banner during Resilient delete retries in the Azure portal.":::
-
 ### [REST API](#tab/rest-2)
 
-To know the status of your VM during Resilient delete, retrieve the return value of the `ResilientVMDeletionStatus` property. There are two different API endpoints available to get the `ResilientVMDeletionStatus`.
+To know the status of your VM during Resilient delete, retrieve the return value of the `ResilientVMDeletionStatus` property through REST API. There are two different API endpoints available to get the `ResilientVMDeletionStatus`.
 
 The following endpoint supports Virtual Machine Scale Sets with Uniform orchestration and Flexible orchestration.
 
