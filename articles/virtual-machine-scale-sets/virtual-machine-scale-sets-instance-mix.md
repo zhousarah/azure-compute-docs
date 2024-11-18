@@ -35,6 +35,8 @@ az feature show --namespace "Microsoft.Compute" --name "FlexVMScaleSetSkuProfile
 ```
 
 ## Changes to existing scale set properties
+### sku.name
+The `sku.name` property should be set to `"Mix"`. VM sizes will be defined in the `skuProfile`.
 ### sku.tier
 The `sku.tier` property is currently an optional scale set property and should be set to `null` for Instance Mix scenarios.
 
@@ -52,7 +54,7 @@ The `skuProfile` property represents the umbrella property for all properties re
 The `vmSizes` property is where you specify the specific VM sizes that you're using as part of your scale set deployment with Instance Mix.
 
 ### allocationStrategy
-Instance Mix introduces the ability to set allocation strategies for your scale set. The `allocationStrategy` property is where you specify which allocation strategy you'd like to use for your Instance Flexible scale set deployments. There are two options for allocation strategies, `lowestPrice` and `capacityOptimized`. Allocation strategies apply to both Spot and Standard VMs.
+Instance Mix introduces the ability to set allocation strategies for your scale set. The `allocationStrategy` property is where you specify which allocation strategy you'd like to use for your Instance Mix scale set deployments. There are two options for allocation strategies, `lowestPrice` and `capacityOptimized`. Allocation strategies apply to both Spot and Standard VMs.
 
 #### lowestPrice (default)
 This allocation strategy is focused on workloads where cost and cost-optimization are most important. When evaluating what VM split to use, Azure looks at the lowest priced VMs of the VM sizes specified. Azure also considers capacity as part of this allocation strategy. The scale set deploys as many of the lowest priced VMs as it can, depending on available capacity, before moving on to the next lowest priced VM size specified. `lowestPrice` is the default allocation strategy.
@@ -90,7 +92,7 @@ The following example can be used to deploy a scale set using Instance Mix:
 7. Use the size picker to select up to five VM sizes. Once you've selected your VM sizes, click the **Select** button at the bottom of the page to return to the scale set Basics tab.
 8. In the **Allocation strategy (preview)** field, select your allocation strategy.
 9. When using the `Prioritized` allocation strategy, the **Rank size** section appears below the Allocation strategy section. Clicking on the bottom **Rank priority** brings up the prioritization blade, where you can adjust the priority of your VM sizes.
-10. You can specify other properties in subsequent tabs, or you can go to **Review + create** and select the **Create** button at the bottom of the page to start your Instance Flexible scale set deployment.
+10. You can specify other properties in subsequent tabs, or you can go to **Review + create** and select the **Create** button at the bottom of the page to start your Instance Mix scale set deployment.
 
 ### [Azure CLI](#tab/cli-1)
 You can use the following basic command to create a scale set using Instance Mix using the following command, which will default to using the `lowestPrice` allocation strategy:
@@ -152,7 +154,7 @@ $vmssResult = New-AzVmss -ResourceGroupName $resourceGroupName -Name $vmssName -
 ```
 
 ### [REST API](#tab/arm-1)
-To deploy an Instance Flexible scale set through REST API, use a `PUT` call to and include the following sections in your request body:
+To deploy an Instance Mix scale set through REST API, use a `PUT` call to and include the following sections in your request body:
 ```json
 PUT https://management.azure.com/subscriptions/{YourSubscriptionId}/resourceGroups/{YourResourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{youScaleSetName}?api-version=2023-09-01
 ```
