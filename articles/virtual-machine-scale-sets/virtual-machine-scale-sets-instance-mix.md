@@ -80,61 +80,6 @@ Following the scale set cost model, usage of Instance Mix is free. You continue 
 ## Deploy a scale set using Instance Mix
 The following example can be used to deploy a scale set using Instance Mix:
 
-### [REST API](#tab/arm-1)
-To deploy an Instance Flexible scale set through REST API, use a `PUT` call to and include the following sections in your request body:
-```json
-PUT https://management.azure.com/subscriptions/{YourSubscriptionId}/resourceGroups/{YourResourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{youScaleSetName}?api-version=2023-09-01
-```
-
-In the request body, ensure `sku.name` is set to Mix:
-```json
-  "sku": {
-    "name": "Mix",
-    "capacity": {TotalNumberVMs}
-  },
-```
-Ensure you reference your existing subnet:
-```json
-"subnet": {
-    "id": "/subscriptions/{YourSubscriptionId}/resourceGroups/{YourResourceGroupName}/providers/Microsoft.Network/virtualNetworks/{YourVnetName}/subnets/default"
-},
-```
-Lastly, be sure to specify the `skuProfile` with **up to five** VM sizes. This sample uses three:
-```json
-    "skuProfile": {
-      "vmSizes": [
-        {
-          "name": "Standard_D8s_v5"
-        },
-        {
-          "name": "Standard_E16s_v5"
-        },
-        {
-          "name": "Standard_D2s_v5"
-        }
-      ],
-      "allocationStrategy": "lowestPrice"
-    },
-```
-
-When using the `prioritized` allocation strategy, you can specify the priority ranking of the `vmSizes` specified:
-```json
-    "skuProfile": {
-      "vmSizes": [
-        {
-          "name": "Standard_D8s_v5", "rank": 1
-        },
-        {
-          "name": "Standard_E16s_v5", "rank": 2
-        },
-        {
-          "name": "Standard_D2s_v5", "rank": 1
-        }
-      ],
-      "allocationStrategy": "Prioritized"
-    },
-```
-
 ### [Azure portal](#tab/portal-1)
 1. Go to **Virtual machine scale sets**.
 2. Select the **Create** button to go to the **Create a virtual machine scale set** view.
@@ -144,7 +89,7 @@ When using the `prioritized` allocation strategy, you can specify the priority r
 6. In the **Size** section, click **Select up to 5 sizes (preview)** and the **Select a VM size** page appears.
 7. Use the size picker to select up to five VM sizes. Once you've selected your VM sizes, click the **Select** button at the bottom of the page to return to the scale set Basics tab.
 8. In the **Allocation strategy (preview)** field, select your allocation strategy.
-9. When using the Prioritized allocation strategy, the **Rank size** section will appear below the Allocation strategy section. Clicking on the bottom **Rank priority** will bring up the prioritization blade, where you can adjust the priority of your VM sizes.
+9. When using the **Prioritized allocation strategy**, the **Rank size** section will appear below the Allocation strategy section. Clicking on the bottom **Rank priority** will bring up the prioritization blade, where you can adjust the priority of your VM sizes.
 10. You can specify other properties in subsequent tabs, or you can go to **Review + create** and select the **Create** button at the bottom of the page to start your Instance Flexible scale set deployment.
 
 ### [Azure CLI](#tab/cli-1)
@@ -204,6 +149,61 @@ $vmss = New-AzVmssConfig -Location $loc -SkuCapacity 2 -UpgradePolicyMode 'Manua
             -ImageReferencePublisher $imgRef.PublisherName;
  
 $vmssResult = New-AzVmss -ResourceGroupName $resourceGroupName -Name $vmssName -VirtualMachineScaleSet $vmss
+```
+
+### [REST API](#tab/arm-1)
+To deploy an Instance Flexible scale set through REST API, use a `PUT` call to and include the following sections in your request body:
+```json
+PUT https://management.azure.com/subscriptions/{YourSubscriptionId}/resourceGroups/{YourResourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{youScaleSetName}?api-version=2023-09-01
+```
+
+In the request body, ensure `sku.name` is set to Mix:
+```json
+  "sku": {
+    "name": "Mix",
+    "capacity": {TotalNumberVMs}
+  },
+```
+Ensure you reference your existing subnet:
+```json
+"subnet": {
+    "id": "/subscriptions/{YourSubscriptionId}/resourceGroups/{YourResourceGroupName}/providers/Microsoft.Network/virtualNetworks/{YourVnetName}/subnets/default"
+},
+```
+Lastly, be sure to specify the `skuProfile` with **up to five** VM sizes. This sample uses three:
+```json
+    "skuProfile": {
+      "vmSizes": [
+        {
+          "name": "Standard_D8s_v5"
+        },
+        {
+          "name": "Standard_E16s_v5"
+        },
+        {
+          "name": "Standard_D2s_v5"
+        }
+      ],
+      "allocationStrategy": "lowestPrice"
+    },
+```
+
+When using the `prioritized` allocation strategy, you can specify the priority ranking of the `vmSizes` specified:
+```json
+    "skuProfile": {
+      "vmSizes": [
+        {
+          "name": "Standard_D8s_v5", "rank": 1
+        },
+        {
+          "name": "Standard_E16s_v5", "rank": 2
+        },
+        {
+          "name": "Standard_D2s_v5", "rank": 1
+        }
+      ],
+      "allocationStrategy": "Prioritized"
+    },
 ```
 
 ---
