@@ -66,9 +66,9 @@ Following the scale set cost model, usage of Instance Mix is free. You continue 
 ## Limitations
 - Instance Mix is currently available in the following regions: West US, West US2, East US, and East US2. 
 - Instance Mix is only available for scale sets using Flexible Orchestration Mode.
-- Instance Mix is currently only available through ARM template.
 - You must have quota for the VM sizes you're requesting with Instance Mix.
 - You can specify **up to** five VM sizes with Instance Mix at this time.
+- The `Prioritized` allocation strategy is currently only supported on REST and Azure portal deployments. 
 - Existing scale sets can't be updated to use Instance Mix. 
 - VM sizes can't be changed once the scale set is deployed.
 - For REST API deployments, you must have an existing virtual network inside of the resource group that you're deploying your scale set with Instance Mix in.
@@ -122,7 +122,8 @@ Lastly, be sure to specify the `skuProfile` with **up to five** VM sizes. This s
 6. In the **Size** section, click **Select up to 5 sizes (preview)** and the **Select a VM size** page appears.
 7. Use the size picker to select up to five VM sizes. Once you've selected your VM sizes, click the **Select** button at the bottom of the page to return to the scale set Basics tab.
 8. In the **Allocation strategy (preview)** field, select your allocation strategy.
-9. You can specify other properties in subsequent tabs, or you can go to **Review + create** and select the **Create** button at the bottom of the page to start your Instance Flexible scale set deployment.
+9. When using the Prioritized allocation strategy, the **Rank size** section will appear below the Allocation strategy section. Clicking on the bottom **Rank priority** will bring up the prioritization blade, where you can adjust the priority of your VM sizes.
+10. You can specify other properties in subsequent tabs, or you can go to **Review + create** and select the **Create** button at the bottom of the page to start your Instance Flexible scale set deployment.
 
 ### [Azure CLI](#tab/cli-1)
 You can use the following basic command to create a scale set using Instance Mix using the following command, which will default to using the `lowestPrice` allocation strategy:
