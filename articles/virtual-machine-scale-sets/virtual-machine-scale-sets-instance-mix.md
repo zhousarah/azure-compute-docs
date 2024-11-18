@@ -89,7 +89,7 @@ The following example can be used to deploy a scale set using Instance Mix:
 6. In the **Size** section, click **Select up to 5 sizes (preview)** and the **Select a VM size** page appears.
 7. Use the size picker to select up to five VM sizes. Once you've selected your VM sizes, click the **Select** button at the bottom of the page to return to the scale set Basics tab.
 8. In the **Allocation strategy (preview)** field, select your allocation strategy.
-9. When using the **Prioritized allocation strategy**, the **Rank size** section will appear below the Allocation strategy section. Clicking on the bottom **Rank priority** will bring up the prioritization blade, where you can adjust the priority of your VM sizes.
+9. When using the `Prioritized` allocation strategy, the **Rank size** section appears below the Allocation strategy section. Clicking on the bottom **Rank priority** brings up the prioritization blade, where you can adjust the priority of your VM sizes.
 10. You can specify other properties in subsequent tabs, or you can go to **Review + create** and select the **Create** button at the bottom of the page to start your Instance Flexible scale set deployment.
 
 ### [Azure CLI](#tab/cli-1)
