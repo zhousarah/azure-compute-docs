@@ -9,9 +9,9 @@ ms.date: 11/18/2024
 ms.reviewer: jushiman
 ---
 
-# Instance Mix FAQs and Troubleshooting
+# Instance Mix Frequently Asked Questions and Troubleshooting
 
-## FAQs
+## Frequently Asked Questions
 ### Can I use Spot and Standard VMs with Instance Mix?
 Yes, you can use both Spot and Standard VMs in your scale set deployments using Instance Mix. To do so, use [Spot Priority Mix](./spot-priority-mix.md) to define a percentage split of Spot and Standard VMs. 
 
