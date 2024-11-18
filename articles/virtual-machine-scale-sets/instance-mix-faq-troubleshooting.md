@@ -1,6 +1,6 @@
 ---
 title: Instance Mix FAQs and Troubleshooting
-description: Frequently asked questions and troubleshooting. 
+description: Frequently asked questions and troubleshooting for Instance Mix on virtual machine scale sets. 
 author: brittanyrowe 
 ms.author: brittanyrowe
 ms.topic: conceptual

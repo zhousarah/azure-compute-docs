@@ -1,6 +1,6 @@
 ---
 title: Create a Virtual Machine Scale Set with Instance Mix
-description: Use multiple Virtual Machine sizes in a scale set using Instance Mix. Optimize deployments using allocation strategies. 
+description: How to create a virtual machine scale set using Instance Mix on different platforms. 
 author: brittanyrowe 
 ms.author: brittanyrowe
 ms.topic: conceptual
