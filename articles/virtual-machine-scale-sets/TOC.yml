@@ -85,7 +85,13 @@
     - name: Troubleshoot autoscale
       href: virtual-machine-scale-sets-troubleshoot.md 
   - name: Instance Mix (Preview)
-    href: virtual-machine-scale-sets-instance-mix.md
+    items:
+    - name: Overview
+      href: instance-mix-overview.md
+    - name: Create a scale set with Instance Mix
+      href: instance-mix-create.md
+    - name: FAQs and Troubleshooting
+      href: instance-mix-faq-troubleshooting.md
   - name: Scaling Profile
     href: virtual-machine-scale-sets-scaling-profile.md
   - name: Scale-In Policy
