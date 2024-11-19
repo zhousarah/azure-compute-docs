@@ -1,5 +1,5 @@
 ---
-title: Instance Mix FAQs and Troubleshooting
+title: Frequently Asked Questions and Troubleshooting
 description: Frequently asked questions and troubleshooting for Instance Mix on virtual machine scale sets. 
 author: brittanyrowe 
 ms.author: brittanyrowe
@@ -9,7 +9,7 @@ ms.date: 11/18/2024
 ms.reviewer: jushiman
 ---
 
-# Instance Mix Frequently Asked Questions and Troubleshooting
+# Virtual machine scale sets with instance mix frequently asked questions and troubleshooting
 
 ## Frequently Asked Questions
 ### Can I use Spot and Standard VMs with Instance Mix?

@@ -66,5 +66,5 @@ Following the scale set cost model, usage of Instance Mix is free. You continue 
 - VM sizes can't be changed once the scale set is deployed.
 - For REST API deployments, you must have an existing virtual network inside of the resource group that you're deploying your scale set with Instance Mix in.
 
-# Next steps
+## Next steps
 Learn how to [create a scale set using Instance Mix](instance-mix-create.md).
