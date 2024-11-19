@@ -90,7 +90,7 @@
       href: instance-mix-overview.md
     - name: Create a scale set with Instance Mix
       href: instance-mix-create.md
-    - name: FAQs and Troubleshooting
+    - name: FAQs and troubleshooting
       href: instance-mix-faq-troubleshooting.md
   - name: Scaling Profile
     href: virtual-machine-scale-sets-scaling-profile.md
