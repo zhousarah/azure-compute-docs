@@ -125,7 +125,10 @@ az standby-vm-pool status --resource-group myResourceGroup --name myStandbyPool
 Get-AzStandbyVMPoolStatus -ResourceGroupName myResourceGroup -Name myStandbyPool
 
 Id: /subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyVirtualMachinePools/mmyStandbyPool/runtimeViews/latest
-InstanceCountSummary         : {{
+InstanceCountSummary: {{
+        {
+        "zone": 1
+        },
         "instanceCountsByState": [
         {
             "state": "Creating",
@@ -315,7 +318,7 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
           }
         ]
       }
-    ],
+    },
     "provisioningState": "Succeeded"
   },
   "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyVirtualMachinePools/pool/runtimeViews/latest",
@@ -329,7 +332,7 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
     "lastModifiedByType": "User",
     "lastModifiedAt": "2024-02-14T23:31:59.679Z"
   }
-}
+
 
 ```
 
