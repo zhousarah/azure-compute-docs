@@ -1033,6 +1033,8 @@
       href: ./linux/spot-template.md
     - name: Spot Priority Mix
       href: /azure/virtual-machine-scale-sets/spot-priority-mix?toc=/azure/virtual-machines/toc.json
+    - name: Spot Placement Score (Preview)
+      href: /articles/virtual-machine-scale-sets/spot-placement-score?toc=/azure/virtual-machines/toc.json
     - name: VM size recommendation
       href: /azure/virtual-machine-scale-sets/spot-vm-size-recommendation?toc=/azure/virtual-machines/toc.json
     - name: Error codes
@@ -1044,7 +1046,7 @@
       maintainContext: true
   - name: Azure Boost
     displayName: Boost, Azure Boost, boost vm, boost virtual machine
-    href: /azure/azure-boost/overview.md
+    href: /azure/azure-boost/overview
   - name: Azure Hybrid Benefit
     items:
     - name: Linux
@@ -1433,6 +1435,9 @@
       maintainContext: true
     - name: Attach VMs to a scale set
       href: /azure/virtual-machine-scale-sets/virtual-machine-scale-sets-attach-detach-vm
+      maintainContext: true
+    - name: Standby pools
+      href: /azure/virtual-machine-scale-sets/standby-pools-overview
       maintainContext: true
   - name: Proximity Placement Groups
     items:
