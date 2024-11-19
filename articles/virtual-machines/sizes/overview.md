@@ -6,7 +6,7 @@ ms.service: azure-virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 08/02/2024
+ms.date: 11/19/2024
 ms.author: mattmcinnes
 ---
 
@@ -128,7 +128,7 @@ List of compute optimized VM size families:
 
 | Family | Workloads | Series List |
 |----|---|---|
-| [F-family](./compute-optimized/f-family.md)  | Medium traffic web servers <br> Network appliances <br> Batch processes <br> Application servers | [Fasv6 and Falsv6-series](./compute-optimized/f-family.md#fasv6-and-falsv6-series) <br> [Fsv2-series](./compute-optimized/f-family.md#fsv2-series) <br> [Previous-gen F-family](./previous-gen-sizes-list.md)|
+| [F-family](./compute-optimized/f-family.md)  | Medium traffic web servers <br> Network appliances <br> Batch processes <br> Application servers | [Fasv6 and Falsv6-series](./compute-optimized/f-family.md#fasv6-falsv6-and-famsv6-series) <br> [Fsv2-series](./compute-optimized/f-family.md#fsv2-series) <br> [Previous-gen F-family](./previous-gen-sizes-list.md)|
 | [FX-family](./compute-optimized/fx-family.md)  | Electronic Design Automation (EDA) <br> Large memory relational databases <br> Medium to large caches <br> In-memory analytics | [FX-series](./compute-optimized/fx-family.md#fx-series) |
 
 To learn more about a specific size family or series, click the tab for that family and scroll to find your desired size series. 
