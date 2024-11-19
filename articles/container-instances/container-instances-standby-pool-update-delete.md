@@ -35,7 +35,7 @@ az standby-container-group-pool update \
    --name myStandbyPool \
    --max-ready-capacity 20 \
    --refill-policy always \
-   --container-profile-id "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile"
+   --container-profile-id "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/mycontainergroupprofile"
 ```
 ### [PowerShell](#tab/powershell)
 Update an existing standby pool using [Update-AzStandbyContainerGroupPool](/powershell/module/az.standbypool/new-AzStandbyContainerGroupPool).
@@ -47,7 +47,7 @@ Update-AzStandbyContainerGroupPool `
    -Name myStandbyPool `
    -MaxReadyCapacity 20 `
    -RefillPolicy always `
-   -ContainerProfileId "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile"
+   -ContainerProfileId "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/mycontainergroupprofile"
 ```
 
 ### [ARM template](#tab/template)
@@ -77,7 +77,7 @@ Update an existing a standby pool. Update your template and deploy it using [az 
         },
         "containerGroupProfile" : {
            "type": "string",
-           "defaultValue": "/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile"
+           "defaultValue": "/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/mycontainergroupprofile"
         }
     },
     "resources": [ 
@@ -115,7 +115,7 @@ Request Body
         },
         "containerGroupProperties": {
             "containerGroupProfile": {
-                "id": "/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile",
+                "id": "/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/mycontainergroupprofile",
                 "revision": 1
             }
         }

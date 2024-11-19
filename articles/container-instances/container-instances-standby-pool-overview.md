@@ -78,7 +78,7 @@ A container group profile tells the standby pool how to configure the containers
     "properties":{
         "containers": [
         {
-            "name":"[containerProfileName]",
+            "name":"[mycontainergroupprofile]",
             "properties": {
                 "command":[],
                 "environmentVariables":[],
@@ -128,7 +128,7 @@ For more information, see [use config maps](container-instances-config-map.md).
     "properties": {
         "containers": [
             {
-                "name": "{containerProfileName}",
+                "name": "{mycontainergroupprofile}",
                 "properties": {
                     "image": "mcr.microsoft.com/azuredocs/aci-helloworld",
                     "ports": [
@@ -181,7 +181,7 @@ Standby pools for Azure container instances support confidential containers. To 
     "properties":{
         "containers": [
         {
-            "name":"{containerProfileName}",
+            "name":"{mycontainergroupprofile}",
             "properties": {
                 "command":[],
                 "environmentVariables":[],
@@ -228,7 +228,7 @@ Standby pools for Azure Container Instances support integration with Managed Ide
                "id": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.StandbyPool/standbyContainerGroupPools/{standbyPoolName}"
            },
            "containerGroupProfile": {
-               "id": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.ContainerInstance/containerGroupProfiles/{containerProfileName}",
+               "id": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.ContainerInstance/containerGroupProfiles/{mycontainergroupprofile}",
                "revision": {revisionNumber}
            },
           },
@@ -239,7 +239,7 @@ Standby pools for Azure Container Instances support integration with Managed Ide
             },
            "containers": [
                {
-                   "name": "{containerProfileName}",
+                   "name": "{mycontainergroupprofile}",
                    "properties": {
                        "configMap": {
                            "keyValuePairs": {
@@ -253,12 +253,12 @@ Standby pools for Azure Container Instances support integration with Managed Ide
 }
 ```
 ## Availability zones
-Standby pools for Azure Container Instances supports creating and requesting containers across availability zones. Creating a zonal standby pool is currently only available using the standby pool [REST APIs](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update) using version 2024-08-01. 
+Standby pools for Azure Container Instances supports creating and requesting containers across availability zones. Creating a zonal standby pool is currently only available using the standby pool [REST APIs](/rest/api/standbypool/standby-virtual-machine-pools/create-or-update) using version 2024-08-01-preview and only available in the Central India region.  
 
 ### Create a zonal standby pool
 
 ```HTTP
-PUT https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool?api-version=2024-08-01
+PUT https://management.azure.com/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool?api-version=2024-08-01-preview
  
 Request Body
 {
@@ -269,7 +269,7 @@ Request Body
         },
         "containerGroupProperties": {
             "containerGroupProfile": {
-                "id": "/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile",
+                "id": "/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/mycontainergroupprofile",
                 "revision": 1
           },
           "subnetIds": [

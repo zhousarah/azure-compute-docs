@@ -30,10 +30,10 @@ Request a container group from a standby pool using [az container create](/cli/a
 ```azurecli-interactive
 az container create \
     --resource-group myResourceGroup \
-    --name myContainer \ 
+    --name mycontainer \ 
     --location WestCentralUS \
     --config-map key1=value1 key2=value2 \
-    --container-group-profile-id "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile" \
+    --container-group-profile-id "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/mycontainergroupprofile" \
     --container-group-profile-revision 1 \
     --standby-pool-profile-id "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool" 
 
@@ -43,14 +43,14 @@ az container create \
 Request a container group from a standby pool using [New-AzContainerGroup](/powershell/module/az.containerinstance/new-AzContainerGroup) and specifying the standby pool and container group profile. For more information on using config maps during container requests, see [use config maps](container-instances-config-map.md). 
 
 ```azurepowershell-interactive
-$container = New-AzContainerInstancenoDefaultObject -Name myContainer -ConfigMapKeyValuePair @{"key1"="value1"}
+$container = New-AzContainerInstancenoDefaultObject -Name mycontainer -ConfigMapKeyValuePair @{"key1"="value1"}
 
 New-AzContainerGroup `
     -ResourceGroupName myResourceGroup `
-    -Name myContainerGroup`
+    -Name mycontainergroup`
     -Container $container `
     -Location "WestCentralUS" `
-    -ContainerGroupProfileId "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile" `
+    -ContainerGroupProfileId "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/mycontainergroupprofile" `
     -ContainerGroupProfileRevision 1 `
     -StandbyPoolProfileId "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool" 
 
@@ -138,12 +138,12 @@ Request a container group from a standby pool using [az deployment group create]
           "id": "[concat('/subscriptions/', parameters('subscriptionId'), '/resourceGroups/', parameters('resourceGroup'), '/providers/Microsoft.StandbyPool/standbyContainerGroupPools/', parameters('standbyPoolName'))]"
         },
         "containerGroupProfile": {
-          "id": "[concat('/subscriptions/', parameters('subscriptionId'), '/resourceGroups/', parameters('resourceGroup'), '/providers/Microsoft.ContainerInstance/containerGroupProfiles/', parameters('containerGroupProfileName'))]",
+          "id": "[concat('/subscriptions/', parameters('subscriptionId'), '/resourceGroups/', parameters('resourceGroup'), '/providers/Microsoft.ContainerInstance/mycontainergroupprofile/', parameters('containerGroupProfileName'))]",
           "revision": "[parameters('revisionNumber')]"
         },
         "containers": [
           {
-            "name": "[parameters('myContainerProfile')]",
+            "name": "[parameters('mycontainergroupprofile')]",
             "properties": {
               "configMap": {
                 "keyValuePairs": {
@@ -182,7 +182,7 @@ Request Body
                "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.StandbyPool/standbyContainerGroupPools/myStandbyPool"
            },
            "containerGroupProfile": {
-               "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile",
+               "id": "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/mycontainergroupprofile",
                "revision": {revisionNumber}
            },
           "identity": {
@@ -192,7 +192,7 @@ Request Body
             },
            "containers": [
                {
-                   "name": "{myContainerGroupProfile}",
+                   "name": "{mycontainergroupprofile}",
                    "properties": {
                        "configMap": {
                            "keyValuePairs": {
