@@ -206,7 +206,7 @@ When you need to add a new disk to increase the VG size, extend your traditional
     sudo lsblk
     ```
 
-    :::image type="content" source="" alt-text="Screenshot showing the code that checks the disk list by using l s b l k with the command and result highlighted.":::
+    :::image type="content" source="./media/disk-encryption/resize-lvm/009-resize-lvm-scenariob-check-lsblk1.png" alt-text="Screenshot showing the code that checks the disk list by using l s b l k with the command and result highlighted.":::
    
 9. Create a new PV on top of the new data disk:
 
