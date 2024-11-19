@@ -21,19 +21,6 @@ Instance Mix is best suited for workloads that are flexible in compute requireme
 - Continue to make use of scale set features, like [Spot Priority Mix](./spot-priority-mix.md), [Autoscale](./virtual-machine-scale-sets-autoscale-overview.md), or [Upgrade Policies](./virtual-machine-scale-sets-set-upgrade-policy.md).
 - Spread a heterogeneous mix of VMs across Availability Zones and Fault Domains for high availability and reliability.
 
-## Enroll in the Preview
-Register for the `FlexVMScaleSetSkuProfileEnabled` feature flag using the [az feature register](/cli/azure/feature#az-feature-register) command:
-
-```azurecli-interactive
-az feature register --namespace "Microsoft.Compute" --name "FlexVMScaleSetSkuProfileEnabled"
-```
-
-It takes a few moments for the feature to register. Verify the registration status by using the [az feature show](/cli/azure/feature#az-feature-register) command:
-
-```azurecli-interactive
-az feature show --namespace "Microsoft.Compute" --name "FlexVMScaleSetSkuProfileEnabled"
-```
-
 ## Changes to existing scale set properties
 ### sku.name
 The `sku.name` property should be set to `"Mix"`. VM sizes will be defined in the `skuProfile`.
@@ -78,3 +65,6 @@ Following the scale set cost model, usage of Instance Mix is free. You continue 
 - Existing scale sets can't be updated to use Instance Mix. 
 - VM sizes can't be changed once the scale set is deployed.
 - For REST API deployments, you must have an existing virtual network inside of the resource group that you're deploying your scale set with Instance Mix in.
+
+# Next steps
+Learn how to [create a scale set using Instance Mix](instance-mix-create.md).

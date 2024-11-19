@@ -10,8 +10,25 @@ ms.reviewer: jushiman
 ---
 
 # Deploy a scale set using Instance Mix
-The following example can be used to deploy a scale set using Instance Mix:
+The article walks through how to deploy a scale set using Instance Mix.
 
+> [!IMPORTANT]
+> Instance Mix for Virtual Machine Scale Sets with Flexible Orchestration Mode is currently in preview. Previews are made available to you on the condition that you agree to the [supplemental terms of use](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Some aspects of this feature may change prior to general availability (GA). 
+
+## Prerequisites
+Before using Instance Mix, complete feature registration for the `FlexVMScaleSetSkuProfileEnabled` feature flag using the [az feature register](/cli/azure/feature#az-feature-register) command:
+
+```azurecli-interactive
+az feature register --namespace "Microsoft.Compute" --name "FlexVMScaleSetSkuProfileEnabled"
+```
+
+It takes a few moments for the feature to register. Verify the registration status by using the [az feature show](/cli/azure/feature#az-feature-register) command:
+
+```azurecli-interactive
+az feature show --namespace "Microsoft.Compute" --name "FlexVMScaleSetSkuProfileEnabled"
+```
+
+## Create a scale set using Instance Mix
 ### [Azure portal](#tab/portal-1)
 1. Go to **Virtual machine scale sets**.
 2. Select the **Create** button to go to the **Create a virtual machine scale set** view.
@@ -139,3 +156,6 @@ When using the `prioritized` allocation strategy, you can specify the priority r
 ```
 
 ---
+
+# Next steps
+Learn how to [troubleshoot](instance-mix-faq-troubleshooting.md) your Instance Mix enabled scale set.
