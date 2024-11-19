@@ -45,13 +45,7 @@ To allow standby pools to create container groups in your subscription, assign t
 8) Search for **Standby Pool Resource Provider** and select it.
 9) Move to the **Review + assign** tab.
 10) Apply the changes. 
-11) Under **Access Control (IAM)** again, select **Add** and **Add role assignment**.
-12) Under the **Role** tab, search for **Network Contributor** and select it. 
-13) Move to the **Members** Tab.
-14) Select **+ Select members**.
-15) Search for **Standby Pool Resource Provider** and select it.
-16) Move to the **Review + assign** tab.
-17) Apply the changes.
+11) Repeat the above steps also assinging the **Azure Container Instances Contributor Role** and the **Network Contributor** to the **Standby Pool Resource Provider**.
 
 
 For more information on assigning roles, see [assign Azure roles using the Azure portal](/azure/role-based-access-control/quickstart-assign-role-user-portal).
