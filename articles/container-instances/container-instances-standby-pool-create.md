@@ -34,7 +34,7 @@ Create a container group profile using [az container container-group-profile cre
 ```azurecli-interactive
 az container container-group-profile create \
     --resource-group myResourceGroup \
-    --name myContainerGroupProfile \
+    --name mycontainergroupprofile \
     --location WestCentralUS \
     --image nginx \
     --os-type Linux \ 
@@ -53,11 +53,11 @@ Create a container group profile using [New-AzContainerInstanceContainerGroupPro
 $port1 = New-AzContainerInstancePortObject -Port 8000 -Protocol TCP
 $port2 = New-AzContainerInstancePortObject -Port 8001 -Protocol TCP
 
-$container = New-AzContainerInstanceObject -Name myContainer -Image nginx -RequestCpu 1 -RequestMemoryInGb 1.5 -Port @($port1, $port2)
+$container = New-AzContainerInstanceObject -Name mycontainer -Image nginx -RequestCpu 1 -RequestMemoryInGb 1.5 -Port @($port1, $port2)
 
 New-AzContainerInstanceContainerGroupProfile `
     -ResourceGroupName myResourceGroup `
-    -Name myContainerGroupProfile `
+    -Name mycontainergroupprofile `
     -Location WestCentralUS `
     -Container $container `
     -OsType Linux `
@@ -84,7 +84,7 @@ Create a container group profile and save the template file. Deploy the template
       "properties": {
         "containers": [
           {
-            "name": "myContainerGroupProfile",
+            "name": "mycontainergroupprofile",
             "properties": {
               "image": "[parameters('containerImage')]",
               "ports": [
@@ -121,7 +121,7 @@ Create a container group profile and save the template file. Deploy the template
   "parameters": {
     "profileName": {
       "type": "string",
-      "defaultValue": "myContainerGroupProfile",
+      "defaultValue": "mycontainergroupprofile",
       "metadata": {
         "description": "Name of the container profile"
       }
@@ -160,7 +160,7 @@ Request Body
     "properties":{
         "containers": [
         {
-            "name":"myContainerGroupProfile",
+            "name":"mycontainergroupprofile",
             "properties": {
                 "command":[],
                 "environmentVariables":[],
@@ -221,7 +221,7 @@ New-AzStandbyContainerGroupPool `
    -Name myStandbyPool `
    -MaxReadyCapacity 20 `
    -RefillPolicy always `
-   -ContainerProfileId "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile"
+   -ContainerProfileId "/subscriptions/{subscriptionId}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/mycontainergroupprofile"
 ```
 
 ### [ARM template](#tab/template)
@@ -251,7 +251,7 @@ Create a standby pool and associate it with a container group profile. Create a 
         },
         "containerGroupProfile" : {
            "type": "string",
-           "defaultValue": "/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile"
+           "defaultValue": "/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/mycontainergroupprofile"
         }
     },
     "resources": [ 
@@ -289,7 +289,7 @@ Request Body
         },
         "containerGroupProperties": {
             "containerGroupProfile": {
-                "id": "/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/myContainerGroupProfile",
+                "id": "/subscriptions/{SubscriptionID}/resourceGroups/myResourceGroup/providers/Microsoft.ContainerInstance/containerGroupProfiles/mycontainergroupprofile",
                 "revision": 1
             }
         }
