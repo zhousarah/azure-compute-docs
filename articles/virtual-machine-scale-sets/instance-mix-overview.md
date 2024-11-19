@@ -58,7 +58,6 @@ Following the scale set cost model, usage of Instance Mix is free. You continue 
 ## Limitations
 - Instance Mix is currently available in the following regions: West US, West US2, East US, and East US2. 
 - Instance Mix is only available for scale sets using Flexible Orchestration Mode.
-- Instance Mix is currently only available through ARM template and the Azure portal.
 - You must have quota for the VM sizes you're requesting with Instance Mix.
 - You can specify **up to** five VM sizes with Instance Mix at this time.
 - The `Prioritized` allocation strategy is currently only supported via REST and Azure portal deployments. 
