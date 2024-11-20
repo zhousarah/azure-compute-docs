@@ -52,7 +52,7 @@ Azure provides several options to create clusters of HPC VMs that can communicat
 
 Note that the maximum scale set size that can be spun up with `singlePlacementGroup=true` is capped at 100 VMs by default. If your HPC job scale needs are higher than 100 VMs in a single tenant, you may request an increase, [open an online customer support request](/azure/azure-portal/supportability/how-to-create-azure-support-request) at no charge. The limit on the number of VMs in a single scale set can be increased to 300. Note that when deploying VMs using Availability Sets the maximum limit is at 200 VMs per Availability Set. 
 
-Also, virtual Machine scale set serves as the isolation boundary between workloads within the same cluster, ensuring that instances in different VMSSs remain isolated from each other to guarantee security.
+Also, VMSS serves as the isolation boundary between workloads within the same cluster, ensuring that instances in different VMSSs remain isolated from each other to guarantee security.
 
   > [!NOTE]
   > **MPI among virtual machines**: If RDMA (e.g. using MPI communication) is required between virtual machines (VMs), ensure that the VMs are in the same virtual machine scale set or availability set.
