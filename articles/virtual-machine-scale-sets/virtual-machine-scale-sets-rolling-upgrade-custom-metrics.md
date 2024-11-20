@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.service: azure-virtual-machine-scale-sets
 ms.date: 11/7/2024
 ms.reviewer: ju-shim
-ms.custom: upgradepolicy, N-Phase
+ms.custom: upgradepolicy, N-Phase, ignite-2024
 ---
 # Configure custom metrics for rolling upgrades on Virtual Machine Scale Sets (Preview)
 

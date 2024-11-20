@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.service: azure-virtual-machine-scale-sets
 ms.date: 11/7/2024
 ms.reviewer: ju-shim
-ms.custom: upgradepolicy, devx-track-azurecli, devx-track-azurepowershell
+ms.custom: upgradepolicy, devx-track-azurecli, devx-track-azurepowershell, ignite-2024
 ---
 # Modify a Virtual Machine Scale Set
 
