@@ -4,7 +4,7 @@ description: Learn how to set up InfiniBand on Azure HPC VMs.
 ms.service: azure-virtual-machines
 ms.subservice: hpc
 ms.topic: how-to
-ms.date: 08/05/2024
+ms.date: 11/19/2024
 ms.reviewer: cynthn
 ms.author: padmalathas
 author: padmalathas
@@ -48,7 +48,11 @@ Azure provides several options to create clusters of HPC VMs that can communicat
 
 - **Virtual machines**  - Deploy the RDMA-capable HPC VMs in the same scale set or availability set (when you use the Azure Resource Manager deployment model). If you use the classic deployment model, deploy the VMs in the same cloud service.
 
-- **Virtual machine scale sets** - In a virtual machine scale set, ensure that you limit the deployment to a single placement group for InfiniBand communication within the scale set. For example, in a Resource Manager template, set the `singlePlacementGroup` property to `true`. Note that the maximum scale set size that can be spun up with `singlePlacementGroup=true` is capped at 100 VMs by default. If your HPC job scale needs are higher than 100 VMs in a single tenant, you may request an increase, [open an online customer support request](/azure/azure-portal/supportability/how-to-create-azure-support-request) at no charge. The limit on the number of VMs in a single scale set can be increased to 300. Note that when deploying VMs using Availability Sets the maximum limit is at 200 VMs per Availability Set.
+- **Virtual machine scale sets** - In a virtual machine scale set(VMSS), ensure that you limit the deployment to a single placement group for InfiniBand communication within the scale set. For example, in a Resource Manager template, set the `singlePlacementGroup` property to `true`. 
+
+Note that the maximum scale set size that can be spun up with `singlePlacementGroup=true` is capped at 100 VMs by default. If your HPC job scale needs are higher than 100 VMs in a single tenant, you may request an increase, [open an online customer support request](/azure/azure-portal/supportability/how-to-create-azure-support-request) at no charge. The limit on the number of VMs in a single scale set can be increased to 300. Note that when deploying VMs using Availability Sets the maximum limit is at 200 VMs per Availability Set. 
+
+Also, virtual Machine scale set serves as the isolation boundary between workloads within the same cluster, ensuring that instances in different VMSSs remain isolated from each other to guarantee security.
 
   > [!NOTE]
   > **MPI among virtual machines**: If RDMA (e.g. using MPI communication) is required between virtual machines (VMs), ensure that the VMs are in the same virtual machine scale set or availability set.
