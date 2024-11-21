@@ -13,7 +13,7 @@ ms.date: 07/14/2022
 
 Availability Zones in Azure are a high-availability offering that protects your applications and data from datacenter failures. An Availability Zone is a unique physical location equipped with independent power, cooling, and networking within an Azure region.
 
-To support clusters that span across Availability Zones, Azure Service Fabric provides the two configuration methods as described in the article below. Availability Zones are available only in select regions. For more information, see the [Availability Zones overview](/azure/availability-zones/az-overview).
+To support clusters that span across Availability Zones, Azure Service Fabric provides the two configuration methods as described in the article below. Availability Zones are available only in select regions. For more information, see the [Availability Zones overview](/azure/reliability/availability-zones-overview).
 
 Sample templates are available at [Service Fabric cross-Availability Zone templates](https://github.com/Azure-Samples/service-fabric-cluster-templates).
 
