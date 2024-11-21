@@ -1401,7 +1401,7 @@
     items:
     - name: Overview
       displayName: availability and scale, availability, scale, autoscale, availability zones, AV zones
-      href: /azure/availability-zones/az-overview?toc=/azure/virtual-machines/toc.json
+      href: /azure/reliability/availability-zones-overview?toc=/azure/virtual-machines/toc.json
     - name: CLI
       displayName: availability and scale, availability, scale, autoscale, availability zones, AV zones
       href: ./linux/create-cli-availability-zone.md
