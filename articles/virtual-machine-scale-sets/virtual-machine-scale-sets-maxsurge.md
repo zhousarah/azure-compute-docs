@@ -13,6 +13,10 @@ ms.custom: upgradepolicy. maxsurge, ignite-2024
 
 Rolling upgrades with MaxSurge can help improve service uptime during upgrade events. With MaxSurge enabled, new instances are created in batches using the latest scale model. When the new instances are fully created and healthy, the scale set then deletes instances in batches matching the old scale set model. The process continues until all instances are brought up-to-date. 
 
+> [!NOTE]
+> To use rolling upgrades with MaxSurge upgrades, register the following feature: <br>
+> `Register-AzProviderFeature -FeatureName MaxSurgeRollingUpgrade -ProviderNamespace Microsoft.Compute`
+
 ## Concepts
 
 > [!NOTE]
