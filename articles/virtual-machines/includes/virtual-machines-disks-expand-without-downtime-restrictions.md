@@ -26,7 +26,7 @@ Expanding Ultra Disks and Premium SSD v2 disks have the following additional lim
 - You can't expand a VM that's using [NVMe controllers](../nvme-overview.md) for Ultra Disks or Premium SSD v2 disks without downtime.
 
 > [!IMPORTANT]
-> Allow up to ten minutes for the correct size to be reflected in Windows VMs and Linux VMs. For Linux VMs, you must perform a [Linux rescan function](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/expand-disks?tabs=ubuntu#detecting-a-changed-disk-size) For Windows VM that doesn't have a workload, you must perform a [Windows rescan function](https://learn.microsoft.com/en-us/windows-hardware/drivers/devtest/devcon-rescan).  You can rescan immediately, but if it's within ten minutes, you might need to rescan again to display the correct size.
+> Allow up to ten minutes for the correct size to be reflected in Windows VMs and Linux VMs. For Linux VMs, you must perform a [Linux rescan function](https://learn.microsoft.com/azure/virtual-machines/linux/expand-disks?tabs=ubuntu#detecting-a-changed-disk-size) For Windows VM that doesn't have a workload, you must perform a [Windows rescan function](https://learn.microsoft.com/windows-hardware/drivers/devtest/devcon-rescan).  You can rescan immediately, but if it's within ten minutes, you might need to rescan again to display the correct size.
 
 #### Regional availability
 
