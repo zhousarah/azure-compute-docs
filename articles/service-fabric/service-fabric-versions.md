@@ -67,7 +67,7 @@ For currently supported versions, all releases are listed. For currently unsuppo
 
 <sup>3</sup> Service Fabric doesn't provide a .NET Core runtime. The service author is responsible for ensuring it's <a href="/dotnet/core/deploying/">available</a>.
 
-<sup>4</sup> The upgrade and downgrade pathways from 9.1 to 10.1CU5 and vice versa are blocked, resulting in 10.0's listing in these places. These blockages aren't present for any other version of 10.1.
+<sup>4</sup> The upgrade and downgrade pathways from 9.1 to 10.1CU5 and vice versa are blocked, resulting in 10.0's listing in these places. These blockages aren't present for other versions of 10.1.
 
 ## Supported Windows versions and support end date
 Support for Service Fabric on a specific OS ends when support for the OS version reaches its End of Life.
@@ -142,7 +142,7 @@ For currently supported versions, all releases are listed. For currently unsuppo
 
 <sup>3</sup> Service Fabric doesn't provide a .NET Core runtime and the service author is responsible for ensuring it's <a href="/dotnet/core/deploying/">available</a>
 
-<sup>4</sup> The upgrade and downgrade pathways from 9.1 to 10.1CU5 and vice versa are blocked, resulting in 10.0's listing in these places. These blockages aren't present for any other version of 10.1.
+<sup>4</sup> The upgrade and downgrade pathways from 9.1 to 10.1CU5 and vice versa are blocked, resulting in 10.0's listing in these places. These blockages aren't present for other versions of 10.1.
 
 ## Supported Linux versions and support end date
 Support for Service Fabric on a specific OS ends when support for the OS version reaches its End of Life.
