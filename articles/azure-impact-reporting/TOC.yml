@@ -1,0 +1,32 @@
+- name: Azure Impact Reporting (Preview)
+  href: index.yml
+- name: Overview
+  items:
+  - name: What is Azure Impact Reporting?
+    href: Overview.md
+  - name: Impact Reporting Connector for Azure Monitor (Preview)
+    items:
+      - name: Overview
+        href: AzMonConnector.md
+      - name: Create an Impact Connector for Azure Monitor Alerts
+        href: CreateAzMonConnector.md
+      - name: Impact Connector for Azure Monitor TSG
+        href: TSGConnectors.md
+      - name: Impact Reporting Connectors FAQ
+        href: connectorsFaq.md
+- name: Tutorials (Preview)
+  items:
+  - name: Register for Private Preview
+    href: RegisterPrivatePreview.md
+  - name: Report Impact on an Azure Virtual Machine
+    href: ReportVMImpact.md
+  - name: Onboard to Azure Impact Reporting
+    href: OnboardToImpactRP.md
+  - name: Report Impacts Using a Logic App
+    href: CreatingLogicApp.md
+  - name: View Reported Impacts
+    href: ViewImpactInsights.md
+  - name: View Allowed Impact Categories
+    href: ViewImpactCategories.md
+- name: FAQ
+  href: Faq.md
