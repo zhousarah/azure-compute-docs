@@ -13,6 +13,10 @@ ms.custom: upgradepolicy
  
 If you have the upgrade policy set to manual, any changes made to the scale set model won't be applied automatically. You need to manually trigger upgrades on each individual virtual machine. The manual upgrade functionality updates the selected instances according to the virtual machine configuration set in the scale set profile.
 
+> [!NOTE]
+> To update the image reference version during an upgrade, register the following feature flag: <br>
+> `Register-AzProviderFeature -FeatureName ImageReferenceUpgradeForVmoVMs -ProviderNamespace Microsoft.Compute` 
+
 ### [Portal](#tab/portal)
 
 Select the Virtual Machine Scale Set you want to perform instance upgrades on. In the menu under **Settings**, select **Instances** and select the instances you want to upgrade. Once selected, click the **Upgrade** option. 
