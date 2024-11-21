@@ -7,7 +7,7 @@ author: tomvcassidy
 ms.service: azure-service-fabric
 ms.custom: devx-track-azurepowershell
 services: service-fabric
-ms.date: 07/11/2022
+ms.date: 11/21/2024
 ---
 
 # Configure network settings for Service Fabric managed clusters
@@ -607,7 +607,7 @@ Managed clusters create an Azure public Standard Load Balancer and fully qualifi
 > You can not switch from the default load balancer to a custom one after deployment of a node type, but you can modify custom load balancer configuration post-deployment if enabled.
 
 **Feature Requirements**
- * Basic and Standard SKU Azure Load Balancer types are supported
+ * The Standard SKU Azure Load Balancer type is supported
  * You must have backend and NAT pools configured on the Azure Load Balancer
  * You must enable outbound connectivity either using a provided public load balancer or the default public load balancer
 
