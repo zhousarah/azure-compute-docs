@@ -1,5 +1,5 @@
 ---
-title: Set the upgrade policy mode on Virtual Machine Scale Sets 
+title: Set the upgrade policy mode on Virtual Machine Scale Sets
 description: Learn about to set the upgrade policy mode on Virtual Machine Scale Sets
 author: mimckitt
 ms.author: mimckitt
@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.service: azure-virtual-machine-scale-sets
 ms.date: 11/7/2024
 ms.reviewer: ju-shim
-ms.custom: upgradepolicy
+ms.custom: upgradepolicy, ignite-2024
 ---
 # Set the upgrade policy mode on Virtual Machine Scale Sets
 

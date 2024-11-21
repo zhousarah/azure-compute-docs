@@ -1,5 +1,5 @@
 ---
-title: Rolling upgrades with MaxSurge for Virtual Machine Scale Sets 
+title: Rolling upgrades with MaxSurge for Virtual Machine Scale Sets
 description: Learn about how to utilize rolling upgrades with MaxSurge on Virtual Machine Scale Sets.
 author: mimckitt
 ms.author: mimckitt
@@ -7,7 +7,7 @@ ms.topic: overview
 ms.service: azure-virtual-machine-scale-sets
 ms.date: 11/7/2024
 ms.reviewer: ju-shim
-ms.custom: upgradepolicy. maxsurge
+ms.custom: upgradepolicy. maxsurge, ignite-2024
 ---
 # Rolling upgrades with MaxSurge on Virtual Machine Scale Sets
 
@@ -121,4 +121,3 @@ Update the properties section of your ARM template and set the upgrade policy to
 ---
 ## Next steps
 To learn more about upgrades for Virtual Machine Scale Sets, see [configure rolling upgrade policy](./virtual-machine-scale-sets-configure-rolling-upgrades.md).
-

@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.service: azure-virtual-machine-scale-sets
 ms.date: 11/7/2024
 ms.reviewer: ju-shim
-ms.custom: upgradepolicy
+ms.custom: upgradepolicy, ignite-2024
 ---
 # Performing manual upgrades on Virtual Machine Scale Sets
  

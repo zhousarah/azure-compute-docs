@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.service: azure-virtual-machine-scale-sets
 ms.date: 11/7/2024
 ms.reviewer: ju-shim
-ms.custom: upgradepolicy, maxsurge
+ms.custom: upgradepolicy, maxsurge, ignite-2024
 ---
 # Configure rolling upgrades on Virtual Machine Scale Sets
 

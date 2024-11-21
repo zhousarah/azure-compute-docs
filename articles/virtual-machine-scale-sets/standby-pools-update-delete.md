@@ -4,6 +4,8 @@ description: Learn how to delete or update a standby pool for Virtual Machine Sc
 author: mimckitt
 ms.author: mimckitt
 ms.service: azure-virtual-machine-scale-sets
+ms.custom:
+  - ignite-2024
 ms.topic: how-to
 ms.date: 11/5/2024
 ms.reviewer: ju-shim

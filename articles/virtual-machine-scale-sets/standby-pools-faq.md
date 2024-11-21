@@ -4,6 +4,8 @@ description: Get answers to frequently asked questions for standby pools on Virt
 author: mimckitt
 ms.author: mimckitt
 ms.service: azure-virtual-machine-scale-sets
+ms.custom:
+  - ignite-2024
 ms.topic: how-to
 ms.date: 11/5/2024
 ms.reviewer: ju-shim
