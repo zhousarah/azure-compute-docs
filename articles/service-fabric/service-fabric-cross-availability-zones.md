@@ -110,7 +110,7 @@ To enable the `zones` property on a virtual machine scale set resource, the load
 ```
 
 >[!NOTE]
-> It isn't possible to do an in-place change of SKU on public IP resources. If you're migrating from existing resources that have a Basic SKU, see the [migration section](#migrate-to-availability-zones-from-a-cluster-by-using-a-basic-sku-load-balancer-and-a-basic-sku-ip) of this article.
+> It isn't possible to do an in-place change of SKU on public IP resources. If you're migrating from existing resources that have a Basic SKU, see the [migration section](#migrate-to-availability-zones-from-a-cluster-by-using-a-basic-sku-ip) of this article.
 
 ### NAT rules for virtual machine scale sets
 
@@ -273,7 +273,7 @@ The Service Fabric node type must be enabled to support multiple Availability Zo
 For all migration scenarios, you need to add a new node type that supports multiple Availability Zones. An existing node type can't be migrated to support multiple zones.
 The [Scale up a Service Fabric cluster primary node type](./service-fabric-scale-up-primary-node-type.md) article includes detailed steps to add a new node type and the other resources required for the new node type, such as IP and load balancer resources. That article also describes how to retire the existing node type after a new node type with multiple Availability Zones is added to the cluster.
 
-* Migration from a node type that uses basic IP resources: This process is already described in [a sub-section below](#migrate-to-availability-zones-from-a-cluster-by-using-a-basic-sku-load-balancer-and-a-basic-sku-ip) for the solution with one node type per Availability Zone.
+* Migration from a node type that uses basic IP resources: This process is already described in [a sub-section below](#migrate-to-availability-zones-from-a-cluster-by-using-a-basic-sku-ip) for the solution with one node type per Availability Zone.
 
   For the new node type, the only difference is that there's only one virtual machine scale set and one node type for all Availability Zones instead of one each per Availability Zone.
 * Migration from a node type that uses the Standard SKU IP resources with an NSG: Follow the same procedure described previously. However, there's no need to add new IP and NSG resources. The same resources can be reused in the new node type.
