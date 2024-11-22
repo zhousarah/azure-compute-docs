@@ -17,7 +17,9 @@ Rolling upgrade policy is best suited for production workloads.
 
 > [!NOTE]
 > To update the image reference version during an upgrade, register the following feature flag: <br>
-> `Register-AzProviderFeature -FeatureName ImageReferenceUpgradeForVmoVMs -ProviderNamespace Microsoft.Compute` 
+> `Register-AzProviderFeature -FeatureName ImageReferenceUpgradeForVmoVMs -ProviderNamespace Microsoft.Compute`<br><br>
+> To use rolling upgrades with MaxSurge upgrades, register the following feature:<br>
+> `Register-AzProviderFeature -FeatureName MaxSurgeRollingUpgrade -ProviderNamespace Microsoft.Compute`
 
 ## Requirements
 
