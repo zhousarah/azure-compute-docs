@@ -1,4 +1,12 @@
 {
   "redirections": [
+    {
+      "source_path": "articles/container-instances/container-instances-dedicated-hosts.md",
+      "redirect_url": "container-instances-overview"
+    },
+    {
+      "source_path": "articles/virtual-machine-scale-sets/virtual-machine-scale-sets-instance-mix.md",
+      "redirect_url": "instance-mix-overview"
+    }
   ]
 }

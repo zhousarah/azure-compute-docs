@@ -6,7 +6,7 @@ ms.service: azure-virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 08/02/2024
+ms.date: 11/19/2024
 ms.author: mattmcinnes
 ---
 
@@ -128,7 +128,7 @@ List of compute optimized VM size families:
 
 | Family | Workloads | Series List |
 |----|---|---|
-| [F-family](./compute-optimized/f-family.md)  | Medium traffic web servers <br> Network appliances <br> Batch processes <br> Application servers | [Fasv6 and Falsv6-series](./compute-optimized/f-family.md#fasv6-and-falsv6-series) <br> [Fsv2-series](./compute-optimized/f-family.md#fsv2-series) <br> [Previous-gen F-family](./previous-gen-sizes-list.md)|
+| [F-family](./compute-optimized/f-family.md)  | Medium traffic web servers <br> Network appliances <br> Batch processes <br> Application servers | [Fasv6 and Falsv6-series](./compute-optimized/f-family.md#fasv6-falsv6-and-famsv6-series) <br> [Fsv2-series](./compute-optimized/f-family.md#fsv2-series) <br> [Previous-gen F-family](./previous-gen-sizes-list.md)|
 | [FX-family](./compute-optimized/fx-family.md)  | Electronic Design Automation (EDA) <br> Large memory relational databases <br> Medium to large caches <br> In-memory analytics | [FX-series](./compute-optimized/fx-family.md#fx-series) |
 
 To learn more about a specific size family or series, click the tab for that family and scroll to find your desired size series. 
@@ -160,9 +160,9 @@ List of memory optimized VM sizes with links to each series' family page section
 | Family | Workloads | Series List |
 |----|---|---|
 | [E-family](./memory-optimized/e-family.md)  | Relational databases <br> Medium to large caches <br> In-memory analytics |[Epsv6 and Epdsv6-series](./memory-optimized/e-family.md#epsv6-and-epdsv6-series)<br> [Easv6 and Eadsv6-series](./memory-optimized/e-family.md#easv6-and-eadsv6-series)<br> [Ev5 and Esv5-series](./memory-optimized/e-family.md#ev5-and-esv5-series)<br> [Edv5 and Edsv5-series](./memory-optimized/e-family.md#edv5-and-edsv5-series)<br> [Easv5 and Eadsv5-series](./memory-optimized/e-family.md#easv5-and-eadsv5-series)<br> [Epsv5 and Epdsv5-series](./memory-optimized/e-family.md#epsv5-and-epdsv5-series)<br> [Previous-gen families](./previous-gen-sizes-list.md#memory-optimized-previous-gen-sizes) |
-| [Eb-family](./memory-optimized/e-family.md)  | E-family with High remote storage performance | [Ebdsv5 and Ebsv5-series](./memory-optimized/eb-family.md#ebdsv5-and-ebsv5-series) |
+| [Eb-family](./memory-optimized/eb-family.md)  | E-family with High remote storage performance | [Ebdsv5 and Ebsv5-series](./memory-optimized/eb-family.md#ebdsv5-and-ebsv5-series) |
 | [EC-family](./memory-optimized/ec-family.md)  | E-family with confidential computing | [ECasv5 and ECadsv5-series](./memory-optimized/ec-family.md#ecasv5-and-ecadsv5-series)<br> [ECas_cc_v5 and ECads_cc_v5-series](./memory-optimized/ec-family.md#ecas_ccv5-and-ecads_ccv5-series)<br> [ECesv5 and ECedsv5-series](./memory-optimized/ec-family.md#ecesv5-and-ecedsv5-series) |
-| [M-family](./memory-optimized/m-family.md)  | Extremely large databases <br> Large amounts of memory | [Msv3 and Mdsv3-series](./memory-optimized/m-family.md#msv3-and-mdsv3-series)<br> [Mv2-series](./memory-optimized/m-family.md#mv2-series)<br> [Msv2 and Mdsv2-series](./memory-optimized/m-family.md#msv2-and-mdsv2-series) |
+| [M-family](./memory-optimized/m-family.md)  | Extremely large databases <br> Large amounts of memory | [Mbsv3 and Mbdsv3-series](./memory-optimized/m-family.md#mbsv3-and-mbdsv3-series)<br> [Msv3 and Mdsv3-series](./memory-optimized/m-family.md#msv3-and-mdsv3-series)<br> [Mv2-series](./memory-optimized/m-family.md#mv2-series)<br> [Msv2 and Mdsv2-series](./memory-optimized/m-family.md#msv2-and-mdsv2-series) |
 | Other families | Older generation memory optimized sizes | [Previous-gen families](./previous-gen-sizes-list.md#memory-optimized-previous-gen-sizes) |
 
 To learn more about a specific size family or series, click the tab for that family and scroll to find your desired size series. 

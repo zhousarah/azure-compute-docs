@@ -37,6 +37,9 @@ Here's sample code to retrieve all metadata for an instance. To access a specifi
 > [!IMPORTANT]
 > This example bypasses proxies. You **must** bypass proxies when querying IMDS. See [Proxies](#proxies) for additional information.
 
+> [!NOTE]
+> IMDS requests must be sent using VM's primary NIC and primary IP, and DHCP must be enabled.
+
 #### [Windows](#tab/windows/)
 
 ```powershell
@@ -401,7 +404,7 @@ Schema breakdown:
 | `vmId` | [Unique identifier](https://azure.microsoft.com/blog/accessing-and-using-azure-vm-unique-id/) for the VM. The blog referenced only suits for VMs that have SMBIOS < 2.6. For VMs that have SMBIOS >= 2.6, the UUID from DMI is displayed in little-endian format, thus, there's no requirement to switch bytes. | 2017-04-02
 | `vmScaleSetName` | [Virtual Machine Scale Set Name](../virtual-machine-scale-sets/overview.md) of your scale set | 2017-12-01
 | `vmSize` | [VM size](sizes.md) | 2017-04-02
-| `zone` | [Availability Zone](/azure/availability-zones/az-overview) of your virtual machine | 2017-12-01
+| `zone` | [Availability Zone](/azure/reliability/availability-zones-overview) of your virtual machine | 2017-12-01
 
 † This version isn't fully available yet and may not be supported in all regions.
 
@@ -544,7 +547,7 @@ curl -H Metadata:true --noproxy "*" "http://169.254.169.254/metadata/instance/co
 
 For certain scenarios, placement of different data replicas is of prime importance. For example, [HDFS replica placement](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html#Replica_Placement:_The_First_Baby_Steps)
 or container placement via an [orchestrator](https://kubernetes.io/docs/concepts/architecture/nodes/) might require you to know the `platformFaultDomain` and `platformUpdateDomain` the VM is running on.
-You can also use [Availability Zones](/azure/availability-zones/az-overview) for the instances to make these decisions.
+You can also use [Availability Zones](/azure/reliability/availability-zones-overview) for the instances to make these decisions.
 You can query this data directly via IMDS.
 
 **Request**
@@ -1118,7 +1121,7 @@ The decoded document contains the following fields:
 | `timestamp.expiresOn` | The UTC timestamp for when the signed document expires | 2018-10-01
 | `vmId` | [Unique identifier](https://azure.microsoft.com/blog/accessing-and-using-azure-vm-unique-id/) for the VM | 2018-10-01
 | `subscriptionId` | Azure subscription for the Virtual Machine | 2019-04-30
-| `sku` | Specific SKU for the VM image (correlates to `compute/sku` property from the Instance Metadata endpoint \[`/metadata/instance`\]) | 2019-11-01
+| `sku` | Specific SKU for the VM image (correlates to `compute/sku` property from the Instance Metadata endpoint [`/metadata/instance`]) | 2019-11-01
 
 > [!NOTE]
 > For Classic (non-Azure Resource Manager) VMs, only the vmId is guaranteed to be populated.

@@ -43,7 +43,7 @@ For example, let's say you have an application running on five VMs, and the VMs 
 
 ### Integration with availability zones
 
-Managed disks support [availability zones](/azure/availability-zones/az-overview), which help protect your applications from datacenter failures.
+Managed disks support [availability zones](/azure/reliability/availability-zones-overview), which help protect your applications from datacenter failures.
 
 Availability zones are unique physical locations within an Azure region. Each zone consists of one or more datacenters equipped with independent power, cooling, and networking. To ensure resiliency, there's a minimum of three separate zones in all enabled regions.
 
