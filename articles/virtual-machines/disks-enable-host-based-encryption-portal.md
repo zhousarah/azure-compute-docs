@@ -39,13 +39,13 @@ You must enable the feature for your subscription before you can use encryption 
    ### [Azure PowerShell](#tab/azure-powershell)
 
    ```powershell
-   Set-AzContext -SubscriptionId "xxxx-xxxx-xxxx-xxxx"
+   Set-AzContext -SubscriptionId "<yourSubIDHere>"
    ```
 
    ### [Azure CLI](#tab/azure-cli)
 
    ```azurecli
-   az account set --subscription "xxxx-xxxx-xxxx-xxxx"
+   az account set --subscription "<yourSubIDHere>"
    ```
    ---
    
