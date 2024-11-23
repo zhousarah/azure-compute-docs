@@ -5,7 +5,7 @@ author: rolandnyamo #Required; your GitHub user alias, with correct capitalizati
 ms.author: ronyamo #Required; microsoft alias of author; optional team alias.
 ms.topic: faq #Required; leave this attribute/value as-is.
 ms.service: azure-impact-reporting #Required; use either service or product per approved list. 
-ms.date: 06/25/2024 #Required; mm/dd/yyyy format.
+ms.date: 06/25/2024 #Required; mm/dd/yyyy format
 ms.custom: template-overview #Required; leave this attribute/value as-is.
 ---
 
