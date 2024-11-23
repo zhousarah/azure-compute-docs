@@ -12,20 +12,20 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 > [!IMPORTANT]
 > Azure Impact Reporting is currently in PREVIEW. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
-Follow the steps below to register your subscription for Impact Reporting.
+To register your subscription for Impact Reporting preview:
 
 1. Navigate to your subscription
 1. Under the `Settings` tab section, go to `Preview Features`
 1. Under this tab, filter for `Microsoft.Impact` in the `type` section
 ![image](images/preview.png)
-1. Click on `Allow Impact Reporting` feature and register
-1. After approval, please go to `Resource providers`, search for `Microsoft.Impact` and register
+1. Select `Allow Impact Reporting` feature and register
+1. After approval, go to `Resource providers`, search for `Microsoft.Impact` and register
 
-Once your request is approved, you will have the ability to report Impact to your Azure workloads.
+Once your request is approved, you the ability to report Impact to your Azure workloads.
 
 ### Register your Subscription for Impact Reporting Feature - Script
 
-To onboard multiple subscriptions, please use the collowing script.
+To onboard multiple subscriptions, use the following script.
 
 <!-- [ NOTE, TIP, IMPORTANT, CAUTION, and WARNING are supported. Case-sensitive.]  -->
 

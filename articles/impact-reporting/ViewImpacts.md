@@ -14,15 +14,15 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 > [!IMPORTANT]
 > Azure Impact Reporting is currently in PREVIEW. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
-You can leverage the following to view reported Impacts: 
+You can use the following channels to view reported Impacts: 
 1. Impact Reporting REST API
-2. Impact Reporting Azure Portal 
+2. Impact Reporting Azure portal 
 3. Query ARG
 
 #### [REST API](#tab/restapi/)
 ##### View Impacts using REST API: 
-You can leverage the Impact Reporting REST API to view previously filed impact reports.
-Please review the full [REST API reference](https://aka.ms/ImpactRP/APIDocs).
+You can use the Impact Reporting REST API to view previously filed impact reports.
+Review the full [REST API reference](https://aka.ms/ImpactRP/APIDocs).
 
 ##### View a single Impact Report
 
@@ -63,11 +63,11 @@ az rest --method GET --url "https://management.azure.com/subscriptions/<Subscrip
 
 ##### View Impacts and Insights using the Azure Portal 
 
-To view impacts on the Azure Portal, click the overview tab on the left panel and select the subscription along with the date range. This would show you a time series of reported impacts on the portal. 
+To view impacts on the Azure portal, click the Overview tab on the left panel and select the subscription along with the date range.
 
 #### [ARG](#tab/ARG/)
 ##### Queries
-To run these queries, go to the Azure Portal [ARG query blade](https://portal.azure.com/#view/HubsExtension/ArgQueryBlade)
+To run these queries, go to the Azure portal [ARG query blade](https://portal.azure.com/#view/HubsExtension/ArgQueryBlade)
 
 ##### Get all Impact reports that have Insights
 

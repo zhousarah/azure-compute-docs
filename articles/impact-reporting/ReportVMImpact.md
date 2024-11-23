@@ -23,7 +23,7 @@ You can call our REST API to file an impact report.
 
 ## Report Impact via Azure REST API
 
-Please review our full [REST API reference](https://aka.ms/ImpactRP/APIDocs) for more examples.
+Review our full [REST API reference](https://aka.ms/ImpactRP/APIDocs) for more examples.
 
 ```json
 {

@@ -1,6 +1,6 @@
 ---
 title: Azure Impact Reporting - View Impact Reports #Required; page title is displayed in search results. Include the brand.
-description: View reported impacts and insights from Microsoft AIOPs. #Required; article description that is displayed in search results. 
+description: View reported impacts and insights from Microsoft Intelligence Systems. #Required; article description that is displayed in search results. 
 author: rolandnyamo #Required; your GitHub user alias, with correct capitalization.
 ms.author: ronyamo #Required; microsoft alias of author; optional team alias.
 ms.topic: how-to #Required; leave this attribute/value as-is.
@@ -16,16 +16,16 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 ## Permissions needed
 You need either the "**Impact Reporter**" role or `read` action on `Microsoft.Impact/WorkloadImpact/*` at the right scope (root, subscription, or resource group).
 
-The following ways can be leveraged to view Impact Reports and/or insights: 
+The following channels can be used to view Impact Reports and/or insights: 
 1. REST API
 2. Query ARG 
-3. Azure Portal 
+3. Azure portal 
 
 
 #### [REST API](#tab/restapi/)
 ##### View Impacts using REST API: 
-You can leverage the Impact Reporting REST API to view previously filed impact reports.
-Please review the full [REST API reference](https://aka.ms/ImpactRP/APIDocs).
+You can use the Impact Reporting REST API to view previously filed impact reports.
+Review the full [REST API reference](https://aka.ms/ImpactRP/APIDocs).
 
 ##### View a single Impact Report
 
@@ -63,7 +63,7 @@ az rest --method GET --url "https://management.azure.com/subscriptions/<Subscrip
 ```
 
 #### [ARG](#tab/arg/)
-To run these queries, go to the Azure Portal [ARG query blade](https://portal.azure.com/#view/HubsExtension/ArgQueryBlade)
+To run these queries, go to the Azure portal [ARG query blade](https://portal.azure.com/#view/HubsExtension/ArgQueryBlade)
 
 ##### Get all Impact reports that have Insights
 
@@ -104,9 +104,9 @@ impactreportresources
 #### [Portal](#tab/portal/)
 1. Go to the Azure Impact Reporting Portal. Look for your subscription and select the date range. 
     ![image](images/ImpactReportingPortal.png) 
-2. Navigate to the bottom of the page to view the insights generated from the impacts. The tabular view will show the count of the insights for each of the resource name. 
+2. To view the insights generated from the impacts, navigate to the bottom of the page. The tabular view shows the count of the insights for each of the resource name. 
     ![image](images/Insights.png)
-3. Click on the insights count to see recommended actions for each of the insights
+3. Select the insight count to see recommended actions for each of the insights
     ![image](images/Recommended_Insights.png)
 
 ---
