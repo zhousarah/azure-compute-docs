@@ -31,15 +31,15 @@ Follow the steps below to register your subscription for Impact Reporting.
 1. Under this tab, filter for `Microsoft.Impact` in the `type` section
 ![image](images/preview.png)
 1. Click on `Allow Impact Reporting` feature and register
-1. After approval, please go to `Resource providers`, search for `Microsoft.Impact` and register
+1. After approval, go to `Resource providers`, search for `Microsoft.Impact` and register
 
-Once your request is approved, you will have the ability to report Impact to your Azure workloads.
+Once your request is approved, you be able to report Impact to your Azure workloads.
 
 ## Report Using Managed Identity
 
 ### Grant Required Permissions
 
-The principal reporting impacts needs to have the `Impact Reporter` Azure built-in role at the tenant, subscription, resource group, or resource level. This role provides the following actions:
+The principal reporting impacts must have the `Impact Reporter` Azure built-in role at the tenant, subscription, resource group, or resource level. This role provides the following actions:
 
 ```text
 "Microsoft.Impact/WorkloadImpacts/*",
@@ -47,8 +47,9 @@ The principal reporting impacts needs to have the `Impact Reporter` Azure built-
 
 ## Report Using curl or Powershell
 
-Below are some examples on how you may report impact from the cli.
-Please note that in this case the user reporting impact needs to have the `Impact Reporter` Azure resource role assigned at the right scope.
+> [!NOTE]
+> This case the user reporting impact needs to have the `Impact Reporter` Azure resource role assigned at the right scope.
+>
 
 #### [Powershell](#tab/powershell/)
 

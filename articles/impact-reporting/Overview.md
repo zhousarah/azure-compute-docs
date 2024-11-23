@@ -13,7 +13,7 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 > [!IMPORTANT]
 > Azure Impact Reporting is currently in PREVIEW. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
-Azure Impact Reporting enables you to report issues with performance, connectivity, and availability impacting your Azure workloads directly to Microsoft. It is an additional tool you can leverage and a quicker way to let us know that something might be wrong. These reports are used by Azure internal systems to aid in quality improvements and regression detection.
+Azure Impact Reporting enables you to leverage Azure Intelligence Systems to enhance your investigations through reporting suspected platform issues. In addition to providing you with insights if found, these impact reports are used in resource health modeling to determine service and resource health.
 
 ## What is an "Impact"?
 
