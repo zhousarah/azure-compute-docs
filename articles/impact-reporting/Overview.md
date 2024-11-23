@@ -17,13 +17,13 @@ Azure Impact Reporting enables you to leverage Azure Intelligence Systems to enh
 
 ## What is an "Impact"?
 
-In this context, an impact is any unexpected behavior or issue negatively affecting your workloads that has been root caused to the Azure platform.
+In this context, an impact is any unexpected behavior or issue negatively affecting your workloads suspected to be caused by the platform.
 
 Examples of impacts include:
 
-* Performance Impact: Your application's performance degrades suddenly, you investigate and realize that database writes to your IaaS SQL virtual machine are unusually slow.
-* Connectivity Impact: You're not able to successfully write to blob store despite having the right permissions
-* Availability: Your Azure virtual machine unexpectedly reboots
+* Unexpected VM reboot
+* Disk IO failures
+* High datapath latency 
 
 ## Next steps
 <!-- Add a context sentence for the following links -->
