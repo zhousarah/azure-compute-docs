@@ -13,8 +13,6 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 > [!IMPORTANT]
 > Azure Impact Reporting is currently in PREVIEW. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
-Below are steps needed to create an impact Connector for Azure Monitor Alerts
-
 ## Pre-Requisites
 | Type     | Details      |
 | ------------- | ------------- |
@@ -26,14 +24,14 @@ Below are steps needed to create an impact Connector for Azure Monitor Alerts
 #### [Command Line](#tab/cli/)
 
 The deployment scripts does the following:
-* Registers your subscription(s) for Azure Impact Reporting private preview (pre-requisite for using Connectors)
+* Registers your subscriptions for Azure Impact Reporting private preview (pre-requisite for using Connectors)
 * Creates a connector resource (`microsoft.impact/connector`)
-* This connector will report an impact whenever an alert from those subscriptions fires
+* This connector reports an impact whenever an alert from those subscriptions fires
 
 ##### 1. **Get the script**
 Go to the [Impact Reporting samples](https://github.com/Azure/impact-reporting-samples/tree/main/Onboarding/Connector/Scripts) githup repo and choose your script and choose either the bash or powershell script
 ##### 2. **Execute in your environment**
-You will need to execute this script in your Azure environment.
+You need to execute this script in your Azure environment.
 
 ###### **Powershell**
 * Single Subscription: `./CreateImpactReportingConnector.ps1 -SubscriptionId <subid>`
@@ -44,17 +42,16 @@ You will need to execute this script in your Azure environment.
 * Multiple subscriptions from file: `./create-impact-reporting-connector.sh --file_path './subscription_ids'`
 
 #### [Portal](#tab/portal/)
-Follow the steps below to create a Connector from the Azure Portal.
 
 1. Search for **Impact Reporting Connectors** in Azure portal search
 2. Click on the **Create** button on the left side in the page. The **Create Impact Reporting Connector** page opens
 
     ![Create Impact Reporting Connector page](images/create-connector.png)
 
-3. From the **Subscription** drop down select the subscription where the Connector will be created
+3. From the **Subscription** drop down, select the subscription for the Connector
 4. Under **Instance details**, enter *AzureMonitorConnector* for the **Connector name** and choose *AzureMonitor* for the **Connector type**.
 5. Select the **Review + create** button at the bottom of the page
-6. Once the validations have passed, and the **Review + Create** shows no error, click on **Create** at the bottom of the page
+6. Once validated and the **Review + Create** tab shows no error, create the connector
 
    ![Review + Create tab](images/review-and-create-tab.png) 
 
@@ -65,8 +62,8 @@ Follow the steps below to create a Connector from the Azure Portal.
 ## Assigning Azure-Alerts-Reader-Role to the Connector
 
 1. Navigate to your subscription, and select **Access Control (IAM)** from the navigation blade
-2. Click **Add** and then click **Add role assignment**. This will open the **Add role assignment** page. 
-3. Under the **Role** tab, in the search bar, type *Azure-Alerts-Reader-Role*. If this role does not exist, head to [Creating the Azure-Alerts-Reader-Role](#creating-the-azure-alerts-reader-role) to create this role. Once the role is created, return back to this step.
+2. Click **Add** and then click **Add role assignment**.
+3. On the **Add role assignment** page under the **Role** tab, in the search bar, type *Azure-Alerts-Reader-Role*. If this role does not exist, head to [Creating the Azure-Alerts-Reader-Role](#creating-the-azure-alerts-reader-role) to create this role. Once the role is created, return back to this step.
 
     ![Add custom role](images/Role%20Selection.png)
 
@@ -82,7 +79,7 @@ Follow the steps below to create a Connector from the Azure Portal.
 
 ## Creating the Azure-Alerts-Reader-Role
 1. Navigate to your subscription, and select **Access Control (IAM)** from the navigation blade
-2. Click **Add** and then click **Add custom role**. This will open the **Create a custom role** page
+2. Click **Add** and then click **Add custom role**. This opens the **Create a custom role** page
 
     ![Add custom role](images/Add%20Custom%20Role.png)
 
