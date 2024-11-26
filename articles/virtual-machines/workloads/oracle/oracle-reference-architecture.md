@@ -18,14 +18,14 @@ If you're interested in learning more about maximizing the performance of your O
 
 ## Prerequisites
 
-- An understanding of the different concepts of Azure such as [availability zones](/azure/availability-zones/az-overview)
+- An understanding of the different concepts of Azure such as [availability zones](/azure/reliability/availability-zones-overview)
 - Oracle Database Enterprise Edition 12c or later
 - Awareness of the licensing implications when using the solutions in this article
 - Defined RPO and RTO Requirements
 
 ## High availability for Oracle databases
 
-Achieving high availability in the cloud is an important part of every organization's planning and design. Azure offers [availability zones](/azure/availability-zones/az-overview) and *availability sets* to be used in regions where availability zones are unavailable. For more information about how to design for the cloud, see [Availability options for Azure Virtual Machines](../../availability.md).
+Achieving high availability in the cloud is an important part of every organization's planning and design. Azure offers [availability zones](/azure/reliability/availability-zones-overview) and *availability sets* to be used in regions where availability zones are unavailable. For more information about how to design for the cloud, see [Availability options for Azure Virtual Machines](../../availability.md).
 
 In addition to cloud-native tools and offerings, Oracle provides solutions for high availability that can be set up on Azure:
 
@@ -44,7 +44,7 @@ Oracle Real Application Cluster (RAC) is a solution by Oracle to help customers 
 
 Customers generally require a high SLA to run mission critical applications. Oracle doesn't currently certify or support Oracle RAC on Azure. However, Azure offers features such as availability zones and planned maintenance windows to help protect against instance-level failures. In addition to these offerings, you can use Oracle Data Guard, Oracle GoldenGate, and Oracle Sharding for high performance and resiliency. These technologies can help protect your databases from rack-level, datacenter-level, and geo-political failures.
 
-When you run Oracle Databases on multiple [availability zones](/azure/availability-zones/az-overview) with Oracle Data Guard or GoldenGate, you can get an uptime SLA of 99.99%. In Azure regions where availability zones aren't yet present, you can use [availability sets](../../availability-set-overview.md) and achieve an uptime SLA of 99.95%.
+When you run Oracle Databases on multiple [availability zones](/azure/reliability/availability-zones-overview) with Oracle Data Guard or GoldenGate, you can get an uptime SLA of 99.99%. In Azure regions where availability zones aren't yet present, you can use [availability sets](../../availability-set-overview.md) and achieve an uptime SLA of 99.95%.
 
 > [!NOTE]
 > You can have a uptime target that is much higher than the uptime SLA provided by Microsoft.
@@ -53,8 +53,7 @@ When you run Oracle Databases on multiple [availability zones](/azure/availabili
 
 When hosting your mission-critical applications in the cloud, it's important to design for high availability and disaster recovery.
 
-For Oracle Database Enterprise Edition, Oracle Data Guard is a useful feature for disaster recovery. You can set up a standby database instance in another Availability Zone or in a [paired Azure region](/azure/availability-zones/cross-region-replication-azure). The type of deployment is decisive of your RPO/ RTO and geo-redundancy requirements. Within a region it is recommended to leverage Data Guard, while for a replication across regions it is recommended by Oracle to leverage Active Data Guard in async mode.
-In addition to that you can deploy Data Guard and Active Data Guard for automatic or manual failover and switchover for disaster recovery. This feature is also called [Fast-Start-Failover (FSFO)](https://docs.oracle.com/en/database/oracle/oracle-database/23/dgbkr/oracle-data-guard-broker-installation-requirements.html).
+For Oracle Database Enterprise Edition, Oracle Data Guard is a useful feature for disaster recovery. You can set up a standby database instance in a [paired Azure region](/azure/reliability/cross-region-replication-azure) and set up Data Guard failover for disaster recovery. For zero data loss, we recommend that you deploy an Oracle Data Guard Far Sync instance in addition to Active Data Guard.
 
 For long distance data replication, it is recommended to leverage Far Sync. Far Sync is an Oracle Active Data Guard Feature. 
 

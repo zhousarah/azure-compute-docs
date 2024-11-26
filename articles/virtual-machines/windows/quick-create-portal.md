@@ -67,13 +67,11 @@ Create a remote desktop connection to the virtual machine. These directions tell
 
 2. In the **Connect with RDP** tab, keep the default options to connect by IP address, over port 3389, and click **Download RDP file**.
 
-    :::image type="content" source="media/quick-create-portal/remote-desktop.png" alt-text="Screenshot showing the remote desktop settings and the Download RDP file button.":::
+3. Open the downloaded RDP file and click **Connect** when prompted.
 
-2. Open the downloaded RDP file and click **Connect** when prompted.
+4. In the **Windows Security** window, select **More choices** and then **Use a different account**. Type the username as **localhost**\\*username*, enter the password you created for the virtual machine, and then click **OK**.
 
-3. In the **Windows Security** window, select **More choices** and then **Use a different account**. Type the username as **localhost**\\*username*, enter the password you created for the virtual machine, and then click **OK**.
-
-4. You may receive a certificate warning during the sign-in process. Click **Yes** or **Continue** to create the connection.
+5. You may receive a certificate warning during the sign-in process. Click **Yes** or **Continue** to create the connection.
 
 ## Install web server
 

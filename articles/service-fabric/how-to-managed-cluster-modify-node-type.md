@@ -41,7 +41,6 @@ You can add a node type to a Service Fabric managed cluster through Portal, an A
 1) Sign in to [Azure portal](https://portal.azure.com/)
 
 2) Navigate to your cluster resource Overview page. 
-![Sample Overview page][overview]
 
 3) Select `Node types` under the `Settings` section 
 ![Node Types view][addremove]
@@ -481,7 +480,6 @@ Implement the following ARM template changes to set the computer name prefix:
 > [Deploy an app to a Service Fabric managed cluster](./tutorial-managed-cluster-deploy-app.md)
 
 
-[overview]: ./media/how-to-managed-cluster-modify-node-type/sfmc-overview.png
 [node-type-updating]: ./media/how-to-managed-cluster-modify-node-type/sfmc-adjust-node-type-updating.png
 [adjust-node-count]: ./media/how-to-managed-cluster-modify-node-type/sfmc-adjust-node-counts-new.png
 [manual-scale-setting]: ./media/how-to-managed-cluster-modify-node-type/sfmc-manual-scale-setting.png
