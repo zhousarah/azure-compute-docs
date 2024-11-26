@@ -79,7 +79,7 @@ This so called OperationTimeout is part of the [Data Guard properties](https://d
 
 #### How does Data Guard work with this property
 
-Data Guards task is to monitor continously the health and the status of the primary and the secondary Database. As soon as you enable Fast-Start-Failover (FSFO), the observer process is triggered and reviews the health status at a regular interval to ensure high availability at any given time. 
+Data Guards task is to monitor continuously the health and the status of the primary and the secondary Database. As soon as you enable Fast-Start-Failover (FSFO), the observer process is triggered and reviews the health status at a regular interval to ensure high availability at any given time. 
 
 Now, if the primary Database becomes unavailable, the observer and Data Guard Broker detect this interruption. Thereby, the OperationTimeout parameter of 30 seconds specifies how long the Broker should wait for a response from the primary database before taking any further action. 
 
@@ -98,7 +98,7 @@ This feature can provide additional resiliency by setting up the observer on a s
 With Oracle Database version 12.2 and above, it's also possible to configure multiple observers with a single Oracle Data Guard broker configuration. It provides extra availability, in case one observer and the secondary database experience downtime.
 For more information about Data Guard Broker and its advantages, see [Oracle Data Guard Broker Concepts](https://docs.oracle.com/en/database/oracle/oracle-database/19/dgbkr/oracle-data-guard-broker-concepts.html#GUID-723E5B73-A350-4B2E-AF3C-5EA4EFC8396).
 
-The following diagram shows a Oracle Data Guard installation without Far Sync with a recovery time of lesser than 5 minutes. 
+The following diagram shows an Oracle Data Guard installation without Far Sync with a recovery time of lesser than 5 minutes. 
 
 :::image type="content" source="./media/oracle-reference-architecture/oracle-dg-architecture.svg" alt-text="Diagram that shows an Oracle Data Guard Architecture...":::
 
@@ -107,20 +107,20 @@ The Oracle databases are placed in multiple availability zones for high availabi
 > [!NOTE]
 > When you plan for a symmetrical Data Guard deployment, please note that you will need one more observer in availability zone three.
 
-Additionally, we highly recommend to deploy the Oracle Enterprise Manager to keep having an overview of the database layer.
+Additionally, we highly recommend deploying the Oracle Enterprise Manager to keep having an overview of the database layer.
 Azure Monitor is recommended to be deployed with the following metrics:
 Monitor the disks:
 - OS Disk IOPS Consumed Percentage  
 - Data Disk IOPS Consumed Percentage 
 - Data Disk Read Bytes/Sec  
-- Data Disk Write Bytes/Sec  
+- Data Disk Writes Bytes/Sec  
 - Disk Queue Depth
 - Disk Bandwidth in % per Lun
 
-In addition to the above we highly recommend to enable the VM insights also.
+In addition to the above we highly recommend enabling the VM insights also.
 
 The Virtual Machine is chosen based on your AWR assessment. Please review [Oracle Capacity Planning](/azure/cloud-adoption-framework/scenarios/oracle-iaas/oracle-capacity-planning) for further read.
-We highly recommend to make use of [constrained core vCPUs](../../../virtual-machines/constrained-vcpu.md) to save on licensing costs and maximize performance. 
+We highly recommend making use of [constrained core vCPUs](../../../virtual-machines/constrained-vcpu.md) to save on licensing costs and maximize performance. 
 
 The choice of disk type is dependent on the output of your AWR assessment. 
 
