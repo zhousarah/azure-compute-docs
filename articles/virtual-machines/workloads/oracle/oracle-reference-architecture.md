@@ -100,7 +100,7 @@ For more information about Data Guard Broker and its advantages, see [Oracle Dat
 
 The following diagram shows an Oracle Data Guard installation without Far Sync with a recovery time of lesser than 5 minutes. 
 
-:::image type="content" source="./media/oracle-reference-architecture/oracle-dg-architecture.svg" alt-text="Diagram that shows an Oracle Data Guard Architecture...":::
+:::image type="content" source="./media/oracle-reference-architecture/oracle-dg-architecture.svg" alt-text="Diagram that shows an Oracle Data Guard Architecture.":::
 
 The Oracle databases are placed in multiple availability zones for high availability. Each zone is made up of one or more data centers equipped with independent power, cooling, and networking. To ensure resiliency, a minimum of three separate zones are set up in all enabled regions. The physical separation of availability zones within a region protects the data from data center failures. Additionally, two FSFO observers are set up across two availability zones to initiate the failover to the secondary database in case of failure.
 
