@@ -101,7 +101,7 @@ For more information about Data Guard Broker and its advantages, see [Oracle Dat
 
 The following diagram shows a Oracle Data Guard installation without Far Sync with a recovery time of lesser than 5 minutes. 
 
-:::image type="content" source="./media/oracle-reference-architecture/oracle_dg_architecture.svg" alt-text="Oracle Data Guard Architecture":::
+:::image type="content" source="./media/oracle-reference-architecture/oracle-dg-architecture.svg" alt-text="Diagram that shows an Oracle Data Guard Architecture...":::
 
 The Oracle databases are placed in multiple availability zones for high availability. Each zone is made up of one or more data centers equipped with independent power, cooling, and networking. To ensure resiliency, a minimum of three separate zones are set up in all enabled regions. The physical separation of availability zones within a region protects the data from data center failures. Additionally, two FSFO observers are set up across two availability zones to initiate the failover to the secondary database in case of failure.
 
@@ -138,7 +138,7 @@ For zero data loss protection, there must be synchronous communication between y
 
 The following diagram is an architecture that uses Oracle Active Data Guard FSFO and Far Sync to achieve high availability and disaster recovery: 
 
-:::image type="content" source="./media/oracle-reference-architecture/Architecture_Far_sync.svg" alt-text="Diagram that shows Oracle Database using Far Sync in an Active Data Guard configuration across regions." lightbox="./media/oracle-reference-architecture/Architecture_Far_sync.svg":::
+:::image type="content" source="./media/oracle-reference-architecture/architecture-far-sync.png" alt-text="Diagram that shows Oracle Database using Far Sync in an Active Data Guard configuration across regions." lightbox="./media/oracle-reference-architecture/architecture-far-sync.png":::
 
 > [!NOTE]
 > When you plan for a symmetrical Far Sync deployment, please note that you will need one more Far Sync instance in the second region.
