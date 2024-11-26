@@ -55,7 +55,7 @@ The following PAYG RHEL and SLES Marketplace offers are AHB eligible:
 
 ##### [RHEL PAYG](#tab/ahbRhelPayg)
 ##### RHEL PAYG offers that are ABH eligible:
-**Note: all of the RHEL PAYG eligible offers must have Red Hat, Inc. as the publisher.**
+**All of the RHEL PAYG eligible offers must have Red Hat, Inc. as the publisher.**
 
 The names of the eligible offers are listed below, with links to them in the Azure Marketplace.
 Within these offers, the associated images will be described as 'Pay-As-You-Go'.
@@ -70,17 +70,35 @@ Within these offers, the associated images will be described as 'Pay-As-You-Go'.
 
 ##### [SLES PAYG](#tab/ahbSlesPayg)
 ##### SLES PAYG offers that are ABH eligible:
-**Note: all of the SLES PAYG eligible offers must have SUSE as the publisher.**
-XXXXX
-XXXXX
+**All of the SLES PAYG eligible offers must have SUSE as the publisher.**
 
+The names of the eligible offers are listed below, with links to them in the Azure Marketplace.
+Within these offers, the associated plans and images will be described as a 'Pay as You Go' subscription of SLES.
+* [SUSE Enterprise Linux 15 SP5 + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-15-sp5?tab=Overview)
+* [SUSE Enterprise Linux 15 SP5 arm64 + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-15-sp5-arm64?tab=Overview)
+* [SUSE Enterprise Linux 15 SP5 + Patching](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-15-sp5-basic?tab=Overview)
+* [SUSE Enterprise Linux for SAP 15 SP5 + 24x7 Support (CVM)](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-sap-15-sp5-cvm?tab=Overview)
+* [SUSE Enterprise Linux 15 SP6 + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-15-sp6?tab=Overview)
+* [SUSE Enterprise Linux 15 SP6 arm64 + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-15-sp6-arm64?tab=PlansAndPrice)
+* [SUSE Enterprise Linux 15 SP6 + Patching](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-15-sp6-basic?tab=Overview)
+* [SUSE Enterprise Linux for SAP 12 SP5 + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-sap-12-sp5?tab=Overview)
+* [SUSE Enterprise Linux for SAP 15 SP1 + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-sap-15-sp1?tab=Overview)
+* [SUSE Enterprise Linux for SAP 15 SP3 + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-sap-15-sp3?tab=Overview)
+* [SUSE Enterprise Linux for SAP 15 SP4 + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-sap-15-sp4?tab=Overview)
+* [SUSE Enterprise Linux for SAP 15 SP4 Hardened + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-sap-15-sp4-hardened?tab=Overview)
+* [SUSE Enterprise Linux for SAP 15 SP5 + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-sap-15-sp5?tab=Overview)
+* [SUSE Enterprise Linux for SAP 15 SP5 + 24x7 Support (CVM)](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-sap-15-sp5-cvm?tab=Overview)
+* [SUSE Enterprise Linux for SAP 15 SP5 Hardened + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-sap-15-sp5-hardened?tab=Overview)
+* [SUSE Enterprise Linux for SAP 15 SP6 + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-sap-15-sp6?tab=Overview)
+* [SUSE Enterprise Linux for SAP 15 SP6 Hardened + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-sap-15-sp6-hardened?tab=Overview)
 
 ---
 
 ### BYOS
 Azure Hybrid Benefit is also available for BYOS RHEL and SLES Marketplace images. 
-There is currently one RHEL BYOS offer available, which is a private offer. 
-To gain access to this offer, it is necessary to join Red Hat's Cloud Access program. 
+There is currently one RHEL BYOS offer available, which is a private listing. 
+To gain access to this private listing, it is necessary to join Red Hat's Cloud Access program. 
+
 SLES BYOS Marketplace offers can be identified by their name, which denotes them as BYOS, for example, 'SUSE Enterprise Linux 12 SP5 - BYOS'.
 
 
