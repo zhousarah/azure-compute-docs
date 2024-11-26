@@ -12,15 +12,17 @@ ms.custom: mvc, linux-related-content
 
 # What is Azure Container Instances?
 
-Containers are becoming the preferred way to package, deploy, and manage cloud applications. Azure Container Instances offers the fastest and simplest way to run a container in Azure, without having to manage any virtual machines and without having to adopt a higher-level service.
+Containers are becoming the preferred way to package, deploy, and manage cloud applications. Azure Container Instances offers the fastest and simplest way to run Linux or Windows containers in Azure, without having to manage any virtual machines and without having to adopt a higher-level service.
 
-ACI supports [regular](container-instances-container-groups.md), [confidential](container-instances-confidential-overview.md), and [Spot](container-instances-spot-containers-overview.md) containers. ACI can be used as [single-instance](container-instances-container-groups.md) or multi-instance via [NGroups](container-instance-ngroups/container-instances-about-ngroups.md), or you can get orchestration capabilities by deploying pods in your Azure Kubernetes Service (AKS) cluster via [virtual nodes on ACI](container-instances-virtual-nodes.md).
+ACI supports [regular](container-instances-container-groups.md), [confidential](container-instances-confidential-overview.md), and [Spot](container-instances-spot-containers-overview.md) containers. ACI can be used as [single-instance](container-instances-container-groups.md) or multi-instance via [NGroups](container-instance-ngroups/container-instances-about-ngroups.md), or you can get orchestration capabilities by deploying pods in your Azure Kubernetes Service (AKS) cluster via [virtual nodes on ACI](container-instances-virtual-nodes.md). For even faster startup times, ACI supports [standby pools](container-instances-standby-pool-overview.md).
 
 ## Fast startup times
 
 Containers offer significant startup benefits over virtual machines (VMs). Azure Container Instances can start containers in Azure in seconds, without the need to provision and manage VMs.
 
 Bring Linux or Windows container images from Docker Hub, a private [Azure container registry](/azure/container-registry/), or another cloud-based Docker registry. Visit the [FAQ](container-instances-faq.yml) to learn which registries ACI supports. Azure Container Instances caches several common base OS images, helping speed deployment of your custom application images.
+
+For even faster startup times, ACI supports [standby pools](container-instances-standby-pool-overview.md).
 
 ## Container access
 
