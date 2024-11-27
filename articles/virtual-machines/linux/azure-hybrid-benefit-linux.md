@@ -14,29 +14,95 @@ ms.reviewer: mattmcinnes
 ms.custom: kr2b-contr-experiment, linux-related-content, devx-track-azurecli
 ---
 
-# Azure Hybrid Benefit for Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise Server (SLES) virtual machines
+# Azure Hybrid Benefit for Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise Server (SLES) Virtual Machines
 
-Azure Hybrid Benefit (AHB) for Linux lets you easily switch the software subscription model for your VM. You can remove licensing cost by bringing your Red Hat and SUSE Linux subscriptions directly to Azure, or utilize a model where you pay for subscriptions as you use them. This article defines 'BYOS' and 'PAYG' licensing models, compares the benefits of each model, and shows how you can use the Azure Hybrid Benefit to switch between the two at any point. This process applies to Virtual Machine Scale Sets, Spot Virtual Machines, and custom images. It allows for seamless bi-directional conversions between the two models.
+Azure Hybrid Benefit (AHB) for Linux lets you easily switch the software subscription model for your VM, enabling flexibility and savings.
+The conversion between subscription models is accomplished without a redeployment of your VM, avoiding any downtime risk.
 
-Customers may see combined savings estimated to up to 76% with Azure Hybrid Benefit for Linux and three-year Azure Reserved VM Instances. Savings estimates are based on one standard D2s v5 Azure VM with RHEL or SLES subscription in the East US region running at a pay-as-you-go rate vs a reduced rate for a three-year reserved instance plan. Based on Azure pricing as of September 2024. Prices subject to change. Actual savings may vary based on location, instance type, or usage.
+There are two subscription models on Azure which you can switch seamlessly between using Azure Hybrid Benefit. 
+* The first enables you to bring your own REHL or SLES subscription directly to Azure.
+With this Bring-Your-Own-Subscription (BYOS) model, you only pay Azure for the infrastructure costs of your VM as the software fee is covered by your RHEL or SLES subscription.
+
+* The second pay-as-you-go model enables you to pay for RHEL and SLES subscriptions as you use them. 
+
+This article further defines BYOS and pay-as-you-go subscription models, compares the benefits of each model, and shows how you can use the Azure Hybrid Benefit to switch between the two at any point. 
+This process applies to Virtual Machine Scale Sets, Spot Virtual Machines, and custom images. 
+Azure Hybrid Benefit allows for seamless bi-directional conversions between the two subscription models on eligible VM instances.
+
+Customers may see combined savings estimated to up to 76% with Azure Hybrid Benefit for Linux and three-year Azure Reserved VM Instances. 
+Savings estimates are based on one standard D2s v5 Azure VM with RHEL or SLES subscription in the East US region running at a pay-as-you-go rate vs a reduced rate for a three-year reserved instance plan. 
+Based on Azure pricing as of September 2024. Prices subject to change. Actual savings may vary based on location, instance type, or usage.
 
 > [!TIP]
 > Try the **[Azure Hybrid Benefit Savings Calculator](https://azure.microsoft.com/pricing/hybrid-benefit/#calculator)** to visualize the cost saving benefits of this feature.
 
-## Defining Pay-as-you-go (PAYG) and Bring-your-own-subscription (BYOS)
+## Defining pay-as-you-go and Bring-Your-Own-Subscription (BYOS)
 
-In Azure, there are two main licensing pricing options: 'pay-as-you-go' (PAYG) and 'bring-your-own-subscription' (BYOS). 'PAYG' is a pricing option where you pay for the resources you use on an hourly or monthly basis. You only pay for what you use and can scale up or down as needed. On the other hand, 'BYOS' is a licensing option where you can use your existing licenses for certain software, in this case RHEL and SLES, on Azure virtual machines. You can use your existing licenses and don't have to purchase new ones for use in Azure.
+In Azure, there are two main licensing pricing options: Pay-as-you-go and Bring-Your-Own-Subscription (BYOS). 
+With pay-as-you-go models you only pay for the resources you use and can scale up or down as needed. 
+BYOS enables you to use your existing license subscriptions, in this case RHEL and SLES, with no need to pay license fees in Azure.
 
 :::image type="content" source="./media/ahb-linux/azure-hybrid-benefit-compare.png" alt-text="Diagram that shows the use of Azure Hybrid Benefit to switch Linux virtual machines between pay-as-you-go and bring-your-own-subscription.":::
 
 > [!NOTE]
 > Virtual machines deployed from PAYG images or VMs converted from BYOS models incur *both* an infrastructure fee and a software fee. If you have your own license, use Azure Hybrid Benefit to convert from a PAYG to BYOS model.
 
-You can use Azure Hybrid Benefit to switch back to pay-as-you-go billing at any time.
+You can use Azure Hybrid Benefit to switch between the two license options at any time.
 
-## Which Linux virtual machines qualify for Azure Hybrid Benefit?
+## Which Linux Virtual Machines are Eligible for Azure Hybrid Benefit 
+### Pay-as-you-go 
+The following pay-as-you-go RHEL and SLES Marketplace offers are AHB eligible:
 
-Azure dedicated host instances and SQL hybrid benefits aren't eligible for Azure Hybrid Benefit if you already use Azure Hybrid Benefit with Linux virtual machines.
+##### [RHEL pay-as-you-go](#tab/ahbRhelPayg)
+##### RHEL pay-as-you-go offers that are ABH eligible:
+**All of the RHEL pay-as-you-go eligible offers must have Red Hat, Inc. as the publisher.**
+
+The names of the eligible offers are listed below, with links to them in the Azure Marketplace.
+Within these offers, the associated images will be described as 'Pay-As-You-Go'.
+
+* [Red Hat Enterprise Linux ( RHEL )](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/redhat.rhel-20190605?tab=Overview)
+* [Red Hat Enterprise Linux ( RHEL ) for SAP Apps](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/redhat.rhel-sap-apps?tab=Overview)
+* [RHEL for SAP with HA and Update Services](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/redhat.rhel-sap-ha?tab=Overview)
+* [Red Hat Enterprise Linux ( RHEL ) with High Availability ( HA ) Add-On](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/redhat.rhel-ha?tab=Overview)
+* [Red Hat Enterprise Linux ( RHEL ) Arm64](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/redhat.rhel-arm64?tab=Overview)
+* [Red Hat Enterprise Linux Confidential VM](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/redhat.rhel-cvm?tab=Overview)
+* [Red Hat Enterprise Linux ( RHEL ) RAW](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/redhat.rhel-raw?tab=Overview)
+
+##### [SLES pay-as-you-go](#tab/ahbSlesPayg)
+##### SLES pay-as-you-go offers that are ABH eligible:
+**All of the SLES pay-as-you-go eligible offers must have SUSE as the publisher.**
+
+The names of the eligible offers are listed below, with links to them in the Azure Marketplace.
+Within these offers, the associated plans and images will be described as a 'Pay as You Go' subscription of SLES.
+* [SUSE Enterprise Linux 15 SP5 + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-15-sp5?tab=Overview)
+* [SUSE Enterprise Linux 15 SP5 Arm64 + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-15-sp5-arm64?tab=Overview)
+* [SUSE Enterprise Linux 15 SP5 + Patching](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-15-sp5-basic?tab=Overview)
+* [SUSE Enterprise Linux for SAP 15 SP5 + 24x7 Support (CVM)](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-sap-15-sp5-cvm?tab=Overview)
+* [SUSE Enterprise Linux 15 SP6 + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-15-sp6?tab=Overview)
+* [SUSE Enterprise Linux 15 SP6 Arm64 + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-15-sp6-arm64?tab=PlansAndPrice)
+* [SUSE Enterprise Linux 15 SP6 + Patching](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-15-sp6-basic?tab=Overview)
+* [SUSE Enterprise Linux for SAP 12 SP5 + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-sap-12-sp5?tab=Overview)
+* [SUSE Enterprise Linux for SAP 15 SP1 + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-sap-15-sp1?tab=Overview)
+* [SUSE Enterprise Linux for SAP 15 SP3 + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-sap-15-sp3?tab=Overview)
+* [SUSE Enterprise Linux for SAP 15 SP4 + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-sap-15-sp4?tab=Overview)
+* [SUSE Enterprise Linux for SAP 15 SP4 Hardened + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-sap-15-sp4-hardened?tab=Overview)
+* [SUSE Enterprise Linux for SAP 15 SP5 + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-sap-15-sp5?tab=Overview)
+* [SUSE Enterprise Linux for SAP 15 SP5 + 24x7 Support (CVM)](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-sap-15-sp5-cvm?tab=Overview)
+* [SUSE Enterprise Linux for SAP 15 SP5 Hardened + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-sap-15-sp5-hardened?tab=Overview)
+* [SUSE Enterprise Linux for SAP 15 SP6 + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-sap-15-sp6?tab=Overview)
+* [SUSE Enterprise Linux for SAP 15 SP6 Hardened + 24x7 Support](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/suse.sles-sap-15-sp6-hardened?tab=Overview)
+
+---
+
+### BYOS
+Azure Hybrid Benefit is also available for BYOS RHEL and SLES Marketplace images. 
+There is currently one RHEL BYOS offer available, which is a private listing. 
+To gain access to this private listing, it is necessary to join Red Hat's Cloud Access program. 
+
+SLES BYOS Marketplace offers can be identified by their name, which denotes them as BYOS, for example, 'SUSE Enterprise Linux 12 SP5 - BYOS'.
+
+
+Additionally, please note that Azure dedicated host instances and SQL hybrid benefits aren't eligible for Azure Hybrid Benefit if you already use Azure Hybrid Benefit with Linux virtual machines.
 
 > [!NOTE]
 > For Red Hat VMs, the Azure account needs to be part of the Red Hat Cloud Access. Register with Red Hat Cloud Access before you try to enable Azure Hybrid Benefit on your VMs.
