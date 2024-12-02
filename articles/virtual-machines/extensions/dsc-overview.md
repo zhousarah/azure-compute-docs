@@ -169,9 +169,6 @@ To set up the DSC extension in the Azure portal, follow these steps:
 
    - **Configuration Arguments**: If the configuration function takes arguments, enter the values by using the format `argumentName1=value1,argumentName2=value2`. Notice that this format differs from the format that's used to specify configuration arguments in PowerShell cmdlets or ARM templates.
 
-      > [!Note]
-      > The configuration arguments can be defined in a [default configuration script](#default-configuration-script).
-
    - **Configuration Data PSD1 File**: If your configuration requires a configuration data file in .psd1 format, use this setting to select the data file and upload it to your user Blob Storage. The configuration data file is secured with an SAS token in Blob Storage.
 
    - **WMF Version**: Specify the version of Windows Management Framework to install on your VM. If you choose **latest**, which is the default value, the system installs the most recent version of WMF. Other possible values include 4.0, 5.0, and 5.1. The possible values are subject to updates.
