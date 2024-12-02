@@ -58,7 +58,7 @@ This article assumes familiarity with the following concepts:
 
 ## Architecture
 
-The Azure DSC extension uses the Azure VM Extension framework to deliver, enact, and report on DSC configurations running on Azure VMs. The DSC extension accepts a configuration document and a set of parameters. If no file is provided, a [default configuration script](#default-configuration-script) is embedded with the extension. The default configuration script is used only to set metadata in [Local Configuration Manager](/powershell/dsc/managing-nodes/metaConfig).
+The Azure DSC extension uses the Azure VM Extension framework to deliver, enact, and report on DSC configurations running on Azure VMs. The DSC extension accepts a configuration document and a set of parameters.
 
 When the extension is called the first time, it installs a version of WMF by using the following logic:
 
