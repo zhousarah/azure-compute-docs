@@ -85,7 +85,7 @@ resource configuration_dscext 'Microsoft.Compute/virtualMachines/extensions@2024
 A virtual machine scale set node has a section that includes an **extensionProfile** attribute.
 Under **extensions**, add the details for DSC Extension.
 
-For the latest details about authoring templates that deploy extensions for VMSS,
+For the latest details about authoring templates that deploy extensions for Virtual Machine Scale Sets,
 see the document [Microsoft.Compute virtualMachineScaleSets](/azure/templates/microsoft.compute/virtualmachinescalesets?pivots=deployment-language-bicep)
 
 The DSC extension inherits default extension properties.
