@@ -6,7 +6,7 @@ ms.service: azure-virtual-machines
 ms.collection: windows
 author: nikhilpatel909
 ms.author: jushiman
-ms.date: 03/10/2023
+ms.date: 12/02/2024
 ms.topic: how-to
 ms.reviewer: jushiman
 ms.custom: devx-track-azurecli
@@ -83,6 +83,9 @@ The entity was not found in this Azure location
 | **SetRDPPort** | Sets the default or user-specified port number for Remote Desktop connections. Enables firewall rules for inbound access to the port. |
 
 ## Azure CLI
+
+> [!NOTE]
+> Depending on which modality is used to execute, some escaping may be needed. For example, if you're executing the command in a PowerShell session, the path to the script file will need to have quotes.
 
 The following example uses the [az vm run-command](/cli/azure/vm/run-command#az-vm-run-command-invoke) command to run a shell script on an Azure Windows VM.
 
