@@ -25,7 +25,7 @@ This article describes the Azure Resource Manager template for the [Desired Stat
 > [!NOTE]
 > You might encounter slightly different schema examples. The change in schema occurred in the October 2016 release. For details, see [Update from a previous format](#update-from-a-previous-format).
 
-## Bicep example for a Windows VM
+## Bicep example for a VM
 
 The DSC extension inherits default extension properties.
 For more information, see
@@ -92,7 +92,7 @@ The DSC extension inherits default extension properties.
 For more information,
 see [VirtualMachineScaleSetExtension class](/dotnet/api/microsoft.azure.management.compute.models.virtualmachinescalesetextension).
 
-## settings vs. protectedSettings
+## Settings vs. protectedSettings
 
 All settings are saved in a settings text file on the VM.
 Properties listed under **settings** are public properties.
@@ -210,7 +210,7 @@ The only possible values are '', 'Enable', and 'Disable'".
 "WmfVersion is '{0}'.
 Only possible values are … and 'latest'".
 
-**Problem**: A provided value is not allowed.
+**Problem**: A provided value isn't allowed.
 
 **Solution**: Change the invalid value to a valid value.
 
@@ -220,30 +220,11 @@ Only possible values are … and 'latest'".
 "DataBlobUri is '{0}'. This is not a valid URL"
 "Configuration.url is '{0}'. This is not a valid URL"
 
-**Problem**: A provided URL is not valid.
+**Problem**: A provided URL isn't valid.
 
 **Solution**: Check all your provided URLs.
 Ensure that all URLs resolve to valid locations
 that the extension can access on the remote machine.
-
-### Invalid RegistrationKey type
-
-"Invalid type for parameter RegistrationKey of type PSCredential."
-
-**Problem**: The *RegistrationKey* value in protectedSettings.configurationArguments
-cannot be provided as any type other than a PSCredential.
-
-**Solution**: Change your protectedSettings.configurationArguments entry for
-RegistrationKey to a PSCredential type using the following format:
-
-```json
-"configurationArguments": {
-    "RegistrationKey": {
-        "userName": "NOT_USED",
-        "Password": "RegistrationKey"
-    }
-}
-```
 
 ### Invalid ConfigurationArgument type
 
