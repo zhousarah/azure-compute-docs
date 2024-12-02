@@ -213,7 +213,6 @@ Only possible values are … and 'latest'".
 **Problem**: A provided value is not allowed.
 
 **Solution**: Change the invalid value to a valid value.
-For more information, see the table in [Details](#details).
 
 ### Invalid URL
 
