@@ -18,6 +18,10 @@ sections:
   - name: Top frequently asked questions for scale sets
     questions:
       - question: |
+          How much does it cost to use Virtual Machine Scale Sets?
+        answer: |
+          You pay for the underlying resources that are used by your scale set, such as virtual machines, storage, and networking resources. There is no additional charge for the scale set itself.  
+      - question: |
           How many VMs can I have in a scale set?
         answer: |
           A scale set can have 0 to 1,000 virtual machines (VMs) based on platform images, or 0 to 600 VMs based on custom images.
