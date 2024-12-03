@@ -33,12 +33,12 @@ For classic VMs, only deploying new VM from on premises custom images is support
  
 
 ## Ways to use Azure Hybrid Benefit for Windows Server
-There are few ways to use Windows virtual machines with the Azure Hybrid Benefit:
+There are a few ways to use Windows virtual machines with the Azure Hybrid Benefit:
 
-1. You can deploy VMs from one of the provided  Windows Server images on the Azure Marketplace
-2. You can  upload a custom VM and deploy using a Resource Manager template or Azure PowerShell
-3. You can toggle and convert existing VM between running with Azure Hybrid Benefit or pay on-demand cost for Windows Server
-4. You can also apply Azure Hybrid Benefit for Windows Server on virtual machine scale set as well
+* You can deploy VMs from one of the provided  Windows Server images on the Azure Marketplace
+* You can  upload a custom VM and deploy using a Resource Manager template or Azure PowerShell
+* You can toggle and convert existing VM between running with Azure Hybrid Benefit or pay on-demand cost for Windows Server
+* You can also apply Azure Hybrid Benefit for Windows Server on virtual machine scale set as well
 
 
 ## Create a VM with Azure Hybrid Benefit for Windows Server
@@ -154,7 +154,7 @@ To see and count all virtual machines and virtual machine scale sets deployed wi
 ### Portal
 From the Virtual Machine or Virtual machine scale sets resource blade, you can view a list of all your VM(s) and licensing type by configuring the table column to include "OS licensing benefit". The VM can be under **Azure Hybrid Benefit for Windows**, **Not enabled**, or **Windows client with multi-tenant hosting** states.
 
-![VM in Azure Portal ](./media/hybrid-use-benefit-licensing/vm_setting_in_azure_portal3.png)
+![Screenshot of VM in Azure Portal](./media/hybrid-use-benefit-licensing/vm_setting_in_azure_portal.png)
 
 
 ### PowerShell
