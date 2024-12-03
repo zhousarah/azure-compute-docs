@@ -154,7 +154,7 @@ When troubleshooting action run command for Windows environments, refer to the *
 
 * The Run Command extension might also fail to execute if command to be executed contains "\n" in the path, as it will be treated as a new line. For example, `C:\Windows\notepad.exe` contains the `\n` in the file path. Consider replacing `\n` with `\N` in your path.
 
-* Ensure you don't have any custom setting in the registry key `HKLM\SOFTWARE\Microsoft\Command Processor\AutoRun` (detailed [here](https://learn.microsoft.com/windows-server/administration/windows-commands/cmd)). This could trigger during the RunCommand Extension install or enable phases and cause an error like *'XYZ is not recognized as an internal or external command, operable program or batch file'*.
+* Ensure you don't have any custom setting in the registry key `HKLM\SOFTWARE\Microsoft\Command Processor\AutoRun` (detailed [here](/windows-server/administration/windows-commands/cmd)). This could trigger during the RunCommand Extension install or enable phases and cause an error like *'XYZ is not recognized as an internal or external command, operable program or batch file'*.
 
 
 ### Action Run Command Removal
