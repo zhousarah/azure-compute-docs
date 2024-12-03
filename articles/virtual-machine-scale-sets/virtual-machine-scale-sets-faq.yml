@@ -20,7 +20,7 @@ sections:
       - question: |
           How much does it cost to use Virtual Machine Scale Sets?
         answer: |
-          You pay for the underlying resources that are used by your scale set, such as virtual machines, storage, and networking resources. There is no additional charge for the scale set itself.  
+          You pay for the underlying resources that are used by your scale set, such as virtual machines, storage, and networking resources. There's no extra charge for the scale set itself.  
       - question: |
           How many VMs can I have in a scale set?
         answer: |
@@ -285,7 +285,7 @@ sections:
           > Currently, you can't remove certificates from VMs by using the Virtual Machine Scale Set API.
           >
 
-          New VMs will not have the old certificate. However, VMs that have the certificate, and that are already deployed, do have the old certificate.
+          New VMs won't have the old certificate. However, VMs that have the certificate, and that are already deployed, do have the old certificate.
 
       - question: |
           Can I push certificates to the Virtual Machine Scale Set without providing the password, when the certificate is in the secret store?
@@ -304,7 +304,7 @@ sections:
       - question: |
           If I add secrets to an existing Virtual Machine Scale Set, are the secrets injected into existing VMs, or only into new ones?
         answer: |
-          Certificates are added to all your VMs, even pre-existing ones. If your Virtual Machine Scale Set `upgradePolicy` property is set to `manual`, the certificate is added to the VM when you perform a manual update on the VM.
+          Certificates are added to all your VMs, even preexisting ones. If your Virtual Machine Scale Set `upgradePolicy` property is set to `manual`, the certificate is added to the VM when you perform a manual update on the VM.
 
       - question: |
           Where do I put certificates for Linux VMs?
@@ -487,7 +487,7 @@ sections:
 
           - Change the Virtual Machine Scale Set model directly. This option is only available with API 2017-12-01 and later versions.
 
-              Update the admin credentials directly in the scale set model (for example, by using the Azure Resource Explorer, PowerShell or the Azure CLI). After the scale set is updated, all new VMs have the new credentials. Existing VMs only have the new credentials if they are reimaged.
+              Update the admin credentials directly in the scale set model (for example, by using the Azure Resource Explorer, PowerShell or the Azure CLI). After the scale set is updated, all new VMs have the new credentials. Existing VMs only have the new credentials if they're reimaged.
 
           - Reset the password by using the VM access extensions. Make sure to follow the password requirements, as described in [the FAQ](../virtual-machines/windows/faq.yml#what-are-the-password-requirements-when-creating-a-vm-).
               
@@ -569,7 +569,7 @@ sections:
       - question: |
           How do I do a virtual IP (VIP) swap for Virtual Machine Scale Sets in the same subscription and same region?
         answer: |
-          If you have two Virtual Machine Scale Sets with Azure Load Balancer, and they are in the same subscription and region, you can deallocate the public IP addresses from each one, and assign to the other. For more information, see [VIP swap: Blue-green deployment in Azure Resource Manager](https://msftstack.wordpress.com/2017/02/24/vip-swap-blue-green-deployment-in-azure-resource-manager/). You may experience a delay, though, because the resources are deallocated or allocated at the network level. A faster option is to use Azure Application Gateway with two back-end pools, and a routing rule. Alternatively, you can host your application with [Azure App Service](https://azure.microsoft.com/services/app-service/), which supports fast switching between staging and production slots.
+          If you have two Virtual Machine Scale Sets with Azure Load Balancer, and they're in the same subscription and region, you can deallocate the public IP addresses from each one, and assign to the other. For more information, see [VIP swap: Blue-green deployment in Azure Resource Manager](https://msftstack.wordpress.com/2017/02/24/vip-swap-blue-green-deployment-in-azure-resource-manager/). You may experience a delay, though, because the resources are deallocated or allocated at the network level. A faster option is to use Azure Application Gateway with two back-end pools, and a routing rule. Alternatively, you can host your application with [Azure App Service](https://azure.microsoft.com/services/app-service/), which supports fast switching between staging and production slots.
 
       - question: |
           How do I specify a range of private IP addresses to use for static private IP address allocation?
@@ -717,7 +717,7 @@ sections:
       - question: |
           Is it possible to integrate scale sets with Azure Monitor Logs?
         answer: |
-          Yes, you can by installing the Azure Monitor extension on the scale set VMs. Here is an example that uses the Azure CLI:
+          Yes, you can by installing the Azure Monitor extension on the scale set VMs. Here's an example that uses Azure CLI:
 
           ```azurecli
           az vmss extension set --name MicrosoftMonitoringAgent --publisher Microsoft.EnterpriseCloud.Monitoring --resource-group Team-03 --vmss-name nt01 --settings "{'workspaceId': '<your workspace ID here>'}" --protected-settings "{'workspaceKey': '<your workspace key here'}"
@@ -768,12 +768,12 @@ sections:
 
           /subscriptions/<subscription_id>/resourceGroups/<resource_group_name>/providers/Microsoft.Compute/virtualMachineScaleSets/<scaleset_name>/virtualMachines?$expand=instanceView&$select=instanceView
           
-          Note that fault domain is not returned when the scale set uses max spreading (platformFaultDomainCount = 1), because there is no guarantee as to how many fault domains would be used with this setting.
+          Note that fault domain isn't returned when the scale set uses max spreading (platformFaultDomainCount = 1), because there's no guarantee as to how many fault domains would be used with this setting.
 
       - question: |
           Can I pass different extension arguments to different VMs in a Virtual Machine Scale Set?
         answer: |
-          No, you can't. However, extensions can act based on the unique properties of the VM they are running on, such as on the machine name. Extensions also can query instance metadata on `http://169.254.169.254` to get more information about the VM.
+          No, you can't. However, extensions can act based on the unique properties of the VM they're running on, such as on the machine name. Extensions also can query instance metadata on `http://169.254.169.254` to get more information about the VM.
 
       - question: |
           Why are there gaps (for example, 0, 1, 3) between my Virtual Machine Scale Set VM machine names and VM IDs?
