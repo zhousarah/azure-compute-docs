@@ -152,7 +152,7 @@ az vm get-instance-view -g MyResourceGroup -n MyVM --query "[?licenseType=='Wind
 To see and count all virtual machines and virtual machine scale sets deployed with Azure Hybrid Benefit for Windows Server, you can run the following command from your subscription:
 
 ### Portal
-From the Virtual Machine or Virtual machine scale sets resource blade, you can view a list of all your VM(s) and licensing type by configuring the table column to include "OS licensing benefit". The VM can either be in **Azure Hybrid Benefit for Windows**, **Not enabled**, or **Windows client with multi-tenant hosting** state.
+From the Virtual Machine or Virtual machine scale sets resource blade, you can view a list of all your VM(s) and licensing type by configuring the table column to include "OS licensing benefit". The VM can be under **Azure Hybrid Benefit for Windows**, **Not enabled**, or **Windows client with multi-tenant hosting** states.
 
 ![VM in Azure Portal ](./media/hybrid-use-benefit-licensing/vm_setting_in_azure_portal3.png)
 
