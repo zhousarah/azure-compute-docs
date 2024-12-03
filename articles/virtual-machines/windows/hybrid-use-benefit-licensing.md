@@ -154,7 +154,7 @@ To see and count all virtual machines and virtual machine scale sets deployed wi
 ### Portal
 From the Virtual Machine or Virtual machine scale sets resource blade, you can view a list of all your VM(s) and licensing type by configuring the table column to include "OS licensing benefit". The VM can be under **Azure Hybrid Benefit for Windows**, **Not enabled**, or **Windows client with multi-tenant hosting** states.
 
-![Screenshot of VM in Azure Portal](./media/hybrid-use-benefit-licensing/vm_setting_in_azure_portal.png)
+![Screenshot of VM in Azure Portal](./media/hybrid-use-benefit-licensing/vm-setting-in-azure-portal.png)
 
 
 ### PowerShell
