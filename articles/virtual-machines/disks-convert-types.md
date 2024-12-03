@@ -5,7 +5,7 @@ author: roygara
 ms.service: azure-disk-storage
 ms.custom: devx-track-azurecli, devx-track-azurepowershell, references_regions
 ms.topic: how-to
-ms.date: 10/30/2024
+ms.date: 12/03/2024
 ms.author: rogarana
 ---
 
@@ -224,7 +224,7 @@ Switching to Premium SSD v2 disks has some additional limitations:
 - You can't directly switch from a Premium SSD v2 to another disk type. If you want to change a Premium SSD v2 to another disk type, migrate using [snapshots](#migrate-to-premium-ssd-v2-or-ultra-disk-using-snapshots).
 - You can't directly switch from Ultra Disks to Premium SSD v2 disks, migrate using [snapshots](#migrate-to-premium-ssd-v2-or-ultra-disk-using-snapshots).
 - If your disk has Azure Site Recovery configured on it, disable it before changing to Premium SSD v2.
-- If your disk is attached to a VM with Azure Backup enabled, ensure that you switch to the Enhanced Backup policy before converting to Premium SSD v2.
+- If your disk is attached to a VM with Azure Backup enabled, switch to the Enhanced Backup policy before converting to Premium SSD v2.
 - If you're using the rest API, use an API version `2020-12-01` or newer for both the Compute Resource Provider and the Disk Resource Provider.
 - Until the conversion process from your previous disk type to Premium SSD v2 is completed, the performance of the disk is degraded, and you can't change or rotate customer-managed keys for the disk if they're in use.
     - You can use the following command to check the conversion process, replace `$diskName` and `$resourceGroupName` with your values: `az disk show -n $diskName  -g  $resourceGroupName --query [completionPercent] -o tsv`
