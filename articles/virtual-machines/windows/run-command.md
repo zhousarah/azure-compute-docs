@@ -24,7 +24,7 @@ This capability is useful in all scenarios where you want to run a script within
 
 ## Prerequisites
 
-### **Windows OS’ Supported**
+### **Windows Operating Systems Supported**
 | **Windows OS** |	**x64** |
 |:----|:----:|
 | Windows 10 |	Supported |
