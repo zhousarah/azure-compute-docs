@@ -146,15 +146,12 @@ az vm get-instance-view -g MyResourceGroup -n MyVM --query "[?licenseType=='Wind
 
 > [!NOTE]
 > Changing the license type on the VM does not cause the system to reboot or cause a service interuption. It is a metadata licensing flag only.
->
 
 ## List all VMs and virtual machine scale sets with Azure Hybrid Benefit for Windows Server in a subscription
 To see and count all virtual machines and virtual machine scale sets deployed with Azure Hybrid Benefit for Windows Server, you can run the following command from your subscription:
 
 ### Portal
 From the Virtual Machine or Virtual machine scale sets resource blade, you can view a list of all your VM(s) and licensing type by configuring the table column to include "OS licensing benefit". The VM can be under **Azure Hybrid Benefit for Windows**, **Not enabled**, or **Windows client with multi-tenant hosting** states.
-
-![Screenshot of VM in Azure Portal](./media/hybrid-use-benefit-licensing/vm-setting-in-azure-portal.png)
 
 
 ### PowerShell
