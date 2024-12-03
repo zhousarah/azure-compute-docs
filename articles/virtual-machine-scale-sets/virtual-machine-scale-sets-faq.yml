@@ -33,7 +33,7 @@ sections:
 
           * Azure Managed Disks (Premium v2, Premium, Standard, Ultra)
           * Azure Files (SMB or NFS shared drives)
-          * Azure Netapp Files
+          * Azure NetApp Files
           * Azure shared disks
           * Operating system drive
           * Temp drive (local, not backed by Azure Storage)
@@ -332,7 +332,7 @@ sections:
       - question: |
           What happens if I delete a certificate from the key vault?
         answer: |
-          If the secret is deleted from the key vault, and then you run `stop deallocate` for all your VMs and then start them again, you encounter a failure. The failure occurs because the CRP needs to retrieve the secrets from the key vault, but it can't. In this scenario, you can delete the certificates from the Virtual Machine Scale Set model.
+          If the secret is deleted from the key vault, and then you `stop deallocate` all your VMs and then start them again, you encounter a failure. The failure occurs because the CRP needs to retrieve the secrets from the key vault, but it can't. In this scenario, you can delete the certificates from the Virtual Machine Scale Set model.
 
           The CRP component doesn't make customer secrets persistent. If you run `stop deallocate` for all VMs in the Virtual Machine Scale Set, the cache is deleted. In this scenario, secrets are retrieved from the key vault.
 
@@ -705,7 +705,7 @@ sections:
           Yes, you can move scale set resources to a new subscription or resource group.
 
       - question: |
-          How do I update my Virtual Machine Scale Set to a new image? How do I manage patching?
+          How do I update my Virtual Machine Scale Set to a new image? How do I manage patching the VMs in my scale set?
         answer: |
           To update your Virtual Machine Scale Set to a new image, and to manage patching, see [Upgrade a Virtual Machine Scale Set](./virtual-machine-scale-sets-upgrade-scale-set.md).
 
