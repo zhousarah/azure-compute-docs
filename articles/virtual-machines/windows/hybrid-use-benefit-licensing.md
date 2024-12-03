@@ -5,7 +5,7 @@ ms.service: azure-virtual-machines
 ms.subservice: billing
 ms.collection: windows
 ms.topic: how-to
-ms.date: 05/14/2024
+ms.date: 12/02/2024
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
 ms.devlang: azurecli
 ---
@@ -33,12 +33,12 @@ For classic VMs, only deploying new VM from on premises custom images is support
  
 
 ## Ways to use Azure Hybrid Benefit for Windows Server
-There are few ways to use Windows virtual machines with the Azure Hybrid Benefit:
+There are a few ways to use Windows virtual machines with the Azure Hybrid Benefit:
 
-1. You can deploy VMs from one of the provided  Windows Server images on the Azure Marketplace
-2. You can  upload a custom VM and deploy using a Resource Manager template or Azure PowerShell
-3. You can toggle and convert existing VM between running with Azure Hybrid Benefit or pay on-demand cost for Windows Server
-4. You can also apply Azure Hybrid Benefit for Windows Server on virtual machine scale set as well
+* You can deploy VMs from one of the provided  Windows Server images on the Azure Marketplace
+* You can  upload a custom VM and deploy using a Resource Manager template or Azure PowerShell
+* You can toggle and convert existing VM between running with Azure Hybrid Benefit or pay on-demand cost for Windows Server
+* You can also apply Azure Hybrid Benefit for Windows Server on virtual machine scale set as well
 
 
 ## Create a VM with Azure Hybrid Benefit for Windows Server
@@ -146,13 +146,13 @@ az vm get-instance-view -g MyResourceGroup -n MyVM --query "[?licenseType=='Wind
 
 > [!NOTE]
 > Changing the license type on the VM does not cause the system to reboot or cause a service interuption. It is a metadata licensing flag only.
->
 
 ## List all VMs and virtual machine scale sets with Azure Hybrid Benefit for Windows Server in a subscription
 To see and count all virtual machines and virtual machine scale sets deployed with Azure Hybrid Benefit for Windows Server, you can run the following command from your subscription:
 
 ### Portal
-From the Virtual Machine or Virtual machine scale sets resource blade, you can view a list of all your VM(s) and licensing type by configuring the table column to include "OS licensing benefit". The VM setting can either be in **Azure Hybrid Benefit for Windows**, **Not enabled**, or **Windows client with multi-tenant hosting** state.
+From the Virtual Machine or Virtual machine scale sets resource blade, you can view a list of all your VM(s) and licensing type by configuring the table column to include "OS licensing benefit". The VM can be under **Azure Hybrid Benefit for Windows**, **Not enabled**, or **Windows client with multi-tenant hosting** states.
+
 
 ### PowerShell
 For virtual machines:
