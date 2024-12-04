@@ -32,8 +32,8 @@ landingContent:
     linkLists:
       - linkListType: quickstart
         links:
-          - text: Register for Private Preview
-            url: RegisterPrivatePreview.md
+          # - text: Register for Private Preview
+          #   url: RegisterPrivatePreview.md
           - text: Report Impact on an Azure Virtual Machine
             url: ReportVMImpact.md
           - text: View Reported Impacts
