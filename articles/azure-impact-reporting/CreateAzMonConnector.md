@@ -1,5 +1,5 @@
 ---
-title: Azure Impact Reporting - Azure Monitor Alert Connector #Required; page title is displayed in search results. Include the brand.
+title: Azure Impact Reporting - Create an Azure Monitor Alert Connector #Required; page title is displayed in search results. Include the brand.
 description: Create an Impact Reporting Azure Monitor Alert Connector. #Required; article description that is displayed in search results. 
 author: rolandnyamo #Required; your GitHub user alias, with correct capitalization.
 ms.author: ronyamo #Required; microsoft alias of author; optional team alias.
@@ -16,8 +16,8 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 ## Pre-Requisites
 | Type     | Details      |
 | ------------- | ------------- |
-| **Azure RBAC Permissions** | [Owner](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#owner) or [User Access Administrator](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#user-access-administrator) to give the Connector Alerts Reader role. Contributor access to the subscription for provider registration and to enable connector features, create connector resources. |
-| **Command line tools** | [Bash](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) or [PowerShell](https://learn.microsoft.com/en-us/powershell/azure/install-azure-powershell?view=azps-12.0.0) (*not needed if you're using CloudShell*)|
+| **Azure RBAC Permissions** | [Owner](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles#owner) or [User Access Administrator](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) to give the Connector Alerts Reader role. Contributor access to the subscription for provider registration and to enable connector features, create connector resources. |
+| **Command line tools** | [Bash](https://learn.microsoft.com/cli/azure/install-azure-cli) or [PowerShell](https://learn.microsoft.com/powershell/azure/install-azure-powershell) (*not needed if you're using CloudShell*)|
 | **Subscription Id**| A subscription ID, or a file containing a list of subscription IDs  whose alerts are of interest|
 
 ## Create an Impact Reporting Connector
@@ -65,7 +65,7 @@ You need to execute this script in your Azure environment.
 2. Select **Add** and then select **Add role assignment**.
 3. On the **Add role assignment** page under the **Role** tab, in the search bar, type *Azure-Alerts-Reader-Role*. If this role doesn't exist, head to [Creating the Azure-Alerts-Reader-Role](#creating-the-azure-alerts-reader-role) to create this role. Once the role is created, return back to this step.
 
-    ![Add custom role](images/Role%20Selection.png)
+    ![Add an Azure custom role](images/Role%20Selection.png)
 
 4. Select the *Azure-Alerts-Reader-Role* and select on **Next** button at the bottom of the page
 5. Under the **Members** tab, select **User, group, or service principal** for **Assign access to**.
@@ -81,23 +81,23 @@ You need to execute this script in your Azure environment.
 1. Navigate to your subscription, and select **Access Control (IAM)** from the navigation blade
 2. Click **Add** and then select **Add custom role** to open the **Create a custom role** page
 
-    ![Add custom role](images/Add%20Custom%20Role.png)
+    ![Add a custom role](images/Add%20Custom%20Role.png)
 
 3. Under the **Basics** tab, enter the name **Azure-Alerts-Reader-Role** for the **Custom role name**. Leave others as defaults and select on **Next** on the bottom of the page
 
-    ![Basics tab](images/Basics%20Tab.png)
+    ![Create role basics tab](images/Basics%20Tab.png)
 
 4. Under the **Permissions** tab, select on **Add permissions**.
 
-    ![Basics tab](images/Permissions%20Tab.png)
+    ![Permissions basics tab](images/Permissions%20Tab.png)
 
 5. Enter *Microsoft.AlertsManagement/alerts/read* in the search bar
 
-    ![Basics tab](images/Add%20Permissions.png)
+    ![Add permissions tab](images/Add%20Permissions.png)
 
 6. Select the tile **Microsoft.AlertsManagement** to access the **Microsoft.AlertsManagement permissions** blade. Select the permission: **Read: Read alerts**, then **Add**
 
-    ![Permission Selection](images/Permission%20Selection.png)
+    ![Select permissions](images/Permission%20Selection.png)
 
 7. Select the **Review + create** button at the bottom of the page
 8. In the **Review + create** tab, select on **Create** button at the bottom of the page
@@ -110,7 +110,7 @@ Ensure you have **Contributor** permission to log into Azure, register resource 
 
 ### Custom role assignment fails to due to permission errors
 
-You also need to have [Owner](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#owner) or [User Access Administrator](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#user-access-administrator) role to create and assign custom roles.
+You also need to have [Owner](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles#owner) or [User Access Administrator](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) role to create and assign custom roles.
 
 ### Connector creation takes too long
 

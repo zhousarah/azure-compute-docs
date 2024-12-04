@@ -18,7 +18,7 @@ Ensure that the script has execution permissions. Use this command to make it ex
 chmod `+x create-impact-reporting-connector.sh`
 
 ## In the bash script, azure login fails (az login command not working)
-Ensure [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli) is installed and updated to the latest version. Try manually logging in using `az login` to check for any more prompts or errors.
+Ensure [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli) is installed and updated to the latest version. Try manually logging in using `az login` to check for any more prompts or errors.
 
 ## Error "**Subscription ID or file path with list of subscription IDs required**"
 - **Bash**: Make sure you're providing either `--subscription-id` or `--file-path` argument when executing the script. Don't provide both. <br>
