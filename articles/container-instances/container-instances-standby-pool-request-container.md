@@ -4,6 +4,8 @@ description: Learn how to scale out from a standby pool with Azure Container Ins
 author: mimckitt
 ms.author: mimckitt
 ms.service: azure-container-instances
+ms.custom:
+  - ignite-2024
 ms.topic: how-to
 ms.date: 11/6/2024
 ms.reviewer: tomvcassidy

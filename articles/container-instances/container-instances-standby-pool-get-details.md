@@ -4,6 +4,8 @@ description: Learn how to get details about your standby pool for Azure Containe
 author: mimckitt
 ms.author: mimckitt
 ms.service: azure-container-instances
+ms.custom:
+  - ignite-2024
 ms.topic: how-to
 ms.date: 11/1/2024
 ms.reviewer: tomvcassidy

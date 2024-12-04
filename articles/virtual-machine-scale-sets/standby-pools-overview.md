@@ -4,6 +4,8 @@ description: Learn how to utilize standby pools to reduce scale-out latency with
 author: mimckitt
 ms.author: mimckitt
 ms.service: azure-virtual-machine-scale-sets
+ms.custom:
+  - ignite-2024
 ms.topic: conceptual
 ms.date: 11/5/2024
 ms.reviewer: ju-shim

@@ -241,13 +241,13 @@ This section assumes that you've already obtained an ISO file from the Red Hat w
 1. Configure `cloud-init` telemetry to assist with troubleshooting for provisioning issues:
 
    ```bash
-           sudo tee >> /etc/cloud/cloud.cfg.d/10-azure-kvp.cfg << EOF
-           # This config enables cloud-init to report provisioning telemetry to aid with troubleshooting
-           Reporting:
-             logging:
-                type: log
-             telemetry:
-                type: hyperv
+   sudo tee >> /etc/cloud/cloud.cfg.d/10-azure-kvp.cfg << EOF
+   # This config enables cloud-init to report provisioning telemetry to aid with troubleshooting
+   Reporting:
+     logging:
+       type: log
+     telemetry:
+       type: hyperv
    EOF
    ```
 
@@ -459,13 +459,13 @@ This section assumes that you've already obtained an ISO file from the Red Hat w
 1. Configure `cloud-init` telemetry to assist with troubleshooting for provisioning issues:
 
    ```bash
-           sudo tee >> /etc/cloud/cloud.cfg.d/10-azure-kvp.cfg << EOF
-           # This config enables cloud-init to report provisioning telemetry to aid with troubleshooting
-           Reporting:
-             logging:
-                type: log
-             telemetry:
-                type: hyperv
+   sudo tee >> /etc/cloud/cloud.cfg.d/10-azure-kvp.cfg << EOF
+   # This config enables cloud-init to report provisioning telemetry to aid with troubleshooting
+   Reporting:
+     logging:
+       type: log
+     telemetry:
+       type: hyperv
    EOF
    ```
 
@@ -869,13 +869,13 @@ This section shows you how to use KVM to prepare RHEL 7 to upload to Azure.
 1. Configure `cloud-init` telemetry to assist with troubleshooting for provisioning issues:
 
    ```bash
-           sudo tee /etc/cloud/cloud.cfg.d/10-azure-kvp.cfg << EOF
-           # This config enables cloud-init to report provisioning telemetry to aid with troubleshooting
-           Reporting:
-             logging:
-                type: log
-             telemetry:
-                type: hyperv
+   sudo tee >> /etc/cloud/cloud.cfg.d/10-azure-kvp.cfg << EOF
+   # This config enables cloud-init to report provisioning telemetry to aid with troubleshooting
+   Reporting:
+     logging:
+       type: log
+     telemetry:
+       type: hyperv
    EOF
    ```
 
@@ -1275,13 +1275,13 @@ This section shows you how to use KVM to prepare RHEL 7 to upload to Azure.
 1. Configure `cloud-init` telemetry to assist with troubleshooting for provisioning issues:
 
    ```bash
-           sudo tee /etc/cloud/cloud.cfg.d/10-azure-kvp.cfg << EOF
-           # This config enables cloud-init to report provisioning telemetry to aid with troubleshooting
-           Reporting:
-             logging:
-                type: log
-             telemetry:
-                type: hyperv
+   sudo tee >> /etc/cloud/cloud.cfg.d/10-azure-kvp.cfg << EOF
+   # This config enables cloud-init to report provisioning telemetry to aid with troubleshooting
+   Reporting:
+     logging:
+       type: log
+     telemetry:
+       type: hyperv
    EOF
    ```
 
