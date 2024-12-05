@@ -91,9 +91,9 @@ landingContent:
       - linkListType: architecture
         links:
           - text: Azure Well-Architected Framework Virtual Machine considerations
-            url: /azure/architecture/service-guides/virtual-machines
+            url: /azure/well-architected/service-guides/virtual-machines
           - text: Azure Well-Architected Framework Disk Storage considerations
-            url: /azure/architecture/service-guides/azure-disk-storage
+            url: /azure/well-architected/service-guides/azure-disk-storage
 
   # Card
   - title: Resources
