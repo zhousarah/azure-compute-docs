@@ -9,7 +9,7 @@ ms.date: 11/01/2022 #Required; mm/dd/yyyy format.
 ms.custom: template-overview #Required; leave this attribute/value as-is.
 ---
 
-# Azure impact Reporting FAQ (Preview)
+# Azure Impact Reporting FAQ (Preview)
 > [!IMPORTANT]
 > Azure Impact Reporting is currently in Preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
