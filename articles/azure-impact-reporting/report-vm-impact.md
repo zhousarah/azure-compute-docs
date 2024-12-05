@@ -13,7 +13,7 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 > [!IMPORTANT]
 > Azure Impact Reporting is currently in PREVIEW. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
-You can call our REST API to file an impact report.
+You can call our REST API to file an impact report, or use a [connector](./azure-monitor-connector.md) to automatically report impact from Azure Monitor Alerts.
 
 <!-- [ NOTE, TIP, IMPORTANT, CAUTION, and WARNING are supported. Case-sensitive.]  -->
 

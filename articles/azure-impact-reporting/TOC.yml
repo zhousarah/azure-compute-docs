@@ -18,8 +18,6 @@
   items:
   - name: Report Impact on an Azure Virtual Machine
     href: report-vm-impact.md
-  - name: Onboard to Azure Impact Reporting
-    href: onboard-to-impact-reporting.md
   - name: Report Impacts Using a Logic App
     href: creating-logic-app.md
   - name: View Reported Impacts

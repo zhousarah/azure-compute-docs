@@ -16,14 +16,8 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 > [!NOTE]
 > Please visit the [API Docs](https://aka.ms/ImpactRP/APIDocs) to learn more about available impact management actions.
 
-<!-- > [!TIP]
-> The SSH key you created can be used the next time your create a VM in Azure. Just select the **Use a key stored in Azure** for **SSH public key source** the next time you create a VM. You already have the private key on your computer, so you won't need to download anything. -->
-
 ![End-to-end architecture diagram of Azumre Impact Reporting.](images/impact-rp-end-to-end.png)
 ## Register your Subscription for Impact Reporting Feature
-
-> [!NOTE]
-> Please remember to also send the subscription list to `impactrp-preview@microsoft.com`.
 
 Follow the steps below to register your subscription for Impact Reporting.
 

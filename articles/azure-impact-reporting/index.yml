@@ -51,7 +51,5 @@ landingContent:
             url: creating-logic-app.md
       - linkListType: tutorial
         links:
-          - text: Onboard to Azure Impact Reporting
-            url: onboard-to-impact-reporting.md
           - text: View Allowed Impact Categories
             url: view-impact-categories.md

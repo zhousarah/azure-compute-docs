@@ -13,6 +13,8 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 > [!IMPORTANT]
 > Azure Impact Reporting is currently in PREVIEW. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
+This guide outlines solutions to common errors faced when creating an Impact Reporting Connector.
+
 ## The bash script fails immediately after starting
 Ensure that the script has execution permissions. Use this command to make it executable.
 chmod `+x create-impact-reporting-connector.sh`
