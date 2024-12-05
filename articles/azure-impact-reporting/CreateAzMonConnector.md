@@ -3,7 +3,7 @@ title: Azure Impact Reporting - Create an Azure Monitor Alert Connector #Require
 description: Create an Impact Reporting Azure Monitor Alert Connector. #Required; article description that is displayed in search results. 
 author: rolandnyamo #Required; your GitHub user alias, with correct capitalization.
 ms.author: ronyamo #Required; microsoft alias of author; optional team alias.
-ms.service: azure-impact-reporting #Required; use either service or product per approved list. 
+ms.service: azure #Required; use either service or product per approved list. 
 ms.topic: overview #Required; leave this attribute/value as-is.
 ms.date: 06/19/2024 #Required; mm/dd/yyyy format.
 ms.custom: template-overview #Required; leave this attribute/value as-is.
@@ -16,8 +16,8 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 ## Pre-Requisites
 | Type     | Details      |
 | ------------- | ------------- |
-| **Azure RBAC Permissions** | [Owner](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles#owner) or [User Access Administrator](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) to give the Connector Alerts Reader role. Contributor access to the subscription for provider registration and to enable connector features, create connector resources. |
-| **Command line tools** | [Bash](https://learn.microsoft.com/cli/azure/install-azure-cli) or [PowerShell](https://learn.microsoft.com/powershell/azure/install-azure-powershell) (*not needed if you're using CloudShell*)|
+| **Azure RBAC Permissions** | [Owner](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles) or [User Access Administrator](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles) to give the Connector Alerts Reader role. Contributor access to the subscription for provider registration and to enable connector features, create connector resources. |
+| **Command line tools** | [Bash](https://learn.microsoft.com/en-us/cli/azure) or [PowerShell](https://learn.microsoft.com/en-us/powershell/azure) (*not needed if you're using CloudShell*)|
 | **Subscription Id**| A subscription ID, or a file containing a list of subscription IDs  whose alerts are of interest|
 
 ## Create an Impact Reporting Connector
@@ -110,7 +110,7 @@ Ensure you have **Contributor** permission to log into Azure, register resource 
 
 ### Custom role assignment fails to due to permission errors
 
-You also need to have [Owner](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles#owner) or [User Access Administrator](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles#user-access-administrator) role to create and assign custom roles.
+You also need to have [Owner](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles) or [User Access Administrator](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles) role to create and assign custom roles.
 
 ### Connector creation takes too long
 

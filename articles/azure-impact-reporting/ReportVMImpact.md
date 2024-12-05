@@ -4,7 +4,7 @@ description: Provide necessary details to report an impact to your Azure workloa
 author: rolandnyamo #Required; your GitHub user alias, with correct capitalization.
 ms.author: ronyamo #Required; microsoft alias of author; optional team alias.
 ms.topic: how-to #Required; leave this attribute/value as-is.
-ms.service: azure-impact-reporting #Required; use either service or product per approved list. 
+ms.service: azure #Required; use either service or product per approved list. 
 ms.date: 11/01/2022 #Required; mm/dd/yyyy format.
 ms.custom: template-overview #Required; leave this attribute/value as-is.
 ---

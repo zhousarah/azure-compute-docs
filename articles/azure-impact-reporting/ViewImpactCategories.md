@@ -4,7 +4,7 @@ description: How to get a valid list of impact categories. #Required; article de
 author: rolandnyamo #Required; your GitHub user alias, with correct capitalization.
 ms.author: ronyamo #Required; microsoft alias of author; optional team alias.
 ms.topic: overview #Required; leave this attribute/value as-is.
-ms.service: azure-impact-reporting #Required; use either service or product per approved list. 
+ms.service: azure #Required; use either service or product per approved list. 
 ms.date: 10/30/2022 #Required; mm/dd/yyyy format.
 ms.custom: template-overview #Required; leave this attribute/value as-is.
 ---

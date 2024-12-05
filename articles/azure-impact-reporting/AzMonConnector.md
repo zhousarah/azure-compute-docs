@@ -3,7 +3,7 @@ title: Azure Impact Reporting - Azure Monitor Alert Connector #Required; page ti
 description: Seamlessly report impact through Azure Monitor alerts. #Required; article description that is displayed in search results. 
 author: rolandnyamo #Required; your GitHub user alias, with correct capitalization.
 ms.author: ronyamo #Required; microsoft alias of author; optional team alias.
-ms.service: azure-impact-reporting #Required; use either service or product per approved list. 
+ms.service: azure #Required; use either service or product per approved list. 
 ms.topic: overview #Required; leave this attribute/value as-is.
 ms.date: 06/19/2024 #Required; mm/dd/yyyy format.
 ms.custom: template-overview #Required; leave this attribute/value as-is.

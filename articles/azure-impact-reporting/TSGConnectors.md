@@ -1,9 +1,9 @@
 ---
 title: Azure Impact Reporting - Connectors Troubleshooting Guide #Required; page title is displayed in search results. Include the brand.
 description: Azure Impact Reporting Connectors TSG #Required; article description that is displayed in search results. 
-author: kezaveri #Required; your GitHub user alias, with correct capitalization.
+author: rolandnyamo #Required; your GitHub user alias, with correct capitalization.
 ms.author: kezaveri #Required; microsoft alias of author; optional team alias.
-ms.service: azure-impact-reporting #Required; use either service or product per approved list. 
+ms.service: azure #Required; use either service or product per approved list. 
 ms.topic: overview #Required; leave this attribute/value as-is.
 ms.date: 06/25/2024 #Required; mm/dd/yyyy format.
 ms.custom: template-overview #Required; leave this attribute/value as-is.
@@ -18,7 +18,7 @@ Ensure that the script has execution permissions. Use this command to make it ex
 chmod `+x create-impact-reporting-connector.sh`
 
 ## In the bash script, azure login fails (az login command not working)
-Ensure [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli) is installed and updated to the latest version. Try manually logging in using `az login` to check for any more prompts or errors.
+Ensure [Azure CLI](https://learn.microsoft.com/en-us/cli/azure) is installed and updated to the latest version. Try manually logging in using `az login` to check for any more prompts or errors.
 
 ## Error "**Subscription ID or file path with list of subscription IDs required**"
 - **Bash**: Make sure you're providing either `--subscription-id` or `--file-path` argument when executing the script. Don't provide both. <br>

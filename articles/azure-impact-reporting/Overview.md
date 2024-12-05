@@ -3,7 +3,7 @@ title: Azure Impact Reporting - Overview #Required; page title is displayed in s
 description: An overview of Azure Impact Reporting - a service that enables you to send reports when you observe a negative change in performance of your Azure workloads. #Required; article description that is displayed in search results. 
 author: rolandnyamo #Required; your GitHub user alias, with correct capitalization.
 ms.author: ronyamo #Required; microsoft alias of author; optional team alias.
-ms.service: azure-impact-reporting #Required; use either service or product per approved list. 
+ms.service: azure #Required; use either service or product per approved list. 
 ms.topic: overview #Required; leave this attribute/value as-is.
 ms.date: 11/18/2022 #Required; mm/dd/yyyy format.
 ms.custom: template-overview #Required; leave this attribute/value as-is.

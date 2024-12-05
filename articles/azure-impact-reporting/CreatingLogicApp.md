@@ -4,7 +4,8 @@ description: How to onboard your workload to Azure Impact Reporting using a Logi
 author: anajib #Required; your GitHub user alias, with correct capitalization.
 ms.author: ashiknajib #Required; microsoft alias of author; optional team alias.
 ms.topic: how-to #Required; leave this attribute/value as-is.
-ms.service: azure-impact-reporting #Required; use either service or product per approved list. 
+ms.date: 06/19/2024 #Required; mm/dd/yyyy format.
+ms.service: azure #Required; use either service or product per approved list. 
 ms.custom: template-overview #Required; leave this attribute/value as-is.
 ---
 

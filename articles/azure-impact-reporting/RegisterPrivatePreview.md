@@ -4,7 +4,8 @@ description: How to register for Azure Impact Reporting private preview to enabl
 author: rolandnyamo #Required; your GitHub user alias, with correct capitalization.
 ms.author: ronyamo #Required; microsoft alias of author; optional team alias.
 ms.topic: how-to #Required; leave this attribute/value as-is.
-ms.service: azure-impact-reporting #Required; use either service or product per approved list. 
+ms.date: 06/21/2024 #Required; mm/dd/yyyy format.
+ms.service: azure #Required; use either service or product per approved list. 
 ms.custom: template-overview #Required; leave this attribute/value as-is.
 ---
 

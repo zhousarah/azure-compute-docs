@@ -4,7 +4,8 @@ description: How to onboard your workloads to Azure Impact Reporting private pre
 author: rolandnyamo #Required; your GitHub user alias, with correct capitalization.
 ms.author: ronyamo #Required; microsoft alias of author; optional team alias.
 ms.topic: how-to #Required; leave this attribute/value as-is.
-ms.service: azure-impact-reporting #Required; use either service or product per approved list. 
+ms.date: 11/18/2024 #Required; mm/dd/yyyy format.
+ms.service: azure #Required; use either service or product per approved list. 
 ms.custom: template-overview #Required; leave this attribute/value as-is.
 ---
 
@@ -18,7 +19,7 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 <!-- > [!TIP]
 > The SSH key you created can be used the next time your create a VM in Azure. Just select the **Use a key stored in Azure** for **SSH public key source** the next time you create a VM. You already have the private key on your computer, so you won't need to download anything. -->
 
-![image](images/impact-rp-end-to-end.png)
+![impact reporting end to end](images/impact-rp-end-to-end.png)
 ## Register your Subscription for Impact Reporting Feature
 
 > [!NOTE]
@@ -29,7 +30,7 @@ Follow the steps below to register your subscription for Impact Reporting.
 1. Navigate to your subscription
 1. Under the `Settings` tab section, go to `Preview Features`
 1. Under this tab, filter for `Microsoft.Impact` in the `type` section
-![image](images/preview.png)
+![preview feature registration](images/preview.png)
 1. Click on `Allow Impact Reporting` feature and register
 1. After approval, go to `Resource providers`, search for `Microsoft.Impact` and register
 
@@ -156,7 +157,7 @@ PUT https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
 }
 ```
 
-### [Performance]((#tab/performance/))
+### [Performance](#tab/performance/)
 
 ```json
 PUT https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.Impact/workloadImpacts/impact-002?api-version=2022-11-01-preview
