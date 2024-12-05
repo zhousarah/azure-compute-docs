@@ -62,7 +62,7 @@ You need to execute this script in your Azure environment.
 
 1. Navigate to your subscription, and select **Access Control (IAM)** from the navigation blade.
 2. Select **Add** and then select **Add role assignment**.
-3. On the **Add role assignment** page under the **Role** tab, in the search bar, type *Azure-Alerts-Reader-Role*. If this role doesn't exist, head to [Creating the Azure-Alerts-Reader-Role](#creating-the-azure-alerts-reader-role) to create this role. Once the role is created, return back to this step.
+3. On the **Add role assignment** page under the **Role** tab, in the search bar, type *Azure-Alerts-Reader-Role*. If this role doesn't exist, head to [Creating the Azure-Alerts-Reader-Role](#create-the-azure-alerts-reader-role) to create this role. Once the role is created, return back to this step.
 4. Select the *Azure-Alerts-Reader-Role* and select on **Next** button at the bottom of the page.
 5. Under the **Members** tab, select **User, group, or service principal** for **Assign access to**.
 6. Select on **Select members**, which opens the **Select Members** blade on the right side.
