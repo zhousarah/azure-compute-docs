@@ -48,7 +48,7 @@ You need to execute this script in your Azure environment.
 1. Search for **Impact Reporting Connectors** in Azure portal search.
 2. Select on the **Create** button on the left side in the page. The **Create Impact Reporting Connector** page opens.
 
-    ![Screenshot of the create impact reporting connector page](images/create-connector.png)
+    ![Screenshot of the create impact reporting connector page.](images/create-connector.png)
 
 3. From the **Subscription** drop down, select the subscription for the Connector
 4. Under **Instance details**, enter *AzureMonitorConnector* for the **Connector name** and choose *AzureMonitor* for the **Connector type**.

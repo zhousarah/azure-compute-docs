@@ -86,7 +86,7 @@ impactreportresources
 
 ##### For a resource URI, Find all reported Impacts and Insights
 
-Given a resource Id, this query retrieves Impact reports and Insights that include the specified resource Id.
+Given a resource ID, this query retrieves Impact reports and Insights that include the specified resource ID.
 
 ```kql
 impactreportresources 
