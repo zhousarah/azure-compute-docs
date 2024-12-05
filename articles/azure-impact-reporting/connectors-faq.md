@@ -39,9 +39,6 @@ Verify your Azure role and permissions. You may need the help of your Azure admi
 ```kql
 impactreportresources  | where name == "AzureMonitorConnector"  and type == "microsoft.impact/connectors"
 ```
-* Step 3: The results should look like below, with a row for the connector resource
-
-    ![image](images/arg.png)
 
 ## Next steps
 

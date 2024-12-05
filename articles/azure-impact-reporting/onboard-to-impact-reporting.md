@@ -19,7 +19,7 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 <!-- > [!TIP]
 > The SSH key you created can be used the next time your create a VM in Azure. Just select the **Use a key stored in Azure** for **SSH public key source** the next time you create a VM. You already have the private key on your computer, so you won't need to download anything. -->
 
-![impact reporting end to end](images/impact-rp-end-to-end.png)
+![End-to-end architecture diagram of Azumre Impact Reporting.](images/impact-rp-end-to-end.png)
 ## Register your Subscription for Impact Reporting Feature
 
 > [!NOTE]
@@ -30,7 +30,7 @@ Follow the steps below to register your subscription for Impact Reporting.
 1. Navigate to your subscription
 1. Under the `Settings` tab section, go to `Preview Features`
 1. Under this tab, filter for `Microsoft.Impact` in the `type` section
-![preview feature registration](images/preview.png)
+![Screenshot of preview feature registration page.](images/preview.png)
 1. Click on `Allow Impact Reporting` feature and register
 1. After approval, go to `Resource providers`, search for `Microsoft.Impact` and register
 

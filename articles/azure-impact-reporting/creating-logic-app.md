@@ -16,7 +16,7 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 > [!NOTE]
 > Please visit the [API Docs](https://aka.ms/ImpactRP/APIDocs) to learn more about available impact management actions.
 
-![image](images/logic-app-diagram.png)
+![Diagram showing how a scheduled logic app can be used as REST client for impact reporting.](images/logic-app-diagram.png)
 
 ## Prerequisites
 
