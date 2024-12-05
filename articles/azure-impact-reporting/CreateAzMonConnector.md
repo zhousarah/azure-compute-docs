@@ -17,7 +17,7 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 | Type     | Details      |
 | ------------- | ------------- |
 | **Azure RBAC Permissions** | [Owner](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles) or [User Access Administrator](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles) to give the Connector Alerts Reader role. Contributor access to the subscription for provider registration and to enable connector features, create connector resources. |
-| **Command line tools** | [Bash](https://learn.microsoft.com/en-us/cli/azure) or [PowerShell](https://learn.microsoft.com/en-us/powershell/azure) (*not needed if you're using CloudShell*)|
+| **Command line tools** | [Bash](https://learn.microsoft.com/cli/azure) or [PowerShell](https://learn.microsoft.com/powershell/azure) (*not needed if you're using CloudShell*)|
 | **Subscription Id**| A subscription ID, or a file containing a list of subscription IDs  whose alerts are of interest|
 
 ## Create an Impact Reporting Connector

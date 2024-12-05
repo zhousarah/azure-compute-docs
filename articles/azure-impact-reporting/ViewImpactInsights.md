@@ -1,5 +1,5 @@
 ---
-title: Azure Impact Reporting - View Impact Reports #Required; page title is displayed in search results. Include the brand.
+title: Azure Impact Reporting - View Impact Insights #Required; page title is displayed in search results. Include the brand.
 description: View reported impacts and insights from Microsoft Intelligence Systems. #Required; article description that is displayed in search results. 
 author: rolandnyamo #Required; your GitHub user alias, with correct capitalization.
 ms.author: ronyamo #Required; microsoft alias of author; optional team alias.
@@ -103,11 +103,11 @@ impactreportresources
 
 #### [Portal](#tab/portal/)
 1. Go to the Azure Impact Reporting Portal. Look for your subscription and select the date range. 
-    ![image](images/ImpactReportingPortal.png) 
+    ![azure impact reporting portal dashboard](images/ImpactReportingPortal.png) 
 2. To view the insights generated from the impacts, navigate to the bottom of the page. The tabular view shows the count of the insights for each of the resource name. 
-    ![image](images/Insights.png)
+    ![azure portal impact insights](images/Insights.png)
 3. Select the insight count to see recommended actions for each of the insights
-    ![image](images/Recommended_Insights.png)
+    ![impact insights links](images/Recommended_Insights.png)
 
 ---
 
