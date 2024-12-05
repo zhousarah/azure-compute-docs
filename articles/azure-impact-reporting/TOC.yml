@@ -16,8 +16,6 @@
         href: connectors-faq.md
 - name: Tutorials (Preview)
   items:
-  # - name: Register for Private Preview
-  #   href: RegisterPrivatePreview.md
   - name: Report Impact on an Azure Virtual Machine
     href: report-vm-impact.md
   - name: Onboard to Azure Impact Reporting
@@ -29,4 +27,4 @@
   - name: View Allowed Impact Categories
     href: view-impact-categories.md
 - name: FAQ
-  href: Faq.md
+  href: faq.md

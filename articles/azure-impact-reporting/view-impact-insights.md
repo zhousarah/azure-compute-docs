@@ -114,4 +114,3 @@ impactreportresources
 * [What is an Impact Reporting Connector for Azure Monitor Alerts?](azure-monitor-connector.md)
 * [Impact Reporting Connectors - Troubleshooting Guide](connectors-troubleshooting-guide.md)
 * [Get allowed Impact category list](view-impact-categories.md)
-

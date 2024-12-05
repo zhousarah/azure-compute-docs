@@ -39,7 +39,7 @@ landingContent:
           - text: View Allowed Impact Categories
             url: view-impact-categories.md
           - text: FAQ
-            url: Faq.md
+            url: faq.md
   # Card
   - title: How-To Guides
     linkLists:
