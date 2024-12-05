@@ -13,6 +13,8 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 > [!IMPORTANT]
 > Azure Impact Reporting is currently in PREVIEW. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
+Here are answers to common questions about Azure Impact Reporting Connectors.
+
 ## How do I enable debug mode?
 
 * **Bash**: Uncomment the `set -x` at the beginning of the script to enable debug mode.
