@@ -22,6 +22,6 @@ The impact Connector for Azure Monitor alerts enables you to seamlessly report i
 When you create a connector, it is associated with a subscription. When alerts whose target resource reside in the specified subscription get fired, an Impact report is created through Azure Impact Reporting and sent to Microsoft AIOPs.
 
 ## Next steps
-* [Create a Connector for Azure Monitor Alerts](CreateAzMonConnector.md)
-* [Impact Reporting Connectors - Troubleshooting Guide](TSGConnectors.md)
-* [View Reported Impacts and Insights](ViewImpactInsights.md)
+* [Create a Connector for Azure Monitor Alerts](create-azure-monitor-connector.md)
+* [Impact Reporting Connectors - Troubleshooting Guide](connectors-troubleshooting-guide.md)
+* [View Reported Impacts and Insights](view-impact-insights.md)

@@ -1,26 +1,23 @@
 ---
-title: Azure Impact Reporting - View Impact Insights #Required; page title is displayed in search results. Include the brand.
-description: View reported impacts and insights from Microsoft Intelligence Systems. #Required; article description that is displayed in search results. 
+title: Azure Impact Reporting - View Impact Reports #Required; page title is displayed in search results. Include the brand.
+description: View previously submitted impact reports. #Required; article description that is displayed in search results. 
 author: rolandnyamo #Required; your GitHub user alias, with correct capitalization.
 ms.author: ronyamo #Required; microsoft alias of author; optional team alias.
-ms.topic: how-to #Required; leave this attribute/value as-is.
+ms.topic: overview #Required; leave this attribute/value as-is.
 ms.service: azure #Required; use either service or product per approved list. 
-ms.date: 06/19/2024 #Required; mm/dd/yyyy format.
+ms.date: 11/01/2022 #Required; mm/dd/yyyy format.
 ms.custom: template-overview #Required; leave this attribute/value as-is.
 ---
 
-# Viewing Impact Reports and Insights (Preview)
+# View Impact Reports (Preview)
+
 > [!IMPORTANT]
 > Azure Impact Reporting is currently in PREVIEW. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
- 
-## Permissions needed
-You need either the "**Impact Reporter**" role or `read` action on `Microsoft.Impact/WorkloadImpact/*` at the right scope (root, subscription, or resource group).
 
-The following channels can be used to view Impact Reports and/or insights: 
-1. REST API
-2. Query ARG 
-3. Azure portal 
-
+You can use the following channels to view reported Impacts: 
+1. Impact Reporting REST API
+2. Impact Reporting Azure portal 
+3. Query ARG
 
 #### [REST API](#tab/restapi/)
 ##### View Impacts using REST API: 
@@ -62,7 +59,14 @@ az rest --method GET --url "https://management.azure.com/subscriptions/<Subscrip
 }
 ```
 
-#### [ARG](#tab/arg/)
+#### [Portal](#tab/portal/)
+
+##### View Impacts and Insights using the Azure Portal 
+
+To view impacts on the Azure portal, click the Overview tab on the left panel and select the subscription along with the date range.
+
+#### [ARG](#tab/ARG/)
+##### Queries
 To run these queries, go to the Azure portal [ARG query blade](https://portal.azure.com/#view/HubsExtension/ArgQueryBlade)
 
 ##### Get all Impact reports that have Insights
@@ -101,18 +105,14 @@ impactreportresources
 |order by insightId desc
 ```
 
-#### [Portal](#tab/portal/)
-1. Go to the Azure Impact Reporting Portal. Look for your subscription and select the date range. 
-    ![azure impact reporting portal dashboard](images/ImpactReportingPortal.png) 
-2. To view the insights generated from the impacts, navigate to the bottom of the page. The tabular view shows the count of the insights for each of the resource name. 
-    ![azure portal impact insights](images/Insights.png)
-3. Select the insight count to see recommended actions for each of the insights
-    ![impact insights links](images/Recommended_Insights.png)
-
 ---
 
-## Next steps
-* [What is an Impact Reporting Connector for Azure Monitor Alerts?](AzMonConnector.md)
-* [Impact Reporting Connectors - Troubleshooting Guide](TSGConnectors.md)
-* [Get allowed Impact category list](ViewImpactCategories.md)
+## Delete an Impact Report
 
+```rest
+az rest --method DELETE --url "https://management.azure.com/subscriptions/<Subscription_id>/providers/Microsoft.Impact/workloadImpacts/<impact_name>?api-version=2022-11-01-preview" 
+```
+
+## Next steps
+
+- [File an impact report](report-vm-impact.md)

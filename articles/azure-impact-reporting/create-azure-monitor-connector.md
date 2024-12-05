@@ -16,8 +16,8 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 ## Pre-Requisites
 | Type     | Details      |
 | ------------- | ------------- |
-| **Azure RBAC Permissions** | [Owner](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles) or [User Access Administrator](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles) to give the Connector Alerts Reader role. Contributor access to the subscription for provider registration and to enable connector features, create connector resources. |
-| **Command line tools** | [Bash](https://learn.microsoft.com/cli/azure) or [PowerShell](https://learn.microsoft.com/powershell/azure) (*not needed if you're using CloudShell*)|
+| **Azure RBAC Permissions** | [Owner](/azure/role-based-access-control/built-in-roles#owner) or [User Access Administrator](/azure/role-based-access-control/built-in-roles#user-access-administrator) to give the Connector Alerts Reader role. Contributor access to the subscription for provider registration and to enable connector features, create connector resources. |
+| **Command line tools** | [Bash](/cli/azure) or [PowerShell](/powershell/azure) (*not needed if you're using CloudShell*)|
 | **Subscription Id**| A subscription ID, or a file containing a list of subscription IDs  whose alerts are of interest|
 
 ## Create an Impact Reporting Connector
@@ -110,7 +110,7 @@ Ensure you have **Contributor** permission to log into Azure, register resource 
 
 ### Custom role assignment fails to due to permission errors
 
-You also need to have [Owner](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles) or [User Access Administrator](https://learn.microsoft.com/azure/role-based-access-control/built-in-roles) role to create and assign custom roles.
+You also need to have [Owner](/azure/role-based-access-control/built-in-roles#owner) or [User Access Administrator](/azure/role-based-access-control/built-in-roles#user-access-administrator) role to create and assign custom roles.
 
 ### Connector creation takes too long
 
@@ -118,6 +118,6 @@ It may take 15-20 minutes for the namespace registration to allow the connector 
 If the script execution isn't complete after 30 minutes, cancel the execution and rerun it. If this issue persists, reach out to the [Impact Reporting Connectors team](mailto:impactrp-preview@microsoft.com)
 
 ## Next steps
-* [What is an Impact Reporting Connector for Azure Monitor Alerts?](AzMonConnector.md)
-* [Impact Reporting Connectors - Troubleshooting Guide](TSGConnectors.md)
-* [View Reported Impacts and Insights](ViewImpactInsights.md)
+* [What is an Impact Reporting Connector for Azure Monitor Alerts?](azure-monitor-connector.md)
+* [Impact Reporting Connectors - Troubleshooting Guide](connectors-troubleshooting-guide.md)
+* [View Reported Impacts and Insights](view-impact-insights.md)

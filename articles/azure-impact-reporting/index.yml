@@ -18,28 +18,26 @@ landingContent:
       - linkListType: overview
         links:
           - text: What is Impact Reporting?
-            url: Overview.md
+            url: overview.md
       - linkListType: whats-new
         links:
           - text: Impact Connector for Azure Monitor
-            url: AzMonConnector.md
+            url: azure-monitor-connector.md
           - text: Impact Connector for Azure Monitor TSG
-            url: TSGConnectors.md
+            url: connectors-troubleshooting-guide.md
           - text: View Reported Impact and Insights
-            url: ViewImpactInsights.md
+            url: view-impact-insights.md
   # Card 
   - title: Get started
     linkLists:
       - linkListType: quickstart
         links:
-          # - text: Register for Private Preview
-          #   url: RegisterPrivatePreview.md
           - text: Report Impact on an Azure Virtual Machine
-            url: ReportVMImpact.md
+            url: report-vm-impact.md
           - text: View Reported Impacts
-            url: ViewImpactInsights.md
+            url: view-impact-insights.md
           - text: View Allowed Impact Categories
-            url: ViewImpactCategories.md
+            url: view-impact-categories.md
           - text: FAQ
             url: Faq.md
   # Card
@@ -48,12 +46,12 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Report Impact on an Azure Virtual Machine
-            url: ReportVMImpact.md
+            url: report-vm-impact.md
           - text: Report Impacts Using a Logic App
-            url: CreatingLogicApp.md
+            url: creating-logic-app.md
       - linkListType: tutorial
         links:
           - text: Onboard to Azure Impact Reporting
-            url: OnboardToImpactRP.md
+            url: onboard-to-impact-reporting.md
           - text: View Allowed Impact Categories
-            url: ViewImpactCategories.md
+            url: view-impact-categories.md

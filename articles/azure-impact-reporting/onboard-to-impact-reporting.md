@@ -189,4 +189,4 @@ PUT https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [File an impact report](ReportVMImpact.md)
+> [File an impact report](report-vm-impact.md)

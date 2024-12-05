@@ -20,7 +20,7 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 
 ## Prerequisites
 
-First see [Onboarding](OnboardToImpactRP.md) for steps on enabling private preview API access for your subscription.\
+First see [Onboarding](onboard-to-impact-reporting.md) for steps on enabling private preview API access for your subscription.\
 \
 A managed identity with PUT access to the ImpactRP API and read access to the data source for the workload is required. Additionally, a query with a 1 minute or greater polling interval for the data source to generate the following fields is needed:
 

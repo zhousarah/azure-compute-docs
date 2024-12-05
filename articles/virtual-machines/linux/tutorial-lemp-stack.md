@@ -705,7 +705,7 @@ done
 
 <!--
 ## Assign Microsoft Entra ID RBAC for Microsoft Entra ID login for Linux Virtual Machine
-The below command uses [az role assignment create](https://learn.microsoft.com/cli/azure/role/assignment#az-role-assignment-create) to assign the `Virtual Machine Administrator Login` role to the VM for your current Azure user.
+The below command uses [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create) to assign the `Virtual Machine Administrator Login` role to the VM for your current Azure user.
 ```bash
 export MY_RESOURCE_GROUP_ID=$(az group show --resource-group $MY_RESOURCE_GROUP_NAME --query id -o tsv)
 az role assignment create \

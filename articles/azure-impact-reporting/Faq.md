@@ -31,4 +31,4 @@ All Azure resource types are enabled for impact reporting.
 
 ## Next steps
 
-- [File an impact report](ReportVMImpact.md)
+- [File an impact report](report-vm-impact.md)

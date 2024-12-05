@@ -29,4 +29,4 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 
 ## Next steps
 <!-- Add a context sentence for the following links -->
-- [Get allowed impact category list](ViewImpactCategories.md)
+- [Get allowed impact category list](view-impact-categories.md)

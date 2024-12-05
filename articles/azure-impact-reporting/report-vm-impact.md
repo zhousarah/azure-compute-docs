@@ -51,4 +51,4 @@ az rest --method PUT --url "https://management.azure.com/subscriptions/<Subscrip
 
 ## Next steps
 
-- [Get allowed impact category list](ViewImpactCategories.md)
+- [Get allowed impact category list](view-impact-categories.md)

@@ -48,4 +48,4 @@ Review our full list of categories in our [REST API reference](https://aka.ms/Im
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [View previously filed impact reports](ViewImpactInsights.md)
+> [View previously filed impact reports](view-impact-insights.md)
