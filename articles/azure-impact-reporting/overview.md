@@ -15,7 +15,7 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 
 Azure Impact Reporting enables you to leverage Azure Intelligence Systems to enhance your investigations through reporting suspected platform issues. In addition to providing you with insights if found, these impact reports are used in resource health modeling to determine service and resource health.
 
-![End-to-end architecture diagram of Azumre Impact Reporting.](images/impact-rp-end-to-end.png)
+![End-to-end architecture diagram of Azumre Impact Reporting.](images/impact-reportingp-end-to-end.png)
 
 ## What is an "Impact"?
 
