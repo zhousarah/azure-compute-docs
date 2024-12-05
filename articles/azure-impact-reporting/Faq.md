@@ -11,7 +11,7 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 
 # Azure impact Reporting FAQ (Preview)
 > [!IMPORTANT]
-> Azure Impact Reporting is currently in PREVIEW. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+> Azure Impact Reporting is currently in Preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 Here are answers to common questions about Azure Impact Reporting.
 

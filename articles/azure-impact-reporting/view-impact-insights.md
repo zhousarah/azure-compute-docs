@@ -9,10 +9,12 @@ ms.date: 06/19/2024 #Required; mm/dd/yyyy format.
 ms.custom: template-overview #Required; leave this attribute/value as-is.
 ---
 
-# Viewing Impact Reports and Insights (Preview)
+# View Impact Reports and Insights (Preview)
 > [!IMPORTANT]
-> Azure Impact Reporting is currently in PREVIEW. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
- 
+> Azure Impact Reporting is currently in Preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+
+Previously submitted impact reports and insights can be viewed through the REST API, in ARG (Azure Resource Graph Explorer) and the Azure portal.
+
 ## Permissions needed
 You need either the "**Impact Reporter**" role or `read` action on `Microsoft.Impact/WorkloadImpact/*` at the right scope (root, subscription, or resource group).
 
@@ -67,7 +69,7 @@ To run these queries, go to the Azure portal [ARG query blade](https://portal.az
 
 ##### Get all Impact reports that have Insights
 
-> This query retrieves all Impact reports with Insights, displaying key details such as the resource ID and impact properties.
+This query retrieves all Impact reports with Insights, displaying key details such as the resource ID and impact properties.
 
 ```kql
 impactreportresources 
@@ -84,7 +86,7 @@ impactreportresources
 
 ##### For a resource URI, Find all reported Impacts and Insights
 
-> Given a resource Id, this query retrieves Impact reports and Insights that include the specified resource Id.
+Given a resource Id, this query retrieves Impact reports and Insights that include the specified resource Id.
 
 ```kql
 impactreportresources 

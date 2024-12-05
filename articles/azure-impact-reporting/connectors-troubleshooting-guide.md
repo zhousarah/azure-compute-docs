@@ -11,7 +11,7 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 
 # Impact Reporting Connectors Troubleshooting Guide (Preview)
 > [!IMPORTANT]
-> Azure Impact Reporting is currently in PREVIEW. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+> Azure Impact Reporting is currently in Preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 This guide outlines solutions to common errors faced when creating an Impact Reporting Connector.
 
@@ -49,11 +49,11 @@ It can take about 15-20 minutes for the namespace registration to allow the conn
 ## Connector creation fails
 
 1. Ensure that the `Microsoft.Impact` resource provider is registered. You can register the subscription in two ways -
-    - From the Azure portal, navigate to your `Subscription -> Resource Providers`
-    - Search for `Microsoft.Impact` and register
-    - **Bash**: run `az provider show -n "Microsoft.Impact" -o json --query "registrationState"`
-    - **PowerShell**: run `Get-AzResourceProvider -ProviderNamespace Microsoft.Impact`
-2.	Ensure that the feature flags: AllowImpactReporting and `AzureImpactReportingConnector` are registered against the feature:` Microsoft.Impact` Run this command
+    - From the Azure portal, navigate to your `Subscription -> Resource Providers`.
+    - Search for `Microsoft.Impact` and register.
+    - **Bash**: run `az provider show -n "Microsoft.Impact" -o json --query "registrationState"`.
+    - **PowerShell**: run `Get-AzResourceProvider -ProviderNamespace Microsoft.Impact`.
+2.	Ensure that the feature flags: AllowImpactReporting and `AzureImpactReportingConnector` are registered against the feature:` Microsoft.Impact`.
 
     - **Bash**
         - `az feature list -o json --query "[?contains(name, 'Microsoft.Impact/AllowImpactReporting')].{Name:name,State:properties.state}"`

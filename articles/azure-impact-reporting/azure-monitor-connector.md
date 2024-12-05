@@ -11,7 +11,7 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 
 # What is the Impact Connector for Azure Monitor Alerts? (Preview)
 > [!IMPORTANT]
-> Azure Impact Reporting is currently in PREVIEW. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+> Azure Impact Reporting is currently in Preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 The impact Connector for Azure Monitor alerts enables you to seamlessly report impact from an alert into Microsoft AIOps for change event correlation.
 
@@ -22,6 +22,6 @@ The impact Connector for Azure Monitor alerts enables you to seamlessly report i
 When you create a connector, it gets associated with a subscription. When alerts whose target resources reside in the specified subscription get fired, an Impact report is created through Azure Impact Reporting and sent to Microsoft Intelligence Systems.
 
 ## Next steps
-* [Create a Connector for Azure Monitor Alerts](create-azure-monitor-connector.md)
-* [Impact Reporting Connectors - Troubleshooting Guide](connectors-troubleshooting-guide.md)
-* [View Reported Impacts and Insights](view-impact-insights.md)
+* [Create a Connector for Azure Monitor Alerts](create-azure-monitor-connector.md).
+* [Impact Reporting Connectors - Troubleshooting Guide](connectors-troubleshooting-guide.md).
+* [View Reported Impacts and Insights](view-impact-insights.md).

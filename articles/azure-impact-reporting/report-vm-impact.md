@@ -11,11 +11,9 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 
 # Report Impact (Preview)
 > [!IMPORTANT]
-> Azure Impact Reporting is currently in PREVIEW. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+> Azure Impact Reporting is currently in Preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 You can call our REST API to file an impact report, or use a [connector](./azure-monitor-connector.md) to automatically report impact from Azure Monitor Alerts.
-
-<!-- [ NOTE, TIP, IMPORTANT, CAUTION, and WARNING are supported. Case-sensitive.]  -->
 
 > [!TIP]
 > Since most workloads have monitoring in place to detect failures, we recommend creating an integration through a logic app or Azure Function to file an impact report when your monitoring identifies a problem that you think is caused by the infrastructure.
@@ -41,13 +39,6 @@ Review our full [REST API reference](https://aka.ms/ImpactRP/APIDocs) for more e
 az rest --method PUT --url "https://management.azure.com/subscriptions/<Subscription_id>/providers/Microsoft.Impact/workloadImpacts/<impact_name>?api-version=2022-11-01-preview"  --body <body_above>
 
 ```
-
-<!-- ## Report Impact via Azure Portal -->
-
---coming soon: file an impact report via azcli and Azure portal.
-
-<!-- ## Reporting Impact via Azure CLI -->
-
 
 ## Next steps
 

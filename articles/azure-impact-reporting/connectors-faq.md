@@ -11,7 +11,7 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 
 # Azure Impact Reporting Connectors for Azure Monitor FAQ (Preview)
 > [!IMPORTANT]
-> Azure Impact Reporting is currently in PREVIEW. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
+> Azure Impact Reporting is currently in Preview. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 Here are answers to common questions about Azure Impact Reporting Connectors.
 
@@ -28,15 +28,15 @@ Verify your Azure role and permissions. You may need the help of your Azure admi
 ### Option 1
 * **Bash**:
     * Step 1: Run this command: 
-`az rest --method get --url https://management.azure.com/subscriptions/<subscription-id>/providers/Microsoft.Impact/connectors?api-version=2024-05-01-preview`
-    * Step 2: You should see a resource with the name `AzureMonitorConnector`
+`az rest --method get --url https://management.azure.com/subscriptions/<subscription-id>/providers/Microsoft.Impact/connectors?api-version=2024-05-01-preview`.
+    * Step 2: You should see a resource with the name `AzureMonitorConnector`.
 * **Powershell**:
     * Step 1: Run this command: 
-`(Invoke-AzRestMethod -Method Get -Path subscriptions/<Subscription Id>/providers/Microsoft.Impact/connectors?api-version=2024-05-01-preview).Content`
-`* Step 2: You should see a resource with the name `AzureMonitorConnector`
+`(Invoke-AzRestMethod -Method Get -Path subscriptions/<Subscription Id>/providers/Microsoft.Impact/connectors?api-version=2024-05-01-preview).Content`.
+    * Step 2: You should see a resource with the name `AzureMonitorConnector`.
 
 ### Option 2
-* Step 1: From the Azure portal, navigate to [Azure Resource Graph Explorer](https://portal.azure.com/#view/HubsExtension/ArgQueryBlade)
+* Step 1: From the Azure portal, navigate to [Azure Resource Graph Explorer](https://portal.azure.com/#view/HubsExtension/ArgQueryBlade).
 * Step 2: Run this query: 
 ```kql
 impactreportresources  | where name == "AzureMonitorConnector"  and type == "microsoft.impact/connectors"
@@ -44,6 +44,6 @@ impactreportresources  | where name == "AzureMonitorConnector"  and type == "mic
 
 ## Next steps
 
-- [File an impact report](report-vm-impact.md)
+* [File an impact report](report-vm-impact.md).
 <!-- Add Impact Connectors TSG -->
 <!-- - [File an impact report](report-vm-impact.md) -->
