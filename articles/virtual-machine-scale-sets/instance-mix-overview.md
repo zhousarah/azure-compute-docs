@@ -41,7 +41,7 @@ The `skuProfile` property represents the umbrella property for all properties re
 The `vmSizes` property is where you specify the specific VM sizes that you're using as part of your scale set deployment with Instance Mix.
 
 ### allocationStrategy
-Instance Mix introduces the ability to set allocation strategies for your scale set. The `allocationStrategy` property is where you specify which allocation strategy you'd like to use for your Instance Mix scale set deployments. There are two options for allocation strategies, `lowestPrice` and `capacityOptimized`. Allocation strategies apply to both Spot and Standard VMs.
+Instance Mix introduces the ability to set allocation strategies for your scale set. The `allocationStrategy` property is where you specify which allocation strategy you'd like to use for your Instance Mix scale set deployments. There are three options for allocation strategies, `lowestPrice`, `capacityOptimized`, and `Prioritized`. Allocation strategies apply to both Spot and Standard VMs.
 
 #### lowestPrice (default)
 This allocation strategy is focused on workloads where cost and cost-optimization are most important. When evaluating what VM split to use, Azure looks at the lowest priced VMs of the VM sizes specified. Azure also considers capacity as part of this allocation strategy. The scale set deploys as many of the lowest priced VMs as it can, depending on available capacity, before moving on to the next lowest priced VM size specified. `lowestPrice` is the default allocation strategy.
