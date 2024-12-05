@@ -14,21 +14,19 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 > Azure Impact Reporting is currently in PREVIEW. See the [Supplemental Terms of Use for Microsoft Azure Previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) for legal terms that apply to Azure features that are in beta, preview, or otherwise not yet released into general availability.
 
 > [!NOTE]
-> Please visit the [API Docs](https://aka.ms/ImpactRP/APIDocs) to learn more about available impact management actions.
+> Please visit the [API Docs](https://aka.ms/ImpactRP/APIDocs) to learn more about available actions.
 
 ![End-to-end architecture diagram of Azumre Impact Reporting.](images/impact-rp-end-to-end.png)
 ## Register your Subscription for Impact Reporting Feature
 
-Follow the steps below to register your subscription for Impact Reporting.
+Follow these steps to register your subscription for Impact Reporting.
 
 1. Navigate to your subscription
 1. Under the `Settings` tab section, go to `Preview Features`
 1. Under this tab, filter for `Microsoft.Impact` in the `type` section
 ![Screenshot of preview feature registration page.](images/preview.png)
-1. Click on `Allow Impact Reporting` feature and register
+1. Select `Allow Impact Reporting` feature and register
 1. After approval, go to `Resource providers`, search for `Microsoft.Impact` and register
-
-Once your request is approved, you be able to report Impact to your Azure workloads.
 
 ## Report Using Managed Identity
 
@@ -40,13 +38,13 @@ The principal reporting impacts must have the `Impact Reporter` Azure built-in r
 "Microsoft.Impact/WorkloadImpacts/*",
 ```
 
-## Report Using curl or Powershell
+## Report Using curl or PowerShell
 
 > [!NOTE]
 > This case the user reporting impact needs to have the `Impact Reporter` Azure resource role assigned at the right scope.
 >
 
-#### [Powershell](#tab/powershell/)
+#### [PowerShell](#tab/powershell/)
 
 ```powershell
 

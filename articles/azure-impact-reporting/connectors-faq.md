@@ -17,8 +17,8 @@ Here are answers to common questions about Azure Impact Reporting Connectors.
 
 ## How do I enable debug mode?
 
-* **Bash**: Uncomment the `set -x` at the beginning of the script to enable debug mode.
-* **Powershell**: Change `Set-PSDebug -Trace 0 to Set-PSDebug -Trace 1` at the beginning of the script to enable debug mode
+* **Bash**: Uncomment the `set -x` at the beginning of the script.
+* **Powershell**: Change `Set-PSDebug -Trace 0 to Set-PSDebug -Trace 1` at the beginning
 
 ## What should I do if I encounter a permission error?
 
@@ -27,17 +27,17 @@ Verify your Azure role and permissions. You may need the help of your Azure admi
 ## How can I verify if the connector is successfully created?
 ### Option 1
 * **Bash**:
-    * Step 1: Run the below command: 
+    * Step 1: Run this command: 
 `az rest --method get --url https://management.azure.com/subscriptions/<subscription-id>/providers/Microsoft.Impact/connectors?api-version=2024-05-01-preview`
     * Step 2: You should see a resource with the name `AzureMonitorConnector`
 * **Powershell**:
-    * Step 1: Run the below command: 
+    * Step 1: Run this command: 
 `(Invoke-AzRestMethod -Method Get -Path subscriptions/<Subscription Id>/providers/Microsoft.Impact/connectors?api-version=2024-05-01-preview).Content`
 `* Step 2: You should see a resource with the name `AzureMonitorConnector`
 
 ### Option 2
-* Step 1: From the Azure Portal, navigate to [Azure Resource Graph Explorer](https://portal.azure.com/#view/HubsExtension/ArgQueryBlade)
-* Step 2: Run the below query: 
+* Step 1: From the Azure portal, navigate to [Azure Resource Graph Explorer](https://portal.azure.com/#view/HubsExtension/ArgQueryBlade)
+* Step 2: Run this query: 
 ```kql
 impactreportresources  | where name == "AzureMonitorConnector"  and type == "microsoft.impact/connectors"
 ```

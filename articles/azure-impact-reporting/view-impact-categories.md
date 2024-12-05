@@ -19,7 +19,7 @@ Review our full list of categories in our [REST API reference](https://aka.ms/Im
 
 |**Category Name**|**Problem Description**|
 |----------------------------------|------------------------------------------------------------------------------------------------------------------------|
-|ARMOperation.CreateOrUpdate|To report problems related to creating a new azure virtual machine such as provisioning or allocation failures|
+|ARMOperation.CreateOrUpdate|To report problems related to creating a new Azure virtual machine such as provisioning or allocation failures|
 |ARMOperation.Delete|To report failures in deleting a resource.|
 |ARMOperation.Get|To report failures in querying resource metadata.|
 |ARMOperation.Start|To report failures in starting a resource.|
@@ -29,20 +29,20 @@ Review our full list of categories in our [REST API reference](https://aka.ms/Im
 |Resource.Performance.Network|To report performance issues which are networking related. For example, degraded network throughput.|
 |Resource.Performance.Disk|To report performance issues which are disk related. For example, degraded IOPs|
 |Resource.Performance.CPU|To report performance issues which are CPU related.|
-|Resource.Performance.Other|To report issues that don’t fall under other Resource.Performance sub-categories.|
+|Resource.Performance.Other|To report issues that don’t fall under other Resource.Performance subcategories.|
 |Resource.Connectivity|To report general connectivity issues to or from a resource.|
 |Resource.Connectivity.Inbound|To report inbound connectivity issues to a resource.|
 |Resource.Connectivity.Outbound|To report outbound connectivity issues from a resource.|
-|Resource.Connectivity.Other|To report issues that don’t fall into under other Resource.Connectivity sub-categories|
+|Resource.Connectivity.Other|To report issues that don’t fall into under other Resource.Connectivity subcategories|
 |Resource.Availability|To report general unavailability issues|
 |Resource.Availability.Restart|To report if an unexpected virtual machine restarts|
-|Resource.Availability.Boot|To report virtual machines which are in a non-bootable state, not booting at all or is on a reboot loop|
+|Resource.Availability.Boot|To report virtual machines which are in a nonbootable state, not booting at all or is on a reboot loop|
 |Resource.Availability.Disk|To report availability issues related to disk|
-|Resource.Availability.UnResponsive|To report a resource that is not responsive now or for a time in the past|
+|Resource.Availability.UnResponsive|To report a resource that isn't responsive now or for a time in the past|
 |Resource.Availability.Storage|To report availability issues related to storage.|
 |Resource.Availability.Network|To report network availability issues.|
-|Resource.Availability.DNS|To report DNS availability issues.|
-|Resource.Availability.Other|To report issues that don’t fall into under other Resource.Availability sub-categories|
+|Resource.Availability.DNS|To report DNS (Domain Name System) availability issues.|
+|Resource.Availability.Other|To report issues that don’t fall into under other Resource.Availability subcategories|
 
 
 ## Next steps

@@ -20,8 +20,6 @@ ms.custom: template-overview #Required; leave this attribute/value as-is.
 
 ## Prerequisites
 
-First see [Onboarding](onboard-to-impact-reporting.md) for steps on enabling private preview API access for your subscription.\
-\
 A managed identity with PUT access to the ImpactRP API and read access to the data source for the workload is required. Additionally, a query with a 1 minute or greater polling interval for the data source to generate the following fields is needed:
 
 - ImpactName
@@ -43,16 +41,16 @@ ExampleTable
 
 ## Steps
 
-1. Create a new Logic Apps in Azure Portal with the following settings:
+1. Create a new Logic Apps in Azure portal with the following settings:
     - Publish: Workflow
     - Region: Central US
     - Plan: Standard
 
-2. (Optional) Under the "Monitoring" section, set "Enable Application Insights" to "Yes." This allows for failure monitoring. More steps will be at the bottom of this document.
+2. (Optional) Under the "Monitoring" section, set "Enable Application Insights" to "Yes." to enable failure monitoring. More steps are at the bottom of this document.
 
-3. Review and Create the Logic App. Once created, open the Logic App and navigate to "Settings" -> "Identity" in the side pane. In the "User assigned" section, click "Add" and select the managed identity created in the prerequisites. Click "Save" to save the changes.
+3. Review and Create the Logic App. Once created, open the Logic App and navigate to "Settings" -> "Identity" in the side pane. In the "User assigned" section, select "Add" and select the managed identity created in the prerequisites. Select "Save" to save the changes.
 
-4. Navigate to "Workflows" -> "Connections" and click on the "JSON View" tab. Create a connection for your data source. This example uses Kusto with managed identity, but any data source supported by Logic Apps can be used:
+4. Navigate to "Workflows" -> "Connections" and select the "JSON View" tab. Create a connection for your data source. This example uses Kusto with managed identity, but any data source supported by Logic Apps can be used:
 
     ```json
     {
@@ -80,11 +78,11 @@ ExampleTable
     }
     ```
 
-    Click "Save" to save the changes.
+    Select "Save" to save the changes.
 
-5. Navigate to "Workflows" -> "Workflows", then click "Add" and create and new blank workflow with "State Type" set as "Stateful."
+5. Navigate to "Workflows" -> "Workflows," then select "Add" and create and new blank workflow with "State Type" set as "Stateful."
 
-6. Click on the newly created workflow. Navigate to "Developer" -> "Code" and replace the JSON content with this:
+6. Select the newly created workflow. Navigate to "Developer" -> "Code" and replace the JSON content with:
 
     ```json
     {
@@ -167,17 +165,17 @@ ExampleTable
     }
     ```
 
-    Click "Save" to save the changes.
+    Select "Save" to save the changes.
 
-7. Navigate to "Developer" -> "Designer." Click on the "Run KQL Query" block. Replace "Cluster URL" and "Database" with the target Kusto cluster and database. Replace the "Query" with the query from the prerequisites. Next, click on the blue "Change connection" link underneath the query textbox. Set "Authentication" to Managed Identity and set "Managed identity" to the managed identity created in the prerequisites with an appropriate "Connection Name" and click "Create."
+7. Navigate to "Developer" -> "Designer." Select the "Run KQL (Kusto Query Language) Query" block. Replace "Cluster URL" and "Database" with the target Kusto cluster and database. Replace the "Query" with the query from the prerequisites. Next, select the blue "Change connection" link underneath the query textbox. Set "Authentication" to Managed Identity and set "Managed identity" to the managed identity created in the prerequisites with an appropriate "Connection Name" and select "Create."
 
     > [!NOTE]
     > If using a source other than Kusto, replace the "Run KQL Query" block with the appropriate block for your data source. The "For Each" block will need to be updated to iterate over the results of the query and the "HTTP" block will need to be updated to use the appropriate data from the query results.
 
-8. (Optional) If the polling interval for the query is greater than 1 minute, click on the "Recurrence" block and set the "Interval" to the polling interval in minutes.
+8. (Optional) If the polling interval for the query is greater than 1 minute, select the "Recurrence" block and set the "Interval" to the polling interval in minutes.
 
-9. Click on the "HTTP" block and update the "Authentication" to the managed identity created in the prerequisites. Click "Save" to save the changes.
+9. Select the "HTTP" block and update the "Authentication" to the managed identity created in the prerequisites. Select "Save" to save the changes.
 
-10. Navigate to "Overview" and click "Run" to test the flow. Results will be displayed under "Run History."
+10. Navigate to "Overview" and select "Run" to test the flow. Results are displayed under "Run History."
 
-11. (Optional) Return to the Logic App screen in Azure Portal. Navigate to "Settings" -> "Application Insights" and click on the hyperlink to the Application Insights resource. Navigate to "Monitoring" -> "Alerts." Click "Create" -> "Alert Rule." From here, you can create an alert rule to notify on failures.
+11. (Optional) Return to the Logic App screen in Azure portal. Navigate to "Settings" -> "Application Insights" and select the hyperlink to the Application Insights resource. Navigate to "Monitoring" -> "Alerts." Select "Create" -> "Alert Rule." From here, you can create an alert rule to notify on failures.
