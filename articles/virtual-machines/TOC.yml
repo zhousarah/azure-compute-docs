@@ -1480,6 +1480,8 @@
     href: disks-redundancy.md
   - name: What's new in Azure Disk Storage
     href: disks-whats-new.md
+  - name: Azure Well-Architected Framework Disk Storage considerations
+    href: /azure/well-architected/service-guides/azure-disk-storage
   - name: Deploy an ultra disk
     href: disks-enable-ultra-ssd.md
   - name: Deploy a premium SSD v2
