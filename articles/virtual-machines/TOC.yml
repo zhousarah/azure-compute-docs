@@ -1802,6 +1802,10 @@
       href: ./windows/expand-os-disk.md
     - name: Unmanaged disks
       href: expand-unmanaged-disks.md
+  - name: Architecture
+    items:
+    - name: Azure Well-Architected Framework Disk Storage considerations
+      href: /azure/well-architected/service-guides/azure-disk-storage?toc=/azure/virtual-machines/toc.json
   - name: Manage storage
     items:
     - name: Deploy disks with ARM template
