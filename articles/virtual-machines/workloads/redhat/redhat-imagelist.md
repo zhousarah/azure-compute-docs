@@ -63,8 +63,8 @@ This section provides list of RHEL images available in Azure. Unless otherwise s
 | | 85-gen2 | LVM | Linux Agent | Hyper-V Generation 2 - RHEL 8.x family of images. <br> Attached to regular repositories (EUS unavailable for RHEL 8.5) |
 | | 8.6 | LVM | Linux Agent | RHEL 8.x family of images. <br> Attached to EUS repositories |
 | | 86-gen2 | LVM | Linux Agent | Hyper-V Generation 2 - RHEL 8.x family of images. <br> Attached to EUS repositories |
-| | 9.0 | LVM | Linux Agent | RHEL 9.x family of images. <br> Currently attached to regular repositores. Will be attached to EUS repositories once they become available |
-| | 90-gen2  | LVM | Linux Agent | Hyper-V Generation 2 - RHEL 9.x family of images. <br> Currently attached to regular repositores. Will be attached to EUS repositories once they become available |
+| | 9.0 | LVM | Linux Agent | RHEL 9.x family of images. <br> Currently attached to regular repositories. Will be attached to EUS repositories once they become available |
+| | 90-gen2  | LVM | Linux Agent | Hyper-V Generation 2 - RHEL 9.x family of images. <br> Currently attached to regular repositories. Will be attached to EUS repositories once they become available |
 | RHEL-SAP-APPS | 6.8 | RAW | Linux Agent | RHEL 6.8 for SAP Business Applications. Outdated in favor of the RHEL-SAP images. |
 | | 7.3 | LVM | Linux Agent | RHEL 7.3 for SAP Business Applications. Outdated in favor of the RHEL-SAP images. |
 | | 7.4 | LVM | Linux Agent | RHEL 7.4 for SAP Business Applications |
