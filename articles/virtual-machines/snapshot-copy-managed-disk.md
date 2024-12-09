@@ -5,7 +5,7 @@ author: roygara
 ms.author: rogarana
 ms.service: azure-disk-storage
 ms.topic: how-to
-ms.date: 04/22/2022
+ms.date: 12/09/2024
 ---
 
 # Create a snapshot of a virtual hard disk
