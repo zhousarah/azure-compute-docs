@@ -223,6 +223,34 @@ Extension execution output is logged to the following file. Refer to this file t
 | 13 | VM size not supported | Use an N-series VM to deploy. |
 | 14 | Operation unsuccessful | Check the execution output log. |
 
+### Known Issues
+1) NvidiaGpuDriverLinux fails to install the latest drivers on Redhat OS because of certificate issues. We are actively working on resolving it. In the meantime, please use GRID driver 16.5 by passing a runtime setting to the extension.
+   
+```azurecli
+az vm extension set  --resource-group <rg-name> --vm-name <vm-name>  --name NvidiaGpuDriverLinux --publisher Microsoft.HpcCompute --settings "{'driverVersion':'538.46'}"
+```
+
+```ARM templates
+{
+  "name": "NvidiaGpuDriverWindows",
+  "type": "extensions",
+  "apiVersion": "2015-06-15",
+  "location": "<location>",
+  "dependsOn": [
+    "[concat('Microsoft.Compute/virtualMachines/', <myVM>)]"
+  ],
+  "properties": {
+    "publisher": "Microsoft.HpcCompute",
+    "type": "NvidiaGpuDriverLinux",
+    "typeHandlerVersion": "1.11",
+    "autoUpgradeMinorVersion": true,
+    "settings": {
+         "driverVersion": "538.46"
+    }
+  }
+}
+```
+
 ### Support
 
 If you need more help at any point in this article, contact the Azure experts on the [MSDN Azure and Stack Overflow forums](https://azure.microsoft.com/support/community/). Alternatively, you can file an Azure support incident. Go to [Azure support](https://azure.microsoft.com/support/options/) and select **Get support**. For information about using Azure support, read the [Azure support FAQ](https://azure.microsoft.com/support/faq/).
