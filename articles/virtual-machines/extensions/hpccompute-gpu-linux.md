@@ -224,7 +224,7 @@ Extension execution output is logged to the following file. Refer to this file t
 | 14 | Operation unsuccessful | Check the execution output log. |
 
 ### Known issues
-1) NvidiaGpuDriverLinux fails to install the latest drivers on Redhat OS because of certificate issues. We are actively working on resolving it. In the meantime, please use GRID driver 16.5 by passing a runtime setting to the extension.
+`NvidiaGpuDriverLinux` currently fails to install the latest drivers on Red Hat OS because of certificate issues. While Azure is working to resolve this issue, use GRID driver 16.5 by passing a runtime setting to the extension.
    
 ```azurecli
 az vm extension set  --resource-group <rg-name> --vm-name <vm-name>  --name NvidiaGpuDriverLinux --publisher Microsoft.HpcCompute --settings "{'driverVersion':'538.46'}"
