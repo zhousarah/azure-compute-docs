@@ -223,7 +223,7 @@ Extension execution output is logged to the following file. Refer to this file t
 | 13 | VM size not supported | Use an N-series VM to deploy. |
 | 14 | Operation unsuccessful | Check the execution output log. |
 
-### Known Issues
+### Known issues
 1) NvidiaGpuDriverLinux fails to install the latest drivers on Redhat OS because of certificate issues. We are actively working on resolving it. In the meantime, please use GRID driver 16.5 by passing a runtime setting to the extension.
    
 ```azurecli
