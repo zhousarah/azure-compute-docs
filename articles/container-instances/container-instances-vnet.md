@@ -221,6 +221,10 @@ Results:
 }
 ```
 
+```bash
+echo -e "I saw this command! 1"
+```
+
 When you deploy to a new virtual network by using this method, the deployment can take a few minutes while the network resources are created. After the initial deployment, further container group deployments to the same subnet complete more quickly.
 
 ## Deploy to existing virtual network
@@ -277,6 +281,10 @@ tags: null
 type: Microsoft.ContainerInstance/containerGroups
 ```
 
+```bash
+echo -e "I saw this command! 2"
+```
+
 The following Bash command is for the automated deployment pathway.
 
 ```bash
@@ -297,7 +305,7 @@ rm container-instances-vnet.yaml
 ```
 
 ```bash
-echo -e "I saw this command!"
+echo -e "I saw this command! 3"
 ```
 
 Once the deployment completes, run the [az container show][az-container-show] command to display its status:
