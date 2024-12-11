@@ -87,7 +87,7 @@ The virtual network and subnet address prefixes specify the address spaces for t
 
 Once you deploy your first container group with this method, you can deploy to the same subnet by specifying the virtual network and subnet names, or the network profile that Azure automatically creates for you. Because Azure delegates the subnet to Azure Container Instances, you can deploy *only* container groups to the subnet.
 
-### Example
+<!-- ### Example -->
 
 The following [az container create][az-container-create] command specifies settings for a new virtual network and subnet. Provide the name of a resource group that was created in a region where container group deployments in a virtual network are [available](container-instances-region-availability.md). This command deploys the public Microsoft aci-helloworld container that runs a small Node.js webserver serving a static web page. In the next section, you'll deploy a second container group to the same subnet, and test communication between the two container instances.
 
