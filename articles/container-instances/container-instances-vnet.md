@@ -29,7 +29,7 @@ Examples in this article are formatted for the Bash shell. If you prefer another
 
 ### Define environment variables
 
-The automated deployment patheway uses the following environment variables and resource names throughout this guide. Users proceeding through the guide manually can use their own variables and names as preferred.
+The automated deployment pathway uses the following environment variables and resource names throughout this guide. Users proceeding through the guide manually can use their own variables and names as preferred.
 
 ```azurecli-interactive
 export RANDOM_ID="$(openssl rand -hex 3)"
@@ -317,7 +317,20 @@ appcontaineryaml  myACIResourceGroup123abc  Succeeded  mcr.microsoft.com/azuredo
 
 ### Example
 
-The following example deploys a third container group to the same subnet created previously, and verifies communication between the first and second container instances.
+The following example deploys a third container group to the same subnet created previously. Using an Apline Linux image, it verifies communication between itself and the first container instance.
+
+> [!NOTE]
+> Due to rate limiting in effect for pulling public Docker images like the Alpine Linux one used here, you may receive an error in the form:
+>
+> (RegistryErrorResponse) An error response is received from the docker registry 'index.docker.io'. Please retry later.
+> Code: RegistryErrorResponse
+> Message: An error response is received from the docker registry 'index.docker.io'. Please retry later.
+
+The following Bash command is for the automated deployment pathway.
+
+```bash
+echo -e "Due to rate limiting in effect for pulling public Docker images like the one used here, you may receive an error in the form:\n\n(RegistryErrorResponse) An error response is received from the docker registry 'index.docker.io'. Please retry later.\nCode: RegistryErrorResponse\nMessage: An error response is received from the docker registry 'index.docker.io'. Please retry later.\n\nIf this occurs, the automated deployment will exit. You can try again or go to the end of the guide to see instructions for cleaning up your resources."
+```
 
 First, get the IP address of the first container group you deployed, the *appcontainer*:
 
@@ -338,19 +351,6 @@ Results:
 ```
 
 Now, set `CONTAINER_GROUP_IP` to the IP you retrieved with the `az container show` command, and execute the following `az container create` command. This second container, *commchecker*, runs an Alpine Linux-based image and executes `wget` against the first container group's private subnet IP address.
-
-> [!NOTE]
-> Due to rate limiting in effect for pulling public Docker images like the one used here, you may receive an error in the form:
->
-> (RegistryErrorResponse) An error response is received from the docker registry 'index.docker.io'. Please retry later.
-> Code: RegistryErrorResponse
-> Message: An error response is received from the docker registry 'index.docker.io'. Please retry later.
-
-The following Bash command is for the automated deployment pathway.
-
-```bash
-echo -e "Due to rate limiting in effect for pulling public Docker images like the one used here, you may receive an error in the form:\n\n(RegistryErrorResponse) An error response is received from the docker registry 'index.docker.io'. Please retry later.\nCode: RegistryErrorResponse\nMessage: An error response is received from the docker registry 'index.docker.io'. Please retry later.\n\nIf this occurs, the automated deployment will exit. You can try again or go to the end of the guide to see instructions for cleaning up your resources."
-```
 
 ```azurecli-interactive
 az container create \
