@@ -70,7 +70,6 @@ Results:
 }
 ```
 
-
 ## Deploy to new virtual network
 
 > [!NOTE]
@@ -86,8 +85,6 @@ To deploy to a new virtual network and have Azure create the network resources f
 The virtual network and subnet address prefixes specify the address spaces for the virtual network and subnet, respectively. These values are represented in Classless Inter-Domain Routing (CIDR) notation, for example `10.0.0.0/16`. For more information about working with subnets, see [Add, change, or delete a virtual network subnet](/azure/virtual-network/virtual-network-manage-subnet).
 
 Once you deploy your first container group with this method, you can deploy to the same subnet by specifying the virtual network and subnet names, or the network profile that Azure automatically creates for you. Because Azure delegates the subnet to Azure Container Instances, you can deploy *only* container groups to the subnet.
-
-<!-- ### Example -->
 
 The following [az container create][az-container-create] command specifies settings for a new virtual network and subnet. Provide the name of a resource group that was created in a region where container group deployments in a virtual network are [available](container-instances-region-availability.md). This command deploys the public Microsoft aci-helloworld container that runs a small Node.js webserver serving a static web page. In the next section, you'll deploy a second container group to the same subnet, and test communication between the two container instances.
 
@@ -244,7 +241,7 @@ To deploy a container group to an existing virtual network:
 echo -e "I saw this command! 3"
 ```
 
-### Example - YAML
+### Deploy using a YAML file
 
 ```bash
 echo -e "I saw this command! 4"
@@ -339,7 +336,7 @@ appcontainer      myACIResourceGroup123abc  Succeeded  mcr.microsoft.com/azuredo
 appcontaineryaml  myACIResourceGroup123abc  Succeeded  mcr.microsoft.com/azuredocs/aci-helloworld  10.0.0.5:80,80  Private    1.0 core/1.5 gb  Linux     abcdef
 ```
 
-### Example
+### Demonstrate communication between container instances
 
 The following example deploys a third container group to the same subnet created previously. Using an Alpine Linux image, it verifies communication between itself and the first container instance.
 
