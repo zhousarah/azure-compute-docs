@@ -221,13 +221,17 @@ Results:
 }
 ```
 
+When you deploy to a new virtual network by using this method, the deployment can take a few minutes while the network resources are created. After the initial deployment, further container group deployments to the same subnet complete more quickly.
+
 ```bash
 echo -e "I saw this command! 1"
 ```
 
-When you deploy to a new virtual network by using this method, the deployment can take a few minutes while the network resources are created. After the initial deployment, further container group deployments to the same subnet complete more quickly.
-
 ## Deploy to existing virtual network
+
+```bash
+echo -e "I saw this command! 2"
+```
 
 To deploy a container group to an existing virtual network:
 
@@ -236,7 +240,15 @@ To deploy a container group to an existing virtual network:
    * Virtual network name and subnet name
    * Virtual network resource ID and subnet resource ID, which allows using a virtual network from a different resource group
 
+```bash
+echo -e "I saw this command! 3"
+```
+
 ### Example - YAML
+
+```bash
+echo -e "I saw this command! 4"
+```
 
 You can also deploy a container group to an existing virtual network by using a YAML file, a [Resource Manager template](https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.containerinstance/aci-vnet), or another programmatic method such as with the Python SDK.
 
