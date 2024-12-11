@@ -224,7 +224,7 @@ Extension execution output is logged to the following file. Refer to this file t
 | 14 | Operation unsuccessful | Check the execution output log. |
 
 ### Known issues
-1) `NvidiaGpuDriverLinux` currently fails to install the latest drivers 17.x GRID drivers because of certificate issues. While Azure is working to resolve this issue, use GRID driver 16.5 by passing a runtime setting to the extension.
+1. `NvidiaGpuDriverLinux` currently fails to install the latest drivers `17.x` GRID drivers because of certificate issues. While Azure is working to resolve this issue, use GRID driver `16.5` by passing a runtime setting to the extension.
    
 ```azurecli
 az vm extension set  --resource-group <rg-name> --vm-name <vm-name>  --name NvidiaGpuDriverLinux --publisher Microsoft.HpcCompute --settings "{'driverVersion':'538.46'}"
