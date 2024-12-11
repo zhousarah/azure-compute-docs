@@ -157,6 +157,42 @@
     href: virtual-machine-scale-sets-upgrade-scale-set.md
   - name: Understand instance IDs
     href: virtual-machine-scale-sets-instance-ids.md
+  - name: Connect to Virtual Machines
+    items:
+    - name: Linux
+      items:
+      - name: Connect to a Linux VM
+        href: ../virtual-machines/linux-vm-connect.md
+        maintainContext: true
+      - name: Create and manage SSH keys locally
+        href: ../virtual-machines/linux/create-ssh-keys-detailed.md
+        maintainContext: true
+      - name: Create and manage SSH keys in the portal
+        href: ../virtual-machines/ssh-keys-portal.md
+        maintainContext: true
+      - name: Create and manage SSH keys with the Azure CLI
+        href: ../virtual-machines/ssh-keys-azure-cli.md
+        maintainContext: true
+      - name: SSH on Linux or macOS
+        href: ../virtual-machines/linux/mac-create-ssh-keys.md
+        maintainContext: true
+      - name: SSH on Windows
+        href: ../virtual-machines/linux/ssh-from-windows.md
+        maintainContext: true
+      - name: Remote Desktop for Linux
+        href: ../virtual-machines/linux/use-remote-desktop.md
+        maintainContext: true
+    - name: Windows
+      items:
+      - name: Remote Desktop
+        href: ../virtual-machines/windows/connect-rdp.yml
+        maintainContext: true
+      - name: SSH
+        href: ../virtual-machines/windows/connect-ssh.md
+        maintainContext: true
+      - name: WinRM
+        href: ../virtual-machines/windows/connect-winrm.md
+        maintainContext: true
   - name: Manage fault domains
     href: virtual-machine-scale-sets-manage-fault-domains.md
   - name: Relocate to another region
