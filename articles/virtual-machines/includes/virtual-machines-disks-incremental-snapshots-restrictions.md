@@ -5,7 +5,7 @@
  author: roygara
  ms.service: azure-virtual-machines
  ms.topic: include
- ms.date: 01/19/2024
+ ms.date: 12/11/2024
  ms.author: rogarana
  ms.custom: include file
 ---
