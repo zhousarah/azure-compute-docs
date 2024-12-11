@@ -250,7 +250,7 @@ az vm extension set  --resource-group <rg-name> --vm-name <vm-name>  --name Nvid
   }
 }
 ```
-2)  GRID Driver version 17.x is incompatible on NVv3 (NVIDIA Tesla M60). GRID drivers up to version 16.5 are supported.`NvidiaGpuDriverLinux` installs the latest drivers which are incompatible on NVv3 SKU. Instead, use the following runtime settings to force the extension to install an older version of the driver. For more information on driver versions, see see [NVIDIA GPU resources](https://raw.githubusercontent.com/Azure/azhpc-extensions/master/NvidiaGPU/resources.json).
+2. GRID Driver version `17.x` is incompatible on NVv3 (NVIDIA Tesla M60). GRID drivers up to version `16.5` are supported. `NvidiaGpuDriverLinux` installs the latest drivers which are incompatible on NVv3 SKU. Instead, use the following runtime settings to force the extension to install an older version of the driver. For more information on driver versions, see [NVIDIA GPU resources](https://raw.githubusercontent.com/Azure/azhpc-extensions/master/NvidiaGPU/resources.json).
 
 ```azurecli
 az vm extension set  --resource-group <rg-name> --vm-name <vm-name>  --name NvidiaGpuDriverLinux --publisher Microsoft.HpcCompute --settings "{'driverVersion':'538.46'}"
