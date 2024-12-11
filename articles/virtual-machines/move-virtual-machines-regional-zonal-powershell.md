@@ -9,11 +9,11 @@ ms.date: 06/10/2024
 ms.author: ankitadutta
 ---
 
-# Move a virtual machine in an availability zone using Azure PowerShell and CLI 
+# Move a virtual machine from Regional to Zonal availability zone using Azure PowerShell and CLI 
 
-This article details using Azure PowerShell and CLI cmdlets to move Azure single instance VMs from regional to zonal availability zones. An [availability zone](/azure/availability-zones/az-overview) is a physically separate zone in an Azure region. Use availability zones to protect your apps and data from an unlikely failure or loss of an entire data center.
+This article details using Azure PowerShell and CLI cmdlets to move Azure single instance VMs from regional to zonal availability zones. An [availability zone](/azure/reliability/availability-zones-overview) is a physically separate zone in an Azure region. Use availability zones to protect your apps and data from an unlikely failure or loss of an entire data center.
 
-To use an availability zone, create your virtual machine in a [supported Azure region](/azure/availability-zones/az-region).
+To use an availability zone, create your virtual machine in a [supported Azure region](/azure/reliability/availability-zones-region-support).
 
 
 ## Prerequisites

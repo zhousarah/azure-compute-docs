@@ -65,28 +65,25 @@ From this example accumulation of Minutes Not Available, here's the calculation 
     - Dadsv5
     - Dav4 series
     - Dasv4 and newer
-    - DCsv2 series
-    - DCasv5 series
-    - DCesv5 and DCedsv5 series
-    - Ddv4 ad v5 series
-    - Ddsv4 series, v4 and newer
-    - Dplsv5 and Dpldsv5 series
-    - Dpsv and Dpds series, v5 and newer
-    - Dpds series, v5 and newer
-    - Dplsv6 series
-    - Dplds series, v5 and newer
+    - Ddv4 and v5 series
+    - Dds series, v4 and newer
     - Dlsv5 and newer series
     - Dldsv5 and newer series
+    - DCsv2 series
+    - DCasv5 and DCadsv5 series
+    - DCesv5 and DCedsv5 series
+    - ECasv5 and ECadsv5 series
+    - ECesv5 and ECedsv5 series
+    - Dplsv5 and newer series
+    - Dps and Dpds series, v5 and newer
+    - Dplds series, v5 and newer
+    - Eps and Epds series, v5 and newer
     - E series, all versions; AMD and Intel
     - Eav4 and Easv4 series
     - Easv5 and Eadsv5 series
     - Ebdsv5 and Ebsv5 series
-    - ECasv5 and ECadsv5 series
-    - ECesv5 and ECedsv5 series
     - Ed and Eds series, v4 and newer
-    - Eps and Epds series, v5 and newer
     - F series, all versions
-    - Fasv6 and Falsv6 series
     - Fx series
     - Lsv3 (Intel) and Lasv3 (AMD)
 
@@ -99,21 +96,20 @@ From this example accumulation of Minutes Not Available, here's the calculation 
     - NV-series, v3 and newer
     - NVadsA10_v5 series
     - NGads V620_v1 series
-- Support for the following VM series for capacity reservation is in public preview:
     - M-series, v2
     - M-series, v3
+- Support for the following VM series for capacity reservation is in public preview:
     - Lsv2
-
-   For the preceding M series, at VM deployment, you can set an FD count of one by using Virtual Machine Scale Sets. A deployment with more than one FD fails to deploy against a capacity reservation.
 - Support for other VM series isn't currently available:
     - M series, v1
+    - M series, HM and VHM
     - ND-series 
     - Hb-series 
     - Hc-series 
 - The following deployment types are supported: 
     - Single VM
     - Virtual Machine Scale Sets with Uniform Orchestration
-    - Virtual Machine Scale Sets with Flexible Orchestration (preview)
+    - Virtual Machine Scale Sets with Flexible Orchestration
 - The following deployment types aren't supported: 
     - Spot VMs 
     - Azure Dedicated Host nodes or VMs deployed to dedicated hosts 
@@ -131,6 +127,8 @@ From this example accumulation of Minutes Not Available, here's the calculation 
 - Clouds supported for capacity reservation:
    - Azure Cloud
    - Azure for Government
+   - Azure in China (Preview)
+     - Support is not available for China North and China East
 
 ## Pricing and billing 
 

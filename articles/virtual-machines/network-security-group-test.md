@@ -5,7 +5,7 @@ author: halkazwini
 ms.author: halkazwini
 ms.service: azure-virtual-machines
 ms.topic: how-to
-ms.date: 07/17/2023
+ms.date: 09/20/2024
 ---
 
 # Network security group test
@@ -32,10 +32,14 @@ In this section, you test if RDP connections are allowed to your VM from a remot
 
 1. Select the VM that you want to test.
 
-1. Under **Help**, select **Network security group test**.
+1. Under **Connect**, select **Connect**.
 
     > [!NOTE]
     > The virtual machine must be in running state.
+
+1. Under **Troubleshoot**, select **Test network security groups**.
+
+    :::image type="content" source="./media/network-security-group-test/test-network-security-groups.png" alt-text="Screenshot that shows how to access network security groups test in the Azure portal." lightbox="./media/network-security-group-test/test-network-security-groups.png":::
 
 1. Select **Inbound connections**. The following options are available for **Inbound** tests:
 
@@ -57,7 +61,7 @@ In this section, you test if RDP connections are allowed to your VM from a remot
     | Port | Leave the default of **3389**. |
     | Protocol | Leave the default of **TCP**. |
 
-    :::image type="content" source="./media/network-security-group-test/inbound.png" alt-text="Screenshot of inbound network security group test in the Azure portal." lightbox="./media/network-security-group-test/inbound.png":::
+    :::image type="content" source="./media/network-security-group-test/inbound-test.png" alt-text="Screenshot of inbound network security group test in the Azure portal." lightbox="./media/network-security-group-test/inbound-test.png":::
 
 1. Select **Run test**.
 
@@ -79,10 +83,14 @@ In this section, you test your VM can have connect to the internet.
 
 1. Select the VM you want to test.
 
-1. Under **Help**, select **Network security group test**.
+1. Under **Connect**, select **Connect**.
 
     > [!NOTE]
     > The virtual machine must be in running state.
+
+1. Under **Troubleshoot**, select **Test network security groups**.
+
+    :::image type="content" source="./media/network-security-group-test/test-network-security-groups.png" alt-text="Screenshot that shows how to access network security groups test in the Azure portal." lightbox="./media/network-security-group-test/test-network-security-groups.png":::
 
 1. Select **Outbound connections**. The following options are available for **Outbound** tests:
 
@@ -104,7 +112,7 @@ In this section, you test your VM can have connect to the internet.
     | Protocol | Leave the default of **Any**. |
     | Destination type | Select **Any IP address**. |
 
-    :::image type="content" source="./media/network-security-group-test/outbound.png" alt-text="Screenshot of outbound network security group test in the Azure portal." lightbox="./media/network-security-group-test/outbound.png":::
+    :::image type="content" source="./media/network-security-group-test/outbound-test.png" alt-text="Screenshot of outbound network security group test in the Azure portal." lightbox="./media/network-security-group-test/outbound-test.png":::
 
 1. Select **Run test**.
 

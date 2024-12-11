@@ -6,7 +6,7 @@ manager: gwallace
 ms.service: azure-virtual-machines
 ms.subservice: hpc
 ms.collection: linux
-ms.topic: article
+ms.topic: concept-article
 ms.tgt_pltfrm: vm-linux
 ms.custom: linux-related-content
 ms.date: 07/25/2024
@@ -222,6 +222,34 @@ Extension execution output is logged to the following file. Refer to this file t
 | 12 | Image offer not supported |
 | 13 | VM size not supported | Use an N-series VM to deploy. |
 | 14 | Operation unsuccessful | Check the execution output log. |
+
+### Known issues
+`NvidiaGpuDriverLinux` currently fails to install the latest drivers on Red Hat OS because of certificate issues. While Azure is working to resolve this issue, use GRID driver 16.5 by passing a runtime setting to the extension.
+   
+```azurecli
+az vm extension set  --resource-group <rg-name> --vm-name <vm-name>  --name NvidiaGpuDriverLinux --publisher Microsoft.HpcCompute --settings "{'driverVersion':'538.46'}"
+```
+
+```ARM templates
+{
+  "name": "NvidiaGpuDriverWindows",
+  "type": "extensions",
+  "apiVersion": "2015-06-15",
+  "location": "<location>",
+  "dependsOn": [
+    "[concat('Microsoft.Compute/virtualMachines/', <myVM>)]"
+  ],
+  "properties": {
+    "publisher": "Microsoft.HpcCompute",
+    "type": "NvidiaGpuDriverLinux",
+    "typeHandlerVersion": "1.11",
+    "autoUpgradeMinorVersion": true,
+    "settings": {
+         "driverVersion": "538.46"
+    }
+  }
+}
+```
 
 ### Support
 

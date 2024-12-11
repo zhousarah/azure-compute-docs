@@ -1,7 +1,7 @@
 ---
 title: Azure Monitor Dependency virtual machine extension for Windows
 description: Deploy the Azure Monitor Dependency agent on Windows virtual machine by using a virtual machine extension.
-ms.topic: article
+ms.topic: concept-article
 ms.service: azure-monitor
 ms.subservice: agents
 author: guywi-ms
@@ -147,7 +147,7 @@ Set-AzVMExtension -ExtensionName "Microsoft.Azure.Monitoring.DependencyAgent" `
 ## Automatic extension upgrade
 A new feature to [automatically upgrade minor versions](../automatic-extension-upgrade.md) of Dependency extension is now available.
 
-To enable automatic extension upgrade for an extension, you must ensure the property `enableAutomaticUpgrade` is set to `true` and added to the extension template. This property must be enabled on every VM or VM scale set individually. Use one of the methods described in the [enablement](../automatic-extension-upgrade.md#enabling-automatic-extension-upgrade) section enable the feature for your VM or VM scale set.
+To enable automatic extension upgrade for an extension, you must ensure the property `enableAutomaticUpgrade` is set to `true` and added to the extension template. This property must be enabled on every VM or VM scale set individually. Use one of the methods described in the [enablement](../automatic-extension-upgrade.md#enable-automatic-extension-upgrade) section enable the feature for your VM or VM scale set.
 
 When automatic extension upgrade is enabled on a VM or VM scale set, the extension is upgraded automatically whenever the extension publisher releases a new version for that extension. The upgrade is applied safely following availability-first principles as described [here](../automatic-extension-upgrade.md#how-does-automatic-extension-upgrade-work).
 
