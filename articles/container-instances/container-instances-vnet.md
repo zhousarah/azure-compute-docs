@@ -244,7 +244,7 @@ To deploy a container group to an existing virtual network:
 echo -e "I saw this command! 3"
 ```
 
-### Example - YAML
+<!-- ### Example - YAML -->
 
 ```bash
 echo -e "I saw this command! 4"
