@@ -32,7 +32,6 @@
       href: tutorial-create-and-manage-cli.md
     - name: Azure PowerShell
       href: tutorial-create-and-manage-powershell.md
-  - name: Connect to Instances
   - name: Modify a scale set
     items:
     - name: Azure CLI
