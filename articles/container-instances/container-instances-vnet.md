@@ -296,6 +296,10 @@ The following Bash command is for the automated deployment pathway.
 rm container-instances-vnet.yaml
 ```
 
+```bash
+echo -e "I saw this command!"
+```
+
 Once the deployment completes, run the [az container show][az-container-show] command to display its status:
 
 ```azurecli-interactive
@@ -317,7 +321,7 @@ appcontaineryaml  myACIResourceGroup123abc  Succeeded  mcr.microsoft.com/azuredo
 
 ### Example
 
-The following example deploys a third container group to the same subnet created previously. Using an Apline Linux image, it verifies communication between itself and the first container instance.
+The following example deploys a third container group to the same subnet created previously. Using an Alpine Linux image, it verifies communication between itself and the first container instance.
 
 > [!NOTE]
 > Due to rate limiting in effect for pulling public Docker images like the Alpine Linux one used here, you may receive an error in the form:
@@ -329,7 +333,7 @@ The following example deploys a third container group to the same subnet created
 The following Bash command is for the automated deployment pathway.
 
 ```bash
-echo -e "Due to rate limiting in effect for pulling public Docker images like the one used here, you may receive an error in the form:\n\n(RegistryErrorResponse) An error response is received from the docker registry 'index.docker.io'. Please retry later.\nCode: RegistryErrorResponse\nMessage: An error response is received from the docker registry 'index.docker.io'. Please retry later.\n\nIf this occurs, the automated deployment will exit. You can try again or go to the end of the guide to see instructions for cleaning up your resources."
+echo -e "Due to rate limiting in effect for pulling public Docker images like the Alpine Linux one used here, you may receive an error in the form:\n\n(RegistryErrorResponse) An error response is received from the docker registry 'index.docker.io'. Please retry later.\nCode: RegistryErrorResponse\nMessage: An error response is received from the docker registry 'index.docker.io'. Please retry later.\n\nIf this occurs, the automated deployment will exit. You can try again or go to the end of the guide to see instructions for cleaning up your resources."
 ```
 
 First, get the IP address of the first container group you deployed, the *appcontainer*:
