@@ -16,6 +16,8 @@ Using a rolling upgrade policy is the safest way to apply updates to instances i
 Rolling upgrade policy is best suited for production workloads.
 
 > [!NOTE]
+> > To configure MaxSurge upgrades, register the following feature flag: <br>
+> `Register-AzProviderFeature -FeatureName MaxSurgeRollingUpgrade -ProviderNamespace Microsoft.Compute`<br><br>
 > To update the image reference version during an upgrade, register the following feature flag: <br>
 > `Register-AzProviderFeature -FeatureName ImageReferenceUpgradeForVmoVMs -ProviderNamespace Microsoft.Compute`
 
