@@ -9,7 +9,7 @@
   - name: Scale Set FAQ
     href: virtual-machine-scale-sets-faq.yml
   - name: What's new
-    href: whats-new.md  
+    href: whats-new.md
   expanded: true
 - name: Quickstarts
   items:
@@ -25,19 +25,13 @@
   - name: Create with ARM template
     href: flexible-virtual-machine-scale-sets-rest-api.md
 - name: Tutorials
-  items: 
+  items:
   - name: Create and manage
     items:
     - name: Azure CLI
       href: tutorial-create-and-manage-cli.md
     - name: Azure PowerShell
       href: tutorial-create-and-manage-powershell.md
-  - name: Connect to Instances
-    items: 
-    - name: Azure CLI
-      href: tutorial-connect-to-instances-cli.md
-    - name: Azure PowerShell
-      href: tutorial-connect-to-instances-powershell.md
   - name: Modify a scale set
     items:
     - name: Azure CLI
@@ -83,7 +77,7 @@
     - name: Autoscale using guest metrics
       href: virtual-machine-scale-sets-mvss-guest-based-autoscale-linux.md
     - name: Troubleshoot autoscale
-      href: virtual-machine-scale-sets-troubleshoot.md 
+      href: virtual-machine-scale-sets-troubleshoot.md
   - name: Instance Mix (Preview)
     items:
     - name: Overview
@@ -95,9 +89,9 @@
   - name: Scaling Profile
     href: virtual-machine-scale-sets-scaling-profile.md
   - name: Scale-In Policy
-    href: virtual-machine-scale-sets-scale-in-policy.md 
+    href: virtual-machine-scale-sets-scale-in-policy.md
   - name: Standby pools
-    items: 
+    items:
     - name: Overview
       href: standby-pools-overview.md
     - name: Create a standby pool
@@ -115,7 +109,7 @@
   - name: Working with large uniform scale sets
     href: virtual-machine-scale-sets-placement-groups.md
 - name: Reliability
-  items: 
+  items:
   - name: Reliability in Virtual Machine Scale Sets
     href: /azure/reliability/reliability-virtual-machines?toc=/azure/virtual-machine-scale-sets/toc.json&bc=/azure/virtual-machine-scale-sets/breadcrumb/toc.json
   - name: Design considerations
@@ -132,7 +126,7 @@
   - name: Resilient create and delete (Preview)
     href: resilient-vm-create-delete.md
 - name: Cost optimization
-  items: 
+  items:
   - name: Azure Spot Virtual Machines
     href: use-spot.md
   - name: Spot Priority Mix
@@ -142,7 +136,7 @@
   - name: Reserved instances
     href: /azure/cost-management-billing/reservations/save-compute-costs-reservations
   - name: Azure Hybrid Benefit
-    items: 
+    items:
     - name: Hybrid Benefit for Linux
       href: ../virtual-machines/linux/azure-hybrid-benefit-linux.md
       maintainContext: true
@@ -152,7 +146,7 @@
     - name: Hybrid benefit for Uniform Scale Sets
       href: azure-hybrid-benefit-linux.md
 - name: Management
-  items: 
+  items:
   - name: Modify a scale set
     href: virtual-machine-scale-sets-upgrade-scale-set.md
   - name: Understand instance IDs
@@ -223,7 +217,7 @@
     - name: Changing the upgrade policy mode
       href: virtual-machine-scale-sets-change-upgrade-policy.md
     - name: Configure rolling upgrade policy
-      href: virtual-machine-scale-sets-configure-rolling-upgrades.md 
+      href: virtual-machine-scale-sets-configure-rolling-upgrades.md
     - name: Custom metrics for rolling upgrades (preview)
       href: virtual-machine-scale-sets-rolling-upgrade-custom-metrics.md
     - name: Rolling upgrades with MaxSurge
@@ -237,7 +231,7 @@
     - name: Extensions Overview
       href: ../virtual-machines/extensions/overview.md
       maintainContext: true
-    - name: Automatic extension upgrade 
+    - name: Automatic extension upgrade
       href: ../virtual-machines/automatic-extension-upgrade.md
       maintainContext: true
     - name: Extension sequencing on scale sets
@@ -245,7 +239,7 @@
     - name: Application Health extension
       href: virtual-machine-scale-sets-health-extension.md
   - name: Azure Compute Gallery
-    items: 
+    items:
     - name: Overview
       href: ../virtual-machines/azure-compute-gallery.md
       maintainContext: true
@@ -265,7 +259,7 @@
     - name: Action Run Commands for Windows
       href: ../virtual-machines/windows/run-command.md
       maintainContext: true
-    - name: Managed Run Commands for Linux 
+    - name: Managed Run Commands for Linux
       href: ../virtual-machines/linux/run-command-managed.md
       maintainContext: true
     - name: Managed Run Commands for Windows
@@ -294,7 +288,7 @@
       href: ../virtual-machines/windows/instance-metadata-service.md
       maintainContext: true
 - name: Updates and maintenance
-  items: 
+  items:
   - name: Maintenance notifications
     items:
     - name: Overview
@@ -333,9 +327,9 @@
   - name: Scheduled events
     items:
     - name: Linux
+      displayName: Scheduled events
       href: ../virtual-machines/linux/scheduled-events.md
       maintainContext: true
-      displayName: Scheduled events
     - name: Windows
       items:
       - name: Scheduled events
@@ -378,7 +372,7 @@
     - name: Azure Disk Encryption
       href: disk-encryption-overview.md
 - name: Networking
-  items: 
+  items:
   - name: Networking Overview
     href: /azure/virtual-network/network-overview
     maintainContext: true
@@ -406,7 +400,7 @@
     href: ../virtual-machines/automatic-vm-guest-patching.md
     maintainContext: true
   - name: Automatic OS image upgrades
-    items: 
+    items:
     - name: Overview
       href: virtual-machine-scale-sets-automatic-upgrade.md
     - name: Maintenance control
