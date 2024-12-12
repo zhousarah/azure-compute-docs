@@ -1799,7 +1799,7 @@
       href: ./linux/expand-disks.md
     - name: Windows
       displayName: Expand a disk - Windows
-      href: ./windows/expand-os-disk.md
+      href: ./windows/expand-disks.md
     - name: Unmanaged disks
       href: expand-unmanaged-disks.md
   - name: Architecture
