@@ -2671,6 +2671,11 @@
             "redirect_document_id": false
         },
         {
+            "source_path_from_root": "/articles/virtual-machines/windows/expand-os-disk.md",
+            "redirect_url": "/azure/virtual-machines/windows/expand-disks",
+            "redirect_document_id": true
+        },
+        {
             "source_path_from_root": "/articles/virtual-machines/windows/create-managed-disk-ps.md",
             "redirect_url": "/azure/virtual-machines/windows/attach-disk-ps",
             "redirect_document_id": false
