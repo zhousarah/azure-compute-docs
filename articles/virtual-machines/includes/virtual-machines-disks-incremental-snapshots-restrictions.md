@@ -30,7 +30,11 @@ Incremental snapshots of Premium SSD v2 and Ultra Disks have the following extra
 - Taking increment snapshots of a Premium SSD v2 or an Ultra disk while the CompletionPercent property of the disk hasn't reached 100 isn't supported.
 - When you increase the size of a Premium SSD v2 or an Ultra disk, any incremental snapshots that are under background copy will fail. 
 - When you attach a Premium SSD v2 or Ultra disk created from snapshot to a running Virtual Machine while CompletionPercent property hasn't reached 100, the disk suffers performance impact. Specifically, if the disk has a 4k sector size, it may experience slower read. If the disk has a 512e sector size, it may experience slower read and write. To track the progress of this background copy process, see the check disk status section of either the Azure [PowerShell sample](/azure/virtual-machines/scripts/virtual-machines-powershell-sample-create-managed-disk-from-snapshot#performance-impact---background-copy-process) or the [Azure CLI](/azure/virtual-machines/scripts/virtual-machines-powershell-sample-create-managed-disk-from-snapshot#performance-impact---background-copy-process).
-- You can have up to 50 background copies per subscription, including creating Premium SSD v2 and Ultra disks via snapshot, restore point, uploading VHDX files, and converting existing Premium SSD v1 disks to Premium SSD v2.
+- You can have up to 50 active background copies per subscription. The following activities count against the total number of active background copies: 
+    - Creating Premium SSD v2 and Ultra disks with snapshots
+    - Creating Premium SSD v2 and Ultra Disks with restore points
+    - Uploading VHDX files into Premium SSD v2 and Ultra Disks
+    - Converting existing Premium SSD disks to Premium SSD v2 disks.
 
 > [!NOTE]
 > Normally, when you take an incremental snapshot, and there aren't any changes, the size of that snapshot is 0 MiB. Currently, empty snapshots of disks with a 4096 logical sector size instead have a size of 6 MiB, when they'd normally be 0 MiB.
