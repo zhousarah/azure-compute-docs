@@ -2672,7 +2672,7 @@
         },
         {
             "source_path_from_root": "/articles/virtual-machines/windows/expand-os-disk.md",
-            "redirect_url": "/azure/virtual-machines/windows/expand-disks",
+            "redirect_url": "/azure/virtual-machines/windows/expand-disk",
             "redirect_document_id": true
         },
         {
