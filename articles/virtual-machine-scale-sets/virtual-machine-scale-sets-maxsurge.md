@@ -15,7 +15,7 @@ Rolling upgrades with MaxSurge can help improve service uptime during upgrade ev
 
 > [!NOTE]
 > To configure MaxSurge upgrades, register the following feature flag: <br>
-> 'Register-AzProviderFeature -FeatureName MaxSurgeRollingUpgrade -ProviderNamespace Microsoft.Compute'
+> `Register-AzProviderFeature -FeatureName MaxSurgeRollingUpgrade -ProviderNamespace Microsoft.Compute` <br><br>
 > To update the image reference version during an upgrade, register the following feature flag: <br>
 > `Register-AzProviderFeature -FeatureName ImageReferenceUpgradeForVmoVMs -ProviderNamespace Microsoft.Compute`
 
