@@ -20,7 +20,7 @@ sections:
           To enable the temp NVMe interface on your VM, you must meet the following prerequisites:
           
           - Choose a VM family that supports NVMe (such as v6 VMs). 
-          - Select the operating system image that's tagged with NVMe support.
+          - Select an operating system that supports NVMe
           - Make sure that you're using a Generation 2 VM, because NVMe supports only Generation 2 images.          
       - question: |
           How are temp NVMe disks in my Dl/D/E_v6 VMs different from remote NVMe disks?
