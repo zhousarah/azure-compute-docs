@@ -5,6 +5,7 @@ metadata:
   ms.service: azure-virtual-machines
   ms.topic: faq
   ms.custom: references_regions
+  ms.date: 12/13/2024
 title: FAQ for temp NVMe disks
 summary: |
   This article addresses some common questions about support for temporary NVM Express (temp NVMe) disks on virtual machines (VMs) created in Azure.
