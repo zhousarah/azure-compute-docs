@@ -195,6 +195,16 @@ In rare cases, if the host update window happens to coincide with the VM guest p
 
 Change the maintenance configuration schedule for the guest update for a time after the ongoing update is finished.
 
+### New maintenance configuration retains attributes of deleted configuration
+
+#### Problem
+
+A newly created maintenance configuration with the same name as a previously deleted configuration is inheriting properties from the deleted configuration.
+
+#### Resolution
+
+Ensure a minimum wait time of 20 minutes between deleting a maintenance configuration and creating a new one with the same name.
+
 ### Maintenance Configurations doesn't support an API
 
 The feature currently doesn't support the following APIs:
