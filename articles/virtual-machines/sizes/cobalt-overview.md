@@ -14,7 +14,7 @@ ms.author: archat
 
 **Applies to:** :heavy_check_mark: Linux VMs :heavy_check_mark: Windows VMs :heavy_check_mark: Flexible scale sets :heavy_check_mark: Uniform scale sets
 
-Cobalt 100-based Virtual Machines (VMs) are powered by Azure's first-generation Cobalt 100 processor. These VMs offer up to 50% better price performance than our previous generation Arm-based VMs, making them an attractive option for a wide range of scale-out and cloud-native Linux-based workloads, including data analytics, web and application servers, open source databases, caches, and more. These VMs utilize Microsoft's first 64-bit Arm-based CPU, which was fully designed by Microsoft. The Cobalt 100 processor, based on the Arm's Neoverse N2 design, aims to enhance performance and power efficiency for broad range of workloads. Operating at 3.4 GHz, the Azure Cobalt 100 processor provides an entire physical core for each virtual machine vCPU. 
+Cobalt 100-based Virtual Machines (VMs) are powered by Azure's first-generation Cobalt 100 processor. These VMs offer an attractive option for a wide range of scale-out and cloud-native Linux-based workloads, including data analytics, web and application servers, open-source databases, caches, and more. These VMs utilize Microsoft's first 64-bit Arm-based CPU, which was fully designed by Microsoft. The Cobalt 100 processor, based on the Arm's Neoverse N2 design, aims to enhance performance and power efficiency for broad range of workloads. Operating at 3.4 GHz, the Azure Cobalt 100 processor provides an entire physical core for each virtual machine vCPU. 
 
 
 ## List of VM series by family
@@ -29,7 +29,7 @@ The following section lists the VM series supported by Cobalt 100 processors. To
 
 To learn how to deploy these VMs for cloud-native applications on AKS, check out [Azure Kubernetes Service (AKS) demo on Cobalt 100 VMs](https://aka.ms/C100-VM-deploy-demo).
 
-To find the most up-to-date regional availability, visit the Virtual Machines section at the bottom of the [Product Availability by Region](https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/table) page.
+To find the most up-to-date regional availability, visit the Virtual Machines section at the bottom of the [Product Availability by Region](https://azure.microsoft.com/explore/global-infrastructure/products-by-region/table) page.
 
 ## Guest OS Support for Cobalt 100 VMs
 The following section lists the Guest OS support for Cobalt 100 VMs. 
@@ -46,7 +46,7 @@ The following section lists the Guest OS support for Cobalt 100 VMs.
 | Red Hat Enterprise Linux (RHEL) | 8.6+ |
 | SUSE Linux Enterprise Server (SLES) | 15 SP4+ |
 | Ubuntu | 20.04+ |
-| Windows 11 Client | N/A |
+| Windows 11 | N/A |
 
 To find the most up-to-date Guest OS support, visit [Azure portal](https://portal.azure.com/#create/Microsoft.VirtualMachine). Under "Instance Details," select "See all images," then click the "Image Type" filter to select "Arm64."
 
